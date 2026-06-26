@@ -65,7 +65,8 @@ export function DeveloperExperience() {
             Built for the release discipline of a regulated bank.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            Define the contract once. Deploy the infrastructure and workload together. <QBricksText /> replaces fragile manual build patterns with governed releases your teams can inspect, approve and audit.
+            Define the contract once. Deploy the infrastructure and workload together.<br />
+            <QBricksText /> replaces fragile manual build patterns with governed releases your teams can inspect, approve and audit.
           </p>
         </div>
 
