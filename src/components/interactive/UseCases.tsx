@@ -105,11 +105,11 @@ export function UseCases() {
                   </div>
                 </div>
 
-                <h3 className="mb-8 min-h-[110px] text-2xl font-black leading-tight tracking-tight text-white md:text-3xl">
+                <h3 className="mb-6 text-2xl font-black leading-tight tracking-tight text-white md:text-3xl">
                   {useCase.title}
                 </h3>
 
-                <div className="mt-8 pt-8 border-t border-white/10 flex-grow">
+                <div className="pt-6 border-t border-white/10 flex-grow">
                   <div className="space-y-5 h-full flex flex-col">
                     {/* Pain */}
                     <div>

@@ -39,7 +39,7 @@ export default function ProductPage() {
             <h1 className="text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
               The platform that governs data at the source.
             </h1>
-            <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
+            <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-300">
               <QBricksText /> ingests directly from your systems of record and enforces the Open Data Contract Standard on every record before it reaches the lakehouse. Agentic metadata management keeps quality improving over time; local compute keeps cost and carbon down; full lineage keeps auditors satisfied. Works with Databricks, Microsoft Fabric and Snowflake via SQL push-down — no Spark, no pipelines, no lock-in.
             </p>
             <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
