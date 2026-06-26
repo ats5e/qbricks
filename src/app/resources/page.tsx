@@ -13,9 +13,9 @@ const insights = [
 ];
 
 const faqs = [
-  ["What exactly is QBricks?", "An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products."],
+  [<>What exactly is <QBricksText />?</>, <>An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products.</>],
   ["How fast can we deploy?", "Hours, not weeks — single-file deployment covers both infrastructure and workloads."],
-  ["Which platforms does it work with?", "Databricks, Microsoft Fabric, Snowflake and Quantexa. QBricks is cloud-agnostic."],
+  [<>Which platforms does it work with?</>, <>Databricks, Microsoft Fabric, Snowflake and Quantexa. <QBricksText /> is cloud-agnostic.</>],
   ["How secure is it?", "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation."],
   ["What results can we expect?", "95% fewer data issues, deployment in hours, around 70% lower cost than manually built workflows and end-to-end auditability."],
 ];
@@ -75,3 +75,4 @@ export default function ResourcesPage() {
     </main>
   );
 }
+\nimport { QBricksText } from "@/components/ui/QBricksText";

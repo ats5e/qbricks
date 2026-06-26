@@ -24,7 +24,7 @@ export default function WhyQBricksPage() {
             “One platform” does not fix your metadata problem.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            QBricks sits underneath the tools and programmes banks already run: the governed metadata foundation that makes AI, analytics and regulatory reporting trustworthy.
+            <QBricksText /> sits underneath the tools and programmes banks already run: the governed metadata foundation that makes AI, analytics and regulatory reporting trustworthy.
           </p>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function WhyQBricksPage() {
       <section className="section-y bg-q-black">
         <div className="container-x">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-[clamp(2.2rem,4vw,4rem)] font-black tracking-[-0.05em] text-white">The QBricks differentiators</h2>
+            <h2 className="text-[clamp(2.2rem,4vw,4rem)] font-black tracking-[-0.05em] text-white">The <QBricksText /> differentiators</h2>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {differentiators.map((item) => (
                 <div key={item} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-black text-white">
@@ -51,3 +51,4 @@ export default function WhyQBricksPage() {
     </main>
   );
 }
+\nimport { QBricksText } from "@/components/ui/QBricksText";

@@ -16,7 +16,7 @@ export default function AboutPage() {
         </div>
 
         <div className="container-x relative z-10 text-center">
-          <p className="eyebrow mb-6">QBricks & Infinium</p>
+          <p className="eyebrow mb-6"><QBricksText /> & Infinium</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
             The platform behind trustworthy AI in financial services.
           </h1>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="premium-card p-7">
               <ShieldCheck className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-white">Built for regulated data</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400">QBricks is an AI-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-400"><QBricksText /> is an AI-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
             </div>
             <div className="premium-card p-7">
               <Globe2 className="mb-6 h-8 w-8 text-q-brand-ember" />
@@ -56,3 +56,4 @@ export default function AboutPage() {
     </main>
   );
 }
+\nimport { QBricksText } from "@/components/ui/QBricksText";

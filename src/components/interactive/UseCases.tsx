@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { AlertOctagon, ArrowRight, CheckCircle2, Network, ShieldAlert, TrendingDown, Users } from "lucide-react";
@@ -63,7 +64,7 @@ export function UseCases() {
             Built for the highest-value data problems in GCC financial services.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            QBricks speaks directly to the priorities of CDOs, governance leaders, risk teams and financial-crime functions: trusted data, defensible decisions and faster regulated delivery.
+            <QBricksText /> speaks directly to the priorities of CDOs, governance leaders, risk teams and financial-crime functions: trusted data, defensible decisions and faster regulated delivery.
           </p>
         </div>
 
@@ -111,7 +112,7 @@ export function UseCases() {
 
                 <div className="mt-9 flex-1 space-y-7">
                   <StoryBlock label="The pain" tone="red" text={activeCase.pain} />
-                  <StoryBlock label="How QBricks helps" text={activeCase.help} />
+                  <StoryBlock label={<>How <QBricksText /> helps</>} text={activeCase.help} />
                   <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.07] p-6">
                     <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-emerald-300">The outcome</span>
                     <p className="flex items-start gap-3 text-xl font-black leading-relaxed text-white">

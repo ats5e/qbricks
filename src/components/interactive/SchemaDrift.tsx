@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle2, Database, Shuffle, RefreshCw } from "lucide-react";
@@ -13,7 +14,7 @@ export function SchemaDrift() {
             Survive schema drift <br /> automatically.
           </h2>
           <p className="text-q-gray-400 text-lg">
-            When upstream systems change, traditional pipelines break. QBricks uses its Data Contract to automatically version schemas, quarantine bad records, and keep the data flowing.
+            When upstream systems change, traditional pipelines break. <QBricksText /> uses its Data Contract to automatically version schemas, quarantine bad records, and keep the data flowing.
           </p>
         </div>
 
@@ -64,7 +65,7 @@ export function SchemaDrift() {
           <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] p-8 flex flex-col items-center shadow-[0_0_50px_rgba(16,185,129,0.05)] relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.1),transparent_70%)] pointer-events-none" />
             
-            <h3 className="text-xl font-bold text-white mb-8 z-10">The QBricks Way</h3>
+            <h3 className="text-xl font-bold text-white mb-8 z-10">The <QBricksText /> Way</h3>
             
             <div className="relative w-full max-w-[300px] h-[300px] flex flex-col items-center justify-between z-10">
               {/* Database Node */}

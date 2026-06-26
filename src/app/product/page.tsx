@@ -40,7 +40,7 @@ export default function ProductPage() {
               AI-enabled metadata management, built for governed enterprise data.
             </h1>
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-              QBricks builds and deploys data quality and ETL workflows through Data Contracts and Data Products, automating metadata management without losing control or auditability.
+              <QBricksText /> builds and deploys data quality and ETL workflows through Data Contracts and Data Products, automating metadata management without losing control or auditability.
             </p>
             <a href="mailto:sales@infinium.consulting?subject=QBricks product demo" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Request a demo <ArrowRight className="h-5 w-5" />
@@ -104,3 +104,4 @@ export default function ProductPage() {
     </main>
   );
 }
+\nimport { QBricksText } from "@/components/ui/QBricksText";

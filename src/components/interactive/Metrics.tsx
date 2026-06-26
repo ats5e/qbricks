@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AlertTriangle, ArrowRight, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { QIcon } from "@/components/ui/QIcon";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const before = [
   "Hundreds of ungoverned notebooks",
@@ -77,7 +78,7 @@ export function Metrics() {
                 <AlertTriangle className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-q-gray-500">Without QBricks</p>
+                <p className="text-sm uppercase tracking-[0.2em] text-q-gray-500">Without <QBricksText /></p>
                 <h3 className="text-2xl font-black text-white">Data swamp</h3>
               </div>
             </div>
@@ -112,7 +113,7 @@ export function Metrics() {
                 <Layers3 className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">With QBricks</p>
+                <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">With <QBricksText /></p>
                 <h3 className="text-2xl font-black text-white">Governed foundation</h3>
               </div>
             </div>

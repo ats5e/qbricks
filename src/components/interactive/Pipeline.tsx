@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -27,7 +28,7 @@ export function Pipeline() {
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <p className="eyebrow mb-4">The QBricks Pipeline</p>
+          <p className="eyebrow mb-4">The <QBricksText /> Pipeline</p>
           <h2 className="mb-6 text-[clamp(2.5rem,4vw,3.5rem)] font-display font-black leading-tight tracking-tighter text-white">
             Record to report, <br />
             <span className="text-brand-gradient">fully transparent.</span>

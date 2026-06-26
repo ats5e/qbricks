@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { motion } from "framer-motion";
 import { BrainCircuit, GitBranch, Network, ScanLine, ShieldCheck, UserCheck } from "lucide-react";
@@ -47,7 +48,7 @@ export function Agentic() {
               Automate the heavy work. Keep the audit trail.
             </h2>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-300">
-              QBricks automates much of metadata management through governed agents that learn, recommend and execute within controlled workflows — giving financial institutions speed without creating a black box.
+              <QBricksText /> automates much of metadata management through governed agents that learn, recommend and execute within controlled workflows — giving financial institutions speed without creating a black box.
             </p>
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -88,8 +89,12 @@ export function Agentic() {
                   className="absolute rounded-full border border-white/10"
                   style={{ inset: `${46 + ring * 56}px` }}
                   animate={{ rotate: ring % 2 ? -360 : 360 }}
-                  transition={{ duration: 32 + ring * 10, repeat: Infinity, ease: "linear" }}
-                />
+                  transition={{ duration: 24 + ring * 8, repeat: Infinity, ease: "linear" }}
+                >
+                  {/* Glowing orbital node */}
+                  <div className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember shadow-[0_0_12px_2px_rgba(232,32,15,0.8)]" />
+                  {ring === 1 && <div className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-400 shadow-[0_0_12px_2px_rgba(52,211,153,0.8)]" />}
+                </motion.div>
               ))}
 
               {orbitLabels.map((label, index) => {
@@ -110,9 +115,14 @@ export function Agentic() {
                 );
               })}
 
-              <div className="relative z-10 rounded-[2.5rem] border border-q-brand/30 bg-gradient-to-b from-q-brand/20 to-white/[0.04] p-8 text-center shadow-[0_0_90px_rgba(232,32,15,0.28)] backdrop-blur-2xl">
-                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-black/40 text-white">
-                  <ScanLine className="h-10 w-10" />
+              <motion.div 
+                className="relative z-10 rounded-[2.5rem] border border-q-brand/30 bg-gradient-to-b from-q-brand/20 to-white/[0.04] p-8 text-center shadow-[0_0_90px_rgba(232,32,15,0.28)] backdrop-blur-2xl"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-black/40 text-white relative">
+                  <div className="absolute inset-0 rounded-3xl border border-q-brand-ember/30 animate-pulse" />
+                  <ScanLine className="h-10 w-10 text-q-brand-ember" />
                 </div>
                 <h3 className="text-2xl font-black text-white">Governed agent core</h3>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-q-gray-300">Learns, recommends and executes with human approval and full lineage.</p>
@@ -120,7 +130,7 @@ export function Agentic() {
                   <ShieldCheck className="h-4 w-4" />
                   Always auditable
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

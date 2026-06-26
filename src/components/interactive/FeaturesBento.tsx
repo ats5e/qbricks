@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight, Blocks, CheckCircle2, Cloud, FileCode2, Network, Shield, Sparkles, XCircle } from "lucide-react";
@@ -33,7 +34,7 @@ const capabilities = [
   {
     icon: Cloud,
     title: "Simplify your lakehouse",
-    text: "QBricks simplifies Databricks and Microsoft Fabric management while remaining cloud-agnostic across the enterprise stack.",
+    text: <><QBricksText /> simplifies Databricks and Microsoft Fabric management while remaining cloud-agnostic across the enterprise stack.</>,
     highlight: "Cloud-agnostic",
   },
   {
@@ -80,12 +81,12 @@ export function FeaturesBento() {
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-16 max-w-4xl text-center">
-          <p className="eyebrow mb-5">What QBricks is</p>
+          <p className="eyebrow mb-5">What <QBricksText /> is</p>
           <h2 className="text-[clamp(2.5rem,5.5vw,5.4rem)] font-black leading-[0.96] tracking-[-0.06em] text-white">
             A governed, secure metadata platform for regulated banks.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            QBricks develops and deploys data quality and ETL workflows through Data Contracts and Data Products, automating the metadata layer banks need for AI, analytics and regulatory reporting.
+            <QBricksText /> develops and deploys data quality and ETL workflows through Data Contracts and Data Products, automating the metadata layer banks need for AI, analytics and regulatory reporting.
           </p>
         </div>
 
@@ -98,7 +99,7 @@ export function FeaturesBento() {
           >
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div>
-                <h3 className="text-3xl font-black tracking-tight text-white lg:text-4xl">The QBricks Transformation</h3>
+                <h3 className="text-3xl font-black tracking-tight text-white lg:text-4xl">The <QBricksText /> Transformation</h3>
                 <p className="mt-5 text-lg leading-relaxed text-q-gray-400">From fragmented, risky lakehouse operations to an explicit control layer for governed data products.</p>
                 <Link href="/why-qbricks" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-white transition-colors hover:text-q-brand-ember">
                   Why the foundation matters <ArrowRight className="h-4 w-4" />

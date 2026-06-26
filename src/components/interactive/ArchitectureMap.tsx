@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { motion } from "framer-motion";
 import { Cpu, Database, FileCheck2, GitBranch, LockKeyhole, Network, Server, ShieldCheck } from "lucide-react";
@@ -16,7 +17,7 @@ export function ArchitectureMap() {
             The governed control plane between your platforms and AI.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            QBricks sits across operational systems, lakehouse platforms and financial-crime tooling — enforcing quality, ownership, lineage and auditability before data reaches AI or regulatory workflows.
+            <QBricksText /> sits across operational systems, lakehouse platforms and financial-crime tooling — enforcing quality, ownership, lineage and auditability before data reaches AI or regulatory workflows.
           </p>
         </div>
 
@@ -52,7 +53,7 @@ export function ArchitectureMap() {
                 <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-q-brand/25 bg-q-brand/[0.12] text-q-brand-ember">
                   <ShieldCheck className="h-10 w-10" />
                 </div>
-                <h3 className="text-2xl font-black text-white">QBricks metadata foundation</h3>
+                <h3 className="text-2xl font-black text-white"><QBricksText /> metadata foundation</h3>
                 <div className="mt-6 space-y-3">
                   <SubComponent icon={FileCheck2} label="Data Contracts" />
                   <SubComponent icon={Database} label="Data Products" />
@@ -71,7 +72,7 @@ export function ArchitectureMap() {
         </div>
 
         <div className="grid gap-4 lg:hidden">
-          {["Core systems", "QBricks metadata foundation", "Databricks · Fabric · Quantexa"].map((item, index) => (
+          {["Core systems", <><QBricksText /> metadata foundation</>, "Databricks · Fabric · Quantexa"].map((item, index) => (
             <div key={item} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center text-xl font-black text-white">
               {item}
               {index < 2 && <div className="mx-auto mt-4 h-10 w-px bg-gradient-to-b from-q-brand to-transparent" />}
@@ -113,9 +114,9 @@ function DataPacket({ path, delay, isClean = false }: { path: string; delay: num
     <motion.circle
       r="4"
       fill={isClean ? "#34d399" : "#ff796c"}
-      style={{ filter: `drop-shadow(0 0 8px ${isClean ? "#10b981" : "#ff3a26"})`, offsetPath: `path('${path}')` }}
-      initial={{ offsetDistance: "0%" }}
-      animate={{ offsetDistance: "100%" }}
+      style={{ filter: `drop-shadow(0 0 8px ${isClean ? "#10b981" : "#ff3a26"})`, offsetPath: `path('${path}')`, offsetDistance: "var(--offset-distance)" } as any}
+      initial={{ "--offset-distance": "0%" } as any}
+      animate={{ "--offset-distance": "100%" } as any}
       transition={{ duration: 3.4, ease: "linear", repeat: Infinity, delay }}
     />
   );

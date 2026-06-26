@@ -1,4 +1,5 @@
-"use client";
+import { QBricksText } from "@/components/ui/QBricksText";
+\n"use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle2, Database, FileJson, LockKeyhole, Network, ShieldCheck, Sparkles } from "lucide-react";
@@ -209,7 +210,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">
-              QBricks turns ungoverned lakehouse sprawl into an auditable, AI-ready metadata foundation for banks — with Data Contracts, Data Products and secure agentic automation deployed in hours, not weeks.
+              <QBricksText /> turns ungoverned lakehouse sprawl into an auditable, AI-ready metadata foundation for banks — with Data Contracts, Data Products and secure agentic automation deployed in hours, not weeks.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
