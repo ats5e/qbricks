@@ -1,5 +1,6 @@
+"use client";
+
 import { QBricksText } from "@/components/ui/QBricksText";
-\n"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { AlertOctagon, ArrowRight, CheckCircle2, Network, ShieldAlert, TrendingDown, Users } from "lucide-react";

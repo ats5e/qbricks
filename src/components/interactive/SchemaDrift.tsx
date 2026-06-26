@@ -1,5 +1,6 @@
+"use client";
+
 import { QBricksText } from "@/components/ui/QBricksText";
-\n"use client";
 
 import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle2, Database, Shuffle, RefreshCw } from "lucide-react";

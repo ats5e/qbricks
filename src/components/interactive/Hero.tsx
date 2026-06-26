@@ -1,5 +1,6 @@
+"use client";
+
 import { QBricksText } from "@/components/ui/QBricksText";
-\n"use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle2, Database, FileJson, LockKeyhole, Network, ShieldCheck, Sparkles } from "lucide-react";

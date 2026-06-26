@@ -104,4 +104,5 @@ export default function ProductPage() {
     </main>
   );
 }
-\nimport { QBricksText } from "@/components/ui/QBricksText";
+
+import { QBricksText } from "@/components/ui/QBricksText";

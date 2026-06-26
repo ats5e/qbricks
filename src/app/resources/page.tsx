@@ -75,4 +75,5 @@ export default function ResourcesPage() {
     </main>
   );
 }
-\nimport { QBricksText } from "@/components/ui/QBricksText";
+
+import { QBricksText } from "@/components/ui/QBricksText";

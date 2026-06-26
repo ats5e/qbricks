@@ -56,4 +56,5 @@ export default function AboutPage() {
     </main>
   );
 }
-\nimport { QBricksText } from "@/components/ui/QBricksText";
+
+import { QBricksText } from "@/components/ui/QBricksText";

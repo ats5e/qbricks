@@ -51,4 +51,5 @@ export default function WhyQBricksPage() {
     </main>
   );
 }
-\nimport { QBricksText } from "@/components/ui/QBricksText";
+
+import { QBricksText } from "@/components/ui/QBricksText";
