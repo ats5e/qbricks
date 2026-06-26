@@ -29,7 +29,7 @@ export default function ContactPage() {
           src="/assets/DubaiSkyline.png"
           alt="Dubai Skyline"
           fill
-          className="object-cover object-bottom opacity-80"
+          className="object-cover object-bottom opacity-30"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-q-black via-q-black/20 to-transparent" />
