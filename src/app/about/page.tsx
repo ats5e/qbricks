@@ -1,5 +1,6 @@
 import { ArrowRight, Building2, Globe2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "About — QBricks",
@@ -11,7 +12,6 @@ export default function AboutPage() {
     <main className="min-h-screen bg-q-black">
       <section className="relative overflow-hidden border-b border-white/5 pb-12 pt-44 lg:pb-16">
         <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bricks-cityscape.png" alt="" fill priority className="object-cover object-center opacity-32 mix-blend-screen grayscale" sizes="100vw" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.58),#000_88%)]" />
         </div>
 
@@ -45,11 +45,13 @@ export default function AboutPage() {
           </div>
 
           <div className="premium-card mx-auto mt-10 max-w-4xl p-8 text-center md:p-12">
-            <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-[-0.05em] text-white">See QBricks on your data.</h2>
+            <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-[-0.05em] text-white">
+              See <QBricksText /> on your data.
+            </h2>
             <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-q-gray-400">Tell us your platform and priority use case — AML, KYC, fraud, MDM or risk — and we will tailor the demo.</p>
-            <a href="mailto:sales@infinium.consulting?subject=QBricks demo request" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
-              sales@infinium.consulting <ArrowRight className="h-5 w-5" />
-            </a>
+            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+              Contact Us <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>

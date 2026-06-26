@@ -42,9 +42,9 @@ export default function ProductPage() {
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
               <QBricksText /> builds and deploys data quality and ETL workflows through Data Contracts and Data Products, automating metadata management without losing control or auditability.
             </p>
-            <a href="mailto:sales@infinium.consulting?subject=QBricks product demo" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+            <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Request a demo <ArrowRight className="h-5 w-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -87,17 +87,11 @@ export default function ProductPage() {
       <FeaturesBento />
       <DeveloperExperience />
 
-      <section className="section-y bg-q-black text-center">
-        <div className="container-x">
-          <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-3">
-            {["95% fewer data issues", "Deploy in hours", "~70% lower cost", "Fully auditable"].map((item) => (
-              <div key={item} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-black text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-300" /> {item}
-              </div>
-            ))}
-          </div>
-          <Link href="/solutions" className="mt-10 inline-flex items-center gap-2 font-black text-white hover:text-q-brand-ember">
-            Explore use cases <ArrowRight className="h-4 w-4" />
+      <section className="section-y bg-q-black text-center pb-32">
+        <div className="container-x relative z-10">
+          <Link href="/solutions" className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-10 py-5 text-lg font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]">
+            Explore use cases
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </section>

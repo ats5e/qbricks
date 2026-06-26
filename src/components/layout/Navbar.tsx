@@ -64,20 +64,26 @@ export function Navbar() {
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
-                  {link.name}
+                  {link.name === "Why QBricks" ? (
+                    <>
+                      Why <span className="font-bold text-q-brand">Q</span><span className="text-white">Bricks</span>
+                    </>
+                  ) : (
+                    link.name
+                  )}
                 </Link>
               );
             })}
           </nav>
 
           <div className="hidden shrink-0 items-center lg:flex">
-            <a
-              href="mailto:sales@infinium.consulting?subject=QBricks demo request"
+            <Link
+              href="/contact"
               className="group inline-flex items-center gap-2 rounded-full bg-q-brand px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-q-brand-ember"
             >
               Request a demo
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </Link>
           </div>
 
           <button
@@ -110,17 +116,24 @@ export function Navbar() {
                         isActive ? "bg-white/[0.06] text-white" : "text-q-gray-300 hover:bg-white/[0.04] hover:text-white"
                       }`}
                     >
-                      {link.name}
+                      {link.name === "Why QBricks" ? (
+                        <>
+                          Why <span className="font-bold text-q-brand">Q</span><span className="text-white">Bricks</span>
+                        </>
+                      ) : (
+                        link.name
+                      )}
                     </Link>
                   );
                 })}
               </div>
-              <a
-                href="mailto:sales@infinium.consulting?subject=QBricks demo request"
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
                 className="mt-3 flex items-center justify-center gap-2 rounded-full bg-q-brand px-5 py-3 text-sm font-bold text-white"
               >
                 Request a demo <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

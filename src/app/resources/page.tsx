@@ -1,5 +1,6 @@
-import { ArrowRight, BookOpen, HelpCircle } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -69,9 +70,9 @@ export default function ResourcesPage() {
         </div>
 
         <div className="container-x mt-12 text-center">
-          <a href="mailto:sales@infinium.consulting?subject=QBricks demo request" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+          <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
             Request a demo <ArrowRight className="h-5 w-5" />
-          </a>
+          </Link>
         </div>
       </section>
     </main>

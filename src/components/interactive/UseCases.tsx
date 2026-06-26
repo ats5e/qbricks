@@ -1,66 +1,77 @@
 "use client";
 
 import { QBricksText } from "@/components/ui/QBricksText";
-
-import { AnimatePresence, motion } from "framer-motion";
-import { AlertOctagon, ArrowRight, CheckCircle2, Network, ShieldAlert, TrendingDown, Users } from "lucide-react";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const cases = [
   {
     title: "Governed data for AML that stands up to scrutiny.",
     icon: ShieldAlert,
     tag: "AML",
-    pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives, missed risk and findings.",
-    help: "Governed metadata and the embedded Quantexa Trust Score deliver 99% data matching accuracy, so entities, transactions and relationships resolve correctly; every transformation is auditable for the regulator.",
+    pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
+    help: "Governed metadata and the embedded Quantexa Trust Score deliver 99% data matching accuracy.",
     outcome: "Fewer false positives, defensible investigations and lower cost to comply.",
+    colSpan: "lg:col-span-2",
   },
   {
     title: "KYC and perpetual KYC built on data you can trust.",
     icon: Users,
     tag: "KYC / pKYC",
-    pain: "Customer data is fragmented across systems; keeping KYC current is expensive and error-prone; EDD demands a complete, accurate picture.",
-    help: "Contextual, governed data with high matching accuracy gives a reliable single view; Data Products keep customer intelligence current and auditable.",
+    pain: "Customer data is fragmented across systems; keeping KYC current is expensive and error-prone.",
+    help: "Contextual, governed data with high matching accuracy gives a reliable single view.",
     outcome: "Faster onboarding, continuous KYC and audit-ready files.",
+    colSpan: "lg:col-span-1",
   },
   {
     title: "Stop fraud with data that is actually connected.",
     icon: AlertOctagon,
     tag: "Fraud & financial crime",
     pain: "Fraud signals live in silos; weak data linkage means missed patterns and inflated false positives.",
-    help: "Ontologies and knowledge graphs interconnect data; embedded trust scoring sharpens entity resolution; agents improve detection inputs continuously.",
+    help: "Ontologies and knowledge graphs interconnect data; embedded trust scoring sharpens entity resolution.",
     outcome: "Stronger detection, fewer false positives and a clear audit trail.",
+    colSpan: "lg:col-span-1",
   },
   {
     title: "Master data with context, governance and lineage.",
     icon: Network,
     tag: "Contextual MDM",
     pain: "Traditional MDM is brittle and loses the business context needed for customer intelligence.",
-    help: "Governed metadata plus ontologies and knowledge graphs deliver contextual master data; Quantexa trust scoring assures matching; everything is auditable.",
+    help: "Governed metadata plus ontologies and knowledge graphs deliver contextual master data.",
     outcome: "A trustworthy single view that powers customer intelligence and cross-sell.",
+    colSpan: "lg:col-span-1",
   },
   {
     title: "Risk decisions are only as good as the data behind them.",
     icon: TrendingDown,
     tag: "Credit & ESG risk",
     pain: "Credit and ESG risk depend on accurate, well-understood, well-lineaged data; regulators expect to see the working.",
-    help: "Governed, auditable data foundations with clear lineage give risk teams explainable inputs for models and reports.",
+    help: "Governed, auditable data foundations with clear lineage give risk teams explainable inputs.",
     outcome: "Defensible risk models and reporting, with the audit trail built in.",
+    colSpan: "lg:col-span-1",
   },
 ];
 
 export function UseCases() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeCase = cases[activeIndex];
-  const ActiveIcon = activeCase.icon;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  
+  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section id="use-cases" className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_26%,rgba(232,32,15,0.16),transparent_30%),linear-gradient(to_bottom,#000,rgba(255,255,255,0.025),#000)]" />
+    <section id="use-cases" ref={containerRef} className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
+      <motion.div 
+        style={{ y: yBackground }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.08),transparent_50%),linear-gradient(to_bottom,#000,rgba(255,255,255,0.02),#000)]" 
+      />
 
       <div className="container-x relative z-10">
-        <div className="mx-auto mb-16 max-w-4xl text-center">
+        <div className="mx-auto mb-20 max-w-4xl text-center">
           <p className="eyebrow mb-5">Solutions</p>
           <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-[-0.06em] text-white">
             Built for the highest-value data problems in GCC financial services.
@@ -70,70 +81,65 @@ export function UseCases() {
           </p>
         </div>
 
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 lg:flex-row">
-          <div className="flex flex-col gap-3 lg:w-1/3">
-            {cases.map((useCase, index) => {
-              const Icon = useCase.icon;
-              const isActive = index === activeIndex;
-              return (
-                <button
-                  key={useCase.tag}
-                  onClick={() => setActiveIndex(index)}
-                  className={`relative overflow-hidden rounded-2xl border p-4 text-left transition-all ${isActive ? "border-white/20 bg-white/[0.065] shadow-lg" : "border-white/5 bg-white/[0.025] hover:border-white/10 hover:bg-white/[0.045]"}`}
-                >
-                  {isActive && <motion.div layoutId="activeUseCase" className="absolute inset-0 bg-gradient-to-r from-q-brand/[0.14] to-transparent" transition={{ type: "spring", stiffness: 300, damping: 30 }} />}
-                  <div className="relative z-10 flex items-center gap-4">
-                    <div className={`rounded-xl p-2 ${isActive ? "bg-q-brand/20 text-q-brand-ember" : "bg-white/5 text-q-gray-500"}`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <span className={`font-black ${isActive ? "text-white" : "text-q-gray-400"}`}>{useCase.tag}</span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="lg:w-2/3">
-            <AnimatePresence mode="wait">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+          {cases.map((useCase, index) => {
+            const Icon = useCase.icon;
+            return (
               <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="premium-card flex h-full flex-col p-8 md:p-12"
+                key={useCase.tag}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-all hover:bg-white/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-white/20 ${useCase.colSpan}`}
               >
-                <div className="mb-7 flex items-center gap-3">
-                  <div className="rounded-2xl border border-q-brand/30 bg-q-brand/[0.18] p-3 text-q-brand-ember">
-                    <ActiveIcon className="h-6 w-6" />
-                  </div>
-                  <span className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-1.5 text-sm font-bold text-q-gray-300">{activeCase.tag}</span>
-                </div>
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.15),transparent_60%)]" />
 
-                <h3 className="text-3xl font-black leading-tight tracking-tight text-white md:text-5xl">{activeCase.title}</h3>
-
-                <div className="mt-9 flex-1 space-y-7">
-                  <StoryBlock label="The pain" tone="red" text={activeCase.pain} />
-                  <StoryBlock label={<>How <QBricksText /> helps</>} text={activeCase.help} />
-                  <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.07] p-6">
-                    <span className="mb-3 block text-xs font-black uppercase tracking-[0.2em] text-emerald-300">The outcome</span>
-                    <p className="flex items-start gap-3 text-xl font-black leading-relaxed text-white">
-                      <CheckCircle2 className="mt-1 h-6 w-6 shrink-0 text-emerald-300" />
-                      {activeCase.outcome}
-                    </p>
+                <div className="mb-8 flex items-center justify-between gap-4">
+                  <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-q-brand-ember">
+                    {useCase.tag}
+                  </span>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-q-gray-400 transition-colors group-hover:bg-q-brand/20 group-hover:text-q-brand-ember">
+                    <Icon className="h-6 w-6" />
                   </div>
                 </div>
 
+                <h3 className="mb-8 text-2xl font-black leading-tight tracking-tight text-white md:text-3xl">
+                  {useCase.title}
+                </h3>
 
+                <div className="mt-8 pt-8 border-t border-white/10 flex-grow">
+                  <div className="space-y-5 h-full flex flex-col">
+                    {/* Pain */}
+                    <div>
+                      <p className="text-sm leading-relaxed text-q-gray-400">{useCase.pain}</p>
+                    </div>
+
+                    {/* QBricks Help */}
+                    <div>
+                      <p className="text-sm leading-relaxed text-q-gray-200">
+                        <strong className="text-white font-bold">With <QBricksText />:</strong> {useCase.help}
+                      </p>
+                    </div>
+
+                    {/* Outcome */}
+                    <div className="mt-auto pt-3">
+                      <div className="rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
+                        <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-400/80">The Outcome</span>
+                        <p className="text-sm font-bold leading-relaxed text-emerald-50">{useCase.outcome}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
-            </AnimatePresence>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-
 function StoryBlock({ label, text, tone = "neutral" }: { label: ReactNode; text: string; tone?: "red" | "neutral" }) {
   return (
     <div className={`border-l-2 pl-6 ${tone === "red" ? "border-red-400/35" : "border-white/20"}`}>

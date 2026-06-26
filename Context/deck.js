@@ -51,10 +51,10 @@ function closingChrome(slide) {
   slide.addText("QBricks · NextWave Infinium", { x: W - 4.55, y: H - 0.45, w: 4, h: 0.3, fontFace: F.body, fontSize: 8, color: C.grayD, align: "right" });
 }
 function kicker(slide, txt) {
-  slide.addText(txt.toUpperCase(), { x: 0.55, y: 0.95, w: 11.5, h: 0.32, fontFace: F.body, fontSize: 11.5, bold: true, color: C.red, charSpacing: 3, margin: 0 });
+  slide.addText(txt.toUpperCase(), { x: 0.55, y: 0.82, w: 11.5, h: 0.32, fontFace: F.body, fontSize: 11.5, bold: true, color: C.red, charSpacing: 3, margin: 0 });
 }
 function title(slide, txt, opts = {}) {
-  slide.addText(txt, { x: 0.55, y: 1.24, w: 12.4, h: 1.05, fontFace: F.head, fontSize: opts.size || 25, bold: true, color: C.white, margin: 0, valign: "top", ...opts });
+  slide.addText(txt, { x: 0.55, y: 1.42, w: 12.4, h: 1.05, fontFace: F.head, fontSize: opts.size || 25, bold: true, color: C.white, margin: 0, valign: "top", ...opts });
 }
 function card(slide, x, y, w, h, fill = C.panel) {
   slide.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y, w, h, rectRadius: 0.07, fill: { color: fill }, line: { color: C.line, width: 1 }, shadow: shadow() });
@@ -77,6 +77,7 @@ function pageNum(slide, n) {
     rocket: fa.FaRocket, cogs: fa.FaCogs, audit: fa.FaClipboardCheck, aml: fa.FaSearchDollar,
     kyc: fa.FaIdCard, fraud: fa.FaFingerprint, database: fa.FaDatabase, chart: fa.FaChartLine,
     mail: fa.FaEnvelope, globe: fa.FaGlobe, handshake: fa.FaHandshake,
+    server: fa.FaServer, sync: fa.FaSyncAlt,
   };
   for (const k of Object.keys(need)) I[k] = await icon(need[k]);
   const arrow = await icon(fa.FaArrowRight, "#7E7E88");
@@ -269,9 +270,86 @@ function pageNum(slide, n) {
       { x: 0.55, y: 5.85, w: 12.25, h: 0.5, fontFace: F.body, fontSize: 12, italic: true, color: C.grayD, align: "center", margin: 0 });
   }
 
-  // ===================== 9. QUANTEXA =====================
+  // ===================== 9. COMPUTE COST =====================
   {
     const s = pres.addSlide(); base(s); pageNum(s, 9);
+    kicker(s, "The compute bill");
+    s.addText([
+      { text: "Say goodbye to ", options: { color: C.white, breakLine: true } },
+      { text: "cloud compute.", options: { color: C.red } },
+    ], { x: 0.55, y: 1.32, w: 11, h: 1.35, fontFace: F.head, fontSize: 31, bold: true, lineSpacingMultiple: 1.0, valign: "top", margin: 0 });
+    s.addText("Cloud data platforms meter every cluster, credit and capacity unit — billing whether you use it or not. QBricks runs on the desktops and laptops you already own. No cloud compute. No meter.",
+      { x: 0.55, y: 2.62, w: 9.4, h: 0.7, fontFace: F.body, fontSize: 12.5, color: C.gray, lineSpacingMultiple: 1.15, margin: 0 });
+    const cards = [
+      ["CLUSTERS & SERVING", "Databricks", "$6,400", "per month · cloud compute", "$0.55 / DBU", "$76,800", false],
+      ["WAREHOUSE CREDITS", "Snowflake", "$5,300", "per month · cloud compute", "$3.00 / credit", "$63,600", false],
+      ["F64 CAPACITY, 24/7", "Microsoft Fabric", "$8,400", "per month · cloud compute", "$0.18 / CU-hr", "$100,800", false],
+      ["LOCAL COMPUTE", "QBricks", "$0", "per month · processed on premise", "none", "$0", true],
+    ];
+    const cw = 2.84, gap = 0.3, x0 = 0.55, y = 3.45, ch = 2.7;
+    cards.forEach((c, i) => {
+      const x = x0 + i * (cw + gap);
+      if (c[6]) s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y, w: cw, h: ch, rectRadius: 0.07, fill: { color: "1A0C0A" }, line: { color: C.red, width: 1.4 }, shadow: shadow() });
+      else card(s, x, y, cw, ch, C.panel);
+      s.addText(c[0], { x: x + 0.28, y: y + 0.26, w: cw - 0.5, h: 0.3, fontFace: F.body, fontSize: 8.5, bold: true, color: c[6] ? C.red : C.grayD, charSpacing: 1.2, margin: 0 });
+      s.addText(c[1], { x: x + 0.28, y: y + 0.62, w: cw - 0.5, h: 0.4, fontFace: F.head, fontSize: 15.5, bold: true, color: C.white, margin: 0 });
+      s.addText(c[2], { x: x + 0.28, y: y + 1.05, w: cw - 0.5, h: 0.65, fontFace: F.head, fontSize: 30, bold: true, color: c[6] ? C.red : C.white, margin: 0 });
+      s.addText(c[3], { x: x + 0.28, y: y + 1.78, w: cw - 0.5, h: 0.3, fontFace: F.body, fontSize: 9, color: C.grayD, margin: 0 });
+      s.addShape(pres.shapes.LINE, { x: x + 0.28, y: y + 2.12, w: cw - 0.56, h: 0, line: { color: C.line, width: 1 } });
+      s.addText("Billing unit", { x: x + 0.28, y: y + 2.2, w: 1.2, h: 0.25, fontFace: F.body, fontSize: 9, color: C.grayD, margin: 0 });
+      s.addText(c[4], { x: x + cw - 1.78, y: y + 2.2, w: 1.5, h: 0.25, fontFace: F.body, fontSize: 9, bold: true, color: C.white, align: "right", margin: 0 });
+      s.addText("Annualized", { x: x + 0.28, y: y + 2.42, w: 1.2, h: 0.25, fontFace: F.body, fontSize: 9, color: C.grayD, margin: 0 });
+      s.addText(c[5], { x: x + cw - 1.78, y: y + 2.42, w: 1.5, h: 0.25, fontFace: F.body, fontSize: 9, bold: true, color: c[6] ? C.red : C.white, align: "right", margin: 0 });
+    });
+    s.addText("Indicative monthly cloud-compute figures for a representative mid-size workload — confirm against the prospect's actual usage before sharing externally.",
+      { x: 0.55, y: 6.35, w: 12.25, h: 0.3, fontFace: F.body, fontSize: 9, italic: true, color: C.grayD, margin: 0 });
+    s.addNotes("Lead with the $0 local-compute card. The point: cloud platforms meter constantly; QBricks processes on hardware the bank already owns. Figures are indicative — confirm against the prospect's real usage before quoting.");
+  }
+
+  // ===================== 10. THE ENGINE =====================
+  {
+    const s = pres.addSlide(); base(s); pageNum(s, 10);
+    kicker(s, "Why it costs nothing to run");
+    title(s, "No Spark. A single-node engine that computes only the delta", { size: 22 });
+    card(s, 0.55, 2.45, 7.15, 1.5, C.panel2);
+    s.addText("THE PRODUCT TEAM'S OWN WORDING", { x: 0.85, y: 2.62, w: 6.5, h: 0.3, fontFace: F.body, fontSize: 9.5, bold: true, color: C.red, charSpacing: 1.2, margin: 0 });
+    s.addText("“No Spark — a vastly more efficient single-node paradigm, using the latest technology in database engines.”",
+      { x: 0.85, y: 2.95, w: 6.55, h: 0.9, fontFace: F.head, fontSize: 14, bold: true, italic: true, color: C.white, lineSpacingMultiple: 1.1, margin: 0 });
+    const pts = [
+      [I.server, "Runs on hardware you already own", "Commodity desktops and laptops — no cluster to spin up, no warehouse to meter."],
+      [I.sync, "Compute the delta, not the dataset", "An initial materialised-view transfer at set-up; thereafter only the change is computed — which is trivial."],
+    ];
+    let yy = 4.25;
+    pts.forEach((p) => {
+      iconOval(s, p[0], 0.55, yy, 0.62);
+      s.addText(p[1], { x: 1.4, y: yy - 0.02, w: 6.3, h: 0.4, fontFace: F.head, fontSize: 14, bold: true, color: C.white, margin: 0 });
+      s.addText(p[2], { x: 1.4, y: yy + 0.4, w: 6.3, h: 0.6, fontFace: F.body, fontSize: 11.5, color: C.gray, lineSpacingMultiple: 1.08, margin: 0 });
+      yy += 1.25;
+    });
+    card(s, 8.0, 2.45, 4.78, 4.0, C.panel2);
+    s.addText("THE TECHNICAL POINT", { x: 8.3, y: 2.68, w: 4.2, h: 0.3, fontFace: F.body, fontSize: 9.5, bold: true, color: C.red, charSpacing: 1.2, margin: 0 });
+    s.addText([
+      { text: "5M-row", options: { color: C.red, bold: true } },
+      { text: " join + aggregation", options: { color: C.white } },
+    ], { x: 8.3, y: 3.02, w: 4.2, h: 0.5, fontFace: F.head, fontSize: 18, bold: true, margin: 0 });
+    const rows = [
+      ["16 GB RAM · 8 cores", "commodity hardware"],
+      ["A few hundred ms", "query time"],
+      ["Delta only, after set-up", "≈ zero ongoing compute"],
+    ];
+    let ry = 3.8;
+    rows.forEach((r) => {
+      s.addText(r[0], { x: 8.3, y: ry, w: 4.2, h: 0.35, fontFace: F.head, fontSize: 14.5, bold: true, color: C.white, margin: 0 });
+      s.addText(r[1], { x: 8.3, y: ry + 0.34, w: 4.2, h: 0.3, fontFace: F.body, fontSize: 11, color: C.gray, margin: 0 });
+      ry += 0.82;
+    });
+    s.addText("Indicative benchmark — actual figures depend on data, hardware and workload.",
+      { x: 0.55, y: 6.6, w: 12.25, h: 0.3, fontFace: F.body, fontSize: 9, italic: true, color: C.grayD, margin: 0 });
+  }
+
+  // ===================== 11. QUANTEXA =====================
+  {
+    const s = pres.addSlide(); base(s); pageNum(s, 11);
     kicker(s, "Differentiator"); title(s, "Embedded Quantexa Trust Score");
     s.addText("QBricks ingests and embeds the Quantexa Trust Score directly into your data assets and products — so entities, transactions and relationships resolve correctly, and every transformation stays auditable.",
       { x: 0.55, y: 2.3, w: 7.3, h: 1.2, fontFace: F.body, fontSize: 13.5, color: C.gray, lineSpacingMultiple: 1.2, margin: 0 });
@@ -296,7 +374,7 @@ function pageNum(slide, n) {
 
   // ===================== 10. SOLUTIONS =====================
   {
-    const s = pres.addSlide(); base(s); pageNum(s, 10);
+    const s = pres.addSlide(); base(s); pageNum(s, 12);
     kicker(s, "Solutions"); title(s, "Where governed metadata creates regulatory & commercial value", { size: 22 });
     const uc = [
       [I.aml, "AML", "Trade, retail, markets & correspondent banking — 99% matching cuts false positives and makes investigations defensible."],
@@ -318,7 +396,7 @@ function pageNum(slide, n) {
 
   // ===================== 11. AML IN FOCUS =====================
   {
-    const s = pres.addSlide(); base(s); pageNum(s, 11);
+    const s = pres.addSlide(); base(s); pageNum(s, 13);
     kicker(s, "Use case in focus — AML"); title(s, "Governed data for AML that stands up to scrutiny");
     const cols = [
       ["The pain", I.warn, "Alerts and investigations are only as good as the data feeding them. Poor matching and ungoverned data drive false positives, missed risk and regulatory findings.", false],
@@ -336,7 +414,7 @@ function pageNum(slide, n) {
 
   // ===================== 12. WHY QBRICKS (competitive table) =====================
   {
-    const s = pres.addSlide(); base(s); pageNum(s, 12);
+    const s = pres.addSlide(); base(s); pageNum(s, 14);
     kicker(s, "Why QBricks"); title(s, "“One platform” and “data fabric” don't fix metadata", { size: 23 });
     const head = ["", "Catalogue / governance\n(Collibra, Purview)", "Native Databricks /\nFabric tooling", "Consultancy\n“data fabric”", "QBricks"];
     const rows = [
@@ -366,7 +444,7 @@ function pageNum(slide, n) {
 
   // ===================== 13. INTEGRATIONS =====================
   {
-    const s = pres.addSlide(); base(s); pageNum(s, 13);
+    const s = pres.addSlide(); base(s); pageNum(s, 15);
     kicker(s, "Integrations"); title(s, "Works with the platforms your bank already runs on");
     const ints = [
       [I.layers, "Databricks", "Simplifies management of Databricks infrastructure via Data Contracts and Products; tames notebook sprawl. Databricks-level security."],
@@ -387,7 +465,7 @@ function pageNum(slide, n) {
 
   // ===================== 14. GCC CREDIBILITY =====================
   {
-    const s = pres.addSlide(); base(s); pageNum(s, 14);
+    const s = pres.addSlide(); base(s); pageNum(s, 16);
     kicker(s, "Built for the GCC"); title(s, "Built for the realities of GCC financial services");
     s.addText("QBricks is developed by Infinium Consulting (NextWave Infinium) and built for the demands regulated banks face in the region. Enterprise-grade product, with deployment and support tailored to the GCC.",
       { x: 0.55, y: 2.0, w: 12.25, h: 0.6, fontFace: F.body, fontSize: 13, color: C.gray, lineSpacingMultiple: 1.12, margin: 0 });
@@ -409,7 +487,7 @@ function pageNum(slide, n) {
 
   // ===================== 15. ABOUT =====================
   {
-    const s = pres.addSlide(); base(s); pageNum(s, 15);
+    const s = pres.addSlide(); base(s); pageNum(s, 17);
     kicker(s, "About"); title(s, "The platform behind trustworthy AI in financial services", { size: 23 });
     const cols = [
       ["QBricks & Infinium", "QBricks is developed and owned by Infinium Consulting B.V., operating under the NextWave Infinium identity — their product and their IP: an AI-enabled metadata management platform for governed, secure enterprise data."],
@@ -426,7 +504,7 @@ function pageNum(slide, n) {
 
   // ===================== 16. CTA (closing) =====================
   {
-    const s = pres.addSlide(); closingChrome(s); pageNum(s, 16);
+    const s = pres.addSlide(); closingChrome(s); pageNum(s, 18);
     kicker(s, "Next steps");
     s.addText("See QBricks on your data", { x: 0.55, y: 2.4, w: 11.5, h: 1.0, fontFace: F.head, fontSize: 36, bold: true, color: C.white, margin: 0 });
     s.addText("Tell us your platform and priority use case — AML, KYC/pKYC, fraud, MDM or risk — and we'll tailor a short demo. You'll see single-file deployment, governed Data Contracts and the audit trail that comes with them.",

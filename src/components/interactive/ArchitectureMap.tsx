@@ -1,6 +1,7 @@
 "use client";
 
 import { QBricksText } from "@/components/ui/QBricksText";
+import { QIcon } from "@/components/ui/QIcon";
 
 import { motion } from "framer-motion";
 import { Cpu, Database, FileCheck2, GitBranch, LockKeyhole, Network, Server, ShieldCheck } from "lucide-react";
@@ -58,9 +59,9 @@ export function ArchitectureMap() {
             >
               <div className="rounded-[calc(2rem-1px)] bg-black p-8 text-center">
                 <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-q-brand/25 bg-q-brand/[0.12] text-q-brand-ember">
-                  <ShieldCheck className="h-10 w-10" />
+                  <QIcon className="h-10 w-10" />
                 </div>
-                <h3 className="text-2xl font-black text-white"><QBricksText /> metadata foundation</h3>
+                <h3 className="text-2xl font-black text-white">Metadata Foundation</h3>
                 <div className="mt-6 space-y-3">
                   <SubComponent icon={FileCheck2} label="Data Contracts" />
                   <SubComponent icon={Database} label="Data Products" />

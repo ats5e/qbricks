@@ -101,8 +101,8 @@ export function Agentic() {
               {orbitLabels.map((label, index) => {
                 const angle = (index / orbitLabels.length) * Math.PI * 2;
                 const radius = 210;
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
+                const x = Math.round(Math.cos(angle) * radius);
+                const y = Math.round(Math.sin(angle) * radius);
                 return (
                   <motion.div
                     key={label}

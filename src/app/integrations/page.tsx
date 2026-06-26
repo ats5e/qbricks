@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
 import { Integrations } from "@/components/interactive/Integrations";
 
@@ -33,9 +34,9 @@ export default function IntegrationsPage() {
       <Integrations showDescriptions />
       
       <div className="container-x relative z-10 pb-20 pt-10 text-center">
-        <a href="mailto:sales@infinium.consulting?subject=QBricks integrations demo" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
-          Tell us your stack <ArrowRight className="h-5 w-5" />
-        </a>
+        <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+          Request a demo <ArrowRight className="h-5 w-5" />
+        </Link>
       </div>
 
       <ArchitectureMap />
