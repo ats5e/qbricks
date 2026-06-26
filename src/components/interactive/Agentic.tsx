@@ -80,7 +80,7 @@ export function Agentic() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.85 }}
-            className="relative mt-12 flex min-h-[620px] origin-top scale-[0.6] items-center justify-center sm:scale-75 md:scale-90 lg:mt-0 lg:scale-100 -mb-[200px] sm:-mb-[100px] lg:mb-0"
+            className="relative mt-12 flex min-h-[620px] w-[500px] max-w-none mx-auto origin-top scale-[0.72] items-center justify-center sm:w-auto sm:scale-100 lg:mt-0 -mb-[170px] sm:mb-0"
           >
             <div className="absolute h-[520px] w-[520px] rounded-full bg-q-brand/[0.12] blur-[110px]" />
             <div className="relative flex h-[500px] w-[500px] items-center justify-center rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-3xl">
