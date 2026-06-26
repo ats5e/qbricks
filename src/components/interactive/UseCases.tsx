@@ -4,6 +4,7 @@ import { QBricksText } from "@/components/ui/QBricksText";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { AlertOctagon, ArrowRight, CheckCircle2, Network, ShieldAlert, TrendingDown, Users } from "lucide-react";
+import type { ReactNode } from "react";
 import { useState } from "react";
 
 const cases = [
@@ -133,7 +134,7 @@ export function UseCases() {
   );
 }
 
-function StoryBlock({ label, text, tone = "neutral" }: { label: string; text: string; tone?: "red" | "neutral" }) {
+function StoryBlock({ label, text, tone = "neutral" }: { label: ReactNode; text: string; tone?: "red" | "neutral" }) {
   return (
     <div className={`border-l-2 pl-6 ${tone === "red" ? "border-red-400/35" : "border-white/20"}`}>
       <span className="mb-2 block text-xs font-black uppercase tracking-[0.2em] text-q-gray-500">{label}</span>

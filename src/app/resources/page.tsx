@@ -1,4 +1,6 @@
 import { ArrowRight, BookOpen, HelpCircle } from "lucide-react";
+import type { ReactNode } from "react";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "Resources — QBricks",
@@ -12,12 +14,12 @@ const insights = [
   "AML and KYC are data problems first",
 ];
 
-const faqs = [
-  [<>What exactly is <QBricksText />?</>, <>An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products.</>],
-  ["How fast can we deploy?", "Hours, not weeks — single-file deployment covers both infrastructure and workloads."],
-  [<>Which platforms does it work with?</>, <>Databricks, Microsoft Fabric, Snowflake and Quantexa. <QBricksText /> is cloud-agnostic.</>],
-  ["How secure is it?", "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation."],
-  ["What results can we expect?", "95% fewer data issues, deployment in hours, around 70% lower cost than manually built workflows and end-to-end auditability."],
+const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
+  { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: <>An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products.</> },
+  { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks — single-file deployment covers both infrastructure and workloads." },
+  { id: "supported-platforms", question: <>Which platforms does it work with?</>, answer: <>Databricks, Microsoft Fabric, Snowflake and Quantexa. <QBricksText /> is cloud-agnostic.</> },
+  { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
+  { id: "expected-results", question: "What results can we expect?", answer: "95% fewer data issues, deployment in hours, around 70% lower cost than manually built workflows and end-to-end auditability." },
 ];
 
 export default function ResourcesPage() {
@@ -53,8 +55,8 @@ export default function ResourcesPage() {
           <div>
             <p className="eyebrow mb-4">FAQ</p>
             <div className="space-y-4">
-              {faqs.map(([question, answer]) => (
-                <div key={question} className="rounded-3xl border border-white/10 bg-white/[0.035] p-6">
+              {faqs.map(({ id, question, answer }) => (
+                <div key={id} className="rounded-3xl border border-white/10 bg-white/[0.035] p-6">
                   <div className="mb-3 flex items-center gap-3">
                     <HelpCircle className="h-5 w-5 text-q-brand-ember" />
                     <h2 className="text-lg font-black text-white">{question}</h2>
@@ -75,5 +77,3 @@ export default function ResourcesPage() {
     </main>
   );
 }
-
-import { QBricksText } from "@/components/ui/QBricksText";

@@ -5,6 +5,12 @@ import { QBricksText } from "@/components/ui/QBricksText";
 import { motion } from "framer-motion";
 import { Cpu, Database, FileCheck2, GitBranch, LockKeyhole, Network, Server, ShieldCheck } from "lucide-react";
 
+const mobileSteps = [
+  { id: "core-systems", label: "Core systems" },
+  { id: "metadata-foundation", label: <><QBricksText /> metadata foundation</> },
+  { id: "platforms", label: "Databricks · Fabric · Quantexa" },
+];
+
 export function ArchitectureMap() {
   return (
     <section id="architecture" className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
@@ -73,9 +79,9 @@ export function ArchitectureMap() {
         </div>
 
         <div className="grid gap-4 lg:hidden">
-          {["Core systems", <><QBricksText /> metadata foundation</>, "Databricks · Fabric · Quantexa"].map((item, index) => (
-            <div key={item} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center text-xl font-black text-white">
-              {item}
+          {mobileSteps.map(({ id, label }, index) => (
+            <div key={id} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center text-xl font-black text-white">
+              {label}
               {index < 2 && <div className="mx-auto mt-4 h-10 w-px bg-gradient-to-b from-q-brand to-transparent" />}
             </div>
           ))}
