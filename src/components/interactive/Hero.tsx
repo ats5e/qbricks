@@ -115,9 +115,8 @@ function DataCommandCentre() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-q-gray-500">Live deployment</p>
-                    <h3 className="mt-2 text-2xl font-black tracking-tight text-white">Metadata foundation</h3>
                   </div>
-                  <div className="whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
+                  <div className="mr-3 whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
                     Audit-ready
                   </div>
                 </div>
