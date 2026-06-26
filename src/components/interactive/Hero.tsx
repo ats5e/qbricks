@@ -61,16 +61,16 @@ function DataCommandCentre() {
           <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
             <div className="flex items-center gap-4">
               <Image src="/assets/qbricks-logo.png" alt="QBricks" width={140} height={32} className="h-7 w-auto" />
-              <div className="hidden items-center gap-2.5 rounded-xl bg-white/[0.04] px-3 py-1.5 sm:flex">
-                <LockKeyhole className="h-4 w-4 text-emerald-400" />
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] text-q-gray-400">Security</p>
-                  <p className="text-[11px] font-bold text-white">Human-in-loop controls</p>
-                </div>
+              <div className="rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember">
+                Control plane
               </div>
             </div>
-            <div className="rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember">
-              Control plane
+            <div className="hidden items-center gap-2.5 rounded-xl bg-white/[0.04] px-3 py-1.5 sm:flex">
+              <LockKeyhole className="h-4 w-4 text-emerald-400" />
+              <div>
+                <p className="text-[9px] uppercase tracking-[0.18em] text-q-gray-400">Security</p>
+                <p className="text-[11px] font-bold text-white">Human-in-loop controls</p>
+              </div>
             </div>
           </div>
 
@@ -121,15 +121,38 @@ function DataCommandCentre() {
 
                 <div className="relative mx-auto flex h-48 w-48 items-center justify-center">
                   {[0, 1, 2].map((ring) => (
-                    <motion.div
-                      key={ring}
+                    <div
+                      key={`ring-${ring}`}
                       className="absolute rounded-full border border-white/10"
                       style={{ inset: `${ring * 24}px` }}
-                      animate={{ rotate: ring % 2 ? -360 : 360 }}
-                      transition={{ duration: 22 + ring * 7, repeat: Infinity, ease: "linear" }}
-                    >
-                      <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember shadow-[0_0_18px_rgba(255,58,38,0.85)]" />
-                    </motion.div>
+                    />
+                  ))}
+                  {[
+                    { startX: -140, startY: -100, delay: 0, duration: 2.5 },
+                    { startX: 160, startY: -60, delay: 1.2, duration: 2.8 },
+                    { startX: -100, startY: 140, delay: 0.5, duration: 3.2 },
+                    { startX: 140, startY: 120, delay: 2.2, duration: 2.6 },
+                    { startX: 20, startY: -160, delay: 1.8, duration: 3.0 },
+                    { startX: -150, startY: 40, delay: 2.8, duration: 2.7 },
+                  ].map((brick, i) => (
+                    <motion.div
+                      key={`brick-${i}`}
+                      className="absolute left-1/2 top-1/2 h-3 w-3 rounded-[3px] bg-q-brand-ember shadow-[0_0_15px_rgba(255,58,38,0.85)]"
+                      style={{ marginLeft: "-6px", marginTop: "-6px" }}
+                      animate={{
+                        x: [brick.startX, 0],
+                        y: [brick.startY, 0],
+                        opacity: [0, 1, 0],
+                        scale: [0.5, 1, 0.2],
+                        rotate: [-45, 90],
+                      }}
+                      transition={{
+                        duration: brick.duration,
+                        delay: brick.delay,
+                        repeat: Infinity,
+                        ease: "easeIn",
+                      }}
+                    />
                   ))}
                   <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-[2rem] border border-white/15 bg-white/[0.06] shadow-[0_0_70px_rgba(232,32,15,0.28)] backdrop-blur-2xl">
                     <QIcon className="h-12 w-12" />
