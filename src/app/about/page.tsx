@@ -12,6 +12,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-q-black">
       <section className="relative overflow-hidden border-b border-white/5 pb-12 pt-44 lg:pb-16">
         <div className="absolute inset-0 -z-0">
+          <Image src="/assets/bg-pathway-door.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-screen" sizes="100vw" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.58),#000_88%)]" />
         </div>
 

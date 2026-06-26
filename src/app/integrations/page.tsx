@@ -16,7 +16,7 @@ export default function IntegrationsPage() {
     <main className="min-h-screen bg-q-black">
       <section className="relative overflow-hidden border-b border-white/5 pt-44 pb-28">
         <div className="absolute inset-0 -z-0">
-          <Image src="/assets/pixels-dissolve.png" alt="" fill priority className="object-cover object-center opacity-38 mix-blend-screen" sizes="100vw" />
+          <Image src="/assets/bg-cubes-scatter.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-screen" sizes="100vw" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.55),#000_88%)]" />
         </div>
 

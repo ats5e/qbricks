@@ -27,7 +27,10 @@ export default function ResourcesPage() {
   return (
     <main className="min-h-screen bg-q-black">
       <section className="relative overflow-hidden border-b border-white/5 pt-44 pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.035),#000_88%)]" />
+        <div className="absolute inset-0 -z-0">
+          <Image src="/assets/bg-pathway-city.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-screen" sizes="100vw" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.5),#000_88%)]" />
+        </div>
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Resources</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">

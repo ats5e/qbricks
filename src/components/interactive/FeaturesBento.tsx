@@ -76,7 +76,7 @@ export function FeaturesBento() {
   return (
     <section id="features" className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
       <div className="absolute inset-0 -z-0">
-        <Image src="/assets/bricks-3.png" alt="" fill className="object-cover object-center opacity-24 mix-blend-screen" sizes="100vw" />
+        <Image src="/assets/bg-cubes-wall.png" alt="" fill className="object-cover object-center opacity-30 mix-blend-screen" sizes="100vw" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(232,32,15,0.18),transparent_28%),linear-gradient(to_bottom,#000_0%,rgba(0,0,0,0.84)_42%,#000_100%)]" />
       </div>
 

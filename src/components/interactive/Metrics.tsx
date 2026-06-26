@@ -30,9 +30,9 @@ const valueCards = [
 
 export function Metrics() {
   return (
-    <section id="the-problem" className="section-y relative overflow-hidden bg-q-black">
-      <div className="absolute inset-0 -z-0">
-        <Image src="/assets/bricks-cityscape.png" alt="" fill className="object-cover object-center opacity-22 mix-blend-screen grayscale" sizes="100vw" />
+    <section id="the-problem" className="section-y relative bg-q-black">
+      <div className="absolute inset-0 -z-0 overflow-hidden">
+        <Image src="/assets/bg-pathway-city.png" alt="" fill className="object-cover object-center opacity-30 mix-blend-screen" sizes="100vw" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_5%,rgba(232,32,15,0.18),transparent_30%),linear-gradient(to_bottom,#000_0%,rgba(0,0,0,0.78)_38%,#000_100%)]" />
       </div>
 

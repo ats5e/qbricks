@@ -39,10 +39,10 @@ function DataCommandCentre() {
   const ActiveIcon = flowSteps[activeStep].icon;
 
   return (
-    <div className="relative hidden min-h-[520px] w-full lg:block">
+    <div className="relative hidden min-h-[600px] w-full lg:block">
       <div className="absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand/15 blur-[140px]" />
       <motion.div
-        className="absolute inset-x-0 top-4 mx-auto max-w-[560px] rounded-[2.25rem] border border-white/10 bg-white/[0.035] p-4 shadow-[0_40px_120px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
+        className="absolute inset-x-0 -top-8 mx-auto max-w-[560px] rounded-[2.25rem] border border-white/10 bg-white/[0.035] p-4 shadow-[0_40px_120px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
         style={{ transform }}
         onMouseMove={(event) => {
           const rect = event.currentTarget.getBoundingClientRect();
@@ -116,7 +116,7 @@ function DataCommandCentre() {
                     <p className="text-xs uppercase tracking-[0.2em] text-q-gray-500">Live deployment</p>
                     <h3 className="mt-2 text-2xl font-black tracking-tight text-white">Metadata foundation</h3>
                   </div>
-                  <div className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-300">
+                  <div className="whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
                     Audit-ready
                   </div>
                 </div>
@@ -185,7 +185,7 @@ function DataCommandCentre() {
 
 export function Hero() {
   return (
-    <section id="hero" className="relative isolate flex min-h-screen items-center overflow-hidden bg-q-black pt-32 pb-16 lg:pt-36">
+    <section id="hero" className="relative isolate flex min-h-screen items-center bg-q-black pt-32 pb-16 lg:pt-36">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
           className="absolute -inset-y-[10%] -left-[25%] w-[150%]"
@@ -226,16 +226,24 @@ export function Hero() {
               </Link>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {proofPoints.map(([value, label]) => (
-                <div key={value} className="flex flex-col justify-start rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl transition-all hover:border-white/20 hover:bg-white/[0.06]">
-                  <div className="flex items-start gap-2 text-white">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                    <span className="text-sm font-bold leading-tight tracking-tight">{value}</span>
+            <div className="mt-12 lg:mt-16">
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-5">
+                {proofPoints.map(([value, label]) => (
+                  <div key={value} className="group relative flex flex-col justify-start">
+                    {/* Hover Glow Effect */}
+                    <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-white/15 to-transparent opacity-0 blur-md transition-all duration-500 group-hover:opacity-100" />
+                    
+                    {/* Card Content */}
+                    <div className="relative flex h-full flex-col justify-start rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-5 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/20 group-hover:from-white/[0.06] group-hover:to-white/[0.02]">
+                      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full border border-q-brand/30 bg-q-brand/10 shadow-[0_0_15px_rgba(232,32,15,0.15)]">
+                        <CheckCircle2 className="h-4 w-4 text-q-brand-ember" />
+                      </div>
+                      <span className="mb-1.5 text-base font-black leading-tight tracking-tight text-white">{value}</span>
+                      <p className="text-[0.8rem] font-medium leading-relaxed text-q-gray-400">{label}</p>
+                    </div>
                   </div>
-                  <p className="ml-6 mt-1.5 text-[11px] font-medium leading-relaxed text-q-gray-400">{label}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </motion.div>
 
