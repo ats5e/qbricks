@@ -34,7 +34,7 @@ export default function Home() {
               ))}
             </div>
             <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.95] tracking-[-0.06em] text-white sm:gap-4 lg:gap-6">
-              See <Image src="/assets/qbricks-logo.png" alt="QBricks" width={182} height={52} className="inline-block h-[0.8em] w-auto -translate-y-[0.05em]" priority /> on your data.
+              See <Image src="/assets/qbricks-logo.png" alt="QBricks" width={182} height={52} className="mx-2 inline-block h-[1.6em] w-auto -translate-y-[0.1em]" priority /> on your data.
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
               A focused demo mapped to one of your real use cases. We will show single-file deployment, governed Data Contracts and the audit trail that comes with them.
