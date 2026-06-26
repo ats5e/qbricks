@@ -19,7 +19,7 @@ export function Integrations({ showDescriptions = false }: { showDescriptions?: 
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="eyebrow mb-4">Integrations</p>
           <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-black leading-tight tracking-[-0.045em] text-white">
-            Works with the platforms your bank already runs on.
+            Works with the platforms your firm already runs on.
           </h2>
         </div>
 

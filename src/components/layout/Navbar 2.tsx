@@ -53,7 +53,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  className={`relative rounded-full px-4 py-2 text-sm font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-q-brand focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
                     isActive ? "text-white" : "text-q-gray-400 hover:text-white"
                   }`}
                 >
