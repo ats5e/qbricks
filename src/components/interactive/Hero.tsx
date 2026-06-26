@@ -39,8 +39,8 @@ function DataCommandCentre() {
   const ActiveIcon = flowSteps[activeStep].icon;
 
   return (
-    <div className="-mx-4 mt-12 w-[calc(100%+2rem)] overflow-x-auto px-4 pb-8 sm:mx-0 sm:w-full sm:px-0 lg:mt-0 lg:block lg:overflow-visible">
-      <div className="relative mx-auto min-w-[500px] max-w-[560px]">
+    <div className="mt-12 w-full lg:mt-0 lg:block -mb-[180px] sm:mb-0">
+      <div className="relative mx-auto max-w-[560px] origin-top scale-[0.65] sm:scale-90 md:scale-100">
         <div className="absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand/15 blur-[140px]" />
         <motion.div
           className="relative rounded-[2.25rem] border border-white/10 bg-white/[0.035] p-4 shadow-[0_40px_120px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
