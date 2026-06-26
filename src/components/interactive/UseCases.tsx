@@ -105,7 +105,7 @@ export function UseCases() {
                   </div>
                 </div>
 
-                <h3 className="mb-8 text-2xl font-black leading-tight tracking-tight text-white md:text-3xl">
+                <h3 className="mb-8 min-h-[110px] text-2xl font-black leading-tight tracking-tight text-white md:text-3xl">
                   {useCase.title}
                 </h3>
 
