@@ -161,8 +161,6 @@ function DataCommandCentre() {
           </div>
         </div>
       </motion.div>
-
-      </motion.div>
     </div>
   );
 }
