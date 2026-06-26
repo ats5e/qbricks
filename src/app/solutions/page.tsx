@@ -1,6 +1,7 @@
 import { UseCases } from "@/components/interactive/UseCases";
 import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
+import Image from "next/image";
 
 export const metadata = {
   title: "Solutions — QBricks",

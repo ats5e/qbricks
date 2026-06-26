@@ -1,5 +1,6 @@
 import { ArrowRight, Box, CheckCircle2, Factory, Network, ShieldAlert, Workflow } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { Metrics } from "@/components/interactive/Metrics";
 import { ComputeCost } from "@/components/interactive/ComputeCost";

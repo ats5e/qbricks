@@ -1,6 +1,7 @@
 import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
