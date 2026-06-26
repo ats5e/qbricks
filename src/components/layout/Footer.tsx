@@ -74,10 +74,8 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
           <p className="text-xs text-q-gray-600">&copy; {new Date().getFullYear()} Infinium Consulting B.V. All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-q-gray-600">
+          <div className="flex items-center text-xs text-q-gray-600">
             <span>qbricks.ai</span>
-            <Link href="/contact" className="transition-colors hover:text-q-gray-300">Contact Us</Link>
-            <span>EU, Nordics & MENA financial services</span>
           </div>
         </div>
       </div>
