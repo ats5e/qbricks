@@ -206,7 +206,7 @@ export function Hero() {
             className="max-w-2xl"
           >
             <h1 className="text-[clamp(2.5rem,5vw,4.25rem)] font-black leading-[0.95] tracking-[-0.04em] text-white">
-              No more data pipelines.
+              No more data <span className="text-q-brand-ember">pipelines.</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">
