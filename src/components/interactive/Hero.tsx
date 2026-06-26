@@ -186,11 +186,11 @@ export function Hero() {
     <section id="hero" className="relative isolate flex min-h-screen items-center overflow-hidden bg-q-black pt-32 pb-16 lg:pt-36">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
-          className="absolute -inset-y-[10%] -left-[10%] right-[0%]"
-          animate={{ x: ["-5%", "5%", "-5%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -inset-y-[10%] -left-[25%] w-[150%]"
+          animate={{ x: ["-10%", "10%"] }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         >
-          <Image src="/assets/pixels-dissolve.png" alt="" fill priority className="object-cover object-left opacity-50 mix-blend-screen -scale-x-100" sizes="120vw" />
+          <Image src="/assets/pixels-dissolve.png" alt="" fill priority className="object-cover object-left opacity-50 mix-blend-screen -scale-x-100" sizes="150vw" />
         </motion.div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,58,38,0.22),transparent_28%),radial-gradient(circle_at_72%_18%,rgba(255,255,255,0.08),transparent_22%),linear-gradient(to_bottom,rgba(0,0,0,0.25),#000_90%)]" />
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />

@@ -9,7 +9,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-q-black">
-      <section className="relative overflow-hidden border-b border-white/5 pt-44 pb-28">
+      <section className="relative overflow-hidden border-b border-white/5 pb-12 pt-44 lg:pb-16">
         <div className="absolute inset-0 -z-0">
           <Image src="/assets/bricks-cityscape.png" alt="" fill priority className="object-cover object-center opacity-32 mix-blend-screen grayscale" sizes="100vw" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.58),#000_88%)]" />
@@ -20,13 +20,11 @@ export default function AboutPage() {
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
             The platform behind trustworthy AI in financial services.
           </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            QBricks is developed and owned by Infinium Consulting B.V., operating under the NextWave Infinium identity.
-          </p>
+
         </div>
       </section>
 
-      <section className="section-y bg-q-black">
+      <section className="bg-q-black pb-20 pt-12 lg:pb-32 lg:pt-16">
         <div className="container-x">
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="premium-card p-7">
