@@ -59,8 +59,8 @@ function DataCommandCentre() {
         
         <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#050505]/92">
           <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-            <div className="flex items-center gap-4">
-              <Image src="/assets/qbricks-logo.png" alt="QBricks" width={140} height={32} className="h-7 w-auto" />
+            <div className="flex items-center gap-8">
+              <Image src="/assets/qbricks-logo.png" alt="QBricks" width={140} height={32} className="h-9 w-auto" />
               <div className="rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember">
                 Control plane
               </div>
