@@ -11,8 +11,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "QBricks — Trustworthy AI starts with trustworthy data",
-  description: "AI-enabled metadata management for financial services. QBricks turns lakehouse sprawl into auditable, AI-ready data with Data Contracts and Data Products.",
+  title: "QBricks – Governed, AI-Ready Data Without Pipelines | Infinium",
+  description: "QBricks turns systems of record into trusted, AI-ready data products in hours. Contract-enforced governance, agentic metadata, local compute – no Spark, no lock-in. Built for financial crime. Works with Databricks, Fabric and Snowflake.",
 };
 
 export default function RootLayout({

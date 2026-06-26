@@ -21,7 +21,7 @@ const constructs = [
   { icon: FileCode2, title: "Data Contracts", text: "The unit of governance: explicit, owned and enforceable quality and transformation logic." },
   { icon: Layers3, title: "Data Products", text: "Governed, discoverable assets carrying quality guarantees, ownership and lineage." },
   { icon: GitBranch, title: "Decision lineage", text: "A transparent audit trail across agent actions, approvals, exceptions and releases." },
-  { icon: ShieldCheck, title: "Bank-secure architecture", text: "Cloud-agnostic, human-in-the-loop and designed for regulated environments." },
+  { icon: ShieldCheck, title: "Institution-grade security", text: "Cloud-agnostic, human-in-the-loop and designed for regulated environments." },
 ];
 
 export default function ProductPage() {
@@ -37,10 +37,10 @@ export default function ProductPage() {
           <div className="mx-auto max-w-5xl text-center">
             <p className="eyebrow mb-6">The platform</p>
             <h1 className="text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
-              AI-enabled metadata management, built for governed enterprise data.
+              The platform that governs data at the source.
             </h1>
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-              <QBricksText /> builds and deploys data quality and ETL workflows through Data Contracts and Data Products, automating metadata management without losing control or auditability.
+              <QBricksText /> ingests directly from your systems of record and enforces the Open Data Contract Standard on every record before it reaches the lakehouse. Agentic metadata management keeps quality improving over time; local compute keeps cost and carbon down; full lineage keeps auditors satisfied. Works with Databricks, Microsoft Fabric and Snowflake via SQL push-down — no Spark, no pipelines, no lock-in.
             </p>
             <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Request a demo <ArrowRight className="h-5 w-5" />

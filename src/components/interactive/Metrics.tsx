@@ -18,8 +18,8 @@ const after = [
   "Data Contracts govern every workflow",
   "Data Products carry ownership and quality",
   "Decision lineage is fully auditable",
-  "95% fewer data issues",
-  "Deployed in hours at ~70% lower cost",
+  "Fewer data-quality issues reaching consumers",
+  "Deployed in hours on local compute, not Spark",
 ];
 
 const valueCards = [

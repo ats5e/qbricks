@@ -44,7 +44,7 @@ export function Footer() {
               <Logo className="h-10 w-[160px] opacity-90" />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-q-gray-500">
-              AI-enabled metadata management for financial services. Built for governed, secure, auditable enterprise data across the UAE and GCC.
+              AI-enabled metadata management for financial services. Built for governed, secure, auditable enterprise data across the EU, Nordics and MENA.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-q-gray-600">
             <span>qbricks.ai</span>
             <Link href="/contact" className="transition-colors hover:text-q-gray-300">Contact Us</Link>
-            <span>UAE & GCC financial services</span>
+            <span>EU, Nordics & MENA financial services</span>
           </div>
         </div>
       </div>

@@ -40,8 +40,8 @@ export default function AboutPage() {
             </div>
             <div className="premium-card p-7">
               <Globe2 className="mb-6 h-8 w-8 text-q-brand-ember" />
-              <h2 className="text-2xl font-black text-white">Built for the GCC</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400">Designed for the realities of financial services in the UAE and wider GCC: regulatory scrutiny, AI ambition and trust in every data decision.</p>
+              <h2 className="text-2xl font-black text-white">Built for the EU, Nordics and MENA</h2>
+              <p className="mt-4 leading-relaxed text-q-gray-400">Designed for the realities of financial services across the EU, Nordics and MENA: regulatory scrutiny, AI ambition and trust in every data decision.</p>
             </div>
           </div>
 

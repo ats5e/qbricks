@@ -10,39 +10,39 @@ import Link from "next/link";
 const capabilities = [
   {
     icon: FileCode2,
-    title: "Deploy in hours, not weeks",
-    text: "A single file deploys both infrastructure and workloads, reducing hand-offs, errors and multi-file sprawl.",
-    highlight: "Single-file deployment",
+    title: "Streaming & incremental",
+    text: "Real-time, change-focused updates underpinned by the Open Data Contract.",
+    highlight: "Incremental",
   },
   {
     icon: Shield,
-    title: "Cut data issues by 95%",
-    text: "Robust ETL and data quality frameworks are governed through explicit Data Contracts and Data Products.",
-    highlight: "95% fewer issues",
+    title: "Governance enforced by contract",
+    text: "Records are compared digitally to your governance framework. Nothing un-governed gets through.",
+    highlight: "Contract-enforced",
   },
   {
     icon: Network,
-    title: "See and trust your data",
-    text: "Ontologies and knowledge graphs structure, connect and explain data for discovery, lineage and better decisions.",
-    highlight: "Knowledge graph ready",
+    title: "Agentic metadata, human in the loop",
+    text: "Agents improve metadata over time and stay isolated from the data lake.",
+    highlight: "Human in the loop",
   },
   {
     icon: Blocks,
-    title: "Match with 99% accuracy",
-    text: "The embedded Quantexa Trust Score is carried into data assets and products for high-confidence entity resolution.",
-    highlight: "Quantexa Trust Score",
+    title: "Knowledge graph & lineage",
+    text: "See hierarchy, linkages and complex relationships. Supports ontologies and full data lineage.",
+    highlight: "Full lineage",
   },
   {
     icon: Cloud,
-    title: "Simplify your lakehouse",
-    text: <><QBricksText /> simplifies Databricks and Microsoft Fabric management while remaining cloud-agnostic across the enterprise stack.</>,
-    highlight: "Cloud-agnostic",
+    title: "Local compute, no Spark",
+    text: "Works with Databricks, Fabric and Snowflake via SQL push-down — enterprise scale without costly Spark or lock-in.",
+    highlight: "No Spark",
   },
   {
     icon: Sparkles,
-    title: "Work the way teams work",
-    text: "Use an intuitive application or native tooling while contracts stay browsable, versioned and auditable.",
-    highlight: "App or native tooling",
+    title: "Fully auditable",
+    text: "Before-and-after files and auditable outputs. Apply Databricks, Microsoft or Snowflake security standards.",
+    highlight: "Auditable",
   },
 ];
 
@@ -84,10 +84,10 @@ export function FeaturesBento() {
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <p className="eyebrow mb-5">What <QBricksText /> is</p>
           <h2 className="text-[clamp(2.5rem,5.5vw,5.4rem)] font-black leading-[0.96] tracking-[-0.06em] text-white">
-            A governed, secure metadata platform for regulated banks.
+            A governed, secure metadata platform for regulated institutions.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            <QBricksText /> develops and deploys data quality and ETL workflows through Data Contracts and Data Products, automating the metadata layer banks need for AI, analytics and regulatory reporting.
+            <QBricksText /> is a streaming data-management platform that enforces governance at the point of ingestion — so the data landing in your lakehouse is already trusted, lineage-complete and AI-ready.
           </p>
         </div>
 

@@ -62,7 +62,7 @@ export function DeveloperExperience() {
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <p className="eyebrow mb-5">Single-file deployment</p>
           <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.96] tracking-[-0.06em] text-white">
-            Built for the release discipline of a regulated bank.
+            Built for the release discipline of a regulated institution.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
             Define the contract once. Deploy the infrastructure and workload together.<br />

@@ -7,7 +7,7 @@ import { ComputeCost } from "@/components/interactive/ComputeCost";
 
 export const metadata = {
   title: "Why QBricks — QBricks",
-  description: "Why one platform, native tooling and consultancy data fabric programmes do not fix the metadata foundation banks need.",
+  description: "Why one platform, vendor-native tooling and consultancy data fabric programmes do not fix the metadata foundation institutions need.",
 };
 
 const differentiators = ["Data Contracts & Data Products", "Single-file deployment", "Agentic + human-in-the-loop", "Ontologies & knowledge graphs", "Quantexa Trust Score", "End-to-end auditability"];
@@ -27,7 +27,7 @@ export default function WhyQBricksPage() {
             “One platform” does not fix your metadata problem.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            <QBricksText /> sits underneath the tools and programmes banks already run: the governed metadata foundation that makes AI, analytics and regulatory reporting trustworthy.
+            <QBricksText /> sits underneath the tools and programmes institutions already run: the governed metadata foundation that makes AI, analytics and regulatory reporting trustworthy.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             {differentiators.map((item) => (

@@ -18,7 +18,7 @@ export default function SolutionsPage() {
         </div>
         <div className="container-x relative z-10">
           <h1 className="mx-auto max-w-4xl text-center text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.95] tracking-[-0.05em] text-white">
-            Data foundation solutions for regulated banking.
+            Data foundation solutions for regulated financial services.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-center text-xl leading-relaxed text-q-gray-400">
             From AML and KYC to Credit Risk and ESG, deploy governed data products that satisfy both business needs and regulatory scrutiny.

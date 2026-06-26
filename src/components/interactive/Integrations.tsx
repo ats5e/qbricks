@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const logos = [
-  { name: "Databricks", src: "/assets/Databricks.png", desc: "Simplifies infrastructure management via Data Contracts and Data Products; tames notebook sprawl and restores governance beyond schema level." },
-  { name: "Microsoft Fabric", src: "/assets/Fabric.png", desc: "Governs and simplifies Fabric workloads through single-file deployment, contracts and Microsoft-level security patterns." },
-  { name: "Snowflake", src: "/assets/Snowflake.png", desc: "Adds governed metadata, quality and ETL workflows across Snowflake environments and business domains." },
-  { name: "Quantexa", src: "/assets/Quantexa.png", desc: "Embeds Quantexa Trust Score into data assets and products for 99% data matching accuracy across AML, KYC, fraud and MDM." },
+  { name: "Databricks", src: "/assets/Databricks.png", desc: "QBricks interfaces with Databricks via SQL push-down — enforcing governance without running Spark inside it. No pipelines, no lock-in." },
+  { name: "Microsoft Fabric", src: "/assets/Fabric.png", desc: "Interfaces with Microsoft Fabric via SQL push-down, enforcing the Open Data Contract Standard without Spark or lock-in." },
+  { name: "Snowflake", src: "/assets/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down — governed metadata, quality and ETL workflows without running Spark inside it." },
+  { name: "Quantexa", src: "/assets/Quantexa.png", desc: "Productised Quantexa entity-resolution integration for financial-crime use cases — AML, KYC, transaction monitoring and TBML." },
 ];
 
 export function Integrations({ showDescriptions = false }: { showDescriptions?: boolean }) {
@@ -50,7 +50,7 @@ export function Integrations({ showDescriptions = false }: { showDescriptions?: 
         </div>
 
         <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
-          Cloud-agnostic, with Databricks- and Microsoft-level security. Embed Quantexa Trust Score into data assets and products for 99% data matching accuracy.
+          QBricks interfaces with Databricks, Microsoft Fabric and Snowflake via SQL push-down — enforcing governance without running Spark inside them, and without lock-in. The Open Data Contract Standard (ODCS) sits at the core.
         </p>
       </div>
     </section>

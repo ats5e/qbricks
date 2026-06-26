@@ -1,7 +1,5 @@
 "use client";
 
-import { QBricksText } from "@/components/ui/QBricksText";
-
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle2, Database, FileJson, LockKeyhole, Network, ShieldCheck, Sparkles } from "lucide-react";
 import Image from "next/image";
@@ -17,10 +15,10 @@ const flowSteps = [
 ];
 
 const proofPoints = [
-  ["95% fewer", "data issues"],
-  ["Deploy in hours", "not weeks"],
-  ["~70% lower cost", "than manual workflows"],
-  ["Fully auditable", "end to end"],
+  ["Fewer data issues", "reaching consumers"],
+  ["Hours, not months", "record to lakehouse"],
+  ["No Spark", "lower compute cost"],
+  ["100% auditable", "compliant by design"],
 ];
 
 function DataCommandCentre() {
@@ -208,11 +206,11 @@ export function Hero() {
             className="max-w-2xl"
           >
             <h1 className="text-[clamp(2.5rem,5vw,4.25rem)] font-black leading-[0.95] tracking-[-0.04em] text-white">
-              Trustworthy AI starts with trustworthy data.
+              No more data pipelines.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">
-              <QBricksText /> turns ungoverned lakehouse sprawl into an auditable, AI-ready metadata foundation for banks — with Data Contracts, Data Products and secure agentic automation deployed in hours, not weeks.
+              Turn your systems of record into governed, AI-ready data products — in hours, not months. No thousands of notebooks. No armies of engineers. No Spark. No lock-in. Governance and lineage are enforced by the Open Data Contract Standard and pushed down to Databricks, Microsoft Fabric or Snowflake.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

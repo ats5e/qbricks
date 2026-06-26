@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const insights = [
-  "Why 95% of AI use cases fail — and what banks can do about it",
+  "Why 95% of AI use cases fail — and what institutions can do about it",
   "The lakehouse data swamp: how migration quietly breaks governance",
   "Data Contracts explained: governance that actually scales",
   "AML and KYC are data problems first",
@@ -19,9 +19,9 @@ const insights = [
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
   { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: <>An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products.</> },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks — single-file deployment covers both infrastructure and workloads." },
-  { id: "supported-platforms", question: <>Which platforms does it work with?</>, answer: <>Databricks, Microsoft Fabric, Snowflake and Quantexa. <QBricksText /> is cloud-agnostic.</> },
+  { id: "supported-platforms", question: <>Which platforms does it work with?</>, answer: <>Databricks, Microsoft Fabric and Snowflake via SQL push-down — no Spark, no lock-in — plus a productised Quantexa entity-resolution integration. <QBricksText /> is cloud-agnostic.</> },
   { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
-  { id: "expected-results", question: "What results can we expect?", answer: "95% fewer data issues, deployment in hours, around 70% lower cost than manually built workflows and end-to-end auditability." },
+  { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost with no Spark, and end-to-end auditability." },
 ];
 
 export default function ResourcesPage() {

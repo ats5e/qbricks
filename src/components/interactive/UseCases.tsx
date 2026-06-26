@@ -12,7 +12,7 @@ const cases = [
     icon: ShieldAlert,
     tag: "AML",
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
-    help: "Governed metadata and the embedded Quantexa Trust Score deliver 99% data matching accuracy.",
+    help: "Governed, contract-enforced data flows into Quantexa for high-confidence entity resolution.",
     outcome: "Fewer false positives, defensible investigations and lower cost to comply.",
     colSpan: "lg:col-span-2",
   },
@@ -74,7 +74,7 @@ export function UseCases() {
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <p className="eyebrow mb-5">Solutions</p>
           <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-[-0.06em] text-white">
-            Built for the highest-value data problems in GCC financial services.
+            Built for the highest-value data problems in financial services across the EU, Nordics and MENA.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
             <QBricksText /> speaks directly to the priorities of CDOs, governance leaders, risk teams and financial-crime functions: trusted data, defensible decisions and faster regulated delivery.
