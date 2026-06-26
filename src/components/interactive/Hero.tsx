@@ -56,12 +56,27 @@ function DataCommandCentre() {
         transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
       >
         <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_30%_10%,rgba(255,255,255,0.16),transparent_28%),radial-gradient(circle_at_88%_10%,rgba(232,32,15,0.24),transparent_34%)]" />
-        <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#050505]/92">
-          <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <div className="flex items-center gap-2.5">
-              <Image src="/assets/qbricks-logo.png" alt="QBricks" width={100} height={24} className="h-5 w-auto" />
+        
+        <motion.div
+          className="absolute left-[160px] top-6 z-20 hidden rounded-2xl border border-white/10 bg-white/[0.08] p-3.5 shadow-2xl backdrop-blur-2xl lg:block"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="flex items-center gap-3">
+            <LockKeyhole className="h-5 w-5 text-emerald-300" />
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.18em] text-q-gray-400">Security</p>
+              <p className="text-sm font-bold text-white">Human-in-loop controls</p>
             </div>
-            <div className="rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember">
+          </div>
+        </motion.div>
+
+        <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#050505]/92">
+          <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+            <div className="flex items-center gap-2.5">
+              <Image src="/assets/qbricks-logo.png" alt="QBricks" width={140} height={32} className="h-7 w-auto" />
+            </div>
+            <div className="rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember">
               Control plane
             </div>
           </div>
@@ -147,18 +162,6 @@ function DataCommandCentre() {
         </div>
       </motion.div>
 
-      <motion.div
-        className="absolute right-0 top-0 hidden rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-2xl lg:block"
-        animate={{ y: [0, -14, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="flex items-center gap-3">
-          <LockKeyhole className="h-5 w-5 text-emerald-300" />
-          <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-q-gray-500">Security</p>
-            <p className="text-sm font-bold text-white">Human-in-loop controls</p>
-          </div>
-        </div>
       </motion.div>
     </div>
   );
@@ -201,14 +204,14 @@ export function Hero() {
               </Link>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
+            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {proofPoints.map(([value, label]) => (
-                <div key={value} className="rounded-2xl border border-white/10 bg-white/[0.045] p-3.5 backdrop-blur-xl">
-                  <div className="flex items-center gap-1.5 text-white">
-                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-300" />
-                    <span className="text-sm font-black tracking-tight">{value}</span>
+                <div key={value} className="flex flex-col justify-start rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl transition-all hover:border-white/20 hover:bg-white/[0.06]">
+                  <div className="flex items-start gap-2 text-white">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                    <span className="text-sm font-bold leading-tight tracking-tight">{value}</span>
                   </div>
-                  <p className="mt-1 text-xs text-q-gray-400">{label}</p>
+                  <p className="ml-6 mt-1.5 text-[11px] font-medium leading-relaxed text-q-gray-400">{label}</p>
                 </div>
               ))}
             </div>
