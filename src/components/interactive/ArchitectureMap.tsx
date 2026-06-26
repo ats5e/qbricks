@@ -73,6 +73,7 @@ export function ArchitectureMap() {
             <SystemNode icon={ShieldCheck} title="Quantexa" subtitle="Trust Score embedded" isGreen />
           </div>
         </div>
+        </div>
       </div>
     </section>
   );
