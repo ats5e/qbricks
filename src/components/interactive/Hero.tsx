@@ -180,6 +180,7 @@ function DataCommandCentre() {
           </div>
         </div>
       </motion.div>
+      </div>
     </div>
   );
 }
