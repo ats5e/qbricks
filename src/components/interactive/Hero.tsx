@@ -57,24 +57,17 @@ function DataCommandCentre() {
       >
         <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_30%_10%,rgba(255,255,255,0.16),transparent_28%),radial-gradient(circle_at_88%_10%,rgba(232,32,15,0.24),transparent_34%)]" />
         
-        <motion.div
-          className="absolute left-[160px] top-6 z-20 hidden rounded-2xl border border-white/10 bg-white/[0.08] p-3.5 shadow-2xl backdrop-blur-2xl lg:block"
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <div className="flex items-center gap-3">
-            <LockKeyhole className="h-5 w-5 text-emerald-300" />
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.18em] text-q-gray-400">Security</p>
-              <p className="text-sm font-bold text-white">Human-in-loop controls</p>
-            </div>
-          </div>
-        </motion.div>
-
         <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#050505]/92">
-          <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
-            <div className="flex items-center gap-2.5">
+          <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+            <div className="flex items-center gap-4">
               <Image src="/assets/qbricks-logo.png" alt="QBricks" width={140} height={32} className="h-7 w-auto" />
+              <div className="hidden items-center gap-2.5 rounded-xl bg-white/[0.04] px-3 py-1.5 sm:flex">
+                <LockKeyhole className="h-4 w-4 text-emerald-400" />
+                <div>
+                  <p className="text-[9px] uppercase tracking-[0.18em] text-q-gray-400">Security</p>
+                  <p className="text-[11px] font-bold text-white">Human-in-loop controls</p>
+                </div>
+              </div>
             </div>
             <div className="rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember">
               Control plane
