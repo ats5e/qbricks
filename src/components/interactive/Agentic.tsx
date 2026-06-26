@@ -75,14 +75,15 @@ export function Agentic() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.85 }}
-            className="relative mt-12 flex min-h-[620px] origin-top scale-[0.6] items-center justify-center sm:scale-75 md:scale-90 lg:mt-0 lg:scale-100"
-          >
-            <div className="absolute h-[520px] w-[520px] rounded-full bg-q-brand/[0.12] blur-[110px]" />
+          <div className="-mx-4 mt-12 w-[calc(100%+2rem)] overflow-x-auto px-4 pb-8 sm:mx-0 sm:w-full sm:px-0 lg:mt-0 lg:overflow-visible">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.85 }}
+              className="relative flex min-h-[620px] min-w-[560px] items-center justify-center"
+            >
+              <div className="absolute h-[520px] w-[520px] rounded-full bg-q-brand/[0.12] blur-[110px]" />
             <div className="relative flex h-[500px] w-[500px] items-center justify-center rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-3xl">
               {[0, 1, 2].map((ring) => (
                 <motion.div
@@ -134,6 +135,7 @@ export function Agentic() {
               </motion.div>
             </div>
           </motion.div>
+          </div>
         </div>
       </div>
     </section>
