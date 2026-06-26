@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,9 +22,21 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-q-black selection:bg-q-brand/30 selection:text-white pb-24">
+    <main className="min-h-screen bg-q-black selection:bg-q-brand/30 selection:text-white pb-24 relative overflow-hidden">
+      {/* Fixed Background Image */}
+      <div className="fixed inset-0 pointer-events-none">
+        <Image
+          src="/assets/DubaiSkyline.png"
+          alt="Dubai Skyline"
+          fill
+          className="object-cover object-bottom opacity-80"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-q-black via-q-black/20 to-transparent" />
+      </div>
+
       {/* Background Hero Effects */}
-      <div className="absolute inset-x-0 top-0 h-[600px] overflow-hidden -z-10">
+      <div className="absolute inset-x-0 top-0 h-[600px] overflow-hidden -z-10 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.15),transparent_50%),linear-gradient(to_bottom,rgba(255,255,255,0.02),#000)]" />
       </div>
 

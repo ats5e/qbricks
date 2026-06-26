@@ -69,7 +69,7 @@ export function ComputeCost() {
             </motion.p>
           </div>
           <motion.div
-            initial={{ opacity: 0, opacity: 0 }}
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="flex flex-col items-end gap-2 text-right"
