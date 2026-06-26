@@ -49,7 +49,7 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="section-y border-b border-white/5 bg-q-black">
+      <section className="border-b border-white/5 bg-q-black pb-10 pt-20 lg:pb-12 lg:pt-32">
         <div className="container-x">
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <p className="eyebrow mb-4">How it works</p>
@@ -67,7 +67,7 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="section-y bg-q-black">
+      <section className="bg-q-black pb-20 pt-10 lg:pb-32 lg:pt-12">
         <div className="container-x">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {constructs.map((construct) => {

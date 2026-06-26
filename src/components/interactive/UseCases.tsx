@@ -121,9 +121,7 @@ export function UseCases() {
                   </div>
                 </div>
 
-                <a href="mailto:sales@infinium.consulting?subject=QBricks solution demo" className="mt-10 inline-flex items-center gap-2 self-start text-sm font-black text-white transition-colors hover:text-q-brand-ember">
-                  Request a tailored demo <ArrowRight className="h-4 w-4" />
-                </a>
+
               </motion.div>
             </AnimatePresence>
           </div>
