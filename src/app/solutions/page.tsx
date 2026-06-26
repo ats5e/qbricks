@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-q-black pt-44">
+    <main className="min-h-screen bg-q-black pt-24">
       <UseCases />
     </main>
   );

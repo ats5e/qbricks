@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, ArrowRight, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import { QIcon } from "@/components/ui/QIcon";
 
 const before = [
   "Hundreds of ungoverned notebooks",
@@ -93,8 +94,8 @@ export function Metrics() {
           <div className="hidden w-20 items-center justify-center lg:flex">
             <div className="relative flex h-full w-full items-center justify-center">
               <div className="absolute h-px w-full bg-gradient-to-r from-white/10 via-q-brand to-white/10" />
-              <div className="relative rounded-full border border-q-brand/40 bg-q-brand/15 p-4 text-q-brand-ember shadow-[0_0_42px_rgba(232,32,15,0.32)]">
-                <ArrowRight className="h-6 w-6" />
+              <div className="relative flex h-14 w-14 items-center justify-center rounded-full border border-q-brand/40 bg-q-brand/15 text-q-brand-ember shadow-[0_0_42px_rgba(232,32,15,0.32)]">
+                <QIcon className="h-6 w-6" />
               </div>
             </div>
           </div>

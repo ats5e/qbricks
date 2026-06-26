@@ -89,47 +89,50 @@ export function FeaturesBento() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="flex flex-col gap-6">
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="premium-card p-6 md:p-8"
+            className="premium-card p-6 md:p-10"
           >
-            <h3 className="text-3xl font-black tracking-tight text-white">The QBricks Transformation</h3>
-            <p className="mt-4 leading-relaxed text-q-gray-400">From fragmented, risky lakehouse operations to an explicit control layer for governed data products.</p>
-
-            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              <div className="rounded-3xl border border-red-400/15 bg-red-500/[0.04] p-5">
-                <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] text-red-300/80">Before</p>
-                <ul className="space-y-4">
-                  {["Ungoverned notebooks", "Schema-level governance gaps", "Fragmented lineage", "AI delivery risk"].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-q-gray-300">
-                      <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-300/70" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+              <div>
+                <h3 className="text-3xl font-black tracking-tight text-white lg:text-4xl">The QBricks Transformation</h3>
+                <p className="mt-5 text-lg leading-relaxed text-q-gray-400">From fragmented, risky lakehouse operations to an explicit control layer for governed data products.</p>
+                <Link href="/why-qbricks" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-white transition-colors hover:text-q-brand-ember">
+                  Why the foundation matters <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
-              <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.055] p-5">
-                <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] text-emerald-300">After</p>
-                <ul className="space-y-4">
-                  {["Data Contracts", "Data Products", "Decision lineage", "AI-ready foundation"].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm font-semibold text-white">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="rounded-3xl border border-red-400/15 bg-red-500/[0.04] p-5 lg:p-6">
+                  <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] text-red-300/80">Before</p>
+                  <ul className="space-y-4">
+                    {["Ungoverned notebooks", "Schema-level governance gaps", "Fragmented lineage", "AI delivery risk"].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-q-gray-300">
+                        <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-300/70" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.055] p-5 lg:p-6">
+                  <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] text-emerald-300">After</p>
+                  <ul className="space-y-4">
+                    {["Data Contracts", "Data Products", "Decision lineage", "AI-ready foundation"].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm font-semibold text-white">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-
-            <Link href="/why-qbricks" className="mt-8 inline-flex items-center gap-2 text-sm font-black text-white transition-colors hover:text-q-brand-ember">
-              Why the foundation matters <ArrowRight className="h-4 w-4" />
-            </Link>
           </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((capability, index) => (
               <CapabilityCard key={capability.title} capability={capability} index={index} />
             ))}

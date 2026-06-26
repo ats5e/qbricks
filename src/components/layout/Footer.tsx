@@ -37,7 +37,7 @@ export function Footer() {
       <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-q-brand/[0.08] blur-[100px]" />
 
       <div className="container-x relative z-10">
-        <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr_1fr]">
+        <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <Link href="/" className="mb-6 flex items-center">
               <Logo className="h-9 w-[130px] opacity-90" />
@@ -62,14 +62,6 @@ export function Footer() {
                 </ul>
               </div>
             ))}
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6">
-            <h4 className="font-black text-white">See QBricks on your data.</h4>
-            <p className="mt-3 text-sm leading-relaxed text-q-gray-500">Request a focused demo mapped to AML, KYC, fraud, MDM or risk.</p>
-            <a href="mailto:sales@infinium.consulting?subject=QBricks demo request" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-black transition-all hover:bg-q-gray-200">
-              Request a demo <ArrowRight className="h-4 w-4" />
-            </a>
           </div>
         </div>
 

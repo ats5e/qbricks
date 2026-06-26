@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Hero } from "@/components/interactive/Hero";
 import { Metrics } from "@/components/interactive/Metrics";
 import { Agentic } from "@/components/interactive/Agentic";
@@ -32,8 +33,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.95] tracking-[-0.06em] text-white">
-              See QBricks on your data.
+            <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.95] tracking-[-0.06em] text-white sm:gap-4 lg:gap-6">
+              See <Image src="/assets/qbricks-logo.png" alt="QBricks" width={182} height={52} className="inline-block h-[0.8em] w-auto -translate-y-[0.05em]" priority /> on your data.
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
               A focused demo mapped to one of your real use cases. We will show single-file deployment, governed Data Contracts and the audit trail that comes with them.
@@ -47,7 +48,6 @@ export default function Home() {
                 Explore the platform
               </Link>
             </div>
-            <p className="mt-8 text-sm font-medium text-q-gray-500">sales@infinium.consulting · UAE & GCC financial services</p>
           </div>
         </div>
       </section>
