@@ -14,7 +14,7 @@ const cases = [
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
     help: "Governed, contract-enforced data flows into Quantexa for high-confidence entity resolution.",
     outcome: "Fewer false positives, defensible investigations and lower cost to comply.",
-    colSpan: "lg:col-span-2",
+    colSpan: "lg:col-span-3",
   },
   {
     title: "KYC and perpetual KYC built on data you can trust.",
@@ -23,7 +23,7 @@ const cases = [
     pain: "Customer data is fragmented across systems; keeping KYC current is expensive and error-prone.",
     help: "Contextual, governed data with high matching accuracy gives a reliable single view.",
     outcome: "Faster onboarding, continuous KYC and audit-ready files.",
-    colSpan: "lg:col-span-1",
+    colSpan: "lg:col-span-3",
   },
   {
     title: "Stop fraud with data that is actually connected.",
@@ -32,7 +32,7 @@ const cases = [
     pain: "Fraud signals live in silos; weak data linkage means missed patterns and inflated false positives.",
     help: "Ontologies and knowledge graphs interconnect data; embedded trust scoring sharpens entity resolution.",
     outcome: "Stronger detection, fewer false positives and a clear audit trail.",
-    colSpan: "lg:col-span-1",
+    colSpan: "lg:col-span-2",
   },
   {
     title: "Master data with context, governance and lineage.",
@@ -41,7 +41,7 @@ const cases = [
     pain: "Traditional MDM is brittle and loses the business context needed for customer intelligence.",
     help: "Governed metadata plus ontologies and knowledge graphs deliver contextual master data.",
     outcome: "A trustworthy single view that powers customer intelligence and cross-sell.",
-    colSpan: "lg:col-span-1",
+    colSpan: "lg:col-span-2",
   },
   {
     title: "Risk decisions are only as good as the data behind them.",
@@ -50,7 +50,7 @@ const cases = [
     pain: "Credit and ESG risk depend on accurate, well-understood, well-lineaged data; regulators expect to see the working.",
     help: "Governed, auditable data foundations with clear lineage give risk teams explainable inputs.",
     outcome: "Defensible risk models and reporting, with the audit trail built in.",
-    colSpan: "lg:col-span-1",
+    colSpan: "lg:col-span-2",
   },
 ];
 
@@ -81,7 +81,7 @@ export function UseCases() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-6">
           {cases.map((useCase, index) => {
             const Icon = useCase.icon;
             return (
