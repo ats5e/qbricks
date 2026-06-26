@@ -60,7 +60,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="navActivePill"
-                      className="absolute inset-0 -z-10 rounded-full border border-white/10 bg-white/[0.08]"
+                      className="absolute inset-0 -z-10 rounded-full border border-q-brand/50 bg-q-brand/10 shadow-[0_0_15px_rgba(232,32,15,0.4)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
