@@ -62,7 +62,7 @@ export default function ContactPage() {
               <div className="mb-10 flex items-start gap-4 text-q-gray-300">
                 <MapPin className="mt-1 h-6 w-6 shrink-0 text-q-brand-ember" />
                 <div className="leading-relaxed">
-                  <strong className="block text-lg text-white">NextWave Infinium</strong>
+                  <strong className="block text-lg text-white">Infinium Consulting</strong>
                   Level 02, Innovation One<br />
                   Dubai International Financial Centre<br />
                   Dubai, UAE

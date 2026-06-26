@@ -6,12 +6,6 @@ import { QIcon } from "@/components/ui/QIcon";
 import { motion } from "framer-motion";
 import { Cpu, Database, FileCheck2, GitBranch, LockKeyhole, Network, Server, ShieldCheck } from "lucide-react";
 
-const mobileSteps = [
-  { id: "core-systems", label: "Core systems" },
-  { id: "metadata-foundation", label: <><QBricksText /> metadata foundation</> },
-  { id: "platforms", label: "Databricks · Fabric · Quantexa" },
-];
-
 export function ArchitectureMap() {
   return (
     <section id="architecture" className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
@@ -29,7 +23,8 @@ export function ArchitectureMap() {
           </p>
         </div>
 
-        <div className="mx-auto hidden h-[620px] max-w-6xl items-center justify-between lg:flex">
+        <div className="-mx-6 overflow-x-auto px-6 pb-8 lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0">
+          <div className="mx-auto flex h-[620px] w-[1060px] items-center justify-between lg:w-full lg:max-w-6xl">
           <svg className="absolute left-1/2 h-[560px] w-[1060px] -translate-x-1/2" viewBox="0 0 1060 560" fill="none">
             <path d="M160 170 C305 170 345 280 490 280" stroke="rgba(255,255,255,0.13)" strokeWidth="2" />
             <path d="M160 280 C305 280 345 280 490 280" stroke="rgba(255,255,255,0.13)" strokeWidth="2" />
@@ -77,15 +72,6 @@ export function ArchitectureMap() {
             <SystemNode icon={Database} title="Microsoft Fabric" subtitle="OneLake products" isGreen />
             <SystemNode icon={ShieldCheck} title="Quantexa" subtitle="Trust Score embedded" isGreen />
           </div>
-        </div>
-
-        <div className="grid gap-4 lg:hidden">
-          {mobileSteps.map(({ id, label }, index) => (
-            <div key={id} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center text-xl font-black text-white">
-              {label}
-              {index < 2 && <div className="mx-auto mt-4 h-10 w-px bg-gradient-to-b from-q-brand to-transparent" />}
-            </div>
-          ))}
         </div>
       </div>
     </section>
