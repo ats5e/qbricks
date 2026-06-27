@@ -2,6 +2,7 @@ import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react"
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "Resources | QBricks",
@@ -16,9 +17,9 @@ const insights = [
 ];
 
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
-  { id: "what-is-qbricks", question: "What exactly is QBricks?", answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
+  { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
-  { id: "supported-platforms", question: "Which platforms does it work with?", answer: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down, with no Spark and no lock-in. QBricks is cloud-agnostic." },
+  { id: "supported-platforms", question: "Which platforms does it work with?", answer: <>Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down, with no Spark and no lock-in. <QBricksText /> is cloud-agnostic.</> },
   { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
   { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost with no Spark, and end-to-end auditability." },
 ];
@@ -43,6 +44,23 @@ export default function ResourcesPage() {
       </section>
 
       <section className="section-y bg-q-black">
+        <div className="container-x mb-16">
+          <Link href="/resources/compute-trap" className="premium-card group block p-8 transition-all duration-300 hover:border-white/20">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <p className="eyebrow mb-2">Interactive Guide</p>
+                <h2 className="text-3xl font-black text-white">The Compute Trap</h2>
+                <p className="mt-3 text-lg text-q-gray-300">
+                  Trading people for cloud compute did not lower the bill. See where <QBricksText /> takes the cost out, and model the saving on your own numbers.
+                </p>
+              </div>
+              <div className="flex shrink-0 items-center gap-2 font-bold text-white md:mt-0 transition-colors group-hover:text-q-brand-ember">
+                Explore the cost story <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </Link>
+        </div>
+
         <div className="container-x grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="eyebrow mb-4">Launch insights</p>

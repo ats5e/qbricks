@@ -5,6 +5,8 @@ import { ArrowRight, Boxes, CheckCircle2, Cpu, Database, FileCheck2, GitBranch, 
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { QIcon } from "@/components/ui/QIcon";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const flowSteps = [
   { label: "Data sprawl detection", detail: "Every source in one registry; spot schema drift and stale data", icon: Database, tone: "text-amber-300" },
@@ -38,6 +40,8 @@ function DataCommandCentre() {
     const interval = setInterval(() => setActiveStep((step) => (step + 1) % flowSteps.length), 2400);
     return () => clearInterval(interval);
   }, []);
+
+  const ActiveIcon = flowSteps[activeStep].icon;
 
   return (
     <div className="mt-12 w-full lg:mt-0 lg:block">
@@ -81,14 +85,14 @@ function DataCommandCentre() {
 
             <div className="grid gap-4 p-5 md:grid-cols-[0.9fr_1.1fr]">
               {/* Module side menu */}
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 {flowSteps.map((step, index) => {
                   const Icon = step.icon;
                   const active = activeStep === index;
                   return (
                     <motion.div
                       key={step.label}
-                      className={`rounded-2xl border p-3.5 transition-all ${active ? "border-q-brand/45 bg-q-brand/[0.12] shadow-[0_0_40px_rgba(232,32,15,0.18)]" : "border-white/[0.08] bg-white/[0.035]"}`}
+                      className={`rounded-2xl border p-2.5 transition-all ${active ? "border-q-brand/45 bg-q-brand/[0.12] shadow-[0_0_40px_rgba(232,32,15,0.18)]" : "border-white/[0.08] bg-white/[0.035]"}`}
                       animate={{ opacity: active ? 1 : 0.55, x: active ? 8 : 0 }}
                     >
                       <div className="flex items-center gap-3">
@@ -97,7 +101,6 @@ function DataCommandCentre() {
                         </div>
                         <div>
                           <p className="text-sm font-bold text-white">{step.label}</p>
-                          <p className="mt-1 text-xs leading-relaxed text-q-gray-400">{step.detail}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -117,48 +120,57 @@ function DataCommandCentre() {
                 <div className="relative z-10 flex h-full min-h-[355px] flex-col gap-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-q-gray-500">Catalogue of Catalogues</p>
-                      <p className="text-sm font-bold text-white">Trusted data products</p>
+                      <p className="text-xs uppercase tracking-[0.2em] text-q-gray-500 max-w-[140px] leading-relaxed">Catalogue of Catalogues</p>
                     </div>
-                    <div className="whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
-                      Audit-ready
+                    <div className="flex flex-col items-end gap-3">
+                      <div className="whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
+                        Audit-ready
+                      </div>
+                      <p className="text-sm font-bold text-white text-right">Trusted data<br/>products</p>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    {dataProducts.map((product, index) => {
-                      const Icon = product.icon;
-                      return (
-                        <motion.div
-                          key={product.name}
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
-                          className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5"
-                        >
-                          <div className="flex items-center gap-2.5">
-                            <div className="rounded-lg border border-white/10 bg-white/5 p-1.5 text-q-brand-ember">
-                              <Icon className="h-3.5 w-3.5" />
-                            </div>
-                            <div>
-                              <p className="font-mono text-[12px] font-bold text-white">{product.name}</p>
-                              <p className="text-[10px] text-q-gray-500">{product.meta}</p>
-                            </div>
-                          </div>
-                          <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
-                            <CheckCircle2 className="h-3 w-3" /> {product.tag}
-                          </span>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-
-                  <div className="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-black/40 px-3 py-2.5 text-[9px] font-bold uppercase tracking-[0.14em] text-q-gray-400">
-                    <span>System of record</span>
-                    <ArrowRight className="h-3 w-3 shrink-0 text-q-brand-ember" />
-                    <span className="text-q-brand-ember">QBricks</span>
-                    <ArrowRight className="h-3 w-3 shrink-0 text-q-brand-ember" />
-                    <span>Lakehouse / DB</span>
+                  <div className="relative mx-auto flex h-48 w-48 items-center justify-center">
+                    {[0, 1, 2].map((ring) => (
+                      <div
+                        key={`ring-${ring}`}
+                        className="absolute rounded-full border border-white/10"
+                        style={{ inset: `${ring * 24}px` }}
+                      />
+                    ))}
+                    {[
+                      { startX: -140, startY: -100, delay: 0, duration: 2.5 },
+                      { startX: 160, startY: -60, delay: 1.2, duration: 2.8 },
+                      { startX: -100, startY: 140, delay: 0.5, duration: 3.2 },
+                      { startX: 140, startY: 120, delay: 2.2, duration: 2.6 },
+                      { startX: 20, startY: -160, delay: 1.8, duration: 3.0 },
+                      { startX: -150, startY: 40, delay: 2.8, duration: 2.7 },
+                    ].map((brick, i) => (
+                      <motion.div
+                        key={`brick-${i}`}
+                        className="absolute left-1/2 top-1/2 h-3 w-3 rounded-[3px] bg-q-brand-ember shadow-[0_0_15px_rgba(255,58,38,0.85)]"
+                        style={{ marginLeft: "-6px", marginTop: "-6px" }}
+                        animate={{
+                          x: [brick.startX, 0],
+                          y: [brick.startY, 0],
+                          opacity: [0, 1, 0],
+                          scale: [0.5, 1, 0.2],
+                          rotate: [-45, 90],
+                        }}
+                        transition={{
+                          duration: brick.duration,
+                          delay: brick.delay,
+                          repeat: Infinity,
+                          ease: "easeIn",
+                        }}
+                      />
+                    ))}
+                    <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-[2rem] border border-white/15 bg-white/[0.06] shadow-[0_0_70px_rgba(232,32,15,0.28)] backdrop-blur-2xl">
+                      <QIcon className="h-12 w-12" />
+                      <span className={`absolute -bottom-2 -right-2 flex h-8 w-8 items-center justify-center rounded-xl border border-white/15 bg-black/80 ${flowSteps[activeStep].tone}`}>
+                        <ActiveIcon className="h-4 w-4" />
+                      </span>
+                    </div>
                   </div>
 
                   <div className="mt-auto grid grid-cols-3 gap-2.5">
@@ -212,9 +224,12 @@ export function Hero() {
               No more data <span className="text-q-brand-ember">pipelines.</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">
-              Turn your systems of record into governed, A.I.-ready data products, in hours, not months or years. No need for thousands of ungoverned notebooks. No armies of engineers. No compute-led Spark processing. No vendor lock-in. Data governance and lineage are enforced by the Open Data Contract Standard and data products are then passed to Databricks, Microsoft Fabric, Snowflake or your own on-premise database or datalake. Operating as a Catalogue of Catalogues, QBricks can work seamlessly with your existing data management solutions.
-            </p>
+            <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-q-gray-300">
+              <p>Turn your systems of record into governed, A.I.-ready data products, in hours, not months or years.</p>
+              <p>No need for thousands of ungoverned notebooks. No armies of engineers. No compute-led Spark processing. No vendor lock-in.</p>
+              <p>Data governance and lineage are enforced by the Open Data Contract Standard and data products are then passed to Databricks, Microsoft Fabric, Snowflake or your own on-premise database or datalake.</p>
+              <p>Operating as a Catalogue of Catalogues, <QBricksText /> can work seamlessly with your existing data management solutions.</p>
+            </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-[0_0_50px_rgba(232,32,15,0.3)] transition-all hover:-translate-y-0.5">
