@@ -18,7 +18,7 @@ const insights = [
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
   { id: "what-is-qbricks", question: "What exactly is QBricks?", answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
-  { id: "supported-platforms", question: "Which platforms does it work with?", answer: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down, with no Spark and no lock-in. QBricks also offers a productised Quantexa entity-resolution integration and is cloud-agnostic." },
+  { id: "supported-platforms", question: "Which platforms does it work with?", answer: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down, with no Spark and no lock-in. QBricks is cloud-agnostic." },
   { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
   { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost with no Spark, and end-to-end auditability." },
 ];

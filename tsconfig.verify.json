@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "node_modules_broken_20260626_1057",
+    "node_modules_corrupt",
+    "review-preview",
+    ".next"
+  ]
+}

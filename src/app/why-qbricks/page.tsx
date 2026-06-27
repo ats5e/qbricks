@@ -10,7 +10,7 @@ export const metadata = {
   description: "Why one platform, vendor-native tooling and consultancy data fabric programmes do not fix the metadata foundation organisations need.",
 };
 
-const differentiators = ["Data Contracts & Data Products", "Single-file deployment", "Agentic + human-in-the-loop", "Ontologies & knowledge graphs", "Quantexa Trust Score", "End-to-end auditability"];
+const differentiators = ["Data Contracts & Data Products", "Single-file deployment", "Agentic + human-in-the-loop", "Ontologies & knowledge graphs", "Local compute, no Spark", "End-to-end auditability"];
 
 export default function WhyQBricksPage() {
   return (

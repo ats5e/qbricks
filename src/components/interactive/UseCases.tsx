@@ -11,7 +11,7 @@ const cases = [
     icon: ShieldAlert,
     tag: "AML",
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
-    help: "Governed, contract-enforced data flows into Quantexa for high-confidence entity resolution.",
+    help: "Contract-enforced, fully-lineaged data gives your monitoring stack clean, resolved records you can defend to the regulator.",
     outcome: "Fewer false positives, defensible investigations and lower cost to comply.",
     colSpan: "lg:col-span-3",
   },
