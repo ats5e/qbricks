@@ -1,7 +1,5 @@
 "use client";
 
-import { QBricksText } from "@/components/ui/QBricksText";
-
 import { motion } from "framer-motion";
 import { BrainCircuit, GitBranch, Network, ScanLine, ShieldCheck, UserCheck } from "lucide-react";
 
@@ -9,17 +7,17 @@ const features = [
   {
     icon: BrainCircuit,
     title: "Agentic automation",
-    description: "Agents handle routine metadata work, learn from your environment and improve continuously without removing human control.",
+    description: "Depending on an organisation's policies, agents can be used to handle routine metadata work and act according to your governance policy.",
   },
   {
     icon: GitBranch,
-    title: "Decision lineage",
-    description: "Every action, exception and approval is tracked so teams can explain how data moved and why decisions were made.",
+    title: "Data Lineage",
+    description: "Fully understand how data assets and products have been created by QBricks. Drill down on each and see a visualization of the joins and underlying data tables.",
   },
   {
     icon: Network,
     title: "Knowledge graphs",
-    description: "Ontologies and graphs connect data, controls and business meaning for stronger discovery, lineage and AI readiness.",
+    description: "Fully understand your data with clickable knowledge graphs, enabling a full and detailed understanding of your organisation's data.",
   },
   {
     icon: UserCheck,
@@ -28,7 +26,7 @@ const features = [
   },
 ];
 
-const orbitLabels = ["Contracts", "Products", "Lineage", "Controls", "Agents", "Audit"];
+const orbitLabels = ["Data Contracts", "Data Products", "Data Assets", "Governed", "Auditable", "Lineage", "Ontologies"];
 
 export function Agentic() {
   return (
@@ -46,10 +44,10 @@ export function Agentic() {
           >
             <p className="eyebrow mb-5">Secure agentic metadata management</p>
             <h2 className="text-[clamp(2.4rem,5vw,5rem)] font-black leading-[0.96] tracking-[-0.055em] text-white">
-              Automate the heavy work. Keep the audit trail.
+              Automate the heavy work. Audit everything.
             </h2>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-300">
-              <QBricksText /> automates much of metadata management through governed agents that learn, recommend and execute within controlled workflows — giving financial institutions speed without creating a black box.
+              QBricks automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
             </p>
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -125,7 +123,7 @@ export function Agentic() {
                   <div className="absolute inset-0 rounded-3xl border border-q-brand-ember/30 animate-pulse" />
                   <ScanLine className="h-10 w-10 text-q-brand-ember" />
                 </div>
-                <h3 className="text-2xl font-black text-white">Governed agent core</h3>
+                <h3 className="text-2xl font-black text-white">Governed Agentic Mesh</h3>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-q-gray-300">Learns, recommends and executes with human approval and full lineage.</p>
                 <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-300">
                   <ShieldCheck className="h-4 w-4" />

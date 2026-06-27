@@ -1,6 +1,5 @@
 "use client";
 
-import { QBricksText } from "@/components/ui/QBricksText";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
 import type { ReactNode } from "react";
@@ -74,10 +73,10 @@ export function UseCases() {
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <p className="eyebrow mb-5">Solutions</p>
           <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-[-0.06em] text-white">
-            Built for the highest-value data problems in financial services across the EU, Nordics and MENA.
+            Governed data products to accelerate your organisation&apos;s A.I. journey.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            <QBricksText /> speaks directly to the priorities of CDOs, governance leaders, risk teams and financial-crime functions: trusted data, defensible decisions and faster regulated delivery.
+            QBricks builds A.I. ready data products, fast.
           </p>
         </div>
 
@@ -119,7 +118,7 @@ export function UseCases() {
                     {/* QBricks Help */}
                     <div>
                       <p className="text-sm leading-relaxed text-q-gray-200">
-                        <strong className="text-white font-bold">With <QBricksText />:</strong> {useCase.help}
+                        <strong className="text-white font-bold">With QBricks:</strong> {useCase.help}
                       </p>
                     </div>
 

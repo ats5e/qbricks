@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "About — QBricks",
+  title: "About | QBricks",
   description: "QBricks is developed and owned by Infinium Consulting B.V. under the NextWave Infinium identity.",
 };
 
@@ -17,9 +17,9 @@ export default function AboutPage() {
         </div>
 
         <div className="container-x relative z-10 text-center">
-          <p className="eyebrow mb-6"><QBricksText /> & Infinium</p>
+          <p className="eyebrow mb-6">QBricks & Infinium</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
-            The platform behind trustworthy AI in financial services.
+            The platform behind trustworthy A.I.
           </h1>
 
         </div>
@@ -31,25 +31,25 @@ export default function AboutPage() {
             <div className="premium-card p-7">
               <Building2 className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-white">Our mission</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400">To fix the layer the market skips: the governed metadata foundation that makes AI, analytics and regulatory reporting trustworthy.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-400">To fix the layer the market skips: the governed metadata foundation that makes A.I., analytics and regulatory reporting trustworthy.</p>
             </div>
             <div className="premium-card p-7">
               <ShieldCheck className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-white">Built for regulated data</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400"><QBricksText /> is an AI-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-400">QBricks is an A.I.-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
             </div>
             <div className="premium-card p-7">
               <Globe2 className="mb-6 h-8 w-8 text-q-brand-ember" />
-              <h2 className="text-2xl font-black text-white">Built for the EU, Nordics and MENA</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400">Designed for the realities of financial services across the EU, Nordics and MENA: regulatory scrutiny, AI ambition and trust in every data decision.</p>
+              <h2 className="text-2xl font-black text-white">Built for every organisation</h2>
+              <p className="mt-4 leading-relaxed text-q-gray-400">Designed for the realities of data-driven organisations: A.I. ambition, governance and trust in every data decision.</p>
             </div>
           </div>
 
           <div className="premium-card mx-auto mt-10 max-w-4xl p-8 text-center md:p-12">
             <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-[-0.05em] text-white">
-              Try <QBricksText /> on your data.
+              Try QBricks on your data.
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-q-gray-400">Tell us your platform and priority use case — AML, KYC, fraud, MDM or risk — and we will tailor the demo.</p>
+            <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-q-gray-400">Tell us your platform and priority use case, AML, KYC, fraud, MDM or risk, and we will tailor the demo.</p>
             <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Contact Us <ArrowRight className="h-5 w-5" />
             </Link>
@@ -59,5 +59,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
-import { QBricksText } from "@/components/ui/QBricksText";

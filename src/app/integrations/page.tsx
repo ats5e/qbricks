@@ -5,8 +5,8 @@ import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
 import { Integrations } from "@/components/interactive/Integrations";
 
 export const metadata = {
-  title: "Integrations — QBricks",
-  description: "QBricks works with Databricks, Microsoft Fabric, Snowflake and Quantexa across modern financial-services data stacks.",
+  title: "Integrations | QBricks",
+  description: "QBricks works with Databricks, Microsoft Fabric, Snowflake and your own on-premise databases across modern data stacks.",
 };
 
 
@@ -23,10 +23,10 @@ export default function IntegrationsPage() {
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Ecosystem</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
-            Built to fit the modern financial-services data stack.
+            Built to fit your modern data stack.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and Quantexa-enabled data products.
+            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases.
           </p>
         </div>
       </section>

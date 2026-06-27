@@ -1,10 +1,9 @@
 "use client";
 
-import { QBricksText } from "@/components/ui/QBricksText";
 import { QIcon } from "@/components/ui/QIcon";
 
 import { motion } from "framer-motion";
-import { Cpu, Database, FileCheck2, GitBranch, LockKeyhole, Network, Server, ShieldCheck } from "lucide-react";
+import { Cpu, Database, FileCheck2, GitBranch, LockKeyhole, Network, Server } from "lucide-react";
 
 export function ArchitectureMap() {
   return (
@@ -16,10 +15,10 @@ export function ArchitectureMap() {
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <p className="eyebrow mb-5">Enterprise architecture</p>
           <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-[-0.06em] text-white">
-            The governed control plane between your platforms and AI.
+            The governed control plane between your platforms and A.I.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            <QBricksText /> sits across operational systems, lakehouse platforms and financial-crime tooling — enforcing quality, ownership, lineage and auditability before data reaches AI or regulatory workflows.
+            QBricks sits across your operational systems, lakehouse platforms and analytics tooling, enforcing quality, ownership, lineage and auditability before data reaches A.I. or regulatory workflows.
           </p>
         </div>
 
@@ -32,18 +31,21 @@ export function ArchitectureMap() {
             <path d="M570 280 C710 280 755 205 900 205" stroke="rgba(255,255,255,0.13)" strokeWidth="2" />
             <path d="M570 280 C710 280 755 280 900 280" stroke="rgba(255,255,255,0.13)" strokeWidth="2" />
             <path d="M570 280 C710 280 755 355 900 355" stroke="rgba(255,255,255,0.13)" strokeWidth="2" />
+            <path d="M570 280 C710 280 755 430 900 430" stroke="rgba(255,255,255,0.13)" strokeWidth="2" />
             <DataPacket path="M160 170 C305 170 345 280 490 280" delay={0} />
             <DataPacket path="M160 280 C305 280 345 280 490 280" delay={0.9} />
             <DataPacket path="M160 390 C305 390 345 280 490 280" delay={1.8} />
             <DataPacket path="M570 280 C710 280 755 205 900 205" delay={0.5} isClean />
             <DataPacket path="M570 280 C710 280 755 280 900 280" delay={1.4} isClean />
             <DataPacket path="M570 280 C710 280 755 355 900 355" delay={2.3} isClean />
+            <DataPacket path="M570 280 C710 280 755 430 900 430" delay={3.0} isClean />
           </svg>
 
           <div className="z-10 flex w-[230px] flex-col gap-6">
-            <SystemNode icon={Database} title="Core banking" subtitle="Customer and account data" />
+            <p className="text-center text-xs font-black uppercase tracking-[0.2em] text-q-gray-500">Systems Of Record</p>
+            <SystemNode icon={Database} title="Core systems" subtitle="Customer and account data" />
             <SystemNode icon={Server} title="Transaction systems" subtitle="Payments and events" />
-            <SystemNode icon={Network} title="External sources" subtitle="Risk, ESG and SaaS" />
+            <SystemNode icon={Network} title="External sources" subtitle="Third-party and SaaS data" />
           </div>
 
           <div className="z-10 w-[330px]">
@@ -56,12 +58,14 @@ export function ArchitectureMap() {
                 <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-q-brand/25 bg-q-brand/[0.12] text-q-brand-ember">
                   <QIcon className="h-10 w-10" />
                 </div>
-                <h3 className="text-2xl font-black text-white">Metadata Foundation</h3>
+                <h3 className="text-2xl font-black text-white">QBricks</h3>
                 <div className="mt-6 space-y-3">
-                  <SubComponent icon={FileCheck2} label="Data Contracts" />
-                  <SubComponent icon={Database} label="Data Products" />
-                  <SubComponent icon={GitBranch} label="Decision lineage" />
-                  <SubComponent icon={LockKeyhole} label="Audit controls" />
+                  <SubComponent icon={FileCheck2} label="Data contracts" />
+                  <SubComponent icon={Database} label="Data products" />
+                  <SubComponent icon={GitBranch} label="Data lineage" />
+                  <SubComponent icon={Network} label="Data ontologies" />
+                  <SubComponent icon={Cpu} label="Agentic insights" />
+                  <SubComponent icon={LockKeyhole} label="Auditable" />
                 </div>
               </div>
             </motion.div>
@@ -70,7 +74,8 @@ export function ArchitectureMap() {
           <div className="z-10 flex w-[230px] flex-col gap-6">
             <SystemNode icon={Database} title="Databricks" subtitle="Curated lakehouse" isGreen />
             <SystemNode icon={Database} title="Microsoft Fabric" subtitle="OneLake products" isGreen />
-            <SystemNode icon={ShieldCheck} title="Quantexa" subtitle="Trust Score embedded" isGreen />
+            <SystemNode icon={Database} title="Snowflake" subtitle="Governed warehouse" isGreen />
+            <SystemNode icon={Server} title="Oracle" subtitle="On-premise database" isGreen />
           </div>
         </div>
         </div>

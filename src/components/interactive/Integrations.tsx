@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const logos = [
-  { name: "Databricks", src: "/assets/Databricks.png", desc: "QBricks interfaces with Databricks via SQL push-down — enforcing governance without running Spark inside it. No pipelines, no lock-in." },
+  { name: "Databricks", src: "/assets/Databricks.png", desc: "QBricks interfaces with Databricks via SQL push-down, enforcing governance without running Spark inside it. No pipelines, no lock-in." },
   { name: "Microsoft Fabric", src: "/assets/Fabric.png", desc: "Interfaces with Microsoft Fabric via SQL push-down, enforcing the Open Data Contract Standard without Spark or lock-in." },
-  { name: "Snowflake", src: "/assets/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down — governed metadata, quality and ETL workflows without running Spark inside it." },
-  { name: "Quantexa", src: "/assets/Quantexa.png", desc: "Productised Quantexa entity-resolution integration for financial-crime use cases — AML, KYC, transaction monitoring and TBML." },
+  { name: "Snowflake", src: "/assets/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down, governed metadata, quality and ETL workflows without running Spark inside it." },
+  { name: "Oracle", src: "/assets/Oracle-Logo.png", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
 ];
 
 export function Integrations({ showDescriptions = false }: { showDescriptions?: boolean }) {
@@ -19,7 +19,7 @@ export function Integrations({ showDescriptions = false }: { showDescriptions?: 
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="eyebrow mb-4">Integrations</p>
           <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-black leading-tight tracking-[-0.045em] text-white">
-            Works with the platforms your firm already runs on.
+            Works with the platforms your organisation already runs on.
           </h2>
         </div>
 
@@ -50,7 +50,7 @@ export function Integrations({ showDescriptions = false }: { showDescriptions?: 
         </div>
 
         <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
-          QBricks interfaces with Databricks, Microsoft Fabric and Snowflake via SQL push-down — enforcing governance without running Spark inside them, and without lock-in. The Open Data Contract Standard (ODCS) sits at the core.
+          QBricks interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, enforcing governance without running Spark inside them, and without lock-in. The Open Data Contract Standard (ODCS) sits at the core.
         </p>
       </div>
     </section>

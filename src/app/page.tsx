@@ -27,10 +27,10 @@ export default function Home() {
         <div className="container-x relative z-10">
           <div className="premium-card mx-auto max-w-4xl p-8 text-center md:p-10">
             <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.2rem,4vw,4rem)] font-black leading-[0.95] tracking-[-0.06em] text-white sm:gap-4 lg:gap-6">
-              See record-to-report in minutes.
+              From Record To Report In Minutes
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-              A focused demo mapped to one of your real use cases. We will show single-file deployment, governed Data Contracts and the audit trail that comes with them.
+              Join us for a focused demo that shows how we create data contracts and products in minutes.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">

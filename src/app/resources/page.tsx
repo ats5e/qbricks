@@ -2,24 +2,23 @@ import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react"
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "Resources — QBricks",
-  description: "Insights and FAQ on AI-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
+  title: "Resources | QBricks",
+  description: "Insights and FAQ on A.I.-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
 };
 
 const insights = [
-  "Why 95% of AI use cases fail — and what institutions can do about it",
+  "Why 95% of A.I. use cases fail, and what organisations can do about it",
   "The lakehouse data swamp: how migration quietly breaks governance",
   "Data Contracts explained: governance that actually scales",
   "AML and KYC are data problems first",
 ];
 
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
-  { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: <>An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products.</> },
-  { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks — single-file deployment covers both infrastructure and workloads." },
-  { id: "supported-platforms", question: <>Which platforms does it work with?</>, answer: <>Databricks, Microsoft Fabric and Snowflake via SQL push-down — no Spark, no lock-in — plus a productised Quantexa entity-resolution integration. <QBricksText /> is cloud-agnostic.</> },
+  { id: "what-is-qbricks", question: "What exactly is QBricks?", answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
+  { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
+  { id: "supported-platforms", question: "Which platforms does it work with?", answer: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down, with no Spark and no lock-in. QBricks also offers a productised Quantexa entity-resolution integration and is cloud-agnostic." },
   { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
   { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost with no Spark, and end-to-end auditability." },
 ];
@@ -35,10 +34,10 @@ export default function ResourcesPage() {
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Resources</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
-            Insight for governed, AI-ready enterprise data.
+            Insight for governed, A.I.-ready enterprise data.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            Practical thinking for CDOs, governance leaders, risk teams and financial-crime functions preparing data for AI, analytics and regulatory confidence.
+            Practical thinking for CDOs, governance leaders, risk teams and financial-crime functions preparing data for A.I., analytics and regulatory confidence.
           </p>
         </div>
       </section>

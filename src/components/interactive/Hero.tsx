@@ -1,24 +1,24 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, CheckCircle2, Database, FileJson, LockKeyhole, Network, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Boxes, CheckCircle2, Database, GitBranch, Lightbulb, LockKeyhole, Network } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { QIcon } from "@/components/ui/QIcon";
 
 const flowSteps = [
-  { label: "Lakehouse sprawl detected", detail: "274 notebooks · schema drift · unclear ownership", icon: Database, tone: "text-amber-300" },
-  { label: "Contracts generated", detail: "Quality rules, ownership and controls made explicit", icon: FileJson, tone: "text-q-brand-ember" },
-  { label: "Lineage captured", detail: "Every decision is traceable for risk, audit and regulators", icon: Network, tone: "text-blue-300" },
-  { label: "AI-ready foundation live", detail: "Auditable Data Products deployed in hours", icon: ShieldCheck, tone: "text-emerald-300" },
+  { label: "Data sprawl detection", detail: "Find ungoverned, duplicated data across your estate", icon: Database, tone: "text-amber-300" },
+  { label: "Data Lineage", detail: "Trace every join, view and transformation", icon: GitBranch, tone: "text-blue-300" },
+  { label: "Data Ontologies", detail: "Connect data to its business meaning", icon: Network, tone: "text-q-brand-ember" },
+  { label: "Data Insights", detail: "Surface what matters across structured and unstructured data", icon: Lightbulb, tone: "text-emerald-300" },
+  { label: "Agentic data mesh", detail: "Underpins everything, processing structured and unstructured data", icon: Boxes, tone: "text-violet-300" },
 ];
 
 const proofPoints = [
-  ["Fewer data issues", "reaching consumers"],
-  ["Hours, not months", "record to lakehouse"],
-  ["No Spark", "lower compute cost"],
-  ["100% auditable", "compliant by design"],
+  ["Fewer data issues", "Turbo charge your development and testing activities. Deploy faster and for lower cost."],
+  ["No Spark", "Lower, local compute cost."],
+  ["100% auditable", "Complete on-line audit trail."],
 ];
 
 function DataCommandCentre() {
@@ -210,7 +210,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">
-              Turn your systems of record into governed, AI-ready data products — in hours, not months. No thousands of notebooks. No armies of engineers. No Spark. No lock-in. Governance and lineage are enforced by the Open Data Contract Standard and pushed down to Databricks, Microsoft Fabric or Snowflake.
+              Turn your systems of record into governed, A.I.-ready data products, in hours, not months or years. No need for thousands of ungoverned notebooks. No armies of engineers. No compute-led Spark processing. No vendor lock-in. Data governance and lineage are enforced by the Open Data Contract Standard and data products are then passed to Databricks, Microsoft Fabric, Snowflake or your own on-premise database or datalake. Operating as a Catalogue of Catalogues, QBricks can work seamlessly with your existing data management solutions.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -226,7 +226,7 @@ export function Hero() {
             </div>
 
             <div className="mt-12 lg:mt-16">
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-5">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
                 {proofPoints.map(([value, label]) => (
                   <div key={value} className="group relative flex flex-col justify-start">
                     {/* Hover Glow Effect */}

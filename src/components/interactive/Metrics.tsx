@@ -4,22 +4,21 @@ import { motion } from "framer-motion";
 import { AlertTriangle, ArrowRight, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { QIcon } from "@/components/ui/QIcon";
-import { QBricksText } from "@/components/ui/QBricksText";
 
 const before = [
-  "Hundreds of ungoverned notebooks",
-  "Governance lost at schema level",
-  "No reliable lineage or audit trail",
-  "AI stalls on poor data quality",
-  "Cost and risk rise with every migration",
+  "Thousands of ungoverned notebooks",
+  "Teams of data engineers",
+  "Lengthy pipeline build and deployment time-lines",
+  "A.I. required data locked at the Bronze layer",
+  "On-going compute costs",
 ];
 
 const after = [
-  "Data Contracts govern every workflow",
-  "Data Products carry ownership and quality",
-  "Decision lineage is fully auditable",
-  "Fewer data-quality issues reaching consumers",
-  "Deployed in hours on local compute, not Spark",
+  "Data governance enforced (ODCS). No notebooks",
+  "Small engineering team (at set-up)",
+  "Streaming data, materialised views",
+  "A.I. ready data available in hours not years",
+  "Low compute costs. No cloud requirement",
 ];
 
 const valueCards = [
@@ -53,7 +52,7 @@ export function Metrics() {
             transition={{ duration: 0.75 }}
             className="text-[clamp(2.4rem,5.6vw,5.6rem)] font-black leading-[0.95] tracking-[-0.06em] text-white"
           >
-            Everyone is racing to deploy AI. Most of the data underneath is not ready.
+            Everyone is racing to deploy A.I. The issue? The supporting data is not ready.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
@@ -62,7 +61,34 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300"
           >
-            A 2025 MIT report found that around <strong className="font-black text-white">95% of AI-related use cases were failing</strong> — not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
+            A 2025 MIT report found that around <strong className="font-black text-white">95% of A.I.-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.75, delay: 0.15 }}
+            className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-400"
+          >
+            To date, the answer to the data quality issue has been to throw money at the problem. Money for data remediation, for data engineers, for data management platforms, for pipeline building and on-going pipeline management, all underpinned by the cloud and compute costs.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.75, delay: 0.2 }}
+            className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-400"
+          >
+            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting A.I.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.75, delay: 0.25 }}
+            className="mx-auto mt-6 max-w-3xl text-xl font-black leading-relaxed text-white"
+          >
+            A different approach is needed. QBricks.
           </motion.p>
         </div>
 
@@ -78,8 +104,8 @@ export function Metrics() {
                 <AlertTriangle className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-q-gray-500">Without <QBricksText /></p>
-                <h3 className="text-2xl font-black text-white">Data swamp</h3>
+                <p className="text-sm uppercase tracking-[0.2em] text-q-gray-500">Without QBricks</p>
+                <h3 className="text-2xl font-black text-white">Data Management Solutions</h3>
               </div>
             </div>
             <ul className="space-y-4">
@@ -113,7 +139,7 @@ export function Metrics() {
                 <Layers3 className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">With <QBricksText /></p>
+                <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">With QBricks</p>
                 <h3 className="text-2xl font-black text-white">Governed foundation</h3>
               </div>
             </div>

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { QBricksText } from "@/components/ui/QBricksText";
 
 const computeData = [
   {
@@ -65,7 +64,7 @@ export function ComputeCost() {
               transition={{ delay: 0.1 }}
               className="mt-6 text-lg leading-relaxed text-q-gray-300 md:text-xl"
             >
-              Cloud data platforms meter every cluster, credit and capacity unit — billing for your compute usage whether queries are running or not. QBricks leverages the local compute you already own, delivering blazing fast compute speed with zero cloud overhead. No cloud compute. No meter.
+              Cloud data platforms meter every cluster, credit and capacity unit, billing for your compute usage whether queries are running or not. QBricks leverages the local compute you already own, delivering blazing fast compute speed with zero cloud overhead. No cloud compute. No meter.
             </motion.p>
           </div>
           <motion.div

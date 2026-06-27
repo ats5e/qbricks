@@ -3,8 +3,8 @@ import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 
 export const metadata = {
-  title: "Solutions — QBricks",
-  description: "QBricks solutions for AML, KYC, fraud, contextual MDM, credit risk and ESG risk in regulated financial services.",
+  title: "Solutions | QBricks",
+  description: "QBricks solutions for AML, KYC, fraud, contextual MDM, credit risk and ESG risk.",
 };
 
 export default function SolutionsPage() {
