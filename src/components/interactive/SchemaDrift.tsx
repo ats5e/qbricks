@@ -11,7 +11,7 @@ export function SchemaDrift() {
       <div className="container-x relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="eyebrow mb-4">Schema Evolution</p>
-          <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-display font-black tracking-tighter text-white mb-6 leading-tight">
+          <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-display font-black tracking-tight text-white mb-6 leading-tight">
             Survive schema drift <br /> automatically.
           </h2>
           <p className="text-q-gray-400 text-lg">

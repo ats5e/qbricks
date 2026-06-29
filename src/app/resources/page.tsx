@@ -34,7 +34,7 @@ export default function ResourcesPage() {
         </div>
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Resources</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
+          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
             Insight for governed, A.I.-ready enterprise data.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">

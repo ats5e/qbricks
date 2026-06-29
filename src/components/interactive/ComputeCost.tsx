@@ -34,10 +34,10 @@ const computeData = [
   {
     category: "LOCAL COMPUTE",
     provider: "QBricks",
-    monthly: "$0",
+    monthly: "minimal",
     subtitle: "per month - processed on premise",
     billingUnit: "none",
-    annualized: "$0",
+    annualized: "minimal",
     isQBricks: true,
   },
 ];
@@ -52,7 +52,7 @@ export function ComputeCost() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-[-0.05em] text-white"
+              className="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-tight text-white"
             >
               Say goodbye to <br />
               <span className="text-q-brand">cloud compute.</span>
@@ -137,16 +137,7 @@ export function ComputeCost() {
                 </p>
               </div>
 
-              <div className={`mt-8 border-t pt-6 ${item.isQBricks ? "border-q-brand/20" : "border-white/10"}`}>
-                <div className="flex items-center justify-between text-xs">
-                  <span className={item.isQBricks ? "text-q-brand/60" : "text-q-gray-500"}>Billing unit</span>
-                  <span className={`font-mono ${item.isQBricks ? "text-q-gray-300" : "text-white"}`}>{item.billingUnit}</span>
-                </div>
-                <div className="mt-3 flex items-center justify-between text-xs">
-                  <span className={item.isQBricks ? "text-q-brand/60" : "text-q-gray-500"}>Annualized</span>
-                  <span className={`font-mono font-bold ${item.isQBricks ? "text-q-brand" : "text-white"}`}>{item.annualized}</span>
-                </div>
-              </div>
+
             </motion.div>
           ))}
         </div>

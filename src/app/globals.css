@@ -18,6 +18,7 @@
     color: #e4e4e7;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overflow-x: hidden;
   }
 
   body::-webkit-scrollbar {

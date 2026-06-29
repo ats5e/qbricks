@@ -12,7 +12,7 @@ const cases = [
     tag: "AML",
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
     help: "Contract-enforced, fully-lineaged data gives your monitoring stack clean, resolved records you can defend to the regulator.",
-    outcome: "Fewer false positives, defensible investigations and lower cost to comply.",
+    outcome: "Fewer false positives, defensible investigations and lower cost.",
     colSpan: "lg:col-span-3",
   },
   {
@@ -72,7 +72,7 @@ export function UseCases() {
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <p className="eyebrow mb-5">Solutions</p>
-          <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-[-0.06em] text-white">
+          <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-tight text-white">
             Governed data products to accelerate your organisation&apos;s A.I. journey.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
@@ -108,8 +108,8 @@ export function UseCases() {
                   {useCase.title}
                 </h3>
 
-                <div className="pt-6 border-t border-white/10 flex-grow">
-                  <div className="space-y-5 h-full flex flex-col">
+                <div className="pt-6 border-t border-white/10 flex-grow flex flex-col">
+                  <div className="space-y-5 mb-6">
                     {/* Pain */}
                     <div>
                       <p className="text-sm leading-relaxed text-q-gray-400">{useCase.pain}</p>
@@ -121,13 +121,13 @@ export function UseCases() {
                         <strong className="text-white font-bold">With QBricks:</strong> {useCase.help}
                       </p>
                     </div>
+                  </div>
 
-                    {/* Outcome */}
-                    <div className="mt-auto pt-3">
-                      <div className="rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
-                        <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-400/80">The Outcome</span>
-                        <p className="text-sm font-bold leading-relaxed text-emerald-50">{useCase.outcome}</p>
-                      </div>
+                  {/* Outcome */}
+                  <div className="mt-auto">
+                    <div className="h-full rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
+                      <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-400/80">The Outcome</span>
+                      <p className="text-sm font-bold leading-relaxed text-emerald-50">{useCase.outcome}</p>
                     </div>
                   </div>
                 </div>

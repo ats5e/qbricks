@@ -22,7 +22,7 @@ export function DeveloperExperience() {
       <div className="container-x relative z-10">
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <p className="eyebrow mb-5">How it works</p>
-          <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.96] tracking-[-0.06em] text-white">
+          <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.96] tracking-tight text-white">
             From your systems of record to governed data products.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">

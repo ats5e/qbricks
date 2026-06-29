@@ -61,20 +61,20 @@ export default function Calculator() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const [fteToday, setFteToday] = useLocalStorage("qb-fteToday", 8);
+  const [fteToday, setFteToday] = useLocalStorage("qb-fteToday", 30);
   const [fteWith, setFteWith] = useLocalStorage("qb-fteWith", 1);
-  const [loadedCost, setLoadedCost] = useLocalStorage("qb-loadedCost", 100000);
+  const [loadedCost, setLoadedCost] = useLocalStorage("qb-loadedCost", 220000);
 
   const [weeksToday, setWeeksToday] = useLocalStorage("qb-weeksToday", 40);
   const [weeksWith, setWeeksWith] = useLocalStorage("qb-weeksWith", 8);
-  const [dayRate, setDayRate] = useLocalStorage("qb-dayRate", 800);
+  const [dayRate, setDayRate] = useLocalStorage("qb-dayRate", 1000);
   const [maintenanceAvoided, setMaintenanceAvoided] = useLocalStorage("qb-maintAvoided", 120000);
 
-  const [runs, setRuns] = useLocalStorage("qb-runs", 500);
+  const [runs, setRuns] = useLocalStorage("qb-runs", 900);
   const [costPerRun, setCostPerRun] = useLocalStorage("qb-costPerRun", 600);
   const [shareRemoved, setShareRemoved] = useLocalStorage("qb-shareRemoved", 90);
 
-  const [runMaintainToday, setRunMaintainToday] = useLocalStorage("qb-runMaintainToday", 150000);
+  const [runMaintainToday, setRunMaintainToday] = useLocalStorage("qb-runMaintainToday", 300000);
   const [runMaintainWith, setRunMaintainWith] = useLocalStorage("qb-runMaintainWith", 30000);
 
   const savingRemediation = Math.max(0, (fteToday - fteWith) * loadedCost);
@@ -95,7 +95,7 @@ export default function Calculator() {
       <div className="mb-12 max-w-3xl">
         <h2 className="text-3xl font-black text-white md:text-4xl">Model the savings</h2>
         <p className="mt-4 text-lg text-q-gray-400">
-          Enter your own baseline figures to see the indicative cost reduction <QBricksText /> can deliver.
+          This is an indicative example model only. Enter your own baseline figures to estimate the gross cost reduction <QBricksText /> can deliver.
         </p>
       </div>
 
@@ -255,8 +255,14 @@ export default function Calculator() {
               </div>
               
               <div className="flex items-start gap-3 text-xs text-q-gray-500 mt-6">
-                <Info className="h-4 w-4 shrink-0 mt-0.5" />
-                <p>Indicative figures, pending your baseline. Populated from your client baseline and the <QBricksText /> gain-share model.</p>
+                <Info className="h-5 w-5 shrink-0 mt-0.5 text-q-gray-400" />
+                <div>
+                  <div className="mb-2">
+                    <p className="mb-1"><strong className="text-q-gray-300">Savings shown are gross.</strong></p>
+                    <p><QBricksText /> operates on a 25% / 30% / 35% gain-share model over three years. Net client savings will be offset by this fee.</p>
+                  </div>
+                  <p>Indicative figures only, pending your baseline. Populated from your client baseline and the <QBricksText /> gain-share model.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -275,7 +281,7 @@ export default function Calculator() {
         </Link>
         
         <p className="mt-8 text-xs text-q-gray-500">
-          Indicative figures, pending your baseline. Not legal or financial advice.
+          Indicative figures only, pending your measured baseline. Not commercial or financial advice.
         </p>
       </div>
     </div>

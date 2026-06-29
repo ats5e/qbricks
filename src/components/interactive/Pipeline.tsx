@@ -30,7 +30,7 @@ export function Pipeline() {
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-3xl text-center">
           <p className="eyebrow mb-4">The <QBricksText /> Pipeline</p>
-          <h2 className="mb-6 text-[clamp(2.5rem,4vw,3.5rem)] font-display font-black leading-tight tracking-tighter text-white">
+          <h2 className="mb-6 text-[clamp(2.5rem,4vw,3.5rem)] font-display font-black leading-tight tracking-tight text-white">
             Record to report, <br />
             <span className="text-brand-gradient">fully transparent.</span>
           </h2>

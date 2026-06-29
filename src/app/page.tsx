@@ -26,7 +26,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.22),transparent_42%),linear-gradient(to_bottom,rgba(255,255,255,0.035),#000)]" />
         <div className="container-x relative z-10">
           <div className="premium-card mx-auto max-w-4xl p-8 text-center md:p-10">
-            <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.2rem,4vw,4rem)] font-black leading-[0.95] tracking-[-0.06em] text-white sm:gap-4 lg:gap-6">
+            <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.2rem,4vw,4rem)] font-black leading-[0.95] tracking-tight text-white sm:gap-4 lg:gap-6">
               From Record To Report In Minutes
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">

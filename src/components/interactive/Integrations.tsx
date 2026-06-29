@@ -10,18 +10,20 @@ const logos = [
   { name: "Oracle", src: "/assets/Oracle-Logo.png", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
 ];
 
-export function Integrations({ showDescriptions = false }: { showDescriptions?: boolean }) {
+export function Integrations({ showDescriptions = false, hideHeading = false }: { showDescriptions?: boolean, hideHeading?: boolean }) {
   return (
     <section className="relative overflow-hidden border-t border-white/5 bg-q-black py-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(232,32,15,0.08),transparent_62%)]" />
 
       <div className="container-x relative z-10">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="eyebrow mb-4">Integrations</p>
-          <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-black leading-tight tracking-[-0.045em] text-white">
-            Works with the platforms your organisation already runs on.
-          </h2>
-        </div>
+        {!hideHeading && (
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="eyebrow mb-4">Integrations</p>
+            <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-black leading-tight tracking-tight text-white">
+              Works with the platforms your organisation already runs on.
+            </h2>
+          </div>
+        )}
 
         <div className={`mx-auto grid max-w-5xl gap-4 ${showDescriptions ? "grid-cols-1 gap-6 md:grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
           {logos.map((logo, index) => (
@@ -37,7 +39,13 @@ export function Integrations({ showDescriptions = false }: { showDescriptions?: 
             >
               {logo.src ? (
                 <div className={`relative transition-all duration-500 ${showDescriptions ? "mb-6 h-12 w-48" : "h-12 w-40 grayscale group-hover:grayscale-0"}`}>
-                  <Image src={logo.src} alt={logo.name} fill className={`object-contain ${showDescriptions ? "object-left" : "object-center"}`} sizes="160px" />
+                  <Image 
+                    src={logo.src} 
+                    alt={logo.name} 
+                    fill 
+                    className={`object-contain ${showDescriptions ? "object-left" : "object-center"} ${logo.name === "Microsoft Fabric" ? "invert hue-rotate-180 brightness-110 contrast-125" : ""}`} 
+                    sizes="160px" 
+                  />
                 </div>
               ) : (
                 <span className={`text-2xl font-black tracking-tight text-white/75 transition-colors group-hover:text-white ${showDescriptions ? "mb-6" : ""}`}>{logo.name}</span>

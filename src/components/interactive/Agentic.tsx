@@ -43,34 +43,13 @@ export function Agentic() {
             transition={{ duration: 0.75 }}
           >
             <p className="eyebrow mb-5">Secure agentic metadata management</p>
-            <h2 className="text-[clamp(2.4rem,5vw,5rem)] font-black leading-[0.96] tracking-[-0.055em] text-white">
+            <h2 className="text-[clamp(2.4rem,5vw,5rem)] font-black leading-[0.96] tracking-tight text-white">
               Automate the heavy work. Audit everything.
             </h2>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-300">
               QBricks automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
             </p>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.55, delay: index * 0.07 }}
-                    className="rounded-3xl border border-white/10 bg-white/[0.035] p-5 backdrop-blur-xl transition-all hover:border-q-brand/30 hover:bg-q-brand/[0.055]"
-                  >
-                    <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3 text-q-brand-ember">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-lg font-black text-white">{feature.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-q-gray-400">{feature.description}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
           </motion.div>
 
           <motion.div
@@ -78,33 +57,33 @@ export function Agentic() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.85 }}
-            className="relative mt-12 flex min-h-[620px] w-[500px] max-w-none mx-auto origin-top scale-[0.72] items-center justify-center sm:w-auto sm:scale-100 lg:mt-0 -mb-[170px] sm:mb-0"
+            className="relative mt-12 flex min-h-[700px] w-[640px] max-w-none mx-auto origin-top scale-[0.45] items-center justify-center sm:w-auto sm:scale-[0.85] lg:scale-100 lg:mt-0 -mb-[380px] sm:-mb-[100px] lg:mb-0"
           >
-            <div className="absolute h-[520px] w-[520px] rounded-full bg-q-brand/[0.12] blur-[110px]" />
-            <div className="relative flex h-[500px] w-[500px] items-center justify-center rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-3xl">
+            <div className="absolute h-[680px] w-[680px] rounded-full bg-q-brand/[0.15] blur-[120px]" />
+            <div className="relative flex h-[640px] w-[640px] items-center justify-center rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-3xl">
               {[0, 1, 2].map((ring) => (
                 <motion.div
                   key={ring}
                   className="absolute rounded-full border border-white/10"
-                  style={{ inset: `${46 + ring * 56}px` }}
+                  style={{ inset: `${40 + ring * 80}px` }}
                   animate={{ rotate: ring % 2 ? -360 : 360 }}
                   transition={{ duration: 24 + ring * 8, repeat: Infinity, ease: "linear" }}
                 >
                   {/* Glowing orbital node */}
-                  <div className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember shadow-[0_0_12px_2px_rgba(232,32,15,0.8)]" />
-                  {ring === 1 && <div className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-400 shadow-[0_0_12px_2px_rgba(52,211,153,0.8)]" />}
+                  <div className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember shadow-[0_0_16px_3px_rgba(232,32,15,0.9)]" />
+                  {ring === 1 && <div className="absolute bottom-0 left-1/2 h-2 w-2 -translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-400 shadow-[0_0_16px_3px_rgba(52,211,153,0.9)]" />}
                 </motion.div>
               ))}
 
               {orbitLabels.map((label, index) => {
-                const angle = (index / orbitLabels.length) * Math.PI * 2;
-                const radius = 210;
+                const angle = (index / orbitLabels.length) * Math.PI * 2 - Math.PI / 2;
+                const radius = 280;
                 const x = Math.round(Math.cos(angle) * radius);
                 const y = Math.round(Math.sin(angle) * radius);
                 return (
                   <motion.div
                     key={label}
-                    className="absolute rounded-2xl border border-white/10 bg-black/70 px-4 py-3 text-sm font-bold text-white shadow-[0_18px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+                    className="absolute rounded-2xl border border-white/20 bg-white/[0.04] px-5 py-3 text-sm font-bold tracking-wide text-white shadow-2xl ring-1 ring-white/10 backdrop-blur-xl"
                     style={{ x, y }}
                     animate={{ y: [y, y - 10, y] }}
                     transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: "easeInOut" }}
@@ -115,7 +94,7 @@ export function Agentic() {
               })}
 
               <motion.div 
-                className="relative z-10 rounded-[2.5rem] border border-q-brand/30 bg-gradient-to-b from-q-brand/20 to-white/[0.04] p-8 text-center shadow-[0_0_90px_rgba(232,32,15,0.28)] backdrop-blur-2xl"
+                className="relative z-10 rounded-[2.5rem] border border-q-brand/40 bg-gradient-to-br from-q-brand/30 via-q-black/80 to-q-black/95 p-10 text-center shadow-[0_0_120px_rgba(232,32,15,0.4)] backdrop-blur-3xl"
                 animate={{ scale: [1, 1.02, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -132,6 +111,28 @@ export function Agentic() {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 relative z-10">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.55, delay: index * 0.07 }}
+                className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 backdrop-blur-xl transition-all hover:border-q-brand/30 hover:-translate-y-1 hover:bg-q-brand/[0.055] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)]"
+              >
+                <div className="mb-5 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3 text-q-brand-ember">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mb-3 text-xl font-black text-white">{feature.title}</h3>
+                <p className="text-sm leading-relaxed text-q-gray-400">{feature.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

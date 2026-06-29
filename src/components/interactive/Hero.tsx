@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, Boxes, CheckCircle2, Cpu, Database, FileCheck2, GitBranch, Layers3, Lightbulb, Network, ShieldCheck } from "lucide-react";
+import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { ArrowRight, Boxes, CheckCircle2, Cpu, Database, FileCheck2, GitBranch, Layers3, Lightbulb, Network, ShieldCheck, Unlock, Users, FileSignature, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -17,9 +17,9 @@ const flowSteps = [
 ];
 
 const proofPoints = [
-  ["Fewer data issues", "Turbo charge your development and testing activities. Deploy faster and for lower cost."],
-  ["No Spark", "Lower, local compute cost."],
-  ["100% auditable", "Complete on-line audit trail."],
+  { value: "Fewer data issues", icon: ShieldCheck },
+  { value: "No Spark", icon: Cpu },
+  { value: "100% auditable", icon: Search },
 ];
 
 const dataProducts = [
@@ -193,11 +193,46 @@ function DataCommandCentre() {
           </div>
         </motion.div>
       </div>
+
+      <div className="mx-auto mt-6 w-full max-w-[560px] lg:mt-6">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-3">
+          {proofPoints.map(({ value, icon: Icon }) => (
+            <div key={value} className="group relative flex flex-col justify-start">
+              {/* Hover Glow Effect */}
+              <div className="absolute -inset-0.5 rounded-[1rem] bg-gradient-to-b from-white/15 to-transparent opacity-0 blur-md transition-all duration-500 group-hover:opacity-100" />
+
+              {/* Card Content */}
+              <div className="relative flex h-full flex-col justify-start rounded-[1rem] border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-4 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/20 group-hover:from-white/[0.06] group-hover:to-white/[0.02]">
+                <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full border border-q-brand/30 bg-q-brand/10 shadow-[0_0_15px_rgba(232,32,15,0.15)]">
+                  <Icon className="h-3.5 w-3.5 text-q-brand-ember" />
+                </div>
+                <span className="text-sm font-black leading-tight tracking-tight text-white">{value}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
 
+const carouselItems = [
+  { text: "Zero vendor lock-in", icon: Unlock },
+  { text: "No armies of engineers", icon: Users },
+  { text: "No compute-led Spark processing", icon: Cpu },
+  { text: "Built on the Open Data Contract Standard", icon: FileSignature },
+  { text: "Seamless Catalogue of Catalogues integration", icon: Network }
+];
+
 export function Hero() {
+  const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCarouselIndex((prev) => (prev + 1) % carouselItems.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section id="hero" className="relative isolate flex min-h-screen items-center bg-q-black pt-32 pb-16 lg:pt-36">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -220,18 +255,50 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <h1 className="text-[clamp(2.5rem,5vw,4.25rem)] font-black leading-[0.95] tracking-[-0.04em] text-white">
+            <h1 className="text-[clamp(3rem,6vw,5.1rem)] font-black leading-[0.95] tracking-tight text-white">
               No more data <span className="text-q-brand-ember">pipelines.</span>
             </h1>
 
-            <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-q-gray-300">
+            <div className="mt-10 max-w-xl text-xl leading-relaxed text-q-gray-300">
               <p>Turn your systems of record into governed, A.I.-ready data products, in hours, not months or years.</p>
-              <p>No need for thousands of ungoverned notebooks. No armies of engineers. No compute-led Spark processing. No vendor lock-in.</p>
-              <p>Data governance and lineage are enforced by the Open Data Contract Standard and data products are then passed to Databricks, Microsoft Fabric, Snowflake or your own on-premise database or datalake.</p>
-              <p>Operating as a Catalogue of Catalogues, <QBricksText /> can work seamlessly with your existing data management solutions.</p>
+              
+              <div className="mt-12 inline-flex items-center overflow-hidden rounded-full border border-q-brand/30 bg-q-brand/[0.08] px-6 py-3 shadow-[0_0_20px_rgba(232,32,15,0.1)] min-h-[48px] sm:h-14">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeCarouselIndex}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex items-center gap-3 sm:gap-3.5"
+                  >
+                    {(() => {
+                      const ActiveIcon = carouselItems[activeCarouselIndex].icon;
+                      return (
+                        <>
+                          <ActiveIcon className="h-5 w-5 sm:h-6 sm:w-6 shrink-0 text-q-brand-ember" />
+                          <p className="text-lg sm:text-[22px] font-bold text-white leading-tight">
+                            {carouselItems[activeCarouselIndex].text}
+                          </p>
+                        </>
+                      );
+                    })()}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <div className="mt-10 pt-8 border-t border-white/10">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-q-gray-500 mb-6">Integrates with</p>
+                <div className="flex flex-wrap items-center gap-8 sm:gap-10">
+                  <Image src="/assets/Databricks.png" alt="Databricks" width={140} height={40} className="h-5 w-auto brightness-0 invert" />
+                  <Image src="/assets/Fabric.png" alt="Microsoft Fabric" width={140} height={40} className="h-9 w-auto brightness-0 invert" />
+                  <Image src="/assets/Snowflake.png" alt="Snowflake" width={140} height={40} className="h-12 w-auto brightness-0 invert" />
+                  <Image src="/assets/Oracle-Logo.png" alt="Oracle" width={140} height={40} className="h-11 w-auto brightness-0 invert" />
+                </div>
+              </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-[0_0_50px_rgba(232,32,15,0.3)] transition-all hover:-translate-y-0.5">
                 <span className="absolute inset-0 bg-gradient-to-r from-[#c91b0d] via-[#ff3a26] to-[#ff7669]" />
                 <span className="absolute inset-y-0 -left-1/2 w-1/3 rotate-12 bg-white/30 blur-xl animate-shimmer" />
@@ -243,25 +310,7 @@ export function Hero() {
               </Link>
             </div>
 
-            <div className="mt-12 lg:mt-16">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
-                {proofPoints.map(([value, label]) => (
-                  <div key={value} className="group relative flex flex-col justify-start">
-                    {/* Hover Glow Effect */}
-                    <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-white/15 to-transparent opacity-0 blur-md transition-all duration-500 group-hover:opacity-100" />
 
-                    {/* Card Content */}
-                    <div className="relative flex h-full flex-col justify-start rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-5 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/20 group-hover:from-white/[0.06] group-hover:to-white/[0.02]">
-                      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full border border-q-brand/30 bg-q-brand/10 shadow-[0_0_15px_rgba(232,32,15,0.15)]">
-                        <CheckCircle2 className="h-4 w-4 text-q-brand-ember" />
-                      </div>
-                      <span className="mb-1.5 text-base font-black leading-tight tracking-tight text-white">{value}</span>
-                      <p className="text-[0.8rem] font-medium leading-relaxed text-q-gray-400">{label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
           <DataCommandCentre />

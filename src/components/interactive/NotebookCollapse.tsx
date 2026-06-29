@@ -44,7 +44,7 @@ export function NotebookCollapse() {
       <div className="absolute inset-0 z-10">
         <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
           <div className="z-20 mb-16 text-center">
-            <h2 className="mb-4 text-[clamp(2rem,4vw,3.5rem)] font-display font-black tracking-tighter text-white">
+            <h2 className="mb-4 text-[clamp(2rem,4vw,3.5rem)] font-display font-black tracking-tight text-white">
               Eliminate <span className="text-q-gray-500 line-through decoration-q-brand">1,000+ notebooks</span>
             </h2>
             <p className="text-xl text-q-gray-400">Replace chaos with a single Data Contract.</p>

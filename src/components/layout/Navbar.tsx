@@ -42,7 +42,7 @@ export function Navbar() {
               : "border-white/[0.06] bg-white/[0.03] backdrop-blur-xl"
           }`}
         >
-          <Link href="/" className="group flex shrink-0 items-center" aria-label="QBricks home">
+          <Link href="/" className="group flex shrink-0 items-center translate-y-[2px]" aria-label="QBricks home">
             <Logo className="h-12 w-auto transition-transform group-hover:scale-[1.03] sm:h-14" />
           </Link>
 

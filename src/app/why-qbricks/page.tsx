@@ -23,7 +23,7 @@ export default function WhyQBricksPage() {
 
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">The category problem</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
+          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
             “One platform” does not fix your metadata problem.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
@@ -46,7 +46,7 @@ export default function WhyQBricksPage() {
       <section className="section-y bg-q-black">
         <div className="container-x">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-10 text-[clamp(2.2rem,4vw,4rem)] font-black tracking-[-0.05em] text-white">Ready to fix your data foundation?</h2>
+            <h2 className="mb-10 text-[clamp(2.2rem,4vw,4rem)] font-black tracking-tight text-white">Ready to fix your data foundation?</h2>
             <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Request a demo <ArrowRight className="h-5 w-5" />
             </Link>

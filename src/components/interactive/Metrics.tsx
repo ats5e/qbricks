@@ -50,7 +50,7 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75 }}
-            className="text-[clamp(2.4rem,5.6vw,5.6rem)] font-black leading-[0.95] tracking-[-0.06em] text-white"
+            className="text-[clamp(2.4rem,5.6vw,5.6rem)] font-black leading-[0.95] tracking-tight text-white"
           >
             Everyone is racing to deploy A.I. The issue? The supporting data is not ready.
           </motion.h2>

@@ -36,7 +36,7 @@ export default function ProductPage() {
         <div className="container-x relative z-10">
           <div className="mx-auto max-w-5xl text-center">
             <p className="eyebrow mb-6">The platform</p>
-            <h1 className="text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
+            <h1 className="text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
               The platform that governs data at the source.
             </h1>
             <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-300">
@@ -53,7 +53,7 @@ export default function ProductPage() {
         <div className="container-x">
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <p className="eyebrow mb-4">How it works</p>
-            <h2 className="text-[clamp(2.4rem,5vw,4.8rem)] font-black leading-tight tracking-[-0.06em] text-white">Five steps from contract to audit trail.</h2>
+            <h2 className="text-[clamp(2.4rem,5vw,4.8rem)] font-black leading-tight tracking-tight text-white">Five steps from contract to audit trail.</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-5">
             {flow.map(([title, text], index) => (

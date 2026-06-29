@@ -18,7 +18,7 @@ export default function AboutPage() {
 
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">QBricks & Infinium</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
+          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
             The platform behind trustworthy A.I.
           </h1>
 
@@ -46,7 +46,7 @@ export default function AboutPage() {
           </div>
 
           <div className="premium-card mx-auto mt-10 max-w-4xl p-8 text-center md:p-12">
-            <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-[-0.05em] text-white">
+            <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-tight text-white">
               Try QBricks on your data.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-q-gray-400">Tell us your platform and priority use case, AML, KYC, fraud, MDM or risk, and we will tailor the demo.</p>

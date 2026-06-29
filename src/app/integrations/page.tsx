@@ -21,17 +21,17 @@ export default function IntegrationsPage() {
         </div>
 
         <div className="container-x relative z-10 text-center">
-          <p className="eyebrow mb-6">Ecosystem</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.075em] text-white">
-            Built to fit your modern data stack.
+          <p className="eyebrow mb-6">Integrations</p>
+          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
+            Works with the platforms your organisation already runs on.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases.
+            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases. QBricks is built to fit your modern data stack perfectly.
           </p>
         </div>
       </section>
 
-      <Integrations showDescriptions />
+      <Integrations showDescriptions hideHeading />
       
       <div className="container-x relative z-10 pb-20 pt-10 text-center">
         <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">

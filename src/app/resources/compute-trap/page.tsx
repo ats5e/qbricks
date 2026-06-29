@@ -20,7 +20,7 @@ export default function ComputeTrapPage() {
         
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Resources</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,6.5rem)] font-black leading-[0.95] tracking-[-0.05em] text-white">
+          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,6.5rem)] font-black leading-[0.95] tracking-tight text-white">
             The compute trap
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">

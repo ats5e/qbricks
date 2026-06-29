@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -18,7 +18,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:david.aston@infinium.consulting?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sales@infinium.consulting?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -42,8 +42,8 @@ export default function ContactPage() {
 
       <div className="container-x relative z-10 pt-40 md:pt-48">
         <div className="mb-16 text-center md:mb-24">
-          <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-[-0.06em] text-white">
-            Try QBricks on your data.
+          <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-white">
+            Try <span className="text-q-brand-ember font-bold">Q</span><span className="font-normal text-white">Bricks</span> on your data.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-q-gray-300">
             Book a 30-minute demo and we will show record-to-report on a representative dataset.
@@ -57,23 +57,49 @@ export default function ContactPage() {
             <div className="premium-card relative overflow-hidden p-8 md:p-10">
               <div className="absolute -right-20 -top-20 -z-10 h-64 w-64 rounded-full bg-q-brand opacity-[0.08] blur-3xl" />
               
-              <h2 className="mb-8 text-2xl font-black text-white">Our Office</h2>
+              <h2 className="mb-8 text-2xl font-black text-white">Our Offices</h2>
               
-              <div className="mb-10 flex items-start gap-4 text-q-gray-300">
-                <MapPin className="mt-1 h-6 w-6 shrink-0 text-q-brand-ember" />
-                <div className="leading-relaxed">
-                  <strong className="block text-lg text-white">Infinium Consulting</strong>
-                  Level 02, Innovation One<br />
-                  Dubai International Financial Centre<br />
-                  Dubai, UAE
+              <div className="mb-10 grid gap-8 md:grid-cols-2 text-q-gray-300">
+                <div className="flex items-start gap-4">
+                  <div className="mt-0.5 shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <div className="flex flex-col gap-1.5 leading-relaxed">
+                    <h3 className="text-lg font-bold text-white mb-1">Dubai Office</h3>
+                    <p className="text-sm text-q-gray-300">Level 02, Innovation One</p>
+                    <p className="text-sm text-q-gray-300">Dubai International Financial Centre</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="mt-0.5 shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <div className="flex flex-col gap-1.5 leading-relaxed">
+                    <h3 className="text-lg font-bold text-white mb-1">Amsterdam Office</h3>
+                    <p className="text-sm text-q-gray-300">Edge Olympic, Fred. Roeskestraat 115</p>
+                    <p className="text-sm text-q-gray-300">Amsterdam</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="mb-10 flex items-center gap-4 text-q-gray-300">
-                <Mail className="h-6 w-6 shrink-0 text-q-brand-ember" />
-                <a href="mailto:david.aston@infinium.consulting" className="transition-colors hover:text-white font-medium">
-                  david.aston@infinium.consulting
-                </a>
+              <div className="mb-10 flex flex-col gap-5 text-q-gray-300">
+                <div className="flex items-center gap-4">
+                  <div className="shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
+                    <Mail className="h-4 w-4" />
+                  </div>
+                  <a href="mailto:sales@infinium.consulting" className="text-sm font-medium transition-colors hover:text-white">
+                    sales@infinium.consulting
+                  </a>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
+                    <Phone className="h-4 w-4" />
+                  </div>
+                  <a href="tel:+310646627480" className="text-sm font-medium transition-colors hover:text-white">
+                    +31 (0) 646627480
+                  </a>
+                </div>
               </div>
 
               {/* DIFC SVG Graphic */}

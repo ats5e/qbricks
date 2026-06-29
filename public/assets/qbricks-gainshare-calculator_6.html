@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QBricks · Gain-Share Negotiation Calculator</title>
+<style>
+:root{--red:#C8102E;--red-d:#9E0C24;--ink:#0A0A0A;--paper:#fff;--mist:#F4F4F4;--line:#E2E0DD;
+--g:#6E6E6E;--gm:#BFBFBF;--amber:#E8960C;}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--ink);background:var(--mist)}
+.top{background:var(--ink);color:#fff;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top .logo{height:38px;width:auto;display:block}
+.top h1{font-size:15px;margin:0;letter-spacing:.03em}
+.top .sub{color:var(--red);font-size:11px;font-weight:bold}
+.top .right{margin-left:auto;display:flex;gap:8px}
+.btn{border:1px solid #fff;background:transparent;color:#fff;padding:6px 12px;font-size:10.5px;font-weight:bold;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:Arial}
+.btn:hover{background:#fff;color:var(--ink)}
+.btn.red{background:var(--red);border-color:var(--red)}
+.btn.red:hover{background:var(--red-d);color:#fff}
+.wrap{display:grid;grid-template-columns:360px 1fr;gap:18px;padding:18px 24px;max-width:1500px;margin:0 auto}
+.panel{background:#fff;border:1px solid var(--line);padding:14px 16px}
+.panel h3{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--red)}
+.panel .note{font-size:9.5px;color:var(--g);margin:0 0 10px}
+.ctrl{margin-bottom:11px}
+.ctrl .lr{display:flex;justify-content:space-between;align-items:baseline}
+.ctrl label{font-size:10.5px;font-weight:bold;color:#333}
+.ctrl .val{font-family:Consolas,Menlo,monospace;font-size:12px;font-weight:bold;color:var(--red)}
+.ctrl input[type=range]{width:100%;accent-color:var(--red);height:22px;margin:2px 0 0}
+.ctrl input[type=number]{width:90px;border:1px solid var(--gm);padding:4px 6px;font-family:Consolas,monospace;font-size:12px;text-align:right}
+.scen{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 12px}
+.scen button{border:1px solid var(--ink);background:#fff;color:var(--ink);font-size:10px;font-weight:bold;padding:5px 9px;cursor:pointer;border-radius:2px;font-family:Arial}
+.scen button:hover{background:var(--ink);color:#fff}
+hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}
+.kpi{background:#fff;border:1px solid var(--line);border-bottom:3px solid var(--red);padding:10px 12px}
+.kpi .k{font-size:8.5px;font-weight:bold;color:var(--g);letter-spacing:.06em;text-transform:uppercase}
+.kpi .v{font-size:21px;font-weight:bold;margin-top:3px;font-family:Arial}
+.kpi .v.red{color:var(--red)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:#fff;border:1px solid var(--line);padding:12px 14px;position:relative;display:flex;flex-direction:column}
+.card .cicon{position:absolute;top:10px;right:12px;width:28px;height:28px;color:var(--ink)}
+.card .cicon svg{width:100%;height:100%}
+.card .roi-foot{margin:10px 0 0;padding-top:8px;border-top:1px solid var(--line);font-size:10px;color:var(--g)}
+.card h4{margin:0 0 4px;font-size:13px;padding:0 38px 6px 0;border-bottom:2px solid var(--mist)}
+.card .basis{font-size:9.5px;color:var(--g);margin:0 0 8px;min-height:24px}
+table{border-collapse:collapse;width:100%}
+th{background:var(--ink);color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:.04em;padding:5px 7px;text-align:right}
+th:first-child{text-align:left}
+td{border:1px solid var(--mist);padding:4px 7px;font-size:11px;text-align:right;font-family:Consolas,Menlo,monospace}
+td:first-child{text-align:left;font-family:Arial;font-weight:bold;font-size:10.5px}
+tr.tot td{background:var(--mist);font-weight:bold}
+td.fee{color:var(--red)}
+.combined{margin-top:14px}
+.perp{background:#171717;color:#fff;padding:10px 14px;margin-top:12px;display:flex;gap:10px;align-items:center;font-size:11.5px}
+.perp .mark{width:10px;height:10px;background:var(--red);transform:rotate(45deg);flex:none}
+.perp b{color:#fff}.perp span{color:#bbb}
+.foot{padding:6px 24px 20px;font-size:9px;color:var(--g);max-width:1500px;margin:0 auto}
+
+/* tabs */
+.tabbar{background:#fff;border-bottom:2px solid var(--ink);display:flex;gap:0;padding:0 24px}
+.tabbar button{background:none;border:0;padding:10px 16px;font-size:11px;font-weight:bold;letter-spacing:.05em;color:var(--g);border-bottom:3px solid transparent;margin-bottom:-2px;text-transform:uppercase;cursor:pointer;font-family:Arial}
+.tabbar button.on{color:var(--ink);border-bottom-color:var(--red)}
+.tabpage{display:none}
+.tabpage.on{display:block}
+/* benchmarks */
+.bwrap{padding:18px 24px;max-width:1500px;margin:0 auto}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.bcard{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ink);padding:14px 16px}
+.bcard h4{margin:0 0 2px;font-size:13px}
+.bcard .bsub{font-size:9.5px;color:var(--g);margin:0 0 10px;min-height:24px}
+.bcard .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px}
+.bcard .row label{font-size:10.5px;font-weight:bold;color:#333}
+.bcard .row input{width:86px;border:1px solid var(--gm);padding:4px 6px;font-family:Consolas,monospace;font-size:11.5px;text-align:right}
+.bcard .out{border-top:1px solid var(--line);margin-top:10px;padding-top:9px}
+.bcard .out .row{margin-bottom:5px}
+.bcard .out .v{font-family:Consolas,monospace;font-weight:bold;font-size:12px}
+.bcard .out .v.red{color:var(--red)}
+.bcard .qb{background:var(--mist);margin:10px -16px 0;padding:9px 16px}
+.bcard .qb label{font-size:10.5px;font-weight:bold}
+.bcard .qb input[type=range]{width:100%;accent-color:var(--red);height:20px}
+.bcard .apply{display:flex;gap:6px;margin-top:10px}
+.bcard .apply button{flex:1;border:1px solid var(--ink);background:#fff;color:var(--ink);font-size:9.5px;font-weight:bold;padding:6px 4px;cursor:pointer;border-radius:2px;font-family:Arial;text-transform:uppercase;letter-spacing:.03em}
+.bcard .apply button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.bshared{background:#fff;border:1px solid var(--line);padding:11px 16px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.bshared label{font-size:10.5px;font-weight:bold}
+.bshared input{width:70px;border:1px solid var(--gm);padding:4px 6px;font-family:Consolas,monospace;font-size:11.5px;text-align:right}
+.bshared .src{margin-left:auto;font-size:9px;color:var(--g);max-width:560px}
+table.bench{border-collapse:collapse;width:100%;background:#fff;margin-top:14px}
+table.bench th{background:var(--ink);color:#fff;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;padding:6px 9px;text-align:right}
+table.bench th:first-child{text-align:left}
+table.bench td{border:1px solid var(--mist);padding:5px 9px;font-size:11.5px;text-align:right;font-family:Consolas,Menlo,monospace}
+table.bench td:first-child{text-align:left;font-family:Arial;font-weight:bold;font-size:11px}
+table.bench td.red{color:var(--red);font-weight:bold}
+
+/* explainer tabs */
+.xwrap{padding:18px 24px;max-width:1180px;margin:0 auto}
+.xwrap h2{font-size:14px;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--red);padding-bottom:5px;margin:22px 0 10px}
+.xwrap h2:first-child{margin-top:0}
+.xwrap p{font-size:12.5px;line-height:1.55;color:#222;max-width:88ch}
+.xwrap .muted{color:var(--g);font-size:10.5px}
+.mblock{background:#fff;border:1px solid var(--line);border-left:3px solid var(--red);padding:12px 16px;margin-bottom:10px}
+.mblock h4{margin:0 0 4px;font-size:12px}
+.mblock .fml{font-family:Consolas,Menlo,monospace;font-size:11.5px;color:var(--ink);background:var(--mist);padding:7px 10px;margin:7px 0;display:block;white-space:pre-wrap}
+.mblock p{font-size:11.5px;margin:4px 0 0;color:#333}
+.steps{counter-reset:st;list-style:none;padding:0;margin:8px 0}
+.steps li{counter-increment:st;position:relative;padding:0 0 12px 34px;font-size:12px;color:#222}
+.steps li::before{content:counter(st);position:absolute;left:0;top:-1px;width:21px;height:21px;background:var(--ink);color:#fff;border-radius:50%;font-size:10.5px;font-weight:bold;display:flex;align-items:center;justify-content:center}
+.steps li b{display:block}
+table.assump{border-collapse:collapse;width:100%;background:#fff;margin-top:10px}
+table.assump th{background:var(--ink);color:#fff;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;padding:6px 9px;text-align:left}
+table.assump td{border:1px solid var(--mist);padding:6px 9px;font-size:11px;vertical-align:top}
+table.assump td:nth-child(2){font-family:Consolas,Menlo,monospace;white-space:nowrap}
+table.assump tr.grp td{background:var(--mist);font-weight:bold;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+details.faq{background:#fff;border:1px solid var(--line);margin-bottom:7px}
+details.faq summary{cursor:pointer;padding:10px 14px;font-size:12.5px;font-weight:bold;list-style:none;display:flex;gap:10px;align-items:baseline}
+details.faq summary::before{content:"+";color:var(--red);font-weight:bold;font-family:Consolas,monospace}
+details.faq[open] summary::before{content:"−"}
+details.faq .a{padding:0 14px 12px 32px;font-size:12px;line-height:1.55;color:#333}
+.gloss{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.gloss div{background:#fff;border:1px solid var(--line);padding:8px 12px;font-size:11px}
+.gloss b{color:var(--red)}
+
+@media print{
+  body{background:#fff}
+  .tabbar,.top .right{display:none}
+  .tabpage{display:none!important}
+  #tab-calc{display:block!important}
+  .wrap{display:block;padding:10px 0}
+  .wrap>div:first-child{display:none}
+  .kpis{grid-template-columns:repeat(6,1fr)}
+  .cards{grid-template-columns:1fr 1fr}
+  .card,.panel,.kpi{break-inside:avoid;border-color:#bbb}
+  .top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.flash{animation:flash 1.2s ease}
+@keyframes flash{0%{box-shadow:0 0 0 3px var(--red)}100%{box-shadow:none}}
+
+@media(max-width:1000px){.wrap{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:1fr}.bgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top">
+  <img class="logo" src="data:image/png;base64,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MLTPT6pbLNsNNU3AQivp7hT/AGNc7HH5RzsPa3t5x8ZI/FHcFCba7dXXO2tRPJpG9yUcVSQaimkjbLDKR1EscCOL8YYPiutuZuRrPca5x12rr3NcHQgiCLhEcMIPXwRtAaM8snGTgZKuUwynoy7vVO0muH10sD6uyXBrYLnTsxxlgOWyMz8thJwDyIJHLORZHo3VOn9YWCC+6butPcrfOMtlhdnhPa1w62uHa04IVQq97RmsdU6NuP2Q0tfq+0VB+E6mmLQ8dzm/BcPAgqKta1bpHS+raNtJqbT9su8LfgNq6dshZ4tJGW+ohYTTdHvZmnqvOY9v7UX5ziR0r2f2HPLfoUStNdMXdO2xtiulNYb2AMGSeldFIfXE5rf+Fe7WdNjWboC2k0hp+GUjk+SSaQA+jiH61UTfo6agtNtjpaOnpqGhpY8MiiY2OKJg7ABgNA9ig102d87drJ8egtI1baqzUc4mr62M5ZVTNyGsYe2NuSeLqc7GOQBOpdzt89y9w4H0d+1DJHbX/CoKJgggd4Oa3m8flErWqgIiIoiIgIiICIiAiIgIiICIiD61zmuDmktcDkEHmFlll3A1DbmNiknZWxDkBUNy4D8oYPtysSRcdy1RcjFcZd3Rblq9BXx6a5NE+U9fXx92yot1pgP8rZI3HvbUEfraV167dO5SMLaO201OT8p7jIR+oLXqLrxt+nic8P5ZuvtpvldPDN+celMT94jL0r3fbteZOO41ss4By1mcMb6GjkvNRF2qaYpjFMYhrl+/dv1zcu1TVVPfM5kREX04hERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//2Q==" alt="QBricks">
+  <div><h1>GAIN-SHARE NEGOTIATION CALCULATOR</h1><div class="sub">Live ROI &amp; split — move the levers, the deal reprices</div></div>
+  <div class="right"><button class="btn" id="btnExport">Export</button><button class="btn" id="btnImport">Import</button><button class="btn" id="btnPrint">Print</button><button class="btn" id="btnCopy">Copy summary</button><button class="btn red" id="btnReset">Reset defaults</button><input type="file" id="fileImport" accept=".json" hidden></div>
+</div>
+
+<div class="tabbar">
+  <button data-t="calc" class="on">Calculator</button>
+  <button data-t="bench">Compute benchmarks</button>
+  <button data-t="method">Methodology</button>
+  <button data-t="assump">Assumptions &amp; sources</button>
+  <button data-t="faq">FAQ</button>
+</div>
+
+<div class="tabpage on" id="tab-calc">
+<div class="wrap">
+  <div>
+    <div class="panel">
+      <h3>Gain-share schedule</h3>
+      <p class="note">The negotiation levers. Fees apply to audited savings only.</p>
+      <div class="scen">
+        <button data-s="20,25,30,30">A · Standard 20/25/30</button>
+        <button data-s="15,20,25,25">B · Push-back 15/20/25</button>
+        <button data-s="25,30,35,35">C · Premium 25/30/35</button>
+      </div>
+      <div class="ctrl"><div class="lr"><label>Year 1 share</label><span class="val" id="vS1"></span></div><input type="range" id="s1" min="5" max="50" step="1" value="20"></div>
+      <div class="ctrl"><div class="lr"><label>Year 2 share</label><span class="val" id="vS2"></span></div><input type="range" id="s2" min="5" max="50" step="1" value="25"></div>
+      <div class="ctrl"><div class="lr"><label>Year 3 share</label><span class="val" id="vS3"></span></div><input type="range" id="s3" min="5" max="50" step="1" value="30"></div>
+      <div class="ctrl"><div class="lr"><label>Year 4+ share (perpetuity on extension)</label><span class="val" id="vS4"></span></div><input type="range" id="s4" min="5" max="50" step="1" value="30"></div>
+    </div>
+
+    <div class="panel" style="margin-top:14px">
+      <h3>Deal mechanics</h3>
+      <p class="note">Optional contract levers, reflected in the combined view and NPV.</p>
+      <div class="ctrl"><div class="lr"><label>Annual fee cap (€'000/yr, 0 = none)</label><input type="number" id="feeCap" value="0" min="0" step="50"></div></div>
+      <div class="ctrl"><div class="lr"><label>Discount rate % (for NPV)</label><input type="number" id="disc" value="8" min="0" step="0.5"></div></div>
+    </div>
+
+    <div class="panel" style="margin-top:14px">
+      <h3>Cost drivers</h3>
+      <p class="note">Cost to the bank = day rate × working days × FTE.</p>
+      <div class="ctrl"><div class="lr"><label>Day rate (€/day)</label><input type="number" id="dayRate" value="1000" min="0" step="50"></div></div>
+      <div class="ctrl"><div class="lr"><label>Working days / year</label><input type="number" id="workDays" value="227" min="1" step="1"></div></div>
+      <div class="ctrl"><div class="lr"><label>→ Cost per FTE / year</label><span class="val" id="vFTE"></span></div></div>
+      <hr>
+      <div class="ctrl"><div class="lr"><label>01 · Remediation FTE</label><span class="val" id="vF1"></span></div><input type="range" id="fte1" min="0" max="80" step="1" value="30"></div>
+      <div class="ctrl"><div class="lr"><label>01 · Realisation Y1 / Y2 / Y3 (%)</label></div>
+        <div style="display:flex;gap:6px">
+          <input type="number" id="r1" value="60" min="0" max="100" style="width:70px">
+          <input type="number" id="r2" value="85" min="0" max="100" style="width:70px">
+          <input type="number" id="r3" value="100" min="0" max="100" style="width:70px">
+        </div></div>
+      <hr>
+      <div class="ctrl"><div class="lr"><label>02 · Pipeline team FTE</label><span class="val" id="vF2"></span></div><input type="range" id="fte2" min="0" max="40" step="1" value="12"></div>
+      <div class="ctrl"><div class="lr"><label>02 · % effort removed</label><span class="val" id="vP2"></span></div><input type="range" id="rem2" min="0" max="100" step="5" value="90"></div>
+      <hr>
+      <div class="ctrl"><div class="lr"><label>03 · Dev/test compute baseline (€/yr)</label><input type="number" id="comp3" value="222000" min="0" step="10000"></div></div>
+      <div class="ctrl"><div class="lr"><label>03 · % avoided</label><span class="val" id="vP3"></span></div><input type="range" id="rem3" min="0" max="100" step="5" value="70"></div>
+      <hr>
+      <div class="ctrl"><div class="lr"><label>04 · Run team FTE</label><span class="val" id="vF4"></span></div><input type="range" id="fte4" min="0" max="20" step="1" value="4"></div>
+      <div class="ctrl"><div class="lr"><label>04 · % people effort removed</label><span class="val" id="vP4a"></span></div><input type="range" id="rem4a" min="0" max="100" step="5" value="75"></div>
+      <div class="ctrl"><div class="lr"><label>04 · Batch compute baseline (€/yr)</label><input type="number" id="comp4" value="540000" min="0" step="10000"></div></div>
+      <div class="ctrl"><div class="lr"><label>04 · % compute reduced</label><span class="val" id="vP4b"></span></div><input type="range" id="rem4b" min="0" max="100" step="5" value="60"></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="kpis" id="kpis"></div>
+    <div class="cards" id="cards"></div>
+    <div class="panel combined">
+      <h3>Combined — one business area, three years</h3>
+      <table id="combined"></table>
+      <div id="capNote" style="display:none;font-size:9.5px;color:var(--g);margin-top:6px"></div>
+      <div id="npvRow" style="display:flex;gap:26px;margin:12px 0 4px;flex-wrap:wrap"></div>
+      <h3 style="margin-top:14px">Five-year view (Y4–Y5 at the extension share)</h3>
+      <svg id="dealChart" viewBox="0 0 660 190" style="width:100%;margin-top:4px"></svg>
+      <h3 style="margin-top:14px">Schedule scenarios on these drivers</h3>
+      <table class="bench" id="scenCompare"></table>
+      <div class="perp"><span class="mark"></span><div><b>Year 4+ on extension:</b> <span id="perpLine"></span></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="tabpage" id="tab-bench">
+<div class="bwrap">
+  <div class="bshared">
+    <label>FX USD → EUR</label><input type="number" id="bFx" value="0.92" step="0.01" min="0">
+    <label>Months / year</label><span style="font-family:Consolas,monospace;font-size:11.5px">12</span>
+    <span class="src">List-price anchors as at Jun 2026 (public pricing guides; editable): Databricks Premium ~$0.15/DBU jobs to ~$0.55/DBU all-purpose, cloud VMs billed separately · Snowflake credits ~$2–4 by edition/region · Fabric ~$0.18/CU-hr PAYG, ~40% off on 1-yr reserved · BigQuery Editions $0.04–0.10/slot-hr (commit ~−20%/−40%), on-demand $6.25/TiB. Verify against your agreement and region.</span>
+  </div>
+
+  <div class="bgrid">
+    <div class="bcard">
+      <h4>Databricks</h4>
+      <p class="bsub">DBU consumption × rate, plus separate cloud VM/infra uplift (dual bill)</p>
+      <div class="row"><label>DBUs / month</label><input type="number" id="dbxU" value="60000" step="5000" min="0"></div>
+      <div class="row"><label>$ per DBU (blended)</label><input type="number" id="dbxR" value="0.35" step="0.05" min="0"></div>
+      <div class="row"><label>Cloud infra uplift %</label><input type="number" id="dbxI" value="60" step="5" min="0"></div>
+      <div class="out">
+        <div class="row"><label>Annual compute cost</label><span class="v" id="dbxCost"></span></div>
+        <div class="qb"><div class="row" style="margin:0"><label>QBricks reduction (incremental)</label><span class="v red" id="dbxPv"></span></div><input type="range" id="dbxP" min="0" max="100" step="5" value="60"></div>
+        <div class="row" style="margin-top:9px"><label>Annual saving with QBricks</label><span class="v red" id="dbxSave"></span></div>
+      </div>
+      <div class="apply"><button onclick="applyBench('dbx','c3')">→ Card 03 baseline</button><button onclick="applyBench('dbx','c4')">→ Card 04 baseline</button></div>
+    </div>
+
+    <div class="bcard">
+      <h4>Snowflake</h4>
+      <p class="bsub">Credit consumption × credit price (compute incl. infra; storage separate)</p>
+      <div class="row"><label>Credits / month</label><input type="number" id="snfU" value="6000" step="500" min="0"></div>
+      <div class="row"><label>$ per credit (edition)</label><input type="number" id="snfR" value="3.00" step="0.25" min="0"></div>
+      <div class="row"><label>&nbsp;</label><span style="font-size:9px;color:var(--g)">Std ~$2 · Ent ~$3 · BC ~$4</span></div>
+      <div class="out">
+        <div class="row"><label>Annual compute cost</label><span class="v" id="snfCost"></span></div>
+        <div class="qb"><div class="row" style="margin:0"><label>QBricks reduction (incremental)</label><span class="v red" id="snfPv"></span></div><input type="range" id="snfP" min="0" max="100" step="5" value="60"></div>
+        <div class="row" style="margin-top:9px"><label>Annual saving with QBricks</label><span class="v red" id="snfSave"></span></div>
+      </div>
+      <div class="apply"><button onclick="applyBench('snf','c3')">→ Card 03 baseline</button><button onclick="applyBench('snf','c4')">→ Card 04 baseline</button></div>
+    </div>
+
+    <div class="bcard">
+      <h4>Microsoft Fabric</h4>
+      <p class="bsub">Capacity Units × $/CU-hour × 730 hrs, with optional reserved discount</p>
+      <div class="row"><label>Capacity Units (e.g. F128 = 128)</label><input type="number" id="fabU" value="128" step="2" min="0"></div>
+      <div class="row"><label>$ per CU-hour</label><input type="number" id="fabR" value="0.18" step="0.01" min="0"></div>
+      <div class="row"><label>Reserved discount %</label><input type="number" id="fabD" value="0" step="5" min="0" max="60"></div>
+      <div class="out">
+        <div class="row"><label>Annual compute cost</label><span class="v" id="fabCost"></span></div>
+        <div class="qb"><div class="row" style="margin:0"><label>QBricks reduction (incremental)</label><span class="v red" id="fabPv"></span></div><input type="range" id="fabP" min="0" max="100" step="5" value="60"></div>
+        <div class="row" style="margin-top:9px"><label>Annual saving with QBricks</label><span class="v red" id="fabSave"></span></div>
+      </div>
+      <div class="apply"><button onclick="applyBench('fab','c3')">→ Card 03 baseline</button><button onclick="applyBench('fab','c4')">→ Card 04 baseline</button></div>
+    </div>
+
+    <div class="bcard">
+      <h4>Google BigQuery (GCP)</h4>
+      <p class="bsub">Editions capacity: baseline slots × $/slot-hour × 730 hrs, with commit discount</p>
+      <div class="row"><label>Baseline slots</label><input type="number" id="gcpU" value="400" step="50" min="0"></div>
+      <div class="row"><label>$ per slot-hour (edition)</label><input type="number" id="gcpR" value="0.06" step="0.01" min="0"></div>
+      <div class="row"><label>&nbsp;</label><span style="font-size:9px;color:var(--g)">Std $0.04 · Ent $0.06 · EP $0.10</span></div>
+      <div class="row"><label>Commit discount %</label><input type="number" id="gcpD" value="0" step="5" min="0" max="60"></div>
+      <div class="row"><label>&nbsp;</label><span style="font-size:9px;color:var(--g)">1-yr ~−20% · 3-yr ~−40%</span></div>
+      <div class="out">
+        <div class="row"><label>Annual compute cost</label><span class="v" id="gcpCost"></span></div>
+        <div class="qb"><div class="row" style="margin:0"><label>QBricks reduction (incremental)</label><span class="v red" id="gcpPv"></span></div><input type="range" id="gcpP" min="0" max="100" step="5" value="60"></div>
+        <div class="row" style="margin-top:9px"><label>Annual saving with QBricks</label><span class="v red" id="gcpSave"></span></div>
+      </div>
+      <div class="apply"><button onclick="applyBench('gcp','c3')">→ Card 03 baseline</button><button onclick="applyBench('gcp','c4')">→ Card 04 baseline</button></div>
+    </div>
+  </div>
+
+  <table class="bench" id="benchTable"></table>
+  <p style="font-size:9px;color:var(--g);margin-top:8px">Benchmarks are illustrative consumption profiles at public list-price anchors, in EUR at the FX rate above. "→ Card 03/04 baseline" pushes the platform's annual cost and QBricks reduction into the Calculator tab, where the gain-share schedule prices it. Storage, networking and licence costs excluded.</p>
+</div>
+</div>
+
+
+<div class="tabpage" id="tab-method">
+<div class="xwrap">
+  <h2>How the model works — with your current values</h2>
+  <p>Everything below recalculates live from the Calculator tab. Change an input there and these formulas update, so the maths behind every number on screen is always inspectable.</p>
+  <div id="methBlocks"></div>
+
+  <h2>The evidence loop — why a client can trust the numbers</h2>
+  <ol class="steps">
+    <li><b>Engage with the 5×5 (5 days)</b>Five days, hands-on with the client's own estate: the use case is selected, the savings opportunity sized and the baseline approach scoped — so the POC starts with a measurement plan, not a blank page.</li>
+    <li><b>Prove and baseline in the POC (8–12 weeks)</b>The cost baseline — team rosters, rate card, compute billing — is measured with the client and agreed in writing, and savings are proven against it on one real use case. No baseline, no fee. 5×5 and POC fees are credited against deployment.</li>
+    <li><b>Deploy and evidence continuously</b>QBricks produces before/after files for every change and platform telemetry for every run. Compute savings are read from the platform's own billing; people savings against the baselined roster.</li>
+    <li><b>Certify quarterly, invoice in arrears</b>Savings are certified against the ledger each quarter; the gain-share fee is invoiced only on certified amounts. If savings stop, fees stop.</li>
+  </ol>
+
+  <h2>Why the share rises (20% → 25% → 30%)</h2>
+  <p>The ascending schedule is deliberately client-friendly at the start: in Year 1 — when the client carries adoption effort and the savings are newest — the bank keeps 80% of every euro. The share rises only as savings become proven, embedded run-rate. It also gives both sides a clean Year-3 decision point: extend at 30% in perpetuity, or part ways with the client keeping 100% of an established saving. One-off events (e.g. a single data migration) are priced once, at the Year-1 rate.</p>
+
+  <h2>Glossary</h2>
+  <div class="gloss">
+    <div><b>Audited saving</b> — a cost reduction versus the agreed baseline, evidenced by telemetry or roster and certified quarterly.</div>
+    <div><b>Baseline</b> — the client-measured cost position (people, rates, compute) agreed in the POC before deployment.</div>
+    <div><b>Gain-share</b> — Infinium's fee as an agreed % of audited savings; no licence-style fixed fee in this schedule.</div>
+    <div><b>Run-rate</b> — the annualised saving once fully realised; the basis of the Year-4+ extension.</div>
+    <div><b>DBU</b> — Databricks Unit, the platform's per-hour compute billing unit; cloud VMs are billed separately.</div>
+    <div><b>Credit</b> — Snowflake's compute billing unit; dollar value depends on edition, region and cloud.</div>
+    <div><b>CU</b> — Fabric Capacity Unit; an F-SKU is a fixed pool of CUs shared by all workloads.</div>
+    <div><b>Incremental processing</b> — QBricks' DBSP engine processes only what changed, eliminating full reloads — the source of the compute reductions.</div>
+    <div><b>Before/after files</b> — the per-change evidence pair QBricks retains, making every transformation auditable.</div>
+    <div><b>ODCS</b> — Open Data Contract Standard; the contract QBricks enforces on every record in motion.</div>
+  </div>
+</div>
+</div>
+
+<div class="tabpage" id="tab-assump">
+<div class="xwrap">
+  <h2>Every default, its basis, and what replaces it in a real deal</h2>
+  <p>The tool ships with illustrative defaults so the model is concrete. Each one is replaced by a client-measured value in the 8–12 week POC — that substitution is the point of the baseline-first mechanism.</p>
+  <table class="assump">
+    <tr><th style="width:24%">Parameter</th><th style="width:14%">Default</th><th style="width:31%">Basis of the default</th><th>In a real deal</th></tr>
+    <tr class="grp"><td colspan="4">Cost of people</td></tr>
+    <tr><td>Day rate per FTE</td><td>€1,000</td><td>Blended loaded rate (internal + contractor mix) typical of bank data functions; illustrative</td><td>Client rate card / finance-approved blended rate, agreed in the POC</td></tr>
+    <tr><td>Working days per year</td><td>227</td><td>Typical NL/EU net working days after leave and public holidays</td><td>Client HR standard</td></tr>
+    <tr><td>Cost per FTE (derived)</td><td>€227k</td><td>Day rate × working days</td><td>Recomputed from agreed inputs</td></tr>
+    <tr class="grp"><td colspan="4">Card 01 — data remediation</td></tr>
+    <tr><td>Remediation FTE</td><td>30</td><td>Illustrative Transaction Monitoring data operation</td><td>Measured exception-handling roster in the POC</td></tr>
+    <tr><td>Realisation ramp</td><td>60 / 85 / 100%</td><td>Cautious adoption profile — releases lag deployment</td><td>Agreed transition plan; gate criteria per quarter</td></tr>
+    <tr class="grp"><td colspan="4">Card 02 — pipeline engineering</td></tr>
+    <tr><td>Pipeline build &amp; change team</td><td>12 FTE</td><td>Illustrative standing team for one business area</td><td>Client engineering org chart / vendor SOWs</td></tr>
+    <tr><td>% effort removed</td><td>90%</td><td>Contract-driven generation replaces hand-built pipelines; human approves, not codes</td><td>Validated on real feeds during the POC</td></tr>
+    <tr class="grp"><td colspan="4">Cards 03 &amp; 04 — compute and run</td></tr>
+    <tr><td>Dev/test compute baseline</td><td>€222k/yr</td><td>Illustrative mid-size profile; the Compute benchmarks tab prices platform-specific baselines</td><td>Platform billing export for the in-scope workloads</td></tr>
+    <tr><td>% build-phase compute avoided</td><td>70%</td><td>Incremental processing removes full-reload dev/test cycles</td><td>Measured in POC from billing telemetry</td></tr>
+    <tr><td>Batch compute baseline</td><td>€540k/yr</td><td>Illustrative nightly reprocessing estate</td><td>Platform billing export; or apply a benchmark from the Compute benchmarks tab</td></tr>
+    <tr><td>% run compute reduced</td><td>60%</td><td>Incremental streams replace nightly full reloads</td><td>Measured post-cutover from billing telemetry</td></tr>
+    <tr><td>Run &amp; maintain team / % removed</td><td>4 FTE / 75%</td><td>Agentic metadata management replaces notebook upkeep; human in the loop</td><td>Baselined support roster; certified quarterly</td></tr>
+    <tr class="grp"><td colspan="4">Commercial schedule</td></tr>
+    <tr><td>Gain-share Y1 / Y2 / Y3</td><td>20 / 25 / 30%</td><td>Standard schedule; ascending as savings become proven run-rate</td><td>Per Order Form; scenario buttons model counters</td></tr>
+    <tr><td>Year 4+ (extension)</td><td>30%</td><td>Perpetuity on the established run-rate, by agreement</td><td>Extension clause in the Order Form</td></tr>
+    <tr><td>One-off events</td><td>Y1 rate (20%)</td><td>Single events (e.g. one migration) never progress up the schedule</td><td>Priced per event in the savings ledger</td></tr>
+    <tr class="grp"><td colspan="4">Deal mechanics</td></tr>
+    <tr><td>Discount rate (NPV)</td><td>8%</td><td>Illustrative cost-of-capital proxy; headline tables remain nominal</td><td>Client treasury / WACC rate</td></tr>
+    <tr><td>Annual fee cap</td><td>none</td><td>Optional contractual ceiling on Infinium's annual fee; savings above the cap revert 100% to the client</td><td>Set per Order Form; modelled in the Deal mechanics panel</td></tr>
+    <tr><td>Extension years shown</td><td>Y4–Y5</td><td>Chart illustrates two extension years at the Year-4+ share</td><td>Actual extension term per Order Form</td></tr>
+    <tr class="grp"><td colspan="4">Compute benchmark anchors (list prices, as at Jun 2026)</td></tr>
+    <tr><td>Databricks $/DBU</td><td>$0.15–0.55</td><td>Public pricing guides: jobs ~$0.15 to all-purpose ~$0.55 (Premium); cloud VMs billed separately — the uplift field covers this</td><td>Client's negotiated DBU rate and commit discounts</td></tr>
+    <tr><td>Snowflake $/credit</td><td>$2–4</td><td>Standard ~$2 · Enterprise ~$3 · Business Critical ~$4; varies by region/cloud</td><td>Client's capacity agreement rate</td></tr>
+    <tr><td>Fabric $/CU-hour</td><td>$0.18</td><td>PAYG list; ~40% lower on 1-yr reserved capacity</td><td>Client's EA pricing and reservation mix</td></tr>
+    <tr><td>BigQuery $/slot-hour</td><td>$0.04–0.10</td><td>Editions: Standard $0.04 · Enterprise $0.06 · Enterprise Plus $0.10 (US multi-region); commitments ~−20% (1-yr) / −40% (3-yr); on-demand alternative $6.25/TiB scanned</td><td>Client's edition, region and commitment mix</td></tr>
+    <tr><td>FX USD→EUR</td><td>0.92</td><td>Indicative conversion for list prices quoted in USD</td><td>Contract currency is EUR; rate per finance policy</td></tr>
+  </table>
+  <p class="muted" style="margin-top:10px">Exclusions throughout: storage, networking, software licences, severance. Savings from redeployment vs. headcount reduction are treated per the baseline definition agreed in the POC.</p>
+</div>
+</div>
+
+<div class="tabpage" id="tab-faq">
+<div class="xwrap">
+  <h2>Commercial model</h2>
+  <details class="faq"><summary>What exactly does the client pay, and when?</summary><div class="a">Only the gain-share percentage of certified savings, invoiced quarterly in arrears. There is no fixed fee in this schedule. The 5-day 5×5 and 8–12 week POC carry their own fixed prices, and both are credited against deployment.</div></details>
+  <details class="faq"><summary>What if the savings don't materialise?</summary><div class="a">Then there is nothing to share and no fee is due. The model is deliberately asymmetric: Infinium carries delivery risk, the client's downside is bounded at the 5×5/POC fees. That asymmetry is also why the baseline must be measured honestly — it protects both sides.</div></details>
+  <details class="faq"><summary>Why does Infinium's share rise over time rather than fall?</summary><div class="a">Because the client's effort is front-loaded and the proof is back-loaded. In Year 1 the bank keeps 80% while adoption is hardest; by Year 3 the saving is established run-rate and the 30% share reflects a proven outcome. It also creates a clean decision point at the end of Year 3.</div></details>
+  <details class="faq"><summary>What does "30% in perpetuity" actually mean?</summary><div class="a">If the client chooses to extend beyond Year 3, the share stays at 30% of the continuing audited savings for as long as the arrangement runs. It is an option, not an obligation: decline the extension and the client keeps 100% of the run-rate, with QBricks licensing (if any) handled separately.</div></details>
+  <details class="faq"><summary>Can the percentages be negotiated?</summary><div class="a">Yes — that is what this tool is for. The scenario buttons (Standard / Push-back / Premium) and the sliders reprice the whole deal instantly, including what each point of share is worth to the client in ROI terms.</div></details>
+  <details class="faq"><summary>How are one-off events like a migration priced?</summary><div class="a">A single event is priced once, at the Year-1 rate (20%): one event, one audited saving, one fee. Each further event is priced the same way. Events never progress up the multi-year schedule because there is no multi-year tail.</div></details>
+
+  <details class="faq"><summary>Is there a cap on Infinium's annual fee?</summary><div class="a">Optionally, yes — many gain-share contracts carry an annual fee cap, set in the Order Form. Savings above the cap revert 100% to the client, which protects the bank's budget envelope while keeping Infinium fully incentivised up to the ceiling. The Deal mechanics panel models it: set a cap and the combined view, ROI and NPV reprice (the cap is applied at combined level, allocated pro-rata across cards).</div></details>
+  <details class="faq"><summary>Are the figures nominal or discounted?</summary><div class="a">The card and combined tables are nominal — that is how savings are certified and invoiced. The combined panel also shows NPV of the client's retained savings and of Infinium's fees at an editable discount rate (default 8%), over both the 3-year term and a 5-year view including two extension years, so treasury can read the deal in present-value terms.</div></details>
+
+  <h2>Evidence &amp; audit</h2>
+  <details class="faq"><summary>Who certifies the savings, and against what?</summary><div class="a">Savings are certified quarterly against the baseline agreed in the POC. People savings are evidenced against the baselined roster and rate card; compute savings are read from the platform's own billing exports; every data change carries QBricks before/after files. The certification pack is the client's — auditable by their internal audit or external assurance.</div></details>
+  <details class="faq"><summary>What stops the baseline being inflated to manufacture savings?</summary><div class="a">The baseline is measured jointly, from the client's own systems (rosters, rate cards, billing exports), documented in the POC, and signed by both parties before deployment. It can be re-opened by either side if scope changes materially.</div></details>
+  <details class="faq"><summary>If an FTE is redeployed rather than removed, is that a saving?</summary><div class="a">That depends on the baseline definition the client chooses, and it is agreed up front. Most banks count redeployment to funded vacancies as a cashable saving and redeployment to new discretionary work as a productivity gain; the ledger records which is which. The model assumes no severance costs either way.</div></details>
+  <details class="faq"><summary>What if the platform vendor changes its prices mid-term?</summary><div class="a">Compute baselines are normalised at the unit prices agreed in the POC, so a vendor price rise doesn't inflate QBricks' "savings" and a price cut doesn't erase them. A recalibration clause adjusts unit prices annually.</div></details>
+  <details class="faq"><summary>Could the same euro be counted in two cards?</summary><div class="a">No — each card has its own ledger against a distinct cost line: the remediation roster, the pipeline engineering roster, dev/test billing, and run billing plus the support roster. A person or a billing line can appear in only one ledger, checked at certification.</div></details>
+
+  <h2>Scope &amp; boundaries</h2>
+  <details class="faq"><summary>What does "per business area and use case" mean in practice?</summary><div class="a">Each arrangement attaches to one named business area and use case — e.g. Transaction Monitoring — with its own baseline, ledger and schedule. Expanding to a second use case (KYC refresh, market data, regulatory reporting…) is a new schedule under the same MSA, so success compounds without renegotiating the framework.</div></details>
+  <details class="faq"><summary>Which costs are excluded from the model?</summary><div class="a">Storage, networking, software licences and severance are excluded throughout. The compute benchmarks also exclude egress and AI add-ons. Exclusions are listed in the Order Form so there are no surprises at certification.</div></details>
+  <details class="faq"><summary>Where do the compute benchmark prices come from?</summary><div class="a">Public list-price anchors as at June 2026: Databricks ~$0.15/DBU (jobs) to ~$0.55/DBU (all-purpose, Premium) with cloud VMs billed separately; Snowflake credits ~$2–4 by edition and region; Fabric ~$0.18/CU-hour PAYG with ~40% off on 1-year reserved; BigQuery Editions $0.04–0.10/slot-hour with ~20–40% commitment discounts (on-demand $6.25/TiB). Every figure is editable because real prices depend on the client's enterprise agreement — the benchmarks frame the conversation, the client's bill provides the baseline.</div></details>
+  <details class="faq"><summary>Does QBricks itself add compute cost?</summary><div class="a">QBricks operates on metadata only and runs on the client's infrastructure; its footprint is small relative to the reloads it removes and is netted in the measured saving — the certified number is net of QBricks' own consumption.</div></details>
+
+  <h2>Contract &amp; governance</h2>
+  <details class="faq"><summary>What is the contractual vehicle?</summary><div class="a">An MSA with an Order Form per business area and use case carrying the baseline, the savings ledger definition, the schedule and the extension clause. Governing law follows the QBricks framework (Netherlands law).</div></details>
+  <details class="faq"><summary>How does gain-share interact with QBricks platform licences?</summary><div class="a">This schedule is pure gain-share. Where a deployment also carries a Core Platform licence under the pricing grid, the Order Form states it explicitly and the client ROI is presented net of both — the tool can be read either way, and the certification ledger separates the two.</div></details>
+  <details class="faq"><summary>Can the client exit?</summary><div class="a">Yes — at the Year-3 decision point without penalty, and earlier per the MSA's termination provisions. Fees are only ever due on savings already certified; there is no clawback of the client's retained share.</div></details>
+  <details class="faq"><summary>What does the client have to do to make the savings real?</summary><div class="a">Three things, all in the transition plan: provide the baseline data honestly in the POC, action the people-side decisions (redeployment) on the agreed timetable, and decommission the legacy pipelines and jobs once cutover is verified — savings only certify when the old cost actually stops.</div></details>
+
+  <h2>Using this tool</h2>
+  <details class="faq"><summary>Can I save a negotiation position and come back to it?</summary><div class="a">Yes — Export writes every input (schedule, cap, discount rate, all drivers and benchmark settings) to a JSON file; Import restores it. Use it to snapshot a client's counter-offer mid-meeting, or to share a position with a colleague. Nothing is sent anywhere; the file is local.</div></details>
+  <details class="faq"><summary>How do I leave a copy with the client?</summary><div class="a">Print produces a clean one-page summary of the Calculator view (inputs panel hidden) — use the browser's "Save as PDF". Copy summary puts a plain-text deal summary including NPV on the clipboard for an email or meeting note.</div></details>
+
+  <p class="muted" style="margin-top:14px">Illustrative, for discussion. Nothing in this tool is an offer or legal/tax advice; commercial terms are as per the executed MSA and Order Form.</p>
+</div>
+</div>
+
+<div class="foot">Illustrative pre-baseline figures · EUR · Fees accrue only on audited savings (baseline in the POC; before/after evidence) · Arrangements per business area &amp; use case · Not an offer; terms per MSA / Order Form · QBricks is a registered trademark.</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const fmt=(v)=> v>=1e6 ? "€"+(v/1e6).toFixed(2)+"M" : "€"+Math.round(v/1e3)+"k";
+const DEFAULTS={s1:20,s2:25,s3:30,s4:30,dayRate:1000,workDays:227,fte1:30,r1:60,r2:85,r3:100,fte2:12,rem2:90,comp3:222000,rem3:70,fte4:4,rem4a:75,comp4:540000,rem4b:60,feeCap:0,disc:8};
+const IDS=Object.keys(DEFAULTS);
+const ICO_PEOPLE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 19.5c.6-3.3 3-5.2 5.8-5.2s5.2 1.9 5.8 5.2"/><circle cx="16.8" cy="9.2" r="2.4"/><path d="M16.2 14.6c2.2.4 3.9 2 4.5 4.9"/></svg>';
+const ICO_CALC='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="5" y="2.8" width="14" height="18.4" rx="2"/><rect x="8" y="5.8" width="8" height="3.6"/><text x="12" y="18.2" text-anchor="middle" font-size="8.5" font-family="Arial" font-weight="bold" fill="currentColor" stroke="none">€</text></svg>';
+const CARD_ICONS=[ICO_PEOPLE,ICO_PEOPLE,ICO_CALC,ICO_CALC];
+
+function read(){const o={};IDS.forEach(k=>o[k]=+($(k).value)||0);return o}
+function calc(){
+  const v=read();
+  const cf=v.dayRate*v.workDays;
+  const shares=[v.s1/100,v.s2/100,v.s3/100];
+  const c1=[v.fte1*cf*v.r1/100, v.fte1*cf*v.r2/100, v.fte1*cf*v.r3/100];
+  const f2=v.fte2*cf*v.rem2/100, c2=[f2,f2,f2];
+  const f3=v.comp3*v.rem3/100, c3=[f3,f3,f3];
+  const f4=v.fte4*cf*v.rem4a/100+v.comp4*v.rem4b/100, c4=[f4,f4,f4];
+  const cards=[
+    {n:"01 · Data remediation — FTE release",b:`${v.fte1} FTE × ${fmt(cf)} cost/FTE · realisation ${v.r1}/${v.r2}/${v.r3}% → team cost ${fmt(v.fte1*cf)}/yr`,s:c1,y4:v.fte1*cf},
+    {n:"02 · Pipeline engineering team",b:`${v.fte2} FTE × ${fmt(cf)} → team cost ${fmt(v.fte2*cf)}/yr · ${v.rem2}% removed`,s:c2,y4:f2},
+    {n:"03 · Build-phase compute",b:`${fmt(v.comp3)}/yr dev/test baseline · ${v.rem3}% avoided`,s:c3,y4:f3},
+    {n:"04 · Ongoing compute & run",b:`${v.fte4} FTE × ${fmt(cf)} (−${v.rem4a}%) + ${fmt(v.comp4)} compute (−${v.rem4b}%)`,s:c4,y4:f4},
+  ];
+  cards.forEach(c=>{
+    c.fees=c.s.map((x,i)=>x*shares[i]); c.cl=c.s.map((x,i)=>x-c.fees[i]);
+    c.tS=c.s.reduce((a,b)=>a+b,0); c.tF=c.fees.reduce((a,b)=>a+b,0); c.tC=c.tS-c.tF;
+    c.roi=c.tF>0?c.tC/c.tF:0;
+  });
+  const T={tS:0,tF:0,tC:0,y4:0,yr:[0,0,0],yrF:[0,0,0]};
+  cards.forEach(c=>{T.tS+=c.tS;T.tF+=c.tF;T.tC+=c.tC;T.y4+=c.y4;c.s.forEach((x,i)=>{T.yr[i]+=x;T.yrF[i]+=c.fees[i]})});
+  T.roiGross=T.tF>0?T.tC/T.tF:0;
+  const cap=(v.feeCap||0)*1000;
+  T.cap=cap;
+  T.yrFc=T.yrF.map(f=>cap>0?Math.min(f,cap):f);
+  T.tFc=T.yrFc.reduce((a,b)=>a+b,0);
+  T.tCc=T.tS-T.tFc;
+  T.roi=T.tFc>0?T.tCc/T.tFc:0;
+  T.y4F=T.y4*v.s4/100; T.y4C=T.y4-T.y4F;
+  T.y4Fc=cap>0?Math.min(T.y4F,cap):T.y4F; T.y4Cc=T.y4-T.y4Fc;
+  const r=(v.disc||0)/100, df=y=>Math.pow(1+r,y);
+  T.yr5=[...T.yr,T.y4,T.y4]; T.yrF5=[...T.yrFc,T.y4Fc,T.y4Fc];
+  T.npvC3=T.yr.reduce((a,x,i)=>a+(x-T.yrFc[i])/df(i+1),0);
+  T.npvF3=T.yrFc.reduce((a,x,i)=>a+x/df(i+1),0);
+  T.npvC5=T.yr5.reduce((a,x,i)=>a+(x-T.yrF5[i])/df(i+1),0);
+  T.npvF5=T.yrF5.reduce((a,x,i)=>a+x/df(i+1),0);
+  return {v,cf,shares,cards,T};
+}
+function render(){
+  const {v,cf,shares,cards,T}=calc();
+  $("vS1").textContent=v.s1+"%";$("vS2").textContent=v.s2+"%";$("vS3").textContent=v.s3+"%";$("vS4").textContent=v.s4+"%";
+  $("vFTE").textContent=fmt(cf);$("vF1").textContent=v.fte1+" FTE";$("vF2").textContent=v.fte2+" FTE";$("vF4").textContent=v.fte4+" FTE";
+  $("vP2").textContent=v.rem2+"%";$("vP3").textContent=v.rem3+"%";$("vP4a").textContent=v.rem4a+"%";$("vP4b").textContent=v.rem4b+"%";
+  $("kpis").innerHTML=[
+    ["3-yr audited savings",fmt(T.tS),""],["Infinium gain-share",fmt(T.tFc),"red"],["Client retains",fmt(T.tCc),""],
+    ["Client ROI",T.roi.toFixed(1)+"×","red"],["Year 4+ run-rate",fmt(T.y4)+"/yr",""],["Client keeps Y4+",fmt(T.y4Cc)+"/yr",""]
+  ].map(([k,val,c])=>`<div class="kpi"><div class="k">${k}</div><div class="v ${c}">${val}</div></div>`).join("");
+  $("cards").innerHTML=cards.map((c,i)=>`<div class="card"><span class="cicon">${CARD_ICONS[i]}</span><h4>${c.n}</h4><p class="basis">${c.b}</p>
+    <table><tr><th></th><th>Y1 (${Math.round(shares[0]*100)}%)</th><th>Y2 (${Math.round(shares[1]*100)}%)</th><th>Y3 (${Math.round(shares[2]*100)}%)</th><th>3-yr</th></tr>
+    <tr><td>Savings</td>${c.s.map(x=>`<td>${fmt(x)}</td>`).join("")}<td><b>${fmt(c.tS)}</b></td></tr>
+    <tr><td>Infinium</td>${c.fees.map(x=>`<td class="fee">${fmt(x)}</td>`).join("")}<td class="fee"><b>${fmt(c.tF)}</b></td></tr>
+    <tr class="tot"><td>Client</td>${c.cl.map(x=>`<td>${fmt(x)}</td>`).join("")}<td><b>${fmt(c.tC)}</b></td></tr></table>
+    <p class="roi-foot">Client ROI <b style="color:var(--red)">${c.roi.toFixed(1)}×</b> · Y4+ run-rate ${fmt(c.y4)}/yr</p></div>`).join("");
+  $("combined").innerHTML=`<tr><th></th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>3-yr total</th></tr>
+    <tr><td>Audited savings</td>${T.yr.map(x=>`<td>${fmt(x)}</td>`).join("")}<td><b>${fmt(T.tS)}</b></td></tr>
+    <tr><td>Infinium fee${T.cap>0?" (capped)":""}</td>${T.yrFc.map(x=>`<td class="fee">${fmt(x)}</td>`).join("")}<td class="fee"><b>${fmt(T.tFc)}</b></td></tr>
+    <tr class="tot"><td>Client retains</td>${T.yr.map((x,i)=>`<td>${fmt(x-T.yrFc[i])}</td>`).join("")}<td><b>${fmt(T.tCc)}</b></td></tr>`;
+  $("perpLine").innerHTML=`<span>${fmt(T.y4)}/yr savings run-rate · client retains <b>${fmt(T.y4Cc)}/yr</b> · Infinium ${fmt(T.y4Fc)}/yr at ${v.s4}%${T.cap>0?" (capped)":""} in perpetuity</span>`;
+}
+IDS.forEach(k=>$(k).addEventListener("input",render));
+document.querySelectorAll(".scen button").forEach(b=>b.addEventListener("click",()=>{
+  const [a,c,d,e]=b.dataset.s.split(",");$("s1").value=a;$("s2").value=c;$("s3").value=d;$("s4").value=e;render();
+}));
+$("btnReset").addEventListener("click",()=>{IDS.forEach(k=>$(k).value=DEFAULTS[k]);render();});
+$("btnCopy").addEventListener("click",()=>{
+  const {v,cards,T}=calc();
+  const L=[`QBricks gain-share summary (illustrative)`,
+   `Schedule: ${v.s1}/${v.s2}/${v.s3}% · Y4+ ${v.s4}% in perpetuity`,
+   ...cards.map(c=>`${c.n}: savings ${fmt(c.tS)} | Infinium ${fmt(c.tF)} | client ${fmt(c.tC)} | ROI ${c.roi.toFixed(1)}x`),
+   `TOTAL: savings ${fmt(T.tS)} | Infinium ${fmt(T.tFc)} | client ${fmt(T.tCc)} | ROI ${T.roi.toFixed(1)}x`+(T.cap>0?` | fee cap ${fmt(T.cap)}/yr`:""),
+   `NPV @ ${v.disc}%: client ${fmt(T.npvC3)} (3-yr) / ${fmt(T.npvC5)} (5-yr incl. extension)`,
+   `Year 4+: ${fmt(T.y4)}/yr | client ${fmt(T.y4Cc)}/yr | Infinium ${fmt(T.y4Fc)}/yr`];
+  navigator.clipboard.writeText(L.join("\n")).then(()=>{$("btnCopy").textContent="Copied ✓";setTimeout(()=>$("btnCopy").textContent="Copy summary",1400);});
+});
+render();
+
+/* ===== tabs ===== */
+document.querySelectorAll(".tabbar button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".tabbar button").forEach(x=>x.classList.remove("on"));b.classList.add("on");
+  document.querySelectorAll(".tabpage").forEach(p=>p.classList.remove("on"));
+  document.getElementById("tab-"+b.dataset.t).classList.add("on");
+}));
+
+/* ===== compute benchmarks ===== */
+const BIDS=["bFx","dbxU","dbxR","dbxI","dbxP","snfU","snfR","snfP","fabU","fabR","fabD","fabP","gcpU","gcpR","gcpD","gcpP"];
+function benchCalc(){
+  const g=id=>+($(id).value)||0, fx=g("bFx");
+  const dbx={name:"Databricks",basis:g("dbxU").toLocaleString()+" DBU/mo × $"+g("dbxR")+" +"+g("dbxI")+"% infra",
+    cost:g("dbxU")*g("dbxR")*(1+g("dbxI")/100)*12*fx, p:g("dbxP")};
+  const snf={name:"Snowflake",basis:g("snfU").toLocaleString()+" credits/mo × $"+g("snfR"),
+    cost:g("snfU")*g("snfR")*12*fx, p:g("snfP")};
+  const fab={name:"Microsoft Fabric",basis:g("fabU")+" CUs × $"+g("fabR")+"/CU-hr × 730h −"+g("fabD")+"%",
+    cost:g("fabU")*g("fabR")*730*(1-g("fabD")/100)*12*fx, p:g("fabP")};
+  const gcp={name:"Google BigQuery",basis:g("gcpU")+" slots × $"+g("gcpR")+"/slot-hr × 730h −"+g("gcpD")+"%",
+    cost:g("gcpU")*g("gcpR")*730*(1-g("gcpD")/100)*12*fx, p:g("gcpP")};
+  [dbx,snf,fab,gcp].forEach(x=>{x.save=x.cost*x.p/100; x.net=x.cost-x.save});
+  return {dbx,snf,fab,gcp};
+}
+function benchRender(){
+  const b=benchCalc();
+  [["dbx",b.dbx],["snf",b.snf],["fab",b.fab],["gcp",b.gcp]].forEach(([k,x])=>{
+    $(k+"Cost").textContent=fmt(x.cost);
+    $(k+"Pv").textContent="−"+x.p+"%";
+    $(k+"Save").textContent=fmt(x.save)+"/yr";
+  });
+  $("benchTable").innerHTML=`<tr><th>Platform · consumption basis</th><th>Annual cost (EUR)</th><th>QBricks reduction</th><th>Annual saving</th><th>Net annual cost</th></tr>`+
+    [b.dbx,b.snf,b.fab,b.gcp].map(x=>`<tr><td>${x.name} — ${x.basis}</td><td>${fmt(x.cost)}</td><td class="red">−${x.p}%</td><td class="red">${fmt(x.save)}</td><td>${fmt(x.net)}</td></tr>`).join("");
+}
+function applyBench(k,card){
+  const b=benchCalc(), x=b[k];
+  const annual=Math.round(x.cost);
+  if(card==="c3"){ $("comp3").value=annual; $("rem3").value=Math.round(x.p/5)*5; }
+  else { $("comp4").value=annual; $("rem4b").value=Math.round(x.p/5)*5; }
+  render();
+  document.querySelector('.tabbar button[data-t="calc"]').click();
+  const tgt=document.getElementById("kpis");
+  tgt.classList.remove("flash"); void tgt.offsetWidth; tgt.classList.add("flash");
+}
+window.applyBench=applyBench;
+BIDS.forEach(k=>$(k).addEventListener("input",benchRender));
+benchRender();
+
+/* ===== methodology (live formulas) ===== */
+function methRender(){
+  const el=document.getElementById("methBlocks"); if(!el) return;
+  const {v,cf,shares,cards,T}=calc();
+  const pct=x=>Math.round(x*100)+"%";
+  el.innerHTML=`
+  <div class="mblock"><h4>Step 0 — cost of an FTE to the bank</h4>
+    <span class="fml">€${v.dayRate.toLocaleString()}/day × ${v.workDays} working days = ${fmt(cf)} per FTE per year</span>
+    <p>Every people-based saving in the model is priced at this rate. It is the first number replaced by the client's own rate card in the POC.</p></div>
+  <div class="mblock"><h4>Card 01 — data remediation</h4>
+    <span class="fml">${v.fte1} FTE × ${fmt(cf)} = ${fmt(v.fte1*cf)}/yr team cost
+realised ${v.r1}% · ${v.r2}% · ${v.r3}% → ${fmt(cards[0].s[0])} · ${fmt(cards[0].s[1])} · ${fmt(cards[0].s[2])}</span>
+    <p>The ramp reflects that people release lags deployment. Fees apply per year at ${pct(shares[0])} / ${pct(shares[1])} / ${pct(shares[2])} → Infinium ${fmt(cards[0].tF)}, client ${fmt(cards[0].tC)} over three years.</p></div>
+  <div class="mblock"><h4>Card 02 — pipeline engineering</h4>
+    <span class="fml">${v.fte2} FTE × ${fmt(cf)} × ${v.rem2}% removed = ${fmt(cards[1].s[0])}/yr, every year</span>
+    <p>Flat profile: onboarding never stops, so the avoided team cost recurs annually. 3-yr: savings ${fmt(cards[1].tS)} · Infinium ${fmt(cards[1].tF)} · client ${fmt(cards[1].tC)}.</p></div>
+  <div class="mblock"><h4>Card 03 — build-phase compute</h4>
+    <span class="fml">${fmt(v.comp3)} baseline × ${v.rem3}% avoided = ${fmt(cards[2].s[0])}/yr</span>
+    <p>Incremental processing removes full-reload dev/test cycles. Use the Compute benchmarks tab to price this baseline per platform and push it here.</p></div>
+  <div class="mblock"><h4>Card 04 — ongoing compute &amp; run</h4>
+    <span class="fml">${v.fte4} FTE × ${fmt(cf)} × ${v.rem4a}% + ${fmt(v.comp4)} × ${v.rem4b}% = ${fmt(cards[3].s[0])}/yr</span>
+    <p>People (agentic metadata management replaces notebook upkeep) plus compute (incremental streams replace nightly reloads), both audited at source.</p></div>
+  <div class="mblock"><h4>The split — current schedule ${Math.round(v.s1)} / ${Math.round(v.s2)} / ${Math.round(v.s3)}% (Y4+ ${Math.round(v.s4)}%)</h4>
+    <span class="fml">3-yr savings ${fmt(T.tS)} → Infinium ${fmt(T.tFc)} · client retains ${fmt(T.tCc)} → client ROI ${T.roi.toFixed(1)}×${T.cap>0?` (fee cap ${fmt(T.cap)}/yr)`:""}
+Year 4+ run-rate ${fmt(T.y4)}/yr → client ${fmt(T.y4Cc)}/yr · Infinium ${fmt(T.y4Fc)}/yr
+NPV @ ${v.disc}%: client ${fmt(T.npvC3)} (3-yr) · ${fmt(T.npvC5)} (5-yr incl. extension)</span>
+    <p>Move any lever on the Calculator or Benchmarks tab and this whole page reprices with it.</p></div>`;
+}
+/* ===== deal extras: NPV row, cap note, 5-yr chart, scenario compare ===== */
+function extraRender(){
+  const {v,cards,T}=calc();
+  $("capNote").style.display=T.cap>0?"block":"none";
+  if(T.cap>0) $("capNote").textContent=`Fee cap ${fmt(T.cap)}/yr applied at combined level (allocation across cards pro-rata); per-card tables show gross fees. Savings above the cap revert 100% to the client.`;
+  $("npvRow").innerHTML=[
+    ["NPV client retained · 3-yr",fmt(T.npvC3),""],["NPV client retained · 5-yr",fmt(T.npvC5),""],
+    ["NPV Infinium · 3-yr",fmt(T.npvF3),"red"],["NPV Infinium · 5-yr",fmt(T.npvF5),"red"],
+    ["Discount rate",(v.disc||0)+"%",""]
+  ].map(([k,val,c])=>`<div><div style="font-size:8.5px;font-weight:bold;color:var(--g);letter-spacing:.05em;text-transform:uppercase">${k}</div><div style="font-size:15px;font-weight:bold" class="${c?'':''}" ${c?'style="font-size:15px;font-weight:bold;color:var(--red)"':''}>${val}</div></div>`).join("");
+  // chart
+  const W=660,H=190,pad=30,bw=70,gap=44,base=H-28;
+  const max=Math.max(...T.yr5,1), sc=x=>x/max*(H-62);
+  let svg=`<line x1="${pad-8}" y1="${base}" x2="${W-10}" y2="${base}" stroke="#D9D9D9" stroke-width="1"/>`;
+  const labels=["Y1","Y2","Y3","Y4*","Y5*"];
+  T.yr5.forEach((sv,i)=>{
+    const fee=T.yrF5[i], cl=sv-fee, x=pad+i*(bw+gap);
+    const hC=sc(cl), hF=sc(fee);
+    svg+=`<rect x="${x}" y="${base-hC}" width="${bw}" height="${Math.max(hC,0)}" fill="#1A1A1A"/>`;
+    svg+=`<rect x="${x}" y="${base-hC-hF}" width="${bw}" height="${Math.max(hF,0)}" fill="#C8102E"/>`;
+    svg+=`<text x="${x+bw/2}" y="${base-hC-hF-6}" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1A1A1A">${fmt(sv)}</text>`;
+    svg+=`<text x="${x+bw/2}" y="${base+14}" text-anchor="middle" font-family="Arial" font-size="10" fill="#6E6E6E">${labels[i]}</text>`;
+  });
+  svg+=`<rect x="${W-200}" y="6" width="9" height="9" fill="#1A1A1A"/><text x="${W-187}" y="14" font-family="Arial" font-size="9.5" fill="#333">Client retains</text>`;
+  svg+=`<rect x="${W-100}" y="6" width="9" height="9" fill="#C8102E"/><text x="${W-87}" y="14" font-family="Arial" font-size="9.5" fill="#333">Infinium fee</text>`;
+  svg+=`<text x="${pad-8}" y="${H-2}" font-family="Arial" font-size="8.5" fill="#999">* extension years at the Year-4+ share${T.cap>0?", fee cap applied":""}</text>`;
+  $("dealChart").innerHTML=svg;
+  // scenario compare on current drivers
+  const SC=[["A · Standard","20/25/30",[0.20,0.25,0.30]],["B · Push-back","15/20/25",[0.15,0.20,0.25]],["C · Premium","25/30/35",[0.25,0.30,0.35]]];
+  const cur=[v.s1/100,v.s2/100,v.s3/100];
+  $("scenCompare").innerHTML=`<tr><th>Scenario</th><th>Schedule</th><th>Infinium 3-yr</th><th>Client 3-yr</th><th>Client ROI</th></tr>`+
+    SC.map(([nm,sch,sh])=>{
+      const yrF=[0,1,2].map(i=>{ let f=cards.reduce((a,c)=>a+c.s[i]*sh[i],0); return T.cap>0?Math.min(f,T.cap):f; });
+      const tF=yrF.reduce((a,b)=>a+b,0), tC=T.tS-tF, roi=tF>0?tC/tF:0;
+      const isCur=sh.every((x,i)=>Math.abs(x-cur[i])<1e-9);
+      return `<tr${isCur?' style="outline:2px solid var(--red);outline-offset:-2px"':''}><td>${nm}${isCur?" ← current":""}</td><td>${sch}%</td><td class="red">${fmt(tF)}</td><td>${fmt(tC)}</td><td><b>${roi.toFixed(1)}×</b></td></tr>`;
+    }).join("");
+}
+/* ===== export / import / print ===== */
+$("btnExport").addEventListener("click",()=>{
+  const o={}; IDS.forEach(k=>o[k]=$(k).value);
+  const blob=new Blob([JSON.stringify({tool:"qbricks-gainshare",exported:new Date().toISOString(),settings:o},null,1)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="qbricks_gainshare_"+new Date().toISOString().slice(0,10)+".json"; a.click();
+});
+$("btnImport").addEventListener("click",()=>$("fileImport").click());
+$("fileImport").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const rd=new FileReader();
+  rd.onload=()=>{ try{
+      const obj=JSON.parse(rd.result), st=obj.settings||obj;
+      IDS.forEach(k=>{ if(st[k]!==undefined) $(k).value=st[k]; });
+      render(); benchRender();
+    }catch(err){ alert("Could not read that file — expected an export from this tool."); } };
+  rd.readAsText(f); e.target.value="";
+});
+$("btnPrint").addEventListener("click",()=>{
+  document.querySelector('.tabbar button[data-t="calc"]').click();
+  setTimeout(()=>window.print(),120);
+});
+
+const __baseRender=render;
+render=function(){ __baseRender(); methRender(); extraRender(); };
+IDS.forEach(k=>$(k).addEventListener("input",methRender));
+IDS.forEach(k=>$(k).addEventListener("input",extraRender));
+methRender(); extraRender();
+
+</script>
+</body>
+</html>
