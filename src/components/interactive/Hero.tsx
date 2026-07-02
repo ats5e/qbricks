@@ -217,15 +217,17 @@ function DataCommandCentre() {
 }
 
 const carouselItems = [
-  { text: "Zero vendor lock-in", icon: Unlock },
-  { text: "No armies of engineers", icon: Users },
-  { text: "No compute-led Spark processing", icon: Cpu },
-  { text: "Built on the Open Data Contract Standard", icon: FileSignature },
-  { text: "Seamless Catalogue of Catalogues integration", icon: Network }
+  { text: "Zero vendor lock in", icon: Unlock, iconTone: "text-emerald-300" },
+  { text: "No armies of engineers", icon: Users, iconTone: "text-blue-300" },
+  { text: "No Spark processing", icon: Cpu, iconTone: "text-amber-300" },
+  { text: "Open Data Contracts", icon: FileSignature, iconTone: "text-q-brand-ember" },
+  { text: "Catalogue of Catalogues", icon: Layers3, iconTone: "text-violet-300" }
 ];
 
 export function Hero() {
   const [activeCarouselIndex, setActiveCarouselIndex] = useState(0);
+  const activeCarouselItem = carouselItems[activeCarouselIndex];
+  const ActiveCarouselIcon = activeCarouselItem.icon;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -259,46 +261,46 @@ export function Hero() {
               No more data <span className="text-q-brand-ember">pipelines.</span>
             </h1>
 
-            <div className="mt-10 max-w-xl text-xl leading-relaxed text-q-gray-300">
+            <div className="mt-8 max-w-xl text-xl leading-relaxed text-q-gray-300">
               <p>Turn your systems of record into governed, A.I.-ready data products, in hours, not months or years.</p>
-              
-              <div className="mt-12 inline-flex items-center overflow-hidden rounded-full border border-q-brand/30 bg-q-brand/[0.08] px-6 py-3 shadow-[0_0_20px_rgba(232,32,15,0.1)] min-h-[48px] sm:h-14">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeCarouselIndex}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -15 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex items-center gap-3 sm:gap-3.5"
-                  >
-                    {(() => {
-                      const ActiveIcon = carouselItems[activeCarouselIndex].icon;
-                      return (
-                        <>
-                          <ActiveIcon className="h-5 w-5 sm:h-6 sm:w-6 shrink-0 text-q-brand-ember" />
-                          <p className="text-lg sm:text-[22px] font-bold text-white leading-tight">
-                            {carouselItems[activeCarouselIndex].text}
-                          </p>
-                        </>
-                      );
-                    })()}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
 
-              <div className="mt-10 pt-8 border-t border-white/10">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-q-gray-500 mb-6">Integrates with</p>
-                <div className="flex flex-wrap items-center gap-8 sm:gap-10">
-                  <Image src="/assets/Databricks.png" alt="Databricks" width={140} height={40} className="h-5 w-auto brightness-0 invert" />
-                  <Image src="/assets/Fabric.png" alt="Microsoft Fabric" width={140} height={40} className="h-9 w-auto brightness-0 invert" />
-                  <Image src="/assets/Snowflake.png" alt="Snowflake" width={140} height={40} className="h-12 w-auto brightness-0 invert" />
-                  <Image src="/assets/Oracle-Logo.png" alt="Oracle" width={140} height={40} className="h-11 w-auto brightness-0 invert" />
+              <div
+                data-testid="hero-difference"
+                className="mt-7 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-md"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-q-brand-ember shadow-[0_0_12px_rgba(255,58,38,0.9)]" />
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-gray-500">
+                    The{" "}
+                    <span data-testid="hero-difference-q" className="font-black text-q-brand-ember">Q</span>
+                    <span data-testid="hero-difference-bricks" className="font-normal text-white">Bricks</span>
+                    {" "}difference
+                  </p>
+                </div>
+
+                <div className="mt-2 flex min-h-[72px] items-center overflow-hidden" aria-live="polite">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeCarouselIndex}
+                      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
+                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      className="flex min-w-0 w-full items-center gap-3.5"
+                    >
+                      <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.055] ${activeCarouselItem.iconTone}`}>
+                        <ActiveCarouselIcon className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <span className="min-w-0 text-[clamp(1.25rem,1.8vw,1.65rem)] font-bold leading-tight tracking-tight text-white">
+                        {activeCarouselItem.text}
+                      </span>
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
 
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-[0_0_50px_rgba(232,32,15,0.3)] transition-all hover:-translate-y-0.5">
                 <span className="absolute inset-0 bg-gradient-to-r from-[#c91b0d] via-[#ff3a26] to-[#ff7669]" />
                 <span className="absolute inset-y-0 -left-1/2 w-1/3 rotate-12 bg-white/30 blur-xl animate-shimmer" />

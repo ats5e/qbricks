@@ -81,7 +81,7 @@ export function FeaturesBento() {
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <p className="eyebrow mb-5">What QBricks is</p>
           <h2 className="text-[clamp(2.5rem,5.5vw,5.4rem)] font-black leading-[0.96] tracking-tight text-white">
-            A governed, secure metadata platform for your organisation.
+            A governed, secure Data Platform for your organisation.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
             QBricks is a streaming data-management platform that enforces governance at the point of ingestion, so the data landing in your lakehouse or database is already trusted, governed and A.I. ready.
