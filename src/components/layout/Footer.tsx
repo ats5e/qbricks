@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const columns = [
   {
@@ -58,7 +59,7 @@ export function Footer() {
                       <Link href={href} className="transition-colors hover:text-white">
                         {label === "Why QBricks" ? (
                           <>
-                            Why <span className="font-bold text-q-brand">Q</span><span className="text-white">Bricks</span>
+                            Why <QBricksText />
                           </>
                         ) : (
                           label

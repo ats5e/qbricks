@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react";
+import { ArrowRight, BookOpen, Video, HelpCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -59,6 +59,43 @@ export default function ResourcesPage() {
               </div>
             </div>
           </Link>
+        </div>
+
+        <div className="container-x mb-16">
+          <p className="eyebrow mb-4">Watch</p>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Link href="/resources/10-reasons-why" className="premium-card group flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 md:p-8">
+              <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl border border-q-brand/30 bg-q-brand/10 text-q-brand-ember">
+                <Video className="h-5 w-5" />
+              </div>
+              <p className="eyebrow mb-3">Video</p>
+              <h2 className="text-3xl font-black leading-tight text-white">
+                10 reasons why <QBricksText />
+              </h2>
+              <p className="mt-4 flex-1 text-lg leading-relaxed text-q-gray-300">
+                See how governed data becomes an A.I.-ready foundation without pipelines, lock-in or runaway compute.
+              </p>
+              <div className="mt-8 flex items-center gap-2 font-bold text-white transition-colors group-hover:text-q-brand-ember">
+                Watch the video <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+
+            <Link href="/resources/use-cases" className="premium-card group flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 md:p-8">
+              <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-300/30 bg-emerald-300/10 text-emerald-300">
+                <Video className="h-5 w-5" />
+              </div>
+              <p className="eyebrow mb-3">Video</p>
+              <h2 className="text-3xl font-black leading-tight text-white">
+                <QBricksText /> use cases in action
+              </h2>
+              <p className="mt-4 flex-1 text-lg leading-relaxed text-q-gray-300">
+                Explore governed data products for financial crime, customer intelligence and risk workflows.
+              </p>
+              <div className="mt-8 flex items-center gap-2 font-bold text-white transition-colors group-hover:text-q-brand-ember">
+                Watch the video <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          </div>
         </div>
 
         <div className="container-x grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">

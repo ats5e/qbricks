@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const navLinks = [
   { name: "Product", href: "/product" },
@@ -66,7 +67,7 @@ export function Navbar() {
                   )}
                   {link.name === "Why QBricks" ? (
                     <>
-                      Why <span className="font-bold text-q-brand">Q</span><span className="text-white">Bricks</span>
+                      Why <QBricksText />
                     </>
                   ) : (
                     link.name
@@ -118,7 +119,7 @@ export function Navbar() {
                     >
                       {link.name === "Why QBricks" ? (
                         <>
-                          Why <span className="font-bold text-q-brand">Q</span><span className="text-white">Bricks</span>
+                          Why <QBricksText />
                         </>
                       ) : (
                         link.name

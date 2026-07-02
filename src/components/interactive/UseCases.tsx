@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import { AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { useState, useRef } from "react";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const cases = [
   {
@@ -76,7 +77,7 @@ export function UseCases() {
             Governed data products to accelerate your organisation&apos;s A.I. journey.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            QBricks builds A.I. ready data products, fast.
+            <QBricksText /> builds A.I. ready data products, fast.
           </p>
         </div>
 
@@ -118,7 +119,7 @@ export function UseCases() {
                     {/* QBricks Help */}
                     <div>
                       <p className="text-sm leading-relaxed text-q-gray-200">
-                        <strong className="text-white font-bold">With QBricks:</strong> {useCase.help}
+                        <strong className="text-white font-bold">With <QBricksText />:</strong> {useCase.help}
                       </p>
                     </div>
                   </div>

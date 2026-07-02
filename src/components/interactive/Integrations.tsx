@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const logos = [
-  { name: "Databricks", src: "/assets/Databricks.png", desc: "QBricks interfaces with Databricks via SQL push-down, enforcing governance without running Spark inside it. No pipelines, no lock-in." },
+  { name: "Databricks", src: "/assets/Databricks.png", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, enforcing governance without running Spark inside it. No pipelines, no lock-in.</> },
   { name: "Microsoft Fabric", src: "/assets/Fabric.png", desc: "Interfaces with Microsoft Fabric via SQL push-down, enforcing the Open Data Contract Standard without Spark or lock-in." },
   { name: "Snowflake", src: "/assets/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down, governed metadata, quality and ETL workflows without running Spark inside it." },
   { name: "Oracle", src: "/assets/Oracle-Logo.png", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
@@ -58,7 +59,7 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
         </div>
 
         <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
-          QBricks interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, enforcing governance without running Spark inside them, and without lock-in. The Open Data Contract Standard (ODCS) sits at the core.
+          <QBricksText /> interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, enforcing governance without running Spark inside them, and without lock-in. The Open Data Contract Standard (ODCS) sits at the core.
         </p>
       </div>
     </section>

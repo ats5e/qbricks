@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
 import { Integrations } from "@/components/interactive/Integrations";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "Integrations | QBricks",
@@ -26,7 +27,7 @@ export default function IntegrationsPage() {
             Works with the platforms your organisation already runs on.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases. QBricks is built to fit your modern data stack perfectly.
+            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases. <QBricksText /> is built to fit your modern data stack perfectly.
           </p>
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BrainCircuit, GitBranch, Network, ScanLine, ShieldCheck, UserCheck } from "lucide-react";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const features = [
   {
@@ -12,7 +13,7 @@ const features = [
   {
     icon: GitBranch,
     title: "Data Lineage",
-    description: "Fully understand how data assets and products have been created by QBricks. Drill down on each and see a visualization of the joins and underlying data tables.",
+    description: <>Fully understand how data assets and products have been created by <QBricksText />. Drill down on each and see a visualization of the joins and underlying data tables.</>,
   },
   {
     icon: Network,
@@ -47,7 +48,7 @@ export function Agentic() {
               Automate the heavy work. Audit everything.
             </h2>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-300">
-              QBricks automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
+              <QBricksText /> automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
             </p>
 
           </motion.div>

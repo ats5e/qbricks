@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Activity, Building2, Database, FileCheck2, ShieldCheck, Sparkles, UserCheck, Users, Waves } from "lucide-react";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 export function ArchitectureMap() {
   return (
@@ -18,7 +19,7 @@ export function ArchitectureMap() {
             From system of record to lakehouse
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            QBricks sits across your operational systems, lakehouse platforms and analytics tooling, enforcing quality, ownership, lineage and auditability before data reaches A.I. or regulatory workflows.
+            <QBricksText /> sits across your operational systems, lakehouse platforms and analytics tooling, enforcing quality, ownership, lineage and auditability before data reaches A.I. or regulatory workflows.
           </p>
         </div>
 

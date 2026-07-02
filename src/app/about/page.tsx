@@ -1,6 +1,7 @@
 import { ArrowRight, Building2, Globe2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "About | QBricks",
@@ -17,7 +18,7 @@ export default function AboutPage() {
         </div>
 
         <div className="container-x relative z-10 text-center">
-          <p className="eyebrow mb-6">QBricks & Infinium</p>
+          <p className="eyebrow mb-6"><QBricksText /> &amp; Infinium</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
             The platform behind trustworthy A.I.
           </h1>
@@ -36,7 +37,7 @@ export default function AboutPage() {
             <div className="premium-card p-7">
               <ShieldCheck className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-white">Built for regulated data</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400">QBricks is an A.I.-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-400"><QBricksText /> is an A.I.-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
             </div>
             <div className="premium-card p-7">
               <Globe2 className="mb-6 h-8 w-8 text-q-brand-ember" />
@@ -47,7 +48,7 @@ export default function AboutPage() {
 
           <div className="premium-card mx-auto mt-10 max-w-4xl p-8 text-center md:p-12">
             <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-tight text-white">
-              Try QBricks on your data.
+              Try <QBricksText /> on your data.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-q-gray-400">Tell us your platform and priority use case, AML, KYC, fraud, MDM or risk, and we will tailor the demo.</p>
             <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">

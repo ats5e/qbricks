@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Database, FileCheck2, Layers3, Package, Server, UploadCloud } from "lucide-react";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const steps = [
   { icon: Server, title: "Establish connections", text: "Connect to your source systems, for example a Databricks lakehouse." },
@@ -26,7 +27,7 @@ export function DeveloperExperience() {
             From your systems of record to governed data products.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            QBricks connects to your source systems, builds the contracts and views, and delivers governed data products to your platform or your own on-premise database.
+            <QBricksText /> connects to your source systems, builds the contracts and views, and delivers governed data products to your platform or your own on-premise database.
           </p>
         </div>
 

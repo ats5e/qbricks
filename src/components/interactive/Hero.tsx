@@ -270,10 +270,7 @@ export function Hero() {
               >
                 <div className="flex items-center">
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-gray-500">
-                    The{" "}
-                    <span data-testid="hero-difference-q" className="font-black text-q-brand-ember">Q</span>
-                    <span data-testid="hero-difference-bricks" className="font-normal text-white">Bricks</span>
-                    {" "}difference
+                    The <QBricksText /> difference
                   </p>
                 </div>
 
