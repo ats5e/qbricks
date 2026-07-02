@@ -255,7 +255,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl"
+            className="relative max-w-2xl lg:-top-6"
           >
             <h1 className="text-[clamp(3rem,6vw,5.1rem)] font-black leading-[0.95] tracking-tight text-white">
               No more data <span className="text-q-brand-ember">pipelines.</span>
@@ -268,8 +268,7 @@ export function Hero() {
                 data-testid="hero-difference"
                 className="mt-7 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_18px_55px_rgba(0,0,0,0.22)] backdrop-blur-md"
               >
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-q-brand-ember shadow-[0_0_12px_rgba(255,58,38,0.9)]" />
+                <div className="flex items-center">
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-gray-500">
                     The{" "}
                     <span data-testid="hero-difference-q" className="font-black text-q-brand-ember">Q</span>
