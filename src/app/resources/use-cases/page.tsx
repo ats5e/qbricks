@@ -13,7 +13,7 @@ export default function UseCasesVideoPage() {
     <VideoResourcePage
       title={<><QBricksText /> use cases in action</>}
       description="See how governed, fully lineaged data products support financial crime, customer intelligence and risk workflows."
-      playerSrc="https://player.mux.com/K02kkR02VjtrgIRgaEl7TT7dayfP5z6iCLyhzJNgHXCFI?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
+      playerSrc="https://player.mux.com/7Dktyh8UTWs8h1ot86tVc2nomWrLZO028JaAM6s6suNg?metadata-video-title=QBricks+Use+Cases&video-title=QBricks+Use+Cases"
       videoTitle="QBricks use cases"
     />
   );

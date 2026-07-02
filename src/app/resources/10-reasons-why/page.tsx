@@ -13,7 +13,7 @@ export default function TenReasonsWhyPage() {
     <VideoResourcePage
       title={<>10 reasons why <QBricksText /></>}
       description={<>See how <QBricksText /> turns governed data into an A.I.-ready foundation without pipelines, lock-in or runaway compute.</>}
-      playerSrc="https://player.mux.com/7Dktyh8UTWs8h1ot86tVc2nomWrLZO028JaAM6s6suNg"
+      playerSrc="https://player.mux.com/pBStRpuKR00m7Xe1neCepUPvoWhvtOJZhhGq8N5JCOqE?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
       videoTitle="10 reasons why QBricks"
     />
   );

@@ -32,7 +32,7 @@ export default function SolutionsPage() {
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.65)] md:p-3">
             <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-black">
               <iframe
-                src="https://player.mux.com/K02kkR02VjtrgIRgaEl7TT7dayfP5z6iCLyhzJNgHXCFI?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
+                src="https://player.mux.com/7Dktyh8UTWs8h1ot86tVc2nomWrLZO028JaAM6s6suNg?metadata-video-title=QBricks+Use+Cases&video-title=QBricks+Use+Cases"
                 title="QBricks use cases"
                 className="h-full w-full border-0"
                 loading="lazy"
