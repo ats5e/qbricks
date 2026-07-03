@@ -1,6 +1,7 @@
-import { ArrowRight, CheckCircle2, FileCode2, GitBranch, Layers3, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileCode2, GitBranch, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
 import { DeveloperExperience } from "@/components/interactive/DeveloperExperience";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { QBricksText } from "@/components/ui/QBricksText";
@@ -50,11 +51,17 @@ export default function ProductPage() {
         </div>
       </section>
 
+      <DataJourneyDiagram variant="qbricks" />
+
       <section className="border-b border-white/5 bg-q-black pb-10 pt-20 lg:pb-12 lg:pt-32">
         <div className="container-x">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="mx-auto mb-12 max-w-6xl text-center">
             <p className="eyebrow mb-4">How it works</p>
-            <h2 className="text-[clamp(2.4rem,5vw,4.8rem)] font-black leading-tight tracking-tight text-white">Five steps from contract to audit trail.</h2>
+            <h2 className="text-[clamp(2.4rem,4.2vw,4.5rem)] font-black leading-[1.02] tracking-tight text-white">
+              <span className="lg:whitespace-nowrap">Five steps from</span>
+              <br className="hidden lg:block" />
+              <span className="lg:whitespace-nowrap"> contract to audit trail.</span>
+            </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-5">
             {flow.map(([title, text], index) => (

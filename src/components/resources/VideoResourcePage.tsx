@@ -2,9 +2,13 @@ import { ArrowLeft, ArrowRight, PlayCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 
+import { PosterVideo } from "@/components/resources/PosterVideo";
+
 type VideoResourcePageProps = {
   description: ReactNode;
   playerSrc: string;
+  posterAlt: string;
+  posterSrc: string;
   title: ReactNode;
   videoTitle: string;
 };
@@ -12,6 +16,8 @@ type VideoResourcePageProps = {
 export function VideoResourcePage({
   description,
   playerSrc,
+  posterAlt,
+  posterSrc,
   title,
   videoTitle,
 }: VideoResourcePageProps) {
@@ -48,13 +54,11 @@ export function VideoResourcePage({
         <div className="container-x">
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.65)] md:p-3">
             <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-black">
-              <iframe
-                src={playerSrc}
-                title={videoTitle}
-                className="h-full w-full border-0"
-                loading="lazy"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowFullScreen
+              <PosterVideo
+                playerSrc={playerSrc}
+                posterAlt={posterAlt}
+                posterSrc={posterSrc}
+                videoTitle={videoTitle}
               />
             </div>
           </div>

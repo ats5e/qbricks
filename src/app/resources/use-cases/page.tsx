@@ -14,6 +14,8 @@ export default function UseCasesVideoPage() {
       title={<><QBricksText /> use cases in action</>}
       description="See how governed, fully lineaged data products support financial crime, customer intelligence and risk workflows."
       playerSrc="https://player.mux.com/7Dktyh8UTWs8h1ot86tVc2nomWrLZO028JaAM6s6suNg?metadata-video-title=QBricks+Use+Cases&video-title=QBricks+Use+Cases"
+      posterAlt="QBricks use cases in action video cover"
+      posterSrc="/assets/thumb-use-cases.png"
       videoTitle="QBricks use cases"
     />
   );

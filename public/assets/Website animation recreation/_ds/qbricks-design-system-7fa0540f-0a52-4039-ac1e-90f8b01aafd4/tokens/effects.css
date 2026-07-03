@@ -1,0 +1,85 @@
+/* QBricks effects: shadows, glass, glows, patterns, animation */
+:root {
+  --shadow-panel: inset 0 1px 0 0 rgba(255,255,255,0.12), 0 24px 80px rgba(0,0,0,0.55);
+  --shadow-premium: inset 0 1px 0 rgba(255,255,255,0.12), 0 24px 80px rgba(0,0,0,0.45);
+  --shadow-nav: 0 8px 40px rgba(0,0,0,0.45);
+  --shadow-device: 0 40px 120px rgba(0,0,0,0.65);
+  --glow-brand: 0 0 50px rgba(232,32,15,0.3);
+  --glow-brand-strong: 0 0 42px rgba(232,32,15,0.32);
+  --glow-pill: 0 0 15px rgba(232,32,15,0.4);
+
+  --blur-glass: 24px;   /* backdrop-blur-2xl */
+  --blur-glass-lg: 40px;
+
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --duration-hover: 300ms; /* @kind other */
+  --duration-card: 500ms; /* @kind other */
+}
+
+/* Utility classes ported verbatim from globals.css */
+.q-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--q-brand-ember);
+}
+.q-text-gradient {
+  background-image: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.q-text-brand-gradient {
+  background-image: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.q-glass-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.045);
+  backdrop-filter: blur(24px);
+  transition: all 500ms var(--ease-brand);
+}
+.q-glass-panel:hover {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.07);
+}
+.q-premium-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
+  backdrop-filter: blur(24px);
+  box-shadow: var(--shadow-premium);
+}
+.q-bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 82%);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 82%);
+}
+.q-bg-dots {
+  background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 72%);
+}
+
+@keyframes q-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+@keyframes q-shimmer {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}

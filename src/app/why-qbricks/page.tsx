@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import { Metrics } from "@/components/interactive/Metrics";
 import { ComputeCost } from "@/components/interactive/ComputeCost";
+import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
+import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -25,7 +27,7 @@ export default function WhyQBricksPage() {
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">The category problem</p>
           <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
-            “One platform” does not fix your metadata problem.
+            “One platform” does not fix your A.I. ready data problem.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
             <QBricksText /> sits underneath the tools and programmes organisations already run: the governed metadata foundation that makes A.I., analytics and regulatory reporting trustworthy.
@@ -39,6 +41,9 @@ export default function WhyQBricksPage() {
           </div>
         </div>
       </section>
+
+      <DataJourneyDiagram variant="manual" />
+      <DataJourneyDiagram variant="platform" />
 
       <section id="ten-reasons" className="section-y relative overflow-hidden border-b border-white/5 bg-q-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(232,32,15,0.16),transparent_42%)]" />
@@ -59,13 +64,11 @@ export default function WhyQBricksPage() {
 
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.65)] md:p-3">
             <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-black">
-              <iframe
-                src="https://player.mux.com/pBStRpuKR00m7Xe1neCepUPvoWhvtOJZhhGq8N5JCOqE?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
-                title="10 reasons why QBricks"
-                className="h-full w-full border-0"
-                loading="lazy"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowFullScreen
+              <PosterVideo
+                playerSrc="https://player.mux.com/pBStRpuKR00m7Xe1neCepUPvoWhvtOJZhhGq8N5JCOqE?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
+                posterAlt="10 reasons why QBricks video cover"
+                posterSrc="/assets/thumb-10-reasons.png"
+                videoTitle="10 reasons why QBricks"
               />
             </div>
           </div>

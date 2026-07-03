@@ -1,0 +1,48 @@
+/* QBricks color tokens — lifted verbatim from tailwind.config.ts + globals.css */
+:root {
+  /* Brand */
+  --q-brand: #e8200f;          /* primary red — CTAs, active states */
+  --q-brand-ember: #ff3a26;    /* hover / accent red — the "Q", eyebrows */
+  --q-brand-dark: #8f1409;     /* deck redDk */
+
+  /* Surfaces */
+  --q-black: #000000;          /* page background */
+  --q-panel: #0a0a0a;          /* raised panel */
+  --q-panel-hover: #121212;    /* panel hover */
+  --q-footer: #040404;         /* footer background */
+
+  /* Neutrals (zinc scale) */
+  --q-gray-100: #f4f4f5;
+  --q-gray-200: #e4e4e7;       /* body text on black */
+  --q-gray-300: #d4d4d8;
+  --q-gray-400: #a1a1aa;       /* secondary text */
+  --q-gray-500: #71717a;       /* tertiary / captions */
+  --q-gray-800: #27272a;       /* default border-color */
+  --q-gray-900: #18181b;
+
+  /* Semantic accents (used sparingly, always as /10 tinted chips) */
+  --q-green: #33c08a;          /* success / "with QBricks" — emerald-300 range in web */
+  --q-amber: #e8a53a;          /* warning tone */
+  --q-emerald-300: #6ee7b7;
+  --q-blue-300: #93c5fd;
+  --q-amber-300: #fcd34d;
+  --q-violet-300: #c4b5fd;
+  --q-red-300: #fca5a5;
+
+  /* Semantic aliases */
+  --text-heading: #ffffff;
+  --text-body: var(--q-gray-300);
+  --text-secondary: var(--q-gray-400);
+  --text-muted: var(--q-gray-500);
+  --surface-page: var(--q-black);
+  --surface-card: rgba(255, 255, 255, 0.045);
+  --surface-card-hover: rgba(255, 255, 255, 0.07);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --border-card-hover: rgba(255, 255, 255, 0.2);
+
+  /* Gradients */
+  --gradient-text: linear-gradient(to bottom, #ffffff 0%, #a1a1aa 100%);
+  --gradient-brand-text: linear-gradient(135deg, #ff6a5c 0%, #ff3a26 42%, #e8200f 100%);
+  --gradient-cta: linear-gradient(to right, #c91b0d, #ff3a26, #ff7669); /* @kind color */
+  --gradient-border: linear-gradient(135deg, rgba(255,58,38,0.52), rgba(255,255,255,0.1) 42%, transparent 76%); /* @kind color */
+}

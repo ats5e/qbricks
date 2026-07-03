@@ -27,7 +27,7 @@ export default function IntegrationsPage() {
             Works with the platforms your organisation already runs on.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            Cloud-agnostic metadata governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases. <QBricksText /> is built to fit your modern data stack perfectly.
+            Cloud-agnostic data governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases. <QBricksText /> is built to fit your modern data stack perfectly.
           </p>
         </div>
       </section>

@@ -1,0 +1,306 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "Context/**",
+              "components/brand/**",
+              "components/core/**",
+              "image-slot.js",
+              "tailwind.config.ts",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Plus Jakarta Sans|Quicksand))/i]",
+        "message": "Font not provided by the design system. Available: Plus Jakarta Sans, Quicksand."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|arrow|children|style|onClick|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, arrow, children, style, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|hero)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'hero'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:md|lg)$/]",
+        "message": "<Button> size must be one of 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlassCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|padding|children|style|key|ref|className|style|children)$/]",
+        "message": "<GlassCard> doesn't accept that prop. Declared props: variant, padding, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlassCard'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:glass|premium)$/]",
+        "message": "<GlassCard> variant must be one of 'glass' | 'premium'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IntegrationTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|name|invert|style|key|ref|className|style|children)$/]",
+        "message": "<IntegrationTile> doesn't accept that prop. Declared props: src, name, invert, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|height|style|key|ref|className|style|children)$/]",
+        "message": "<Logo> doesn't accept that prop. Declared props: src, height, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pill'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|uppercase|children|style|key|ref|className|style|children)$/]",
+        "message": "<Pill> doesn't accept that prop. Declared props: tone, uppercase, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pill'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:neutral|brand|success)$/]",
+        "message": "<Pill> tone must be one of 'neutral' | 'brand' | 'success'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='QIcon'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|size|glow|style|key|ref|className|style|children)$/]",
+        "message": "<QIcon> doesn't accept that prop. Declared props: src, size, glow, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute > JSXIdentifier[name!=/^(?:eyebrow|title|lead|size|align|style|key|ref|className|style|children)$/]",
+        "message": "<SectionHeading> doesn't accept that prop. Declared props: eyebrow, title, lead, size, align, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:lg|md|sm)$/]",
+        "message": "<SectionHeading> size must be one of 'lg' | 'md' | 'sm'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:center|left)$/]",
+        "message": "<SectionHeading> align must be one of 'center' | 'left'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "GlassCard": {
+        "replaces": []
+      },
+      "IntegrationTile": {
+        "replaces": []
+      },
+      "Logo": {
+        "replaces": []
+      },
+      "Pill": {
+        "replaces": []
+      },
+      "QBricksText": {
+        "replaces": []
+      },
+      "QIcon": {
+        "replaces": []
+      },
+      "SectionHeading": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--blur-glass",
+      "--blur-glass-lg",
+      "--border-card",
+      "--border-card-hover",
+      "--container-max",
+      "--container-pad",
+      "--duration-card",
+      "--duration-hover",
+      "--ease-brand",
+      "--font-deck",
+      "--font-display",
+      "--font-sans",
+      "--font-wordmark",
+      "--glow-brand",
+      "--glow-brand-strong",
+      "--glow-pill",
+      "--gradient-border",
+      "--gradient-brand-text",
+      "--gradient-cta",
+      "--gradient-text",
+      "--leading-display",
+      "--leading-relaxed",
+      "--pad-btn",
+      "--pad-btn-lg",
+      "--pad-card",
+      "--pad-card-lg",
+      "--q-amber",
+      "--q-amber-300",
+      "--q-black",
+      "--q-blue-300",
+      "--q-brand",
+      "--q-brand-dark",
+      "--q-brand-ember",
+      "--q-emerald-300",
+      "--q-footer",
+      "--q-gray-100",
+      "--q-gray-200",
+      "--q-gray-300",
+      "--q-gray-400",
+      "--q-gray-500",
+      "--q-gray-800",
+      "--q-gray-900",
+      "--q-green",
+      "--q-panel",
+      "--q-panel-hover",
+      "--q-red-300",
+      "--q-violet-300",
+      "--radius-card",
+      "--radius-card-lg",
+      "--radius-card-xl",
+      "--radius-chip",
+      "--radius-inner",
+      "--radius-pill",
+      "--section-y",
+      "--shadow-device",
+      "--shadow-nav",
+      "--shadow-panel",
+      "--shadow-premium",
+      "--surface-card",
+      "--surface-card-hover",
+      "--surface-page",
+      "--text-body",
+      "--text-eyebrow",
+      "--text-h2",
+      "--text-h2-sm",
+      "--text-h3",
+      "--text-heading",
+      "--text-hero",
+      "--text-lead",
+      "--text-muted",
+      "--text-secondary",
+      "--text-sm",
+      "--tracking-eyebrow",
+      "--tracking-tag",
+      "--weight-black",
+      "--weight-bold",
+      "--weight-semibold"
+    ],
+    "tokenKinds": {
+      "--q-brand": "color",
+      "--q-brand-ember": "color",
+      "--q-brand-dark": "color",
+      "--q-black": "color",
+      "--q-panel": "color",
+      "--q-panel-hover": "color",
+      "--q-footer": "color",
+      "--q-gray-100": "color",
+      "--q-gray-200": "color",
+      "--q-gray-300": "color",
+      "--q-gray-400": "color",
+      "--q-gray-500": "color",
+      "--q-gray-800": "color",
+      "--q-gray-900": "color",
+      "--q-green": "color",
+      "--q-amber": "color",
+      "--q-emerald-300": "color",
+      "--q-blue-300": "color",
+      "--q-amber-300": "color",
+      "--q-violet-300": "color",
+      "--q-red-300": "color",
+      "--text-heading": "font",
+      "--text-body": "font",
+      "--text-secondary": "font",
+      "--text-muted": "font",
+      "--surface-page": "color",
+      "--surface-card": "color",
+      "--surface-card-hover": "color",
+      "--border-card": "color",
+      "--border-card-hover": "color",
+      "--gradient-text": "font",
+      "--gradient-brand-text": "font",
+      "--gradient-cta": "color",
+      "--gradient-border": "color",
+      "--font-sans": "font",
+      "--font-display": "font",
+      "--font-deck": "font",
+      "--font-wordmark": "font",
+      "--text-hero": "font",
+      "--text-h2": "font",
+      "--text-h2-sm": "font",
+      "--text-h3": "font",
+      "--text-lead": "font",
+      "--text-sm": "font",
+      "--text-eyebrow": "font",
+      "--leading-display": "font",
+      "--leading-relaxed": "font",
+      "--tracking-eyebrow": "font",
+      "--tracking-tag": "font",
+      "--weight-black": "font",
+      "--weight-bold": "font",
+      "--weight-semibold": "font",
+      "--container-max": "spacing",
+      "--container-pad": "spacing",
+      "--section-y": "spacing",
+      "--radius-card": "radius",
+      "--radius-card-lg": "radius",
+      "--radius-card-xl": "radius",
+      "--radius-inner": "radius",
+      "--radius-chip": "radius",
+      "--radius-pill": "radius",
+      "--pad-card": "spacing",
+      "--pad-card-lg": "spacing",
+      "--pad-btn": "spacing",
+      "--pad-btn-lg": "spacing",
+      "--shadow-panel": "shadow",
+      "--shadow-premium": "shadow",
+      "--shadow-nav": "shadow",
+      "--shadow-device": "shadow",
+      "--glow-brand": "shadow",
+      "--glow-brand-strong": "shadow",
+      "--glow-pill": "shadow",
+      "--blur-glass": "spacing",
+      "--blur-glass-lg": "spacing",
+      "--ease-brand": "other",
+      "--duration-hover": "other",
+      "--duration-card": "other"
+    },
+    "fontFamilies": [
+      "Plus Jakarta Sans",
+      "Quicksand"
+    ]
+  }
+}

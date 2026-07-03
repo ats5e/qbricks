@@ -1,0 +1,22 @@
+/* QBricks spacing, radii and layout tokens */
+:root {
+  /* Layout: .container-x = max-w-7xl, px 16/24/32 */
+  --container-max: 80rem;
+  --container-pad: 2rem;
+  /* .section-y = py 64/96/128 */
+  --section-y: clamp(4rem, 8vw, 8rem); /* @kind spacing */
+
+  /* Corner radii — QBricks is heavily rounded */
+  --radius-card: 1.5rem;       /* rounded-3xl: glass panels, integration tiles */
+  --radius-card-lg: 2rem;      /* rounded-[2rem]: premium cards */
+  --radius-card-xl: 2.25rem;   /* hero device frame */
+  --radius-inner: 1rem;        /* small proof cards */
+  --radius-chip: 1rem;         /* icon chips: rounded-xl (0.75rem) / rounded-2xl (1rem) */
+  --radius-pill: 9999px;       /* buttons, nav, badges — always full pill */
+
+  /* Common paddings from source */
+  --pad-card: 1.5rem;          /* p-6 */
+  --pad-card-lg: 2rem;         /* p-8 */
+  --pad-btn: 0.875rem 1.5rem;  /* px-6 py-3.5, text-sm bold */
+  --pad-btn-lg: 1rem 2rem;     /* px-8 py-4 */
+}

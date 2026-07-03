@@ -1,0 +1,8 @@
+/* QBricks webfonts.
+   The website uses Plus Jakarta Sans (Google Fonts, loaded via next/font in the
+   source repo). No font binaries ship with the repo, so we load from Google.
+   The PPTX deck house style originally used Century Gothic; per user decision
+   all HTML output uses Plus Jakarta Sans. */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+/* Quicksand — reserved exclusively for the "QBricks" wordmark in text (Q 700 / Bricks 400). */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');

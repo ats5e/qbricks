@@ -1,0 +1,28 @@
+/* QBricks typography tokens */
+:root {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Deck (PPTX) house font — original was Century Gothic (not shipped); using Plus Jakarta Sans per user decision. */
+  --font-deck: var(--font-sans);
+  /* Wordmark: every text-rendered "QBricks" uses Quicksand — Q 700 #FF3A26, Bricks 400 #fff, inline, no spacing. */
+  --font-wordmark: "Quicksand", var(--font-sans);
+
+  /* Display headline: font-black, leading-[0.95], tracking-tight */
+  --text-hero: clamp(3rem, 6vw, 5.1rem);
+  --text-h2: clamp(2.4rem, 5.6vw, 5.6rem);
+  --text-h2-sm: clamp(2rem, 4vw, 3.7rem);
+  --text-h3: 1.5rem;         /* card titles: text-2xl font-black */
+  --text-lead: 1.25rem;      /* text-xl leading-relaxed */
+  --text-body: 1rem;
+  --text-sm: 0.875rem;
+  --text-eyebrow: 0.75rem;   /* uppercase, tracking .18em, bold, brand-ember */
+
+  --leading-display: 0.95;
+  --leading-relaxed: 1.625;
+  --tracking-eyebrow: 0.18em;
+  --tracking-tag: 0.22em;
+
+  --weight-black: 900;       /* headlines, buttons use 700–900 */
+  --weight-bold: 700;
+  --weight-semibold: 600;
+}
