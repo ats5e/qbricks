@@ -1,6 +1,6 @@
 import { PlayCircle } from "lucide-react";
 import { UseCases } from "@/components/interactive/UseCases";
-import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
+import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText } from "@/components/ui/QBricksText";
@@ -46,7 +46,7 @@ export default function SolutionsPage() {
       </section>
 
       <UseCases />
-      <ArchitectureMap />
+      <EcosystemDiagram />
       <FeaturesBento />
 
       <section className="relative overflow-hidden border-b border-white/5 bg-q-black py-24">

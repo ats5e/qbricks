@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Check, ChevronRight, Cpu, FileCheck2, Unlock } from "lucide-react";
 import Image from "next/image";
@@ -63,7 +64,7 @@ const fadeUp = {
   viewport: { once: true, margin: "-90px" },
 } as const;
 
-export function CapabilityOverview({ content }: { content: CapabilityContent }) {
+export function CapabilityOverview({ content, diagram }: { content: CapabilityContent; diagram?: React.ReactNode }) {
   const Scene = scenes[content.scene];
   const sceneProps: SceneProps = { badge: content.sceneBadge, logo: content.partnerLogo, logoAlt: content.partner };
 
@@ -265,6 +266,9 @@ export function CapabilityOverview({ content }: { content: CapabilityContent }) 
           </div>
         </div>
       </section>
+
+      {/* ================= Partner flow diagram ================= */}
+      {diagram && <Fragment key="partner-diagram">{diagram}</Fragment>}
 
       {/* ================= How QBricks fits ================= */}
       <section className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">

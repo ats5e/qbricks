@@ -1,4 +1,5 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
+import { ClouderaFlowDiagram } from "@/components/diagrams/ClouderaFlowDiagram";
 
 export const metadata = {
   title: "QBricks + Cloudera | Capability Overview",
@@ -101,5 +102,5 @@ const content: CapabilityContent = {
 };
 
 export default function Page() {
-  return <CapabilityOverview content={content} />;
+  return <CapabilityOverview content={content} diagram={<ClouderaFlowDiagram />} />;
 }

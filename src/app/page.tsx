@@ -1,13 +1,12 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { Hero } from "@/components/interactive/Hero";
 import { Metrics } from "@/components/interactive/Metrics";
 import { Agentic } from "@/components/interactive/Agentic";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { DeveloperExperience } from "@/components/interactive/DeveloperExperience";
 import { Integrations } from "@/components/interactive/Integrations";
-import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
+import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { UseCases } from "@/components/interactive/UseCases";
 import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
 
@@ -21,7 +20,7 @@ export default function Home() {
       <FeaturesBento />
       <DeveloperExperience />
       <Integrations />
-      <ArchitectureMap />
+      <EcosystemDiagram />
       <UseCases />
 
       <section id="demo" className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">

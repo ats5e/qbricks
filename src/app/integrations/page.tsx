@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
+import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { Integrations } from "@/components/interactive/Integrations";
 import { QBricksText } from "@/components/ui/QBricksText";
 
@@ -40,7 +40,7 @@ export default function IntegrationsPage() {
         </Link>
       </div>
 
-      <ArchitectureMap />
+      <EcosystemDiagram />
     </main>
   );
 }

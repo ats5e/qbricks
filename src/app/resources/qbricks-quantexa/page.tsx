@@ -1,4 +1,5 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
+import { QuantexaFlowDiagram } from "@/components/diagrams/QuantexaFlowDiagram";
 
 export const metadata = {
   title: "QBricks + Quantexa | Capability Overview",
@@ -102,5 +103,5 @@ const content: CapabilityContent = {
 };
 
 export default function Page() {
-  return <CapabilityOverview content={content} />;
+  return <CapabilityOverview content={content} diagram={<QuantexaFlowDiagram />} />;
 }
