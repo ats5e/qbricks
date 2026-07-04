@@ -77,7 +77,7 @@ const spotlights = [
     href: "/resources/qbricks-cloudera",
     scene: GovernanceScene,
     badge: "Live audit",
-    logo: undefined,
+    logo: "/assets/partners/Cloudera_logo.webp",
     partner: "Cloudera",
     bullets: [
       "ODCS enforced at ingestion — nothing ungoverned gets through",

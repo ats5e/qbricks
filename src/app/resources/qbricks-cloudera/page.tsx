@@ -7,6 +7,7 @@ export const metadata = {
 
 const content: CapabilityContent = {
   partner: "Cloudera",
+  partnerLogo: "/assets/partners/Cloudera_logo.webp",
   scene: "governance",
   sceneBadge: "Live audit",
   eyebrow: "No more data pipelines",
