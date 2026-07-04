@@ -16,6 +16,39 @@ const insights = [
   "AML and KYC are data problems first",
 ];
 
+const capabilityOverviews = [
+  {
+    partner: "Databricks",
+    logo: "/assets/partners/Databricks.png",
+    href: "/resources/qbricks-databricks",
+    text: "Governed, A.I.-ready data products delivered straight into Unity Catalog.",
+  },
+  {
+    partner: "Microsoft Fabric",
+    logo: "/assets/partners/Fabric.png",
+    href: "/resources/qbricks-fabric",
+    text: "Contract-enforced Delta Parquet landed in OneLake, read instantly by Power BI.",
+  },
+  {
+    partner: "Snowflake",
+    logo: "/assets/partners/Snowflake.png",
+    href: "/resources/qbricks-snowflake",
+    text: "Open Iceberg tables into the data cloud — credits stay free for Cortex AI.",
+  },
+  {
+    partner: "Quantexa",
+    logo: "/assets/partners/Quantexa.png",
+    href: "/resources/qbricks-quantexa",
+    text: "Entity-ready products, field-mapped to the Quantexa data model.",
+  },
+  {
+    partner: "Cloudera",
+    logo: "/assets/partners/Cloudera_logo.webp",
+    href: "/resources/qbricks-cloudera",
+    text: "Trusted, ODCS-governed data products for the Cloudera lakehouse.",
+  },
+];
+
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
   { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
@@ -59,6 +92,30 @@ export default function ResourcesPage() {
               </div>
             </div>
           </Link>
+        </div>
+
+        <div className="container-x mb-16">
+          <p className="eyebrow mb-4">Capability overviews</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {capabilityOverviews.map((item) => (
+              <Link
+                key={item.partner}
+                href={item.href}
+                className="premium-card group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
+              >
+                <div className="mb-5 flex h-9 items-center">
+                  <Image src={item.logo} alt={item.partner} width={140} height={28} className="h-6 w-auto object-contain" />
+                </div>
+                <h2 className="text-lg font-black leading-snug text-white">
+                  Trusted data for {item.partner}
+                </h2>
+                <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-q-gray-400">{item.text}</p>
+                <div className="mt-5 flex items-center gap-2 text-sm font-bold text-white transition-colors group-hover:text-q-brand-ember">
+                  Read the overview <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="container-x mb-16">
