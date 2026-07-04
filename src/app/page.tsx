@@ -9,11 +9,13 @@ import { DeveloperExperience } from "@/components/interactive/DeveloperExperienc
 import { Integrations } from "@/components/interactive/Integrations";
 import { ArchitectureMap } from "@/components/interactive/ArchitectureMap";
 import { UseCases } from "@/components/interactive/UseCases";
+import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-q-black selection:bg-q-brand/30 selection:text-white">
       <Hero />
+      <PlatformSpotlights />
       <Metrics />
       <Agentic />
       <FeaturesBento />

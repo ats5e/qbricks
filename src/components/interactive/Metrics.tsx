@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, ArrowRight, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
+import { AlertTriangle, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { QIcon } from "@/components/ui/QIcon";
 import { QBricksText } from "@/components/ui/QBricksText";
@@ -93,12 +93,31 @@ export function Metrics() {
           </motion.p>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
+        <div className="relative mt-16 grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
+          {/* Connecting beam with travelling pulses (desktop) */}
+          <div
+            className="absolute inset-x-10 top-1/2 hidden h-0.5 lg:block"
+            style={{
+              background: "linear-gradient(90deg, rgba(239,68,68,0.35), rgba(232,32,15,0.85), rgba(52,211,153,0.5))",
+              boxShadow: "0 0 18px rgba(232,32,15,0.4)",
+            }}
+            aria-hidden="true"
+          >
+            <div
+              className="absolute -top-[3px] h-2 w-2 rounded-full bg-[#ff6a64] shadow-[0_0_14px_rgba(255,58,38,0.9)]"
+              style={{ animation: "cc-travel 4.5s ease-in-out infinite" }}
+            />
+            <div
+              className="absolute -top-[3px] h-2 w-2 rounded-full bg-[#ff6a64] shadow-[0_0_14px_rgba(255,58,38,0.9)]"
+              style={{ animation: "cc-travel 4.5s ease-in-out 2.2s infinite" }}
+            />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="premium-card p-6 md:p-8"
+            className="premium-card border-red-400/20 bg-gradient-to-br from-[#26181a]/90 to-[#0f0b0c]/90 p-6 md:p-8"
           >
             <div className="mb-7 flex items-center gap-3">
               <div className="rounded-2xl border border-red-400/20 bg-red-500/10 p-3 text-red-300">
@@ -110,21 +129,50 @@ export function Metrics() {
               </div>
             </div>
             <ul className="space-y-4">
-              {before.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-q-gray-300">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-400/80" />
+              {before.map((item, index) => (
+                <li key={item} className="flex items-start gap-3 border-b border-white/5 pb-4 text-q-gray-300 last:border-b-0 last:pb-0">
+                  <span
+                    className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-400/85 shadow-[0_0_10px_rgba(239,68,68,0.6)]"
+                    style={{ animation: `cc-blink ${[2.6, 3.4, 2.9, 3.8, 3.1][index % 5]}s ease-in-out infinite` }}
+                  />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
+            <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+              <div
+                className="absolute inset-y-0 left-0 w-[38%]"
+                style={{
+                  background: "linear-gradient(105deg, transparent, rgba(255,255,255,0.04), transparent)",
+                  animation: "cc-sweep 8s linear 3s infinite",
+                }}
+              />
+            </div>
           </motion.div>
 
           <div className="hidden w-20 items-center justify-center lg:flex">
             <div className="relative flex h-full w-full items-center justify-center">
-              <div className="absolute h-px w-full bg-gradient-to-r from-white/10 via-q-brand to-white/10" />
-              <div className="relative flex h-14 w-14 items-center justify-center rounded-full border border-q-brand/40 bg-q-brand/15 text-q-brand-ember shadow-[0_0_42px_rgba(232,32,15,0.32)]">
+              <div
+                className="absolute h-24 w-24 rounded-full"
+                style={{
+                  background: "radial-gradient(circle, rgba(232,32,15,0.35), transparent 70%)",
+                  animation: "cc-halo 4s ease-in-out infinite",
+                }}
+              />
+              <div
+                className="absolute h-[74px] w-[74px] rounded-full border border-dashed border-q-brand/50"
+                style={{ animation: "cc-spin 18s linear infinite" }}
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.2 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-q-brand/85 bg-[#17171d] text-q-brand-ember"
+                style={{ animation: "cc-hub-pulse 3.4s ease-in-out infinite" }}
+              >
                 <QIcon className="h-6 w-6" />
-              </div>
+              </motion.div>
             </div>
           </div>
 
@@ -132,11 +180,14 @@ export function Metrics() {
             initial={{ opacity: 0, x: 28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="premium-card border-emerald-400/20 p-6 md:p-8"
+            className="premium-card border-emerald-400/25 bg-gradient-to-bl from-[#16221e]/90 to-[#0b0f0d]/90 p-6 md:p-8"
           >
             <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-emerald-400/10 blur-[90px]" />
             <div className="relative mb-7 flex items-center gap-3">
-              <div className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-3 text-emerald-300">
+              <div
+                className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-3 text-emerald-300"
+                style={{ animation: "cc-green-glow 3.6s ease-in-out infinite" }}
+              >
                 <Layers3 className="h-6 w-6" />
               </div>
               <div>
@@ -145,13 +196,30 @@ export function Metrics() {
               </div>
             </div>
             <ul className="relative space-y-4">
-              {after.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-white">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
+              {after.map((item, index) => (
+                <li key={item} className="flex items-start gap-3 border-b border-white/5 pb-4 text-white last:border-b-0 last:pb-0">
+                  <motion.span
+                    initial={{ opacity: 0, scale: 0.2 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.16, ease: [0.22, 1, 0.36, 1] }}
+                    className="shrink-0"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" />
+                  </motion.span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
+            <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+              <div
+                className="absolute inset-y-0 left-0 w-[38%]"
+                style={{
+                  background: "linear-gradient(105deg, transparent, rgba(255,255,255,0.04), transparent)",
+                  animation: "cc-sweep 8s linear 4s infinite",
+                }}
+              />
+            </div>
           </motion.div>
         </div>
 

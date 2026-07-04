@@ -225,3 +225,121 @@
     animation: none !important;
   }
 }
+
+/* Command centre & without/with redesigned graphics */
+@keyframes cc-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cc-spin-r {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes cc-cube-bob {
+  0%, 100% { transform: scale(var(--sc, 1)) translateY(0); }
+  50% { transform: scale(var(--sc, 1)) translateY(-16px); }
+}
+
+@keyframes cc-twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.95; }
+}
+
+@keyframes cc-sweep {
+  0% { transform: translateX(-160%) skewX(-14deg); }
+  100% { transform: translateX(420%) skewX(-14deg); }
+}
+
+@keyframes cc-streak {
+  0% { transform: translateX(-280px); opacity: 0; }
+  8% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(110vw); opacity: 0; }
+}
+
+@keyframes cc-halo {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.8); opacity: 0.12; }
+}
+
+@keyframes cc-hub-pulse {
+  0%, 100% { box-shadow: 0 0 34px rgba(232, 32, 15, 0.35); }
+  50% { box-shadow: 0 0 72px rgba(232, 32, 15, 0.7); }
+}
+
+@keyframes cc-green-glow {
+  0%, 100% { box-shadow: 0 0 16px rgba(34, 160, 107, 0.3); }
+  50% { box-shadow: 0 0 38px rgba(34, 160, 107, 0.65); }
+}
+
+@keyframes cc-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes cc-travel {
+  0% { left: 0%; opacity: 0; transform: scale(1); }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 100%; opacity: 0; transform: scale(0.6); }
+}
+
+@keyframes cc-breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes cc-float-back {
+  0%, 100% { transform: translateZ(-240px) translateY(0); }
+  50% { transform: translateZ(-240px) translateY(-18px); }
+}
+
+@keyframes cc-float-front {
+  0%, 100% { transform: translateZ(20px) translateY(0); }
+  50% { transform: translateZ(20px) translateY(-28px); }
+}
+
+@keyframes cc-scroll-cue {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+@keyframes cc-shield-draw {
+  from { stroke-dashoffset: 600; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes cc-log-scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@keyframes cc-dot-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes cc-dash-flow {
+  to { stroke-dashoffset: -26; }
+}
+
+@keyframes cc-node-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@keyframes cc-edge-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes cc-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="cc-"] {
+    animation: none !important;
+  }
+}
