@@ -171,8 +171,9 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
           </FlowCanvas>
         </div>
 
-        <p className="mt-6 text-center text-sm text-q-gray-500">
-          <QBricksText /> streams governed, contract-enforced data forward — every lane inherits the same trusted foundation.
+        <p className="mx-auto mt-14 max-w-4xl text-center text-[clamp(1.4rem,2.6vw,2.1rem)] font-black leading-snug tracking-tight text-white">
+          “<QBricksText /> streams governed, contract-enforced data forward — every lane inherits the same{" "}
+          <span className="text-q-brand-ember">trusted foundation</span>.”
         </p>
       </div>
     </section>
