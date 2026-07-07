@@ -1,4 +1,5 @@
-import { ArrowRight, BookOpen, Video, HelpCircle } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react";
+import { whitepapers } from "./whitepapers/data";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -100,6 +101,31 @@ export default function ResourcesPage() {
               </div>
             </div>
           </Link>
+        </div>
+
+        <div className="container-x mb-16">
+          <p className="eyebrow mb-4">White papers</p>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {whitepapers.map((paper) => (
+              <Link
+                key={paper.slug}
+                href={`/resources/whitepapers/${paper.slug}`}
+                className="premium-card group flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
+              >
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-q-brand/35 bg-q-brand/10 text-q-brand-ember">
+                    <FileText className="h-4 w-4" />
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-q-gray-500">{paper.category}</span>
+                </div>
+                <h2 className="text-xl font-black leading-snug text-white">{paper.title}</h2>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-q-gray-400">{paper.standfirst.slice(0, 150)}…</p>
+                <div className="mt-5 flex items-center gap-2 text-sm font-bold text-white transition-colors group-hover:text-q-brand-ember">
+                  Read & download <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="container-x mb-16">
