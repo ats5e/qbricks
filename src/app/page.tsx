@@ -8,6 +8,7 @@ import { Integrations } from "@/components/interactive/Integrations";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
+import { ProofBand } from "@/components/interactive/ProofBand";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <PlatformSpotlights />
       <Metrics />
+      <ProofBand />
       <Agentic />
       <FeaturesBento />
       <EcosystemDiagram />

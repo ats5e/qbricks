@@ -276,7 +276,7 @@ export default function Calculator() {
           Reclaim <span className="font-bold text-emerald-400"><Counter value={totalAnnualSaving} isMillion={true} /></span> across your data estate.
         </p>
         
-        <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+        <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
           Request a demo <ArrowRight className="h-5 w-5" />
         </Link>
         

@@ -52,8 +52,18 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
 
   const Scene = scenes[paper.scene];
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: paper.title,
+    description: paper.standfirst,
+    author: { "@type": "Organization", name: "QBricks" },
+    publisher: { "@type": "Organization", name: "Infinium Consulting B.V." },
+  };
+
   return (
     <main className="min-h-screen bg-q-black selection:bg-q-brand/30 selection:text-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/5 pb-20 pt-40 lg:pt-44">
         <div className="absolute inset-0 -z-0">
@@ -153,6 +163,15 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
                 More resources
               </Link>
             </div>
+            <p className="mt-6 text-sm text-q-gray-500">
+              Prefer it in your inbox?{" "}
+              <a
+                href={`mailto:sales@infinium.consulting?subject=${encodeURIComponent(`White paper request: ${paper.title}`)}`}
+                className="font-bold text-q-gray-300 underline decoration-q-brand/50 underline-offset-4 transition-colors hover:text-white"
+              >
+                Email us for the paper and a walkthrough.
+              </a>
+            </p>
           </div>
         </div>
       </section>

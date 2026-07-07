@@ -83,12 +83,22 @@ export function FlowCanvas({
   }, []);
 
   return (
-    <div ref={ref} className="relative" style={{ width }}>
-      <svg className="pointer-events-none absolute inset-0 z-0 h-full w-full">
+    <div ref={ref} className="relative w-full lg:w-[var(--fc-w)]" style={{ ["--fc-w" as string]: `${width}px` }}>
+      <svg className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full lg:block">
         {paths.map((d, i) =>
           d ? (
             <g key={`conn-${i}`}>
-              <path d={d} fill="none" stroke="rgba(232,32,15,0.28)" strokeWidth="1.5" strokeDasharray="5 5" />
+              <motion.path
+                d={d}
+                fill="none"
+                stroke="rgba(232,32,15,0.28)"
+                strokeWidth="1.5"
+                strokeDasharray="5 5"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.9, delay: 0.3 + i * 0.12 }}
+              />
               {!reducedMotion &&
                 Array.from({ length: connectors[i].packets ?? 1 }).map((_, p) => (
                   <FlowPacket
@@ -104,7 +114,7 @@ export function FlowCanvas({
       </svg>
       {label && labelPos && (
         <span
-          className="pointer-events-none absolute z-10 -translate-y-1/2 rounded bg-q-black/80 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.2em] text-q-brand-ember"
+          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-q-black/80 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.2em] text-q-brand-ember lg:block"
           style={{ left: labelPos.x + 10, top: labelPos.y - 14 }}
         >
           {label.text}

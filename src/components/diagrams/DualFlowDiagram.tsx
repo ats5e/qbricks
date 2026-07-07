@@ -56,7 +56,7 @@ export function DualFlowDiagram() {
 
         <div className="-mx-6 mt-14 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:flex lg:justify-center lg:px-0">
           <FlowCanvas width={1120} connectors={connectors}>
-            <div className="flex items-start justify-between gap-14">
+            <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
               {/* Systems of record */}
               <div className="w-[220px] flex-none self-center">
                 <ColumnLabel>Systems of record</ColumnLabel>

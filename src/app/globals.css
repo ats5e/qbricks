@@ -328,6 +328,17 @@
   50% { opacity: 1; }
 }
 
+/* Visible keyboard focus site-wide */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid rgba(255, 58, 38, 0.85);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 @keyframes cc-edge-grow {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }

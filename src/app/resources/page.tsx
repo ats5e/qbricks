@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, FileText, Video, HelpCircle } from "lucide-react";
 import { whitepapers } from "./whitepapers/data";
+import { insights } from "./insights/data";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,13 +10,6 @@ export const metadata = {
   title: "Resources | QBricks",
   description: "Insights and FAQ on A.I.-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
 };
-
-const insights = [
-  "Why 95% of A.I. use cases fail, and what organisations can do about it",
-  "The lakehouse data swamp: how migration quietly breaks governance",
-  "Data Contracts explained: governance that actually scales",
-  "AML and KYC are data problems first",
-];
 
 const capabilityOverviews = [
   {
@@ -66,9 +60,26 @@ const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
   { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost on local compute, and end-to-end auditability." },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { q: "What exactly is QBricks?", a: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
+    { q: "How fast can we deploy?", a: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
+    { q: "Which platforms does it work with?", a: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down. QBricks is cloud-agnostic, delivering in open, portable formats." },
+    { q: "How secure is it?", a: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
+    { q: "What results can we expect?", a: "Fewer data-quality issues, deployment in hours, lower compute cost on local compute, and end-to-end auditability." },
+  ].map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function ResourcesPage() {
   return (
     <main className="min-h-screen bg-q-black">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="bg-q-black pb-24 pt-40 lg:pt-44">
         <div className="container-x mb-16">
           <h1 className="sr-only">Resources</h1>
@@ -176,13 +187,22 @@ export default function ResourcesPage() {
 
         <div className="container-x grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="eyebrow mb-4">Launch insights</p>
+            <p className="eyebrow mb-4">Insights</p>
             <div className="space-y-4">
               {insights.map((item) => (
-                <div key={item} className="premium-card flex items-start gap-4 p-6">
+                <Link
+                  key={item.slug}
+                  href={`/resources/insights/${item.slug}`}
+                  className="premium-card group flex items-start gap-4 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-q-brand/40"
+                >
                   <BookOpen className="mt-1 h-5 w-5 shrink-0 text-q-brand-ember" />
-                  <h2 className="text-xl font-black leading-snug text-white">{item}</h2>
-                </div>
+                  <div>
+                    <h2 className="text-xl font-black leading-snug text-white">{item.title}</h2>
+                    <span className="mt-2 flex items-center gap-2 text-sm font-bold text-q-gray-400 transition-colors group-hover:text-q-brand-ember">
+                      Read the insight <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -231,7 +251,7 @@ export default function ResourcesPage() {
         </div>
 
         <div className="container-x mt-16 text-center">
-          <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+          <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
             Request a demo <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

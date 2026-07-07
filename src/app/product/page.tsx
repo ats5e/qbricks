@@ -1,7 +1,6 @@
 import { ArrowRight, FileCode2, GitBranch, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { QBricksText } from "@/components/ui/QBricksText";
@@ -44,14 +43,12 @@ export default function ProductPage() {
             <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-300">
               <QBricksText /> ingests directly from your systems of record and enforces the Open Data Contract Standard on every record before it reaches the lakehouse. Agentic metadata management keeps quality improving over time; local compute keeps cost and carbon down; full lineage keeps auditors satisfied. Works with Databricks, Microsoft Fabric, Snowflake or your own on-premise database via SQL push-down — delivered in open formats that stay fully portable.
             </p>
-            <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+            <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
               Request a demo <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
-
-      <DataJourneyDiagram variant="qbricks" />
 
       <section className="border-b border-white/5 bg-q-black pb-10 pt-20 lg:pb-12 lg:pt-32">
         <div className="container-x">
@@ -97,7 +94,7 @@ export default function ProductPage() {
 
       <section className="section-y bg-q-black text-center pb-32">
         <div className="container-x relative z-10">
-          <Link href="/solutions" className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-10 py-5 text-lg font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]">
+          <Link href="/solutions" className="group inline-flex items-center justify-center gap-3 rounded-full bg-q-brand px-10 py-5 text-lg font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember hover:shadow-[0_0_40px_rgba(232,32,15,0.3)]">
             Explore use cases
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>

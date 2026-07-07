@@ -14,6 +14,18 @@ export const metadata = {
 export default function SolutionsPage() {
   return (
     <main className="min-h-screen bg-q-black pt-24">
+      <section className="border-b border-white/5 bg-q-black pb-4 pt-20 lg:pt-24">
+        <div className="container-x text-center">
+          <p className="eyebrow mb-5">Solutions</p>
+          <h1 className="mx-auto max-w-4xl text-[clamp(2.8rem,6vw,5.5rem)] font-black leading-[0.94] tracking-tight text-white">
+            Governed data products for the use cases that matter.
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
+            AML, KYC, fraud, contextual MDM, credit and ESG risk — every solution inherits the same trusted, contract-enforced foundation.
+          </p>
+        </div>
+      </section>
+
       <EcosystemDiagram emphasis />
       <UseCases />
       <DualFlowDiagram />
@@ -28,9 +40,9 @@ export default function SolutionsPage() {
               <PlayCircle className="h-4 w-4" />
               Watch
             </p>
-            <h1 className="text-[clamp(2.8rem,6vw,6rem)] font-black leading-[0.94] tracking-tight text-white">
+            <h2 className="text-[clamp(2.8rem,6vw,6rem)] font-black leading-[0.94] tracking-tight text-white">
               <QBricksText /> use cases in action
-            </h1>
+            </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
               See how governed, fully lineaged data products support financial crime, customer intelligence and risk workflows.
             </p>

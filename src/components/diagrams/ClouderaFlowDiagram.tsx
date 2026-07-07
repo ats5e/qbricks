@@ -59,7 +59,7 @@ export function ClouderaFlowDiagram() {
 
         <div className="-mx-6 mt-14 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:px-0">
           <FlowCanvas width={1320} connectors={connectors} label={{ text: "Streaming", afterId: "cl-data-1" }}>
-            <div className="flex items-start justify-between gap-10">
+            <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-between">
               {/* Data */}
               <div className="w-[210px] flex-none self-center">
                 <ColumnLabel>Data</ColumnLabel>
@@ -76,7 +76,7 @@ export function ClouderaFlowDiagram() {
               </div>
 
               {/* Cloudera platform */}
-              <div className="w-[440px] flex-none self-center">
+              <div className="w-full max-w-[440px] flex-none self-center lg:w-[440px]">
                 <motion.div
                   data-flow-id="cl-platform"
                   initial={{ opacity: 0 }}

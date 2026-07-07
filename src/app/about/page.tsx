@@ -48,10 +48,10 @@ export default function AboutPage() {
 
           <div className="premium-card mx-auto mt-10 max-w-4xl p-8 text-center md:p-12">
             <h2 className="text-[clamp(2rem,4vw,3.8rem)] font-black tracking-tight text-white">
-              Try <QBricksText /> on your data.
+              See <QBricksText /> on your own data.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-q-gray-400">Tell us your platform and priority use case, AML, KYC, fraud, MDM or risk, and we will tailor the demo.</p>
-            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
               Contact Us <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

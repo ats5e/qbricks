@@ -2,7 +2,6 @@ import { ArrowRight, CheckCircle2, PlayCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Metrics } from "@/components/interactive/Metrics";
 import { ComputeCost } from "@/components/interactive/ComputeCost";
 import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
 import { PosterVideo } from "@/components/resources/PosterVideo";
@@ -76,8 +75,6 @@ export default function WhyQBricksPage() {
         </div>
       </section>
 
-      <Metrics />
-      
       <ComputeCost />
 
       <section className="section-y bg-q-black">
@@ -86,7 +83,7 @@ export default function WhyQBricksPage() {
             <h2 className="text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[0.98] tracking-tight text-white">
               Ready to fix your data&nbsp;foundation?
             </h2>
-            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
               Request a demo <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

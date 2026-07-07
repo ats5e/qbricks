@@ -87,6 +87,10 @@ function BrickCube({ cube }: { cube: (typeof heroCubes)[number] }) {
 function useCountUp(target: number, delay: number, duration = 1700) {
   const [value, setValue] = useState(0);
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setValue(target);
+      return;
+    }
     let raf = 0;
     let start: number | null = null;
     const timer = setTimeout(() => {
