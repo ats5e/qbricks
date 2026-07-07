@@ -4,6 +4,7 @@ import Link from "next/link";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { Integrations } from "@/components/interactive/Integrations";
+import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
 import { UseCases } from "@/components/interactive/UseCases";
 import { QBricksText } from "@/components/ui/QBricksText";
 
@@ -39,6 +40,8 @@ export default function IntegrationsPage() {
       <EcosystemDiagram />
 
       <Integrations showDescriptions hideHeading />
+
+      <PlatformSpotlights />
 
       <DualFlowDiagram />
 

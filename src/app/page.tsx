@@ -7,14 +7,12 @@ import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { Integrations } from "@/components/interactive/Integrations";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
-import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
 import { ProofBand } from "@/components/interactive/ProofBand";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-q-black selection:bg-q-brand/30 selection:text-white">
       <Hero />
-      <PlatformSpotlights />
       <Metrics />
       <ProofBand />
       <Agentic />
