@@ -25,7 +25,7 @@ const after = [
 const valueCards = [
   { icon: ShieldCheck, title: "Regulatory confidence", text: "Every transformation, agent action and exception is traceable for risk, compliance and internal audit." },
   { icon: Gauge, title: "Speed without chaos", text: "Single-file deployment turns complex infrastructure and workloads into a controlled, repeatable release pattern." },
-  { icon: FileSearch, title: "Data teams can prove it", text: "Contracts, products, lineage and knowledge graphs create a shared language between business and technology." },
+  { icon: FileSearch, title: "Data teams can prove it", text: "Contracts, products, lineage and knowledge graphs create a fully auditable shared language between business and technology." },
 ];
 
 export function Metrics() {
@@ -53,7 +53,7 @@ export function Metrics() {
             transition={{ duration: 0.75 }}
             className="text-[clamp(2.4rem,5.6vw,5.6rem)] font-black leading-[0.95] tracking-tight text-white"
           >
-            Everyone is racing to deploy A.I. The issue? The supporting data is not ready.
+            Everyone is racing to deploy A.I. The issue? The underlying data is not ready.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
