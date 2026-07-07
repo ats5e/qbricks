@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -65,9 +65,10 @@ export default function ContactPage() {
                     <MapPin className="h-4 w-4" />
                   </div>
                   <div className="flex flex-col gap-1.5 leading-relaxed">
-                    <h3 className="text-lg font-bold text-white mb-1">Dubai Office</h3>
-                    <p className="text-sm text-q-gray-300">Level 02, Innovation One</p>
-                    <p className="text-sm text-q-gray-300">Dubai International Financial Centre</p>
+                    <h3 className="text-lg font-bold text-white mb-1">Amsterdam Office</h3>
+                    <p className="text-sm text-q-gray-300">Infinium Consulting BV</p>
+                    <p className="text-sm text-q-gray-300">Edge Olympic, Fred. Roeskestraat 115</p>
+                    <p className="text-sm text-q-gray-300">Amsterdam, The Netherlands</p>
                   </div>
                 </div>
 
@@ -76,14 +77,14 @@ export default function ContactPage() {
                     <MapPin className="h-4 w-4" />
                   </div>
                   <div className="flex flex-col gap-1.5 leading-relaxed">
-                    <h3 className="text-lg font-bold text-white mb-1">Amsterdam Office</h3>
-                    <p className="text-sm text-q-gray-300">Edge Olympic, Fred. Roeskestraat 115</p>
-                    <p className="text-sm text-q-gray-300">Amsterdam</p>
+                    <h3 className="text-lg font-bold text-white mb-1">Dubai Office</h3>
+                    <p className="text-sm text-q-gray-300">Level 02, Innovation One</p>
+                    <p className="text-sm text-q-gray-300">Dubai International Financial Centre</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mb-10 flex flex-col gap-5 text-q-gray-300">
+              <div className="flex flex-col gap-5 text-q-gray-300">
                 <div className="flex items-center gap-4">
                   <div className="shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
                     <Mail className="h-4 w-4" />
@@ -91,46 +92,6 @@ export default function ContactPage() {
                   <a href="mailto:sales@infinium.consulting" className="text-sm font-medium transition-colors hover:text-white">
                     sales@infinium.consulting
                   </a>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
-                    <Phone className="h-4 w-4" />
-                  </div>
-                  <a href="tel:+310646627480" className="text-sm font-medium transition-colors hover:text-white">
-                    +31 (0) 646627480
-                  </a>
-                </div>
-              </div>
-
-              {/* DIFC SVG Graphic */}
-              <div className="relative mt-auto pt-8 border-t border-white/10">
-                <p className="mb-4 text-xs font-bold uppercase tracking-widest text-q-gray-500">DIFC Innovation Hub</p>
-                <div className="relative h-48 w-full rounded-2xl border border-white/5 bg-gradient-to-tr from-white/[0.02] to-white/[0.05] p-6 shadow-[inset_0_2px_20px_rgba(255,255,255,0.02)] overflow-hidden">
-                  {/* Subtle Grid Background */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:16px_16px] opacity-20" />
-                  
-                  {/* DIFC Abstract Skyline SVG */}
-                  <svg className="absolute bottom-0 left-1/2 w-[110%] -translate-x-1/2 text-q-gray-400 opacity-70 mix-blend-plus-lighter" viewBox="0 0 400 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Gate Building */}
-                    <path d="M160 140V30H240V140M175 140V45H225V140" stroke="currentColor" strokeWidth="2.5" fill="url(#gate-grad)"/>
-                    {/* Innovation One / Generic Tower */}
-                    <path d="M260 140L275 40H315L325 140" stroke="currentColor" strokeWidth="2" fill="url(#tower-grad)"/>
-                    {/* Another Tower */}
-                    <path d="M120 140L100 60H60L50 140" stroke="currentColor" strokeWidth="2" fill="url(#tower-grad)"/>
-                    {/* Glows */}
-                    <circle cx="200" cy="40" r="6" fill="#E8200F" className="animate-pulse" />
-                    
-                    <defs>
-                      <linearGradient id="gate-grad" x1="200" y1="30" x2="200" y2="140" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="currentColor" stopOpacity="0.2"/>
-                        <stop offset="1" stopColor="currentColor" stopOpacity="0"/>
-                      </linearGradient>
-                      <linearGradient id="tower-grad" x1="200" y1="40" x2="200" y2="140" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="currentColor" stopOpacity="0.1"/>
-                        <stop offset="1" stopColor="currentColor" stopOpacity="0"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
                 </div>
               </div>
             </div>

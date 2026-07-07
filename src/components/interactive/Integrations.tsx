@@ -5,10 +5,10 @@ import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 const logos = [
-  { name: "Databricks", src: "/assets/Databricks.png", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, enforcing governance without running Spark inside it. No pipelines, no lock-in.</> },
-  { name: "Microsoft Fabric", src: "/assets/Fabric.png", desc: "Interfaces with Microsoft Fabric via SQL push-down, enforcing the Open Data Contract Standard without Spark or lock-in." },
-  { name: "Snowflake", src: "/assets/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down, governed metadata, quality and ETL workflows without running Spark inside it." },
-  { name: "Oracle", src: "/assets/Oracle-Logo.png", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
+  { name: "Databricks", src: "/assets/partners/Databricks.png", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, delivering governed, contract-enforced data products straight into Unity Catalog.</> },
+  { name: "Microsoft Fabric", src: "/assets/partners/Fabric.png", desc: "Interfaces with Microsoft Fabric via SQL push-down, landing contract-enforced Delta Parquet in OneLake for Power BI and Copilot." },
+  { name: "Snowflake", src: "/assets/partners/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down, delivering governed metadata, quality and open Iceberg data products into the data cloud." },
+  { name: "Oracle", src: "/assets/partners/Oracle.png", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
 ];
 
 export function Integrations({ showDescriptions = false, hideHeading = false }: { showDescriptions?: boolean, hideHeading?: boolean }) {
@@ -38,19 +38,15 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
                 showDescriptions ? "min-h-[14rem] flex-col items-start justify-start p-8" : "h-28 items-center justify-center"
               }`}
             >
-              {logo.src ? (
-                <div className={`relative transition-all duration-500 ${showDescriptions ? "mb-6 h-12 w-48" : "h-12 w-40 grayscale group-hover:grayscale-0"}`}>
-                  <Image 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    fill 
-                    className={`object-contain ${showDescriptions ? "object-left" : "object-center"} ${logo.name === "Microsoft Fabric" ? "invert hue-rotate-180 brightness-110 contrast-125" : ""}`} 
-                    sizes="160px" 
-                  />
-                </div>
-              ) : (
-                <span className={`text-2xl font-black tracking-tight text-white/75 transition-colors group-hover:text-white ${showDescriptions ? "mb-6" : ""}`}>{logo.name}</span>
-              )}
+              <div className={`flex h-12 items-center transition-all duration-500 ${showDescriptions ? "mb-6 justify-start" : "justify-center grayscale group-hover:grayscale-0"}`}>
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={200}
+                  height={48}
+                  className="h-8 w-auto max-w-[11rem] object-contain"
+                />
+              </div>
               {showDescriptions && (
                 <p className="text-base leading-relaxed text-q-gray-400">{logo.desc}</p>
               )}
@@ -59,7 +55,7 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
         </div>
 
         <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
-          <QBricksText /> interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, enforcing governance without running Spark inside them, and without lock-in. The Open Data Contract Standard (ODCS) sits at the core.
+          <QBricksText /> interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, delivering governed, portable data products in open formats. The Open Data Contract Standard (ODCS) sits at the core.
         </p>
       </div>
     </section>

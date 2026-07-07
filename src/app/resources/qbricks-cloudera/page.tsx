@@ -24,9 +24,9 @@ const content: CapabilityContent = {
   },
   pillars: [
     {
-      kicker: "// No Spark",
+      kicker: "// Local compute",
       title: "Local compute",
-      text: "Integration and cleaning run on a local DataFusion engine — enterprise scale on a single node, with no Spark, no cluster and no cloud lock-in.",
+      text: "Integration and cleaning run on a local DataFusion engine — enterprise scale on a single node, with no cluster to stand up and no cloud dependency.",
     },
     {
       kicker: "// ODCS",
@@ -34,7 +34,7 @@ const content: CapabilityContent = {
       text: "Every record is matched to the Open Data Contract Standard at ingestion. Nothing ungoverned gets through.",
     },
     {
-      kicker: "// No lock-in",
+      kicker: "// Open formats",
       title: "Yours to keep",
       text: "Delivered as open data products to Cloudera, Databricks, Fabric, Snowflake — or your own database.",
     },
@@ -64,7 +64,7 @@ const content: CapabilityContent = {
     },
   ],
   computeNote:
-    "Because all the integration, cleaning and transformation run on local compute — at any size, with no Spark cluster — a single large-memory node handles wholesale-banking volumes. Cloudera's compute stays free for what it's for: serving, analytics and AI.",
+    "Because all the integration, cleaning and transformation run on local compute — at any size, with no cluster to stand up — a single large-memory node handles wholesale-banking volumes. Cloudera's compute stays free for what it's for: serving, analytics and AI.",
   outcome: "A.I.-ready data in hours — not months of pipeline building.",
   fits: {
     title: "Built to work with Cloudera, not around it.",
@@ -74,7 +74,7 @@ const content: CapabilityContent = {
       "Connecting to and fusing systems of record",
       "Cleaning, validation and ODCS enforcement",
       "Data products, lineage and agentic metadata",
-      "Local, low-cost compute — no Spark",
+      "Local, low-cost compute",
     ],
     partnerHandlesTitle: "Cloudera handles",
     partnerHandles: [
@@ -93,7 +93,7 @@ const content: CapabilityContent = {
       },
       {
         kicker: "Open standards",
-        title: "Open by default, no lock-in",
+        title: "Open by default",
         text: "Products are delivered as open Apache Iceberg tables and can be registered through Apache Polaris — the open catalog Cloudera has adopted. Your data stays portable, readable by Cloudera today and by anything else tomorrow.",
       },
     ],

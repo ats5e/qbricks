@@ -23,9 +23,9 @@ const content: CapabilityContent = {
   },
   pillars: [
     {
-      kicker: "// No Spark",
+      kicker: "// Local compute",
       title: "Local compute",
-      text: "Integration and cleaning run on a local compute engine – enterprise scale on a single node, with no Spark, no cluster and no cloud lock-in.",
+      text: "Integration and cleaning run on a local compute engine – enterprise scale on a single node, with no cluster to stand up and no cloud dependency.",
     },
     {
       kicker: "// ODCS",
@@ -33,7 +33,7 @@ const content: CapabilityContent = {
       text: "Every record is matched to the Open Data Contract Standard at ingestion. Nothing ungoverned reaches OneLake.",
     },
     {
-      kicker: "// No lock-in",
+      kicker: "// Open formats",
       title: "Yours to keep",
       text: "Delivered as open data products to Fabric, Databricks, Snowflake – or your own database.",
     },
@@ -63,7 +63,7 @@ const content: CapabilityContent = {
     },
   ],
   computeNote:
-    "Because all the integration, cleaning and transformation run on local compute – at any size, with no Spark cluster – a single large-memory node handles wholesale-banking volumes. Your Fabric capacity stays free for what it's for: Power BI, Real-Time Intelligence and Copilot.",
+    "Because all the integration, cleaning and transformation run on local compute – at any size, with no cluster to stand up – a single large-memory node handles wholesale-banking volumes. Your Fabric capacity stays free for what it's for: Power BI, Real-Time Intelligence and Copilot.",
   outcome: "A.I.-ready data in hours – not months of pipeline building.",
   fits: {
     title: "Built to work with Fabric, not around it.",
@@ -73,7 +73,7 @@ const content: CapabilityContent = {
       "Connecting to and fusing systems of record",
       "Cleaning, validation and ODCS enforcement",
       "Data products, lineage and agentic metadata",
-      "Local, low-cost compute — no Spark",
+      "Local, low-cost compute",
     ],
     partnerHandlesTitle: "Fabric handles",
     partnerHandles: [
@@ -92,7 +92,7 @@ const content: CapabilityContent = {
       },
       {
         kicker: "Open standards",
-        title: "Open by default, no lock-in",
+        title: "Open by default",
         text: "Products are delivered as open Delta Parquet straight into OneLake – the format Fabric reads natively, with no import and no translation – portable, and readable by anything else tomorrow.",
       },
     ],

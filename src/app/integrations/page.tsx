@@ -2,7 +2,9 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
+import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { Integrations } from "@/components/interactive/Integrations";
+import { UseCases } from "@/components/interactive/UseCases";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -32,15 +34,19 @@ export default function IntegrationsPage() {
         </div>
       </section>
 
+      <EcosystemDiagram />
+
       <Integrations showDescriptions hideHeading />
-      
+
+      <DualFlowDiagram />
+
+      <UseCases />
+
       <div className="container-x relative z-10 pb-20 pt-10 text-center">
         <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
           Request a demo <ArrowRight className="h-5 w-5" />
         </Link>
       </div>
-
-      <EcosystemDiagram />
     </main>
   );
 }

@@ -49,12 +49,20 @@ const capabilityOverviews = [
   },
 ];
 
+const consumptionLanes = [
+  { lane: "BI & Analytics", tools: ["Power BI", "Tableau", "Qlik", "Looker"] },
+  { lane: "AI & ML Serving", tools: ["Mosaic AI", "MLflow", "Azure ML", "Vector stores"] },
+  { lane: "Operational Activation", tools: ["Hightouch", "Census", "Kafka", "Low-latency stores"] },
+  { lane: "Regulatory & Decisioning", tools: ["Quantexa", "NICE Actimize", "Napier", "Feedzai"] },
+  { lane: "Governance & Observability", tools: ["Collibra", "Alation", "Purview", "Monte Carlo"] },
+];
+
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
   { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
-  { id: "supported-platforms", question: "Which platforms does it work with?", answer: <>Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down, with no Spark and no lock-in. <QBricksText /> is cloud-agnostic.</> },
+  { id: "supported-platforms", question: "Which platforms does it work with?", answer: <>Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down. <QBricksText /> is cloud-agnostic, delivering in open, portable formats.</> },
   { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
-  { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost with no Spark, and end-to-end auditability." },
+  { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost on local compute, and end-to-end auditability." },
 ];
 
 export default function ResourcesPage() {
@@ -78,17 +86,17 @@ export default function ResourcesPage() {
 
       <section className="section-y bg-q-black">
         <div className="container-x mb-16">
-          <Link href="/resources/compute-trap" className="premium-card group block p-8 transition-all duration-300 hover:border-white/20">
+          <Link href="/resources/cost-calculator" className="premium-card group block p-8 transition-all duration-300 hover:border-white/20">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-2xl">
-                <p className="eyebrow mb-2">Interactive Guide</p>
-                <h2 className="text-3xl font-black text-white">The Compute Trap</h2>
+                <p className="eyebrow mb-2">Illustrative cost calculator</p>
+                <h2 className="text-3xl font-black text-white">Where <QBricksText /> takes cost out</h2>
                 <p className="mt-3 text-lg text-q-gray-300">
-                  Trading people for cloud compute did not lower the bill. See where <QBricksText /> takes the cost out, and model the saving on your own numbers.
+                  Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-2 font-bold text-white md:mt-0 transition-colors group-hover:text-q-brand-ember">
-                Explore the cost story <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                Open the calculator <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
           </Link>
@@ -119,6 +127,33 @@ export default function ResourcesPage() {
         </div>
 
         <div className="container-x mb-16">
+          <p className="eyebrow mb-4">By consumption lane</p>
+          <h2 className="max-w-3xl text-3xl font-black tracking-tight text-white md:text-4xl">
+            How <QBricksText /> accelerates the tools you consume data with.
+          </h2>
+          <div className="mt-10 space-y-10">
+            {consumptionLanes.map((group) => (
+              <div key={group.lane}>
+                <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-q-brand-ember">{group.lane}</p>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {group.tools.map((tool) => (
+                    <div key={tool} className="premium-card flex h-full flex-col p-5 opacity-80 transition-opacity hover:opacity-100">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-q-gray-500">{group.lane}</p>
+                      <h3 className="mt-2 text-lg font-black leading-snug text-white">
+                        How <QBricksText /> accelerates {tool}
+                      </h3>
+                      <span className="mt-4 inline-flex w-fit items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-q-gray-400">
+                        Coming soon
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container-x mb-16">
           <p className="eyebrow mb-4">Watch</p>
           <div className="grid gap-6 lg:grid-cols-2">
             <Link href="/resources/10-reasons-why" className="premium-card group flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 md:p-8">
@@ -130,7 +165,7 @@ export default function ResourcesPage() {
                 10 reasons why <QBricksText />
               </h2>
               <p className="mt-4 flex-1 text-lg leading-relaxed text-q-gray-300">
-                See how governed data becomes an A.I.-ready foundation without pipelines, lock-in or runaway compute.
+                See how governed data becomes an A.I.-ready foundation — no pipelines, delivered in open, portable formats.
               </p>
               <div className="mt-8 flex items-center gap-2 font-bold text-white transition-colors group-hover:text-q-brand-ember">
                 Watch the video <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

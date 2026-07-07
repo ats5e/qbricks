@@ -34,6 +34,15 @@ export function FlowCanvas({
   const ref = useRef<HTMLDivElement>(null);
   const [paths, setPaths] = useState<string[]>([]);
   const [labelPos, setLabelPos] = useState<{ x: number; y: number } | null>(null);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(media.matches);
+    const onChange = (event: MediaQueryListEvent) => setReducedMotion(event.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     const root = ref.current;
@@ -80,14 +89,15 @@ export function FlowCanvas({
           d ? (
             <g key={`conn-${i}`}>
               <path d={d} fill="none" stroke="rgba(232,32,15,0.28)" strokeWidth="1.5" strokeDasharray="5 5" />
-              {Array.from({ length: connectors[i].packets ?? 1 }).map((_, p) => (
-                <FlowPacket
-                  key={`pkt-${i}-${p}`}
-                  path={d}
-                  duration={connectors[i].duration ?? 3.2}
-                  delay={(p * (connectors[i].duration ?? 3.2)) / (connectors[i].packets ?? 1) + i * 0.35}
-                />
-              ))}
+              {!reducedMotion &&
+                Array.from({ length: connectors[i].packets ?? 1 }).map((_, p) => (
+                  <FlowPacket
+                    key={`pkt-${i}-${p}`}
+                    path={d}
+                    duration={connectors[i].duration ?? 3.2}
+                    delay={(p * (connectors[i].duration ?? 3.2)) / (connectors[i].packets ?? 1) + i * 0.35}
+                  />
+                ))}
             </g>
           ) : null
         )}

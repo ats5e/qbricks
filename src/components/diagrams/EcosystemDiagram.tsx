@@ -66,7 +66,7 @@ const connectors: FlowConnector[] = [
   { from: "lane-3", to: "uc-3", duration: 3.6 },
 ];
 
-export function EcosystemDiagram() {
+export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
   const [activeLane, setActiveLane] = useState(0);
 
   useEffect(() => {
@@ -115,8 +115,14 @@ export function EcosystemDiagram() {
               </div>
 
               {/* Consumption lanes */}
-              <div className="w-[250px] flex-none">
-                <ColumnLabel>Consumption lanes</ColumnLabel>
+              <div className={`relative w-[250px] flex-none ${emphasis ? "rounded-3xl" : ""}`}>
+                {emphasis && (
+                  <div
+                    className="pointer-events-none absolute -inset-4 rounded-3xl"
+                    style={{ background: "radial-gradient(320px 460px at 50% 50%, rgba(232,32,15,0.12), transparent 75%)", animation: "cc-breathe 8s ease-in-out infinite" }}
+                  />
+                )}
+                <ColumnLabel className={emphasis ? "text-q-brand-ember/80" : ""}>Consumption lanes</ColumnLabel>
                 <div className="space-y-3">
                   {lanes.map((lane, index) => (
                     <FlowCard
@@ -133,18 +139,31 @@ export function EcosystemDiagram() {
                       }
                       chips={lane.chips}
                       active={activeLane === index}
-                      delay={index * 0.07}
+                      delay={emphasis ? 0.35 + index * 0.12 : index * 0.07}
                     />
                   ))}
                 </div>
               </div>
 
               {/* AI use cases */}
-              <div className="w-[190px] flex-none self-center">
-                <ColumnLabel>AI use cases</ColumnLabel>
+              <div className="relative w-[190px] flex-none self-center">
+                {emphasis && (
+                  <div
+                    className="pointer-events-none absolute -inset-4 rounded-3xl"
+                    style={{ background: "radial-gradient(260px 380px at 50% 50%, rgba(232,32,15,0.14), transparent 75%)", animation: "cc-breathe 8s ease-in-out 1.5s infinite" }}
+                  />
+                )}
+                <ColumnLabel className={emphasis ? "text-q-brand-ember/80" : ""}>AI use cases</ColumnLabel>
                 <div className="space-y-3">
                   {useCases.map((useCase, index) => (
-                    <FlowCard key={useCase.id} flowId={useCase.id} icon={useCase.icon} title={useCase.title} delay={index * 0.07} className="!border-q-brand/25" />
+                    <FlowCard
+                      key={useCase.id}
+                      flowId={useCase.id}
+                      icon={useCase.icon}
+                      title={useCase.title}
+                      delay={emphasis ? 0.5 + index * 0.12 : index * 0.07}
+                      className={emphasis ? "!border-q-brand/45 shadow-[0_0_30px_rgba(232,32,15,0.12)]" : "!border-q-brand/25"}
+                    />
                   ))}
                 </div>
               </div>

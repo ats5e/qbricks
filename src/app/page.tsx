@@ -4,10 +4,9 @@ import { Hero } from "@/components/interactive/Hero";
 import { Metrics } from "@/components/interactive/Metrics";
 import { Agentic } from "@/components/interactive/Agentic";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
-import { DeveloperExperience } from "@/components/interactive/DeveloperExperience";
 import { Integrations } from "@/components/interactive/Integrations";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
-import { UseCases } from "@/components/interactive/UseCases";
+import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
 
 export default function Home() {
@@ -18,10 +17,9 @@ export default function Home() {
       <Metrics />
       <Agentic />
       <FeaturesBento />
-      <DeveloperExperience />
-      <Integrations />
       <EcosystemDiagram />
-      <UseCases />
+      <Integrations />
+      <DualFlowDiagram />
 
       <section id="demo" className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.22),transparent_42%),linear-gradient(to_bottom,rgba(255,255,255,0.035),#000)]" />

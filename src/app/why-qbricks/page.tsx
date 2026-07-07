@@ -13,7 +13,7 @@ export const metadata = {
   description: "Why one platform, vendor-native tooling and consultancy data fabric programmes do not fix the metadata foundation organisations need.",
 };
 
-const differentiators = ["Data Contracts & Data Products", "Single-file deployment", "Agentic + human-in-the-loop", "Ontologies & knowledge graphs", "Local compute, no Spark", "End-to-end auditability"];
+const differentiators = ["Data Contracts & Data Products", "Single-file deployment", "Agentic + human-in-the-loop", "Ontologies & knowledge graphs", "Local compute", "End-to-end auditability"];
 
 export default function WhyQBricksPage() {
   return (
@@ -50,6 +50,7 @@ export default function WhyQBricksPage() {
 
         <div className="container-x relative z-10">
           <div className="mx-auto mb-12 max-w-4xl text-center">
+            <p className="eyebrow mb-5 text-q-gray-500">The answer?</p>
             <p className="eyebrow mb-5 inline-flex items-center justify-center gap-2">
               <PlayCircle className="h-4 w-4" />
               Watch
@@ -58,7 +59,7 @@ export default function WhyQBricksPage() {
               10 reasons why <QBricksText />
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-              See how <QBricksText /> turns governed data into an A.I.-ready foundation without pipelines, lock-in or runaway compute.
+              See how <QBricksText /> turns governed data into an A.I.-ready foundation — no pipelines, no runaway compute, delivered in open, portable formats.
             </p>
           </div>
 

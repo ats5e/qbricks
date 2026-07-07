@@ -24,9 +24,9 @@ const content: CapabilityContent = {
   },
   pillars: [
     {
-      kicker: "// No Spark",
+      kicker: "// Local compute",
       title: "Local compute",
-      text: "Integration and cleaning run on a local Rust engine – enterprise scale on a single node, with no Spark, no cluster and no cloud lock-in.",
+      text: "Integration and cleaning run on a local Rust engine – enterprise scale on a single node, with no cluster to stand up and no cloud dependency.",
     },
     {
       kicker: "// ODCS",
@@ -64,7 +64,7 @@ const content: CapabilityContent = {
     },
   ],
   computeNote:
-    "Because all the integration, cleaning and transformation run on local compute – at any size, with no Spark cluster – a single large-memory node handles wholesale-banking volumes. Quantexa's compute stays free for what it's for: resolution, networks and scoring.",
+    "Because all the integration, cleaning and transformation run on local compute – at any size, with no cluster to stand up – a single large-memory node handles wholesale-banking volumes. Quantexa's compute stays free for what it's for: resolution, networks and scoring.",
   outcome: "Higher match rates in hours – not months of mapping projects.",
   fits: {
     title: "Built to work with Quantexa, not around it.",
@@ -75,7 +75,7 @@ const content: CapabilityContent = {
       "Cleaning, validation and ODCS enforcement",
       "Data products, lineage and agentic metadata",
       "Field mapping to the Quantexa data model",
-      "Local, low-cost compute – no Spark",
+      "Local, low-cost compute",
     ],
     partnerHandlesTitle: "Quantexa handles",
     partnerHandles: [
@@ -93,7 +93,7 @@ const content: CapabilityContent = {
         text: "Together we cover the full lifecycle. QBricks guarantees quality and meaning as data is created; Quantexa turns it into context, networks and decisions. The result is higher match rates, fewer false positives, and alerts you can defend to a regulator.",
       },
       {
-        kicker: "No lock-in",
+        kicker: "Open formats",
         title: "Open by default",
         text: "Products are delivered in open formats with full lineage – consumed by Quantexa today, and readable by anything else tomorrow. Your data stays portable, and stays yours.",
       },

@@ -36,7 +36,7 @@ const computeData = [
     category: "LOCAL COMPUTE",
     provider: "QBricks",
     monthly: "minimal",
-    subtitle: "per month - processed on premise",
+    subtitle: "per month - processed on premise, local desktop",
     billingUnit: "none",
     annualized: "minimal",
     isQBricks: true,

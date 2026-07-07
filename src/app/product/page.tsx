@@ -2,7 +2,7 @@ import { ArrowRight, FileCode2, GitBranch, Layers3, ShieldCheck } from "lucide-r
 import Image from "next/image";
 import Link from "next/link";
 import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
-import { DeveloperExperience } from "@/components/interactive/DeveloperExperience";
+import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { QBricksText } from "@/components/ui/QBricksText";
 
@@ -42,7 +42,7 @@ export default function ProductPage() {
               The platform that governs data at the source.
             </h1>
             <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-300">
-              <QBricksText /> ingests directly from your systems of record and enforces the Open Data Contract Standard on every record before it reaches the lakehouse. Agentic metadata management keeps quality improving over time; local compute keeps cost and carbon down; full lineage keeps auditors satisfied. Works with Databricks, Microsoft Fabric, Snowflake or your own on-premise database via SQL push-down, with no Spark, no pipelines and no lock-in.
+              <QBricksText /> ingests directly from your systems of record and enforces the Open Data Contract Standard on every record before it reaches the lakehouse. Agentic metadata management keeps quality improving over time; local compute keeps cost and carbon down; full lineage keeps auditors satisfied. Works with Databricks, Microsoft Fabric, Snowflake or your own on-premise database via SQL push-down — delivered in open formats that stay fully portable.
             </p>
             <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Request a demo <ArrowRight className="h-5 w-5" />
@@ -93,7 +93,7 @@ export default function ProductPage() {
       </section>
 
       <FeaturesBento />
-      <DeveloperExperience />
+      <EcosystemDiagram />
 
       <section className="section-y bg-q-black text-center pb-32">
         <div className="container-x relative z-10">

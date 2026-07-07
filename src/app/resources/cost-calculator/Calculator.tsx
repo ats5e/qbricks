@@ -259,9 +259,9 @@ export default function Calculator() {
                 <div>
                   <div className="mb-2">
                     <p className="mb-1"><strong className="text-q-gray-300">Savings shown are gross.</strong></p>
-                    <p><QBricksText /> operates on a 25% / 30% / 35% gain-share model over three years. Net client savings will be offset by this fee.</p>
+                    <p>Gains are subject to a gain share model.</p>
                   </div>
-                  <p>Indicative figures only, pending your baseline. Populated from your client baseline and the <QBricksText /> gain-share model.</p>
+                  <p>These numbers are indicative and illustrative only. Actual results may vary depending on a client&apos;s individual environment.</p>
                 </div>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function Calculator() {
       <div className="mt-24 rounded-3xl border border-white/10 bg-white/[0.02] p-12 text-center">
         <h2 className="mb-6 text-3xl font-black text-white md:text-5xl">Four cost lines, one engine</h2>
         <p className="mx-auto mb-10 max-w-2xl text-xl text-q-gray-300">
-          Reclaim <span className="font-bold text-emerald-400"><Counter value={totalAnnualSaving} isMillion={true} /></span> and end the compute trap.
+          Reclaim <span className="font-bold text-emerald-400"><Counter value={totalAnnualSaving} isMillion={true} /></span> across your data estate.
         </p>
         
         <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">

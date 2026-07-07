@@ -32,9 +32,9 @@ const capabilities = [
   },
   {
     icon: Cloud,
-    title: "Local compute, no Spark",
-    text: "Works with Databricks, Fabric, Snowflake or your own database via SQL push-down, with enterprise scale and no costly Spark or lock-in.",
-    highlight: "No Spark",
+    title: "Local compute",
+    text: "Works with Databricks, Fabric, Snowflake or your own database via SQL push-down, with enterprise scale on the compute you already own.",
+    highlight: "Local",
   },
   {
     icon: Sparkles,

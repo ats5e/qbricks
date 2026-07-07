@@ -17,7 +17,7 @@ const flowSteps = [
 
 const proofPoints = [
   { value: "Fewer data issues", icon: ShieldCheck },
-  { value: "No Spark", icon: Cpu },
+  { value: "Local compute", icon: Cpu },
   { value: "100% auditable", icon: Search },
 ];
 
@@ -134,7 +134,7 @@ function CommandWindow() {
           <Cpu className="h-4 w-4 text-emerald-400" />
           <div>
             <p className="text-[9px] uppercase tracking-[0.18em] text-q-gray-400">Compute</p>
-            <p className="text-[11px] font-bold text-white">Local · No Spark</p>
+            <p className="text-[11px] font-bold text-white">Local compute</p>
           </div>
         </div>
       </div>
@@ -371,9 +371,9 @@ function CommandStage() {
 }
 
 const carouselItems = [
-  { text: "Zero vendor lock in", icon: Unlock, iconTone: "text-emerald-300" },
+  { text: "Open, portable data products", icon: Unlock, iconTone: "text-emerald-300" },
   { text: "No armies of engineers", icon: Users, iconTone: "text-blue-300" },
-  { text: "No Spark processing", icon: Cpu, iconTone: "text-amber-300" },
+  { text: "Local compute engine", icon: Cpu, iconTone: "text-amber-300" },
   { text: "Open Data Contracts", icon: FileSignature, iconTone: "text-q-brand-ember" },
   { text: "Catalogue of Catalogues", icon: Layers3, iconTone: "text-violet-300" },
 ];

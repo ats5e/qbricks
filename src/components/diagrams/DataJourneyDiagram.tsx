@@ -75,11 +75,11 @@ const platformNodes: Record<DiagramVariant, NodeItem[]> = {
 
 const diagramContent = {
   manual: {
-    eyebrow: "Today",
+    eyebrow: "The starting point",
     title: (
       <>
-        The old way: <span className="text-q-brand-ember">months or years</span>
-        <br className="hidden md:block" /> before A.I. sees any quality data.
+        Today: <span className="text-q-brand-ember">months or years</span> before
+        <br className="hidden md:block" /> A.I. sees any quality data.
       </>
     ),
     description:

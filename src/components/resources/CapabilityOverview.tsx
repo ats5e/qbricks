@@ -152,7 +152,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                 ))}
               </ul>
               <span className="mt-3 inline-block rounded-full border border-q-brand/50 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-q-brand-ember">
-                Local · No Spark
+                Local compute
               </span>
             </motion.div>
             <FlowArrow delay={0.2} />

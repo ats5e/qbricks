@@ -48,7 +48,7 @@ export function Agentic() {
               Automate the heavy work. Audit everything.
             </h2>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-300">
-              <QBricksText /> automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
+              <QBricksText />{" "}automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
             </p>
 
           </motion.div>
