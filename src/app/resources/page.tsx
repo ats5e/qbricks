@@ -69,24 +69,9 @@ const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
 export default function ResourcesPage() {
   return (
     <main className="min-h-screen bg-q-black">
-      <section className="relative overflow-hidden border-b border-white/5 pt-44 pb-24">
-        <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bg-pathway-city.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-screen" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.5),#000_88%)]" />
-        </div>
-        <div className="container-x relative z-10 text-center">
-          <p className="eyebrow mb-6">Resources</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
-            Insight for governed, A.I.-ready enterprise data.
-          </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
-            Practical thinking for CDOs, governance leaders, risk teams and financial-crime functions preparing data for A.I., analytics and regulatory confidence.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-y bg-q-black">
+      <section className="bg-q-black pb-24 pt-40 lg:pt-44">
         <div className="container-x mb-16">
+          <h1 className="sr-only">Resources</h1>
           <Link href="/resources/cost-calculator" className="premium-card group block p-8 transition-all duration-300 hover:border-white/20">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-2xl">
@@ -148,33 +133,6 @@ export default function ResourcesPage() {
                   Read the overview <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="container-x mb-16">
-          <p className="eyebrow mb-4">By consumption lane</p>
-          <h2 className="max-w-3xl text-3xl font-black tracking-tight text-white md:text-4xl">
-            How <QBricksText /> accelerates the tools you consume data with.
-          </h2>
-          <div className="mt-10 space-y-10">
-            {consumptionLanes.map((group) => (
-              <div key={group.lane}>
-                <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-q-brand-ember">{group.lane}</p>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {group.tools.map((tool) => (
-                    <div key={tool} className="premium-card flex h-full flex-col p-5 opacity-80 transition-opacity hover:opacity-100">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-q-gray-500">{group.lane}</p>
-                      <h3 className="mt-2 text-lg font-black leading-snug text-white">
-                        How <QBricksText /> accelerates {tool}
-                      </h3>
-                      <span className="mt-4 inline-flex w-fit items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-q-gray-400">
-                        Coming soon
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             ))}
           </div>
         </div>
@@ -245,7 +203,34 @@ export default function ResourcesPage() {
           </div>
         </div>
 
-        <div className="container-x mt-12 text-center">
+        <div className="container-x mt-20">
+          <p className="eyebrow mb-4">By consumption lane</p>
+          <h2 className="max-w-3xl text-3xl font-black tracking-tight text-white md:text-4xl">
+            How <QBricksText /> accelerates the tools you consume data with.
+          </h2>
+          <div className="mt-10 space-y-10">
+            {consumptionLanes.map((group) => (
+              <div key={group.lane}>
+                <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-q-brand-ember">{group.lane}</p>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {group.tools.map((tool) => (
+                    <div key={tool} className="premium-card flex h-full flex-col p-5 opacity-80 transition-opacity hover:opacity-100">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-q-gray-500">{group.lane}</p>
+                      <h3 className="mt-2 text-lg font-black leading-snug text-white">
+                        How <QBricksText /> accelerates {tool}
+                      </h3>
+                      <span className="mt-4 inline-flex w-fit items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-q-gray-400">
+                        Coming soon
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container-x mt-16 text-center">
           <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
             Request a demo <ArrowRight className="h-5 w-5" />
           </Link>

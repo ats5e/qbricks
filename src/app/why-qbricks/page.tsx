@@ -82,9 +82,11 @@ export default function WhyQBricksPage() {
 
       <section className="section-y bg-q-black">
         <div className="container-x">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-10 text-[clamp(2.2rem,4vw,4rem)] font-black tracking-tight text-white">Ready to fix your data foundation?</h2>
-            <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[0.98] tracking-tight text-white">
+              Ready to fix your data&nbsp;foundation?
+            </h2>
+            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-black text-black transition-all hover:-translate-y-1 hover:bg-q-gray-200">
               Request a demo <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
