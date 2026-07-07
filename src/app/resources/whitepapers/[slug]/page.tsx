@@ -148,22 +148,12 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
             <p className="mx-auto max-w-4xl text-[clamp(1.7rem,3.6vw,3rem)] font-black leading-[1.05] tracking-tight text-brand-gradient">
               “{paper.quote}”
             </p>
-            <p className="mx-auto mt-8 max-w-2xl font-mono text-sm leading-relaxed text-q-gray-500">{paper.tagline}</p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <DownloadButton href={paper.pdf} large />
               <Link href="/resources" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-white/[0.08]">
                 More resources
               </Link>
             </div>
-            <p className="mt-6 text-sm text-q-gray-500">
-              Prefer it in your inbox?{" "}
-              <a
-                href={`mailto:sales@infinium.consulting?subject=${encodeURIComponent(`White paper request: ${paper.title}`)}`}
-                className="font-bold text-q-gray-300 underline decoration-q-brand/50 underline-offset-4 transition-colors hover:text-white"
-              >
-                Email us for the paper and a walkthrough.
-              </a>
-            </p>
           </div>
         </div>
       </section>
