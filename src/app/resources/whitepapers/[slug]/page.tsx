@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Download, FileText } from "lucide-react";
+import { ArrowLeft, ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -83,14 +83,6 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
 
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
-              <div className="mb-6 flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-q-brand/40 bg-q-brand/10 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-q-brand-ember">
-                  <FileText className="h-3.5 w-3.5" /> White paper · July 2026
-                </span>
-                <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-q-gray-400">
-                  {paper.category}
-                </span>
-              </div>
               <h1 className="text-[clamp(2.6rem,4.8vw,4.2rem)] font-black leading-[0.97] tracking-tight text-white">
                 {paper.title}
               </h1>
