@@ -31,10 +31,12 @@ export function FlowCanvas({
   children: React.ReactNode;
   label?: { text: string; afterId: string };
 }) {
+  const outerRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
   const [paths, setPaths] = useState<string[]>([]);
   const [labelPos, setLabelPos] = useState<{ x: number; y: number } | null>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -46,9 +48,18 @@ export function FlowCanvas({
 
   useEffect(() => {
     const root = ref.current;
-    if (!root) return;
+    const outer = outerRef.current;
+    if (!root || !outer) return;
 
     const measure = () => {
+      // Scale the diagram down to fit the container width so it never
+      // needs horizontal scrolling. `zoom` shrinks both the rendering
+      // and the layout box, keeping the connector geometry consistent.
+      const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+      const avail = outer.clientWidth;
+      const nextZoom = isDesktop && avail > 0 ? Math.min(1, avail / width) : 1;
+      setZoom(nextZoom);
+
       const rb = root.getBoundingClientRect();
       if (rb.width === 0) return;
       const next = connectors.map((conn) => {
@@ -75,6 +86,7 @@ export function FlowCanvas({
     const settle = setTimeout(measure, 800);
     const observer = new ResizeObserver(measure);
     observer.observe(root);
+    observer.observe(outer);
     return () => {
       clearTimeout(settle);
       observer.disconnect();
@@ -83,7 +95,12 @@ export function FlowCanvas({
   }, []);
 
   return (
-    <div ref={ref} className="relative w-full lg:w-[var(--fc-w)]" style={{ ["--fc-w" as string]: `${width}px` }}>
+    <div ref={outerRef} className="w-full">
+    <div
+      ref={ref}
+      className="relative w-full lg:w-[var(--fc-w)]"
+      style={{ ["--fc-w" as string]: `${width}px`, zoom: zoom < 1 ? zoom : undefined }}
+    >
       <svg className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full lg:block">
         {paths.map((d, i) =>
           d ? (
@@ -121,6 +138,7 @@ export function FlowCanvas({
         </span>
       )}
       <div className="relative z-10">{children}</div>
+    </div>
     </div>
   );
 }

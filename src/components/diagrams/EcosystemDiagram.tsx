@@ -84,7 +84,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
           eyebrow="The ecosystem"
           title={
             <>
-              From system of record to AI use case, <span className="text-q-brand-ember">in hours.</span>
+              Feed any AI use case, <span className="text-q-brand-ember">in hours.</span>
             </>
           }
           intro="QBricks — the Data Management Platform — accelerates the platforms you already run, streaming governed, AI-ready data from your systems of record straight into production use cases."
