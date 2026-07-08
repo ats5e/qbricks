@@ -42,6 +42,12 @@ const capabilityOverviews = [
     href: "/resources/qbricks-cloudera",
     text: "Trusted, ODCS-governed data products for the Cloudera lakehouse.",
   },
+  {
+    partner: "Alteryx",
+    logo: "/assets/partners/Alteryx.png",
+    href: "/resources/qbricks-alteryx",
+    text: "Governed data landed in the stores your Alteryx workflows already read.",
+  },
 ];
 
 const consumptionLanes = [
@@ -126,7 +132,7 @@ export default function ResourcesPage() {
 
         <div className="container-x mb-16">
           <p className="eyebrow mb-4">Capability overviews</p>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {capabilityOverviews.map((item) => (
               <Link
                 key={item.partner}

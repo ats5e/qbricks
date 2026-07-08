@@ -7,9 +7,10 @@ import { QIcon } from "@/components/ui/QIcon";
 /*
  * Animated mini-scenes recreated from the QBricks graphics pack
  * (1a lineage, 2a data contracts, 2c integrations hub, 2e governance
- * & audit, 2f A.I.-ready data products). Shared between the homepage
- * spotlight cards and the partner capability pages. An optional
- * partner logo renders in the window chrome.
+ * & audit, 2f A.I.-ready data products, plus a workflow-canvas scene).
+ * Shared between the homepage spotlight cards and the partner
+ * capability pages. An optional partner logo renders in the window
+ * chrome.
  */
 
 export type SceneProps = { badge: string; logo?: string; logoAlt?: string };
@@ -407,6 +408,93 @@ export function IntegrationsScene(props: SceneProps) {
             />
           </motion.div>
         ))}
+      </div>
+    </SceneShell>
+  );
+}
+
+/* Workflow canvas — governed source feeding an analyst workflow graph */
+export function WorkflowScene(props: SceneProps) {
+  const nodes = [
+    { x: 44, y: 90, c: "#ff3a26", hub: true },
+    { x: 132, y: 58, c: "#6ca8f5" },
+    { x: 132, y: 122, c: "#3ecf8e" },
+    { x: 222, y: 90, c: "#b48cf2" },
+    { x: 300, y: 90, c: "#e8b34b" },
+  ];
+  const edges = [
+    "M56 90 C90 90 96 58 120 58",
+    "M56 90 C90 90 96 122 120 122",
+    "M144 58 C180 58 186 90 210 90",
+    "M144 122 C180 122 186 90 210 90",
+    "M234 90 L288 90",
+  ];
+  return (
+    <SceneShell {...props}>
+      <div className="flex min-h-[240px] flex-1 flex-col">
+        {/* Workflow graph */}
+        <div className="relative flex-1">
+          <svg viewBox="0 0 340 200" className="absolute inset-0 h-full w-full">
+            {edges.map((d, i) => (
+              <path
+                key={`we-${i}`}
+                d={d}
+                fill="none"
+                stroke="rgba(255,58,38,0.4)"
+                strokeWidth="1.5"
+                strokeDasharray="6 5"
+                style={{ animation: `cc-dash-flow 4.5s linear ${i * 0.4}s infinite` }}
+              />
+            ))}
+            {nodes.map((n, i) =>
+              n.hub ? null : (
+                <g key={`wn-${i}`} style={{ animation: `cc-node-pulse ${2.6 + i * 0.4}s ease-in-out ${-i}s infinite` }}>
+                  <rect x={n.x - 12} y={n.y - 12} width="24" height="24" rx="7" fill="#17171d" stroke={n.c} strokeWidth="1.5" />
+                  <rect x={n.x - 4} y={n.y - 4} width="8" height="8" rx="2" fill={n.c} />
+                </g>
+              )
+            )}
+          </svg>
+          {/* Governed QBricks source node */}
+          <div className="absolute left-[13%] top-[45%] h-11 w-11 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute -inset-1.5 rounded-full border border-dashed border-q-brand/50" style={{ animation: "cc-spin 16s linear infinite" }} />
+            <div className="absolute -inset-5 rounded-full" style={{ background: "radial-gradient(circle, rgba(232,32,15,0.3), transparent 70%)", animation: "cc-halo 4.2s ease-in-out infinite" }} />
+            <div
+              className="absolute inset-0 flex items-center justify-center rounded-xl border-2 border-q-brand/80 bg-[#17171d]"
+              style={{ animation: "cc-hub-pulse 3.6s ease-in-out infinite" }}
+            >
+              <QIcon className="h-5 w-5" />
+            </div>
+          </div>
+        </div>
+        {/* Human-in-the-loop governed handoff */}
+        <div className="flex flex-none items-center gap-3 border-t border-white/10 px-3.5 py-3">
+          <span className="relative h-4 w-7 flex-none rounded-full bg-emerald-400/25">
+            <motion.span
+              className="absolute top-0.5 h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
+              initial={{ left: 2 }}
+              whileInView={{ left: 14 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </span>
+          <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-q-gray-400">Human in the loop</span>
+          <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full border border-emerald-400/70">
+            <motion.svg
+              viewBox="0 0 24 24"
+              className="h-3 w-3"
+              fill="none"
+              stroke="#3ecf8e"
+              strokeWidth="3.5"
+              initial={{ opacity: 0, scale: 0.2 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <path d="M4 12l5 5 11-11" />
+            </motion.svg>
+          </span>
+        </div>
       </div>
     </SceneShell>
   );

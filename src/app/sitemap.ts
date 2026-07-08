@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources/qbricks-snowflake",
     "/resources/qbricks-quantexa",
     "/resources/qbricks-cloudera",
+    "/resources/qbricks-alteryx",
     "/about",
     "/contact",
   ];

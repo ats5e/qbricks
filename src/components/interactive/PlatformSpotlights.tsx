@@ -10,6 +10,7 @@ import {
   GovernanceScene,
   IntegrationsScene,
   LineageScene,
+  WorkflowScene,
 } from "@/components/interactive/scenes";
 
 /*
@@ -83,6 +84,19 @@ const spotlights = [
       "ODCS enforced at ingestion — nothing ungoverned gets through",
       "End-to-end governance with a live, streaming audit trail",
       "Open Iceberg tables, registered through Apache Polaris",
+    ],
+  },
+  {
+    title: "Analyst-ready data for Alteryx",
+    href: "/resources/qbricks-alteryx",
+    scene: WorkflowScene,
+    badge: "Workflow",
+    logo: "/assets/partners/Alteryx.png",
+    partner: "Alteryx",
+    bullets: [
+      "Governed products landed in the stores your workflows already read",
+      "No more hundreds of workflows re-cleaning the same sources",
+      "Self-service that starts from trust instead of creating it",
     ],
   },
 ];

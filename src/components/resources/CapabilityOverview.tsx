@@ -12,6 +12,7 @@ import {
   GovernanceScene,
   IntegrationsScene,
   LineageScene,
+  WorkflowScene,
   type SceneProps,
 } from "@/components/interactive/scenes";
 
@@ -21,6 +22,7 @@ const scenes = {
   aiready: AiReadyScene,
   contracts: ContractsScene,
   integrations: IntegrationsScene,
+  workflow: WorkflowScene,
 } as const;
 
 const pillarIcons = [Cpu, FileCheck2, Unlock];
