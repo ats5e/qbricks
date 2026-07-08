@@ -45,7 +45,7 @@ const lanes = [
   { id: "lane-0", icon: BarChart3, title: "BI & Analytics", tag: "Lane 01", chips: ["Power BI", "Tableau", "Qlik", "Looker"] },
   { id: "lane-1", icon: BrainCircuit, title: "AI & ML Serving", tag: "Lane 02", chips: ["Mosaic AI", "MLflow", "Azure ML", "Vector stores"] },
   { id: "lane-2", icon: Repeat2, title: "Operational Activation", tag: "Lane 03", chips: ["Hightouch", "Census", "Kafka", "Low-latency stores"] },
-  { id: "lane-3", icon: Scale, title: "Regulatory & Decisioning", tag: "Lane 04", chips: ["Quantexa", "NICE Actimize", "Napier", "Feedzai"] },
+  { id: "lane-3", icon: Scale, title: "Regulatory & Decisioning", tag: "Lane 04", chips: ["Quantexa"] },
   { id: "lane-4", icon: ShieldCheck, title: "Governance & Observability", tag: "Metadata", chips: ["Collibra", "Alation", "Purview", "Monte Carlo"] },
 ];
 

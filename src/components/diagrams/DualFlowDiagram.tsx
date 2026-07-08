@@ -28,9 +28,10 @@ const processes = [
 ];
 
 const connectors: FlowConnector[] = [
-  // Option 01 — direct streaming, straight past the governed database
-  { from: "df-sor-0", to: "df-hub", packets: 2, duration: 3 },
-  { from: "df-sor-1", to: "df-hub", packets: 2, duration: 3.4 },
+  // Option 01 — direct streaming: straight into the side of the QBricks
+  // box at the source's own height, passing above the governed database.
+  { from: "df-sor-0", to: "df-hub", packets: 2, duration: 3, toY: "source" },
+  { from: "df-sor-1", to: "df-hub", packets: 2, duration: 3.4, toY: "source" },
   // Option 02 — land first, then process & govern
   { from: "df-sor-2", to: "df-govdb", packets: 2, duration: 2.8 },
   { from: "df-sor-3", to: "df-govdb", packets: 2, duration: 3.2 },
@@ -68,7 +69,7 @@ export function DualFlowDiagram() {
               </div>
 
               {/* Two routes */}
-              <div className="w-[300px] flex-none self-center">
+              <div className="w-[300px] flex-none self-center lg:self-start lg:pt-[150px]">
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}

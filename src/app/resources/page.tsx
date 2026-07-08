@@ -54,7 +54,7 @@ const consumptionLanes = [
   { lane: "BI & Analytics", tools: ["Power BI", "Tableau", "Qlik", "Looker"] },
   { lane: "AI & ML Serving", tools: ["Mosaic AI", "MLflow", "Azure ML", "Vector stores"] },
   { lane: "Operational Activation", tools: ["Hightouch", "Census", "Kafka", "Low-latency stores"] },
-  { lane: "Regulatory & Decisioning", tools: ["Quantexa", "NICE Actimize", "Napier", "Feedzai"] },
+  { lane: "Regulatory & Decisioning", tools: ["Quantexa"] },
   { lane: "Governance & Observability", tools: ["Collibra", "Alation", "Purview", "Monte Carlo"] },
 ];
 

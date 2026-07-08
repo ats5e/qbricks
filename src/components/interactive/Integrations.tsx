@@ -5,10 +5,11 @@ import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 const logos = [
-  { name: "Databricks", src: "/assets/partners/Databricks.png", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, delivering governed, contract-enforced data products straight into Unity Catalog.</> },
-  { name: "Microsoft Fabric", src: "/assets/partners/Fabric.png", desc: "Interfaces with Microsoft Fabric via SQL push-down, landing contract-enforced Delta Parquet in OneLake for Power BI and Copilot." },
-  { name: "Snowflake", src: "/assets/partners/Snowflake.png", desc: "Interfaces with Snowflake via SQL push-down, delivering governed metadata, quality and open Iceberg data products into the data cloud." },
-  { name: "Oracle", src: "/assets/partners/Oracle.png", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
+  { name: "Databricks", src: "/assets/partners/Databricks.png", imgClass: "h-8 max-w-[11rem]", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, delivering governed, contract-enforced data products straight into Unity Catalog.</> },
+  { name: "Microsoft Fabric", src: "/assets/partners/Fabric.png", imgClass: "h-11 max-w-[13.5rem]", desc: "Interfaces with Microsoft Fabric via SQL push-down, landing contract-enforced Delta Parquet in OneLake for Power BI and Copilot." },
+  { name: "Snowflake", src: "/assets/partners/Snowflake.png", imgClass: "h-9 max-w-[11rem]", desc: "Interfaces with Snowflake via SQL push-down, delivering governed metadata, quality and open Iceberg data products into the data cloud." },
+  { name: "Oracle", src: "/assets/partners/Oracle.png", imgClass: "h-8 max-w-[11rem]", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
+  { name: "Alteryx", src: "/assets/partners/Alteryx.png", imgClass: "h-9 max-w-[10rem]", desc: "Land governed, contract-enforced data products in the stores your Alteryx workflows already read — analyst-ready from the first run." },
 ];
 
 export function Integrations({ showDescriptions = false, hideHeading = false }: { showDescriptions?: boolean, hideHeading?: boolean }) {
@@ -26,7 +27,7 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
           </div>
         )}
 
-        <div className={`mx-auto grid max-w-5xl gap-4 ${showDescriptions ? "grid-cols-1 gap-6 md:grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
+        <div className={`mx-auto grid max-w-6xl gap-4 ${showDescriptions ? "grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-5"}`}>
           {logos.map((logo, index) => (
             <motion.div
               key={logo.name}
@@ -42,9 +43,9 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
                 <Image
                   src={logo.src}
                   alt={logo.name}
-                  width={200}
-                  height={48}
-                  className="h-8 w-auto max-w-[11rem] object-contain"
+                  width={220}
+                  height={56}
+                  className={`w-auto object-contain ${logo.imgClass}`}
                 />
               </div>
               {showDescriptions && (

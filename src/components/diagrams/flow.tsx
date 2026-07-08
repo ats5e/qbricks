@@ -18,6 +18,9 @@ export type FlowConnector = {
   to: string;
   packets?: number;
   duration?: number;
+  // "source" enters the target's near side at the source's own height —
+  // a straight, horizontal line into the side of the box.
+  toY?: "center" | "source";
 };
 
 export function FlowCanvas({
@@ -69,7 +72,7 @@ export function FlowCanvas({
         const x1 = from.right - rb.left;
         const y1 = from.top + from.height / 2 - rb.top;
         const x2 = to.left - rb.left;
-        const y2 = to.top + to.height / 2 - rb.top;
+        const y2 = conn.toY === "source" ? y1 : to.top + to.height / 2 - rb.top;
         const bend = Math.max(28, (x2 - x1) / 2);
         return `M${x1} ${y1} C${x1 + bend} ${y1}, ${x2 - bend} ${y2}, ${x2} ${y2}`;
       });

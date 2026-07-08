@@ -32,12 +32,12 @@ export default function AboutPage() {
             <div className="premium-card p-7">
               <Building2 className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-white">Our mission</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400">To fix the layer the market skips: the governed metadata foundation that makes A.I., analytics and regulatory reporting trustworthy.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-400">To fix the layer the market skips: the governed data management foundation that makes A.I., analytics and regulatory reporting trustworthy.</p>
             </div>
             <div className="premium-card p-7">
               <ShieldCheck className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-white">Built for regulated data</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-400"><QBricksText /> is an A.I.-enabled metadata management platform built for secure, governed enterprise data and auditable delivery.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-400"><QBricksText /> is an A.I.-enabled data management platform built for secure, governed enterprise data and auditable delivery.</p>
             </div>
             <div className="premium-card p-7">
               <Globe2 className="mb-6 h-8 w-8 text-q-brand-ember" />

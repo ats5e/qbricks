@@ -45,7 +45,7 @@ export function Footer() {
               <Logo className="h-10 w-[160px] opacity-90" />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-q-gray-500">
-              A.I.-enabled metadata management for your organisation. Built for governed, secure, auditable enterprise data.
+              A.I.-enabled data management for your organisation. Built for governed, secure, auditable enterprise data.
             </p>
           </div>
 

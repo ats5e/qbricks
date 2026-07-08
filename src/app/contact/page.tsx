@@ -50,7 +50,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
           
           {/* Left Column: Contact Info & Address */}
           <div className="flex flex-col gap-8">
@@ -59,7 +59,7 @@ export default function ContactPage() {
               
               <h2 className="mb-8 text-2xl font-black text-white">Our Offices</h2>
               
-              <div className="mb-10 grid gap-8 md:grid-cols-2 text-q-gray-300">
+              <div className="mb-10 grid gap-7 text-q-gray-300">
                 <div className="flex items-start gap-4">
                   <div className="mt-0.5 shrink-0 rounded-full bg-q-brand/10 p-2 text-q-brand-ember shadow-[0_0_10px_rgba(232,32,15,0.1)]">
                     <MapPin className="h-4 w-4" />

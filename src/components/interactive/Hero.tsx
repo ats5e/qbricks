@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Boxes, ChevronDown, Cpu, Database, GitBranch, Layers3, Lightbulb, Network, ShieldCheck, Unlock, Users, FileSignature, Search } from "lucide-react";
+import { ArrowRight, Boxes, Cpu, Database, GitBranch, Layers3, Lightbulb, Network, ShieldCheck, Unlock, Users, FileSignature, Search } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { QIcon } from "@/components/ui/QIcon";
@@ -516,11 +516,16 @@ export function Hero() {
             <CommandWindow />
           </motion.div>
         </div>
-      </div>
 
-      {/* Scroll cue */}
-      <div className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 lg:block" aria-hidden="true">
-        <ChevronDown className="h-5 w-5 text-white/40" style={{ animation: "cc-scroll-cue 2.2s ease-in-out infinite" }} />
+        {/* Full-width value banner under the hero */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-14 border-t border-white/10 pt-8 text-center text-[clamp(1.3rem,2.4vw,2rem)] font-black leading-tight tracking-tight text-white lg:mt-20"
+        >
+          Significantly reduce the cost of producing <span className="text-q-brand-ember">A.I.-ready data</span>.
+        </motion.p>
       </div>
     </section>
   );
