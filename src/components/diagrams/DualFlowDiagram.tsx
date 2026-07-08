@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Activity, Building2, Database, FileCheck2, ShieldCheck, Sparkles, UserCheck, Users, Waves } from "lucide-react";
-import { ColumnLabel, DiagramHeader, FlowCanvas, FlowCard, type FlowConnector } from "@/components/diagrams/flow";
+import { ColumnLabel, DiagramHeader, FlowCanvas, FlowCard, QBricksText, type FlowConnector } from "@/components/diagrams/flow";
 import { QIcon } from "@/components/ui/QIcon";
 
 /*
@@ -48,7 +48,7 @@ export function DualFlowDiagram() {
           eyebrow="Two routes in"
           title={
             <>
-              From system of record to QBricks — <span className="text-q-brand-ember">direct, or landed first.</span>
+              From system of record to <QBricksText /> — <span className="text-q-brand-ember">direct, or landed first.</span>
             </>
           }
           intro="Stream straight from your systems of record into QBricks, or land data in a governed database first — either way, every record is processed and governed the same way."

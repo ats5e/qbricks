@@ -7,6 +7,7 @@ import {
   FlowCanvas,
   FlowCard,
   QBricksHubCard,
+  QBricksText,
   type FlowConnector,
 } from "@/components/diagrams/flow";
 
@@ -40,7 +41,7 @@ export function QuantexaFlowDiagram() {
           eyebrow="The integrated solution"
           title={
             <>
-              QBricks: the layer between your data <span className="text-q-brand-ember">and risk detection in Quantexa.</span>
+              <QBricksText />: the layer between your data <span className="text-q-brand-ember">and risk detection in Quantexa.</span>
             </>
           }
           intro="Every risk model, investigation and case inherits the quality of the data beneath it. QBricks sits between the two — streaming governed, contract-enforced data forward."

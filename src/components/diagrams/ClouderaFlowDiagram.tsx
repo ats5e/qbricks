@@ -10,6 +10,7 @@ import {
   FlowCanvas,
   FlowCard,
   QBricksHubCard,
+  QBricksText,
   type FlowConnector,
 } from "@/components/diagrams/flow";
 
@@ -51,7 +52,7 @@ export function ClouderaFlowDiagram() {
           eyebrow="The detailed view"
           title={
             <>
-              QBricks streaming into <span className="text-q-brand-ember">Cloudera.</span>
+              <QBricksText /> streaming into <span className="text-q-brand-ember">Cloudera.</span>
             </>
           }
           intro="Governed, contract-enforced data lands in Cloudera in hours — powering every function of the platform, with the Oracle Lakehouse served downstream."
