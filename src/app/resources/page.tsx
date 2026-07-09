@@ -88,7 +88,15 @@ export default function ResourcesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="bg-q-black pb-24 pt-40 lg:pt-44">
         <div className="container-x mb-16">
-          <h1 className="sr-only">Resources</h1>
+          <div className="mb-14 max-w-3xl">
+            <p className="eyebrow mb-4">Resources</p>
+            <h1 className="text-[clamp(2.6rem,5.5vw,4.8rem)] font-black leading-[0.95] tracking-tight text-white">
+              Make data your competitive edge.
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-q-gray-300 md:text-xl">
+              Capability overviews, white papers and field-tested thinking on governed, A.I.-ready data — plus an illustrative calculator to model the saving on your own numbers. Everything a CDO, risk or financial-crime team needs to make the case for getting the data foundation right.
+            </p>
+          </div>
           <Link href="/resources/cost-calculator" className="premium-card group block p-8 transition-all duration-300 hover:border-white/20">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-2xl">
