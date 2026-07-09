@@ -8,6 +8,7 @@ const logos = [
   { name: "Databricks", src: "/assets/partners/Databricks.png", imgClass: "h-8 max-w-[11rem]", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, delivering governed, contract-enforced data products straight into Unity Catalog.</> },
   { name: "Microsoft Fabric", src: "/assets/partners/Fabric.png", imgClass: "h-11 max-w-[13.5rem]", desc: "Interfaces with Microsoft Fabric via SQL push-down, landing contract-enforced Delta Parquet in OneLake for Power BI and Copilot." },
   { name: "Snowflake", src: "/assets/partners/Snowflake.png", imgClass: "h-9 max-w-[11rem]", desc: "Interfaces with Snowflake via SQL push-down, delivering governed metadata, quality and open Iceberg data products into the data cloud." },
+  { name: "Cloudera", src: "/assets/partners/Cloudera_logo.webp", imgClass: "h-6 max-w-[11rem]", desc: "Interfaces with Cloudera via SQL push-down, delivering governed, open Iceberg data products registered through Apache Polaris." },
   { name: "Oracle", src: "/assets/partners/Oracle.png", imgClass: "h-8 max-w-[11rem]", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
   { name: "Alteryx", src: "/assets/partners/Alteryx.png", imgClass: "h-9 max-w-[10rem]", desc: "Land governed, contract-enforced data products in the stores your Alteryx workflows already read — analyst-ready from the first run." },
 ];
