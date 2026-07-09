@@ -127,4 +127,66 @@ export const insights: Insight[] = [
     ],
     takeaway: "Fix the data foundation first, and every financial-crime outcome built on it improves.",
   },
+  {
+    slug: "poor-data-quality-credit-models",
+    category: "Credit risk",
+    title: "Poor data quality is quietly breaking your credit models",
+    standfirst:
+      "A PD, LGD or EAD model is a precise instrument fed by imprecise data. Banks invest heavily in model methodology and validation, then feed those models exposures, collateral and behavioural histories assembled by hand from inconsistent sources. The result is models that are technically sound and practically unreliable — and the gap rarely shows up until a downturn.",
+    sections: [
+      {
+        heading: "The defect is upstream of the model",
+        paragraphs: [
+          "Credit models inherit every flaw in their inputs. Missing or stale collateral valuations, duplicated exposures across systems, inconsistent counterparty identifiers and undocumented field semantics all pass silently into staging — and out again as a risk parameter someone will rely on.",
+          "Because the data is assembled per model, per run, by different teams, the same borrower can carry different exposures in two models at once. The methodology is peer-reviewed; the data feeding it is not.",
+        ],
+      },
+      {
+        heading: "Why remediation never catches up",
+        paragraphs: [
+          "The usual fix is more reconciliation: analysts cleaning extracts before each model run, exceptions chased by email, adjustments recorded in spreadsheets no auditor can follow. It scales with people, not with data, so the backlog grows with the portfolio.",
+          "Regulators have noticed. IFRS 9 staging, PD/LGD/EAD estimation and stress testing all now demand demonstrable data quality and lineage. A provision built on data with no traceable origin is a finding waiting to happen, however defensible the model.",
+        ],
+      },
+      {
+        heading: "Governed inputs, reproducible outputs",
+        paragraphs: [
+          "The banks that trust their credit models fix the inputs first: core banking, collateral, payments and reference data fused and validated against Open Data Contract Standard (ODCS) contracts at ingestion, delivered as governed, versioned data products with full lineage from system of record to model input.",
+          "The payoff is reproducibility. The same model, run twice, produces the same figures — because the data underneath is versioned, contract-enforced and traceable. Model risk stops hiding in the data, and validation finally has something stable to validate against.",
+        ],
+      },
+    ],
+    takeaway: "A credit model is only as trustworthy as the data it is estimated on. Govern the inputs, and the model you already built starts to earn its confidence interval.",
+  },
+  {
+    slug: "rwa-only-as-good-as-the-data",
+    category: "Regulatory capital",
+    title: "RWA is only as defensible as the data beneath it",
+    standfirst:
+      "Risk-weighted assets sit at the centre of a bank's capital position, yet the figure is only ever as good as the exposures, ratings and collateral data rolled up to produce it. When that data is assembled by hand from scattered sources, the capital number becomes a negotiation — and one a regulator can unwind.",
+    sections: [
+      {
+        heading: "Where the number drifts",
+        paragraphs: [
+          "An RWA calculation aggregates exposure classes, credit conversion factors, ratings and collateral across dozens of systems. Every inconsistent identifier, mismatched exposure and undocumented mapping introduces drift — and because the roll-up is opaque, the drift is invisible until someone reconciles back to source, usually under regulatory pressure.",
+          "Under CRR3 and the output floor, the cost of that drift rises: small errors in exposure classification or risk-weight assignment move real capital.",
+        ],
+      },
+      {
+        heading: "BCBS 239 is a data problem",
+        paragraphs: [
+          "The principles for risk data aggregation ask for accuracy, completeness, timeliness and — above all — traceability: every figure attributable to its source. Hand-built pipelines and spreadsheet adjustments cannot provide that. The lineage simply isn't there to show.",
+          "This is why RWA programmes stall not on methodology but on data: teams can compute the number, but they cannot prove it to the standard a supervisor now expects.",
+        ],
+      },
+      {
+        heading: "Every figure traceable to source",
+        paragraphs: [
+          "Contract-first ingestion inverts the problem. Positions, ratings and collateral are validated against ODCS contracts at the point of entry and delivered as governed, versioned data products — so the roll-up is built on certified inputs, and every exposure-class and risk-weight figure traces cleanly back to the system of record.",
+          "The result is an RWA number that is reproducible run to run and defensible line by line — capital you can report with confidence, and evidence you can hand to an auditor without a remediation project first.",
+        ],
+      },
+    ],
+    takeaway: "Capital adequacy rests on data you can trace. Govern the exposures at the source, and RWA stops being a figure you defend and becomes one you can prove.",
+  },
 ];

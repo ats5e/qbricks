@@ -28,7 +28,7 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
           </div>
         )}
 
-        <div className={`mx-auto grid max-w-6xl gap-4 ${showDescriptions ? "grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-5"}`}>
+        <div className={`mx-auto grid gap-4 ${showDescriptions ? "max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" : "max-w-4xl grid-cols-2 md:grid-cols-3"}`}>
           {logos.map((logo, index) => (
             <motion.div
               key={logo.name}
