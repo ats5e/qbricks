@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
 import Image from "next/image";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -43,7 +44,7 @@ export default function ContactPage() {
       <div className="container-x relative z-10 pt-40 md:pt-48">
         <div className="mb-16 text-center md:mb-24">
           <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-white">
-            Try <span className="text-q-brand-ember font-bold">Q</span><span className="font-normal text-white">Bricks</span> on your data.
+            Try <QBricksText /> on your data.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-q-gray-300">
             Book a 30-minute demo and we will show record-to-report on a representative dataset.
@@ -79,7 +80,7 @@ export default function ContactPage() {
                   <div className="flex flex-col gap-1.5 leading-relaxed">
                     <h3 className="text-lg font-bold text-white mb-1">Dubai Office</h3>
                     <p className="text-sm text-q-gray-300">Level 02, Innovation One</p>
-                    <p className="text-sm text-q-gray-300">Dubai International Financial Centre</p>
+                    <p className="text-sm text-q-gray-300">Dubai International Financial Centre, UAE</p>
                   </div>
                 </div>
               </div>
