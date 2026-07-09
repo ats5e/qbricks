@@ -395,6 +395,7 @@ export function Hero() {
   }, []);
 
   return (
+    <>
     <section id="hero" className="relative isolate flex min-h-screen items-center overflow-hidden bg-q-black pb-16 pt-32 lg:pt-36">
       <div className="absolute inset-0 -z-10">
         {/* Breathing brand glows */}
@@ -516,17 +517,17 @@ export function Hero() {
             <CommandWindow />
           </motion.div>
         </div>
-
-        {/* Full-width value banner under the hero */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14 border-t border-white/10 pt-8 text-center text-[clamp(1.3rem,2.4vw,2rem)] font-black leading-tight tracking-tight text-white lg:mt-20"
-        >
-          Significantly reduce the cost of producing <span className="text-q-brand-ember">A.I.-ready data</span>.
-        </motion.p>
       </div>
     </section>
+
+      {/* Full-width value banner beneath the hero */}
+      <div className="relative border-y border-white/10 bg-q-black py-12 lg:py-14">
+        <div className="container-x">
+          <p className="text-center text-[clamp(1.35rem,2.5vw,2.15rem)] font-black leading-tight tracking-tight text-white">
+            Significantly reduce the cost of producing <span className="text-q-brand-ember">A.I.-ready data</span>.
+          </p>
+        </div>
+      </div>
+    </>
   );
 }
