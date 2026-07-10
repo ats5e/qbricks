@@ -186,4 +186,31 @@ export const whitepapers: Whitepaper[] = [
     sceneBadge: "Local compute",
     pdf: "/whitepapers/new-paradigm.pdf",
   },
+  {
+    slug: "shift-right",
+    category: "Data Product Strategy",
+    title: "Shift the system of record right.",
+    standfirst:
+      "Your operational systems were never built to answer questions. Stop treating them as where truth lives. Every analytical, AI and regulatory workload in your enterprise re-extracts and re-interprets the same source systems — thousands of pipelines, each a private, ungoverned copy of the truth. The fix is not more pipelines. It is to publish truth as governed data products in the lakehouse, and let that become the record your enterprise actually consumes.",
+    stats: [
+      { value: "1", label: "governed publication replacing a thousand private extractions" },
+      { value: "Right", label: "of the contract boundary is where the record now lives" },
+      { value: "Hours", label: "from system of record to governed lakehouse" },
+    ],
+    pointsTitle: "Why the status quo is the risk",
+    points: [
+      { title: "Semantic drift", text: "\"Shift left\" told producers to fix quality at the source. A decade on, every notebook still re-derives \"customer\" and \"revenue\" differently. There is no record — only copies, each drifting from the last." },
+      { title: "The source can't be fixed", text: "The operational systems haven't changed because they can't: optimised for transactions, owned by vendors, frozen by process. Asking them to become the analytical record was always going to fail." },
+      { title: "Ungoverned sprawl", text: "Meanwhile consumption exploded rightward — BI, ML, agents, regulators. Each stands up its own extract. Lineage ends at the extract, and audit becomes archaeology." },
+      { title: "AI on sand", text: "Every model reads one of these private copies. The problem is not the AI solution you are trying to implement — it is the quality of the data beneath it." },
+    ],
+    solutionTitle: "The operating model: the record moves right",
+    solutionText:
+      "A data product is a versioned, contract-bound publication: schema, semantics, quality thresholds and ownership agreed up front in an Open Data Contract Standard (ODCS) contract, enforced on every streaming record, with a human in the loop on every exception. Once the contract holds, the product is more trustworthy than any private read of the source — so the system of record has shifted right, past the contract boundary and into the lakehouse. The ERP still captures transactions; the data product becomes the record everyone reads. For the CDO, three things change: you fund named data products with contracts and SLAs instead of point-to-point pipelines; governance moves into the flow, enforced at the boundary on every incremental change rather than inspected after the fact; and audit becomes a property of construction — before-and-after files, lineage and versioned contracts make the shifted record defensible to any regulator.",
+    quote: "The ERP still captures transactions. The data product becomes the record everyone reads.",
+    tagline: "QBricks: automated, governed, incremental ingestion — one publication that replaces a thousand private extractions.",
+    scene: "contracts",
+    sceneBadge: "Contract boundary",
+    pdf: "/whitepapers/Shift-Right.pdf",
+  },
 ];
