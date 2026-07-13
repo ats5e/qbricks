@@ -19,8 +19,8 @@ export default function CostCalculatorPage() {
 
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Illustrative cost calculator</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,6.5rem)] font-black leading-[0.95] tracking-tight text-white">
-            Where <QBricksText /> takes cost out
+          <h1 className="mx-auto max-w-5xl text-[clamp(2.5rem,5.4vw,4.6rem)] font-black leading-[1.0] tracking-tight text-white">
+            Re-allocate your data remediation team to more rewarding activities
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
             Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.

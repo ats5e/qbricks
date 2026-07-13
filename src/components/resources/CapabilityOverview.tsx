@@ -231,7 +231,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               {content.stepsTitle}
             </motion.h3>
             <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-4 max-w-2xl text-q-gray-400">
-              Four steps, one continuous flow — running on local compute, with a data contract enforced at every handoff.
+              Four steps, one continuous flow, running on local compute, with a data contract enforced at every handoff.
             </motion.p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -259,9 +259,9 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               transition={{ duration: 0.8 }}
               className="relative mt-10 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-10"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(600px_300px_at_15%_50%,rgba(232,32,15,0.14),transparent_70%)]" />
-              <p className="relative font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// The outcome"}</p>
-              <p className="relative mt-3 max-w-3xl text-[clamp(1.7rem,3.2vw,2.6rem)] font-black leading-[1.05] tracking-tight text-q-brand-ember">
+              <div className="absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_50%,rgba(232,32,15,0.14),transparent_70%)]" />
+              <p className="relative text-center font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// The outcome"}</p>
+              <p className="relative mx-auto mt-3 max-w-6xl text-balance text-center text-[clamp(1.35rem,2.6vw,2rem)] font-black leading-[1.12] tracking-tight text-q-brand-ember">
                 {content.outcome}
               </p>
             </motion.div>
@@ -286,7 +286,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="premium-card border-q-brand/25 bg-gradient-to-br from-[#26181a]/90 to-[#0f0b0c]/90 p-7 md:p-9">
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// Upstream — production"}</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// Upstream, production"}</p>
               <h3 className="mt-2 text-2xl font-black text-white"><QBricksText /> handles</h3>
               <ul className="mt-6 space-y-3.5">
                 {content.fits.qbricksHandles.map((item) => (
@@ -297,7 +297,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               </ul>
             </motion.div>
             <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.1 }} className="premium-card p-7 md:p-9">
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-gray-500">{"// Downstream — consumption"}</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-gray-500">{"// Downstream, consumption"}</p>
               <div className="mt-2 flex h-8 items-center">
                 {content.partnerLogo ? (
                   <span className="flex items-center gap-3">

@@ -83,7 +83,7 @@ const diagramContent = {
       </>
     ),
     description:
-      "Spreadsheets and large teams sit between your systems of record and your platforms — ungoverned, manual and slow.",
+      "Spreadsheets and large teams sit between your systems of record and your platforms, ungoverned, manual and slow.",
     layerLabel: "The manual layer",
     layerTitle: "Excel and large teams of data professionals and analysts.",
     layerIcons: [FileSpreadsheet, Users],
@@ -105,7 +105,7 @@ const diagramContent = {
       </>
     ),
     description:
-      "Hand-built pipelines and heavy compute on the platforms themselves — engineering-led, costly and slow.",
+      "Hand-built pipelines and heavy compute on the platforms themselves, engineering-led, costly and slow.",
     layerLabel: "The engineering layer",
     layerTitle: "Pipelines built on Databricks, Microsoft Fabric or Snowflake.",
     layerIcons: [Layers3, Grid2X2, Snowflake],
@@ -133,7 +133,7 @@ const diagramContent = {
       </>
     ),
     layerLabel: "Data Management Platform",
-    layerTitle: "Governed, A.I.-ready data — in hours, not years.",
+    layerTitle: "Governed, A.I.-ready data, in hours, not years.",
     layerIcons: [],
     bullets: [
       { icon: Workflow, text: "Automatic pipeline building" },

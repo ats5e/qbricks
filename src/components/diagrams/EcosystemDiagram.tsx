@@ -84,10 +84,10 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
           eyebrow="The ecosystem"
           title={
             <>
-              Feed any AI use case, <span className="text-q-brand-ember">in hours.</span>
+              Accelerate any AI use case <span className="text-q-brand-ember">in hours.</span>
             </>
           }
-          intro="QBricks — the Data Management Platform — accelerates the platforms you already run, streaming governed, AI-ready data from your systems of record straight into production use cases."
+          intro="QBricks, the Data Management Platform, accelerates the platforms you already run, streaming governed, AI-ready data from your systems of record straight into production use cases."
         />
 
         <div className="-mx-6 mt-14 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:px-0">
@@ -172,7 +172,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
         </div>
 
         <p className="mx-auto mt-14 max-w-4xl text-center text-[clamp(1.4rem,2.6vw,2.1rem)] font-black leading-snug tracking-tight text-white">
-          “<QBricksText /> streams governed, contract-enforced data forward — every lane inherits the same{" "}
+          “<QBricksText /> streams governed, contract-enforced data forward, every use case inherits the same{" "}
           <span className="text-q-brand-ember">trusted foundation</span>.”
         </p>
       </div>

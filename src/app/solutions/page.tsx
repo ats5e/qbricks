@@ -21,7 +21,7 @@ export default function SolutionsPage() {
             Governed data products for the use cases that matter.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-            AML, KYC, fraud, contextual MDM, credit and ESG risk — every solution inherits the same trusted, contract-enforced foundation.
+            AML, KYC, fraud, contextual MDM, credit and ESG risk, every solution inherits the same trusted, contract-enforced foundation.
           </p>
         </div>
       </section>

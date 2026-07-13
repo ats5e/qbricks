@@ -116,7 +116,7 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* Numbered points */}
-      <section className="section-y relative overflow-hidden bg-q-black">
+      <section className="relative overflow-hidden bg-q-black pb-16 pt-12 md:pb-24 md:pt-14 lg:pb-32 lg:pt-16">
         <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_78%_20%,rgba(232,32,15,0.09),transparent_65%)]" />
         <div className="container-x relative z-10">
           <h2 className="max-w-3xl text-[clamp(2rem,3.8vw,3.2rem)] font-black leading-[0.98] tracking-tight text-white">

@@ -13,7 +13,7 @@ const features = [
   {
     icon: GitBranch,
     title: "Data Lineage",
-    description: <>Fully understand how data assets and products have been created by <QBricksText />. Drill down on each and see a visualization of the joins and underlying data tables.</>,
+    description: <>Fully understand how data assets and products have been created by <QBricksText />. Drill down on each and see a visualisation of the joins and underlying data tables.</>,
   },
   {
     icon: Network,

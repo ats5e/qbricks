@@ -8,19 +8,19 @@ import { QBricksText } from "@/components/ui/QBricksText";
 const stats = [
   {
     value: "$650B",
-    label: "of annual revenue — in perpetuity — required for a 10% return on the AI infrastructure buildout, per J.P. Morgan analysts.",
+    label: "of annual revenue, in perpetuity, required for a 10% return on the AI infrastructure buildout, per J.P. Morgan analysts.",
     href: "/resources/whitepapers/ai-compute-numbers",
     source: "Why the AI numbers don't add up",
   },
   {
     value: "100×",
-    label: "the compute a reasoning model can need over single-shot inference — while most \"AI spend\" still feeds data preparation.",
+    label: "the compute a reasoning model can need over single-shot inference, while most \"AI spend\" still feeds data preparation.",
     href: "/resources/whitepapers/ai-compute-numbers",
     source: "Why the AI numbers don't add up",
   },
   {
     value: "2×",
-    label: "the cost of every Microsoft Fabric capacity upgrade step — a blunt instrument for what is usually one inefficient pipeline.",
+    label: "the cost of every data fabric capacity upgrade step, a blunt instrument for what is usually one inefficient pipeline.",
     href: "/resources/whitepapers/fabric-compute",
     source: "The hidden cost of Fabric compute",
   },

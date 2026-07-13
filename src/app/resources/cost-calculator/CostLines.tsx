@@ -27,7 +27,7 @@ const costLines = [
     title: "Build & processing compute",
     todayText: "Clusters scanning twice over. Quality jobs spin up dedicated clusters and re-scan full data sets on every run. Data is copied out, egress and duplicate storage on top.",
     todayDriver: "€[per run] × [N runs]",
-    withText: "Local compute, no copy-out. Metadata only, with a lightweight Rust engine. Work is pushed down to where data already lives in Databricks, Microsoft Fabric, Snowflake. No separate cluster, no egress.",
+    withText: "Local compute, desktop or in a containerised app. A lightweight Rust engine. Upload data products to Databricks, Snowflake, OneLake, or your own on-premise data warehouse. Significantly reduce the cost of compute.",
     savingText: "processing compute & egress removed"
   },
   {
@@ -35,7 +35,7 @@ const costLines = [
     title: "Ongoing compute & maintenance",
     todayText: "Opex that only grows. Pipelines, clusters and rules need constant upkeep: re-runs, uptime, version maintenance. Every rule change is an engineering ticket.",
     todayDriver: "€[run + maintain / year]",
-    withText: "Light to run, business-owned. Runs on existing infrastructure, server-side. Rules maintained by the business, not re-engineered each time. Incremental compute is minimal.",
+    withText: "Light to run, business-owned. Runs on existing infrastructure, server-side. Rules maintained by the business, not re-engineered each time. Incremental compute is minimal. Escape the compute trap and accelerate your organisation's AI use cases.",
     savingText: "run & maintain cost minimised"
   }
 ];

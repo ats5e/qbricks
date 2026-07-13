@@ -58,7 +58,7 @@ export default function WhyQBricksPage() {
               10 reasons why <QBricksText />
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-              See how <QBricksText /> turns governed data into an A.I.-ready foundation — no pipelines, no runaway compute, delivered in open, portable formats.
+              See how <QBricksText /> turns governed data into an A.I.-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.
             </p>
           </div>
 

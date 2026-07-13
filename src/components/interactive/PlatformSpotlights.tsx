@@ -81,7 +81,7 @@ const spotlights = [
     logo: "/assets/partners/Cloudera_logo.webp",
     partner: "Cloudera",
     bullets: [
-      "ODCS enforced at ingestion — nothing ungoverned gets through",
+      "ODCS enforced at ingestion, before anything reaches the platform",
       "End-to-end governance with a live, streaming audit trail",
       "Open Iceberg tables, registered through Apache Polaris",
     ],
@@ -132,7 +132,7 @@ export function PlatformSpotlights() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-q-gray-400"
           >
-            QBricks sits upstream of Databricks, Microsoft Fabric, Snowflake, Quantexa, Cloudera and Alteryx — delivering contract-enforced data products, in open formats, straight into the platform you already run.
+            QBricks sits upstream of Databricks, Microsoft Fabric, Snowflake, Quantexa, Cloudera and Alteryx, delivering contract-enforced data products, in open formats, straight into the platform you already run.
           </motion.p>
         </div>
 

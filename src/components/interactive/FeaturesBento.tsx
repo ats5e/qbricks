@@ -9,13 +9,13 @@ const capabilities = [
   {
     icon: FileCode2,
     title: "Streaming & incremental",
-    text: "Real-time, change-focused updates underpinned by the Open Data Contract.",
+    text: "Real-time, change-focused updates underpinned by an Open Data Contract standard.",
     highlight: "Incremental",
   },
   {
     icon: Shield,
     title: "Governance enforced by contract",
-    text: "Records are compared digitally to your governance framework. Nothing un-governed gets through.",
+    text: "Records are compared digitally to your governance framework.",
     highlight: "Contract-enforced",
   },
   {
@@ -33,13 +33,13 @@ const capabilities = [
   {
     icon: Cloud,
     title: "Local compute",
-    text: "Works with Databricks, Fabric, Snowflake or your own database via SQL push-down, with enterprise scale on the compute you already own.",
+    text: "Works with Databricks, Fabric, Snowflake or your own database via SQL push-down, with enterprise scale on your desktop or container app.",
     highlight: "Local",
   },
   {
     icon: Sparkles,
-    title: "Fully auditable",
-    text: "Before-and-after files and auditable outputs. Apply Databricks, Microsoft or Snowflake security standards.",
+    title: "Fully auditable & Secure",
+    text: "Before-and-after files and auditable outputs. Apply your organisation's security standards.",
     highlight: "Auditable",
   },
 ];

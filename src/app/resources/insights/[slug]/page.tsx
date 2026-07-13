@@ -55,7 +55,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <section className="section-y bg-q-black">
+      <section className="bg-q-black pb-16 pt-12 md:pb-24 md:pt-14 lg:pb-32 lg:pt-16">
         <div className="container-x">
           <div className="max-w-3xl space-y-14">
             {insight.sections.map((section) => (

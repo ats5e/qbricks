@@ -17,14 +17,14 @@ const before = [
 const after = [
   "Data governance enforced (ODCS). No notebooks",
   "Small engineering team (at set-up)",
-  "Streaming data, materialised views",
+  "Streaming data, automated pipeline builds, materialised views",
   "A.I. ready data available in hours not years",
   "Low compute costs. No cloud requirement",
 ];
 
 const valueCards = [
-  { icon: ShieldCheck, title: "Regulatory confidence", text: "Every transformation, agent action and exception is traceable for risk, compliance and internal audit." },
-  { icon: Gauge, title: "Speed without chaos", text: "Single-file deployment turns complex infrastructure and workloads into a controlled, repeatable release pattern." },
+  { icon: ShieldCheck, title: "Regulatory confidence", text: "Every transformation, agent action and exception can be tracked and viewed by Risk, Compliance and Internal Audit." },
+  { icon: Gauge, title: "Speed without chaos", text: "Single-file deployment turns complex infrastructure and workloads into a controlled, repeatable process." },
   { icon: FileSearch, title: "Data teams can prove it", text: "Contracts, products, lineage and knowledge graphs create a fully auditable shared language between business and technology." },
 ];
 
@@ -71,7 +71,7 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.15 }}
             className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-400"
           >
-            To date, the answer to the data quality issue has been to throw money at the problem. Money for data remediation, for data engineers, for data management platforms, for pipeline building and on-going pipeline management, all underpinned by the cloud and compute costs.
+            To date, the answer to the data quality issue has been to throw money at the problem. Money for data remediation, for data engineers, for data management platforms, for pipeline building and on-going pipeline management, all underpinned by cloud and compute costs.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
@@ -80,7 +80,7 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.2 }}
             className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-400"
           >
-            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting A.I.
+            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting A.I. Industry is stuck and value from AI is under scrutiny.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}

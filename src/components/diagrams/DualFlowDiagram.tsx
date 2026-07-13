@@ -23,7 +23,7 @@ const processes = [
   { icon: Waves, title: "Ingest", text: "Incremental change, streamed continuously" },
   { icon: FileCheck2, title: "Data Contract", text: "Every record matched to the ODCS" },
   { icon: ShieldCheck, title: "Governance", text: "Compared in Unity Catalog, auditable" },
-  { icon: UserCheck, title: "Human in the loop", text: "Approve before & after — always", highlight: true },
+  { icon: UserCheck, title: "Human in the loop", text: "Approve before & after, always", highlight: true },
   { icon: Sparkles, title: "Agentic metadata", text: "Learns & improves, isolated from the lake" },
 ];
 
@@ -49,10 +49,10 @@ export function DualFlowDiagram() {
           eyebrow="Two routes in"
           title={
             <>
-              From system of record to <QBricksText /> — <span className="text-q-brand-ember">direct, or landed first.</span>
+              From system of record to <QBricksText />, <span className="text-q-brand-ember">direct, or landed first.</span>
             </>
           }
-          intro="Stream straight from your systems of record into QBricks, or land data in a governed database first — either way, every record is processed and governed the same way."
+          intro="Stream straight from your systems of record into QBricks, or land data in a governed database first, either way, every record is processed and governed the same way."
         />
 
         <div className="-mx-6 mt-14 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:flex lg:justify-center lg:px-0">

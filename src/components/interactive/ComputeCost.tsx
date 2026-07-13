@@ -24,7 +24,7 @@ export function ComputeCost() {
             transition={{ delay: 0.1 }}
             className="mt-6 text-lg leading-relaxed text-q-gray-300 md:text-xl"
           >
-            Cloud data platforms meter every cluster, credit and capacity unit, billing for your compute usage whether queries are running or not. <QBricksText /> leverages the local compute you already own, delivering blazing fast compute speed with zero cloud overhead. No cloud compute. No meter.
+            Cloud data platforms meter every cluster, credit and capacity unit, billing for your compute usage whether queries are running or not. <QBricksText /> leverages the local compute you already own, delivering blazing fast compute speed with very low cloud overhead. Minimal cloud compute. Major AI acceleration.
           </motion.p>
         </div>
       </div>

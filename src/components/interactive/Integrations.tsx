@@ -10,7 +10,7 @@ const logos = [
   { name: "Snowflake", src: "/assets/partners/Snowflake.png", imgClass: "h-9 max-w-[11rem]", desc: "Interfaces with Snowflake via SQL push-down, delivering governed metadata, quality and open Iceberg data products into the data cloud." },
   { name: "Cloudera", src: "/assets/partners/Cloudera_logo.webp", imgClass: "h-6 max-w-[11rem]", desc: "Interfaces with Cloudera via SQL push-down, delivering governed, open Iceberg data products registered through Apache Polaris." },
   { name: "Oracle", src: "/assets/partners/Oracle.png", imgClass: "h-8 max-w-[11rem]", desc: "Deliver governed data products to your own on-premise Oracle database, with no cloud requirement." },
-  { name: "Alteryx", src: "/assets/partners/Alteryx.png", imgClass: "h-9 max-w-[10rem]", desc: "Land governed, contract-enforced data products in the stores your Alteryx workflows already read — analyst-ready from the first run." },
+  { name: "Alteryx", src: "/assets/partners/Alteryx.png", imgClass: "h-9 max-w-[10rem]", desc: "Land governed, contract-enforced data products in the stores your Alteryx workflows already read, analyst-ready from the first run." },
 ];
 
 export function Integrations({ showDescriptions = false, hideHeading = false }: { showDescriptions?: boolean, hideHeading?: boolean }) {
@@ -57,7 +57,10 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
         </div>
 
         <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
-          <QBricksText /> interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, delivering governed, portable data products in open formats. The Open Data Contract Standard (ODCS) sits at the core.
+          <QBricksText /> interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, delivering governed, portable data products in open formats.
+        </p>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
+          The Open Data Contract Standard (ODCS) sits at the core.
         </p>
       </div>
     </section>

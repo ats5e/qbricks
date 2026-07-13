@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "QBricks",
-    title: "QBricks — No more data pipelines.",
-    description: "Governed, A.I.-ready data products — in hours, not years.",
+    title: "QBricks, No more data pipelines.",
+    description: "Governed, A.I.-ready data products, in hours, not years.",
     url: "https://qbricks.ai",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "QBricks — No more data pipelines." }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "QBricks, No more data pipelines." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QBricks — No more data pipelines.",
-    description: "Governed, A.I.-ready data products — in hours, not years.",
+    title: "QBricks, No more data pipelines.",
+    description: "Governed, A.I.-ready data products, in hours, not years.",
     images: ["/og-image.png"],
   },
 };

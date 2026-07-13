@@ -28,7 +28,7 @@ const capabilityOverviews = [
     partner: "Snowflake",
     logo: "/assets/partners/Snowflake.png",
     href: "/resources/qbricks-snowflake",
-    text: "Open Iceberg tables into the data cloud — credits stay free for Cortex AI.",
+    text: "Open Iceberg tables into the data cloud, credits stay free for Cortex AI.",
   },
   {
     partner: "Quantexa",
@@ -62,7 +62,7 @@ const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
   { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
   { id: "supported-platforms", question: "Which platforms does it work with?", answer: <>Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down. <QBricksText /> is cloud-agnostic, delivering in open, portable formats.</> },
-  { id: "security", question: "How secure is it?", answer: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
+  { id: "security", question: "How secure is it?", answer: "Enterprise-grade security applying your organisation's own standards, full auditability and human-in-the-loop control over agentic automation." },
   { id: "expected-results", question: "What results can we expect?", answer: "Fewer data-quality issues, deployment in hours, lower compute cost on local compute, and end-to-end auditability." },
 ];
 
@@ -73,7 +73,7 @@ const faqJsonLd = {
     { q: "What exactly is QBricks?", a: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
     { q: "How fast can we deploy?", a: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
     { q: "Which platforms does it work with?", a: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down. QBricks is cloud-agnostic, delivering in open, portable formats." },
-    { q: "How secure is it?", a: "Databricks- and Microsoft-level security, full auditability and human-in-the-loop control over agentic automation." },
+    { q: "How secure is it?", a: "Enterprise-grade security applying your organisation's own standards, full auditability and human-in-the-loop control over agentic automation." },
     { q: "What results can we expect?", a: "Fewer data-quality issues, deployment in hours, lower compute cost on local compute, and end-to-end auditability." },
   ].map(({ q, a }) => ({
     "@type": "Question",
@@ -94,7 +94,7 @@ export default function ResourcesPage() {
               Make data your competitive edge.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-q-gray-300 md:text-xl">
-              Capability overviews, white papers and field-tested thinking on governed, A.I.-ready data — plus an illustrative calculator to model the saving on your own numbers. Everything a CDO, risk or financial-crime team needs to make the case for getting the data foundation right.
+              Capability overviews, white papers and field-tested thinking on governed, A.I.-ready data, plus an illustrative calculator to model the saving on your own numbers. Everything a CDO, risk or financial-crime team needs to make the case for getting the data foundation right.
             </p>
           </div>
           <Link href="/resources/cost-calculator" className="premium-card group block p-8 transition-all duration-300 hover:border-white/20">
@@ -174,7 +174,7 @@ export default function ResourcesPage() {
                 10 reasons why <QBricksText />
               </h2>
               <p className="mt-4 flex-1 text-lg leading-relaxed text-q-gray-300">
-                See how governed data becomes an A.I.-ready foundation — no pipelines, delivered in open, portable formats.
+                See how governed data becomes an A.I.-ready foundation, no pipelines, delivered in open, portable formats.
               </p>
               <div className="mt-8 flex items-center gap-2 font-bold text-white transition-colors group-hover:text-q-brand-ember">
                 Watch the video <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

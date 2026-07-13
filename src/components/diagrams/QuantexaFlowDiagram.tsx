@@ -44,7 +44,7 @@ export function QuantexaFlowDiagram() {
               <QBricksText />: the layer between your data <span className="text-q-brand-ember">and risk detection in Quantexa.</span>
             </>
           }
-          intro="Every risk model, investigation and case inherits the quality of the data beneath it. QBricks sits between the two — streaming governed, contract-enforced data forward."
+          intro="Every risk model, investigation and case inherits the quality of the data beneath it. QBricks sits between the two, streaming governed, contract-enforced data forward."
         />
 
         <div className="-mx-6 mt-14 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:px-0">

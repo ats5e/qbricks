@@ -55,7 +55,7 @@ export function ClouderaFlowDiagram() {
               <QBricksText /> streaming into <span className="text-q-brand-ember">Cloudera.</span>
             </>
           }
-          intro="Governed, contract-enforced data lands in Cloudera in hours — powering every function of the platform, with the Oracle Lakehouse served downstream."
+          intro="Governed, contract-enforced data lands in Cloudera in hours, powering every function of the platform, with the Oracle Lakehouse served downstream."
         />
 
         <div className="-mx-6 mt-14 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mx-0 lg:px-0">

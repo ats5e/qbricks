@@ -258,7 +258,7 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
       </div>
       <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-q-brand-ember">Data management platform</p>
       <p className="mt-3 text-lg font-black leading-snug tracking-tight text-white">
-        Governed, AI-ready data — in hours, not years.
+        Governed, AI-ready data, in hours, not years.
       </p>
       <div className="my-4 h-px bg-white/10" />
       <ul className="space-y-2.5">

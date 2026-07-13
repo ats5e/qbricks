@@ -396,7 +396,7 @@ export function Hero() {
 
   return (
     <>
-    <section id="hero" className="relative isolate flex min-h-screen items-center overflow-hidden bg-q-black pb-16 pt-32 lg:pt-36">
+    <section id="hero" className="relative isolate flex min-h-[84vh] items-center overflow-hidden bg-q-black pb-8 pt-32 lg:min-h-[86vh] lg:pt-36">
       <div className="absolute inset-0 -z-10">
         {/* Breathing brand glows */}
         <div
@@ -521,7 +521,7 @@ export function Hero() {
     </section>
 
       {/* Full-width value banner beneath the hero */}
-      <div className="relative border-y border-white/10 bg-q-black py-12 lg:py-14">
+      <div className="relative border-y border-white/10 bg-q-black py-8 lg:py-10">
         <div className="container-x">
           <p className="text-center text-[clamp(1.35rem,2.5vw,2.15rem)] font-black leading-tight tracking-tight text-white">
             Significantly reduce the cost of producing <span className="text-q-brand-ember">A.I.-ready data</span>.
