@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
+
+// Hosted form-backend endpoint (Formspree). The endpoint is a public URL (it
+// lives in the plain-HTML form action), so it's safe to keep here; an env var
+// overrides it if you ever point the form at a different Formspree form.
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "https://formspree.io/f/xykrzyrr";
+
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,15 +18,47 @@ export default function ContactPage() {
     email: "",
     company: "",
     message: "",
+    // Honeypot: real users leave this empty; bots tend to fill every field.
+    company_website: "",
   });
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Inquiry from ${formData.name} (${formData.company})`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
-    );
-    window.location.href = `mailto:sales@infinium.consulting?subject=${subject}&body=${body}`;
+    if (formData.company_website) return; // honeypot tripped — silently drop
+
+    if (!FORM_ENDPOINT) {
+      // Fallback so the button still works if the endpoint isn't configured yet.
+      const subject = encodeURIComponent(`Demo request from ${formData.name} (${formData.company})`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+      );
+      window.location.href = `mailto:sales@infinium.consulting?subject=${subject}&body=${body}`;
+      return;
+    }
+
+    setStatus("submitting");
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          _subject: `Demo request from ${formData.name} (${formData.company})`,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "", company_website: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -151,12 +190,40 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* Honeypot — hidden from users, catches bots */}
+              <div className="absolute left-[-9999px]" aria-hidden="true">
+                <label htmlFor="company_website">Company website</label>
+                <input
+                  type="text"
+                  id="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.company_website}
+                  onChange={(e) => setFormData({ ...formData, company_website: e.target.value })}
+                />
+              </div>
+
               <button
                 type="submit"
-                className="group mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-q-brand px-8 py-4 font-black text-white transition-all hover:bg-q-brand-ember hover:shadow-[0_0_30px_rgba(232,32,15,0.3)]"
+                disabled={status === "submitting"}
+                className="group mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-q-brand px-8 py-4 font-black text-white transition-all hover:bg-q-brand-ember hover:shadow-[0_0_30px_rgba(232,32,15,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message <Send className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                {status === "submitting" ? "Sending…" : "Send Message"}
+                <Send className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </button>
+
+              {status === "success" && (
+                <p role="status" className="flex items-center gap-2 text-sm font-bold text-emerald-400">
+                  <CheckCircle2 className="h-5 w-5 shrink-0" />
+                  Thanks — your message is on its way. We&apos;ll be in touch shortly.
+                </p>
+              )}
+              {status === "error" && (
+                <p role="alert" className="flex items-center gap-2 text-sm font-bold text-q-brand-ember">
+                  <AlertCircle className="h-5 w-5 shrink-0" />
+                  Something went wrong. Please try again, or email sales@infinium.consulting directly.
+                </p>
+              )}
             </form>
           </div>
 
