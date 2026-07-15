@@ -8,7 +8,7 @@ import { QBricksText } from "@/components/ui/QBricksText";
 const costLines = [
   {
     id: "01",
-    title: "Replacing the data remediation team",
+    title: "Optimise & re-allocate the data remediation team",
     todayText: "A standing team you pay every month. Analysts and data stewards triage, reconcile and fix quality exceptions by hand. Backlogs grow faster than they clear.",
     todayDriver: "[N] FTE at €[loaded cost / FTE]",
     withText: "The engine works the backlog. Metadata-driven rules detect and resolve exceptions continuously and automatically. Quality is enforced at source, not after. Headcount falls from [N] to [n] FTE.",
