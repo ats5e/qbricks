@@ -6,9 +6,14 @@ import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 // Hosted form-backend endpoint (Formspree). The endpoint is a public URL (it
-// lives in the plain-HTML form action), so it's safe to keep here; an env var
-// overrides it if you ever point the form at a different Formspree form.
-const FORM_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "https://formspree.io/f/xykrzyrr";
+// lives in the plain-HTML form action), so it's safe to keep here. An env var
+// can override it — but only if it's a valid absolute URL; anything malformed
+// (empty string, a bare form id, whitespace) falls back to the known-good URL
+// so a misconfigured env var can never break the form in production.
+const DEFAULT_ENDPOINT = "https://formspree.io/f/xykrzyrr";
+const ENV_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT?.trim();
+const FORM_ENDPOINT =
+  ENV_ENDPOINT && /^https?:\/\//.test(ENV_ENDPOINT) ? ENV_ENDPOINT : DEFAULT_ENDPOINT;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
