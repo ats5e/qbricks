@@ -459,11 +459,11 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-[clamp(3.2rem,6.2vw,5.6rem)] font-black leading-[0.93] tracking-tight text-white">
-              No more data <span className="text-q-brand-ember">pipelines.</span>
+              Significantly reduce your <span className="text-q-brand-ember">compute costs.</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-xl leading-relaxed text-q-gray-300">
-              Turn your systems of record into governed, A.I.-ready data products, in hours, not months or years.
+              Powered by EOS, representing a new generation in SQL engines.
             </p>
 
             <div
@@ -524,7 +524,7 @@ export function Hero() {
       <div className="relative border-y border-white/10 bg-q-black py-8 lg:py-10">
         <div className="container-x">
           <p className="text-center text-[clamp(1.35rem,2.5vw,2.15rem)] font-black leading-tight tracking-tight text-white">
-            Significantly reduce the cost of producing <span className="text-q-brand-ember">A.I.-ready data</span>.
+            No more data <span className="text-q-brand-ember">pipelines</span>.
           </p>
         </div>
       </div>
