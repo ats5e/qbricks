@@ -1,7 +1,7 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
 
 export const metadata = {
-  title: "QBricks + Alteryx | Capability Overview",
+  title: { absolute: "QBricks + Alteryx | Capability Overview" },
   description: "Trusted data, before it reaches Alteryx. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered into the stores your Alteryx workflows already read.",
 };
 

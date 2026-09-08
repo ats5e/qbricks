@@ -1,7 +1,7 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
 
 export const metadata = {
-  title: "QBricks + Microsoft Fabric | Capability Overview",
+  title: { absolute: "QBricks + Microsoft Fabric | Capability Overview" },
   description: "Trusted data, before it reaches Microsoft Fabric. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into OneLake.",
 };
 

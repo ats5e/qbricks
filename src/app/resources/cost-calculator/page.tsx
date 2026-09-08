@@ -4,7 +4,7 @@ import Calculator from "./Calculator";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata: Metadata = {
-  title: "Where QBricks takes cost out | QBricks",
+  title: { absolute: "Where QBricks takes cost out" },
   description: "An illustrative cost calculator: model where QBricks takes cost out of your data estate on your own numbers.",
 };
 

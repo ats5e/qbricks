@@ -2,7 +2,7 @@ import { CapabilityOverview, type CapabilityContent } from "@/components/resourc
 import { QuantexaFlowDiagram } from "@/components/diagrams/QuantexaFlowDiagram";
 
 export const metadata = {
-  title: "QBricks + Quantexa | Capability Overview",
+  title: { absolute: "QBricks + Quantexa | Capability Overview" },
   description: "Trusted data, before it reaches Quantexa. QBricks turns fragmented systems of record into governed, entity-ready data products, field-mapped to the Quantexa data model.",
 };
 

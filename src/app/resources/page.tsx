@@ -7,7 +7,7 @@ import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "Resources | QBricks",
+  title: "Resources",
   description: "Insights and FAQ on A.I.-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
 };
 

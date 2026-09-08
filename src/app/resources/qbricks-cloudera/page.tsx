@@ -2,7 +2,7 @@ import { CapabilityOverview, type CapabilityContent } from "@/components/resourc
 import { ClouderaFlowDiagram } from "@/components/diagrams/ClouderaFlowDiagram";
 
 export const metadata = {
-  title: "QBricks + Cloudera | Capability Overview",
+  title: { absolute: "QBricks + Cloudera | Capability Overview" },
   description: "Trusted data, before it reaches Cloudera. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your Cloudera platform.",
 };
 

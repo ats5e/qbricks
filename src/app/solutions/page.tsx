@@ -7,7 +7,7 @@ import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "Solutions | QBricks",
+  title: "Solutions",
   description: "QBricks solutions for AML, KYC, fraud, contextual MDM, credit risk and ESG risk.",
 };
 

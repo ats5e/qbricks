@@ -6,7 +6,7 @@ import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "Product | QBricks",
+  title: "Product",
   description: "A.I.-enabled metadata management built for governed enterprise data, Data Contracts, Data Products and auditable deployment.",
 };
 

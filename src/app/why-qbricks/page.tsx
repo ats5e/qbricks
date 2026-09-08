@@ -8,7 +8,7 @@ import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "Why QBricks | QBricks",
+  title: { absolute: "Why QBricks" },
   description: "Why one platform, vendor-native tooling and consultancy data fabric programmes do not fix the metadata foundation organisations need.",
 };
 

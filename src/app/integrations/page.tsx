@@ -9,7 +9,7 @@ import { UseCases } from "@/components/interactive/UseCases";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "Integrations | QBricks",
+  title: "Integrations",
   description: "QBricks works with Databricks, Microsoft Fabric, Snowflake and your own on-premise databases across modern data stacks.",
 };
 

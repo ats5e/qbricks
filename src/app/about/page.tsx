@@ -4,7 +4,7 @@ import Link from "next/link";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
-  title: "About | QBricks",
+  title: "About",
   description: "QBricks is developed and owned by Infinium Consulting B.V. under the NextWave Infinium identity.",
 };
 

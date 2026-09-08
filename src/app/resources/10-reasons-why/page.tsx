@@ -4,7 +4,7 @@ import { VideoResourcePage } from "@/components/resources/VideoResourcePage";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata: Metadata = {
-  title: "10 Reasons Why QBricks | Resources",
+  title: { absolute: "10 Reasons Why QBricks | Resources" },
   description: "See how QBricks turns governed data into an A.I.-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.",
 };
 

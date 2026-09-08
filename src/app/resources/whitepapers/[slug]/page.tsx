@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const paper = whitepapers.find((entry) => entry.slug === slug);
   if (!paper) return {};
   return {
-    title: `${paper.title} | QBricks White Paper`,
+    title: { absolute: `${paper.title} | QBricks White Paper` },
     description: paper.standfirst.slice(0, 155),
   };
 }

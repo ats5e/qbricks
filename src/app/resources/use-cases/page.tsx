@@ -4,7 +4,7 @@ import { VideoResourcePage } from "@/components/resources/VideoResourcePage";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata: Metadata = {
-  title: "QBricks Use Cases | Resources",
+  title: { absolute: "QBricks Use Cases | Resources" },
   description: "See how governed, fully lineaged data products support financial crime, customer intelligence and risk workflows.",
 };
 
