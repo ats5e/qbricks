@@ -8,9 +8,11 @@ const columns = [
     title: "Product",
     links: [
       ["Overview", "/product"],
+      ["EOS Engine", "/eos"],
       ["Solutions", "/solutions"],
       ["Integrations", "/integrations"],
       ["Why QBricks", "/why-qbricks"],
+      ["Sustainability", "/sustainability"],
     ],
   },
   {

@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/product",
+    "/eos",
+    "/sustainability",
     "/solutions",
     "/integrations",
     "/why-qbricks",

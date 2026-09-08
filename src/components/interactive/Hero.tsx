@@ -463,7 +463,11 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-xl text-xl leading-relaxed text-q-gray-300">
-              Powered by EOS, representing a new generation in SQL engines.
+              Powered by{" "}
+              <Link href="/eos" className="font-bold text-white underline decoration-q-brand/50 underline-offset-4 transition-colors hover:decoration-q-brand-ember">
+                EOS
+              </Link>
+              , representing a new generation in SQL engines.
             </p>
 
             <div
