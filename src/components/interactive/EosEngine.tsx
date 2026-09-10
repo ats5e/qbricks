@@ -14,7 +14,7 @@ const fadeUp = {
 const headlineStats = [
   { value: "866", unit: "M", label: <>Records through the full 22-query TPC-H suite in <strong className="font-black text-white">16.5s</strong></> },
   { value: "−85", unit: "%", label: "Compute per migrated workload" },
-  { value: "1", unit: " VM", label: "32 vCPU / 64 GiB, ≈ $31/day, replaces the cluster" },
+  { value: "1", unit: " VM", label: "32 vCPU / 64 GiB, ≈ $20/day, replaces the cluster" },
   { value: "−90", unit: "%", label: "Cost per workload vs managed Spark" },
 ];
 
@@ -50,7 +50,7 @@ const differences = [
 ];
 
 const basis =
-  "Basis: TPC-H SF100 (~866M rows total, lineitem ~600M), 22 queries, single Azure D32als_v6 (32 vCPU / 64 GiB), pay-as-you-go ≈ $31/day at the $1.286/hr US baseline · Compute reduction: QBricks engineering estimate, up to 85% · Cost savings are subject to the QBricks gain share, not shown here.";
+  "Basis: TPC-H SF100 (~866M rows total, lineitem ~600M), 22 queries, single Azure D32als_v6 (32 vCPU / 64 GiB), ≈ $20/day (≈ $0.83/hr) · Compute reduction: QBricks engineering estimate, up to 85% · Cost savings are subject to the QBricks gain share, not shown here.";
 
 export function EosEngine() {
   return (
@@ -201,7 +201,7 @@ export function EosEngine() {
                 866M records · <span className="text-q-brand-ember">16.5s</span>
               </p>
               <p className="mt-5 text-[15px] leading-relaxed text-q-gray-300">
-                ~100 GB raw across 8 tables, the full 22-query suite end to end, a full bank analytical estate compressed onto one $31/day VM.
+                ~100 GB raw across 8 tables, the full 22-query suite end to end, a full bank analytical estate compressed onto one $20/day VM.
               </p>
             </motion.div>
 

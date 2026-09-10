@@ -15,7 +15,7 @@ const headlineStats = [
   { value: "−88", unit: "%", label: "Energy per year, same pipeline" },
   { value: "9", unit: "×", label: "Smaller provisioned compute" },
   { value: "40", unit: "%", label: "Of the data-centre estate is pipeline compute, the layer QBricks addresses" },
-  { value: "−94", unit: "%", label: "Annual platform cost, same workload" },
+  { value: "−96", unit: "%", label: "Annual platform cost, same workload" },
 ];
 
 const workedExample = [
@@ -23,7 +23,7 @@ const workedExample = [
   { dimension: "Power at the wall", qbricks: "~0.29 kW", warehouse: "~2.3 kW", delta: "−87%" },
   { dimension: "Energy per year", qbricks: "~2.5 MWh", warehouse: "~20.2 MWh", delta: "−88%" },
   { dimension: "CO₂ per year", qbricks: "~0.9 tCO₂e", warehouse: "~7.5 tCO₂e", delta: "−6.6 t" },
-  { dimension: "Annual platform cost", qbricks: "$11,300", warehouse: "$196,224", delta: "−94%" },
+  { dimension: "Annual platform cost", qbricks: "$7,300", warehouse: "$196,224", delta: "−96%" },
 ];
 
 const scaleCards = [
