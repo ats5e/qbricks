@@ -15,9 +15,87 @@ export type Whitepaper = {
   sceneLogo?: string;
   sceneLogoAlt?: string;
   pdf: string;
+  /** Optional layered-stack section (e.g. the DAVE stack). */
+  stack?: {
+    title: string;
+    intro: string;
+    layers: { letter: string; name: string; role: string; inherit: string; extend: string }[];
+  };
+  /** Optional full-width animated figures from the QBricks graphics pack. */
+  figures?: { graphic: "migration" | "pipeline" | "routing"; eyebrow: string; title: string; text: string }[];
+  /** Optional link rendered under the solution section. */
+  related?: { href: string; label: string };
+  /** Optional "what this does not do" section. */
+  caveats?: { title: string; items: { title: string; text: string }[] };
+  references?: { label: string; href?: string }[];
+  note?: string;
 };
 
 export const whitepapers: Whitepaper[] = [
+  {
+    slug: "dave-stack",
+    category: "Engine Architecture / Financial Services Data",
+    title: "Purpose-built engines for financial services data.",
+    standfirst:
+      "For a decade, financial institutions have consolidated analytics onto a handful of general-purpose cloud warehouses and lakehouses. These platforms are excellent at what they were built for. But financial services data has quirks of its own: point-in-time correctness, bitemporal history, entity-centric joins, dense rule sets and strict residency constraints. Expressing those quirks on a general-purpose engine is always possible, and it is often expensive. Four open building blocks, the DAVE stack, have changed the economics of building an engine for exactly this data.",
+    stats: [
+      { value: "4", label: "open layers you inherit rather than build: DataFusion, Arrow, Vortex and an Embedded architecture" },
+      { value: "~70%", label: "faster queries reported by Polar Signals after adopting Vortex for storage" },
+      { value: "16.5s", label: "for 866M records through the full TPC-H suite on one VM, with EOS, the engine inside QBricks" },
+    ],
+    pointsTitle: "Financial services data is not generic data",
+    points: [
+      { title: "Time is not one dimension", text: "Regulators and auditors ask what an institution knew at a given moment, not just what is true now. That means as-of joins, valid-time and transaction-time history, and replaying a report exactly as it was submitted, even after upstream restatements. General-purpose engines get there through careful modelling, snapshot tables and repeated scans, which multiply both storage and compute." },
+      { title: "Entities, not rows", text: "Customer, counterparty, beneficial owner and account are resolved across many source systems. Financial crime, KYC and trade-based money laundering analytics are about joining evidence to a resolved entity, often through graph-shaped relationships. These joins are central to the workload, not an edge case." },
+      { title: "Dense rules and contracts", text: "A mid-sized bank can operate thousands of data quality rules, each evaluated on every load, plus BCBS 239 lineage obligations and, increasingly, formal data contracts such as the Open Data Contract Standard (ODCS). On a general-purpose platform, each rule is frequently another query over another full scan." },
+      { title: "Skewed, sparse activity", text: "Most customers transact rarely, while a small number of correspondents, merchants and market counterparties generate most of the volume. The analytically interesting questions often touch a scattered subset of rows and columns that no single physical ordering can keep together." },
+      { title: "Residency and sovereignty", text: "Data protection and localisation rules in the EU, the Kingdom of Saudi Arabia and the UAE, together with DORA\u2019s expectations on ICT third-party risk, increasingly require compute to go to the data rather than the reverse. Egress is a cost line and, in some jurisdictions, a compliance problem." },
+      { title: "The painful middle ground", text: "Historically an analytical database was a very large, costly and slow project, justified only where thousands of organisations shared the need. Financial services sits in the middle ground: each institution\u2019s needs are specific, the regulatory workloads are heavy and recurring, and the gap between a general-purpose platform and an expertly optimised one grows material as data scales." },
+    ],
+    stack: {
+      title: "Meet DAVE: build the parts specific to your data, inherit the rest",
+      intro:
+        "In a September 2026 essay, Tim Poterba, formerly a lead engineer on the Hail genomics platform at the Broad Institute and now building the Phoebe database, argues that a database optimised for a specific domain has shifted from a multi-year undertaking to a reasonable proposition. Each layer of the DAVE stack is designed to be extended at exactly the points where domain optimisation pays off: query plans and joins, table layouts, compute kernels, storage encodings and distributed architecture. His own population genomics database is the production evidence: trillions of sparse, skewed records, with a representative search returning in a couple of seconds from a stateless container reading about 1 GB across roughly 200 files in S3.",
+      layers: [
+        { letter: "D", name: "DataFusion", role: "The query engine", inherit: "An embeddable, high-performance SQL query engine: planner, optimiser and vectorised execution, competitive with the leading engines on the ClickBench benchmark.", extend: "Custom logical and physical plans, table providers, specialised operators and joins: native as-of joins, and plans that reuse resolved-entity keys rather than recomputing matches." },
+        { letter: "A", name: "Arrow", role: "The in-memory format", inherit: "The de facto columnar in-memory format and compute kernel library, approaching its tenth anniversary, with zero-copy interoperability across the analytics industry.", extend: "Domain-specific compute kernels written against a stable format: identifier and reference-data checks, and thousands of quality rules evaluated in a single pass." },
+        { letter: "V", name: "Vortex", role: "The storage engine", inherit: "A columnar file format and storage engine with modern encodings and built-in object-store I/O, created by SpiralDB and donated to the Apache Software Foundation.", extend: "Custom encodings, layouts and filter pushdown that skip data before it is materialised, so scoped queries across wide, sparse tables never decode what they do not need." },
+        { letter: "E", name: "Embedded", role: "The deployment model", inherit: "Other people\u2019s distributed systems: containers, serverless, batch schedulers and managed clouds, with their security, identity and operational controls.", extend: "Thin wrappers that run the same engine wherever the workload and the data are: on premise, in a sovereign cloud region or on an analyst workstation." },
+      ],
+    },
+    figures: [
+      { graphic: "routing", eyebrow: "Embedded", title: "The engine goes to the work, not the other way round", text: "Most institutions have already invested heavily in Databricks, Microsoft Fabric, Snowflake or on-premise estates. An embedded engine does not ask them to replace these. Data lands in the lakehouse as it does today; QBricks routes the workload to EOS on one right-sized node, pushes down the work the platform does well, and returns governed data products to the landing zone for downstream consumption." },
+      { graphic: "pipeline", eyebrow: "Less compute per question", title: "Ingestion, pipeline and extraction on one node", text: "Pushing selections into storage, evaluating rules in single passes and maintaining views incrementally means reading and processing a fraction of the data a general-purpose plan would touch. Data contracts are attached at ingestion and enforced through extraction, and the whole flow runs on the EOS SQL engine, end to end, without Spark." },
+      { graphic: "migration", eyebrow: "Less data movement", title: "Tables become contract-enforced data products on the way across", text: "Running compute next to the data reduces egress charges, duplicate copies and the pipelines that maintain them, and simplifies residency compliance. A database-to-lakehouse migration that once took 12 to 18 months becomes a matter of hours to days: profile and ingest incrementally, generate the ODCS contract, validate with a human in the loop, publish in open formats." },
+    ],
+    solutionTitle: "How QBricks applies the approach: EOS",
+    solutionText:
+      "QBricks is an agentic metadata management and data quality platform for financial services. EOS is the engine inside it, and it is built on the DAVE stack. We did not set out to build a general-purpose database. We inherited query execution, in-memory compute and storage from DataFusion, Arrow and Vortex, and concentrated our engineering on what is specific to financial services: data contracts, quality rules, point-in-time correctness, incremental materialised views and the metadata that ties them to governance evidence. EOS is embedded wherever an institution needs it, on premise, in a sovereign cloud region or on an analyst\u2019s workstation, so processing happens where the data already resides. QBricks interfaces with Databricks, Microsoft Fabric, Snowflake and on-premise platforms, including through SQL push-down, and complements rather than replaces them. Entity resolution for financial crime use cases is delivered through a productised Quantexa integration.",
+    related: { href: "/eos", label: "How EOS extends each layer of the stack" },
+    caveats: {
+      title: "What DAVE does not do for you",
+      items: [
+        { title: "A team that knows both", text: "DAVE is not a shortcut to a finished product. Realising the benefit means understanding the domain and database internals: how to turn a business question into a precise query, how data should be partitioned and encoded, which joins should run first and whether data can stay encoded through the query. Poterba\u2019s own engine is around 70,000 lines of Rust above the DAVE layers." },
+        { title: "Supportability", text: "Open-source foundations reduce build effort but not the need for a vendor accountable for the engine built on top of them, with defined support, security patching and release management." },
+        { title: "Third-party risk", text: "Open-source components still belong in the ICT third-party and software bill-of-materials records that DORA and local regulators expect. Apache Software Foundation governance helps, but it does not replace an institution\u2019s own assessment." },
+        { title: "Governance above the engine", text: "Speed is only valuable if results are trusted. Lineage, data contracts, quality evidence and audit trails have to be first-class features, not afterthoughts." },
+      ],
+    },
+    quote: "You no longer have to build a whole database to get a database built for your domain.",
+    tagline: "QBricks 5\u00d75 Ignite: a no-cost engagement that answers which workloads to move first, on five of your own datasets and five of your own rules.",
+    references: [
+      { label: "Poterba, T. (2026). The DAVE stack: the age of domain-optimized analytical databases on Datafusion, Arrow, and Vortex, Embedded. Sequence and Silicon, 14 September 2026.", href: "https://sequenceandsilicon.substack.com/p/the-dave-stack-the-age-of-domain" },
+      { label: "Apache DataFusion", href: "https://datafusion.apache.org" },
+      { label: "Apache Arrow", href: "https://arrow.apache.org" },
+      { label: "Vortex", href: "https://vortex.dev" },
+      { label: "Durner, D., Leis, V. and Neumann, T. (2023). Exploiting Cloud Object Storage for High-Performance Analytics. PVLDB 16(11).", href: "https://www.vldb.org/pvldb/vol16/p2769-durner.pdf" },
+      { label: "Polar Signals and Spice AI engineering blogs on Vortex adoption, as cited in Poterba (2026)." },
+    ],
+    note: "QBricks\u00ae is a registered trademark of Infinium Consulting B.V. DataFusion, Arrow and Vortex are projects of the Apache Software Foundation and their respective contributors. Other product names are trademarks of their owners. This paper summarises and comments on a third-party publication; the views on financial services are Infinium\u2019s own.",
+    scene: "integrations",
+    sceneBadge: "EOS · DAVE stack",
+    pdf: "/whitepapers/dave-stack.pdf",
+  },
   {
     slug: "ai-compute-numbers",
     category: "AI Economics / Enterprise Data",
