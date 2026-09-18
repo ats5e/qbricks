@@ -13,7 +13,7 @@ const fadeUp = {
 } as const;
 
 const headlineStats = [
-  { value: "866", unit: "M", label: <>Records through the full 22-query TPC-H suite in <strong className="font-black text-white">16.5s</strong></> },
+  { value: "866", unit: "M", label: <>Records through the full 22-query TPC-H suite in <strong className="font-black text-white">14.5s</strong></> },
   { value: "−85", unit: "%", label: "Compute per migrated workload" },
   { value: "1", unit: " VM", label: "32 vCPU / 64 GiB, ≈ $20/day, replaces the cluster" },
   { value: "−90", unit: "%", label: "Cost per workload vs managed Spark" },
@@ -264,7 +264,7 @@ export function EosEngine() {
             <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="premium-card p-8">
               <p className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-q-gray-500">TPC-H SF100</p>
               <p className="mt-4 text-[clamp(1.8rem,3.2vw,2.6rem)] font-black leading-none tracking-tight text-white">
-                866M records · <span className="text-q-brand-ember">16.5s</span>
+                866M records · <span className="text-q-brand-ember">14.5s</span>
               </p>
               <p className="mt-5 text-[15px] leading-relaxed text-q-gray-300">
                 ~100 GB raw across 8 tables, the full 22-query suite end to end, a full bank analytical estate compressed onto one $20/day VM.

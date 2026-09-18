@@ -41,7 +41,7 @@ export const whitepapers: Whitepaper[] = [
     stats: [
       { value: "4", label: "open layers you inherit rather than build: DataFusion, Arrow, Vortex and an Embedded architecture" },
       { value: "~70%", label: "faster queries reported by Polar Signals after adopting Vortex for storage" },
-      { value: "16.5s", label: "for 866M records through the full TPC-H suite on one VM, with EOS, the engine inside QBricks" },
+      { value: "14.5s", label: "for 866M records through the full TPC-H suite on one VM, with EOS, the engine inside QBricks" },
     ],
     pointsTitle: "Financial services data is not generic data",
     points: [
