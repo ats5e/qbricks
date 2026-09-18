@@ -26,14 +26,14 @@ export default function Home() {
         <div className="container-x relative z-10">
           <div className="premium-card mx-auto max-w-4xl p-8 text-center md:p-10">
             <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.2rem,4vw,4rem)] font-black leading-[0.95] tracking-tight text-white sm:gap-4 lg:gap-6">
-              From Record To Report In Minutes
+              Bring Us A Representative Workload
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
-              Join us for a focused demo that shows how we create data contracts and products in minutes.
+              We will show you where QBricks helps, where it does not, and what adoption would require.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
-                Request a demo <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                Evaluate your workload <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link href="/product" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-white/[0.08]">
                 <CheckCircle2 className="h-5 w-5 text-emerald-300" />

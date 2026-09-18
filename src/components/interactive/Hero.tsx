@@ -459,15 +459,19 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-[clamp(3.2rem,6.2vw,5.6rem)] font-black leading-[0.93] tracking-tight text-white">
-              Significantly reduce your <span className="text-q-brand-ember">compute costs.</span>
+              Fast answers from <span className="text-q-brand-ember">complex data.</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-xl leading-relaxed text-q-gray-300">
+              <QBricksText /> combines a high-performance SQL engine with the tools to manage, govern and serve analytical data.
+            </p>
+
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-q-gray-400">
               Powered by{" "}
               <Link href="/eos" className="font-bold text-white underline decoration-q-brand/50 underline-offset-4 transition-colors hover:decoration-q-brand-ember">
                 EOS
               </Link>
-              , representing a new generation in SQL engines.
+              , designed to reduce unnecessary decoding, data movement and join processing.
             </p>
 
             <div
@@ -498,15 +502,15 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 whitespace-nowrap sm:flex-row sm:flex-wrap">
               <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-4 text-sm font-bold text-white shadow-[0_0_50px_rgba(232,32,15,0.3)] transition-all hover:-translate-y-0.5">
                 <span className="absolute inset-0 bg-gradient-to-r from-[#c91b0d] via-[#ff3a26] to-[#ff7669]" />
                 <span className="absolute inset-y-0 -left-1/2 w-1/3 rotate-12 bg-white/30 blur-xl animate-shimmer" />
-                <span className="relative z-10">Request a demo</span>
+                <span className="relative z-10">Evaluate your workload</span>
                 <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="/product" className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.055] px-7 py-4 text-sm font-bold text-white backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08]">
-                See how it works
+              <Link href="/eos#benchmarks" className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.055] px-7 py-4 text-sm font-bold text-white backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08]">
+                Explore the benchmarks
               </Link>
             </div>
           </motion.div>

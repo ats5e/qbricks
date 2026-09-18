@@ -88,10 +88,10 @@ export default function ContactPage() {
       <div className="container-x relative z-10 pt-40 md:pt-48">
         <div className="mb-16 text-center md:mb-24">
           <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-white">
-            Try <QBricksText /> on your data.
+            Evaluate <QBricksText /> on your workload.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-q-gray-300">
-            Book a 30-minute demo and we will show record-to-report on a representative dataset.
+            Bring us a representative workload. We will show you where <QBricksText /> helps, where it does not, and what adoption would require.
           </p>
         </div>
 
@@ -184,7 +184,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-bold text-q-gray-300">How can we help?</label>
+                <label htmlFor="message" className="text-sm font-bold text-q-gray-300">Tell us about your workload</label>
                 <textarea
                   id="message"
                   required

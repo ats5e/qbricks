@@ -13,6 +13,12 @@ const capabilities = [
     highlight: "Incremental",
   },
   {
+    icon: Cloud,
+    title: "Local compute",
+    text: "Works with Databricks, Fabric, Snowflake or your own database via SQL push-down, with enterprise scale on your desktop or container app.",
+    highlight: "Local",
+  },
+  {
     icon: Shield,
     title: "Governance enforced by contract",
     text: "Records are compared digitally to your governance framework.",
@@ -29,12 +35,6 @@ const capabilities = [
     title: "Knowledge graph & lineage",
     text: "See hierarchy, linkages and complex relationships. Supports ontologies and full data lineage.",
     highlight: "Full lineage",
-  },
-  {
-    icon: Cloud,
-    title: "Local compute",
-    text: "Works with Databricks, Fabric, Snowflake or your own database via SQL push-down, with enterprise scale on your desktop or container app.",
-    highlight: "Local",
   },
   {
     icon: Sparkles,
