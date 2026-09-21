@@ -281,8 +281,8 @@ const stageChips = {
 };
 
 const perf = [
-  { x: 720, title: "INGESTION PERFORMANCE", stats: [["1BN records · 150 s", "ingested end-to-end"], ["Market leading", "on par with ClickHouse"]] },
-  { x: 985, title: "PIPELINE PERFORMANCE", stats: [["TPC-H SF100 · 14.5 s", "benchmarked end-to-end"], ["Market leading", "faster than DuckDB"]] },
+  { x: 720, title: "INGESTION PERFORMANCE", stats: [["1BN records · 150 s", "ingested end-to-end"]] },
+  { x: 985, title: "PIPELINE PERFORMANCE", stats: [["TPC-H SF100 · 14.5 s", "benchmarked end-to-end"]] },
   { x: 1250, title: "BI PERFORMANCE", stats: [["Low compute costs", "single node, no cluster"], ["Est. 99% lower*", "vs lakehouse compute"]] },
 ];
 

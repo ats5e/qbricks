@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
+import { MigrationGraphic, RoutingGraphic } from "@/components/interactive/flowGraphics";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -85,6 +86,39 @@ export default function ProductPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/5 bg-q-black py-20 lg:py-28">
+        <div className="container-x space-y-20">
+          <div>
+            <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+              <div>
+                <p className="eyebrow mb-3">Workload routing</p>
+                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-white">Data lands in the lakehouse. <QBricksText /> runs the workload.</h2>
+              </div>
+              <p className="leading-relaxed text-q-gray-300 lg:pt-1">
+                Your lakehouse stays the governed landing zone. <QBricksText /> routes each workload to the EOS engine on one right-sized node, then returns governed data products to the landing zone for downstream consumption and to data scientists through the Python SDK.
+              </p>
+            </div>
+            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_40px_120px_rgba(0,0,0,0.55)] sm:p-3">
+              <RoutingGraphic />
+            </div>
+          </div>
+          <div>
+            <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+              <div>
+                <p className="eyebrow mb-3">Database to lakehouse migration</p>
+                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-white">Tables become contract-enforced data products on the way across.</h2>
+              </div>
+              <p className="leading-relaxed text-q-gray-300 lg:pt-1">
+                Profile and ingest incrementally, generate the Open Data Contract Standard contract, validate with a human in the loop and publish in open formats. A migration that once took 12 to 18 months becomes a matter of hours to days.
+              </p>
+            </div>
+            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_40px_120px_rgba(0,0,0,0.55)] sm:p-3">
+              <MigrationGraphic />
+            </div>
           </div>
         </div>
       </section>
