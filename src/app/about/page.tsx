@@ -5,7 +5,7 @@ import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "About",
-  description: "QBricks is developed and owned by Infinium Consulting B.V. under the NextWave Infinium identity.",
+  description: "QBricks is developed and owned by Infinium Consulting B.V., part of Infinium Technology.",
 };
 
 export default function AboutPage() {
@@ -44,6 +44,22 @@ export default function AboutPage() {
               <h2 className="text-2xl font-black text-white">Built for every organisation</h2>
               <p className="mt-4 leading-relaxed text-q-gray-400">Designed for the realities of data-driven organisations: A.I. ambition, governance and trust in every data decision.</p>
             </div>
+          </div>
+
+          <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.035] p-7 md:flex-row md:items-center md:p-8">
+            <div>
+              <p className="eyebrow mb-2">Part of Infinium Technology</p>
+              <p className="max-w-2xl leading-relaxed text-q-gray-400">
+                <QBricksText /> is developed and owned by Infinium Consulting B.V., the Amsterdam-based consultancy behind Infinium Technology. Infinium delivers the data, A.I. and transformation programmes that <QBricksText /> was built to accelerate.
+              </p>
+            </div>
+            <a
+              href="https://infinium-technology.com/"
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08]"
+            >
+              Visit Infinium Technology <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
 
           <div className="premium-card mx-auto mt-10 max-w-4xl p-8 text-center md:p-12">

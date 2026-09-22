@@ -111,7 +111,9 @@ export default function ContactPage() {
                   </div>
                   <div className="flex flex-col gap-1.5 leading-relaxed">
                     <h3 className="text-lg font-bold text-white mb-1">Amsterdam Office</h3>
-                    <p className="text-sm text-q-gray-300">Infinium Consulting BV</p>
+                    <p className="text-sm text-q-gray-300">
+                      <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">Infinium Consulting BV</a>
+                    </p>
                     <p className="text-sm text-q-gray-300">Edge Olympic, Fred. Roeskestraat 115</p>
                     <p className="text-sm text-q-gray-300">Amsterdam, The Netherlands</p>
                   </div>

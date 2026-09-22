@@ -52,6 +52,13 @@ const organizationJsonLd = {
     addressCountry: "NL",
   },
   description: "A.I.-enabled metadata management platform delivering governed, contract-enforced data products.",
+  sameAs: ["https://infinium-technology.com/"],
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Infinium Technology",
+    legalName: "Infinium Consulting B.V.",
+    url: "https://infinium-technology.com/",
+  },
 };
 
 export default function RootLayout({

@@ -76,8 +76,17 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
-          <p className="text-xs text-q-gray-600">&copy; {new Date().getFullYear()} Infinium Consulting B.V. All rights reserved.</p>
-          <div className="flex items-center text-xs text-q-gray-600">
+          <p className="text-xs text-q-gray-600">
+            &copy; {new Date().getFullYear()}{" "}
+            <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+              Infinium Consulting B.V.
+            </a>
+            . All rights reserved.
+          </p>
+          <div className="flex items-center gap-4 text-xs text-q-gray-600">
+            <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+              A product of Infinium Technology ↗
+            </a>
             <span>qbricks.ai</span>
           </div>
         </div>
