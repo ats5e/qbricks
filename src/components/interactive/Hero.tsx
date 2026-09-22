@@ -459,11 +459,11 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-[clamp(3.2rem,6.2vw,5.6rem)] font-black leading-[0.93] tracking-tight text-white">
-              Fast answers from <span className="text-q-brand-ember">complex data.</span>
+              Significantly reduce your <span className="text-q-brand-ember">compute costs.</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-xl leading-relaxed text-q-gray-300">
-              <QBricksText /> combines a high-performance SQL engine with the tools to manage, govern and serve analytical data.
+              <QBricksText /> combines a high-performance SQL engine with the tools to manage, govern and provide A.I. ready data.
             </p>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-q-gray-400">
