@@ -2,33 +2,49 @@
 
 import { useEffect, useRef } from "react";
 import type * as T3 from "three";
-import type { RoundedBoxGeometry as RoundedBoxGeometryT } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 
 /*
- * QBricks hero: the Q built from bricks, after the brand film's cold open.
+ * QBricks hero: the Q laid in bricks, after the brand film's cold open.
  *
- * Raw (charcoal) bricks fly in, accelerating, and lock into the QBricks Q,
- * a ring of 16 and a three-brick tail. Each brick turns QBricks red as it
- * locks: governed on arrival. Once the Q is whole, it keeps streaming: every
- * couple of seconds one brick lights, is released, and a fresh raw brick
- * streams in from the right to take its place. The mark tilts gently towards
- * the pointer.
+ * The mark is built like masonry: two staggered courses of bricks around the
+ * ring, so it has the logo's weight, and a tail of bricks following the
+ * logo's own swash (traced from the Q outline used in the brand film).
+ * Raw charcoal bricks fly in, accelerating, and lock into place, turning the
+ * logo red (#ff1e27) as they are governed. Once the Q is whole, one brick at
+ * a time lights, is released, and a fresh raw brick streams in to replace it.
+ * The mark tilts gently towards the pointer.
  *
- * Vanilla three.js, loaded on the client only. DPR capped at 2, paused when
- * off-screen or the tab is hidden, and a single finished frame for reduced
- * motion and automated agents.
+ * Vanilla three.js, client only. DPR capped at 2, paused off-screen or when
+ * the tab is hidden, and a single finished frame for reduced motion.
  */
 
 type Props = { still: boolean };
 
-const RING_N = 16;
-const R = 2.25;
-const ARRIVALS = [8, 19, 29, 38, 46, 53, 59, 64, 69, 73, 77, 80, 83, 86, 88, 90, 94, 97, 100].map((f) => f / 32 + 0.35);
-const FLY = 0.42; // seconds each brick spends flying in
-const BASE_GLOW = 0.5; // keeps shadowed faces in the logo red rather than going maroon
-
 const RED = 0xff1e27; // the logo red, sampled from qbricks-logo.png
-const RAW = 0x2a2a30;
+const RAW = 0x26262b;
+const FLY = 0.5; // seconds each brick spends flying in
+const BUILD = 3.4; // seconds to lay the whole Q
+
+// brick sizes: length along the course, thickness across it, depth
+const RING_BRICK = [0.74, 0.4, 0.5] as const;
+const TAIL_BRICK = [0.5, 0.4, 0.5] as const; // shorter, so two courses follow the swash cleanly
+const COURSES = [
+  { r: 2.02, n: 16, offset: 0 },
+  { r: 2.46, n: 19, offset: 0.5 },
+];
+
+// tail centreline, mapped from the Q outline in the brand film (video/src/three/qPath.ts):
+// ring centre at the origin, outer ring edge at 2.66; a wave that meets the ring, dips, then lifts
+const TAIL = [
+  [-1.35, -3.3], // rounded start, below-left
+  [-0.7, -3.06],
+  [0, -2.98], // joins the underside of the ring
+  [0.6, -3.22],
+  [1.15, -3.56], // the dip
+  [1.9, -3.5],
+  [2.6, -3.18],
+  [2.98, -2.94], // lifts at the end, past the ring's right edge
+] as const;
 
 function rng(seed: number) {
   let a = seed >>> 0;
@@ -64,7 +80,7 @@ export default function QBrickHero({ still }: Props) {
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.toneMapping = THREE.NoToneMapping; // keep the logo red exact
       renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.shadowMap.type = THREE.VSMShadowMap;
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
       renderer.domElement.style.display = "block";
@@ -72,113 +88,137 @@ export default function QBrickHero({ still }: Props) {
 
       const scene = new THREE.Scene();
       const pmrem = new THREE.PMREMGenerator(renderer);
-      scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-      scene.environmentIntensity = 0.12;
+      scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.02).texture;
+      scene.environmentIntensity = 0.55;
 
-      const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-      camera.position.set(1.6, 1.4, 15.5);
-      camera.lookAt(0, 0, 0);
+      const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+      camera.position.set(0.8, 1.1, 17);
+      camera.lookAt(0, -0.35, 0);
 
-      scene.add(new THREE.HemisphereLight(0xffffff, 0xe8e8ec, 0.25));
-      const key = new THREE.DirectionalLight(0xffffff, 1.7);
-      key.position.set(-6, 9, 8);
+      scene.add(new THREE.HemisphereLight(0xffffff, 0xf0f0f2, 0.25));
+      const key = new THREE.DirectionalLight(0xffffff, 1.35);
+      key.position.set(-3, 12, 7); // high, so the shadow falls under the mark
       key.castShadow = true;
       key.shadow.mapSize.set(1024, 1024);
-      key.shadow.camera.left = -6;
-      key.shadow.camera.right = 6;
-      key.shadow.camera.top = 6;
-      key.shadow.camera.bottom = -6;
-      key.shadow.radius = 6;
+      key.shadow.camera.left = -7;
+      key.shadow.camera.right = 7;
+      key.shadow.camera.top = 7;
+      key.shadow.camera.bottom = -7;
+      key.shadow.radius = 14;
+      key.shadow.blurSamples = 20;
+      key.shadow.bias = -0.0004;
       scene.add(key);
-      const glow = new THREE.PointLight(RED, 0, 9, 2);
-      glow.position.set(0, 0.4, 1.5);
+      const rim = new THREE.DirectionalLight(0xffffff, 0.6);
+      rim.position.set(6, 3, -4);
+      scene.add(rim);
+      const glow = new THREE.PointLight(RED, 0, 10, 2);
+      glow.position.set(0, 0, 2.2);
       scene.add(glow);
 
-      // soft contact shadow on the white page
-      const floor = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.12 }));
+      const floor = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.09 }));
       floor.rotation.x = -Math.PI / 2;
-      floor.position.y = -3.35;
+      floor.position.y = -4.35;
       floor.receiveShadow = true;
       scene.add(floor);
 
       const group = new THREE.Group();
-      group.position.set(-0.55, 0.35, 0);
       scene.add(group);
 
-      // the Q: 16 ring bricks clockwise from 12 o'clock, then the tail sweeping down and right
-      type Slot = { p: T3.Vector3; rz: number; s: number; out: T3.Vector2 };
-      const slots: Slot[] = [];
-      for (let k = 0; k < RING_N; k++) {
-        const th = Math.PI / 2 - (k / RING_N) * Math.PI * 2;
-        slots.push({
-          p: new THREE.Vector3(Math.cos(th) * R, Math.sin(th) * R, 0),
-          rz: th + Math.PI / 2,
-          s: 0.7,
-          out: new THREE.Vector2(Math.cos(th), Math.sin(th)),
-        });
-      }
-      (
-        [
-          [0.3, -R - 0.55, -0.38],
-          [1.25, -R - 0.78, 0.05],
-          [2.15, -R - 0.55, 0.5],
-        ] as const
-      ).forEach(([x, y, rz]) => slots.push({ p: new THREE.Vector3(x, y, 0.15), rz, s: 0.66, out: new THREE.Vector2(0.6, -0.8) }));
+      const ringGeo = new RoundedBoxGeometry(...RING_BRICK, 5, 0.075);
+      const tailGeo = new RoundedBoxGeometry(...TAIL_BRICK, 5, 0.075);
 
-      const geo = new RoundedBoxGeometry(1, 1, 1, 4, 0.1);
+      // slots: each brick's resting place, orientation and the direction it arrives from
+      type Slot = { p: T3.Vector3; rz: number; geo: T3.BufferGeometry; out: T3.Vector2; order: number };
+      const slots: Slot[] = [];
+      COURSES.forEach((c, ci) => {
+        for (let k = 0; k < c.n; k++) {
+          const u = (k + c.offset) / c.n; // clockwise from 12 o'clock
+          const th = Math.PI / 2 - u * Math.PI * 2;
+          slots.push({
+            p: new THREE.Vector3(Math.cos(th) * c.r, Math.sin(th) * c.r, ci === 0 ? 0.02 : 0),
+            rz: th + Math.PI / 2,
+            geo: ringGeo,
+            out: new THREE.Vector2(Math.cos(th), Math.sin(th)),
+            order: u,
+          });
+        }
+      });
+      const tail = new THREE.CatmullRomCurve3(TAIL.map(([x, y]) => new THREE.Vector3(x, y, 0.04)));
+      // two staggered courses along the tail, offset either side of the centreline
+      [
+        { n: 9, start: 0.5, side: 0.215 },
+        { n: 9, start: 0, side: -0.215 },
+      ].forEach((c) => {
+        for (let i = 0; i < c.n; i++) {
+          const u = (i + c.start + 0.25) / 9.5;
+          const p = tail.getPointAt(u);
+          const d = tail.getTangentAt(u);
+          p.add(new THREE.Vector3(-d.y * c.side, d.x * c.side, 0));
+          slots.push({ p, rz: Math.atan2(d.y, d.x), geo: tailGeo, out: new THREE.Vector2(0.55, -0.85), order: 1 + u * 0.35 });
+        }
+      });
+      slots.sort((a, b) => a.order - b.order);
+      // accelerating arrivals: intervals shrink as the Q fills
+      const arrivals = slots.map((_, i) => 0.3 + BUILD * Math.sqrt(i / (slots.length - 1)));
+      const built = arrivals[arrivals.length - 1];
+
       const raw = new THREE.Color(RAW);
       const red = new THREE.Color(RED);
       const r = rng(20260928);
 
       type Brick = {
-        mesh: T3.Mesh<RoundedBoxGeometryT, T3.MeshPhysicalMaterial>;
+        mesh: T3.Mesh<T3.BufferGeometry, T3.MeshPhysicalMaterial>;
         slot: Slot;
-        arrive: number; // time it locks in
+        arrive: number;
         spin: T3.Vector3;
-        from: T3.Vector3; // start offset when flying in
-        leaving: number; // time it was released, or -1
+        from: T3.Vector3;
+        leaving: number;
         leaveDir: T3.Vector3;
       };
 
       const makeMaterial = () =>
-        new THREE.MeshPhysicalMaterial({ color: raw.clone(), roughness: 0.58, metalness: 0, clearcoat: 0.1, clearcoatRoughness: 0.45, emissive: new THREE.Color(RED), emissiveIntensity: 0 });
+        new THREE.MeshPhysicalMaterial({
+          color: raw.clone(),
+          roughness: 0.3,
+          metalness: 0,
+          clearcoat: 1,
+          clearcoatRoughness: 0.08,
+          emissive: new THREE.Color(RED),
+          emissiveIntensity: 0,
+        });
 
       const bricks: Brick[] = [];
-      const spawn = (slot: Slot, arrive: number, fromRight: boolean): Brick => {
-        const mesh = new THREE.Mesh(geo, makeMaterial());
+      const spawn = (slot: Slot, arrive: number, fromRight: boolean) => {
+        const mesh = new THREE.Mesh(slot.geo, makeMaterial());
         mesh.castShadow = true;
-        mesh.scale.setScalar(slot.s);
         group.add(mesh);
-        const from = fromRight
-          ? new THREE.Vector3(9 + r() * 3, (r() - 0.5) * 3, -2 - r() * 3)
-          : new THREE.Vector3(slot.out.x * 9, slot.out.y * 9, -7);
-        const b: Brick = {
+        bricks.push({
           mesh,
           slot,
           arrive,
-          spin: new THREE.Vector3((r() - 0.5) * 2.4, (r() - 0.5) * 2.8, 0),
-          from,
+          spin: new THREE.Vector3((r() - 0.5) * 2.6, (r() - 0.5) * 3, (r() - 0.5) * 1.2),
+          from: fromRight
+            ? new THREE.Vector3(10 + r() * 3, (r() - 0.5) * 3, -2 - r() * 3)
+            : new THREE.Vector3(slot.out.x * (7 + r() * 3), slot.out.y * (7 + r() * 3), -6 - r() * 3),
           leaving: -1,
-          leaveDir: new THREE.Vector3(slot.out.x * 1.2 + 0.4, slot.out.y * 1.2 + 0.6, 2.5),
-        };
-        bricks.push(b);
-        return b;
+          leaveDir: new THREE.Vector3(slot.out.x * 1.3 + 0.3, slot.out.y * 1.3 + 0.8, 2.6),
+        });
       };
-      slots.forEach((s, i) => spawn(s, ARRIVALS[i], false));
-      const built = ARRIVALS[ARRIVALS.length - 1];
+      slots.forEach((s, i) => spawn(s, arrivals[i], false));
+
+      const BASE_GLOW = 0.16; // keeps shaded faces in the logo red rather than maroon
 
       const place = (b: Brick, t: number) => {
         const m = b.mesh;
         const mat = m.material;
         if (b.leaving >= 0) {
-          // released: lift, spin out towards the viewer and fade
-          const u = clamp01((t - b.leaving) / 0.9);
+          const u = clamp01((t - b.leaving) / 1);
           const e = easeIn(u);
-          m.position.set(b.slot.p.x + b.leaveDir.x * e * 3, b.slot.p.y + b.leaveDir.y * e * 3 + 1.2 * u, b.slot.p.z + b.leaveDir.z * e * 3);
-          m.rotation.set(b.spin.x * e * 3, b.spin.y * e * 3, b.slot.rz);
-          mat.emissiveIntensity = 0.9 * (1 - u);
+          m.position.set(b.slot.p.x + b.leaveDir.x * e * 3, b.slot.p.y + b.leaveDir.y * e * 3 + u, b.slot.p.z + b.leaveDir.z * e * 3);
+          m.rotation.set(b.spin.x * e * 3, b.spin.y * e * 3, b.slot.rz + b.spin.z * e * 2);
+          mat.emissiveIntensity = BASE_GLOW + 0.9 * Math.max(0, 1 - u * 1.6);
           mat.transparent = true;
-          mat.opacity = 1 - u;
+          mat.opacity = 1 - easeIn(u);
           m.visible = u < 1;
           return u >= 1;
         }
@@ -186,48 +226,41 @@ export default function QBrickHero({ still }: Props) {
         m.visible = t >= b.arrive - FLY;
         const k = 1 - easeIn(u);
         m.position.set(b.slot.p.x + b.from.x * k, b.slot.p.y + b.from.y * k, b.slot.p.z + b.from.z * k);
-        m.rotation.set(b.spin.x * k * 3, b.spin.y * k * 3, b.slot.rz + b.spin.x * k);
-        // turns red as it locks, with a short flash and settle
-        const lock = clamp01((t - b.arrive) / 0.35);
+        m.rotation.set(b.spin.x * k * 3, b.spin.y * k * 3, b.slot.rz + b.spin.z * k * 3);
+        const lock = clamp01((t - b.arrive) / 0.4);
         mat.color.copy(raw).lerp(red, easeOut(lock));
-        const flash = t >= b.arrive ? Math.max(0, 1 - (t - b.arrive) / 0.45) : 0;
-        mat.emissiveIntensity = easeOut(lock) * BASE_GLOW + flash * 0.6;
-        const bounce = t >= b.arrive ? Math.sin(Math.min(1, (t - b.arrive) / 0.3) * Math.PI) * 0.08 : 0;
-        m.scale.setScalar(b.slot.s * (1 + bounce));
+        const flash = t >= b.arrive ? Math.max(0, 1 - (t - b.arrive) / 0.5) : 0;
+        mat.emissiveIntensity = easeOut(lock) * BASE_GLOW + flash * 0.45;
+        const settle = t >= b.arrive ? Math.sin(Math.min(1, (t - b.arrive) / 0.28) * Math.PI) * 0.05 : 0;
+        m.scale.setScalar(1 + settle);
         return false;
       };
 
-      // streaming: after the Q is built, release one brick and stream in a replacement
-      let nextSwap = built + 1.6;
+      let nextSwap = built + 1.8;
       const swap = (t: number) => {
-        const live = bricks.filter((b) => b.leaving < 0 && t > b.arrive + 0.5);
+        const live = bricks.filter((b) => b.leaving < 0 && t > b.arrive + 0.6);
         if (!live.length) return;
         const out = live[Math.floor(r() * live.length)];
         out.leaving = t;
-        spawn(out.slot, t + 0.75, true);
+        spawn(out.slot, t + 0.85, true);
       };
 
       const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
       const onMove = (ev: PointerEvent) => {
         const rect = el.getBoundingClientRect();
-        pointer.tx = ((ev.clientX - rect.left) / rect.width - 0.5) * 2;
-        pointer.ty = ((ev.clientY - rect.top) / rect.height - 0.5) * 2;
-      };
-      const onLeave = () => {
-        pointer.tx = 0;
-        pointer.ty = 0;
+        pointer.tx = clamp01((ev.clientX - rect.left) / rect.width) * 2 - 1;
+        pointer.ty = clamp01((ev.clientY - rect.top) / rect.height) * 2 - 1;
       };
       window.addEventListener("pointermove", onMove);
-      el.addEventListener("pointerleave", onLeave);
 
+      let portrait = false;
       const resize = () => {
         const w = el.clientWidth || 1;
         const h = el.clientHeight || 1;
         renderer.setSize(w, h, false);
         camera.aspect = w / h;
-        // keep the whole Q in frame on narrow containers
-        camera.position.z = w / h < 1 ? 15.5 / Math.max(0.62, w / h) : 15.5;
-        group.position.x = w / h < 1 ? -0.9 : -0.55; // the tail pulls the Q right; recentre in portrait
+        portrait = w / h < 1;
+        camera.position.z = portrait ? 17 / Math.max(0.6, w / h) : 17;
         camera.updateProjectionMatrix();
       };
       resize();
@@ -249,16 +282,17 @@ export default function QBrickHero({ still }: Props) {
         }
         if (!still && t > nextSwap) {
           swap(t);
-          nextSwap = t + 1.9 + r() * 1.2;
+          nextSwap = t + 2.2 + r() * 1.3;
         }
-        const whole = clamp01((t - built) / 0.6);
-        glow.intensity = 6 * Math.max(0, 1 - Math.abs(t - built - 0.2) / 0.8);
-        pointer.x += (pointer.tx - pointer.x) * Math.min(1, dt * 3);
-        pointer.y += (pointer.ty - pointer.y) * Math.min(1, dt * 3);
-        const idle = still ? 0 : Math.sin(t * 0.45) * 0.06;
-        group.rotation.y = -0.32 + whole * 0.22 + pointer.x * 0.18 + idle;
-        group.rotation.x = 0.06 + pointer.y * 0.1;
-        group.position.y = 0.35 + (still ? 0 : Math.sin(t * 0.8) * 0.06);
+        const whole = clamp01((t - built) / 0.8);
+        glow.intensity = 5 * Math.max(0, 1 - Math.abs(t - built - 0.25) / 0.9);
+        pointer.x += (pointer.tx - pointer.x) * Math.min(1, dt * 2.5);
+        pointer.y += (pointer.ty - pointer.y) * Math.min(1, dt * 2.5);
+        const idle = still ? 0 : Math.sin(t * 0.4) * 0.05;
+        // turns from three-quarter to face the viewer as it completes
+        group.rotation.y = -0.42 + whole * 0.3 + pointer.x * 0.14 + idle;
+        group.rotation.x = 0.04 + pointer.y * 0.08;
+        group.position.set(portrait ? -0.75 : -0.45, 0.3 + (still ? 0 : Math.sin(t * 0.7) * 0.05), 0);
         floor.position.x = group.position.x;
         renderer.render(scene, camera);
       };
@@ -281,11 +315,8 @@ export default function QBrickHero({ still }: Props) {
         cancelAnimationFrame(raf);
       };
 
-      if (still) {
-        render(built + 2, 0.016); // the finished Q
-      } else {
-        start();
-      }
+      if (still) render(built + 2, 0.016);
+      else start();
 
       const io = new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()));
       io.observe(el);
@@ -298,9 +329,9 @@ export default function QBrickHero({ still }: Props) {
         ro.disconnect();
         document.removeEventListener("visibilitychange", onVis);
         window.removeEventListener("pointermove", onMove);
-        el.removeEventListener("pointerleave", onLeave);
         bricks.forEach((b) => b.mesh.material.dispose());
-        geo.dispose();
+        ringGeo.dispose();
+        tailGeo.dispose();
         pmrem.dispose();
         renderer.dispose();
         renderer.domElement.remove();
