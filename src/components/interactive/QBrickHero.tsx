@@ -22,8 +22,8 @@ type Props = { still: boolean };
 
 const RED = 0xff1e27; // the logo red, sampled from qbricks-logo.png
 const RAW = 0x26262b;
-const FLY = 0.5; // seconds each brick spends flying in
-const BUILD = 3.4; // seconds to lay the whole Q
+const FLY = 0.3; // seconds each brick spends flying in
+const BUILD = 1.5; // seconds to lay the whole Q
 const SCALE = 0.85; // overall size of the mark in the hero
 
 // brick sizes: length along the course, thickness across it, depth
@@ -161,7 +161,7 @@ export default function QBrickHero({ still }: Props) {
       });
       slots.sort((a, b) => a.order - b.order);
       // accelerating arrivals: intervals shrink as the Q fills
-      const arrivals = slots.map((_, i) => 0.3 + BUILD * Math.sqrt(i / (slots.length - 1)));
+      const arrivals = slots.map((_, i) => FLY + BUILD * Math.sqrt(i / (slots.length - 1)));
       const built = arrivals[arrivals.length - 1];
 
       const raw = new THREE.Color(RAW);
@@ -229,7 +229,7 @@ export default function QBrickHero({ still }: Props) {
         const k = 1 - easeIn(u);
         m.position.set(b.slot.p.x + b.from.x * k, b.slot.p.y + b.from.y * k, b.slot.p.z + b.from.z * k);
         m.rotation.set(b.spin.x * k * 3, b.spin.y * k * 3, b.slot.rz + b.spin.z * k * 3);
-        const lock = clamp01((t - b.arrive) / 0.4);
+        const lock = clamp01((t - b.arrive) / 0.25);
         mat.color.copy(raw).lerp(red, easeOut(lock));
         const flash = t >= b.arrive ? Math.max(0, 1 - (t - b.arrive) / 0.5) : 0;
         mat.emissiveIntensity = easeOut(lock) * BASE_GLOW + flash * 0.45;
@@ -238,7 +238,7 @@ export default function QBrickHero({ still }: Props) {
         return false;
       };
 
-      let nextSwap = built + 1.8;
+      let nextSwap = built + 1.4;
       const swap = (t: number) => {
         const live = bricks.filter((b) => b.leaving < 0 && t > b.arrive + 0.6);
         if (!live.length) return;

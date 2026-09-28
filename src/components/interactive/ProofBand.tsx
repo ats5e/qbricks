@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
@@ -70,22 +71,20 @@ export function ProofBand() {
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.1 }} className="mt-6">
           <Link
             href="/resources/cost-calculator"
-            className="premium-card group flex flex-col gap-6 p-7 transition-all duration-300 hover:border-q-brand/40 md:flex-row md:items-center md:justify-between md:p-8"
+            className="group grid overflow-hidden rounded-[2rem] border border-black/[0.08] bg-q-panel transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)] md:grid-cols-[1.25fr_1fr]"
           >
-            <div className="flex items-start gap-5">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-q-brand/35 bg-q-brand/10 text-q-brand-ember">
-                <Calculator className="h-5 w-5" />
+            <div className="flex flex-col justify-center p-7 md:p-10">
+              <h3 className="text-2xl font-black tracking-tight text-q-ink md:text-3xl">Where <QBricksText /> takes cost out</h3>
+              <p className="mt-3 max-w-xl text-lg text-q-gray-600">
+                Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.
+              </p>
+              <span className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-q-brand px-7 py-3.5 text-sm font-black text-white transition-all group-hover:-translate-y-0.5 group-hover:bg-q-brand-ember">
+                Open the calculator <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
-              <div>
-                <h3 className="text-2xl font-black tracking-tight text-q-ink">Where <QBricksText /> takes cost out</h3>
-                <p className="mt-2 max-w-2xl text-q-gray-600">
-                  Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.
-                </p>
-              </div>
             </div>
-            <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-q-brand px-7 py-3.5 text-sm font-black text-white transition-all group-hover:-translate-y-0.5 group-hover:bg-q-brand-ember">
-              Open the calculator <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </span>
+            <div className="relative min-h-[240px]">
+              <Image src="/assets/brand/resources/wp-cfo-compute-cost.webp" alt="" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width: 768px) 40vw, 100vw" />
+            </div>
           </Link>
         </motion.div>
       </div>

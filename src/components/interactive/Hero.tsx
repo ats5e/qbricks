@@ -39,7 +39,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-y-0 left-[46%] right-0 hidden lg:block lg:pointer-events-auto"
         initial={{ opacity: 0, x: 36 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="absolute inset-x-0 bottom-[4%] top-[10%]">
           <QBrickHero still={still} />

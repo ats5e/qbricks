@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Check, FileSearch, Gauge, ShieldCheck, X } from "lucide-react";
 import { QIcon } from "@/components/ui/QIcon";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
@@ -42,6 +43,15 @@ export function Metrics() {
           >
             Everyone is racing to deploy A.I. The issue? The underlying data is not ready.
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative mt-10 aspect-[3/2] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white"
+          >
+            <Image src="/assets/brand/resources/in-why-ai-use-cases-fail.webp" alt="" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
+          </motion.div>
           </div>
           <div className="max-w-xl lg:pt-1.5">
           <motion.p
