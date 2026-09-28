@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Blocks, Cloud, FileCode2, Network, Shield, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { CommandCentre } from "@/components/interactive/CommandCentre";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const capabilities = [
@@ -86,6 +87,16 @@ export function FeaturesBento() {
             <QBricksText /> is a streaming data-management platform that enforces governance at the point of ingestion, so the data landing in your lakehouse or database is already trusted, governed and A.I. ready.
           </p>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto mb-16 max-w-3xl"
+        >
+          <CommandCentre />
+        </motion.div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((capability, index) => (
