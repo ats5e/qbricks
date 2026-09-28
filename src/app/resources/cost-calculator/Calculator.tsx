@@ -248,7 +248,7 @@ export default function Calculator() {
               </div>
               
               <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-6 pt-5 mt-8">
-                <p className="text-sm font-bold uppercase tracking-wider text-emerald-500 mb-1">Total Annual Saving</p>
+                <p className="text-sm font-bold uppercase tracking-wider text-emerald-700 mb-1">Total Annual Saving</p>
                 <p className="text-4xl font-black text-emerald-600">
                   <Counter value={totalAnnualSaving} isMillion={true} />
                 </p>

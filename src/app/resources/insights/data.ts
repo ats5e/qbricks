@@ -95,7 +95,7 @@ export const insights: Insight[] = [
         ],
       },
     ],
-    takeaway: "Governance as documentation fails at scale. Governance as an enforced contract compounds.",
+    takeaway: "Governance as documentation fails at scale. Governance as an enforced contract compounds.",
   },
   {
     slug: "aml-kyc-data-problems-first",
@@ -125,7 +125,7 @@ export const insights: Insight[] = [
         ],
       },
     ],
-    takeaway: "Fix the data foundation first, and every financial-crime outcome built on it improves.",
+    takeaway: "Fix the data foundation first, and every financial-crime outcome built on it improves.",
   },
   {
     slug: "poor-data-quality-credit-models",

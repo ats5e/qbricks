@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  /* No stranded last words: balanced headings, "pretty" line breaks for copy. */
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  p, li, blockquote, figcaption {
+    text-wrap: pretty;
+  }
+
   *,
   ::before,
   ::after {
@@ -48,13 +56,13 @@
   /* Type scale: one display size for page titles, one for section headings. */
   .h-display {
     @apply font-black tracking-tight text-q-ink;
-    font-size: clamp(2.6rem, 5.2vw, 4.75rem);
+    font-size: clamp(2.15rem, 5.2vw, 4.75rem);
     line-height: 0.98;
   }
 
   .h-section {
     @apply font-black tracking-tight text-q-ink;
-    font-size: clamp(2rem, 3.4vw, 3.25rem);
+    font-size: clamp(1.7rem, 3.4vw, 3.25rem);
     line-height: 1.1;
   }
 

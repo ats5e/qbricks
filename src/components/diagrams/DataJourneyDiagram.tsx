@@ -263,7 +263,7 @@ function DiagramNode({
         {item.subtitle ? (
           <p className="mt-1 truncate text-[11px] text-q-gray-500 font-medium">{brand(item.subtitle)}</p>
         ) : muted ? (
-          <p className="mt-1 text-[11px] text-q-gray-400 font-medium">waiting on data</p>
+          <p className="mt-1 text-[11px] text-q-gray-500 font-medium">waiting on data</p>
         ) : null}
       </div>
     </div>
@@ -274,7 +274,7 @@ function Connector({ active = false, label }: { active?: boolean; label?: string
   return (
     <div className="flex flex-col items-center justify-center">
       {label ? (
-        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-ember" : "text-q-gray-400"}`}>
+        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-ember" : "text-q-gray-500"}`}>
           {brand(label)}
         </span>
       ) : null}

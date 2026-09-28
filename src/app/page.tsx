@@ -19,8 +19,8 @@ export default function Home() {
         <div className="container-x relative z-10">
           <div className="grid items-center gap-10 overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white lg:grid-cols-[1fr_1.05fr] lg:gap-0">
             <div className="px-7 pt-10 md:px-12 lg:py-16">
-              <h2 className="h-section">
-                Bring Us A Representative Workload
+              <h2 className="h-section text-[clamp(1.55rem,6.4vw,2rem)] lg:text-[2.5rem]">
+                Bring Us A Representative Workload
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-700">
                 We will show you where <QBricksText /> helps, where it does not, and what adoption would require.

@@ -193,8 +193,10 @@ export function EosEngine() {
       </section>
 
       {/* Image bar: many small pieces of work resolving into one right-sized block */}
-      <div className="relative h-[clamp(220px,26vw,400px)] overflow-hidden border-b border-black/5 bg-white" aria-hidden="true">
-        <Image src="/assets/brand/eos-bar.webp" alt="" fill unoptimized className="object-cover object-[center_56%]" />
+      <div className="container-x pb-4" aria-hidden="true">
+        <div className="relative aspect-[3136/1100] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white">
+          <Image src="/assets/brand/eos-bar.webp" alt="" fill unoptimized className="object-cover object-[center_56%]" />
+        </div>
       </div>
 
       {/* The distributed tax */}
