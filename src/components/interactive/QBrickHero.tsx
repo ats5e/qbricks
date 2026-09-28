@@ -24,6 +24,7 @@ const RED = 0xff1e27; // the logo red, sampled from qbricks-logo.png
 const RAW = 0x26262b;
 const FLY = 0.5; // seconds each brick spends flying in
 const BUILD = 3.4; // seconds to lay the whole Q
+const SCALE = 0.85; // overall size of the mark in the hero
 
 // brick sizes: length along the course, thickness across it, depth
 const RING_BRICK = [0.74, 0.4, 0.5] as const;
@@ -117,11 +118,12 @@ export default function QBrickHero({ still }: Props) {
 
       const floor = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.09 }));
       floor.rotation.x = -Math.PI / 2;
-      floor.position.y = -4.35;
+      floor.position.y = 0.3 - 4.65 * SCALE; // just under the scaled mark
       floor.receiveShadow = true;
       scene.add(floor);
 
       const group = new THREE.Group();
+      group.scale.setScalar(SCALE);
       scene.add(group);
 
       const ringGeo = new RoundedBoxGeometry(...RING_BRICK, 5, 0.075);
