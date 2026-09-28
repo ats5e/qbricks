@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import type { MetadataRoute } from "next";
 import { whitepapers } from "./resources/whitepapers/data";
 import { insights } from "./resources/insights/data";
