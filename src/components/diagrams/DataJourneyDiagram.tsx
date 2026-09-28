@@ -78,8 +78,7 @@ const diagramContent = {
     eyebrow: "The starting point",
     title: (
       <>
-        Today: <span className="text-q-brand-ember">months or years</span>
-        <br className="hidden md:block" /> before A.I. sees any quality data.
+        Today: <span className="text-q-brand-ember">months or years</span> before A.I. sees any quality data.
       </>
     ),
     description:
@@ -100,8 +99,7 @@ const diagramContent = {
     eyebrow: "Today",
     title: (
       <>
-        The Data Management approach: <span className="text-q-brand-ember">months or years</span>
-        <br className="hidden md:block" /> before A.I. sees any quality data.
+        The Data Management approach: <span className="text-q-brand-ember">months or years</span> before A.I. sees any quality data.
       </>
     ),
     description:
@@ -181,7 +179,7 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
       <div className="container-x relative z-10 py-16 md:py-24">
         <div className="max-w-5xl">
           <p className={`eyebrow mb-5 ${isQBricks ? "" : "text-q-gray-500"}`}>{brand(content.eyebrow)}</p>
-          <h2 className="h-section font-black tracking-tight text-q-ink">
+          <h2 className="h-section max-w-4xl font-black tracking-tight text-q-ink [text-wrap:balance]">
             {brand(content.title)}
           </h2>
           <div className="mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-700 md:text-xl">

@@ -94,7 +94,7 @@ export function EosEngine() {
             Meet <span className="text-q-brand-ember">EOS</span>.
           </motion.h1>
 
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mx-auto mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-700">
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mx-auto mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-700 [text-wrap:balance]">
             Built on Apache DataFusion, Arrow-native streaming and Vortex, EOS represents the next generation of SQL engines. It runs an organisation&apos;s entire pipeline estate at lightning speed and with minimal compute cost. EOS powers <QBricksText />.
           </motion.p>
 
@@ -194,7 +194,7 @@ export function EosEngine() {
 
       {/* Image bar: many small pieces of work resolving into one right-sized block */}
       <div className="relative h-[clamp(220px,26vw,400px)] overflow-hidden border-b border-black/5 bg-white" aria-hidden="true">
-        <Image src="/assets/brand/hero-product.webp" alt="" fill className="object-cover object-[center_88%]" sizes="100vw" />
+        <Image src="/assets/brand/eos-bar.webp" alt="" fill unoptimized className="object-cover object-[center_56%]" />
       </div>
 
       {/* The distributed tax */}
