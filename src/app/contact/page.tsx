@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import Image from "next/image";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 // Hosted form-backend endpoint (Formspree). The endpoint is a public URL (it
@@ -68,23 +67,6 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white selection:bg-q-brand/30 selection:text-q-ink pb-24 relative overflow-hidden">
-      {/* Fixed Background Image */}
-      <div className="fixed inset-0 pointer-events-none">
-        <Image
-          src="/assets/DubaiSkyline.png"
-          alt="Dubai Skyline"
-          fill
-          className="object-cover object-bottom opacity-30"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
-      </div>
-
-      {/* Background Hero Effects */}
-      <div className="absolute inset-x-0 top-0 h-[600px] overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.02),#ffffff)]" />
-      </div>
-
       <div className="container-x relative z-10 pt-40 md:pt-48">
         <div className="mb-16 text-center md:mb-24">
           <h1 className="h-display font-black tracking-tight text-q-ink">
@@ -156,7 +138,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:bg-black/[0.05] focus:outline-none"
+                    className="rounded-xl border border-black/15 bg-white px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:outline-none focus:ring-2 focus:ring-q-brand/15"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -167,7 +149,7 @@ export default function ContactPage() {
                     required
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:bg-black/[0.05] focus:outline-none"
+                    className="rounded-xl border border-black/15 bg-white px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:outline-none focus:ring-2 focus:ring-q-brand/15"
                   />
                 </div>
               </div>
@@ -180,7 +162,7 @@ export default function ContactPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:bg-black/[0.05] focus:outline-none"
+                  className="rounded-xl border border-black/15 bg-white px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:outline-none focus:ring-2 focus:ring-q-brand/15"
                 />
               </div>
 
@@ -192,7 +174,7 @@ export default function ContactPage() {
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="resize-none rounded-xl border border-black/10 bg-black/[0.03] px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:bg-black/[0.05] focus:outline-none"
+                  className="resize-none rounded-xl border border-black/15 bg-white px-4 py-3 text-q-ink transition-colors focus:border-q-brand/50 focus:outline-none focus:ring-2 focus:ring-q-brand/15"
                 />
               </div>
 

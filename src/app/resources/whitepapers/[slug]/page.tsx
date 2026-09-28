@@ -67,13 +67,6 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-black/5 pb-20 pt-40 lg:pt-44">
-        <div className="absolute inset-0 -z-0">
-          <div
-            className="absolute inset-0"
-            style={{ background: "radial-gradient(1000px 700px at 24% 20%, rgba(232,32,15,0.0825), transparent 65%)", animation: "cc-breathe 10s ease-in-out infinite" }}
-          />
-          <div className="absolute inset-0 bg-grid-pattern opacity-25" />
-        </div>
 
         <div className="container-x relative z-10">
           <Link href="/resources" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-q-gray-600 transition-colors hover:text-q-ink">

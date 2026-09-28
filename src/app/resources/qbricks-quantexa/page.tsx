@@ -24,17 +24,17 @@ const content: CapabilityContent = {
   },
   pillars: [
     {
-      kicker: "// Local compute",
+      kicker: "Local compute",
       title: "Local compute",
       text: "Integration and cleaning run on a local Rust engine, enterprise scale on a single node, with no cluster to stand up and no cloud dependency.",
     },
     {
-      kicker: "// ODCS",
+      kicker: "ODCS",
       title: "Governed by contract",
       text: "Every record is matched to the Open Data Contract Standard at ingestion.",
     },
     {
-      kicker: "// Field-mapped",
+      kicker: "Field-mapped",
       title: "Quantexa-ready",
       text: "Every product is delivered field-mapped to the Quantexa data model, sources land resolution-ready, not as a mapping project.",
     },

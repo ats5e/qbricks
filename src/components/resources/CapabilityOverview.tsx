@@ -74,22 +74,6 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
     <main className="min-h-screen bg-white selection:bg-q-brand/30 selection:text-q-ink">
       {/* ================= Hero ================= */}
       <section className="relative overflow-hidden border-b border-black/5 pb-20 pt-40 lg:pt-44">
-        <div className="absolute inset-0 -z-0">
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "radial-gradient(1000px 700px at 22% 20%, rgba(232,32,15,0.088), transparent 65%)",
-              animation: "cc-breathe 10s ease-in-out infinite",
-            }}
-          />
-          <div className="absolute inset-0 bg-grid-pattern opacity-25" />
-          <div className="absolute -left-[15%] bottom-[10%] w-[150%] rotate-[6deg] border-t-2 border-dotted border-q-brand/[0.13]">
-            <div
-              className="absolute -top-[3px] left-0 h-1 w-72 rounded-full blur-[1.5px]"
-              style={{ background: "linear-gradient(90deg, transparent, rgba(255,58,38,0.495), transparent)", animation: "cc-streak 11s linear infinite" }}
-            />
-          </div>
-        </div>
 
         <div className="container-x relative z-10">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

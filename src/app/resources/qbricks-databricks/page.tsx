@@ -23,17 +23,17 @@ const content: CapabilityContent = {
   },
   pillars: [
     {
-      kicker: "// Local compute",
+      kicker: "Local compute",
       title: "Local compute",
       text: "Integration and cleaning run on a local compute engine, enterprise scale on a single node, with no cluster to stand up and no cloud dependency.",
     },
     {
-      kicker: "// ODCS",
+      kicker: "ODCS",
       title: "Governed by contract",
       text: "Every record is matched to the Open Data Contract Standard at ingestion.",
     },
     {
-      kicker: "// Open formats",
+      kicker: "Open formats",
       title: "Yours to keep",
       text: "Delivered as open data products to Databricks, Fabric, Snowflake, or your own database.",
     },
