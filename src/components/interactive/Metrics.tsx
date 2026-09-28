@@ -31,7 +31,7 @@ export function Metrics() {
   return (
     <section id="the-problem" className="section-y relative bg-white">
       <div className="container-x relative z-10">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
           <div>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
@@ -43,13 +43,13 @@ export function Metrics() {
             Everyone is racing to deploy A.I. The issue? The underlying data is not ready.
           </motion.h2>
           </div>
-          <div className="lg:pt-10">
+          <div className="max-w-xl lg:pt-1.5">
           <motion.p
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.1 }}
-            className="text-xl leading-relaxed text-q-gray-700"
+            className="text-lg leading-[1.7] text-q-gray-700 md:text-xl"
           >
             A 2025 MIT report found that around <strong className="font-black text-q-ink">95% of A.I.-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
           </motion.p>
@@ -58,7 +58,7 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.15 }}
-            className="mt-5 text-lg leading-relaxed text-q-gray-600"
+            className="mt-5 text-lg leading-[1.7] text-q-gray-600"
           >
             To date, the answer to the data quality issue has been to throw money at the problem. Money for data remediation, for data engineers, for data management platforms, for pipeline building and on-going pipeline management, all underpinned by cloud and compute costs.
           </motion.p>
@@ -67,7 +67,7 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.2 }}
-            className="mt-5 text-lg leading-relaxed text-q-gray-600"
+            className="mt-5 text-lg leading-[1.7] text-q-gray-600"
           >
             Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting A.I. Industry is stuck and value from AI is under scrutiny.
           </motion.p>
