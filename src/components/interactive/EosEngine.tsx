@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
@@ -88,20 +89,13 @@ export function EosEngine() {
       <section className="relative overflow-hidden border-b border-black/5 pb-24 pt-44">
 
         <div className="container-x relative z-10 text-center">
-          <motion.span
-            {...fadeUp}
-            className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-black/10 bg-black/[0.04] px-4 py-1.5 text-[13px] font-bold text-q-gray-700"
-          >
-            <span className="h-[7px] w-[7px] rounded-full bg-q-brand" />
-            The engine that powers <QBricksText />
-          </motion.span>
 
           <motion.h1 {...fadeUp} transition={{ duration: 0.7 }} className="h-display mx-auto max-w-4xl">
             Meet <span className="text-q-brand-ember">EOS</span>.
           </motion.h1>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mx-auto mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-700">
-            Built on Apache DataFusion, Arrow-native streaming and Vortex, EOS represents the next generation of SQL engines. It runs an organisation&apos;s entire pipeline estate at lightning speed and with minimal compute cost.
+            Built on Apache DataFusion, Arrow-native streaming and Vortex, EOS represents the next generation of SQL engines. It runs an organisation&apos;s entire pipeline estate at lightning speed and with minimal compute cost. EOS powers <QBricksText />.
           </motion.p>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.12 }} className="mx-auto mt-6 text-[clamp(1.15rem,2vw,1.4rem)] font-black tracking-tight text-q-ink">
@@ -197,6 +191,11 @@ export function EosEngine() {
           </div>
         </div>
       </section>
+
+      {/* Image bar: many small pieces of work resolving into one right-sized block */}
+      <div className="relative h-[clamp(220px,26vw,400px)] overflow-hidden border-b border-black/5 bg-white" aria-hidden="true">
+        <Image src="/assets/brand/hero-product.webp" alt="" fill className="object-cover object-[center_88%]" sizes="100vw" />
+      </div>
 
       {/* The distributed tax */}
       <section className="section-y border-b border-black/5 bg-white">

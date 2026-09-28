@@ -459,18 +459,21 @@ export function RoutingGraphic() {
       <g fill="none" stroke={LINE} strokeWidth={2}>
         {inPaths.map((d, i) => <path key={`i${i}`} id={`${id}-i${i}`} d={d} />)}
         <path id={`${id}-out`} d="M 700 340 C 790 340, 800 210, 880 210" />
-        <path d="M 700 340 C 790 340, 800 500, 880 500" strokeDasharray="4 8" strokeLinecap="round" style={{ animation: "qb-dash 1.6s linear infinite" }} />
+        <path id={`${id}-lh`} d="M 700 340 C 790 340, 800 500, 880 500" />
         <path id={`${id}-ret`} d="M 880 140 C 780 140, 700 160, 640 250" />
         <path id={`${id}-sdk`} d="M 1160 210 L 1220 210" />
-        <path d="M 1160 500 L 1220 500" strokeDasharray="4 8" strokeLinecap="round" style={{ animation: "qb-dash 1.6s linear infinite" }} />
+        <path id={`${id}-lh2`} d="M 1160 500 L 1220 500" />
       </g>
       <Mono x={860} y={122} size={9} fill={EMBER} anchor="end">GOVERNED DATA PRODUCTS · BACK TO LANDING ZONE · FOR DOWNSTREAM CONSUMPTION</Mono>
-      <Mono x={722} y={470} size={11}>OPTION 02 · 0%</Mono>
+      <Mono x={722} y={470} size={11}>OPTION 02 · 30%</Mono>
       <g>
         {inPaths.map((_, i) => <Dot key={`di${i}`} path={`${id}-i${i}`} dur={2.5} begin={i * 0.5} />)}
         {[0.3, 1.1, 1.9].map((b) => <Dot key={`o${b}`} path={`${id}-out`} dur={2.5} begin={b} />)}
         {[0.7, 1.5].map((b) => <Dot key={`r${b}`} path={`${id}-ret`} dur={2.5} begin={b} />)}
         {[0, 0.6].map((b) => <Dot key={`s${b}`} path={`${id}-sdk`} dur={2.5} begin={b} />)}
+        {/* the lakehouse route carries roughly a third of the flow of the QBricks route (70 / 30) */}
+        <Dot path={`${id}-lh`} dur={2.5} begin={0.9} />
+        <Dot path={`${id}-lh2`} dur={2.5} begin={1.4} />
       </g>
 
       <SourceRows label="SYSTEMS OF RECORD" rows={sources} right="→ lakehouse" />
@@ -505,7 +508,7 @@ export function RoutingGraphic() {
       <Mono x={944} y={121} size={10} fill={GRAY_400}>OPTION 01</Mono>
       <T x={944} y={140} size={17} weight={700}>QBricks routing</T>
       <Pill x={1080} y={114} w={60} h={20} label="ROUTED" fill={BRAND} size={9} mono />
-      {[["Share of workloads", "100%", INK], ["Latency", "Lower", INK], ["Est. compute cost", "99% lower*", GREEN]].map(([k, v, c], i) => (
+      {[["Share of workloads", "70%", INK], ["Latency", "Lower", INK], ["Est. compute cost", "99% lower*", GREEN]].map(([k, v, c], i) => (
         <g key={k}>
           <T x={900} y={180 + i * 20} size={13} fill={GRAY_400} weight={400}>{k}</T>
           <Mono x={1140} y={180 + i * 20} size={12} fill={c} anchor="end" weight={c === GREEN ? 700 : 500}>{v}</Mono>
@@ -531,10 +534,10 @@ export function RoutingGraphic() {
       <Pill x={1070} y={410} w={70} h={20} label="FALLBACK" fill="none" stroke="rgba(0,0,0,0.15)" color={GRAY_400} size={9} mono />
       <T x={900} y={464} size={12} fill={GRAY_500} weight={400}>Spark clusters inside the lakehouse.</T>
       <T x={900} y={480} size={12} fill={GRAY_500} weight={400}>Memory-heavy, metered per step.</T>
-      {[["Share of workloads", "0%"], ["Latency", "Baseline"], ["Est. compute cost", "Baseline"]].map(([k, v], i) => (
+      {[["Share of workloads", "30%"], ["Latency", "Baseline"], ["Est. compute cost", "Baseline"]].map(([k, v], i) => (
         <g key={k}>
           <T x={900} y={510 + i * 20} size={13} fill={GRAY_400} weight={400}>{k}</T>
-          <Mono x={1140} y={510 + i * 20} size={12} fill={GRAY_500} anchor="end">{v}</Mono>
+          <Mono x={1140} y={510 + i * 20} size={12} fill={i === 0 ? INK : GRAY_500} anchor="end" weight={i === 0 ? 600 : 500}>{v}</Mono>
         </g>
       ))}
 
