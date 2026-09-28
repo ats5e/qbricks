@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
 import { QIcon } from "@/components/ui/QIcon";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const before = [
   "Thousands of ungoverned notebooks",
@@ -105,7 +105,7 @@ export function Metrics() {
               {before.map((item) => (
                 <li key={item} className="flex items-start gap-3 border-b border-black/5 pb-4 text-q-gray-700 last:border-b-0 last:pb-0">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-400/85" />
-                  <span>{item}</span>
+                  <span>{brand(item)}</span>
                 </li>
               ))}
             </ul>
@@ -154,7 +154,7 @@ export function Metrics() {
                   >
                     <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" />
                   </motion.span>
-                  <span>{item}</span>
+                  <span>{brand(item)}</span>
                 </li>
               ))}
             </ul>
@@ -174,8 +174,8 @@ export function Metrics() {
                 className="rounded-3xl border border-black/10 bg-black/[0.03] p-6"
               >
                 <Icon className="mb-5 h-7 w-7 text-q-brand-ember" />
-                <h4 className="text-xl font-black text-q-ink">{card.title}</h4>
-                <p className="mt-3 leading-relaxed text-q-gray-600">{card.text}</p>
+                <h4 className="text-xl font-black text-q-ink">{brand(card.title)}</h4>
+                <p className="mt-3 leading-relaxed text-q-gray-600">{brand(card.text)}</p>
               </motion.div>
             );
           })}

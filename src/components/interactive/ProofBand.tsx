@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calculator } from "lucide-react";
 import Link from "next/link";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const stats = [
   {
@@ -56,8 +56,8 @@ export function ProofBand() {
                 href={stat.href}
                 className="group flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
               >
-                <p className="text-5xl font-black tracking-tight text-q-brand-ember">{stat.value}</p>
-                <p className="mt-4 flex-1 leading-relaxed text-q-gray-700">{stat.label}</p>
+                <p className="text-5xl font-black tracking-tight text-q-brand-ember">{brand(stat.value)}</p>
+                <p className="mt-4 flex-1 leading-relaxed text-q-gray-700">{brand(stat.label)}</p>
                 <p className="mt-5 text-xs text-q-gray-500 transition-colors group-hover:text-q-brand-ember font-medium">
                   White paper · {stat.source}
                 </p>

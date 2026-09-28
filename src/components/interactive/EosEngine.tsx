@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 // Copy follows David's revised EOS page (28 Sept 2026).
 
@@ -86,7 +86,6 @@ export function EosEngine() {
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-black/5 pb-24 pt-44">
-        <div className="absolute inset-0 bg-[radial-gradient(720px_420px_at_50%_0%,rgba(232,32,15,0.11),transparent_65%)]" />
 
         <div className="container-x relative z-10 text-center">
           <motion.span
@@ -116,12 +115,12 @@ export function EosEngine() {
                 href="#benchmarks"
                 className="premium-card block p-7 transition-colors hover:border-q-brand/40"
               >
-                <p className="text-sm font-bold text-q-gray-600">{stat.label}</p>
+                <p className="text-sm font-bold text-q-gray-600">{brand(stat.label)}</p>
                 <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-q-ink">
-                  {stat.value}
-                  <span className="text-q-brand-ember">{stat.unit}</span>
+                  {brand(stat.value)}
+                  <span className="text-q-brand-ember">{brand(stat.unit)}</span>
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-q-gray-600">{stat.detail}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-q-gray-600">{brand(stat.detail)}</p>
               </a>
             ))}
           </motion.div>
@@ -160,14 +159,14 @@ export function EosEngine() {
                 className="premium-card flex flex-col p-8 md:p-10"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-sm font-bold text-q-gray-600">{b.kicker}</span>
-                  <span className="rounded-full border border-black/10 px-3 py-1 text-xs font-medium text-q-gray-700">{b.tag}</span>
+                  <span className="text-sm font-bold text-q-gray-600">{brand(b.kicker)}</span>
+                  <span className="rounded-full border border-black/10 px-3 py-1 text-xs font-medium text-q-gray-700">{brand(b.tag)}</span>
                 </div>
                 <h3 className="mt-7 text-[clamp(1.6rem,2.6vw,2.2rem)] font-black leading-[1.1] tracking-tight text-q-ink">
-                  {b.title}
+                  {brand(b.title)}
                   <span className="text-q-brand-ember">.</span>
                 </h3>
-                <p className="mt-4 leading-relaxed text-q-gray-600">{b.text}</p>
+                <p className="mt-4 leading-relaxed text-q-gray-600">{brand(b.text)}</p>
 
                 <div className="mt-auto pt-9">
                   <div className="h-1.5 overflow-hidden rounded-full bg-black/[0.08]">
@@ -180,16 +179,16 @@ export function EosEngine() {
                     />
                   </div>
                   <div className="mt-2 flex justify-between text-xs text-q-gray-500">
-                    <span>{b.range[0]}</span>
-                    <span>{b.range[1]}</span>
+                    <span>{brand(b.range[0])}</span>
+                    <span>{brand(b.range[1])}</span>
                   </div>
                 </div>
 
                 <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10">
                   {b.facts.map((fact) => (
                     <div key={fact.label} className="bg-white p-4 md:p-5">
-                      <p className="text-xl font-black tracking-tight text-q-ink md:text-2xl">{fact.value}</p>
-                      <p className="mt-1 text-[13px] text-q-gray-500">{fact.label}</p>
+                      <p className="text-xl font-black tracking-tight text-q-ink md:text-2xl">{brand(fact.value)}</p>
+                      <p className="mt-1 text-[13px] text-q-gray-500">{brand(fact.label)}</p>
                     </div>
                   ))}
                 </div>
@@ -214,10 +213,10 @@ export function EosEngine() {
             {nodeStats.map((stat, index) => (
               <motion.div key={stat.label} {...fadeUp} transition={{ duration: 0.6, delay: index * 0.08 }} className="border-l-[3px] border-q-brand pl-5">
                 <p className="text-[2.5rem] font-black leading-none tracking-tight text-q-ink">
-                  {stat.value}
-                  <span className="text-q-brand-ember">{stat.unit}</span>
+                  {brand(stat.value)}
+                  <span className="text-q-brand-ember">{brand(stat.unit)}</span>
                 </p>
-                <p className="mt-2.5 text-sm leading-relaxed text-q-gray-600">{stat.label}</p>
+                <p className="mt-2.5 text-sm leading-relaxed text-q-gray-600">{brand(stat.label)}</p>
               </motion.div>
             ))}
           </div>
@@ -229,8 +228,8 @@ export function EosEngine() {
               <div className="mt-6 flex flex-col gap-2">
                 {sparkRows.map((row) => (
                   <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-black/[0.04] px-4 py-3.5 text-[15px]">
-                    <span className="text-q-ink">{row.label}</span>
-                    <span className={`shrink-0 text-right text-sm ${row.tax ? "text-q-gray-500" : "text-q-gray-700"}`}>{row.tag}</span>
+                    <span className="text-q-ink">{brand(row.label)}</span>
+                    <span className={`shrink-0 text-right text-sm ${row.tax ? "text-q-gray-500" : "text-q-gray-700"}`}>{brand(row.tag)}</span>
                   </div>
                 ))}
               </div>
@@ -245,8 +244,8 @@ export function EosEngine() {
               <div className="mt-6 flex flex-col gap-2">
                 {eosRows.map((row) => (
                   <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-black/[0.04] px-4 py-3.5 text-[15px]">
-                    <span className="text-q-ink">{row.label}</span>
-                    <span className={`shrink-0 text-right text-sm font-bold ${row.accent ? "text-q-brand-ember" : "text-q-gray-700"}`}>{row.tag}</span>
+                    <span className="text-q-ink">{brand(row.label)}</span>
+                    <span className={`shrink-0 text-right text-sm font-bold ${row.accent ? "text-q-brand-ember" : "text-q-gray-700"}`}>{brand(row.tag)}</span>
                   </div>
                 ))}
                 <div className="rounded-xl border border-q-brand/45 bg-q-brand/[0.08] px-4 py-4 text-[15px] leading-relaxed text-q-ink">
@@ -274,9 +273,9 @@ export function EosEngine() {
                 transition={{ duration: 0.6, delay: (index % 3) * 0.06 }}
                 className="flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition-colors duration-300 hover:border-q-brand/40"
               >
-                <p className="text-sm font-black text-q-brand-ember">{item.n}</p>
-                <h3 className="mt-4 text-lg font-black tracking-tight text-q-ink">{item.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{item.d}</p>
+                <p className="text-sm font-black text-q-brand-ember">{brand(item.n)}</p>
+                <h3 className="mt-4 text-lg font-black tracking-tight text-q-ink">{brand(item.t)}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{brand(item.d)}</p>
               </motion.div>
             ))}
           </div>
@@ -309,7 +308,7 @@ export function EosEngine() {
             </div>
           </div>
 
-          <p className="mx-auto mt-16 max-w-5xl text-center text-xs leading-relaxed text-q-gray-500">{basis}</p>
+          <p className="mx-auto mt-16 max-w-5xl text-center text-xs leading-relaxed text-q-gray-500">{brand(basis)}</p>
         </div>
       </section>
     </main>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Boxes, Cpu, Database, GitBranch, Lightbulb, Network, ShieldCheck, Search } from "lucide-react";
 import Link from "next/link";
 import { QIcon } from "@/components/ui/QIcon";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const flowSteps = [
   { label: "Data sprawl detection", detail: "Every source in one registry; spot schema drift and stale data", icon: Database, tone: "text-amber-600" },
@@ -66,7 +66,7 @@ function CommandWindow() {
                   <div className={`rounded-xl border border-black/10 bg-black/5 p-2 ${step.tone}`}>
                     <Icon className="h-4 w-4" />
                   </div>
-                  <p className="text-sm font-bold text-q-ink">{step.label}</p>
+                  <p className="text-sm font-bold text-q-ink">{brand(step.label)}</p>
                   <span
                     className={`ml-auto h-2 w-2 rounded-full ${active ? "bg-q-brand-ember shadow-[0_0_10px_rgba(255,58,38,0.8)]" : "bg-black/15"}`}
                   />
@@ -154,7 +154,7 @@ function CommandWindow() {
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-q-brand/40 bg-q-brand/10 text-q-brand-ember">
               <Icon className="h-3.5 w-3.5" />
             </span>
-            <span className="text-[13px] font-black leading-tight tracking-tight text-q-ink">{value}</span>
+            <span className="text-[13px] font-black leading-tight tracking-tight text-q-ink">{brand(value)}</span>
           </div>
         ))}
       </div>
@@ -185,7 +185,6 @@ export function Hero() {
     <>
     <section id="hero" className="relative isolate flex min-h-[84vh] items-center overflow-hidden bg-white pb-8 pt-32 lg:min-h-[86vh] lg:pt-36">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(1000px_760px_at_26%_30%,rgba(232,32,15,0.077),transparent_65%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white/85" />
       </div>
 

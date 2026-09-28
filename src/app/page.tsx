@@ -1,3 +1,4 @@
+import { QBricksText } from "@/components/ui/QBricksText";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Hero } from "@/components/interactive/Hero";
@@ -20,7 +21,7 @@ export default function Home() {
               Bring Us A Representative Workload
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-q-gray-700">
-              We will show you where QBricks helps, where it does not, and what adoption would require.
+              We will show you where <QBricksText /> helps, where it does not, and what adoption would require.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">

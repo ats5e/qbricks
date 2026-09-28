@@ -1,5 +1,6 @@
 "use client";
 
+import { brand, QBricksText } from "@/components/ui/QBricksText";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -104,7 +105,6 @@ const spotlights = [
 export function PlatformSpotlights() {
   return (
     <section id="platform-spotlights" className="section-y relative overflow-hidden border-t border-black/5 bg-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.077),transparent_45%)]" />
 
       <div className="container-x relative z-10">
         <div className="mx-auto max-w-3xl text-center">
@@ -132,7 +132,7 @@ export function PlatformSpotlights() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-q-gray-600"
           >
-            QBricks sits upstream of Databricks, Microsoft Fabric, Snowflake, Quantexa, Cloudera and Alteryx, delivering contract-enforced data products, in open formats, straight into the platform you already run.
+            <QBricksText /> sits upstream of Databricks, Microsoft Fabric, Snowflake, Quantexa, Cloudera and Alteryx, delivering contract-enforced data products, in open formats, straight into the platform you already run.
           </motion.p>
         </div>
 
@@ -168,12 +168,12 @@ export function PlatformSpotlights() {
                     <p className="text-xs text-q-gray-500 font-medium">
                       Capability overview · {card.partner}
                     </p>
-                    <h3 className="mt-2 text-2xl font-black tracking-tight text-q-ink">{card.title}</h3>
+                    <h3 className="mt-2 text-2xl font-black tracking-tight text-q-ink">{brand(card.title)}</h3>
                     <ul className="mt-5 space-y-3.5">
                       {card.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-q-gray-700">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-q-brand-ember" />
-                          <span>{item}</span>
+                          <span>{brand(item)}</span>
                         </li>
                       ))}
                     </ul>

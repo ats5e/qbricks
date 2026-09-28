@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, animate, useMotionValue, useTransform } from "framer-motion";
 import { Calculator as CalculatorIcon, ArrowRight, Info } from "lucide-react";
 import Link from "next/link";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 // Custom hook for localStorage
 function useLocalStorage<T>(key: string, initialValue: T) {
@@ -111,13 +111,13 @@ export default function Calculator() {
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
-                  FTE today <span>{fteToday}</span>
+                  FTE today <span>{brand(fteToday)}</span>
                 </label>
                 <input type="range" min="1" max="50" value={fteToday} onChange={e => setFteToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
                 <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
-                  <span>FTE with <QBricksText /></span> <span>{fteWith}</span>
+                  <span>FTE with <QBricksText /></span> <span>{brand(fteWith)}</span>
                 </label>
                 <input type="range" min="0" max="10" value={fteWith} onChange={e => setFteWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
@@ -138,13 +138,13 @@ export default function Calculator() {
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
-                  Person-weeks today <span>{weeksToday}</span>
+                  Person-weeks today <span>{brand(weeksToday)}</span>
                 </label>
                 <input type="range" min="4" max="100" value={weeksToday} onChange={e => setWeeksToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
                 <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
-                  <span>Person-weeks with <QBricksText /></span> <span>{weeksWith}</span>
+                  <span>Person-weeks with <QBricksText /></span> <span>{brand(weeksWith)}</span>
                 </label>
                 <input type="range" min="1" max="20" value={weeksWith} onChange={e => setWeeksWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
@@ -171,7 +171,7 @@ export default function Calculator() {
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
-                  Runs per year <span>{runs}</span>
+                  Runs per year <span>{brand(runs)}</span>
                 </label>
                 <input type="range" min="10" max="2000" step="10" value={runs} onChange={e => setRuns(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>

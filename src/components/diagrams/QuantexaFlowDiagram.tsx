@@ -1,5 +1,6 @@
 "use client";
 
+import { brand } from "@/components/ui/QBricksText";
 import { Building2, Database, FolderSearch, Globe, Layers3, RefreshCw, Sparkles } from "lucide-react";
 import {
   ColumnLabel,
@@ -33,7 +34,6 @@ const connectors: FlowConnector[] = [
 export function QuantexaFlowDiagram() {
   return (
     <section className="section-y relative overflow-hidden border-t border-black/5 bg-white">
-      <div className="absolute left-[30%] top-1/2 h-[700px] w-[900px] -translate-y-1/2 rounded-full bg-q-brand-ember/[0.06] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
       <div className="container-x relative z-10">
@@ -87,7 +87,7 @@ export function QuantexaFlowDiagram() {
                       <div className="flex flex-wrap gap-1.5">
                         {["Transactions", "Client Reference", "Resolved Entity", "Corp Hierarchies", "UBO", "Network"].map((chip) => (
                           <span key={chip} className="rounded-md border border-black/10 bg-black/[0.04] px-2 py-1 text-xs leading-none text-q-gray-700 font-medium">
-                            {chip}
+                            {brand(chip)}
                           </span>
                         ))}
                       </div>
@@ -99,7 +99,7 @@ export function QuantexaFlowDiagram() {
                       <div className="flex flex-wrap gap-1.5">
                         {["Machine Learning", "Models", "Rules", "Decision Systems"].map((chip) => (
                           <span key={chip} className="rounded-md border border-black/10 bg-black/[0.04] px-2 py-1 text-xs leading-none text-q-gray-700 font-medium">
-                            {chip}
+                            {brand(chip)}
                           </span>
                         ))}
                       </div>
@@ -122,7 +122,7 @@ export function QuantexaFlowDiagram() {
                       <div className="flex flex-wrap gap-1.5">
                         {["Investigations UI", "Request for Info", "Decision / QC", "File SAR"].map((chip) => (
                           <span key={chip} className="rounded-md border border-black/10 bg-black/[0.04] px-2 py-1 text-xs leading-none text-q-gray-700 font-medium">
-                            {chip}
+                            {brand(chip)}
                           </span>
                         ))}
                       </div>
@@ -132,7 +132,7 @@ export function QuantexaFlowDiagram() {
                       <div className="flex flex-wrap gap-1.5">
                         {["Data Intelligence", "Case Narrative", "Q Assist", "Agentic AI · GenAI"].map((chip) => (
                           <span key={chip} className="rounded-md border border-q-brand/35 bg-q-brand/10 px-2 py-1 text-xs leading-none text-q-brand-ember font-medium">
-                            {chip}
+                            {brand(chip)}
                           </span>
                         ))}
                       </div>

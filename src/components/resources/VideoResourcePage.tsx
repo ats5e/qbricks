@@ -1,3 +1,4 @@
+import { brand } from "@/components/ui/QBricksText";
 import { ArrowLeft, ArrowRight, PlayCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import Link from "next/link";
@@ -24,7 +25,7 @@ export function VideoResourcePage({
   return (
     <main className="min-h-screen bg-white">
       <section className="relative overflow-hidden border-b border-black/5 pt-40 pb-20 md:pt-44 md:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(232,32,15,0.11),transparent_42%),linear-gradient(to_bottom,rgba(255,255,255,0.15),#fff_92%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),#fff_92%)]" />
 
         <div className="container-x relative z-10">
           <Link
@@ -41,10 +42,10 @@ export function VideoResourcePage({
               Video resource
             </p>
             <h1 className="h-display font-black tracking-tight text-q-ink">
-              {title}
+              {brand(title)}
             </h1>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700 md:text-2xl">
-              {description}
+              {brand(description)}
             </p>
           </div>
         </div>

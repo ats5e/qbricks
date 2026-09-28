@@ -1,5 +1,6 @@
 "use client";
 
+import { brand } from "@/components/ui/QBricksText";
 import { motion } from "framer-motion";
 import { Activity, Building2, Database, FileCheck2, ShieldCheck, Sparkles, UserCheck, Users, Waves } from "lucide-react";
 import { ColumnLabel, DiagramHeader, FlowCanvas, FlowCard, QBricksText, type FlowConnector } from "@/components/diagrams/flow";
@@ -41,7 +42,6 @@ const connectors: FlowConnector[] = [
 export function DualFlowDiagram() {
   return (
     <section id="two-routes" className="section-y relative overflow-hidden border-y border-black/5 bg-white">
-      <div className="absolute left-1/2 top-1/2 h-[700px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember/[0.06] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
       <div className="container-x relative z-10">
@@ -78,7 +78,7 @@ export function DualFlowDiagram() {
                   className="mb-8 text-center"
                 >
                   <p className="text-xs font-bold text-q-brand-ember">Option 01 · Direct streaming</p>
-                  <p className="mt-1.5 text-xs text-q-gray-500 font-medium">system of record → QBricks, nothing in between</p>
+                  <p className="mt-1.5 text-xs text-q-gray-500 font-medium">system of record → <QBricksText />, nothing in between</p>
                 </motion.div>
 
                 <motion.div
@@ -99,7 +99,7 @@ export function DualFlowDiagram() {
                     <p className="mt-4 text-xl font-black leading-tight text-q-ink">Governed database</p>
                     <p className="mt-1.5 text-sm text-q-gray-600">Structured & unstructured data, unified</p>
                   </div>
-                  <p className="mt-3 text-center text-xs text-q-gray-500 font-medium">land first, then QBricks processes & governs</p>
+                  <p className="mt-3 text-center text-xs text-q-gray-500 font-medium">land first, then <QBricksText /> processes & governs</p>
                 </motion.div>
               </div>
 
@@ -133,8 +133,8 @@ export function DualFlowDiagram() {
                             <Icon className="h-4 w-4" />
                           </span>
                           <div className="min-w-0">
-                            <p className="text-[15px] font-black leading-tight text-q-ink">{process.title}</p>
-                            <p className={`mt-0.5 text-[12px] leading-snug ${process.highlight ? "text-q-brand-ember/90" : "text-q-gray-500"}`}>{process.text}</p>
+                            <p className="text-[15px] font-black leading-tight text-q-ink">{brand(process.title)}</p>
+                            <p className={`mt-0.5 text-[12px] leading-snug ${process.highlight ? "text-q-brand-ember/90" : "text-q-gray-500"}`}>{brand(process.text)}</p>
                           </div>
                         </div>
                       );

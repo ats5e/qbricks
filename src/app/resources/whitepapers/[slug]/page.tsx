@@ -1,3 +1,4 @@
+import { brand } from "@/components/ui/QBricksText";
 import { ArrowLeft, ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -84,9 +85,9 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
               <h1 className="h-section font-black tracking-tight text-q-ink">
-                {paper.title}
+                {brand(paper.title)}
               </h1>
-              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-q-gray-700">{paper.standfirst}</p>
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-q-gray-700">{brand(paper.standfirst)}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <DownloadButton href={paper.pdf} />
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-7 py-3.5 text-sm font-bold text-q-ink backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-black/[0.08]">
@@ -96,7 +97,6 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
             </div>
 
             <div className="relative">
-              <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand/15 blur-[120px]" />
               <div className="relative h-[320px] rounded-2xl shadow-[0_50px_130px_rgba(0,0,0,0.18)] sm:h-[340px]">
                 <Scene badge={paper.sceneBadge} logo={paper.sceneLogo} logoAlt={paper.sceneLogoAlt} />
               </div>
@@ -107,8 +107,8 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
           <div className="mt-16 grid gap-4 md:grid-cols-3">
             {paper.stats.map((stat) => (
               <div key={stat.label} className="rounded-3xl border border-black/10 bg-black/[0.035] p-6 backdrop-blur-xl">
-                <p className="text-4xl font-black tracking-tight text-q-brand-ember">{stat.value}</p>
-                <p className="mt-2 leading-relaxed text-q-gray-600">{stat.label}</p>
+                <p className="text-4xl font-black tracking-tight text-q-brand-ember">{brand(stat.value)}</p>
+                <p className="mt-2 leading-relaxed text-q-gray-600">{brand(stat.label)}</p>
               </div>
             ))}
           </div>
@@ -117,29 +117,27 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
 
       {/* Numbered points */}
       <section className="relative overflow-hidden bg-white pb-16 pt-12 md:pb-24 md:pt-14 lg:pb-32 lg:pt-16">
-        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_78%_20%,rgba(232,32,15,0.0495),transparent_65%)]" />
         <div className="container-x relative z-10">
           <h2 className="max-w-3xl text-[clamp(2rem,3.8vw,3.2rem)] font-black leading-[0.98] tracking-tight text-q-ink">
-            {paper.pointsTitle}
+            {brand(paper.pointsTitle)}
           </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {paper.points.map((point, index) => (
               <div key={point.title} className="rounded-3xl border border-black/10 bg-gradient-to-b from-black/[0.05] to-black/[0.01] p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-q-brand/30">
                 <p className="text-3xl font-black text-q-brand-ember">0{index + 1}</p>
-                <h3 className="mt-3 text-xl font-black text-q-ink">{point.title}</h3>
-                <p className="mt-2.5 leading-relaxed text-q-gray-600">{point.text}</p>
+                <h3 className="mt-3 text-xl font-black text-q-ink">{brand(point.title)}</h3>
+                <p className="mt-2.5 leading-relaxed text-q-gray-600">{brand(point.text)}</p>
               </div>
             ))}
           </div>
 
           {/* Solution */}
           <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-q-brand/25 bg-gradient-to-br from-[#f5e9e9]/80 to-transparent p-8 md:p-12">
-            <div className="absolute inset-0 bg-[radial-gradient(700px_320px_at_12%_40%,rgba(232,32,15,0.066),transparent_70%)]" />
             <div className="relative max-w-4xl">
               <h2 className="text-[clamp(1.8rem,3.4vw,2.8rem)] font-black leading-[1.02] tracking-tight text-q-ink">
-                {paper.solutionTitle}
+                {brand(paper.solutionTitle)}
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-q-gray-700">{paper.solutionText}</p>
+              <p className="mt-6 text-lg leading-relaxed text-q-gray-700">{brand(paper.solutionText)}</p>
             </div>
           </div>
 

@@ -82,7 +82,7 @@ export default function ContactPage() {
 
       {/* Background Hero Effects */}
       <div className="absolute inset-x-0 top-0 h-[600px] overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.0825),transparent_50%),linear-gradient(to_bottom,rgba(0,0,0,0.02),#ffffff)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.02),#ffffff)]" />
       </div>
 
       <div className="container-x relative z-10 pt-40 md:pt-48">
@@ -100,7 +100,6 @@ export default function ContactPage() {
           {/* Left Column: Contact Info & Address */}
           <div className="flex flex-col gap-8">
             <div className="premium-card relative overflow-hidden p-8 md:p-10">
-              <div className="absolute -right-20 -top-20 -z-10 h-64 w-64 rounded-full bg-q-brand opacity-[0.08] blur-3xl" />
               
               <h2 className="mb-8 text-2xl font-black text-q-ink">Our Offices</h2>
               

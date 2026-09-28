@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BrainCircuit, GitBranch, Network, ScanLine, ShieldCheck, UserCheck } from "lucide-react";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const features = [
   {
@@ -27,15 +27,85 @@ const features = [
   },
 ];
 
-const orbitLabels = ["Data Contracts", "Data Products", "Data Assets", "Governed", "Auditable", "Lineage", "Ontologies"];
+const outputs = ["Data Contracts", "Data Products"];
+const guarantees = ["Governed", "Auditable", "Lineage", "Ontologies"];
+
+function Chip({ children, strong = false }: { children: React.ReactNode; strong?: boolean }) {
+  return (
+    <div
+      className={`rounded-2xl border px-4 py-3 text-center text-sm font-bold ${
+        strong ? "border-q-brand/30 bg-q-brand/[0.06] text-q-ink" : "border-black/10 bg-white text-q-ink"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Connector({ className = "" }: { className?: string }) {
+  return <div className={`h-px flex-1 bg-gradient-to-r from-black/15 via-q-brand/50 to-black/15 ${className}`} aria-hidden="true" />;
+}
+
+/** Data Assets flow through the governed agentic mesh into Data Contracts and Data Products, on a base of guarantees. */
+function MeshDiagram() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7 }}
+      className="rounded-[2rem] border border-black/[0.08] bg-q-panel p-5 sm:p-7"
+    >
+      <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-0">
+        <div className="sm:w-32">
+          <p className="mb-2 text-center text-xs font-medium text-q-gray-500">In</p>
+          <Chip>Data Assets</Chip>
+        </div>
+
+        <Connector className="hidden sm:block" />
+
+        <div className="rounded-3xl border border-q-brand/30 bg-white p-6 text-center shadow-[0_20px_50px_rgba(0,0,0,0.06)] sm:w-64">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-q-brand/10 text-q-brand-ember">
+            <ScanLine className="h-6 w-6" />
+          </div>
+          <h3 className="text-lg font-black text-q-ink">Governed Agentic Mesh</h3>
+          <p className="mt-2 text-sm leading-relaxed text-q-gray-600">Learns, recommends and executes with human approval and full lineage.</p>
+          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-600/10 px-3 py-1.5 text-xs font-bold text-emerald-700">
+            <ShieldCheck className="h-3.5 w-3.5" />
+            Always auditable
+          </div>
+        </div>
+
+        <Connector className="hidden sm:block" />
+
+        <div className="sm:w-36">
+          <p className="mb-2 text-center text-xs font-medium text-q-gray-500">Out</p>
+          <div className="flex flex-col gap-2">
+            {outputs.map((label) => (
+              <Chip key={label} strong>{label}</Chip>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 grid grid-cols-2 gap-2 border-t border-black/[0.08] pt-6 sm:grid-cols-4">
+        {guarantees.map((label) => (
+          <div key={label} className="flex items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2.5 text-sm font-bold text-q-gray-700 ring-1 ring-black/[0.06]">
+            <span className="h-1.5 w-1.5 rounded-full bg-q-brand" />
+            {label}
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
 
 export function Agentic() {
   return (
     <section className="section-y relative overflow-hidden border-y border-black/5 bg-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(232,32,15,0.088),transparent_34%),radial-gradient(circle_at_20%_15%,rgba(0,0,0,0.06),transparent_24%)]" />
 
       <div className="container-x relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -52,62 +122,7 @@ export function Agentic() {
 
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.85 }}
-            className="relative mt-12 flex min-h-[700px] w-[640px] max-w-none mx-auto origin-top scale-[0.45] items-center justify-center sm:w-auto sm:scale-[0.85] lg:scale-100 lg:mt-0 -mb-[380px] sm:-mb-[100px] lg:mb-0"
-          >
-            <div className="absolute h-[680px] w-[680px] rounded-full bg-q-brand/[0.08] blur-[120px]" />
-            <div className="relative flex h-[640px] w-[640px] items-center justify-center rounded-full border border-black/10 bg-black/[0.02] backdrop-blur-3xl">
-              {[0, 1, 2].map((ring) => (
-                <motion.div
-                  key={ring}
-                  className="absolute rounded-full border border-black/10"
-                  style={{ inset: `${40 + ring * 80}px` }}
-
-                >
-                  {/* Glowing orbital node */}
-                  <div className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember shadow-[0_0_16px_3px_rgba(232,32,15,0.9)]" />
-                  {ring === 1 && <div className="absolute bottom-0 left-1/2 h-2 w-2 -translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-400 shadow-[0_0_16px_3px_rgba(52,211,153,0.9)]" />}
-                </motion.div>
-              ))}
-
-              {orbitLabels.map((label, index) => {
-                const angle = (index / orbitLabels.length) * Math.PI * 2 - Math.PI / 2;
-                const radius = 280;
-                const x = Math.round(Math.cos(angle) * radius);
-                const y = Math.round(Math.sin(angle) * radius);
-                return (
-                  <motion.div
-                    key={label}
-                    className="absolute rounded-2xl border border-black/20 bg-black/[0.04] px-5 py-3 text-sm font-bold tracking-wide text-q-ink shadow-2xl ring-1 ring-black/10 backdrop-blur-xl"
-                    style={{ x, y }}
-
-                  >
-                    {label}
-                  </motion.div>
-                );
-              })}
-
-              <motion.div 
-                className="relative z-10 rounded-[2.5rem] border border-q-brand/40 bg-gradient-to-br from-q-brand/30 via-white/80 to-white/95 p-10 text-center shadow-[0_0_80px_rgba(232,32,15,0.25)] backdrop-blur-3xl"
-
-              >
-                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-black/15 bg-white/40 text-q-ink relative">
-                  <div className="absolute inset-0 rounded-3xl border border-q-brand-ember/30" />
-                  <ScanLine className="h-10 w-10 text-q-brand-ember" />
-                </div>
-                <h3 className="text-2xl font-black text-q-ink">Governed Agentic Mesh</h3>
-                <p className="mt-3 max-w-xs text-sm leading-relaxed text-q-gray-700">Learns, recommends and executes with human approval and full lineage.</p>
-                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-600">
-                  <ShieldCheck className="h-4 w-4" />
-                  Always auditable
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+          <MeshDiagram />
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 relative z-10">
@@ -120,13 +135,13 @@ export function Agentic() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.55, delay: index * 0.07 }}
-                className="rounded-3xl border border-black/10 bg-black/[0.035] p-6 backdrop-blur-xl transition-all hover:border-q-brand/30 hover:-translate-y-1 hover:bg-q-brand/[0.055] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)]"
+                className="rounded-3xl border border-black/[0.08] bg-white p-6 transition-colors hover:border-q-brand/30"
               >
                 <div className="mb-5 inline-flex rounded-2xl border border-black/10 bg-black/5 p-3 text-q-brand-ember">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-xl font-black text-q-ink">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-q-gray-600">{feature.description}</p>
+                <h3 className="mb-3 text-xl font-black text-q-ink">{brand(feature.title)}</h3>
+                <p className="text-sm leading-relaxed text-q-gray-600">{brand(feature.description)}</p>
               </motion.div>
             );
           })}

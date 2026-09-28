@@ -1,6 +1,7 @@
 "use client";
 
 import { useId } from "react";
+import { brandSvg } from "@/components/ui/QBricksText";
 
 /*
  * Animated flow graphics rebuilt from the QBricks graphics pack David
@@ -56,7 +57,7 @@ function Mono({
 }: { x: number; y: number; size?: number; fill?: string; anchor?: "start" | "middle" | "end"; children: React.ReactNode; weight?: number }) {
   return (
     <text x={x} y={y} fontSize={size + 1} fontWeight={Math.max(weight, 500)} fill={fill} textAnchor={anchor}>
-      {labelCase(children)}
+      {brandSvg(labelCase(children), EMBER)}
     </text>
   );
 }
@@ -66,7 +67,7 @@ function T({
 }: { x: number; y: number; size?: number; fill?: string; weight?: number; anchor?: "start" | "middle" | "end"; children: React.ReactNode }) {
   return (
     <text x={x} y={y} fontSize={size} fontWeight={weight} fill={fill} textAnchor={anchor}>
-      {children}
+      {brandSvg(children, EMBER)}
     </text>
   );
 }
@@ -82,7 +83,7 @@ function Pill({
         fontSize={size} fontWeight={mono ? 600 : 500}
         fill={color} textAnchor="middle"
       >
-        {labelCase(label)}
+        {brandSvg(labelCase(label), EMBER)}
       </text>
     </g>
   );

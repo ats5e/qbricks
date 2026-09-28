@@ -4,7 +4,7 @@ import { insights } from "./insights/data";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "Resources",
@@ -126,9 +126,9 @@ export default function ResourcesPage() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-q-brand/35 bg-q-brand/10 text-q-brand-ember">
                     <FileText className="h-4 w-4" />
                   </span>
-                  <span className="text-xs text-q-gray-500 font-medium">{paper.category}</span>
+                  <span className="text-xs text-q-gray-500 font-medium">{brand(paper.category)}</span>
                 </div>
-                <h2 className="text-xl font-black leading-snug text-q-ink">{paper.title}</h2>
+                <h2 className="text-xl font-black leading-snug text-q-ink">{brand(paper.title)}</h2>
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-q-gray-600">{paper.standfirst.slice(0, 150)}…</p>
                 <div className="mt-5 flex items-center gap-2 text-sm font-bold text-q-ink transition-colors group-hover:text-q-brand-ember">
                   Read & download <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -153,7 +153,7 @@ export default function ResourcesPage() {
                 <h2 className="text-lg font-black leading-snug text-q-ink">
                   Trusted data for {item.partner}
                 </h2>
-                <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-q-gray-600">{item.text}</p>
+                <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-q-gray-600">{brand(item.text)}</p>
                 <div className="mt-5 flex items-center gap-2 text-sm font-bold text-q-ink transition-colors group-hover:text-q-brand-ember">
                   Read the overview <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -211,7 +211,7 @@ export default function ResourcesPage() {
                 >
                   <BookOpen className="mt-1 h-5 w-5 shrink-0 text-q-brand-ember" />
                   <div>
-                    <h2 className="text-xl font-black leading-snug text-q-ink">{item.title}</h2>
+                    <h2 className="text-xl font-black leading-snug text-q-ink">{brand(item.title)}</h2>
                     <span className="mt-2 flex items-center gap-2 text-sm font-bold text-q-gray-600 transition-colors group-hover:text-q-brand-ember">
                       Read the insight <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -228,9 +228,9 @@ export default function ResourcesPage() {
                 <div key={id} className="rounded-3xl border border-black/10 bg-black/[0.035] p-6">
                   <div className="mb-3 flex items-center gap-3">
                     <HelpCircle className="h-5 w-5 text-q-brand-ember" />
-                    <h2 className="text-lg font-black text-q-ink">{question}</h2>
+                    <h2 className="text-lg font-black text-q-ink">{brand(question)}</h2>
                   </div>
-                  <p className="leading-relaxed text-q-gray-600">{answer}</p>
+                  <p className="leading-relaxed text-q-gray-600">{brand(answer)}</p>
                 </div>
               ))}
             </div>
@@ -245,11 +245,11 @@ export default function ResourcesPage() {
           <div className="mt-10 space-y-10">
             {consumptionLanes.map((group) => (
               <div key={group.lane}>
-                <p className="mb-4 text-xs text-q-brand-ember font-medium">{group.lane}</p>
+                <p className="mb-4 text-xs text-q-brand-ember font-medium">{brand(group.lane)}</p>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {group.tools.map((tool) => (
                     <div key={tool} className="premium-card flex h-full flex-col p-5 opacity-80 transition-opacity hover:opacity-100">
-                      <p className="text-xs text-q-gray-500 font-medium">{group.lane}</p>
+                      <p className="text-xs text-q-gray-500 font-medium">{brand(group.lane)}</p>
                       <h3 className="mt-2 text-lg font-black leading-snug text-q-ink">
                         How <QBricksText /> accelerates {tool}
                       </h3>

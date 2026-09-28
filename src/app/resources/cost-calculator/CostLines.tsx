@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, AlertCircle, CheckCircle2 } from "lucide-react";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const costLines = [
   {
@@ -59,8 +59,8 @@ export default function CostLines() {
             className="flex w-full items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-q-brand-ember"
           >
             <div className="flex items-center gap-4">
-              <span className="text-sm font-bold text-q-gray-500">{line.id}</span>
-              <h3 className="text-xl font-bold text-q-ink md:text-2xl">{line.title}</h3>
+              <span className="text-sm font-bold text-q-gray-500">{brand(line.id)}</span>
+              <h3 className="text-xl font-bold text-q-ink md:text-2xl">{brand(line.title)}</h3>
             </div>
             <ChevronDown 
               className={`h-5 w-5 shrink-0 text-q-gray-600 transition-transform duration-300 ${
@@ -86,10 +86,10 @@ export default function CostLines() {
                         <h4 className="font-bold">Today, without <QBricksText /></h4>
                       </div>
                       <p className="text-q-gray-700 leading-relaxed text-sm">
-                        {line.todayText}
+                        {brand(line.todayText)}
                       </p>
                       <div className="inline-flex rounded-lg bg-black/5 px-3 py-2 text-xs text-q-gray-600 border border-black/10 font-medium">
-                        Cost driver: <span className="ml-2 text-q-gray-800">{line.todayDriver}</span>
+                        Cost driver: <span className="ml-2 text-q-gray-800">{brand(line.todayDriver)}</span>
                       </div>
                     </div>
                     
@@ -100,7 +100,7 @@ export default function CostLines() {
                         <h4 className="font-bold">With <QBricksText /></h4>
                       </div>
                       <p className="text-q-gray-700 leading-relaxed text-sm">
-                        {line.withText}
+                        {brand(line.withText)}
                       </p>
                     </div>
                   </div>
@@ -108,7 +108,7 @@ export default function CostLines() {
                   {/* Annual Saving */}
                   <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 px-6 py-4">
                     <span className="font-bold text-emerald-600 uppercase text-xs tracking-wider">Annual saving</span>
-                    <span className="font-bold text-emerald-700 text-sm">{line.savingText}</span>
+                    <span className="font-bold text-emerald-700 text-sm">{brand(line.savingText)}</span>
                   </div>
                 </div>
               </motion.div>

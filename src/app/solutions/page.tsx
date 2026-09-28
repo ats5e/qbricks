@@ -26,7 +26,6 @@ export default function SolutionsPage() {
       <UseCases />
 
       <section className="relative overflow-hidden border-b border-black/5 bg-white py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(232,32,15,0.099),transparent_44%)]" />
 
         <div className="container-x relative z-10">
           <div className="mx-auto mb-12 max-w-4xl text-center">
@@ -47,7 +46,7 @@ export default function SolutionsPage() {
               <PosterVideo
                 playerSrc="https://player.mux.com/7Dktyh8UTWs8h1ot86tVc2nomWrLZO028JaAM6s6suNg?metadata-video-title=QBricks+Use+Cases&video-title=QBricks+Use+Cases"
                 posterAlt="QBricks use cases in action video cover"
-                posterSrc="/assets/thumb-use-cases.png"
+                posterSrc="/assets/brand/poster-use-cases.webp"
                 videoTitle="QBricks use cases"
               />
             </div>

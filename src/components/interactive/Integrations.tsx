@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const logos = [
   { name: "Databricks", src: "/assets/partners/Databricks-dark.png", imgClass: "h-8 max-w-[11rem]", desc: <><QBricksText /> interfaces with Databricks via SQL push-down, delivering governed, contract-enforced data products straight into Unity Catalog.</> },
@@ -49,7 +49,7 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
                 />
               </div>
               {showDescriptions && (
-                <p className="text-base leading-relaxed text-q-gray-600">{logo.desc}</p>
+                <p className="text-base leading-relaxed text-q-gray-600">{brand(logo.desc)}</p>
               )}
             </motion.div>
           ))}

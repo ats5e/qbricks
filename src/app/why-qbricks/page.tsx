@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ComputeCost } from "@/components/interactive/ComputeCost";
 import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
 import { PosterVideo } from "@/components/resources/PosterVideo";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: { absolute: "Why QBricks" },
@@ -17,10 +17,9 @@ const differentiators = ["Data Contracts & Data Products", "Single-file deployme
 export default function WhyQBricksPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-28">
-        <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bg-cubes-wall.png" alt="" fill priority className="object-cover object-center opacity-30 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.121),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.55),#fff_88%)]" />
+      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
+          <Image src="/assets/brand/hero-why.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
 
         <div className="container-x relative z-10 text-center">
@@ -34,7 +33,7 @@ export default function WhyQBricksPage() {
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             {differentiators.map((item) => (
               <div key={item} className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.04] px-5 py-3 text-sm font-black text-q-ink backdrop-blur-sm">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {item}
+                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {brand(item)}
               </div>
             ))}
           </div>
@@ -45,7 +44,6 @@ export default function WhyQBricksPage() {
       <DataJourneyDiagram variant="platform" />
 
       <section id="ten-reasons" className="section-y relative overflow-hidden border-b border-black/5 bg-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(232,32,15,0.088),transparent_42%)]" />
 
         <div className="container-x relative z-10">
           <div className="mx-auto mb-12 max-w-4xl text-center">
@@ -67,7 +65,7 @@ export default function WhyQBricksPage() {
               <PosterVideo
                 playerSrc="https://player.mux.com/pBStRpuKR00m7Xe1neCepUPvoWhvtOJZhhGq8N5JCOqE?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
                 posterAlt="10 reasons why QBricks video cover"
-                posterSrc="/assets/thumb-10-reasons.png"
+                posterSrc="/assets/brand/poster-10-reasons.webp"
                 videoTitle="10 reasons why QBricks"
               />
             </div>

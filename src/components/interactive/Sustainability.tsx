@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Leaf } from "lucide-react";
 import Link from "next/link";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const fadeUp = {
   initial: { opacity: 0, y: 22 },
@@ -53,8 +53,6 @@ export function Sustainability() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-black/5 pb-24 pt-44">
         <div className="absolute inset-0 -z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(720px_420px_at_50%_0%,rgba(232,32,15,0.132),transparent_65%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(600px_400px_at_78%_80%,rgba(62,207,142,0.1),transparent_70%)]" />
           <div className="absolute inset-0 bg-grid-pattern opacity-20" />
         </div>
 
@@ -105,10 +103,10 @@ export function Sustainability() {
                 className="border-l-[3px] border-q-brand pl-5"
               >
                 <p className="text-[2.5rem] font-black leading-none tracking-tight text-q-ink">
-                  {stat.value}
-                  <span className="text-q-brand-ember">{stat.unit}</span>
+                  {brand(stat.value)}
+                  <span className="text-q-brand-ember">{brand(stat.unit)}</span>
                 </p>
-                <p className="mt-2.5 text-sm leading-relaxed text-q-gray-600">{stat.label}</p>
+                <p className="mt-2.5 text-sm leading-relaxed text-q-gray-600">{brand(stat.label)}</p>
               </motion.div>
             ))}
           </div>
@@ -117,7 +115,6 @@ export function Sustainability() {
 
       {/* Worked example */}
       <section className="section-y relative overflow-hidden border-b border-black/5 bg-white">
-        <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_20%_0%,rgba(232,32,15,0.055),transparent_65%)]" />
 
         <div className="container-x relative z-10">
           <motion.p {...fadeUp} className="eyebrow mb-5">Worked example</motion.p>
@@ -133,7 +130,7 @@ export function Sustainability() {
               <thead>
                 <tr className="border-b border-black/10">
                   <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Dimension</th>
-                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-brand-ember">QBricks · single node</th>
+                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-brand-ember"><QBricksText /> · single node</th>
                   <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Cloud warehouse, on-demand</th>
                   <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Delta</th>
                 </tr>
@@ -141,10 +138,10 @@ export function Sustainability() {
               <tbody>
                 {workedExample.map((row) => (
                   <tr key={row.dimension} className="border-b border-black/[0.07] last:border-0">
-                    <td className="px-6 py-4 text-[15px] font-bold text-q-ink">{row.dimension}</td>
-                    <td className="px-6 py-4 text-[15px] text-q-gray-700">{row.qbricks}</td>
-                    <td className="px-6 py-4 text-[15px] text-q-gray-600">{row.warehouse}</td>
-                    <td className="px-6 py-4 text-[15px] font-black text-emerald-600">{row.delta}</td>
+                    <td className="px-6 py-4 text-[15px] font-bold text-q-ink">{brand(row.dimension)}</td>
+                    <td className="px-6 py-4 text-[15px] text-q-gray-700">{brand(row.qbricks)}</td>
+                    <td className="px-6 py-4 text-[15px] text-q-gray-600">{brand(row.warehouse)}</td>
+                    <td className="px-6 py-4 text-[15px] font-black text-emerald-600">{brand(row.delta)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -159,7 +156,6 @@ export function Sustainability() {
 
       {/* The quiet 40% */}
       <section className="section-y relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_0%,rgba(232,32,15,0.055),transparent_65%)]" />
 
         <div className="container-x relative z-10">
           <motion.h2 {...fadeUp} className="max-w-3xl text-[clamp(2rem,4vw,3.1rem)] font-black leading-[1.05] tracking-tight text-q-ink">
@@ -178,15 +174,15 @@ export function Sustainability() {
                 className="flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.035] p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
               >
                 <p className="text-[clamp(2rem,3.4vw,2.7rem)] font-black leading-none tracking-tight text-q-ink">
-                  {card.value} <span className="text-q-brand-ember">{card.unit}</span>
+                  {brand(card.value)} <span className="text-q-brand-ember">{brand(card.unit)}</span>
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-q-gray-600">{card.text}</p>
+                <p className="mt-4 text-sm leading-relaxed text-q-gray-600">{brand(card.text)}</p>
               </motion.div>
             ))}
           </div>
 
           <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-10 max-w-5xl text-xs leading-relaxed text-q-gray-500">
-            {basis}
+            {brand(basis)}
           </motion.p>
         </div>
       </section>

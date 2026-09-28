@@ -1,10 +1,10 @@
 "use client";
 
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
 import type { ReactNode } from "react";
-import { useState, useRef } from "react";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { useState } from "react";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const cases = [
   {
@@ -55,20 +55,8 @@ const cases = [
 ];
 
 export function UseCases() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-  
-  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-
   return (
-    <section id="use-cases" ref={containerRef} className="section-y relative overflow-hidden border-y border-black/5 bg-white">
-      <motion.div 
-        style={{ y: yBackground }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.044),transparent_50%),linear-gradient(to_bottom,#ffffff,rgba(0,0,0,0.02),#ffffff)]" 
-      />
+    <section id="use-cases" className="section-y relative overflow-hidden border-y border-black/5 bg-white">
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-4xl text-center">
@@ -97,7 +85,7 @@ export function UseCases() {
 
                 <div className="mb-8 flex items-center justify-between gap-4">
                   <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-q-brand-ember">
-                    {useCase.tag}
+                    {brand(useCase.tag)}
                   </span>
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black/5 text-q-gray-600 transition-colors group-hover:bg-q-brand/20 group-hover:text-q-brand-ember">
                     <Icon className="h-6 w-6" />
@@ -105,20 +93,20 @@ export function UseCases() {
                 </div>
 
                 <h3 className="mb-6 text-2xl font-black leading-tight tracking-tight text-q-ink md:text-3xl">
-                  {useCase.title}
+                  {brand(useCase.title)}
                 </h3>
 
                 <div className="pt-6 border-t border-black/10 flex-grow flex flex-col">
                   <div className="space-y-5 mb-6">
                     {/* Pain */}
                     <div>
-                      <p className="text-sm leading-relaxed text-q-gray-600">{useCase.pain}</p>
+                      <p className="text-sm leading-relaxed text-q-gray-600">{brand(useCase.pain)}</p>
                     </div>
 
                     {/* QBricks Help */}
                     <div>
                       <p className="text-sm leading-relaxed text-q-gray-800">
-                        <strong className="text-q-ink font-bold">With <QBricksText />:</strong> {useCase.help}
+                        <strong className="text-q-ink font-bold">With <QBricksText />:</strong> {brand(useCase.help)}
                       </p>
                     </div>
                   </div>
@@ -127,7 +115,7 @@ export function UseCases() {
                   <div className="mt-auto">
                     <div className="h-full rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
                       <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-600/80">The Outcome</span>
-                      <p className="text-sm font-bold leading-relaxed text-emerald-700">{useCase.outcome}</p>
+                      <p className="text-sm font-bold leading-relaxed text-emerald-700">{brand(useCase.outcome)}</p>
                     </div>
                   </div>
                 </div>
@@ -142,8 +130,8 @@ export function UseCases() {
 function StoryBlock({ label, text, tone = "neutral" }: { label: ReactNode; text: string; tone?: "red" | "neutral" }) {
   return (
     <div className={`border-l-2 pl-6 ${tone === "red" ? "border-red-400/35" : "border-black/20"}`}>
-      <span className="mb-2 block text-xs font-black uppercase tracking-[0.2em] text-q-gray-500">{label}</span>
-      <p className="text-lg leading-relaxed text-q-gray-700">{text}</p>
+      <span className="mb-2 block text-xs font-black uppercase tracking-[0.2em] text-q-gray-500">{brand(label)}</span>
+      <p className="text-lg leading-relaxed text-q-gray-700">{brand(text)}</p>
     </div>
   );
 }

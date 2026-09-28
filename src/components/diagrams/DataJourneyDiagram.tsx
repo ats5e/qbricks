@@ -28,7 +28,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 type DiagramVariant = "manual" | "platform" | "qbricks";
 
@@ -180,12 +180,12 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
       />
       <div className="container-x relative z-10 py-16 md:py-24">
         <div className="max-w-5xl">
-          <p className={`eyebrow mb-5 ${isQBricks ? "" : "text-q-gray-500"}`}>{content.eyebrow}</p>
+          <p className={`eyebrow mb-5 ${isQBricks ? "" : "text-q-gray-500"}`}>{brand(content.eyebrow)}</p>
           <h2 className="h-section font-black tracking-tight text-q-ink">
-            {content.title}
+            {brand(content.title)}
           </h2>
           <div className="mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-700 md:text-xl">
-            {content.description}
+            {brand(content.description)}
           </div>
         </div>
 
@@ -224,7 +224,7 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
 function DiagramColumn({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div>
-      <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">{label}</p>
+      <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">{brand(label)}</p>
       <div className="space-y-3">{children}</div>
     </div>
   );
@@ -261,9 +261,9 @@ function DiagramNode({
         <Icon className="h-[18px] w-[18px]" />
       </div>
       <div className="min-w-0">
-        <p className="truncate text-sm font-bold text-q-ink">{item.title}</p>
+        <p className="truncate text-sm font-bold text-q-ink">{brand(item.title)}</p>
         {item.subtitle ? (
-          <p className="mt-1 truncate text-[11px] text-q-gray-500 font-medium">{item.subtitle}</p>
+          <p className="mt-1 truncate text-[11px] text-q-gray-500 font-medium">{brand(item.subtitle)}</p>
         ) : muted ? (
           <p className="mt-1 text-[11px] text-q-gray-400 font-medium">waiting on data</p>
         ) : null}
@@ -277,7 +277,7 @@ function Connector({ active = false, label }: { active?: boolean; label?: string
     <div className="flex flex-col items-center justify-center">
       {label ? (
         <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-ember" : "text-q-gray-400"}`}>
-          {label}
+          {brand(label)}
         </span>
       ) : null}
       <div className="relative h-12 w-px border-l border-dashed border-black/20 lg:h-px lg:w-full lg:border-l-0 lg:border-t">
@@ -321,9 +321,9 @@ function CoreLayer({
       )}
 
       <p className={`text-[0.66rem] font-black uppercase tracking-[0.15em] ${active ? "text-q-brand-ember" : "text-q-gray-500"}`}>
-        {content.layerLabel}
+        {brand(content.layerLabel)}
       </p>
-      <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-q-ink md:text-xl">{content.layerTitle}</h3>
+      <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-q-ink md:text-xl">{brand(content.layerTitle)}</h3>
 
       <div className="my-5 h-px bg-black/10" />
 
@@ -331,7 +331,7 @@ function CoreLayer({
         {content.bullets.map(({ icon: Icon, text }) => (
           <div key={text} className="flex items-center gap-3 text-sm text-q-gray-700">
             <Icon className={`h-4 w-4 shrink-0 ${active ? "text-q-brand-ember" : "text-q-brand"}`} />
-            <span>{text}</span>
+            <span>{brand(text)}</span>
           </div>
         ))}
       </div>

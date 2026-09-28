@@ -1,5 +1,6 @@
 "use client";
 
+import { brand } from "@/components/ui/QBricksText";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { QIcon } from "@/components/ui/QIcon";
@@ -33,7 +34,7 @@ function MiniWindowHeader({ badge, logo, logoAlt }: SceneProps) {
         )}
         <span className="flex items-center gap-2 rounded-md border border-q-brand/50 px-2.5 py-1.5">
           <span className="h-1.5 w-1.5 rounded-full bg-q-brand-ember" style={{ animation: "cc-blink 2.4s ease-in-out infinite" }} />
-          <span className="text-[11px] text-q-ink/75 font-medium">{badge}</span>
+          <span className="text-[11px] text-q-ink/75 font-medium">{brand(badge)}</span>
         </span>
       </div>
     </div>
@@ -216,7 +217,7 @@ export function AiReadyScene(props: SceneProps) {
                   transition={{ duration: 0.5, delay: 1.5 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className="h-1.5 w-1.5 rounded-[2px] bg-q-brand-ember" />
-                  {tag}
+                  {brand(tag)}
                 </motion.span>
               ))}
             </div>

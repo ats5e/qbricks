@@ -1,6 +1,6 @@
 "use client";
 
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -25,7 +25,6 @@ export function Pipeline() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#fff_70%)]" />
       </div>
 
-      <div className="absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand/5 blur-[120px] pointer-events-none mix-blend-multiply invert hue-rotate-180" />
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-3xl text-center">
@@ -63,8 +62,8 @@ export function Pipeline() {
               </motion.div>
 
               <div className="absolute top-24 w-40 text-center transition-opacity duration-300">
-                <h3 className={`mb-1 text-lg font-bold ${activeNode === node.id ? "text-q-ink" : "text-q-gray-700"}`}>{node.label}</h3>
-                <p className={`text-sm ${activeNode === node.id ? "text-q-gray-600 opacity-100" : "opacity-0"}`}>{node.desc}</p>
+                <h3 className={`mb-1 text-lg font-bold ${activeNode === node.id ? "text-q-ink" : "text-q-gray-700"}`}>{brand(node.label)}</h3>
+                <p className={`text-sm ${activeNode === node.id ? "text-q-gray-600 opacity-100" : "opacity-0"}`}>{brand(node.desc)}</p>
               </div>
             </div>
           ))}

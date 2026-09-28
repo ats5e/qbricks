@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Cpu, Library, Table2, Workflow, Zap, type LucideIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 import { QIcon } from "@/components/ui/QIcon";
 
 /*
@@ -137,7 +137,7 @@ export function FlowCanvas({
           className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-white/80 px-1.5 py-0.5 text-[11px] text-q-brand-ember lg:block font-medium"
           style={{ left: labelPos.x + 10, top: labelPos.y - 14 }}
         >
-          {label.text}
+          {brand(label.text)}
         </span>
       )}
       <div className="relative z-10">{children}</div>
@@ -216,19 +216,19 @@ export function FlowCard({
           </span>
         )}
         <div className="min-w-0">
-          <p className="text-sm font-black leading-tight text-q-ink">{title}</p>
-          {kicker && <p className="mt-0.5 text-[11px] text-q-gray-500 font-medium">{kicker}</p>}
+          <p className="text-sm font-black leading-tight text-q-ink">{brand(title)}</p>
+          {kicker && <p className="mt-0.5 text-[11px] text-q-gray-500 font-medium">{brand(kicker)}</p>}
         </div>
       </div>
       {chips.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
           {chips.map((chip) => (
-            <Chip key={chip}>{chip}</Chip>
+            <Chip key={chip}>{brand(chip)}</Chip>
           ))}
         </div>
       )}
       {children}
-      {footer && <p className="mt-3 text-[11px] leading-relaxed text-q-gray-500 font-medium">{footer}</p>}
+      {footer && <p className="mt-3 text-[11px] leading-relaxed text-q-gray-500 font-medium">{brand(footer)}</p>}
     </motion.div>
   );
 }
@@ -264,7 +264,7 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
       <ul className="space-y-2.5">
         {hubFeatures.map(({ icon: Icon, label }) => (
           <li key={label} className="flex items-center gap-2.5 text-[13px] font-semibold text-q-gray-800">
-            <Icon className="h-3.5 w-3.5 shrink-0 text-q-brand-ember" /> {label}
+            <Icon className="h-3.5 w-3.5 shrink-0 text-q-brand-ember" /> {brand(label)}
           </li>
         ))}
       </ul>
@@ -298,7 +298,7 @@ export function DiagramHeader({
         viewport={{ once: true, margin: "-90px" }}
         className="eyebrow mb-5"
       >
-        {eyebrow}
+        {brand(eyebrow)}
       </motion.p>
       <motion.h2
         initial={{ opacity: 0, y: 24 }}
@@ -307,7 +307,7 @@ export function DiagramHeader({
         transition={{ duration: 0.75 }}
         className="h-section font-black tracking-tight text-q-ink"
       >
-        {title}
+        {brand(title)}
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 22 }}
@@ -316,7 +316,7 @@ export function DiagramHeader({
         transition={{ duration: 0.75, delay: 0.1 }}
         className="mt-6 text-lg leading-relaxed text-q-gray-700"
       >
-        {intro}
+        {brand(intro)}
       </motion.p>
     </div>
   );

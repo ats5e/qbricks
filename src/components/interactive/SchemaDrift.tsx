@@ -64,7 +64,6 @@ export function SchemaDrift() {
 
           {/* The QBricks Way */}
           <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.02] p-8 flex flex-col items-center shadow-[0_0_50px_rgba(16,185,129,0.05)] relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.1),transparent_70%)] pointer-events-none" />
             
             <h3 className="text-xl font-bold text-q-ink mb-8 z-10">The <QBricksText /> Way</h3>
             

@@ -14,7 +14,7 @@ export default function CostCalculatorPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-44 pb-16 md:pb-24">
         <div className="absolute inset-0 -z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(232,32,15,0.0825),transparent_40%),linear-gradient(to_bottom,rgba(255,255,255,0.2),#fff_88%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.2),#fff_88%)]" />
         </div>
 
         <div className="container-x relative z-10 text-center">

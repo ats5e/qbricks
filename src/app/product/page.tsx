@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Agentic } from "@/components/interactive/Agentic";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { MigrationGraphic, RoutingGraphic } from "@/components/interactive/flowGraphics";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 export const metadata = {
   title: "Product",
@@ -29,10 +29,9 @@ const constructs = [
 export default function ProductPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-28">
-        <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bricks-3.png" alt="" fill priority className="object-cover object-top opacity-35 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.121),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.5),#fff_88%)]" />
+      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
+          <Image src="/assets/brand/hero-product.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
 
         <div className="container-x relative z-10">
@@ -65,8 +64,8 @@ export default function ProductPage() {
             {flow.map(([title, text], index) => (
               <div key={title} className="premium-card p-5">
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-q-brand/25 bg-q-brand/[0.12] text-lg font-black text-q-brand-ember">{index + 1}</div>
-                <h3 className="text-xl font-black text-q-ink">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{text}</p>
+                <h3 className="text-xl font-black text-q-ink">{brand(title)}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{brand(text)}</p>
               </div>
             ))}
           </div>
@@ -81,8 +80,8 @@ export default function ProductPage() {
               return (
                 <div key={construct.title} className="rounded-3xl border border-black/10 bg-black/[0.035] p-6">
                   <Icon className="mb-5 h-7 w-7 text-q-brand-ember" />
-                  <h3 className="text-xl font-black text-q-ink">{construct.title}</h3>
-                  <p className="mt-3 leading-relaxed text-q-gray-600">{construct.text}</p>
+                  <h3 className="text-xl font-black text-q-ink">{brand(construct.title)}</h3>
+                  <p className="mt-3 leading-relaxed text-q-gray-600">{brand(construct.text)}</p>
                 </div>
               );
             })}

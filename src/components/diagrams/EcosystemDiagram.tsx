@@ -1,5 +1,6 @@
 "use client";
 
+import { brand } from "@/components/ui/QBricksText";
 import {
   ArrowLeftRight,
   BarChart3,
@@ -76,7 +77,6 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
 
   return (
     <section id="architecture" className="section-y relative overflow-hidden border-y border-black/5 bg-white">
-      <div className="absolute left-1/2 top-1/2 h-[760px] w-[980px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember/[0.07] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
       <div className="container-x relative z-10">
@@ -131,9 +131,9 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
                       icon={lane.icon}
                       title={
                         <span className="flex items-center justify-between gap-2">
-                          {lane.title}
+                          {brand(lane.title)}
                           <span className={`text-[11px] ${activeLane === index ? "text-q-brand-ember" : "text-q-gray-500"} font-medium`}>
-                            {lane.tag}
+                            {brand(lane.tag)}
                           </span>
                         </span>
                       }

@@ -17,10 +17,9 @@ export const metadata = {
 export default function IntegrationsPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-28">
-        <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bg-cubes-scatter.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.121),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.55),#fff_88%)]" />
+      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
+          <Image src="/assets/brand/hero-integrations.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
 
         <div className="container-x relative z-10 text-center">

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Blocks, Cloud, FileCode2, Network, Shield, Sparkles } from "lucide-react";
 import Image from "next/image";
-import { QBricksText } from "@/components/ui/QBricksText";
+import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const capabilities = [
   {
@@ -55,16 +55,15 @@ function CapabilityCard({ capability, index }: { capability: (typeof capabilitie
       transition={{ duration: 0.65, delay: index * 0.06 }}
       className="premium-card group p-6"
     >
-      <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-q-brand/[0.08] blur-[70px] transition-opacity group-hover:opacity-100" />
       <div className="relative">
         <div className="mb-6 flex items-center justify-between gap-4">
           <div className="rounded-2xl border border-black/10 bg-black/[0.055] p-3 text-q-brand-ember">
             <Icon className="h-6 w-6" />
           </div>
-          <span className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 text-xs font-bold text-q-gray-700">{capability.highlight}</span>
+          <span className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 text-xs font-bold text-q-gray-700">{brand(capability.highlight)}</span>
         </div>
-        <h3 className="text-2xl font-black tracking-tight text-q-ink">{capability.title}</h3>
-        <p className="mt-4 leading-relaxed text-q-gray-600">{capability.text}</p>
+        <h3 className="text-2xl font-black tracking-tight text-q-ink">{brand(capability.title)}</h3>
+        <p className="mt-4 leading-relaxed text-q-gray-600">{brand(capability.text)}</p>
       </div>
     </motion.div>
   );
@@ -73,9 +72,8 @@ function CapabilityCard({ capability, index }: { capability: (typeof capabilitie
 export function FeaturesBento() {
   return (
     <section id="features" className="section-y relative overflow-hidden border-t border-black/5 bg-white">
-      <div className="absolute inset-0 -z-0">
-        <Image src="/assets/bg-cubes-wall.png" alt="" fill className="object-cover object-center opacity-30 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(232,32,15,0.099),transparent_28%),linear-gradient(to_bottom,#fff_0%,rgba(255,255,255,0.84)_42%,#fff_100%)]" />
+      <div className="pointer-events-none absolute right-0 top-0 -z-0 hidden aspect-[2560/1088] w-[46%] lg:block" aria-hidden="true">
+        <Image src="/assets/brand/section-features.webp" alt="" fill className="object-cover object-right-top" sizes="46vw" />
       </div>
 
       <div className="container-x relative z-10">

@@ -1,6 +1,7 @@
 import { ArrowRight, Building2, Globe2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { InfiniumLockup } from "@/components/ui/InfiniumLockup";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -11,10 +12,9 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pb-12 pt-44 lg:pb-16">
-        <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bg-pathway-door.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.121),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.58),#fff_88%)]" />
+      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
+          <Image src="/assets/brand/hero-about.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
 
         <div className="container-x relative z-10 text-center">
@@ -46,8 +46,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-black/10 bg-black/[0.035] p-7 md:flex-row md:items-center md:p-8">
+          <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-black/10 bg-white p-7 md:flex-row md:items-center md:p-8">
             <div>
+              <InfiniumLockup className="mb-4 text-[26px]" />
               <p className="eyebrow mb-2">Part of Infinium Technology</p>
               <p className="max-w-2xl leading-relaxed text-q-gray-600">
                 <QBricksText /> is developed and owned by Infinium Consulting B.V., the Amsterdam-based consultancy behind Infinium Technology. Infinium delivers the data, A.I. and transformation programmes that <QBricksText /> was built to accelerate.
