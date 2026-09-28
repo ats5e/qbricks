@@ -1,8 +1,5 @@
 import { PlayCircle } from "lucide-react";
 import { UseCases } from "@/components/interactive/UseCases";
-import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
-import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
-import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText } from "@/components/ui/QBricksText";
 
@@ -17,7 +14,7 @@ export default function SolutionsPage() {
       <section className="border-b border-white/5 bg-q-black pb-4 pt-20 lg:pt-24">
         <div className="container-x text-center">
           <p className="eyebrow mb-5">Solutions</p>
-          <h1 className="mx-auto max-w-4xl text-[clamp(2.8rem,6vw,5.5rem)] font-black leading-[0.94] tracking-tight text-white">
+          <h1 className="h-display mx-auto max-w-4xl font-black tracking-tight text-white">
             Governed data products for the use cases that matter.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
@@ -26,10 +23,7 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <EcosystemDiagram emphasis />
       <UseCases />
-      <DualFlowDiagram />
-      <FeaturesBento />
 
       <section className="relative overflow-hidden border-b border-white/5 bg-q-black py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(232,32,15,0.18),transparent_44%)]" />
@@ -40,7 +34,7 @@ export default function SolutionsPage() {
               <PlayCircle className="h-4 w-4" />
               Watch
             </p>
-            <h2 className="text-[clamp(2.8rem,6vw,6rem)] font-black leading-[0.94] tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-white">
               <QBricksText /> use cases in action
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">

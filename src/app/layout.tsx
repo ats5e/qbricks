@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} dark antialiased`}>
+    <html lang="en" className={`${plusJakarta.variable} antialiased`}>
       <body className="relative bg-q-black font-sans text-q-gray-200 selection:bg-q-brand/30 selection:text-white">
         <script
           type="application/ld+json"

@@ -83,7 +83,7 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
 
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
-              <h1 className="text-[clamp(2.6rem,4.8vw,4.2rem)] font-black leading-[0.97] tracking-tight text-white">
+              <h1 className="h-section font-black tracking-tight text-white">
                 {paper.title}
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-q-gray-300">{paper.standfirst}</p>

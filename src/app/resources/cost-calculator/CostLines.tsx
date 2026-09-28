@@ -59,7 +59,7 @@ export default function CostLines() {
             className="flex w-full items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-q-brand-ember"
           >
             <div className="flex items-center gap-4">
-              <span className="font-mono text-sm font-bold text-q-gray-500">{line.id}</span>
+              <span className="text-sm font-bold text-q-gray-500">{line.id}</span>
               <h3 className="text-xl font-bold text-white md:text-2xl">{line.title}</h3>
             </div>
             <ChevronDown 
@@ -88,7 +88,7 @@ export default function CostLines() {
                       <p className="text-q-gray-300 leading-relaxed text-sm">
                         {line.todayText}
                       </p>
-                      <div className="inline-flex rounded-lg bg-white/5 px-3 py-2 text-xs font-mono text-q-gray-400 border border-white/10">
+                      <div className="inline-flex rounded-lg bg-white/5 px-3 py-2 text-xs text-q-gray-400 border border-white/10 font-medium">
                         Cost driver: <span className="ml-2 text-q-gray-200">{line.todayDriver}</span>
                       </div>
                     </div>

@@ -86,7 +86,7 @@ export function QuantexaFlowDiagram() {
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Transactions", "Client Reference", "Resolved Entity", "Corp Hierarchies", "UBO", "Network"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[10px] leading-none text-q-gray-300">
+                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-xs leading-none text-q-gray-300 font-medium">
                             {chip}
                           </span>
                         ))}
@@ -98,7 +98,7 @@ export function QuantexaFlowDiagram() {
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Machine Learning", "Models", "Rules", "Decision Systems"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[10px] leading-none text-q-gray-300">
+                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-xs leading-none text-q-gray-300 font-medium">
                             {chip}
                           </span>
                         ))}
@@ -121,7 +121,7 @@ export function QuantexaFlowDiagram() {
                       <p className="mb-2 text-[12px] font-black text-white">Case Management</p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Investigations UI", "Request for Info", "Decision / QC", "File SAR"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 font-mono text-[10px] leading-none text-q-gray-300">
+                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-xs leading-none text-q-gray-300 font-medium">
                             {chip}
                           </span>
                         ))}
@@ -131,7 +131,7 @@ export function QuantexaFlowDiagram() {
                       <p className="mb-2 text-[12px] font-black text-white">Advanced AI with LLM</p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Data Intelligence", "Case Narrative", "Q Assist", "Agentic AI · GenAI"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-q-brand/35 bg-q-brand/10 px-2 py-1 font-mono text-[10px] leading-none text-q-brand-ember">
+                          <span key={chip} className="rounded-md border border-q-brand/35 bg-q-brand/10 px-2 py-1 text-xs leading-none text-q-brand-ember font-medium">
                             {chip}
                           </span>
                         ))}

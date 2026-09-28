@@ -16,19 +16,16 @@ const logos = [
 export function Integrations({ showDescriptions = false, hideHeading = false }: { showDescriptions?: boolean, hideHeading?: boolean }) {
   return (
     <section className="relative overflow-hidden border-t border-white/5 bg-q-black py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(232,32,15,0.08),transparent_62%)]" />
-
       <div className="container-x relative z-10">
         {!hideHeading && (
           <div className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="eyebrow mb-4">Integrations</p>
-            <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-black leading-tight tracking-tight text-white">
+            <h2 className={showDescriptions ? "h-section" : "text-2xl font-black tracking-tight text-white md:text-3xl"}>
               Works with the platforms your organisation already runs on.
             </h2>
           </div>
         )}
 
-        <div className={`mx-auto grid gap-4 ${showDescriptions ? "max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" : "max-w-4xl grid-cols-2 md:grid-cols-3"}`}>
+        <div className={`mx-auto grid gap-4 ${showDescriptions ? "max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" : "max-w-5xl grid-cols-3 gap-x-8 md:grid-cols-6"}`}>
           {logos.map((logo, index) => (
             <motion.div
               key={logo.name}
@@ -36,11 +33,13 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className={`group flex rounded-3xl border border-white/10 bg-white/[0.035] p-6 backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] ${
-                showDescriptions ? "min-h-[14rem] flex-col items-start justify-start p-8" : "h-28 items-center justify-center"
+              className={`group flex ${
+                showDescriptions
+                  ? "min-h-[14rem] flex-col items-start justify-start rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all hover:-translate-y-1 hover:border-white/20"
+                  : "h-16 items-center justify-center"
               }`}
             >
-              <div className={`flex h-12 items-center transition-all duration-500 ${showDescriptions ? "mb-6 justify-start" : "justify-center grayscale group-hover:grayscale-0"}`}>
+              <div className={`flex h-12 items-center transition-all duration-500 ${showDescriptions ? "mb-6 justify-start" : "scale-[0.72] justify-center opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0"}`}>
                 <Image
                   src={logo.src}
                   alt={logo.name}
@@ -56,10 +55,10 @@ export function Integrations({ showDescriptions = false, hideHeading = false }: 
           ))}
         </div>
 
-        <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
+        <p className="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-q-gray-400">
           <QBricksText /> interfaces with Databricks, Microsoft Fabric, Snowflake or your own database via SQL push-down, delivering governed, portable data products in open formats.
         </p>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-lg font-medium leading-relaxed text-q-gray-400">
+        <p className="mx-auto mt-2 max-w-3xl text-center text-base leading-relaxed text-q-gray-400">
           The Open Data Contract Standard (ODCS) sits at the core.
         </p>
       </div>

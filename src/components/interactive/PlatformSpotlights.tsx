@@ -121,7 +121,7 @@ export function PlatformSpotlights() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75 }}
-            className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-black leading-[0.98] tracking-tight text-white"
+            className="h-section font-black tracking-tight text-white"
           >
             Trusted data, wherever it lands.
           </motion.h2>
@@ -165,7 +165,7 @@ export function PlatformSpotlights() {
 
                   {/* Content */}
                   <div className="relative flex flex-1 flex-col border-t border-white/[0.07] bg-gradient-to-b from-[#0d0d12] to-q-brand/[0.07] p-7">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-q-gray-500">
+                    <p className="text-xs text-q-gray-500 font-medium">
                       Capability overview · {card.partner}
                     </p>
                     <h3 className="mt-2 text-2xl font-black tracking-tight text-white">{card.title}</h3>

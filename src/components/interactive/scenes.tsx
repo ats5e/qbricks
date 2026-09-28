@@ -33,7 +33,7 @@ function MiniWindowHeader({ badge, logo, logoAlt }: SceneProps) {
         )}
         <span className="flex items-center gap-2 rounded-md border border-q-brand/50 px-2.5 py-1.5">
           <span className="h-1.5 w-1.5 rounded-full bg-q-brand-ember" style={{ animation: "cc-blink 2.4s ease-in-out infinite" }} />
-          <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/75">{badge}</span>
+          <span className="text-[11px] text-white/75 font-medium">{badge}</span>
         </span>
       </div>
     </div>
@@ -209,7 +209,7 @@ export function AiReadyScene(props: SceneProps) {
               {cites.map((tag, i) => (
                 <motion.span
                   key={tag}
-                  className="flex items-center gap-1.5 rounded-full border border-q-brand/50 px-2 py-0.5 font-mono text-[9px] text-white/70"
+                  className="flex items-center gap-1.5 rounded-full border border-q-brand/50 px-2 py-0.5 text-[11px] text-white/70 font-medium"
                   initial={{ opacity: 0, scale: 0.2 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-60px" }}
@@ -264,11 +264,11 @@ export function ContractsScene(props: SceneProps) {
           <div className="mb-2.5 flex items-center gap-2">
             <span className="h-2 w-2 rounded-[2px] bg-q-brand/70" style={{ animation: "cc-blink 3.2s ease-in-out infinite" }} />
             <span className="h-1.5 w-24 rounded bg-white/25" />
-            <span className="ml-auto rounded border border-q-brand/50 px-1.5 py-0.5 font-mono text-[8px] tracking-[0.14em] text-q-brand-ember">ODCS</span>
+            <span className="ml-auto rounded border border-q-brand/50 px-1.5 py-0.5 text-[11px] text-q-brand-ember font-medium">ODCS</span>
           </div>
           {codeLines.map((l, i) => (
             <div key={`cl-${i}`} className="flex items-center gap-2 py-[3px]">
-              <span className="w-3 flex-none text-right font-mono text-[8px] text-white/20">{i + 1}</span>
+              <span className="w-3 flex-none text-right text-[11px] text-white/20 font-medium">{i + 1}</span>
               <motion.span
                 className="h-1.5 rounded"
                 style={{ background: l.c, marginLeft: l.ind }}
@@ -280,7 +280,7 @@ export function ContractsScene(props: SceneProps) {
             </div>
           ))}
           <div className="flex items-center gap-2 py-[3px]">
-            <span className="w-3 flex-none text-right font-mono text-[8px] text-white/20">{codeLines.length + 1}</span>
+            <span className="w-3 flex-none text-right text-[11px] text-white/20 font-medium">{codeLines.length + 1}</span>
             <span className="h-3 w-1.5 bg-q-brand-ember" style={{ animation: "cc-caret 1.1s steps(1) infinite" }} />
           </div>
         </div>
@@ -478,7 +478,7 @@ export function WorkflowScene(props: SceneProps) {
               transition={{ duration: 0.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
             />
           </span>
-          <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-q-gray-400">Human in the loop</span>
+          <span className="text-[11px] text-q-gray-400 font-medium">Human in the loop</span>
           <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full border border-emerald-400/70">
             <motion.svg
               viewBox="0 0 24 24"

@@ -12,7 +12,7 @@ export function ComputeCost() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-tight text-white"
+            className="h-section font-black tracking-tight text-white"
           >
             Say goodbye to <br />
             <span className="text-q-brand">cloud compute.</span>

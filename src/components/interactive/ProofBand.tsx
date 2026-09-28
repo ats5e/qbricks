@@ -35,11 +35,9 @@ const fadeUp = {
 export function ProofBand() {
   return (
     <section className="relative overflow-hidden border-y border-white/5 bg-q-black py-20 lg:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_0%,rgba(232,32,15,0.1),transparent_65%)]" />
       <div className="container-x relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <motion.p {...fadeUp} className="eyebrow mb-4">The numbers</motion.p>
             <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="text-3xl font-black tracking-tight text-white md:text-4xl">
               The economics only work when trusted data stops being the most expensive line on the bill.
             </motion.h2>
@@ -56,11 +54,11 @@ export function ProofBand() {
             <motion.div key={stat.value + stat.source} {...fadeUp} transition={{ duration: 0.6, delay: index * 0.08 }}>
               <Link
                 href={stat.href}
-                className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.035] p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
+                className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
               >
                 <p className="text-5xl font-black tracking-tight text-q-brand-ember">{stat.value}</p>
                 <p className="mt-4 flex-1 leading-relaxed text-q-gray-300">{stat.label}</p>
-                <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-q-gray-500 transition-colors group-hover:text-q-brand-ember">
+                <p className="mt-5 text-xs text-q-gray-500 transition-colors group-hover:text-q-brand-ember font-medium">
                   White paper · {stat.source}
                 </p>
               </Link>

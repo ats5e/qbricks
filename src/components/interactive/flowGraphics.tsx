@@ -19,6 +19,15 @@ const BRAND = "#e8200f";
 const GREEN = "#6fd39a";
 const LINE = "rgba(255,255,255,0.14)";
 
+// Labels are authored in capitals; render them in sentence case, keeping acronyms and names.
+const KEEP = ["QBricks", "SQL", "EOS", "ODCS", "VM", "SDK", "CRM", "AML", "KYC", "BI", "ML", "AI", "Oracle", "Python", "Spark", "Iceberg", "Parquet", "Databricks", "Snowflake", "Fabric"];
+function labelCase(node: React.ReactNode): React.ReactNode {
+  if (typeof node !== "string" || /[a-z]/.test(node)) return node;
+  let out = node.toLowerCase().replace(/^(\W*)(\w)/, (_, pre: string, c: string) => pre + c.toUpperCase());
+  for (const word of KEEP) out = out.replace(new RegExp(`\\b${word}\\b`, "gi"), word);
+  return out;
+}
+
 type CardVariant = "plain" | "accent" | "hot" | "panel";
 
 const cardFill: Record<CardVariant, { fill: string; stroke: string }> = {
@@ -46,8 +55,8 @@ function Mono({
   x, y, size = 10, fill = GRAY_500, anchor = "start", children, weight = 500,
 }: { x: number; y: number; size?: number; fill?: string; anchor?: "start" | "middle" | "end"; children: React.ReactNode; weight?: number }) {
   return (
-    <text x={x} y={y} className="font-mono" fontSize={size} fontWeight={weight} letterSpacing={size * 0.14} fill={fill} textAnchor={anchor}>
-      {children}
+    <text x={x} y={y} fontSize={size + 1} fontWeight={Math.max(weight, 500)} fill={fill} textAnchor={anchor}>
+      {labelCase(children)}
     </text>
   );
 }
@@ -70,11 +79,10 @@ function Pill({
       <rect x={x} y={y} width={w} height={h} rx={h / 2} fill={fill} stroke={stroke} strokeWidth={1} style={style} />
       <text
         x={x + w / 2} y={y + h / 2 + size * 0.36}
-        className={mono ? "font-mono" : undefined}
-        fontSize={size} fontWeight={500} letterSpacing={mono ? size * 0.14 : 0}
+        fontSize={size} fontWeight={mono ? 600 : 500}
         fill={color} textAnchor="middle"
       >
-        {label}
+        {labelCase(label)}
       </text>
     </g>
   );
@@ -221,7 +229,7 @@ export function MigrationGraphic() {
             <rect x={578} y={y} width={244} height={30} rx={6} fill="rgba(255,255,255,0.06)" style={{ animation: "qb-step 4s ease-in-out infinite", animationDelay: `${i}s` }} />
             <Mono x={588} y={y + 19} size={9.5} fill="rgba(255,255,255,0.7)">{s.n}</Mono>
             <T x={608} y={y + 19} size={11.5}>{s.name}</T>
-            <text x={814} y={y + 19} className="font-mono" fontSize={9} fill="rgba(255,255,255,0.7)" textAnchor="end">{s.meta}</text>
+            <text x={814} y={y + 19} fontSize={10} fill="rgba(255,255,255,0.7)" textAnchor="end">{s.meta}</text>
           </g>
         );
       })}

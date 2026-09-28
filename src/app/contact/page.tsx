@@ -87,7 +87,7 @@ export default function ContactPage() {
 
       <div className="container-x relative z-10 pt-40 md:pt-48">
         <div className="mb-16 text-center md:mb-24">
-          <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-black leading-[0.9] tracking-tight text-white">
+          <h1 className="h-display font-black tracking-tight text-white">
             Evaluate <QBricksText /> on your workload.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-q-gray-300">

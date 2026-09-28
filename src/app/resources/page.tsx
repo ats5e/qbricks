@@ -90,7 +90,7 @@ export default function ResourcesPage() {
         <div className="container-x mb-16">
           <div className="mb-14 max-w-3xl">
             <p className="eyebrow mb-4">Resources</p>
-            <h1 className="text-[clamp(2.6rem,5.5vw,4.8rem)] font-black leading-[0.95] tracking-tight text-white">
+            <h1 className="h-display font-black tracking-tight text-white">
               Make data your competitive edge.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-q-gray-300 md:text-xl">
@@ -126,7 +126,7 @@ export default function ResourcesPage() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-q-brand/35 bg-q-brand/10 text-q-brand-ember">
                     <FileText className="h-4 w-4" />
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-q-gray-500">{paper.category}</span>
+                  <span className="text-xs text-q-gray-500 font-medium">{paper.category}</span>
                 </div>
                 <h2 className="text-xl font-black leading-snug text-white">{paper.title}</h2>
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-q-gray-400">{paper.standfirst.slice(0, 150)}…</p>
@@ -245,11 +245,11 @@ export default function ResourcesPage() {
           <div className="mt-10 space-y-10">
             {consumptionLanes.map((group) => (
               <div key={group.lane}>
-                <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-q-brand-ember">{group.lane}</p>
+                <p className="mb-4 text-xs text-q-brand-ember font-medium">{group.lane}</p>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {group.tools.map((tool) => (
                     <div key={tool} className="premium-card flex h-full flex-col p-5 opacity-80 transition-opacity hover:opacity-100">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-q-gray-500">{group.lane}</p>
+                      <p className="text-xs text-q-gray-500 font-medium">{group.lane}</p>
                       <h3 className="mt-2 text-lg font-black leading-snug text-white">
                         How <QBricksText /> accelerates {tool}
                       </h3>

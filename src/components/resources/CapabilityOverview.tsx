@@ -103,7 +103,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
               <p className="eyebrow mb-6">{content.eyebrow}</p>
-              <h1 className="text-[clamp(2.8rem,5.2vw,4.6rem)] font-black leading-[0.95] tracking-tight text-white">
+              <h1 className="h-display font-black tracking-tight text-white">
                 Trusted data, before it reaches <span className="text-q-brand-ember">{content.partner}.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-300">{content.heroIntro}</p>
@@ -131,12 +131,12 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
           </div>
 
           {/* Handoff flow */}
-          <motion.p {...fadeUp} transition={{ duration: 0.6 }} className="mt-20 font-mono text-xs uppercase tracking-[0.2em] text-q-gray-500">
+          <motion.p {...fadeUp} transition={{ duration: 0.6 }} className="mt-20 text-xs text-q-gray-500 font-medium">
             {content.handoffLabel}
           </motion.p>
           <div className="mt-5 grid gap-3 md:grid-cols-[1fr_auto_1.1fr_auto_1fr_auto_1.1fr] md:items-stretch">
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.05 }} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-              <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-q-gray-500">Systems of record</p>
+              <p className="mb-3 text-xs text-q-gray-500 font-medium">Systems of record</p>
               <ul className="space-y-1.5">
                 {content.handoff.sourceItems.map((item) => (
                   <li key={item} className="text-[15px] font-bold text-white">{item}</li>
@@ -153,7 +153,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                   </li>
                 ))}
               </ul>
-              <span className="mt-3 inline-block rounded-full border border-q-brand/50 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-q-brand-ember">
+              <span className="mt-3 inline-block rounded-full border border-q-brand/50 px-3 py-1 text-xs text-q-brand-ember font-medium">
                 Local compute
               </span>
             </motion.div>
@@ -161,7 +161,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.25 }} className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
               <p className="text-sm text-q-gray-400">data product</p>
               <p className="mt-1 text-xl font-black text-white">governed</p>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-q-brand-ember">{content.handoff.productTags}</p>
+              <p className="mt-2 text-xs text-q-brand-ember font-medium">{content.handoff.productTags}</p>
             </motion.div>
             <FlowArrow delay={0.3} />
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.35 }} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
@@ -179,7 +179,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                   </li>
                 ))}
               </ul>
-              <span className="mt-3 inline-block rounded-full border border-white/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-q-gray-400">
+              <span className="mt-3 inline-block rounded-full border border-white/15 px-3 py-1 text-xs text-q-gray-400 font-medium">
                 {content.handoff.partnerTag}
               </span>
             </motion.div>
@@ -200,7 +200,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-q-brand/35 bg-q-brand/10 text-q-brand-ember">
                       <Icon className="h-4 w-4" />
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-q-brand-ember">{pillar.kicker}</span>
+                    <span className="text-xs text-q-brand-ember font-medium">{pillar.kicker}</span>
                   </div>
                   <h3 className="text-xl font-black text-white">{pillar.title}</h3>
                   <p className="mt-2.5 leading-relaxed text-q-gray-400">{pillar.text}</p>
@@ -217,7 +217,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
         <div className="container-x relative z-10">
           <div className="max-w-4xl">
             <motion.p {...fadeUp} className="eyebrow mb-5">{content.gap.eyebrow}</motion.p>
-            <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-black leading-[0.98] tracking-tight text-white">
+            <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section font-black tracking-tight text-white">
               {content.gap.title}
             </motion.h2>
             <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.1 }} className="mt-7 text-lg leading-relaxed text-q-gray-300">
@@ -242,7 +242,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.01] p-6"
                 >
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-q-gray-500">Step 0{index + 1}</p>
+                  <p className="text-xs text-q-gray-500 font-medium">Step 0{index + 1}</p>
                   <p className="mt-1 text-4xl font-black text-q-brand-ember">0{index + 1}</p>
                   <h4 className="mt-4 text-lg font-black text-white">{step.title}</h4>
                   <p className="mt-2 text-[15px] leading-relaxed text-q-gray-400">{step.text}</p>
@@ -260,7 +260,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               className="relative mt-10 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-10"
             >
               <div className="absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_50%,rgba(232,32,15,0.14),transparent_70%)]" />
-              <p className="relative text-center font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// The outcome"}</p>
+              <p className="relative text-center text-xs text-q-brand-ember font-medium">The outcome</p>
               <p className="relative mx-auto mt-3 max-w-6xl text-balance text-center text-[clamp(1.35rem,2.6vw,2rem)] font-black leading-[1.12] tracking-tight text-q-brand-ember">
                 {content.outcome}
               </p>
@@ -277,7 +277,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
         <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_20%_30%,rgba(232,32,15,0.09),transparent_65%)]" />
         <div className="container-x relative z-10">
           <motion.p {...fadeUp} className="eyebrow mb-5">How <QBricksText /> fits</motion.p>
-          <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="max-w-4xl text-[clamp(2.2rem,4.4vw,3.8rem)] font-black leading-[0.98] tracking-tight text-white">
+          <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-4xl font-black tracking-tight text-white">
             {content.fits.title}
           </motion.h2>
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.1 }} className="mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-300">
@@ -286,7 +286,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="premium-card border-q-brand/25 bg-gradient-to-br from-[#26181a]/90 to-[#0f0b0c]/90 p-7 md:p-9">
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// Upstream, production"}</p>
+              <p className="text-xs text-q-brand-ember font-medium">Upstream, production</p>
               <h3 className="mt-2 text-2xl font-black text-white"><QBricksText /> handles</h3>
               <ul className="mt-6 space-y-3.5">
                 {content.fits.qbricksHandles.map((item) => (
@@ -297,7 +297,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               </ul>
             </motion.div>
             <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.1 }} className="premium-card p-7 md:p-9">
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-gray-500">{"// Downstream, consumption"}</p>
+              <p className="text-xs text-q-gray-500 font-medium">Downstream, consumption</p>
               <div className="mt-2 flex h-8 items-center">
                 {content.partnerLogo ? (
                   <span className="flex items-center gap-3">
@@ -330,7 +330,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                 transition={{ duration: 0.6, delay: index * 0.08 }}
                 className="rounded-3xl border border-white/10 bg-white/[0.035] p-7 backdrop-blur-xl"
               >
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{`// ${card.kicker}`}</p>
+                <p className="text-xs text-q-brand-ember font-medium">{card.kicker}</p>
                 <h3 className="mt-2 text-xl font-black text-white">{card.title}</h3>
                 <p className="mt-3 leading-relaxed text-q-gray-400">{card.text}</p>
               </motion.div>

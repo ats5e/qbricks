@@ -5,7 +5,6 @@ import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
 import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { Integrations } from "@/components/interactive/Integrations";
 import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
-import { UseCases } from "@/components/interactive/UseCases";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -26,7 +25,7 @@ export default function IntegrationsPage() {
 
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Integrations</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
+          <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-white">
             Works with the platforms your organisation already runs on.
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
@@ -44,8 +43,6 @@ export default function IntegrationsPage() {
       <PlatformSpotlights />
 
       <DualFlowDiagram />
-
-      <UseCases />
 
       <div className="container-x relative z-10 pb-20 pt-10 text-center">
         <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">

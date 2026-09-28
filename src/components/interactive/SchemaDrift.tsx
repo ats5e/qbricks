@@ -30,7 +30,7 @@ export function SchemaDrift() {
               <div className="w-full flex justify-center z-10">
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
                   <Database className="w-5 h-5 text-q-gray-400" />
-                  <span className="text-sm font-mono text-q-gray-300">ALTER TABLE...</span>
+                  <span className="text-sm text-q-gray-300 font-medium">ALTER TABLE...</span>
                 </div>
               </div>
 
@@ -52,7 +52,7 @@ export function SchemaDrift() {
               <div className="w-full flex justify-center z-10">
                 <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center gap-3 grayscale">
                   <Shuffle className="w-5 h-5 text-red-400" />
-                  <span className="text-sm font-mono text-red-400">Pipeline Failed</span>
+                  <span className="text-sm text-red-400 font-medium">Pipeline Failed</span>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ export function SchemaDrift() {
               <div className="w-full flex justify-center z-10">
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
                   <Database className="w-5 h-5 text-q-gray-400" />
-                  <span className="text-sm font-mono text-q-gray-300">ALTER TABLE...</span>
+                  <span className="text-sm text-q-gray-300 font-medium">ALTER TABLE...</span>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ export function SchemaDrift() {
               <div className="w-full flex justify-center z-10">
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                  <span className="text-sm font-mono text-emerald-400">Data Flowing</span>
+                  <span className="text-sm text-emerald-400 font-medium">Data Flowing</span>
                 </div>
               </div>
             </div>

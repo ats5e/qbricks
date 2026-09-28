@@ -72,8 +72,7 @@ export function UseCases() {
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-4xl text-center">
-          <p className="eyebrow mb-5">Solutions</p>
-          <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.98] tracking-tight text-white">
+          <h2 className="h-section font-black tracking-tight text-white">
             Governed data products to accelerate your organisation&apos;s A.I. journey.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">

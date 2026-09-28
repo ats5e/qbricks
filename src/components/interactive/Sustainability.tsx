@@ -70,7 +70,7 @@ export function Sustainability() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.7 }}
-            className="mx-auto max-w-4xl text-[clamp(2.8rem,6.4vw,5.2rem)] font-black leading-[1.02] tracking-tight text-white"
+            className="h-display mx-auto max-w-4xl font-black tracking-tight text-white"
           >
             Less Compute. Less <span className="text-q-brand-ember">Carbon</span>.
           </motion.h1>
@@ -195,7 +195,7 @@ export function Sustainability() {
       <section className="section-y border-t border-white/5 bg-q-black">
         <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[0.98] tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-white">
               Cut the compute. Cut the&nbsp;carbon.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">

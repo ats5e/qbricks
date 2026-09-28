@@ -134,7 +134,7 @@ export function FlowCanvas({
       </svg>
       {label && labelPos && (
         <span
-          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-q-black/80 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.2em] text-q-brand-ember lg:block"
+          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-q-black/80 px-1.5 py-0.5 text-[11px] text-q-brand-ember lg:block font-medium"
           style={{ left: labelPos.x + 10, top: labelPos.y - 14 }}
         >
           {label.text}
@@ -162,11 +162,11 @@ function FlowPacket({ path, duration, delay }: { path: string; duration: number;
 export function Chip({ children, tone = "default" }: { children: React.ReactNode; tone?: "default" | "red" }) {
   return (
     <span
-      className={`inline-flex items-center rounded-md border px-2 py-1 font-mono text-[10px] leading-none transition-colors ${
-        tone === "red"
-          ? "border-q-brand/40 bg-q-brand/10 text-q-brand-ember"
-          : "border-white/10 bg-white/[0.04] text-q-gray-300 hover:border-white/25 hover:text-white"
-      }`}
+      className={`inline-flex items-center rounded-md border px-2 py-1 text-xs leading-none transition-colors ${
+ tone === "red"
+ ? "border-q-brand/40 bg-q-brand/10 text-q-brand-ember"
+ : "border-white/10 bg-white/[0.04] text-q-gray-300 hover:border-white/25 hover:text-white"
+ } font-medium`}
     >
       {children}
     </span>
@@ -217,7 +217,7 @@ export function FlowCard({
         )}
         <div className="min-w-0">
           <p className="text-sm font-black leading-tight text-white">{title}</p>
-          {kicker && <p className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.16em] text-q-gray-500">{kicker}</p>}
+          {kicker && <p className="mt-0.5 text-[11px] text-q-gray-500 font-medium">{kicker}</p>}
         </div>
       </div>
       {chips.length > 0 && (
@@ -228,7 +228,7 @@ export function FlowCard({
         </div>
       )}
       {children}
-      {footer && <p className="mt-3 font-mono text-[9px] leading-relaxed tracking-[0.08em] text-q-gray-500">{footer}</p>}
+      {footer && <p className="mt-3 text-[11px] leading-relaxed text-q-gray-500 font-medium">{footer}</p>}
     </motion.div>
   );
 }
@@ -256,7 +256,7 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
         <QIcon className="h-6 w-6" />
         <span className="text-base font-black tracking-tight text-white">Bricks</span>
       </div>
-      <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-q-brand-ember">Data management platform</p>
+      <p className="mt-2 text-xs text-q-brand-ember font-medium">Data management platform</p>
       <p className="mt-3 text-lg font-black leading-snug tracking-tight text-white">
         Governed, AI-ready data, in hours, not years.
       </p>
@@ -268,7 +268,7 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
           </li>
         ))}
       </ul>
-      <p className="mt-4 font-mono text-[9px] tracking-[0.08em] text-q-gray-500">
+      <p className="mt-4 text-[11px] text-q-gray-500 font-medium">
         governed · contract-enforced · audit-ready
       </p>
     </motion.div>
@@ -277,7 +277,7 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
 
 export function ColumnLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <p className={`mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-q-gray-500 ${className}`}>{children}</p>
+    <p className={`mb-3 text-xs text-q-gray-500 ${className} font-medium`}>{children}</p>
   );
 }
 
@@ -305,7 +305,7 @@ export function DiagramHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-90px" }}
         transition={{ duration: 0.75 }}
-        className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-black leading-[0.98] tracking-tight text-white"
+        className="h-section font-black tracking-tight text-white"
       >
         {title}
       </motion.h2>

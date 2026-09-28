@@ -12,9 +12,7 @@ const navLinks = [
   { name: "Product", href: "/product" },
   { name: "Solutions", href: "/solutions" },
   { name: "Why QBricks", href: "/why-qbricks" },
-  { name: "Integrations", href: "/integrations" },
   { name: "Resources", href: "/resources" },
-  { name: "About", href: "/about" },
 ];
 
 export function Navbar() {

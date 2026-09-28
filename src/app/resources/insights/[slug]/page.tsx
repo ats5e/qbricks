@@ -44,10 +44,10 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             <span className="text-q-gray-300">Insight</span>
           </Link>
           <div className="max-w-4xl">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-q-brand/40 bg-q-brand/10 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-q-brand-ember">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-q-brand/40 bg-q-brand/10 px-4 py-1.5 text-xs text-q-brand-ember font-medium">
               <BookOpen className="h-3.5 w-3.5" /> Insight · {insight.category}
             </span>
-            <h1 className="text-[clamp(2.4rem,4.6vw,4rem)] font-black leading-[0.98] tracking-tight text-white">
+            <h1 className="h-section font-black tracking-tight text-white">
               {insight.title}
             </h1>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-300">{insight.standfirst}</p>
@@ -70,7 +70,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             ))}
 
             <div className="relative overflow-hidden rounded-[2rem] border border-q-brand/25 bg-gradient-to-br from-[#160a0a]/80 to-transparent p-8 md:p-10">
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-q-brand-ember">{"// The takeaway"}</p>
+              <p className="text-xs text-q-brand-ember font-medium">The takeaway</p>
               <p className="mt-3 text-2xl font-black leading-snug tracking-tight text-white md:text-3xl">{insight.takeaway}</p>
             </div>
 

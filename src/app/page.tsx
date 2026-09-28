@@ -2,11 +2,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Hero } from "@/components/interactive/Hero";
 import { Metrics } from "@/components/interactive/Metrics";
-import { Agentic } from "@/components/interactive/Agentic";
-import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { Integrations } from "@/components/interactive/Integrations";
-import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
-import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { ProofBand } from "@/components/interactive/ProofBand";
 
 export default function Home() {
@@ -15,20 +11,15 @@ export default function Home() {
       <Hero />
       <Metrics />
       <ProofBand />
-      <Agentic />
-      <FeaturesBento />
-      <EcosystemDiagram />
       <Integrations />
-      <DualFlowDiagram />
 
-      <section id="demo" className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.22),transparent_42%),linear-gradient(to_bottom,rgba(255,255,255,0.035),#000)]" />
+      <section id="demo" className="section-y relative border-t border-white/5 bg-q-black">
         <div className="container-x relative z-10">
-          <div className="premium-card mx-auto max-w-4xl p-8 text-center md:p-10">
-            <h2 className="flex flex-wrap items-center justify-center gap-3 text-[clamp(2.2rem,4vw,4rem)] font-black leading-[0.95] tracking-tight text-white sm:gap-4 lg:gap-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="h-section">
               Bring Us A Representative Workload
             </h2>
-            <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-q-gray-300">
               We will show you where QBricks helps, where it does not, and what adoption would require.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">

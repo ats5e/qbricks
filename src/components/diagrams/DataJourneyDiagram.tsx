@@ -181,7 +181,7 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
       <div className="container-x relative z-10 py-16 md:py-24">
         <div className="max-w-5xl">
           <p className={`eyebrow mb-5 ${isQBricks ? "" : "text-q-gray-500"}`}>{content.eyebrow}</p>
-          <h2 className="text-[clamp(2.35rem,4.6vw,4.9rem)] font-black leading-[0.98] tracking-tight text-white">
+          <h2 className="h-section font-black tracking-tight text-white">
             {content.title}
           </h2>
           <div className="mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-300 md:text-xl">
@@ -263,9 +263,9 @@ function DiagramNode({
       <div className="min-w-0">
         <p className="truncate text-sm font-bold text-white">{item.title}</p>
         {item.subtitle ? (
-          <p className="mt-1 truncate font-mono text-[0.6rem] tracking-wide text-q-gray-500">{item.subtitle}</p>
+          <p className="mt-1 truncate text-[11px] text-q-gray-500 font-medium">{item.subtitle}</p>
         ) : muted ? (
-          <p className="mt-1 font-mono text-[0.6rem] tracking-wide text-q-gray-600">waiting on data</p>
+          <p className="mt-1 text-[11px] text-q-gray-600 font-medium">waiting on data</p>
         ) : null}
       </div>
     </div>
@@ -336,7 +336,7 @@ function CoreLayer({
         ))}
       </div>
 
-      <div className="mt-5 flex items-center gap-2 font-mono text-[0.62rem] tracking-wide text-q-gray-600">
+      <div className="mt-5 flex items-center gap-2 text-[11px] text-q-gray-600 font-medium">
         {active ? <Sparkles className="h-3.5 w-3.5 text-q-brand-ember" /> : <CalendarClock className="h-3.5 w-3.5" />}
         {content.timing}
       </div>

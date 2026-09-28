@@ -106,7 +106,7 @@ export default function Calculator() {
           {/* 01 */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
             <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
-              <span className="font-mono text-sm text-q-gray-500">01</span> Remediation
+              <span className="text-sm text-q-gray-500 font-medium">01</span> Remediation
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -133,7 +133,7 @@ export default function Calculator() {
           {/* 02 */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
             <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
-              <span className="font-mono text-sm text-q-gray-500">02</span> Pipeline build & engineering
+              <span className="text-sm text-q-gray-500 font-medium">02</span> Pipeline build & engineering
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -166,7 +166,7 @@ export default function Calculator() {
           {/* 03 */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
             <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
-              <span className="font-mono text-sm text-q-gray-500">03</span> Build & processing compute
+              <span className="text-sm text-q-gray-500 font-medium">03</span> Build & processing compute
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -193,7 +193,7 @@ export default function Calculator() {
           {/* 04 */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
             <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
-              <span className="font-mono text-sm text-q-gray-500">04</span> Ongoing compute & maintenance
+              <span className="text-sm text-q-gray-500 font-medium">04</span> Ongoing compute & maintenance
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>

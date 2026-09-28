@@ -1,7 +1,7 @@
 import { ArrowRight, FileCode2, GitBranch, Layers3, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { EcosystemDiagram } from "@/components/diagrams/EcosystemDiagram";
+import { Agentic } from "@/components/interactive/Agentic";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { MigrationGraphic, RoutingGraphic } from "@/components/interactive/flowGraphics";
 import { QBricksText } from "@/components/ui/QBricksText";
@@ -38,7 +38,7 @@ export default function ProductPage() {
         <div className="container-x relative z-10">
           <div className="mx-auto max-w-5xl text-center">
             <p className="eyebrow mb-6">The platform</p>
-            <h1 className="text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
+            <h1 className="h-display font-black tracking-tight text-white">
               The platform that governs data at the source.
             </h1>
             <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-300">
@@ -55,7 +55,7 @@ export default function ProductPage() {
         <div className="container-x">
           <div className="mx-auto mb-12 max-w-6xl text-center">
             <p className="eyebrow mb-4">How it works</p>
-            <h2 className="text-[clamp(2.4rem,4.2vw,4.5rem)] font-black leading-[1.02] tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-white">
               <span className="lg:whitespace-nowrap">Five steps from</span>
               <br className="hidden lg:block" />
               <span className="lg:whitespace-nowrap"> contract to audit trail.</span>
@@ -124,7 +124,7 @@ export default function ProductPage() {
       </section>
 
       <FeaturesBento />
-      <EcosystemDiagram />
+      <Agentic />
 
       <section className="section-y bg-q-black text-center pb-32">
         <div className="container-x relative z-10">

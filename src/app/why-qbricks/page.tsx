@@ -25,7 +25,7 @@ export default function WhyQBricksPage() {
 
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">The category problem</p>
-          <h1 className="mx-auto max-w-5xl text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.9] tracking-tight text-white">
+          <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-white">
             Can “one platform” really fix your A.I.-ready data problem?
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
@@ -54,7 +54,7 @@ export default function WhyQBricksPage() {
               <PlayCircle className="h-4 w-4" />
               Watch
             </p>
-            <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-black leading-[0.96] tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-white">
               10 reasons why <QBricksText />
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-300">
@@ -80,7 +80,7 @@ export default function WhyQBricksPage() {
       <section className="section-y bg-q-black">
         <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[0.98] tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-white">
               Ready to fix your data&nbsp;foundation?
             </h2>
             <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">

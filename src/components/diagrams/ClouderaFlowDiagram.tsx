@@ -88,7 +88,7 @@ export function ClouderaFlowDiagram() {
                 >
                   <div className="mb-4 flex items-center gap-3">
                     <Image src="/assets/partners/Cloudera_logo.webp" alt="Cloudera" width={110} height={22} className="h-4 w-auto object-contain" />
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-q-brand-ember">Downstream platform</span>
+                    <span className="text-[11px] text-q-brand-ember font-medium">Downstream platform</span>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     {clouderaModules.map((module, index) => {
@@ -114,7 +114,7 @@ export function ClouderaFlowDiagram() {
                       );
                     })}
                   </div>
-                  <p className="mt-4 font-mono text-[9px] tracking-[0.08em] text-q-gray-500">
+                  <p className="mt-4 text-[11px] text-q-gray-500 font-medium">
                     hybrid: on-prem & cloud · open table format (Iceberg)
                   </p>
                 </motion.div>

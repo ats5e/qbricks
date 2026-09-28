@@ -77,8 +77,8 @@ export function DualFlowDiagram() {
                   transition={{ duration: 0.6, delay: 0.15 }}
                   className="mb-8 text-center"
                 >
-                  <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-q-brand-ember">Option 01 · Direct streaming</p>
-                  <p className="mt-1.5 font-mono text-[10px] tracking-[0.06em] text-q-gray-500">system of record → QBricks, nothing in between</p>
+                  <p className="text-xs font-bold text-q-brand-ember">Option 01 · Direct streaming</p>
+                  <p className="mt-1.5 text-xs text-q-gray-500 font-medium">system of record → QBricks, nothing in between</p>
                 </motion.div>
 
                 <motion.div
@@ -87,7 +87,7 @@ export function DualFlowDiagram() {
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, delay: 0.25 }}
                 >
-                  <p className="mb-3 text-center font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-q-brand-ember">Option 02 · Lands in</p>
+                  <p className="mb-3 text-center text-xs font-bold text-q-brand-ember">Option 02 · Lands in</p>
                   <div
                     data-flow-id="df-govdb"
                     className="rounded-3xl border border-q-brand/60 bg-[#100404]/95 p-6 text-center transition-all duration-300 hover:-translate-y-0.5"
@@ -99,7 +99,7 @@ export function DualFlowDiagram() {
                     <p className="mt-4 text-xl font-black leading-tight text-white">Governed database</p>
                     <p className="mt-1.5 text-sm text-q-gray-400">Structured & unstructured data, unified</p>
                   </div>
-                  <p className="mt-3 text-center font-mono text-[10px] tracking-[0.06em] text-q-gray-500">land first, then QBricks processes & governs</p>
+                  <p className="mt-3 text-center text-xs text-q-gray-500 font-medium">land first, then QBricks processes & governs</p>
                 </motion.div>
               </div>
 
@@ -118,7 +118,7 @@ export function DualFlowDiagram() {
                     <QIcon className="h-6 w-6" />
                     <span className="text-base font-black tracking-tight text-white">Bricks</span>
                   </div>
-                  <p className="mb-4 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-q-brand-ember">Processes & governs the data</p>
+                  <p className="mb-4 text-center text-xs text-q-brand-ember font-medium">Processes & governs the data</p>
                   <div className="space-y-1.5">
                     {processes.map((process) => {
                       const Icon = process.icon;

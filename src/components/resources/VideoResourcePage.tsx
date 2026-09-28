@@ -40,7 +40,7 @@ export function VideoResourcePage({
               <PlayCircle className="h-4 w-4" />
               Video resource
             </p>
-            <h1 className="text-[clamp(2.8rem,6vw,6rem)] font-black leading-[0.94] tracking-tight text-white">
+            <h1 className="h-display font-black tracking-tight text-white">
               {title}
             </h1>
             <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
