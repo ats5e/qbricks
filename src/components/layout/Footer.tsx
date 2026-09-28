@@ -44,7 +44,7 @@ export function Footer() {
         <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <Link href="/" className="mb-5 inline-flex" aria-label="QBricks home">
-              <Logo className="h-8" />
+              <Logo height={32} />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-q-gray-500">
               A.I.-enabled data management for your organisation. Built for governed, secure, auditable enterprise data.

@@ -42,7 +42,7 @@ export function Navbar() {
           }`}
         >
           <Link href="/" className="group flex shrink-0 items-center" aria-label="QBricks home">
-            <Logo className="h-[21px] transition-transform group-hover:scale-[1.03] sm:h-[25px]" />
+            <Logo height={22} className="transition-transform group-hover:scale-[1.03]" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
