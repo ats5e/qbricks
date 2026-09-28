@@ -36,7 +36,7 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/5 bg-[#040404] pt-20 pb-10">
+    <footer className="relative overflow-hidden border-t border-black/5 bg-[#fbfbfb] pt-20 pb-10">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-q-brand/70 to-transparent" />
       <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-q-brand/[0.08] blur-[100px]" />
 
@@ -54,11 +54,11 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-3">
             {columns.map((column) => (
               <div key={column.title}>
-                <h4 className="mb-5 font-black text-white">{column.title}</h4>
-                <ul className="space-y-3 text-sm text-q-gray-400">
+                <h4 className="mb-5 font-black text-q-ink">{column.title}</h4>
+                <ul className="space-y-3 text-sm text-q-gray-600">
                   {column.links.map(([label, href]) => (
                     <li key={label}>
-                      <Link href={href} className="transition-colors hover:text-white">
+                      <Link href={href} className="transition-colors hover:text-q-ink">
                         {label === "Why QBricks" ? (
                           <>
                             Why <QBricksText />
@@ -75,16 +75,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
-          <p className="text-xs text-q-gray-600">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-black/5 pt-8 md:flex-row">
+          <p className="text-xs text-q-gray-400">
             &copy; {new Date().getFullYear()}{" "}
-            <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+            <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-q-ink">
               Infinium Consulting B.V.
             </a>
             . All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-q-gray-600">
-            <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+          <div className="flex items-center gap-4 text-xs text-q-gray-400">
+            <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-q-ink">
               A product of Infinium Technology ↗
             </a>
             <span>qbricks.ai</span>

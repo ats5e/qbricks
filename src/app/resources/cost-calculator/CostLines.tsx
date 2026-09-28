@@ -50,8 +50,8 @@ export default function CostLines() {
           key={line.id}
           className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
             expandedId === line.id 
-              ? "border-white/20 bg-white/[0.05]" 
-              : "border-white/5 bg-white/[0.02] hover:bg-white/[0.04]"
+              ? "border-black/20 bg-black/[0.05]" 
+              : "border-black/5 bg-black/[0.02] hover:bg-black/[0.04]"
           }`}
         >
           <button
@@ -60,10 +60,10 @@ export default function CostLines() {
           >
             <div className="flex items-center gap-4">
               <span className="text-sm font-bold text-q-gray-500">{line.id}</span>
-              <h3 className="text-xl font-bold text-white md:text-2xl">{line.title}</h3>
+              <h3 className="text-xl font-bold text-q-ink md:text-2xl">{line.title}</h3>
             </div>
             <ChevronDown 
-              className={`h-5 w-5 shrink-0 text-q-gray-400 transition-transform duration-300 ${
+              className={`h-5 w-5 shrink-0 text-q-gray-600 transition-transform duration-300 ${
                 expandedId === line.id ? "rotate-180" : ""
               }`} 
             />
@@ -77,29 +77,29 @@ export default function CostLines() {
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                <div className="border-t border-white/5 p-6 pt-2">
+                <div className="border-t border-black/5 p-6 pt-2">
                   <div className="grid gap-8 md:grid-cols-2">
                     {/* Today */}
-                    <div className="space-y-4 rounded-xl bg-black/40 p-5 border border-q-gray-800">
+                    <div className="space-y-4 rounded-xl bg-white/40 p-5 border border-q-gray-200">
                       <div className="flex items-center gap-2 text-q-brand-ember">
                         <AlertCircle className="h-4 w-4" />
                         <h4 className="font-bold">Today, without <QBricksText /></h4>
                       </div>
-                      <p className="text-q-gray-300 leading-relaxed text-sm">
+                      <p className="text-q-gray-700 leading-relaxed text-sm">
                         {line.todayText}
                       </p>
-                      <div className="inline-flex rounded-lg bg-white/5 px-3 py-2 text-xs text-q-gray-400 border border-white/10 font-medium">
-                        Cost driver: <span className="ml-2 text-q-gray-200">{line.todayDriver}</span>
+                      <div className="inline-flex rounded-lg bg-black/5 px-3 py-2 text-xs text-q-gray-600 border border-black/10 font-medium">
+                        Cost driver: <span className="ml-2 text-q-gray-800">{line.todayDriver}</span>
                       </div>
                     </div>
                     
                     {/* With QBricks */}
                     <div className="space-y-4 rounded-xl bg-emerald-400/5 p-5 border border-emerald-400/20">
-                      <div className="flex items-center gap-2 text-emerald-400">
+                      <div className="flex items-center gap-2 text-emerald-600">
                         <CheckCircle2 className="h-4 w-4" />
                         <h4 className="font-bold">With <QBricksText /></h4>
                       </div>
-                      <p className="text-q-gray-300 leading-relaxed text-sm">
+                      <p className="text-q-gray-700 leading-relaxed text-sm">
                         {line.withText}
                       </p>
                     </div>
@@ -107,8 +107,8 @@ export default function CostLines() {
                   
                   {/* Annual Saving */}
                   <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 px-6 py-4">
-                    <span className="font-bold text-emerald-300 uppercase text-xs tracking-wider">Annual saving</span>
-                    <span className="font-bold text-emerald-100 text-sm">{line.savingText}</span>
+                    <span className="font-bold text-emerald-600 uppercase text-xs tracking-wider">Annual saving</span>
+                    <span className="font-bold text-emerald-700 text-sm">{line.savingText}</span>
                   </div>
                 </div>
               </motion.div>

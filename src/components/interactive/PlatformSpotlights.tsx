@@ -26,7 +26,7 @@ const spotlights = [
     href: "/resources/qbricks-databricks",
     scene: AiReadyScene,
     badge: "Q Agent",
-    logo: "/assets/partners/Databricks.png",
+    logo: "/assets/partners/Databricks-dark.png",
     partner: "Databricks",
     bullets: [
       "Governed data products registered straight into Unity Catalog",
@@ -39,7 +39,7 @@ const spotlights = [
     href: "/resources/qbricks-fabric",
     scene: ContractsScene,
     badge: "ODCS",
-    logo: "/assets/partners/Fabric.png",
+    logo: "/assets/partners/Fabric-dark.png",
     partner: "Microsoft Fabric",
     bullets: [
       "Open Delta Parquet landed straight into OneLake",
@@ -65,7 +65,7 @@ const spotlights = [
     href: "/resources/qbricks-quantexa",
     scene: LineageScene,
     badge: "Lineage",
-    logo: "/assets/partners/Quantexa.png",
+    logo: "/assets/partners/Quantexa-dark.png",
     partner: "Quantexa",
     bullets: [
       "Products delivered field-mapped to the Quantexa data model",
@@ -103,8 +103,8 @@ const spotlights = [
 
 export function PlatformSpotlights() {
   return (
-    <section id="platform-spotlights" className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.14),transparent_45%)]" />
+    <section id="platform-spotlights" className="section-y relative overflow-hidden border-t border-black/5 bg-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.077),transparent_45%)]" />
 
       <div className="container-x relative z-10">
         <div className="mx-auto max-w-3xl text-center">
@@ -121,7 +121,7 @@ export function PlatformSpotlights() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75 }}
-            className="h-section font-black tracking-tight text-white"
+            className="h-section font-black tracking-tight text-q-ink"
           >
             Trusted data, wherever it lands.
           </motion.h2>
@@ -130,7 +130,7 @@ export function PlatformSpotlights() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.1 }}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-q-gray-400"
+            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-q-gray-600"
           >
             QBricks sits upstream of Databricks, Microsoft Fabric, Snowflake, Quantexa, Cloudera and Alteryx, delivering contract-enforced data products, in open formats, straight into the platform you already run.
           </motion.p>
@@ -149,29 +149,29 @@ export function PlatformSpotlights() {
               >
                 <Link
                   href={card.href}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-[#141419] to-[#0a0a0d] transition-all duration-500 hover:-translate-y-1.5 hover:border-q-brand/40 hover:shadow-[0_30px_90px_rgba(232,32,15,0.14)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-gradient-to-b from-[#e6e6eb] to-[#f2f2f5] transition-all duration-500 hover:-translate-y-1.5 hover:border-q-brand/40 hover:shadow-[0_30px_90px_rgba(232,32,15,0.14)]"
                 >
                   {/* Imagery */}
                   <div className="relative h-72 flex-none overflow-hidden">
                     <div
                       className="absolute inset-0"
-                      style={{ background: "radial-gradient(360px 280px at 30% 30%, rgba(232,32,15,0.16), transparent 65%)", animation: "cc-breathe 10s ease-in-out infinite" }}
+                      style={{ background: "radial-gradient(360px 280px at 30% 30%, rgba(232,32,15,0.088), transparent 65%)", animation: "cc-breathe 10s ease-in-out infinite" }}
                     />
                     <div className="absolute inset-x-5 bottom-0 top-6 transition-transform duration-700 group-hover:-translate-y-1.5">
                       <Scene badge={card.badge} logo={card.logo} logoAlt={card.partner} />
                     </div>
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-[#0d0d12]" />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-[#ededf2]" />
                   </div>
 
                   {/* Content */}
-                  <div className="relative flex flex-1 flex-col border-t border-white/[0.07] bg-gradient-to-b from-[#0d0d12] to-q-brand/[0.07] p-7">
+                  <div className="relative flex flex-1 flex-col border-t border-black/[0.07] bg-gradient-to-b from-[#ededf2] to-q-brand/[0.07] p-7">
                     <p className="text-xs text-q-gray-500 font-medium">
                       Capability overview · {card.partner}
                     </p>
-                    <h3 className="mt-2 text-2xl font-black tracking-tight text-white">{card.title}</h3>
+                    <h3 className="mt-2 text-2xl font-black tracking-tight text-q-ink">{card.title}</h3>
                     <ul className="mt-5 space-y-3.5">
                       {card.bullets.map((item) => (
-                        <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-q-gray-300">
+                        <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-q-gray-700">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-q-brand-ember" />
                           <span>{item}</span>
                         </li>

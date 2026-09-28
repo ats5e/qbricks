@@ -7,7 +7,7 @@ export const metadata = {
 
 const content: CapabilityContent = {
   partner: "Databricks",
-  partnerLogo: "/assets/partners/Databricks.png",
+  partnerLogo: "/assets/partners/Databricks-dark.png",
   scene: "aiready",
   sceneBadge: "Q Agent",
   eyebrow: "No more data pipelines",

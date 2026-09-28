@@ -68,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakarta.variable} antialiased`}>
-      <body className="relative bg-q-black font-sans text-q-gray-200 selection:bg-q-brand/30 selection:text-white">
+      <body className="relative bg-white font-sans text-q-gray-800 selection:bg-q-brand/30 selection:text-q-ink">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

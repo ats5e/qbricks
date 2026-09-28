@@ -34,16 +34,16 @@ const fadeUp = {
 
 export function ProofBand() {
   return (
-    <section className="relative overflow-hidden border-y border-white/5 bg-q-black py-20 lg:py-24">
+    <section className="relative overflow-hidden border-y border-black/5 bg-white py-20 lg:py-24">
       <div className="container-x relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="text-3xl font-black tracking-tight text-white md:text-4xl">
+            <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="text-3xl font-black tracking-tight text-q-ink md:text-4xl">
               The economics only work when trusted data stops being the most expensive line on the bill.
             </motion.h2>
           </div>
           <motion.div {...fadeUp} transition={{ delay: 0.1 }}>
-            <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-bold text-q-brand-ember transition-colors hover:text-white">
+            <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-bold text-q-brand-ember transition-colors hover:text-q-ink">
               From our white papers <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
@@ -54,10 +54,10 @@ export function ProofBand() {
             <motion.div key={stat.value + stat.source} {...fadeUp} transition={{ duration: 0.6, delay: index * 0.08 }}>
               <Link
                 href={stat.href}
-                className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
+                className="group flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
               >
                 <p className="text-5xl font-black tracking-tight text-q-brand-ember">{stat.value}</p>
-                <p className="mt-4 flex-1 leading-relaxed text-q-gray-300">{stat.label}</p>
+                <p className="mt-4 flex-1 leading-relaxed text-q-gray-700">{stat.label}</p>
                 <p className="mt-5 text-xs text-q-gray-500 transition-colors group-hover:text-q-brand-ember font-medium">
                   White paper · {stat.source}
                 </p>
@@ -77,8 +77,8 @@ export function ProofBand() {
                 <Calculator className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="text-2xl font-black tracking-tight text-white">Where <QBricksText /> takes cost out</h3>
-                <p className="mt-2 max-w-2xl text-q-gray-400">
+                <h3 className="text-2xl font-black tracking-tight text-q-ink">Where <QBricksText /> takes cost out</h3>
+                <p className="mt-2 max-w-2xl text-q-gray-600">
                   Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.
                 </p>
               </div>

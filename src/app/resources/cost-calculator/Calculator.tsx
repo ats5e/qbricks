@@ -87,14 +87,14 @@ export default function Calculator() {
 
   // Render a skeleton if not mounted to prevent hydration mismatch
   if (!mounted) {
-    return <div className="min-h-[800px] animate-pulse rounded-3xl bg-white/[0.02]" />;
+    return <div className="min-h-[800px] animate-pulse rounded-3xl bg-black/[0.02]" />;
   }
 
   return (
     <div>
       <div className="mb-12 max-w-3xl">
-        <h2 className="text-3xl font-black text-white md:text-4xl">Model the savings</h2>
-        <p className="mt-4 text-lg text-q-gray-400">
+        <h2 className="text-3xl font-black text-q-ink md:text-4xl">Model the savings</h2>
+        <p className="mt-4 text-lg text-q-gray-600">
           This is an indicative example model only. Enter your own baseline figures to estimate the gross cost reduction <QBricksText /> can deliver.
         </p>
       </div>
@@ -104,109 +104,109 @@ export default function Calculator() {
         <div className="space-y-12">
           
           {/* 01 */}
-          <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
-            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
+          <div className="rounded-2xl border border-black/5 bg-black/[0.02] p-6 md:p-8">
+            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-q-ink">
               <span className="text-sm text-q-gray-500 font-medium">01</span> Remediation
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   FTE today <span>{fteToday}</span>
                 </label>
                 <input type="range" min="1" max="50" value={fteToday} onChange={e => setFteToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   <span>FTE with <QBricksText /></span> <span>{fteWith}</span>
                 </label>
-                <input type="range" min="0" max="10" value={fteWith} onChange={e => setFteWith(Number(e.target.value))} className="w-full accent-emerald-400" />
+                <input type="range" min="0" max="10" value={fteWith} onChange={e => setFteWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Loaded cost per FTE <span>€{loadedCost.toLocaleString()}</span>
                 </label>
-                <input type="range" min="50000" max="300000" step="5000" value={loadedCost} onChange={e => setLoadedCost(Number(e.target.value))} className="w-full accent-q-gray-400" />
+                <input type="range" min="50000" max="300000" step="5000" value={loadedCost} onChange={e => setLoadedCost(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
             </div>
           </div>
 
           {/* 02 */}
-          <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
-            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
+          <div className="rounded-2xl border border-black/5 bg-black/[0.02] p-6 md:p-8">
+            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-q-ink">
               <span className="text-sm text-q-gray-500 font-medium">02</span> Pipeline build & engineering
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Person-weeks today <span>{weeksToday}</span>
                 </label>
                 <input type="range" min="4" max="100" value={weeksToday} onChange={e => setWeeksToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   <span>Person-weeks with <QBricksText /></span> <span>{weeksWith}</span>
                 </label>
-                <input type="range" min="1" max="20" value={weeksWith} onChange={e => setWeeksWith(Number(e.target.value))} className="w-full accent-emerald-400" />
+                <input type="range" min="1" max="20" value={weeksWith} onChange={e => setWeeksWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Contractor day rate <span>€{dayRate}</span>
                 </label>
-                <input type="range" min="300" max="2000" step="50" value={dayRate} onChange={e => setDayRate(Number(e.target.value))} className="w-full accent-q-gray-400" />
+                <input type="range" min="300" max="2000" step="50" value={dayRate} onChange={e => setDayRate(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Annual maint. avoided <span>€{maintenanceAvoided.toLocaleString()}</span>
                 </label>
-                <input type="range" min="0" max="300000" step="10000" value={maintenanceAvoided} onChange={e => setMaintenanceAvoided(Number(e.target.value))} className="w-full accent-q-gray-400" />
+                <input type="range" min="0" max="300000" step="10000" value={maintenanceAvoided} onChange={e => setMaintenanceAvoided(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
             </div>
           </div>
 
           {/* 03 */}
-          <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
-            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
+          <div className="rounded-2xl border border-black/5 bg-black/[0.02] p-6 md:p-8">
+            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-q-ink">
               <span className="text-sm text-q-gray-500 font-medium">03</span> Build & processing compute
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Runs per year <span>{runs}</span>
                 </label>
-                <input type="range" min="10" max="2000" step="10" value={runs} onChange={e => setRuns(Number(e.target.value))} className="w-full accent-q-gray-400" />
+                <input type="range" min="10" max="2000" step="10" value={runs} onChange={e => setRuns(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Cost per run <span>€{costPerRun}</span>
                 </label>
-                <input type="range" min="100" max="5000" step="50" value={costPerRun} onChange={e => setCostPerRun(Number(e.target.value))} className="w-full accent-q-gray-400" />
+                <input type="range" min="100" max="5000" step="50" value={costPerRun} onChange={e => setCostPerRun(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Share removed by push-down <span>{shareRemoved}%</span>
                 </label>
-                <input type="range" min="0" max="100" value={shareRemoved} onChange={e => setShareRemoved(Number(e.target.value))} className="w-full accent-emerald-400" />
+                <input type="range" min="0" max="100" value={shareRemoved} onChange={e => setShareRemoved(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
             </div>
           </div>
 
           {/* 04 */}
-          <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
-            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-white">
+          <div className="rounded-2xl border border-black/5 bg-black/[0.02] p-6 md:p-8">
+            <h3 className="mb-6 flex items-center gap-3 text-xl font-bold text-q-ink">
               <span className="text-sm text-q-gray-500 font-medium">04</span> Ongoing compute & maintenance
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Run + maintain today <span>€{runMaintainToday.toLocaleString()}</span>
                 </label>
                 <input type="range" min="10000" max="500000" step="5000" value={runMaintainToday} onChange={e => setRunMaintainToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-400">
+                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   <span>With <QBricksText /></span> <span>€{runMaintainWith.toLocaleString()}</span>
                 </label>
-                <input type="range" min="10000" max="250000" step="5000" value={runMaintainWith} onChange={e => setRunMaintainWith(Number(e.target.value))} className="w-full accent-emerald-400" />
+                <input type="range" min="10000" max="250000" step="5000" value={runMaintainWith} onChange={e => setRunMaintainWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
             </div>
           </div>
@@ -215,50 +215,50 @@ export default function Calculator() {
 
         {/* Right Col - Summary Sticky */}
         <div>
-          <div className="sticky top-24 rounded-[2rem] border border-white/10 bg-q-gray-900 p-8 shadow-2xl">
+          <div className="sticky top-24 rounded-[2rem] border border-black/10 bg-q-gray-100 p-8 shadow-2xl">
             <div className="mb-8 flex items-center gap-3 text-q-brand-ember">
               <CalculatorIcon className="h-6 w-6" />
-              <h3 className="text-xl font-bold text-white">Savings Summary</h3>
+              <h3 className="text-xl font-bold text-q-ink">Savings Summary</h3>
             </div>
             
             <div className="space-y-6">
               <div>
-                <p className="mb-1 text-sm text-q-gray-400">01 Remediation</p>
-                <p className="text-2xl font-bold text-emerald-400"><Counter value={savingRemediation} /></p>
+                <p className="mb-1 text-sm text-q-gray-600">01 Remediation</p>
+                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingRemediation} /></p>
               </div>
               
-              <div className="border-t border-white/10 pt-4">
-                <p className="mb-1 text-sm text-q-gray-400">02 Pipeline annual maint. avoided</p>
-                <p className="text-2xl font-bold text-emerald-400"><Counter value={savingPipelineAnnual} /></p>
+              <div className="border-t border-black/10 pt-4">
+                <p className="mb-1 text-sm text-q-gray-600">02 Pipeline annual maint. avoided</p>
+                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingPipelineAnnual} /></p>
                 
-                <div className="mt-3 rounded-xl bg-white/5 p-3 text-sm">
-                  <p className="text-q-gray-400">Plus one-off build saving:</p>
-                  <p className="font-bold text-white"><Counter value={savingPipelineOneOff} /></p>
+                <div className="mt-3 rounded-xl bg-black/5 p-3 text-sm">
+                  <p className="text-q-gray-600">Plus one-off build saving:</p>
+                  <p className="font-bold text-q-ink"><Counter value={savingPipelineOneOff} /></p>
                 </div>
               </div>
               
-              <div className="border-t border-white/10 pt-4">
-                <p className="mb-1 text-sm text-q-gray-400">03 Processing compute</p>
-                <p className="text-2xl font-bold text-emerald-400"><Counter value={savingCompute} /></p>
+              <div className="border-t border-black/10 pt-4">
+                <p className="mb-1 text-sm text-q-gray-600">03 Processing compute</p>
+                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingCompute} /></p>
               </div>
               
-              <div className="border-t border-white/10 pt-4">
-                <p className="mb-1 text-sm text-q-gray-400">04 Ongoing compute & maintain</p>
-                <p className="text-2xl font-bold text-emerald-400"><Counter value={savingOngoing} /></p>
+              <div className="border-t border-black/10 pt-4">
+                <p className="mb-1 text-sm text-q-gray-600">04 Ongoing compute & maintain</p>
+                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingOngoing} /></p>
               </div>
               
               <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-6 pt-5 mt-8">
                 <p className="text-sm font-bold uppercase tracking-wider text-emerald-500 mb-1">Total Annual Saving</p>
-                <p className="text-4xl font-black text-emerald-300">
+                <p className="text-4xl font-black text-emerald-600">
                   <Counter value={totalAnnualSaving} isMillion={true} />
                 </p>
               </div>
               
               <div className="flex items-start gap-3 text-xs text-q-gray-500 mt-6">
-                <Info className="h-5 w-5 shrink-0 mt-0.5 text-q-gray-400" />
+                <Info className="h-5 w-5 shrink-0 mt-0.5 text-q-gray-600" />
                 <div>
                   <div className="mb-2">
-                    <p className="mb-1"><strong className="text-q-gray-300">Savings shown are gross.</strong></p>
+                    <p className="mb-1"><strong className="text-q-gray-700">Savings shown are gross.</strong></p>
                     <p>Gains are subject to a gain share model.</p>
                   </div>
                   <p>These numbers are indicative and illustrative only. Actual results may vary depending on a client&apos;s individual environment.</p>
@@ -270,10 +270,10 @@ export default function Calculator() {
       </div>
 
       {/* Summary Band + CTA */}
-      <div className="mt-24 rounded-3xl border border-white/10 bg-white/[0.02] p-12 text-center">
-        <h2 className="mb-6 text-3xl font-black text-white md:text-5xl">Four cost lines, one engine</h2>
-        <p className="mx-auto mb-10 max-w-2xl text-xl text-q-gray-300">
-          Reclaim <span className="font-bold text-emerald-400"><Counter value={totalAnnualSaving} isMillion={true} /></span> across your data estate.
+      <div className="mt-24 rounded-3xl border border-black/10 bg-black/[0.02] p-12 text-center">
+        <h2 className="mb-6 text-3xl font-black text-q-ink md:text-5xl">Four cost lines, one engine</h2>
+        <p className="mx-auto mb-10 max-w-2xl text-xl text-q-gray-700">
+          Reclaim <span className="font-bold text-emerald-600"><Counter value={totalAnnualSaving} isMillion={true} /></span> across your data estate.
         </p>
         
         <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">

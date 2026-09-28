@@ -29,7 +29,7 @@ const valueCards = [
 
 export function Metrics() {
   return (
-    <section id="the-problem" className="section-y relative bg-q-black">
+    <section id="the-problem" className="section-y relative bg-white">
       <div className="container-x relative z-10">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <div>
@@ -38,7 +38,7 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75 }}
-            className="h-section font-black tracking-tight text-white"
+            className="h-section font-black tracking-tight text-q-ink"
           >
             Everyone is racing to deploy A.I. The issue? The underlying data is not ready.
           </motion.h2>
@@ -49,16 +49,16 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.1 }}
-            className="text-xl leading-relaxed text-q-gray-300"
+            className="text-xl leading-relaxed text-q-gray-700"
           >
-            A 2025 MIT report found that around <strong className="font-black text-white">95% of A.I.-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
+            A 2025 MIT report found that around <strong className="font-black text-q-ink">95% of A.I.-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.15 }}
-            className="mt-5 text-lg leading-relaxed text-q-gray-400"
+            className="mt-5 text-lg leading-relaxed text-q-gray-600"
           >
             To date, the answer to the data quality issue has been to throw money at the problem. Money for data remediation, for data engineers, for data management platforms, for pipeline building and on-going pipeline management, all underpinned by cloud and compute costs.
           </motion.p>
@@ -67,7 +67,7 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.2 }}
-            className="mt-5 text-lg leading-relaxed text-q-gray-400"
+            className="mt-5 text-lg leading-relaxed text-q-gray-600"
           >
             Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting A.I. Industry is stuck and value from AI is under scrutiny.
           </motion.p>
@@ -76,7 +76,7 @@ export function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.75, delay: 0.25 }}
-            className="mt-6 text-xl font-black leading-relaxed text-white"
+            className="mt-6 text-xl font-black leading-relaxed text-q-ink"
           >
             A different approach is needed. <QBricksText />.
           </motion.p>
@@ -90,20 +90,20 @@ export function Metrics() {
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="premium-card border-red-400/20 bg-[#140d0e] p-6 md:p-8"
+            className="premium-card border-red-400/20 bg-[#f2ebec] p-6 md:p-8"
           >
             <div className="mb-7 flex items-center gap-3">
-              <div className="rounded-2xl border border-red-400/20 bg-red-500/10 p-3 text-red-300">
+              <div className="rounded-2xl border border-red-400/20 bg-red-500/10 p-3 text-red-600">
                 <AlertTriangle className="h-6 w-6" />
               </div>
               <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-q-gray-500">Without <QBricksText /></p>
-                <h3 className="text-2xl font-black text-white">Data Management Solutions</h3>
+                <h3 className="text-2xl font-black text-q-ink">Data Management Solutions</h3>
               </div>
             </div>
             <ul className="space-y-4">
               {before.map((item) => (
-                <li key={item} className="flex items-start gap-3 border-b border-white/5 pb-4 text-q-gray-300 last:border-b-0 last:pb-0">
+                <li key={item} className="flex items-start gap-3 border-b border-black/5 pb-4 text-q-gray-700 last:border-b-0 last:pb-0">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-400/85" />
                   <span>{item}</span>
                 </li>
@@ -118,7 +118,7 @@ export function Metrics() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-q-brand/85 bg-[#17171d] text-q-brand-ember"
+                className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-q-brand/85 bg-[#e2e2e8] text-q-brand-ember"
               >
                 <QIcon className="h-6 w-6" />
               </motion.div>
@@ -129,22 +129,22 @@ export function Metrics() {
             initial={{ opacity: 0, x: 28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="premium-card border-emerald-400/25 bg-[#0c1210] p-6 md:p-8"
+            className="premium-card border-emerald-400/25 bg-[#edf3f1] p-6 md:p-8"
           >
             <div className="relative mb-7 flex items-center gap-3">
               <div
-                className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-3 text-emerald-300"
+                className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-3 text-emerald-600"
               >
                 <Layers3 className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80">With <QBricksText /></p>
-                <h3 className="text-2xl font-black text-white">Governed foundation</h3>
+                <p className="text-sm uppercase tracking-[0.2em] text-emerald-600/80">With <QBricksText /></p>
+                <h3 className="text-2xl font-black text-q-ink">Governed foundation</h3>
               </div>
             </div>
             <ul className="relative space-y-4">
               {after.map((item, index) => (
-                <li key={item} className="flex items-start gap-3 border-b border-white/5 pb-4 text-white last:border-b-0 last:pb-0">
+                <li key={item} className="flex items-start gap-3 border-b border-black/5 pb-4 text-q-ink last:border-b-0 last:pb-0">
                   <motion.span
                     initial={{ opacity: 0, scale: 0.2 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -152,7 +152,7 @@ export function Metrics() {
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.16, ease: [0.22, 1, 0.36, 1] }}
                     className="shrink-0"
                   >
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" />
                   </motion.span>
                   <span>{item}</span>
                 </li>
@@ -171,11 +171,11 @@ export function Metrics() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
+                className="rounded-3xl border border-black/10 bg-black/[0.03] p-6"
               >
                 <Icon className="mb-5 h-7 w-7 text-q-brand-ember" />
-                <h4 className="text-xl font-black text-white">{card.title}</h4>
-                <p className="mt-3 leading-relaxed text-q-gray-400">{card.text}</p>
+                <h4 className="text-xl font-black text-q-ink">{card.title}</h4>
+                <p className="mt-3 leading-relaxed text-q-gray-600">{card.text}</p>
               </motion.div>
             );
           })}

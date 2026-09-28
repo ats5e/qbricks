@@ -28,20 +28,20 @@ const constructs = [
 
 export default function ProductPage() {
   return (
-    <main className="min-h-screen bg-q-black">
-      <section className="relative overflow-hidden border-b border-white/5 pt-44 pb-28">
+    <main className="min-h-screen bg-white">
+      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-28">
         <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bricks-3.png" alt="" fill priority className="object-cover object-top opacity-35 mix-blend-screen" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.5),#000_88%)]" />
+          <Image src="/assets/bricks-3.png" alt="" fill priority className="object-cover object-top opacity-35 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.121),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.5),#fff_88%)]" />
         </div>
 
         <div className="container-x relative z-10">
           <div className="mx-auto max-w-5xl text-center">
             <p className="eyebrow mb-6">The platform</p>
-            <h1 className="h-display font-black tracking-tight text-white">
+            <h1 className="h-display font-black tracking-tight text-q-ink">
               The platform that governs data at the source.
             </h1>
-            <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-300">
+            <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-700">
               <QBricksText /> brings high-performance SQL execution and data management into one platform. The EOS engine avoids unnecessary work so difficult queries finish sooner; local compute gets more useful analytics from your infrastructure; and the Open Data Contract Standard is enforced on every record, with agentic metadata management and full lineage, so you can govern the data behind every answer. Works with Databricks, Microsoft Fabric, Snowflake or your own on-premise database via SQL push-down, delivered in open formats that stay fully portable.
             </p>
             <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
@@ -51,11 +51,11 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="border-b border-white/5 bg-q-black pb-10 pt-20 lg:pb-12 lg:pt-32">
+      <section className="border-b border-black/5 bg-white pb-10 pt-20 lg:pb-12 lg:pt-32">
         <div className="container-x">
           <div className="mx-auto mb-12 max-w-6xl text-center">
             <p className="eyebrow mb-4">How it works</p>
-            <h2 className="h-section font-black tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-q-ink">
               <span className="lg:whitespace-nowrap">Five steps from</span>
               <br className="hidden lg:block" />
               <span className="lg:whitespace-nowrap"> contract to audit trail.</span>
@@ -65,24 +65,24 @@ export default function ProductPage() {
             {flow.map(([title, text], index) => (
               <div key={title} className="premium-card p-5">
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-q-brand/25 bg-q-brand/[0.12] text-lg font-black text-q-brand-ember">{index + 1}</div>
-                <h3 className="text-xl font-black text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-q-gray-400">{text}</p>
+                <h3 className="text-xl font-black text-q-ink">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-q-black pb-20 pt-10 lg:pb-32 lg:pt-12">
+      <section className="bg-white pb-20 pt-10 lg:pb-32 lg:pt-12">
         <div className="container-x">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {constructs.map((construct) => {
               const Icon = construct.icon;
               return (
-                <div key={construct.title} className="rounded-3xl border border-white/10 bg-white/[0.035] p-6">
+                <div key={construct.title} className="rounded-3xl border border-black/10 bg-black/[0.035] p-6">
                   <Icon className="mb-5 h-7 w-7 text-q-brand-ember" />
-                  <h3 className="text-xl font-black text-white">{construct.title}</h3>
-                  <p className="mt-3 leading-relaxed text-q-gray-400">{construct.text}</p>
+                  <h3 className="text-xl font-black text-q-ink">{construct.title}</h3>
+                  <p className="mt-3 leading-relaxed text-q-gray-600">{construct.text}</p>
                 </div>
               );
             })}
@@ -90,19 +90,19 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/5 bg-q-black py-20 lg:py-28">
+      <section className="border-y border-black/5 bg-white py-20 lg:py-28">
         <div className="container-x space-y-20">
           <div>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
               <div>
                 <p className="eyebrow mb-3">Workload routing</p>
-                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-white">Data lands in the lakehouse. <QBricksText /> runs the workload.</h2>
+                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-q-ink">Data lands in the lakehouse. <QBricksText /> runs the workload.</h2>
               </div>
-              <p className="leading-relaxed text-q-gray-300 lg:pt-1">
+              <p className="leading-relaxed text-q-gray-700 lg:pt-1">
                 Your lakehouse stays the governed landing zone. <QBricksText /> routes each workload to the EOS engine on one right-sized node, then returns governed data products to the landing zone for downstream consumption and to data scientists through the Python SDK.
               </p>
             </div>
-            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_40px_120px_rgba(0,0,0,0.55)] sm:p-3">
+            <div className="mt-8 rounded-[1.6rem] border border-black/10 bg-black/[0.02] p-2 shadow-[0_40px_120px_rgba(0,0,0,0.165)] sm:p-3">
               <RoutingGraphic />
             </div>
           </div>
@@ -110,13 +110,13 @@ export default function ProductPage() {
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
               <div>
                 <p className="eyebrow mb-3">Database to lakehouse migration</p>
-                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-white">Tables become contract-enforced data products on the way across.</h2>
+                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-q-ink">Tables become contract-enforced data products on the way across.</h2>
               </div>
-              <p className="leading-relaxed text-q-gray-300 lg:pt-1">
+              <p className="leading-relaxed text-q-gray-700 lg:pt-1">
                 Profile and ingest incrementally, generate the Open Data Contract Standard contract, validate with a human in the loop and publish in open formats. A migration that once took 12 to 18 months becomes a matter of hours to days.
               </p>
             </div>
-            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_40px_120px_rgba(0,0,0,0.55)] sm:p-3">
+            <div className="mt-8 rounded-[1.6rem] border border-black/10 bg-black/[0.02] p-2 shadow-[0_40px_120px_rgba(0,0,0,0.165)] sm:p-3">
               <MigrationGraphic />
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function ProductPage() {
       <FeaturesBento />
       <Agentic />
 
-      <section className="section-y bg-q-black text-center pb-32">
+      <section className="section-y bg-white text-center pb-32">
         <div className="container-x relative z-10">
           <Link href="/solutions" className="group inline-flex items-center justify-center gap-3 rounded-full bg-q-brand px-10 py-5 text-lg font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember hover:shadow-[0_0_40px_rgba(232,32,15,0.3)]">
             Explore use cases

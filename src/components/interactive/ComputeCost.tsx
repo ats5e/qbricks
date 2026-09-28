@@ -5,14 +5,14 @@ import { QBricksText } from "@/components/ui/QBricksText";
 
 export function ComputeCost() {
   return (
-    <section className="section-y relative overflow-hidden bg-q-black">
+    <section className="section-y relative overflow-hidden bg-white">
       <div className="container-x relative z-10">
         <div className="max-w-3xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="h-section font-black tracking-tight text-white"
+            className="h-section font-black tracking-tight text-q-ink"
           >
             Say goodbye to <br />
             <span className="text-q-brand">cloud compute.</span>
@@ -22,7 +22,7 @@ export function ComputeCost() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
-            className="mt-6 text-lg leading-relaxed text-q-gray-300 md:text-xl"
+            className="mt-6 text-lg leading-relaxed text-q-gray-700 md:text-xl"
           >
             Cloud data platforms meter every cluster, credit and capacity unit, billing for your compute usage whether queries are running or not. <QBricksText /> leverages the local compute you already own, delivering blazing fast compute speed with very low cloud overhead. Minimal cloud compute. Major AI acceleration.
           </motion.p>

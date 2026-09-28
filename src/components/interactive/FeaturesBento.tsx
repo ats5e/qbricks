@@ -58,13 +58,13 @@ function CapabilityCard({ capability, index }: { capability: (typeof capabilitie
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-q-brand/[0.08] blur-[70px] transition-opacity group-hover:opacity-100" />
       <div className="relative">
         <div className="mb-6 flex items-center justify-between gap-4">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-3 text-q-brand-ember">
+          <div className="rounded-2xl border border-black/10 bg-black/[0.055] p-3 text-q-brand-ember">
             <Icon className="h-6 w-6" />
           </div>
-          <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-bold text-q-gray-300">{capability.highlight}</span>
+          <span className="rounded-full border border-black/10 bg-black/[0.04] px-3 py-1 text-xs font-bold text-q-gray-700">{capability.highlight}</span>
         </div>
-        <h3 className="text-2xl font-black tracking-tight text-white">{capability.title}</h3>
-        <p className="mt-4 leading-relaxed text-q-gray-400">{capability.text}</p>
+        <h3 className="text-2xl font-black tracking-tight text-q-ink">{capability.title}</h3>
+        <p className="mt-4 leading-relaxed text-q-gray-600">{capability.text}</p>
       </div>
     </motion.div>
   );
@@ -72,19 +72,19 @@ function CapabilityCard({ capability, index }: { capability: (typeof capabilitie
 
 export function FeaturesBento() {
   return (
-    <section id="features" className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
+    <section id="features" className="section-y relative overflow-hidden border-t border-black/5 bg-white">
       <div className="absolute inset-0 -z-0">
-        <Image src="/assets/bg-cubes-wall.png" alt="" fill className="object-cover object-center opacity-30 mix-blend-screen" sizes="100vw" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(232,32,15,0.18),transparent_28%),linear-gradient(to_bottom,#000_0%,rgba(0,0,0,0.84)_42%,#000_100%)]" />
+        <Image src="/assets/bg-cubes-wall.png" alt="" fill className="object-cover object-center opacity-30 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(232,32,15,0.099),transparent_28%),linear-gradient(to_bottom,#fff_0%,rgba(255,255,255,0.84)_42%,#fff_100%)]" />
       </div>
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <p className="eyebrow mb-5">What <QBricksText /> is</p>
-          <h2 className="h-section font-black tracking-tight text-white">
+          <h2 className="h-section font-black tracking-tight text-q-ink">
             A governed, secure Data Platform for your organisation.
           </h2>
-          <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
+          <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700">
             <QBricksText /> is a streaming data-management platform that enforces governance at the point of ingestion, so the data landing in your lakehouse or database is already trusted, governed and A.I. ready.
           </p>
         </div>

@@ -6,7 +6,7 @@
   *,
   ::before,
   ::after {
-    border-color: #27272a;
+    border-color: #d5d5d8;
   }
 
   html {
@@ -14,8 +14,8 @@
   }
 
   body {
-    background-color: #000000;
-    color: #e4e4e7;
+    background-color: #ffffff;
+    color: #18181b;
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-x: hidden;
@@ -37,7 +37,7 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to bottom, #ffffff 0%, #a1a1aa 100%);
+    background-image: linear-gradient(to bottom, #000000 0%, #55555e 100%);
   }
 
   .text-brand-gradient {
@@ -47,13 +47,13 @@
 
   /* Type scale: one display size for page titles, one for section headings. */
   .h-display {
-    @apply font-black tracking-tight text-white;
+    @apply font-black tracking-tight text-q-ink;
     font-size: clamp(2.6rem, 5.2vw, 4.75rem);
     line-height: 0.98;
   }
 
   .h-section {
-    @apply font-black tracking-tight text-white;
+    @apply font-black tracking-tight text-q-ink;
     font-size: clamp(2rem, 3.4vw, 3.25rem);
     line-height: 1.04;
   }
@@ -63,20 +63,20 @@
   }
 
   .glass-panel {
-    @apply relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] backdrop-blur-2xl transition-all duration-500 hover:border-white/20 hover:bg-white/[0.07];
+    @apply relative overflow-hidden rounded-3xl border border-black/10 bg-black/[0.045] backdrop-blur-2xl transition-all duration-500 hover:border-black/20 hover:bg-black/[0.07];
   }
 
   .glass-panel-premium {
-    @apply relative overflow-hidden rounded-3xl border border-white/[0.1] bg-white/[0.035] backdrop-blur-3xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_24px_80px_rgba(0,0,0,0.55)] transition-all duration-500 hover:border-white/[0.18] hover:bg-white/[0.055];
+    @apply relative overflow-hidden rounded-3xl border border-black/[0.1] bg-black/[0.035] backdrop-blur-3xl shadow-[inset_0_1px_0_0_rgba(0,0,0,0.12),0_24px_80px_rgba(0,0,0,0.165)] transition-all duration-500 hover:border-black/[0.18] hover:bg-black/[0.055];
   }
 
   .premium-card {
-    @apply relative overflow-hidden rounded-3xl border border-white/[0.09] bg-white/[0.03];
+    @apply relative overflow-hidden rounded-3xl border border-black/[0.09] bg-black/[0.03];
   }
 
   .gradient-border-wrapper {
     @apply relative overflow-hidden rounded-3xl p-[1px] transition-all duration-500 hover:-translate-y-1;
-    background: linear-gradient(135deg, rgba(255, 58, 38, 0.52), rgba(255, 255, 255, 0.1) 42%, transparent 76%);
+    background: linear-gradient(135deg, rgba(255,58,38,0.286), rgba(0,0,0,0.1) 42%, transparent 76%);
   }
 
   .gradient-border-content {
@@ -86,14 +86,14 @@
 
 .bg-grid-pattern {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,0,0,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.035) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black, transparent 82%);
 }
 
 .bg-dot-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0,0,0,0.12) 1px, transparent 1px);
   background-size: 24px 24px;
   mask-image: radial-gradient(ellipse at center, black, transparent 72%);
 }
@@ -165,10 +165,10 @@
 
 @keyframes journey-core-pulse {
   0%, 100% {
-    box-shadow: 0 0 34px rgba(232, 32, 15, 0.08), 12px 12px 0 rgba(232, 32, 15, 0.055);
+    box-shadow: 0 0 34px rgba(232,32,15,0.08), 12px 12px 0 rgba(232,32,15,0.055);
   }
   50% {
-    box-shadow: 0 0 90px rgba(232, 32, 15, 0.24), 12px 12px 0 rgba(232, 32, 15, 0.08);
+    box-shadow: 0 0 90px rgba(232,32,15,0.24), 12px 12px 0 rgba(232,32,15,0.08);
   }
 }
 
@@ -190,7 +190,7 @@
   animation: journey-energy-vertical 1.6s linear infinite;
   background: #ff3a26;
   border-radius: 999px;
-  box-shadow: 0 0 18px rgba(255, 58, 38, 0.95);
+  box-shadow: 0 0 18px rgba(255,58,38,0.95);
   content: "";
   height: 10px;
   left: 50%;
@@ -204,7 +204,7 @@
 }
 
 #data-journey-qbricks div[class*="lg:grid-cols"] > div:nth-child(7) div[class*="rounded-2xl"] {
-  background-image: linear-gradient(105deg, transparent 20%, rgba(255, 58, 38, 0.13) 42%, transparent 64%);
+  background-image: linear-gradient(105deg, transparent 20%, rgba(255,58,38,0.0715) 42%, transparent 64%);
   background-position: 180% 0;
   background-size: 220% 100%;
   animation:
@@ -276,13 +276,13 @@
 }
 
 @keyframes cc-hub-pulse {
-  0%, 100% { box-shadow: 0 0 34px rgba(232, 32, 15, 0.35); }
-  50% { box-shadow: 0 0 72px rgba(232, 32, 15, 0.7); }
+  0%, 100% { box-shadow: 0 0 34px rgba(232,32,15,0.35); }
+  50% { box-shadow: 0 0 72px rgba(232,32,15,0.7); }
 }
 
 @keyframes cc-green-glow {
-  0%, 100% { box-shadow: 0 0 16px rgba(34, 160, 107, 0.3); }
-  50% { box-shadow: 0 0 38px rgba(34, 160, 107, 0.65); }
+  0%, 100% { box-shadow: 0 0 16px rgba(34,160,107,0.3); }
+  50% { box-shadow: 0 0 38px rgba(34,160,107,0.65); }
 }
 
 @keyframes cc-blink {
@@ -347,7 +347,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  outline: 2px solid rgba(255, 58, 38, 0.85);
+  outline: 2px solid rgba(255,58,38,0.85);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -370,23 +370,23 @@ summary:focus-visible {
 
 /* Flow graphics (migration / pipeline / routing boards) */
 @keyframes qb-row {
-  0%, 100% { stroke: rgba(255, 255, 255, 0.12); }
-  50% { stroke: rgba(255, 58, 38, 0.75); }
+  0%, 100% { stroke: rgba(0,0,0,0.12); }
+  50% { stroke: rgba(255,58,38,0.75); }
 }
 
 @keyframes qb-stage {
-  0%, 100% { stroke: rgba(255, 255, 255, 0.12); }
-  50% { stroke: rgba(255, 58, 38, 0.7); }
+  0%, 100% { stroke: rgba(0,0,0,0.12); }
+  50% { stroke: rgba(255,58,38,0.7); }
 }
 
 @keyframes qb-step {
-  0%, 100% { fill: rgba(255, 255, 255, 0.06); }
-  50% { fill: rgba(232, 32, 15, 0.85); }
+  0%, 100% { fill: rgba(0,0,0,0.06); }
+  50% { fill: rgba(232,32,15,0.85); }
 }
 
 @keyframes qb-chip {
-  0%, 100% { fill: rgba(255, 255, 255, 0.03); stroke: rgba(255, 255, 255, 0.12); }
-  50% { fill: rgba(232, 32, 15, 0.9); stroke: rgba(232, 32, 15, 0.9); }
+  0%, 100% { fill: rgba(0,0,0,0.03); stroke: rgba(0,0,0,0.12); }
+  50% { fill: rgba(232,32,15,0.9); stroke: rgba(232,32,15,0.9); }
 }
 
 @keyframes qb-land {
@@ -395,8 +395,8 @@ summary:focus-visible {
 }
 
 @keyframes qb-pulse {
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 58, 38, 0)); }
-  50% { filter: drop-shadow(0 0 18px rgba(255, 58, 38, 0.6)); }
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255,58,38,0)); }
+  50% { filter: drop-shadow(0 0 18px rgba(255,58,38,0.6)); }
 }
 
 @keyframes qb-tick {

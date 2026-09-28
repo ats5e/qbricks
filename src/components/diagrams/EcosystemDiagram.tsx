@@ -75,7 +75,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
   }, []);
 
   return (
-    <section id="architecture" className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
+    <section id="architecture" className="section-y relative overflow-hidden border-y border-black/5 bg-white">
       <div className="absolute left-1/2 top-1/2 h-[760px] w-[980px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember/[0.07] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
@@ -119,7 +119,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
                 {emphasis && (
                   <div
                     className="pointer-events-none absolute -inset-4 rounded-3xl"
-                    style={{ background: "radial-gradient(320px 460px at 50% 50%, rgba(232,32,15,0.12), transparent 75%)", animation: "cc-breathe 8s ease-in-out infinite" }}
+                    style={{ background: "radial-gradient(320px 460px at 50% 50%, rgba(232,32,15,0.066), transparent 75%)", animation: "cc-breathe 8s ease-in-out infinite" }}
                   />
                 )}
                 <ColumnLabel className={emphasis ? "text-q-brand-ember/80" : ""}>Consumption lanes</ColumnLabel>
@@ -150,7 +150,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
                 {emphasis && (
                   <div
                     className="pointer-events-none absolute -inset-4 rounded-3xl"
-                    style={{ background: "radial-gradient(260px 380px at 50% 50%, rgba(232,32,15,0.14), transparent 75%)", animation: "cc-breathe 8s ease-in-out 1.5s infinite" }}
+                    style={{ background: "radial-gradient(260px 380px at 50% 50%, rgba(232,32,15,0.077), transparent 75%)", animation: "cc-breathe 8s ease-in-out 1.5s infinite" }}
                   />
                 )}
                 <ColumnLabel className={emphasis ? "text-q-brand-ember/80" : ""}>AI use cases</ColumnLabel>
@@ -171,7 +171,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
           </FlowCanvas>
         </div>
 
-        <p className="mx-auto mt-14 max-w-4xl text-center text-[clamp(1.4rem,2.6vw,2.1rem)] font-black leading-snug tracking-tight text-white">
+        <p className="mx-auto mt-14 max-w-4xl text-center text-[clamp(1.4rem,2.6vw,2.1rem)] font-black leading-snug tracking-tight text-q-ink">
           “<QBricksText /> streams governed, contract-enforced data forward, every use case inherits the same{" "}
           <span className="text-q-brand-ember">trusted foundation</span>.”
         </p>

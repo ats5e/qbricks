@@ -167,24 +167,24 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
   return (
     <section
       id={`data-journey-${variant}`}
-      className={`relative overflow-hidden border-y border-white/5 ${
-        isQBricks ? "bg-[#030303]" : "bg-[#050507]"
+      className={`relative overflow-hidden border-y border-black/5 ${
+        isQBricks ? "bg-[#fcfcfc]" : "bg-[#f8f8fa]"
       }`}
     >
       <div
         className={`absolute inset-0 ${
           isQBricks
-            ? "bg-[radial-gradient(circle_at_48%_54%,rgba(232,32,15,0.13),transparent_28%)]"
-            : "bg-[radial-gradient(circle_at_50%_46%,rgba(255,255,255,0.035),transparent_38%)]"
+            ? "bg-[radial-gradient(circle_at_48%_54%,rgba(232,32,15,0.0715),transparent_28%)]"
+            : "bg-[radial-gradient(circle_at_50%_46%,rgba(0,0,0,0.035),transparent_38%)]"
         }`}
       />
       <div className="container-x relative z-10 py-16 md:py-24">
         <div className="max-w-5xl">
           <p className={`eyebrow mb-5 ${isQBricks ? "" : "text-q-gray-500"}`}>{content.eyebrow}</p>
-          <h2 className="h-section font-black tracking-tight text-white">
+          <h2 className="h-section font-black tracking-tight text-q-ink">
             {content.title}
           </h2>
-          <div className="mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-300 md:text-xl">
+          <div className="mt-6 max-w-3xl text-lg leading-relaxed text-q-gray-700 md:text-xl">
             {content.description}
           </div>
         </div>
@@ -247,25 +247,25 @@ function DiagramNode({
         active
           ? "border-q-brand/45 bg-q-brand/[0.055]"
           : muted
-            ? "border-white/[0.065] bg-white/[0.018] opacity-45"
-            : "border-white/10 bg-white/[0.035]"
+            ? "border-black/[0.065] bg-black/[0.018] opacity-45"
+            : "border-black/10 bg-black/[0.035]"
       }`}
     >
       <div
         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${
           active
             ? "border-q-brand/50 bg-q-brand/[0.12] text-q-brand-ember"
-            : "border-white/10 bg-white/[0.04] text-q-gray-300"
+            : "border-black/10 bg-black/[0.04] text-q-gray-700"
         }`}
       >
         <Icon className="h-[18px] w-[18px]" />
       </div>
       <div className="min-w-0">
-        <p className="truncate text-sm font-bold text-white">{item.title}</p>
+        <p className="truncate text-sm font-bold text-q-ink">{item.title}</p>
         {item.subtitle ? (
           <p className="mt-1 truncate text-[11px] text-q-gray-500 font-medium">{item.subtitle}</p>
         ) : muted ? (
-          <p className="mt-1 text-[11px] text-q-gray-600 font-medium">waiting on data</p>
+          <p className="mt-1 text-[11px] text-q-gray-400 font-medium">waiting on data</p>
         ) : null}
       </div>
     </div>
@@ -276,11 +276,11 @@ function Connector({ active = false, label }: { active?: boolean; label?: string
   return (
     <div className="flex flex-col items-center justify-center">
       {label ? (
-        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-ember" : "text-q-gray-600"}`}>
+        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-ember" : "text-q-gray-400"}`}>
           {label}
         </span>
       ) : null}
-      <div className="relative h-12 w-px border-l border-dashed border-white/20 lg:h-px lg:w-full lg:border-l-0 lg:border-t">
+      <div className="relative h-12 w-px border-l border-dashed border-black/20 lg:h-px lg:w-full lg:border-l-0 lg:border-t">
         <span
           className={`absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full ${
             active ? "bg-q-brand-ember shadow-[0_0_14px_rgba(255,58,38,0.9)]" : "bg-q-gray-500"
@@ -300,10 +300,10 @@ function CoreLayer({
 }) {
   return (
     <div
-      className={`relative rounded-[1.7rem] border p-5 shadow-[12px_12px_0_rgba(255,255,255,0.025),20px_20px_0_rgba(255,255,255,0.018)] md:p-6 ${
+      className={`relative rounded-[1.7rem] border p-5 shadow-[12px_12px_0_rgba(0,0,0,0.025),20px_20px_0_rgba(0,0,0,0.018)] md:p-6 ${
         active
-          ? "border-q-brand bg-[#100708] shadow-[0_0_70px_rgba(232,32,15,0.14),12px_12px_0_rgba(232,32,15,0.055)]"
-          : "border-white/15 bg-[#141419]"
+          ? "border-q-brand bg-[#f8eff0] shadow-[0_0_70px_rgba(232,32,15,0.14),12px_12px_0_rgba(232,32,15,0.055)]"
+          : "border-black/15 bg-[#e6e6eb]"
       }`}
     >
       {active ? (
@@ -313,7 +313,7 @@ function CoreLayer({
       ) : (
         <div className="mb-6 flex gap-2">
           {content.layerIcons.map((Icon, index) => (
-            <div key={index} className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.045] text-q-gray-200">
+            <div key={index} className="flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 bg-black/[0.045] text-q-gray-800">
               <Icon className="h-5 w-5" />
             </div>
           ))}
@@ -323,20 +323,20 @@ function CoreLayer({
       <p className={`text-[0.66rem] font-black uppercase tracking-[0.15em] ${active ? "text-q-brand-ember" : "text-q-gray-500"}`}>
         {content.layerLabel}
       </p>
-      <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-white md:text-xl">{content.layerTitle}</h3>
+      <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-q-ink md:text-xl">{content.layerTitle}</h3>
 
-      <div className="my-5 h-px bg-white/10" />
+      <div className="my-5 h-px bg-black/10" />
 
       <div className="space-y-3">
         {content.bullets.map(({ icon: Icon, text }) => (
-          <div key={text} className="flex items-center gap-3 text-sm text-q-gray-300">
+          <div key={text} className="flex items-center gap-3 text-sm text-q-gray-700">
             <Icon className={`h-4 w-4 shrink-0 ${active ? "text-q-brand-ember" : "text-q-brand"}`} />
             <span>{text}</span>
           </div>
         ))}
       </div>
 
-      <div className="mt-5 flex items-center gap-2 text-[11px] text-q-gray-600 font-medium">
+      <div className="mt-5 flex items-center gap-2 text-[11px] text-q-gray-400 font-medium">
         {active ? <Sparkles className="h-3.5 w-3.5 text-q-brand-ember" /> : <CalendarClock className="h-3.5 w-3.5" />}
         {content.timing}
       </div>

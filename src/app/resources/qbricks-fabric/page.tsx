@@ -7,7 +7,7 @@ export const metadata = {
 
 const content: CapabilityContent = {
   partner: "Microsoft Fabric",
-  partnerLogo: "/assets/partners/Fabric.png",
+  partnerLogo: "/assets/partners/Fabric-dark.png",
   scene: "contracts",
   sceneBadge: "ODCS",
   eyebrow: "No more data pipelines",

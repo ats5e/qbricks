@@ -40,7 +40,7 @@ const connectors: FlowConnector[] = [
 
 export function DualFlowDiagram() {
   return (
-    <section id="two-routes" className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
+    <section id="two-routes" className="section-y relative overflow-hidden border-y border-black/5 bg-white">
       <div className="absolute left-1/2 top-1/2 h-[700px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-q-brand-ember/[0.06] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
@@ -90,14 +90,14 @@ export function DualFlowDiagram() {
                   <p className="mb-3 text-center text-xs font-bold text-q-brand-ember">Option 02 · Lands in</p>
                   <div
                     data-flow-id="df-govdb"
-                    className="rounded-3xl border border-q-brand/60 bg-[#100404]/95 p-6 text-center transition-all duration-300 hover:-translate-y-0.5"
+                    className="rounded-3xl border border-q-brand/60 bg-[#fbefef]/95 p-6 text-center transition-all duration-300 hover:-translate-y-0.5"
                     style={{ animation: "cc-hub-pulse 4.6s ease-in-out 1s infinite" }}
                   >
                     <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-q-brand-ember text-white shadow-lg">
                       <Database className="h-7 w-7" />
                     </span>
-                    <p className="mt-4 text-xl font-black leading-tight text-white">Governed database</p>
-                    <p className="mt-1.5 text-sm text-q-gray-400">Structured & unstructured data, unified</p>
+                    <p className="mt-4 text-xl font-black leading-tight text-q-ink">Governed database</p>
+                    <p className="mt-1.5 text-sm text-q-gray-600">Structured & unstructured data, unified</p>
                   </div>
                   <p className="mt-3 text-center text-xs text-q-gray-500 font-medium">land first, then QBricks processes & governs</p>
                 </motion.div>
@@ -111,12 +111,12 @@ export function DualFlowDiagram() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.7, delay: 0.2 }}
-                  className="rounded-3xl border border-q-brand/60 bg-gradient-to-b from-[#160a0a]/95 to-[#0c0709]/95 p-5"
+                  className="rounded-3xl border border-q-brand/60 bg-gradient-to-b from-[#f5e9e9]/95 to-[#f8f3f5]/95 p-5"
                   style={{ animation: "cc-hub-pulse 4.2s ease-in-out infinite" }}
                 >
                   <div className="mb-1 flex items-center justify-center gap-2.5">
                     <QIcon className="h-6 w-6" />
-                    <span className="text-base font-black tracking-tight text-white">Bricks</span>
+                    <span className="text-base font-black tracking-tight text-q-ink">Bricks</span>
                   </div>
                   <p className="mb-4 text-center text-xs text-q-brand-ember font-medium">Processes & governs the data</p>
                   <div className="space-y-1.5">
@@ -126,14 +126,14 @@ export function DualFlowDiagram() {
                         <div
                           key={process.title}
                           className={`flex items-start gap-3.5 rounded-2xl border p-3.5 transition-colors ${
-                            process.highlight ? "border-q-brand/40 bg-q-brand-ember/15" : "border-transparent hover:border-white/10 hover:bg-white/[0.03]"
+                            process.highlight ? "border-q-brand/40 bg-q-brand-ember/15" : "border-transparent hover:border-black/10 hover:bg-black/[0.03]"
                           }`}
                         >
-                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${process.highlight ? "bg-q-brand-ember text-white" : "border border-white/10 bg-white/[0.04] text-q-brand-ember"}`}>
+                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${process.highlight ? "bg-q-brand-ember text-white" : "border border-black/10 bg-black/[0.04] text-q-brand-ember"}`}>
                             <Icon className="h-4 w-4" />
                           </span>
                           <div className="min-w-0">
-                            <p className="text-[15px] font-black leading-tight text-white">{process.title}</p>
+                            <p className="text-[15px] font-black leading-tight text-q-ink">{process.title}</p>
                             <p className={`mt-0.5 text-[12px] leading-snug ${process.highlight ? "text-q-brand-ember/90" : "text-q-gray-500"}`}>{process.text}</p>
                           </div>
                         </div>

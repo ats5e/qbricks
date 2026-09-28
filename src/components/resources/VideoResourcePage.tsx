@@ -22,14 +22,14 @@ export function VideoResourcePage({
   videoTitle,
 }: VideoResourcePageProps) {
   return (
-    <main className="min-h-screen bg-q-black">
-      <section className="relative overflow-hidden border-b border-white/5 pt-40 pb-20 md:pt-44 md:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(232,32,15,0.2),transparent_42%),linear-gradient(to_bottom,rgba(0,0,0,0.15),#000_92%)]" />
+    <main className="min-h-screen bg-white">
+      <section className="relative overflow-hidden border-b border-black/5 pt-40 pb-20 md:pt-44 md:pb-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(232,32,15,0.11),transparent_42%),linear-gradient(to_bottom,rgba(255,255,255,0.15),#fff_92%)]" />
 
         <div className="container-x relative z-10">
           <Link
             href="/resources"
-            className="mb-12 inline-flex items-center gap-2 text-sm font-bold text-q-gray-400 transition-colors hover:text-white"
+            className="mb-12 inline-flex items-center gap-2 text-sm font-bold text-q-gray-600 transition-colors hover:text-q-ink"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Resources
@@ -40,20 +40,20 @@ export function VideoResourcePage({
               <PlayCircle className="h-4 w-4" />
               Video resource
             </p>
-            <h1 className="h-display font-black tracking-tight text-white">
+            <h1 className="h-display font-black tracking-tight text-q-ink">
               {title}
             </h1>
-            <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
+            <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700 md:text-2xl">
               {description}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-y bg-q-black pt-14 md:pt-20">
+      <section className="section-y bg-white pt-14 md:pt-20">
         <div className="container-x">
-          <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.65)] md:p-3">
-            <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-black">
+          <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.195)] md:p-3">
+            <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-white">
               <PosterVideo
                 playerSrc={playerSrc}
                 posterAlt={posterAlt}
@@ -64,7 +64,7 @@ export function VideoResourcePage({
           </div>
 
           <div className="mx-auto mt-16 max-w-3xl text-center">
-            <p className="text-lg leading-relaxed text-q-gray-400">
+            <p className="text-lg leading-relaxed text-q-gray-600">
               Ready to turn governed enterprise data into trusted, A.I.-ready products?
             </p>
             <Link

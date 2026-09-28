@@ -64,18 +64,18 @@ export function UseCases() {
   const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section id="use-cases" ref={containerRef} className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
+    <section id="use-cases" ref={containerRef} className="section-y relative overflow-hidden border-y border-black/5 bg-white">
       <motion.div 
         style={{ y: yBackground }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.08),transparent_50%),linear-gradient(to_bottom,#000,rgba(255,255,255,0.02),#000)]" 
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,32,15,0.044),transparent_50%),linear-gradient(to_bottom,#ffffff,rgba(0,0,0,0.02),#ffffff)]" 
       />
 
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-4xl text-center">
-          <h2 className="h-section font-black tracking-tight text-white">
+          <h2 className="h-section font-black tracking-tight text-q-ink">
             Governed data products to accelerate your organisation&apos;s A.I. journey.
           </h2>
-          <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-300">
+          <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700">
             <QBricksText /> builds A.I. ready data products, fast.
           </p>
         </div>
@@ -90,35 +90,35 @@ export function UseCases() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-all hover:bg-white/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-white/20 ${useCase.colSpan}`}
+                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] p-8 transition-all hover:bg-black/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-black/20 ${useCase.colSpan}`}
               >
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.15),transparent_60%)]" />
+                <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.0825),transparent_60%)]" />
 
                 <div className="mb-8 flex items-center justify-between gap-4">
                   <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-q-brand-ember">
                     {useCase.tag}
                   </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-q-gray-400 transition-colors group-hover:bg-q-brand/20 group-hover:text-q-brand-ember">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black/5 text-q-gray-600 transition-colors group-hover:bg-q-brand/20 group-hover:text-q-brand-ember">
                     <Icon className="h-6 w-6" />
                   </div>
                 </div>
 
-                <h3 className="mb-6 text-2xl font-black leading-tight tracking-tight text-white md:text-3xl">
+                <h3 className="mb-6 text-2xl font-black leading-tight tracking-tight text-q-ink md:text-3xl">
                   {useCase.title}
                 </h3>
 
-                <div className="pt-6 border-t border-white/10 flex-grow flex flex-col">
+                <div className="pt-6 border-t border-black/10 flex-grow flex flex-col">
                   <div className="space-y-5 mb-6">
                     {/* Pain */}
                     <div>
-                      <p className="text-sm leading-relaxed text-q-gray-400">{useCase.pain}</p>
+                      <p className="text-sm leading-relaxed text-q-gray-600">{useCase.pain}</p>
                     </div>
 
                     {/* QBricks Help */}
                     <div>
-                      <p className="text-sm leading-relaxed text-q-gray-200">
-                        <strong className="text-white font-bold">With <QBricksText />:</strong> {useCase.help}
+                      <p className="text-sm leading-relaxed text-q-gray-800">
+                        <strong className="text-q-ink font-bold">With <QBricksText />:</strong> {useCase.help}
                       </p>
                     </div>
                   </div>
@@ -126,8 +126,8 @@ export function UseCases() {
                   {/* Outcome */}
                   <div className="mt-auto">
                     <div className="h-full rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
-                      <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-400/80">The Outcome</span>
-                      <p className="text-sm font-bold leading-relaxed text-emerald-50">{useCase.outcome}</p>
+                      <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-600/80">The Outcome</span>
+                      <p className="text-sm font-bold leading-relaxed text-emerald-700">{useCase.outcome}</p>
                     </div>
                   </div>
                 </div>
@@ -141,9 +141,9 @@ export function UseCases() {
 }
 function StoryBlock({ label, text, tone = "neutral" }: { label: ReactNode; text: string; tone?: "red" | "neutral" }) {
   return (
-    <div className={`border-l-2 pl-6 ${tone === "red" ? "border-red-400/35" : "border-white/20"}`}>
+    <div className={`border-l-2 pl-6 ${tone === "red" ? "border-red-400/35" : "border-black/20"}`}>
       <span className="mb-2 block text-xs font-black uppercase tracking-[0.2em] text-q-gray-500">{label}</span>
-      <p className="text-lg leading-relaxed text-q-gray-300">{text}</p>
+      <p className="text-lg leading-relaxed text-q-gray-700">{text}</p>
     </div>
   );
 }

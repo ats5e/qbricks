@@ -8,7 +8,7 @@ export const metadata = {
 
 const content: CapabilityContent = {
   partner: "Quantexa",
-  partnerLogo: "/assets/partners/Quantexa.png",
+  partnerLogo: "/assets/partners/Quantexa-dark.png",
   scene: "lineage",
   sceneBadge: "Lineage",
   eyebrow: "No more mapping projects",

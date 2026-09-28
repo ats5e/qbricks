@@ -31,8 +31,8 @@ const orbitLabels = ["Data Contracts", "Data Products", "Data Assets", "Governed
 
 export function Agentic() {
   return (
-    <section className="section-y relative overflow-hidden border-y border-white/5 bg-q-black">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(232,32,15,0.16),transparent_34%),radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.06),transparent_24%)]" />
+    <section className="section-y relative overflow-hidden border-y border-black/5 bg-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(232,32,15,0.088),transparent_34%),radial-gradient(circle_at_20%_15%,rgba(0,0,0,0.06),transparent_24%)]" />
 
       <div className="container-x relative z-10">
         <div className="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr]">
@@ -43,10 +43,10 @@ export function Agentic() {
             transition={{ duration: 0.75 }}
           >
             <p className="eyebrow mb-5">Secure agentic metadata management</p>
-            <h2 className="h-section font-black tracking-tight text-white">
+            <h2 className="h-section font-black tracking-tight text-q-ink">
               Automate the heavy work. Audit everything.
             </h2>
-            <p className="mt-7 text-xl leading-relaxed text-q-gray-300">
+            <p className="mt-7 text-xl leading-relaxed text-q-gray-700">
               <QBricksText />{" "}automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s A.I. journey and keep complete control of each and every data product.
             </p>
 
@@ -60,11 +60,11 @@ export function Agentic() {
             className="relative mt-12 flex min-h-[700px] w-[640px] max-w-none mx-auto origin-top scale-[0.45] items-center justify-center sm:w-auto sm:scale-[0.85] lg:scale-100 lg:mt-0 -mb-[380px] sm:-mb-[100px] lg:mb-0"
           >
             <div className="absolute h-[680px] w-[680px] rounded-full bg-q-brand/[0.08] blur-[120px]" />
-            <div className="relative flex h-[640px] w-[640px] items-center justify-center rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-3xl">
+            <div className="relative flex h-[640px] w-[640px] items-center justify-center rounded-full border border-black/10 bg-black/[0.02] backdrop-blur-3xl">
               {[0, 1, 2].map((ring) => (
                 <motion.div
                   key={ring}
-                  className="absolute rounded-full border border-white/10"
+                  className="absolute rounded-full border border-black/10"
                   style={{ inset: `${40 + ring * 80}px` }}
 
                 >
@@ -82,7 +82,7 @@ export function Agentic() {
                 return (
                   <motion.div
                     key={label}
-                    className="absolute rounded-2xl border border-white/20 bg-white/[0.04] px-5 py-3 text-sm font-bold tracking-wide text-white shadow-2xl ring-1 ring-white/10 backdrop-blur-xl"
+                    className="absolute rounded-2xl border border-black/20 bg-black/[0.04] px-5 py-3 text-sm font-bold tracking-wide text-q-ink shadow-2xl ring-1 ring-black/10 backdrop-blur-xl"
                     style={{ x, y }}
 
                   >
@@ -92,16 +92,16 @@ export function Agentic() {
               })}
 
               <motion.div 
-                className="relative z-10 rounded-[2.5rem] border border-q-brand/40 bg-gradient-to-br from-q-brand/30 via-q-black/80 to-q-black/95 p-10 text-center shadow-[0_0_80px_rgba(232,32,15,0.25)] backdrop-blur-3xl"
+                className="relative z-10 rounded-[2.5rem] border border-q-brand/40 bg-gradient-to-br from-q-brand/30 via-white/80 to-white/95 p-10 text-center shadow-[0_0_80px_rgba(232,32,15,0.25)] backdrop-blur-3xl"
 
               >
-                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-black/40 text-white relative">
+                <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-black/15 bg-white/40 text-q-ink relative">
                   <div className="absolute inset-0 rounded-3xl border border-q-brand-ember/30" />
                   <ScanLine className="h-10 w-10 text-q-brand-ember" />
                 </div>
-                <h3 className="text-2xl font-black text-white">Governed Agentic Mesh</h3>
-                <p className="mt-3 max-w-xs text-sm leading-relaxed text-q-gray-300">Learns, recommends and executes with human approval and full lineage.</p>
-                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-300">
+                <h3 className="text-2xl font-black text-q-ink">Governed Agentic Mesh</h3>
+                <p className="mt-3 max-w-xs text-sm leading-relaxed text-q-gray-700">Learns, recommends and executes with human approval and full lineage.</p>
+                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-600">
                   <ShieldCheck className="h-4 w-4" />
                   Always auditable
                 </div>
@@ -120,13 +120,13 @@ export function Agentic() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.55, delay: index * 0.07 }}
-                className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 backdrop-blur-xl transition-all hover:border-q-brand/30 hover:-translate-y-1 hover:bg-q-brand/[0.055] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)]"
+                className="rounded-3xl border border-black/10 bg-black/[0.035] p-6 backdrop-blur-xl transition-all hover:border-q-brand/30 hover:-translate-y-1 hover:bg-q-brand/[0.055] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)]"
               >
-                <div className="mb-5 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3 text-q-brand-ember">
+                <div className="mb-5 inline-flex rounded-2xl border border-black/10 bg-black/5 p-3 text-q-brand-ember">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 text-xl font-black text-white">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-q-gray-400">{feature.description}</p>
+                <h3 className="mb-3 text-xl font-black text-q-ink">{feature.title}</h3>
+                <p className="text-sm leading-relaxed text-q-gray-600">{feature.description}</p>
               </motion.div>
             );
           })}

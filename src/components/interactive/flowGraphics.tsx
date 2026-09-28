@@ -10,14 +10,14 @@ import { useId } from "react";
  * with the page and share the site's fonts and colours.
  */
 
-const INK = "#ffffff";
-const GRAY_300 = "#d4d4d8";
-const GRAY_400 = "#a1a1aa";
-const GRAY_500 = "#71717a";
+const INK = "#000000";
+const GRAY_300 = "#27272b";
+const GRAY_400 = "#55555e";
+const GRAY_500 = "#85858e";
 const EMBER = "#ff3a26";
 const BRAND = "#e8200f";
 const GREEN = "#6fd39a";
-const LINE = "rgba(255,255,255,0.14)";
+const LINE = "rgba(0,0,0,0.14)";
 
 // Labels are authored in capitals; render them in sentence case, keeping acronyms and names.
 const KEEP = ["QBricks", "SQL", "EOS", "ODCS", "VM", "SDK", "CRM", "AML", "KYC", "BI", "ML", "AI", "Oracle", "Python", "Spark", "Iceberg", "Parquet", "Databricks", "Snowflake", "Fabric"];
@@ -31,10 +31,10 @@ function labelCase(node: React.ReactNode): React.ReactNode {
 type CardVariant = "plain" | "accent" | "hot" | "panel";
 
 const cardFill: Record<CardVariant, { fill: string; stroke: string }> = {
-  plain: { fill: "rgba(255,255,255,0.035)", stroke: "rgba(255,255,255,0.12)" },
+  plain: { fill: "rgba(0,0,0,0.035)", stroke: "rgba(0,0,0,0.12)" },
   accent: { fill: "rgba(232,32,15,0.07)", stroke: "rgba(255,58,38,0.45)" },
-  hot: { fill: "#050507", stroke: "rgba(255,58,38,0.6)" },
-  panel: { fill: "rgba(255,255,255,0.02)", stroke: "rgba(255,255,255,0.08)" },
+  hot: { fill: "#f8f8fa", stroke: "rgba(255,58,38,0.6)" },
+  panel: { fill: "rgba(0,0,0,0.02)", stroke: "rgba(0,0,0,0.08)" },
 };
 
 function Card({
@@ -72,7 +72,7 @@ function T({
 }
 
 function Pill({
-  x, y, w, h = 20, label, fill = "rgba(255,255,255,0.06)", stroke = "none", color = INK, size = 11, mono = false, style,
+  x, y, w, h = 20, label, fill = "rgba(0,0,0,0.06)", stroke = "none", color = INK, size = 11, mono = false, style,
 }: { x: number; y: number; w: number; h?: number; label: string; fill?: string; stroke?: string; color?: string; size?: number; mono?: boolean; style?: React.CSSProperties }) {
   return (
     <g>
@@ -109,15 +109,15 @@ function Frame({ id, w, h, label, children }: { id: string; w: number; h: number
       >
         <defs>
           <linearGradient id={`${id}-bg`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#1a1a22" />
-            <stop offset="1" stopColor="#0a0a0f" />
+            <stop offset="0" stopColor="#dddde5" />
+            <stop offset="1" stopColor="#f0f0f5" />
           </linearGradient>
           <radialGradient id={`${id}-glow`} cx="0.5" cy="0.5" r="0.5">
             <stop offset="0" stopColor="rgba(232,32,15,0.22)" />
             <stop offset="1" stopColor="rgba(232,32,15,0)" />
           </radialGradient>
         </defs>
-        <rect x={0.5} y={0.5} width={w - 1} height={h - 1} rx={14} fill={`url(#${id}-bg)`} stroke="rgba(255,255,255,0.12)" />
+        <rect x={0.5} y={0.5} width={w - 1} height={h - 1} rx={14} fill={`url(#${id}-bg)`} stroke="rgba(0,0,0,0.12)" />
         <ellipse cx={w / 2} cy={h / 2} rx={w * 0.34} ry={h * 0.5} fill={`url(#${id}-glow)`} />
         {children}
       </svg>
@@ -129,7 +129,7 @@ function Header({ eyebrow, sub, dividerX }: { eyebrow: string; sub: string; divi
   return (
     <g>
       <Mono x={40} y={44} size={12} fill={EMBER}>{eyebrow}</Mono>
-      <line x1={dividerX} y1={33} x2={dividerX} y2={47} stroke="rgba(255,255,255,0.18)" />
+      <line x1={dividerX} y1={33} x2={dividerX} y2={47} stroke="rgba(0,0,0,0.18)" />
       <T x={dividerX + 14} y={44} size={13} fill={GRAY_400} weight={400}>{sub}</T>
     </g>
   );
@@ -226,10 +226,10 @@ export function MigrationGraphic() {
         const y = 296 + i * 36;
         return (
           <g key={s.n}>
-            <rect x={578} y={y} width={244} height={30} rx={6} fill="rgba(255,255,255,0.06)" style={{ animation: "qb-step 4s ease-in-out infinite", animationDelay: `${i}s` }} />
-            <Mono x={588} y={y + 19} size={9.5} fill="rgba(255,255,255,0.7)">{s.n}</Mono>
+            <rect x={578} y={y} width={244} height={30} rx={6} fill="rgba(0,0,0,0.06)" style={{ animation: "qb-step 4s ease-in-out infinite", animationDelay: `${i}s` }} />
+            <Mono x={588} y={y + 19} size={9.5} fill="rgba(0,0,0,0.7)">{s.n}</Mono>
             <T x={608} y={y + 19} size={11.5}>{s.name}</T>
-            <text x={814} y={y + 19} fontSize={10} fill="rgba(255,255,255,0.7)" textAnchor="end">{s.meta}</text>
+            <text x={814} y={y + 19} fontSize={10} fill="rgba(0,0,0,0.7)" textAnchor="end">{s.meta}</text>
           </g>
         );
       })}
@@ -257,18 +257,18 @@ export function MigrationGraphic() {
 
       {/* Timeline bars */}
       <Mono x={40} y={601} size={10}>TRADITIONAL MIGRATION</Mono>
-      <rect x={202} y={592} width={696} height={10} rx={5} fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
-      <rect x={202} y={592} width={696} height={10} rx={5} fill="rgba(255,255,255,0.16)" />
+      <rect x={202} y={592} width={696} height={10} rx={5} fill="rgba(0,0,0,0.05)" stroke="rgba(0,0,0,0.1)" />
+      <rect x={202} y={592} width={696} height={10} rx={5} fill="rgba(0,0,0,0.16)" />
       <Mono x={910} y={601} size={11}>12–18 months</Mono>
       <Mono x={40} y={623} size={10} fill={EMBER}>WITH QBRICKS</Mono>
-      <rect x={202} y={614} width={696} height={10} rx={5} fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
+      <rect x={202} y={614} width={696} height={10} rx={5} fill="rgba(0,0,0,0.05)" stroke="rgba(0,0,0,0.1)" />
       <rect x={202} y={614} width={56} height={10} rx={5} fill={EMBER} />
       <Mono x={910} y={623} size={11} fill={EMBER} weight={600}>hours to days</Mono>
 
       {migrationPhases.map((ph, i) => {
         const x = 1060 + migrationPhases.slice(0, i).reduce((acc, p) => acc + p.w + 6, 0);
         return (
-          <Pill key={ph.name} x={x} y={578} w={ph.w} h={24} label={ph.name} fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" color={GRAY_300} size={11}
+          <Pill key={ph.name} x={x} y={578} w={ph.w} h={24} label={ph.name} fill="rgba(0,0,0,0.03)" stroke="rgba(0,0,0,0.12)" color={GRAY_300} size={11}
             style={{ animation: "qb-chip 4s ease-in-out infinite", animationDelay: `${i}s` }} />
         );
       })}
@@ -301,7 +301,7 @@ function ChipStack({ x, y, items, dark = false }: { x: number; y: number; items:
     <g>
       {items.map((label, i) => (
         <g key={label}>
-          <rect x={x} y={y + i * 30} width={180} height={24} rx={6} fill={dark ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.06)"} />
+          <rect x={x} y={y + i * 30} width={180} height={24} rx={6} fill={dark ? "rgba(0,0,0,0.09)" : "rgba(0,0,0,0.06)"} />
           <T x={x + 10} y={y + i * 30 + 16} size={12}>{label}</T>
         </g>
       ))}
@@ -411,7 +411,7 @@ export function PipelineGraphic() {
       <Mono x={1702} y={150} size={9}>PLATFORMS</Mono>
       {platforms.map((p, i) => (
         <g key={p}>
-          <rect x={1702} y={160 + i * 30} width={76} height={22} rx={5} fill="rgba(255,255,255,0.06)" />
+          <rect x={1702} y={160 + i * 30} width={76} height={22} rx={5} fill="rgba(0,0,0,0.06)" />
           <T x={1710} y={175 + i * 30} size={11}>{p}</T>
         </g>
       ))}
@@ -515,8 +515,8 @@ export function RoutingGraphic() {
         const x = 900 + routingChips.slice(row === 0 ? 0 : 3, i).reduce((acc, c) => acc + c.w + 6, 0);
         return (
           <g key={chip.label}>
-            <rect x={x} y={244 + row * 24} width={chip.w} height={18} rx={4} fill="rgba(255,255,255,0.1)" />
-            <T x={x + chip.w / 2} y={256.5 + row * 24} size={10} fill="#e4e4e7" anchor="middle">{chip.label}</T>
+            <rect x={x} y={244 + row * 24} width={chip.w} height={18} rx={4} fill="rgba(0,0,0,0.1)" />
+            <T x={x + chip.w / 2} y={256.5 + row * 24} size={10} fill="#18181b" anchor="middle">{chip.label}</T>
           </g>
         );
       })}
@@ -527,7 +527,7 @@ export function RoutingGraphic() {
       <Card x={880} y={390} w={280} h={220} r={12} />
       <Mono x={900} y={416} size={10}>OPTION 02</Mono>
       <T x={900} y={436} size={17} weight={700} fill={GRAY_300}>Lakehouse routing</T>
-      <Pill x={1070} y={410} w={70} h={20} label="FALLBACK" fill="none" stroke="rgba(255,255,255,0.15)" color={GRAY_400} size={9} mono />
+      <Pill x={1070} y={410} w={70} h={20} label="FALLBACK" fill="none" stroke="rgba(0,0,0,0.15)" color={GRAY_400} size={9} mono />
       <T x={900} y={464} size={12} fill={GRAY_500} weight={400}>Spark clusters inside the lakehouse.</T>
       <T x={900} y={480} size={12} fill={GRAY_500} weight={400}>Memory-heavy, metered per step.</T>
       {[["Share of workloads", "0%"], ["Latency", "Baseline"], ["Est. compute cost", "Baseline"]].map(([k, v], i) => (
@@ -559,7 +559,7 @@ export function RoutingGraphic() {
       {reasons.map((r, i) => {
         const x = 170 + reasons.slice(0, i).reduce((acc, c) => acc + c.w + 10, 0);
         return (
-          <Pill key={r.name} x={x} y={600} w={r.w} h={26} label={r.name} fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" color={GRAY_300} size={12}
+          <Pill key={r.name} x={x} y={600} w={r.w} h={26} label={r.name} fill="rgba(0,0,0,0.03)" stroke="rgba(0,0,0,0.12)" color={GRAY_300} size={12}
             style={{ animation: "qb-chip 2.5s ease-in-out infinite", animationDelay: `${r.delay}s` }} />
         );
       })}

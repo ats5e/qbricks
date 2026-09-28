@@ -37,8 +37,8 @@ export function Navbar() {
         <div
           className={`flex items-center justify-between gap-4 rounded-full border px-3 py-2 pl-5 transition-all duration-300 sm:pl-6 ${
             scrolled || mobileMenuOpen
-              ? "border-white/10 bg-black/70 shadow-[0_8px_40px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
-              : "border-white/[0.06] bg-white/[0.03] backdrop-blur-xl"
+              ? "border-black/10 bg-white/70 shadow-[0_8px_40px_rgba(0,0,0,0.135)] backdrop-blur-2xl"
+              : "border-black/[0.06] bg-black/[0.03] backdrop-blur-xl"
           }`}
         >
           <Link href="/" className="group flex shrink-0 items-center translate-y-[2px]" aria-label="QBricks home">
@@ -53,7 +53,7 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={`relative rounded-full px-4 py-2 text-sm font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-q-brand focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
-                    isActive ? "text-white" : "text-q-gray-400 hover:text-white"
+                    isActive ? "text-q-ink" : "text-q-gray-600 hover:text-q-ink"
                   }`}
                 >
                   {isActive && (
@@ -86,7 +86,7 @@ export function Navbar() {
           </div>
 
           <button
-            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.05] p-2.5 text-white lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.05] p-2.5 text-q-ink lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -101,7 +101,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="mt-2 overflow-hidden rounded-3xl border border-white/10 bg-black/85 p-4 backdrop-blur-2xl lg:hidden"
+              className="mt-2 overflow-hidden rounded-3xl border border-black/10 bg-white/85 p-4 backdrop-blur-2xl lg:hidden"
             >
               <div className="flex flex-col gap-1">
                 {navLinks.map((link) => {
@@ -112,7 +112,7 @@ export function Navbar() {
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`rounded-2xl px-4 py-3 text-base font-semibold transition-colors ${
-                        isActive ? "bg-white/[0.06] text-white" : "text-q-gray-300 hover:bg-white/[0.04] hover:text-white"
+                        isActive ? "bg-black/[0.06] text-q-ink" : "text-q-gray-700 hover:bg-black/[0.04] hover:text-q-ink"
                       }`}
                     >
                       {link.name === "Why QBricks" ? (

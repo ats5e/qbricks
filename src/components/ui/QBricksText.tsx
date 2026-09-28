@@ -8,7 +8,7 @@ const quicksand = Quicksand({
 export function QBricksText() {
   return (
     <span className={`${quicksand.className} inline-block`}>
-      <span className="font-bold text-q-brand-ember">Q</span><span className="font-normal text-white">Bricks</span>
+      <span className="font-bold text-q-brand-ember">Q</span><span className="font-normal text-q-ink">Bricks</span>
     </span>
   );
 }

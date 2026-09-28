@@ -32,7 +32,7 @@ const connectors: FlowConnector[] = [
 
 export function QuantexaFlowDiagram() {
   return (
-    <section className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
+    <section className="section-y relative overflow-hidden border-t border-black/5 bg-white">
       <div className="absolute left-[30%] top-1/2 h-[700px] w-[900px] -translate-y-1/2 rounded-full bg-q-brand-ember/[0.06] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
@@ -80,25 +80,25 @@ export function QuantexaFlowDiagram() {
                   footer="databricks · quantexa"
                 >
                   <div className="mt-4 space-y-3">
-                    <div className="rounded-xl border border-white/10 bg-black/30 p-3">
-                      <p className="mb-2 flex items-center gap-2 text-[12px] font-black text-white">
+                    <div className="rounded-xl border border-black/10 bg-white/30 p-3">
+                      <p className="mb-2 flex items-center gap-2 text-[12px] font-black text-q-ink">
                         <FolderSearch className="h-3.5 w-3.5 text-q-brand-ember" /> Data Products
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Transactions", "Client Reference", "Resolved Entity", "Corp Hierarchies", "UBO", "Network"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-xs leading-none text-q-gray-300 font-medium">
+                          <span key={chip} className="rounded-md border border-black/10 bg-black/[0.04] px-2 py-1 text-xs leading-none text-q-gray-700 font-medium">
                             {chip}
                           </span>
                         ))}
                       </div>
                     </div>
-                    <div className="rounded-xl border border-white/10 bg-black/30 p-3">
-                      <p className="mb-2 flex items-center gap-2 text-[12px] font-black text-white">
+                    <div className="rounded-xl border border-black/10 bg-white/30 p-3">
+                      <p className="mb-2 flex items-center gap-2 text-[12px] font-black text-q-ink">
                         <Sparkles className="h-3.5 w-3.5 text-q-brand-ember" /> Data & ML Engineering
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Machine Learning", "Models", "Rules", "Decision Systems"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-xs leading-none text-q-gray-300 font-medium">
+                          <span key={chip} className="rounded-md border border-black/10 bg-black/[0.04] px-2 py-1 text-xs leading-none text-q-gray-700 font-medium">
                             {chip}
                           </span>
                         ))}
@@ -117,18 +117,18 @@ export function QuantexaFlowDiagram() {
                   footer="camunda · pega · appian · agent & LLM agnostic"
                 >
                   <div className="mt-4 space-y-3">
-                    <div className="rounded-xl border border-white/10 bg-black/30 p-3">
-                      <p className="mb-2 text-[12px] font-black text-white">Case Management</p>
+                    <div className="rounded-xl border border-black/10 bg-white/30 p-3">
+                      <p className="mb-2 text-[12px] font-black text-q-ink">Case Management</p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Investigations UI", "Request for Info", "Decision / QC", "File SAR"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-xs leading-none text-q-gray-300 font-medium">
+                          <span key={chip} className="rounded-md border border-black/10 bg-black/[0.04] px-2 py-1 text-xs leading-none text-q-gray-700 font-medium">
                             {chip}
                           </span>
                         ))}
                       </div>
                     </div>
                     <div className="rounded-xl border border-q-brand/30 bg-q-brand/[0.05] p-3">
-                      <p className="mb-2 text-[12px] font-black text-white">Advanced AI with LLM</p>
+                      <p className="mb-2 text-[12px] font-black text-q-ink">Advanced AI with LLM</p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Data Intelligence", "Case Narrative", "Q Assist", "Agentic AI · GenAI"].map((chip) => (
                           <span key={chip} className="rounded-md border border-q-brand/35 bg-q-brand/10 px-2 py-1 text-xs leading-none text-q-brand-ember font-medium">

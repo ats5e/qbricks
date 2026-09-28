@@ -43,7 +43,7 @@ const connectors: FlowConnector[] = [
 
 export function ClouderaFlowDiagram() {
   return (
-    <section className="section-y relative overflow-hidden border-t border-white/5 bg-q-black">
+    <section className="section-y relative overflow-hidden border-t border-black/5 bg-white">
       <div className="absolute left-[35%] top-1/2 h-[700px] w-[900px] -translate-y-1/2 rounded-full bg-q-brand-ember/[0.06] blur-[150px]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
@@ -84,7 +84,7 @@ export function ClouderaFlowDiagram() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.7, delay: 0.15 }}
-                  className="rounded-3xl border border-dashed border-q-brand/35 bg-white/[0.015] p-5"
+                  className="rounded-3xl border border-dashed border-q-brand/35 bg-black/[0.015] p-5"
                 >
                   <div className="mb-4 flex items-center gap-3">
                     <Image src="/assets/partners/Cloudera_logo.webp" alt="Cloudera" width={110} height={22} className="h-4 w-auto object-contain" />
@@ -100,9 +100,9 @@ export function ClouderaFlowDiagram() {
                           whileInView={{ opacity: 1 }}
                           viewport={{ once: true, margin: "-60px" }}
                           transition={{ duration: 0.5, delay: 0.25 + index * 0.08 }}
-                          className="rounded-xl border border-white/10 bg-[#101014]/90 p-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25"
+                          className="rounded-xl border border-black/10 bg-[#ebebef]/90 p-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-black/25"
                         >
-                          <p className="flex items-center gap-2 text-[13px] font-black text-white">
+                          <p className="flex items-center gap-2 text-[13px] font-black text-q-ink">
                             <Icon className="h-3.5 w-3.5 shrink-0 text-q-brand-ember" /> {module.title}
                           </p>
                           <div className="mt-2.5 flex flex-wrap gap-1.5">

@@ -16,19 +16,19 @@ export const metadata = {
 
 export default function IntegrationsPage() {
   return (
-    <main className="min-h-screen bg-q-black">
-      <section className="relative overflow-hidden border-b border-white/5 pt-44 pb-28">
+    <main className="min-h-screen bg-white">
+      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-28">
         <div className="absolute inset-0 -z-0">
-          <Image src="/assets/bg-cubes-scatter.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-screen" sizes="100vw" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.22),transparent_34%),linear-gradient(to_bottom,rgba(0,0,0,0.55),#000_88%)]" />
+          <Image src="/assets/bg-cubes-scatter.png" alt="" fill priority className="object-cover object-center opacity-40 mix-blend-multiply invert hue-rotate-180" sizes="100vw" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(232,32,15,0.121),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.55),#fff_88%)]" />
         </div>
 
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">Integrations</p>
-          <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-white">
+          <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-q-ink">
             Works with the platforms your organisation already runs on.
           </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-300 md:text-2xl">
+          <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-700 md:text-2xl">
             Cloud-agnostic data governance for Databricks, Microsoft Fabric, Snowflake and your own on-premise databases.
             <br />
             <QBricksText /> is built to fit your modern data stack perfectly.

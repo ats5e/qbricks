@@ -134,7 +134,7 @@ export function FlowCanvas({
       </svg>
       {label && labelPos && (
         <span
-          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-q-black/80 px-1.5 py-0.5 text-[11px] text-q-brand-ember lg:block font-medium"
+          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-white/80 px-1.5 py-0.5 text-[11px] text-q-brand-ember lg:block font-medium"
           style={{ left: labelPos.x + 10, top: labelPos.y - 14 }}
         >
           {label.text}
@@ -165,7 +165,7 @@ export function Chip({ children, tone = "default" }: { children: React.ReactNode
       className={`inline-flex items-center rounded-md border px-2 py-1 text-xs leading-none transition-colors ${
  tone === "red"
  ? "border-q-brand/40 bg-q-brand/10 text-q-brand-ember"
- : "border-white/10 bg-white/[0.04] text-q-gray-300 hover:border-white/25 hover:text-white"
+ : "border-black/10 bg-black/[0.04] text-q-gray-700 hover:border-black/25 hover:text-q-ink"
  } font-medium`}
     >
       {children}
@@ -206,17 +206,17 @@ export function FlowCard({
       className={`rounded-2xl border p-4 backdrop-blur-sm transition-all duration-300 ${
         active
           ? "border-q-brand/50 bg-q-brand/[0.07] shadow-[0_0_40px_rgba(232,32,15,0.15)]"
-          : "border-white/10 bg-[#101014]/90 hover:-translate-y-0.5 hover:border-white/25"
+          : "border-black/10 bg-[#ebebef]/90 hover:-translate-y-0.5 hover:border-black/25"
       } ${className}`}
     >
       <div className="flex items-center gap-3">
         {Icon && (
-          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${active ? "border-q-brand/40 bg-q-brand/10 text-q-brand-ember" : "border-white/10 bg-white/[0.05] text-q-gray-300"}`}>
+          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${active ? "border-q-brand/40 bg-q-brand/10 text-q-brand-ember" : "border-black/10 bg-black/[0.05] text-q-gray-700"}`}>
             <Icon className="h-4 w-4" />
           </span>
         )}
         <div className="min-w-0">
-          <p className="text-sm font-black leading-tight text-white">{title}</p>
+          <p className="text-sm font-black leading-tight text-q-ink">{title}</p>
           {kicker && <p className="mt-0.5 text-[11px] text-q-gray-500 font-medium">{kicker}</p>}
         </div>
       </div>
@@ -249,21 +249,21 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7 }}
-      className={`relative rounded-3xl border border-q-brand/60 bg-gradient-to-b from-[#160a0a]/95 to-[#0c0709]/95 p-5 ${className}`}
+      className={`relative rounded-3xl border border-q-brand/60 bg-gradient-to-b from-[#f5e9e9]/95 to-[#f8f3f5]/95 p-5 ${className}`}
       style={{ animation: "cc-hub-pulse 4.2s ease-in-out infinite" }}
     >
       <div className="flex items-center gap-2.5">
         <QIcon className="h-6 w-6" />
-        <span className="text-base font-black tracking-tight text-white">Bricks</span>
+        <span className="text-base font-black tracking-tight text-q-ink">Bricks</span>
       </div>
       <p className="mt-2 text-xs text-q-brand-ember font-medium">Data management platform</p>
-      <p className="mt-3 text-lg font-black leading-snug tracking-tight text-white">
+      <p className="mt-3 text-lg font-black leading-snug tracking-tight text-q-ink">
         Governed, AI-ready data, in hours, not years.
       </p>
-      <div className="my-4 h-px bg-white/10" />
+      <div className="my-4 h-px bg-black/10" />
       <ul className="space-y-2.5">
         {hubFeatures.map(({ icon: Icon, label }) => (
-          <li key={label} className="flex items-center gap-2.5 text-[13px] font-semibold text-q-gray-200">
+          <li key={label} className="flex items-center gap-2.5 text-[13px] font-semibold text-q-gray-800">
             <Icon className="h-3.5 w-3.5 shrink-0 text-q-brand-ember" /> {label}
           </li>
         ))}
@@ -305,7 +305,7 @@ export function DiagramHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-90px" }}
         transition={{ duration: 0.75 }}
-        className="h-section font-black tracking-tight text-white"
+        className="h-section font-black tracking-tight text-q-ink"
       >
         {title}
       </motion.h2>
@@ -314,7 +314,7 @@ export function DiagramHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-90px" }}
         transition={{ duration: 0.75, delay: 0.1 }}
-        className="mt-6 text-lg leading-relaxed text-q-gray-300"
+        className="mt-6 text-lg leading-relaxed text-q-gray-700"
       >
         {intro}
       </motion.p>

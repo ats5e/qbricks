@@ -83,15 +83,15 @@ const basis =
 
 export function EosEngine() {
   return (
-    <main className="min-h-screen bg-q-black">
+    <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-white/5 pb-24 pt-44">
-        <div className="absolute inset-0 bg-[radial-gradient(720px_420px_at_50%_0%,rgba(232,32,15,0.2),transparent_65%)]" />
+      <section className="relative overflow-hidden border-b border-black/5 pb-24 pt-44">
+        <div className="absolute inset-0 bg-[radial-gradient(720px_420px_at_50%_0%,rgba(232,32,15,0.11),transparent_65%)]" />
 
         <div className="container-x relative z-10 text-center">
           <motion.span
             {...fadeUp}
-            className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-[13px] font-bold text-q-gray-300"
+            className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-black/10 bg-black/[0.04] px-4 py-1.5 text-[13px] font-bold text-q-gray-700"
           >
             <span className="h-[7px] w-[7px] rounded-full bg-q-brand" />
             The engine that powers <QBricksText />
@@ -101,11 +101,11 @@ export function EosEngine() {
             Meet <span className="text-q-brand-ember">EOS</span>.
           </motion.h1>
 
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mx-auto mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-300">
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mx-auto mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-700">
             Built on Apache DataFusion, Arrow-native streaming and Vortex, EOS represents the next generation of SQL engines. It runs an organisation&apos;s entire pipeline estate at lightning speed and with minimal compute cost.
           </motion.p>
 
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.12 }} className="mx-auto mt-6 text-[clamp(1.15rem,2vw,1.4rem)] font-black tracking-tight text-white">
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.12 }} className="mx-auto mt-6 text-[clamp(1.15rem,2vw,1.4rem)] font-black tracking-tight text-q-ink">
             Streaming data. No Spark. No clusters. <span className="text-q-brand-ember">No memory tax.</span>
           </motion.p>
 
@@ -116,24 +116,24 @@ export function EosEngine() {
                 href="#benchmarks"
                 className="premium-card block p-7 transition-colors hover:border-q-brand/40"
               >
-                <p className="text-sm font-bold text-q-gray-400">{stat.label}</p>
-                <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-white">
+                <p className="text-sm font-bold text-q-gray-600">{stat.label}</p>
+                <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-q-ink">
                   {stat.value}
                   <span className="text-q-brand-ember">{stat.unit}</span>
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-q-gray-400">{stat.detail}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-q-gray-600">{stat.detail}</p>
               </a>
             ))}
           </motion.div>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.2 }} className="mt-5 text-sm text-q-gray-500">
             Benchmarked against recognised industry standards ·{" "}
-            <Link href="/contact" className="text-q-gray-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white">
+            <Link href="/contact" className="text-q-gray-700 underline decoration-q-ink/20 underline-offset-4 transition-colors hover:text-q-ink">
               Results available on request
             </Link>
           </motion.p>
 
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.24 }} className="mx-auto mt-10 max-w-2xl text-xl font-black leading-snug tracking-tight text-white">
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.24 }} className="mx-auto mt-10 max-w-2xl text-xl font-black leading-snug tracking-tight text-q-ink">
             From system of record to data product, available for consumption via a Python SDK, in just over{" "}
             <span className="text-q-brand-ember">5 minutes.</span>
           </motion.p>
@@ -141,13 +141,13 @@ export function EosEngine() {
       </section>
 
       {/* Benchmarks */}
-      <section id="benchmarks" className="section-y scroll-mt-24 border-b border-white/5 bg-q-black">
+      <section id="benchmarks" className="section-y scroll-mt-24 border-b border-black/5 bg-white">
         <div className="container-x">
           <motion.p {...fadeUp} className="eyebrow mb-5">Benchmarked</motion.p>
           <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-3xl">
             From system of record to data product in minutes<span className="text-q-brand-ember">.</span>
           </motion.h2>
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 text-lg text-q-gray-300">
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 text-lg text-q-gray-700">
             A new era in Data Management.
           </motion.p>
 
@@ -160,17 +160,17 @@ export function EosEngine() {
                 className="premium-card flex flex-col p-8 md:p-10"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-sm font-bold text-q-gray-400">{b.kicker}</span>
-                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-q-gray-300">{b.tag}</span>
+                  <span className="text-sm font-bold text-q-gray-600">{b.kicker}</span>
+                  <span className="rounded-full border border-black/10 px-3 py-1 text-xs font-medium text-q-gray-700">{b.tag}</span>
                 </div>
-                <h3 className="mt-7 text-[clamp(1.6rem,2.6vw,2.2rem)] font-black leading-[1.1] tracking-tight text-white">
+                <h3 className="mt-7 text-[clamp(1.6rem,2.6vw,2.2rem)] font-black leading-[1.1] tracking-tight text-q-ink">
                   {b.title}
                   <span className="text-q-brand-ember">.</span>
                 </h3>
-                <p className="mt-4 leading-relaxed text-q-gray-400">{b.text}</p>
+                <p className="mt-4 leading-relaxed text-q-gray-600">{b.text}</p>
 
                 <div className="mt-auto pt-9">
-                  <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.08]">
+                  <div className="h-1.5 overflow-hidden rounded-full bg-black/[0.08]">
                     <motion.div
                       className="h-full rounded-full bg-q-brand"
                       initial={{ width: 0 }}
@@ -185,10 +185,10 @@ export function EosEngine() {
                   </div>
                 </div>
 
-                <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+                <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10">
                   {b.facts.map((fact) => (
-                    <div key={fact.label} className="bg-q-black p-4 md:p-5">
-                      <p className="text-xl font-black tracking-tight text-white md:text-2xl">{fact.value}</p>
+                    <div key={fact.label} className="bg-white p-4 md:p-5">
+                      <p className="text-xl font-black tracking-tight text-q-ink md:text-2xl">{fact.value}</p>
                       <p className="mt-1 text-[13px] text-q-gray-500">{fact.label}</p>
                     </div>
                   ))}
@@ -200,67 +200,67 @@ export function EosEngine() {
       </section>
 
       {/* The distributed tax */}
-      <section className="section-y border-b border-white/5 bg-q-black">
+      <section className="section-y border-b border-black/5 bg-white">
         <div className="container-x">
           <motion.p {...fadeUp} className="eyebrow mb-5">The distributed tax</motion.p>
           <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-3xl">
             SQL prompts replace pipelines. Single node<span className="text-q-brand-ember">.</span>
           </motion.h2>
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-300">
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-700">
             Spark splits your data up, runs it in parallel and recompiles it, and you pay for all of that before a single row is processed. EOS removes the coordination layer.
           </motion.p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
             {nodeStats.map((stat, index) => (
               <motion.div key={stat.label} {...fadeUp} transition={{ duration: 0.6, delay: index * 0.08 }} className="border-l-[3px] border-q-brand pl-5">
-                <p className="text-[2.5rem] font-black leading-none tracking-tight text-white">
+                <p className="text-[2.5rem] font-black leading-none tracking-tight text-q-ink">
                   {stat.value}
                   <span className="text-q-brand-ember">{stat.unit}</span>
                 </p>
-                <p className="mt-2.5 text-sm leading-relaxed text-q-gray-400">{stat.label}</p>
+                <p className="mt-2.5 text-sm leading-relaxed text-q-gray-600">{stat.label}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
-            <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-              <p className="text-lg font-black text-white">Today with Spark</p>
+            <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="rounded-3xl border border-black/10 bg-black/[0.03] p-8">
+              <p className="text-lg font-black text-q-ink">Today with Spark</p>
               <p className="mt-1 text-sm text-q-gray-500">Distributed cluster · memory-heavy</p>
               <div className="mt-6 flex flex-col gap-2">
                 {sparkRows.map((row) => (
-                  <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-white/[0.04] px-4 py-3.5 text-[15px]">
-                    <span className="text-white">{row.label}</span>
-                    <span className={`shrink-0 text-right text-sm ${row.tax ? "text-q-gray-500" : "text-q-gray-300"}`}>{row.tag}</span>
+                  <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-black/[0.04] px-4 py-3.5 text-[15px]">
+                    <span className="text-q-ink">{row.label}</span>
+                    <span className={`shrink-0 text-right text-sm ${row.tax ? "text-q-gray-500" : "text-q-gray-700"}`}>{row.tag}</span>
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-sm leading-relaxed text-q-gray-400">
+              <p className="mt-6 text-sm leading-relaxed text-q-gray-600">
                 Every Spark billing unit comes with a fixed 16 GB of DRAM. Memory prices are rising fast, so you&apos;re locked into a rising market.
               </p>
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="rounded-3xl border border-q-brand/40 bg-q-brand/[0.05] p-8">
-              <p className="text-lg font-black text-white">With EOS</p>
+              <p className="text-lg font-black text-q-ink">With EOS</p>
               <p className="mt-1 text-sm text-q-gray-500">One right-sized VM node</p>
               <div className="mt-6 flex flex-col gap-2">
                 {eosRows.map((row) => (
-                  <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-white/[0.04] px-4 py-3.5 text-[15px]">
-                    <span className="text-white">{row.label}</span>
-                    <span className={`shrink-0 text-right text-sm font-bold ${row.accent ? "text-q-brand-ember" : "text-q-gray-300"}`}>{row.tag}</span>
+                  <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-black/[0.04] px-4 py-3.5 text-[15px]">
+                    <span className="text-q-ink">{row.label}</span>
+                    <span className={`shrink-0 text-right text-sm font-bold ${row.accent ? "text-q-brand-ember" : "text-q-gray-700"}`}>{row.tag}</span>
                   </div>
                 ))}
-                <div className="rounded-xl border border-q-brand/45 bg-q-brand/[0.08] px-4 py-4 text-[15px] leading-relaxed text-white">
+                <div className="rounded-xl border border-q-brand/45 bg-q-brand/[0.08] px-4 py-4 text-[15px] leading-relaxed text-q-ink">
                   Insulate your organisation from rising compute costs, memory shortages and environmental and geopolitical impact.
                 </div>
               </div>
-              <p className="mt-6 text-sm leading-relaxed text-q-gray-400">One committed line item, forecastable to the euro.</p>
+              <p className="mt-6 text-sm leading-relaxed text-q-gray-600">One committed line item, forecastable to the euro.</p>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Why EOS is different */}
-      <section className="section-y border-b border-white/5 bg-q-black">
+      <section className="section-y border-b border-black/5 bg-white">
         <div className="container-x">
           <motion.h2 {...fadeUp} className="h-section">
             Why EOS is different<span className="text-q-brand-ember">.</span>
@@ -272,11 +272,11 @@ export function EosEngine() {
                 key={item.n}
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: (index % 3) * 0.06 }}
-                className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-colors duration-300 hover:border-q-brand/40"
+                className="flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition-colors duration-300 hover:border-q-brand/40"
               >
                 <p className="text-sm font-black text-q-brand-ember">{item.n}</p>
-                <h3 className="mt-4 text-lg font-black tracking-tight text-white">{item.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-q-gray-400">{item.d}</p>
+                <h3 className="mt-4 text-lg font-black tracking-tight text-q-ink">{item.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{item.d}</p>
               </motion.div>
             ))}
           </div>
@@ -284,13 +284,13 @@ export function EosEngine() {
       </section>
 
       {/* CTA */}
-      <section className="section-y bg-q-black">
+      <section className="section-y bg-white">
         <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="h-section">
               See EOS on your own&nbsp;workload<span className="text-q-brand-ember">.</span>
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-q-gray-300">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-q-gray-700">
               We&apos;ll run your pipeline estate on one right-sized node and show you the compute bill before and after.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -302,7 +302,7 @@ export function EosEngine() {
               </Link>
               <Link
                 href="/sustainability"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.055] px-8 py-4 font-bold text-white transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08]"
+                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 font-bold text-q-ink transition-all hover:-translate-y-1 hover:border-black/20 hover:bg-black/[0.08]"
               >
                 Less compute, less carbon <ArrowRight className="h-4 w-4" />
               </Link>
