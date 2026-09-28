@@ -2,6 +2,7 @@ import { ArrowRight, Building2, Globe2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { InfiniumLockup } from "@/components/ui/InfiniumLockup";
+import { Logo } from "@/components/ui/Logo";
 import { QBricksText } from "@/components/ui/QBricksText";
 
 export const metadata = {
@@ -18,7 +19,11 @@ export default function AboutPage() {
         </div>
 
         <div className="container-x relative z-10 text-center">
-          <p className="eyebrow mb-6"><QBricksText /> &amp; Infinium</p>
+          <div className="mb-8 flex items-center justify-center gap-5" aria-label="QBricks and Infinium">
+            <Logo height={30} />
+            <span className="h-7 w-px bg-black/15" aria-hidden="true" />
+            <InfiniumLockup className="text-[26px]" />
+          </div>
           <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-q-ink">
             The platform behind trustworthy A.I.
           </h1>

@@ -2,22 +2,8 @@ import { brand } from "@/components/ui/QBricksText";
 import { ArrowLeft, ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  AiReadyScene,
-  ContractsScene,
-  GovernanceScene,
-  IntegrationsScene,
-  LineageScene,
-} from "@/components/interactive/scenes";
-import { whitepapers } from "../data";
-
-const scenes = {
-  lineage: LineageScene,
-  governance: GovernanceScene,
-  aiready: AiReadyScene,
-  contracts: ContractsScene,
-  integrations: IntegrationsScene,
-} as const;
+import Image from "next/image";
+import { whitepaperImage, whitepapers } from "../data";
 
 export function generateStaticParams() {
   return whitepapers.map(({ slug }) => ({ slug }));
@@ -50,8 +36,6 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const paper = whitepapers.find((entry) => entry.slug === slug);
   if (!paper) notFound();
-
-  const Scene = scenes[paper.scene];
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -89,10 +73,8 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative h-[320px] rounded-2xl shadow-[0_50px_130px_rgba(0,0,0,0.18)] sm:h-[340px]">
-                <Scene badge={paper.sceneBadge} logo={paper.sceneLogo} logoAlt={paper.sceneLogoAlt} />
-              </div>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white shadow-[0_40px_100px_rgba(0,0,0,0.08)]">
+              <Image src={whitepaperImage(paper.slug)} alt="" fill priority className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
             </div>
           </div>
 

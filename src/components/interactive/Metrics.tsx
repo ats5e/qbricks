@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, CheckCircle2, FileSearch, Gauge, Layers3, ShieldCheck } from "lucide-react";
+import { Check, FileSearch, Gauge, ShieldCheck, X } from "lucide-react";
 import { QIcon } from "@/components/ui/QIcon";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
@@ -83,83 +83,53 @@ export function Metrics() {
           </div>
         </div>
 
-        <div className="relative mt-16 grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
-          <div className="absolute inset-x-10 top-1/2 hidden h-px bg-gradient-to-r from-red-400/30 via-q-brand/60 to-emerald-400/40 lg:block" aria-hidden="true" />
-
-          <motion.div
-            initial={{ opacity: 0, x: -28 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            className="premium-card border-red-400/20 bg-[#f2ebec] p-6 md:p-8"
-          >
-            <div className="mb-7 flex items-center gap-3">
-              <div className="rounded-2xl border border-red-400/20 bg-red-500/10 p-3 text-red-600">
-                <AlertTriangle className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-q-gray-500">Without <QBricksText /></p>
-                <h3 className="text-2xl font-black text-q-ink">Data Management Solutions</h3>
-              </div>
+        {/* Before → after: each row pairs what an organisation carries today with what replaces it */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="mt-16 overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white shadow-[0_24px_60px_rgba(0,0,0,0.05)]"
+        >
+          <div className="grid lg:grid-cols-2">
+            <div className="border-b border-black/[0.08] px-6 py-6 md:px-10 md:py-8 lg:border-b-0 lg:border-r">
+              <p className="text-sm font-medium text-q-gray-500">Without <QBricksText /></p>
+              <h3 className="mt-1 text-2xl font-black tracking-tight text-q-gray-600">Data Management Solutions</h3>
             </div>
-            <ul className="space-y-4">
-              {before.map((item) => (
-                <li key={item} className="flex items-start gap-3 border-b border-black/5 pb-4 text-q-gray-700 last:border-b-0 last:pb-0">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-400/85" />
-                  <span>{brand(item)}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <div className="hidden w-20 items-center justify-center lg:flex">
-            <div className="relative flex h-full w-full items-center justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.2 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-q-brand/85 bg-[#e2e2e8] text-q-brand-ember"
-              >
-                <QIcon className="h-6 w-6" />
-              </motion.div>
+            <div className="hidden bg-q-brand/[0.035] px-10 py-8 lg:block">
+              <div className="flex items-center gap-3">
+                <QIcon className="h-7 w-7" />
+                <div>
+                  <p className="text-sm font-medium text-q-brand-ember">With <QBricksText /></p>
+                  <h3 className="mt-1 text-2xl font-black tracking-tight text-q-ink">Governed foundation</h3>
+                </div>
+              </div>
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 28 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            className="premium-card border-emerald-400/25 bg-[#edf3f1] p-6 md:p-8"
-          >
-            <div className="relative mb-7 flex items-center gap-3">
-              <div
-                className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-3 text-emerald-600"
-              >
-                <Layers3 className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-emerald-600/80">With <QBricksText /></p>
-                <h3 className="text-2xl font-black text-q-ink">Governed foundation</h3>
-              </div>
-            </div>
-            <ul className="relative space-y-4">
-              {after.map((item, index) => (
-                <li key={item} className="flex items-start gap-3 border-b border-black/5 pb-4 text-q-ink last:border-b-0 last:pb-0">
-                  <motion.span
-                    initial={{ opacity: 0, scale: 0.2 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 0.5, delay: 0.5 + index * 0.16, ease: [0.22, 1, 0.36, 1] }}
-                    className="shrink-0"
-                  >
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" />
-                  </motion.span>
+          <ol>
+            {before.map((item, index) => (
+              <li key={item} className="grid border-t border-black/[0.06] lg:grid-cols-2">
+                <div className="flex items-start gap-3 px-6 pb-2 pt-5 text-q-gray-500 md:px-10 lg:border-r lg:border-black/[0.08] lg:py-5">
+                  <X className="mt-1 h-4 w-4 shrink-0 text-q-gray-400" />
                   <span>{brand(item)}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: 0.15 + index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-start gap-3 bg-q-brand/[0.035] px-6 pb-5 pt-2 font-medium text-q-ink md:px-10 lg:py-5"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-q-brand text-white">
+                    <Check className="h-3 w-3" strokeWidth={3} />
+                  </span>
+                  <span>{brand(after[index])}</span>
+                </motion.div>
+              </li>
+            ))}
+          </ol>
+        </motion.div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {valueCards.map((card, index) => {

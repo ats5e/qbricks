@@ -214,3 +214,6 @@ export const whitepapers: Whitepaper[] = [
     pdf: "/whitepapers/Shift-Right.pdf",
   },
 ];
+
+/** Editorial image for each white paper (light-studio red glass, public/assets/brand/resources). */
+export const whitepaperImage = (slug: string) => `/assets/brand/resources/wp-${slug}.webp`;

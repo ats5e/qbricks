@@ -190,3 +190,6 @@ export const insights: Insight[] = [
     takeaway: "Capital adequacy rests on data you can trace. Govern the exposures at the source, and RWA stops being a figure you defend and becomes one you can prove.",
   },
 ];
+
+/** Editorial image for each insight (light-studio red glass, public/assets/brand/resources). */
+export const insightImage = (slug: string) => `/assets/brand/resources/in-${slug}.webp`;

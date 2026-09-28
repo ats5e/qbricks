@@ -1,8 +1,9 @@
 import { brand } from "@/components/ui/QBricksText";
 import { ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { insights } from "../data";
+import { insights, insightImage } from "../data";
 
 export function generateStaticParams() {
   return insights.map(({ slug }) => ({ slug }));
@@ -43,7 +44,8 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             <span className="text-q-gray-500">/</span>
             <span className="text-q-gray-700">Insight</span>
           </Link>
-          <div className="max-w-4xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div>
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-q-brand/40 bg-q-brand/10 px-4 py-1.5 text-xs text-q-brand-ember font-medium">
               <BookOpen className="h-3.5 w-3.5" /> Insight · {insight.category}
             </span>
@@ -51,6 +53,10 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
               {brand(insight.title)}
             </h1>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-700">{brand(insight.standfirst)}</p>
+          </div>
+          <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white shadow-[0_40px_100px_rgba(0,0,0,0.08)]">
+            <Image src={insightImage(insight.slug)} alt="" fill priority className="object-cover" sizes="(min-width: 1024px) 40vw, 100vw" />
+          </div>
           </div>
         </div>
       </section>

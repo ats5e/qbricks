@@ -9,7 +9,7 @@ const quicksand = Quicksand({
 /** The QBricks word mark: a bold red Q and "Bricks" in Quicksand. Use it wherever the name appears in running text. */
 export function QBricksText() {
   return (
-    <span className={`${quicksand.className} inline-block`}>
+    <span className={`${quicksand.className} inline-block normal-case tracking-normal`}>
       <span className="font-bold text-q-brand-ember">Q</span><span className="font-normal text-q-ink">Bricks</span>
     </span>
   );
