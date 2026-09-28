@@ -35,7 +35,7 @@ const benchmarks = [
     kicker: "02 · Complex pipeline builds",
     tag: "TPC-H SF100",
     title: "866M records through the full TPC-H suite in 14.5 seconds",
-    text: "TPC-H is the industry-standard analytics benchmark: one retail schema and 22 fixed queries of joins, aggregations and sub-queries. On one machine there's no network shuffle or cluster tuning to hide behind, so the result shows pure engine efficiency.",
+    text: "TPC-H is the industry-standard analytics benchmark: one retail schema and 22 fixed queries of joins, aggregations and sub-queries. There's no network shuffle or cluster tuning to hide behind, so the result shows pure engine efficiency.",
     range: ["0.0s", "14.5s"],
     facts: [
       { value: "22", label: "Queries, fixed by spec" },
@@ -60,7 +60,7 @@ const sparkRows = [
 ];
 
 const eosRows = [
-  { label: "The work itself, on one machine", tag: "remains", accent: false },
+  { label: "The work itself", tag: "remains", accent: false },
   { label: "Shuffle, replication, serialisation", tag: "removed", accent: true },
   { label: "Idle headroom, minimums, transfers", tag: "removed", accent: true },
   { label: "Compute per migrated workload", tag: "−85%", accent: true },
@@ -75,7 +75,7 @@ const features = [
   { n: "06", t: "Governed by design", d: "Every record is checked against an Open Data Contract Standard contract. Fully auditable, with a human in the loop." },
   { n: "07", t: "Python SDK", d: "Data science teams connect with a few lines of Python and pull governed data products in seconds, with no pipeline build and no wait on engineering." },
   { n: "08", t: "Best-in-class ingestion", d: "10 TB of CSV and Parquet, 867 BN records, landed in under 5 minutes." },
-  { n: "09", t: "Best-in-class pipeline builds", d: "Complex, multi-join pipelines over 866M records built in 14.5 seconds across the full TPC-H suite." },
+  { n: "09", t: "Best-in-class pipeline builds", d: "Complex, multi-join pipelines over 866M records built in 14.5 seconds across the full TPC-H suite. Uses managed tables to deliver incremental changes." },
 ];
 
 const basis =
