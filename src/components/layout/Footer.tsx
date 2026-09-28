@@ -43,8 +43,8 @@ export function Footer() {
       <div className="container-x relative z-10">
         <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
-            <Link href="/" className="mb-6 flex items-center -ml-[0.6rem]">
-              <Logo className="h-10 w-[160px] opacity-90" />
+            <Link href="/" className="mb-5 inline-flex" aria-label="QBricks home">
+              <Logo className="h-8" />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-q-gray-500">
               A.I.-enabled data management for your organisation. Built for governed, secure, auditable enterprise data.
@@ -53,7 +53,7 @@ export function Footer() {
               href="https://infinium-technology.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex flex-col gap-2 transition-opacity hover:opacity-80"
+              className="mt-8 inline-flex flex-col items-start gap-2 transition-opacity hover:opacity-80"
               aria-label="A product of Infinium Technology"
             >
               <span className="text-xs font-medium text-q-gray-500">A product of</span>

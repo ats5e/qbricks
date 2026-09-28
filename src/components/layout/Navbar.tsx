@@ -41,8 +41,8 @@ export function Navbar() {
               : "border-black/[0.06] bg-black/[0.03] backdrop-blur-xl"
           }`}
         >
-          <Link href="/" className="group flex shrink-0 items-center translate-y-[2px]" aria-label="QBricks home">
-            <Logo className="h-12 w-auto transition-transform group-hover:scale-[1.03] sm:h-14" />
+          <Link href="/" className="group flex shrink-0 items-center" aria-label="QBricks home">
+            <Logo className="h-[21px] transition-transform group-hover:scale-[1.03] sm:h-[25px]" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
