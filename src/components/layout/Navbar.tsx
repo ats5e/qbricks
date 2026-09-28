@@ -10,6 +10,7 @@ import { QBricksText } from "@/components/ui/QBricksText";
 
 const navLinks = [
   { name: "Product", href: "/product" },
+  { name: "EOS", href: "/eos" },
   { name: "Solutions", href: "/solutions" },
   { name: "Why QBricks", href: "/why-qbricks" },
   { name: "Resources", href: "/resources" },
