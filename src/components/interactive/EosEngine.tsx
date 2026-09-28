@@ -74,8 +74,8 @@ const features = [
   { n: "05", t: "Capped compute cost", d: "The whole pipeline estate runs on one right-sized VM as a single committed line item. Compression also shrinks your lakehouse storage bill." },
   { n: "06", t: "Governed by design", d: "Every record is checked against an Open Data Contract Standard contract. Fully auditable, with a human in the loop." },
   { n: "07", t: "Python SDK", d: "Data science teams connect with a few lines of Python and pull governed data products in seconds, with no pipeline build and no wait on engineering." },
-  { n: "08", t: "Best-in-class ingestion", d: "10 TB of CSV and Parquet, 867 BN records, landed in under 5 minutes on one machine. Your full history is loaded before a cluster would have spun up." },
-  { n: "09", t: "Best-in-class pipeline builds", d: "Complex, multi-join pipelines over 866M records built in 14.5 seconds across the full TPC-H suite. Rebuild on every change, not overnight." },
+  { n: "08", t: "Best-in-class ingestion", d: "10 TB of CSV and Parquet, 867 BN records, landed in under 5 minutes." },
+  { n: "09", t: "Best-in-class pipeline builds", d: "Complex, multi-join pipelines over 866M records built in 14.5 seconds across the full TPC-H suite." },
 ];
 
 const basis =
