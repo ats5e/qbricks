@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { CtaTracker } from "@/components/analytics/CtaTracker";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
@@ -86,9 +87,11 @@ export default function RootLayout({
           </filter>
           <rect width="100%" height="100%" filter="url(#noiseFilter)" />
         </svg>
-        <Navbar />
-        <div id="main-content">{children}</div>
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          <div id="main-content">{children}</div>
+          <Footer />
+        </MotionProvider>
         <Analytics />
         <CtaTracker />
       </body>

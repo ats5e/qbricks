@@ -456,3 +456,29 @@ summary:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .hero-in { animation: none; }
 }
+
+/* Restrained motion: decorative loops (glow pulses, blinks, spins, floats) are
+   frozen at rest; only loops that explain data flow (dashes, travelling dots)
+   keep moving. Later @keyframes definitions override the ones above. */
+@keyframes cc-hub-pulse { from, to { box-shadow: 0 0 34px rgba(232,32,15,0.35); } }
+@keyframes cc-blink { from, to { opacity: 1; } }
+@keyframes cc-node-pulse { from, to { opacity: 0.8; } }
+@keyframes cc-breathe { from, to { opacity: 0.85; } }
+@keyframes cc-green-glow { from, to { box-shadow: none; } }
+@keyframes float { from, to { transform: none; } }
+@keyframes float-slow { from, to { transform: none; } }
+@keyframes journey-core-pulse { from, to { box-shadow: 0 0 34px rgba(232,32,15,0.08), 12px 12px 0 rgba(232,32,15,0.055); } }
+@keyframes qb-pulse { from, to { filter: none; } }
+@keyframes cc-spin { from, to { transform: none; } }
+@keyframes cc-spin-r { from, to { transform: none; } }
+@keyframes cc-caret { from, to { opacity: 1; } }
+
+/* Visitors who ask for less motion get none. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
