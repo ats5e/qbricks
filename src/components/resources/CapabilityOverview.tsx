@@ -224,8 +224,9 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative overflow-hidden rounded-3xl border border-black/10 bg-gradient-to-b from-black/[0.05] to-black/[0.01] p-6"
                 >
-                  <p className="text-xs text-q-gray-500 font-medium">Step 0{index + 1}</p>
-                  <p className="mt-1 text-4xl font-black text-q-brand-ember">0{index + 1}</p>
+                  <p className="text-4xl font-black text-q-brand-ember">
+                    <span className="sr-only">Step </span>0{index + 1}
+                  </p>
                   <h4 className="mt-4 text-lg font-black text-q-ink">{brand(step.title)}</h4>
                   <p className="mt-2 text-[15px] leading-relaxed text-q-gray-600">{brand(step.text)}</p>
                 </motion.div>
