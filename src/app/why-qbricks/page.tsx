@@ -67,7 +67,7 @@ export default function WhyQBricksPage() {
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.195)] md:p-3">
             <div className="aspect-video overflow-hidden rounded-3xl bg-white">
               <PosterVideo
-                playerSrc="https://player.mux.com/pBStRpuKR00m7Xe1neCepUPvoWhvtOJZhhGq8N5JCOqE?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
+                playerSrc="https://player.mux.com/oDXZTXbzTpzcA28orBxyGhTJxouFBatpFta3nl023aYs?metadata-video-title=QBricks+Ten+Reasons+Why&video-title=QBricks+Ten+Reasons+Why"
                 posterAlt="10 reasons why QBricks video cover"
                 posterSrc="/assets/brand/poster-10-reasons.webp"
                 videoTitle="10 reasons why QBricks"

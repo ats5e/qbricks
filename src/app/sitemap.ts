@@ -18,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources",
     "/resources/cost-calculator",
     "/resources/10-reasons-why",
-    "/resources/use-cases",
     "/resources/qbricks-databricks",
     "/resources/qbricks-fabric",
     "/resources/qbricks-snowflake",

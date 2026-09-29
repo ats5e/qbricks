@@ -92,12 +92,7 @@ const videos = [
     title: <>10 reasons why <QBricksText /></>,
     text: "See how governed data becomes an AI-ready foundation, no pipelines, delivered in open, portable formats.",
   },
-  {
-    href: "/resources/use-cases",
-    poster: "/assets/brand/poster-use-cases.webp",
-    title: <><QBricksText /> use cases in action</>,
-    text: "Explore governed data products for financial crime, customer intelligence and risk workflows.",
-  },
+
 ];
 
 function SectionHead({ id, label }: { id: string; label: string }) {
@@ -206,18 +201,18 @@ export default function ResourcesPage() {
         {/* Watch */}
         <section>
           <SectionHead id="watch" label="Watch" />
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6">
             {videos.map((v) => (
-              <Link key={v.href} href={v.href} className="group overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)]">
+              <Link key={v.href} href={v.href} className="group overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)] lg:grid lg:grid-cols-[1.5fr_1fr] lg:items-center">
                 <div className="relative aspect-video overflow-hidden bg-q-panel">
-                  <Image src={v.poster} alt="" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width: 1024px) 45vw, 100vw" />
+                  <Image src={v.poster} alt="" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width: 1024px) 60vw, 100vw" />
                   <span className="absolute inset-0 flex items-center justify-center">
                     <span className="flex h-16 w-16 items-center justify-center rounded-full bg-q-brand text-white shadow-[0_12px_40px_rgba(232,32,15,0.35)] transition-transform duration-300 group-hover:scale-105">
                       <Play className="ml-1 h-6 w-6 fill-current" />
                     </span>
                   </span>
                 </div>
-                <div className="p-7 md:p-8">
+                <div className="p-7 md:p-10">
                   <h3 className="text-2xl font-black tracking-tight text-q-ink">{v.title}</h3>
                   <p className="mt-3 text-lg leading-relaxed text-q-gray-600">{v.text}</p>
                 </div>
