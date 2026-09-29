@@ -79,6 +79,7 @@ export function Navbar() {
           <div className="hidden shrink-0 items-center lg:flex">
             <Link
               href="/contact"
+              data-cta="Nav: Request a demo"
               className="group inline-flex items-center gap-2 rounded-full bg-q-brand px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-q-brand-ember"
             >
               Request a demo

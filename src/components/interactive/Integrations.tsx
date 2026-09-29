@@ -15,7 +15,7 @@ const logos = [
 
 export function Integrations({ showDescriptions = false, hideHeading = false }: { showDescriptions?: boolean, hideHeading?: boolean }) {
   return (
-    <section className="relative overflow-hidden border-t border-black/5 bg-white py-20">
+    <section className="relative overflow-hidden border-t border-black/5 bg-white section-y-sm">
       <div className="container-x relative z-10">
         {!hideHeading && (
           <div className="mx-auto mb-12 max-w-3xl text-center">

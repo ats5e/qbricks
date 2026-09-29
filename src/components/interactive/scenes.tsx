@@ -233,7 +233,7 @@ export function AiReadyScene(props: SceneProps) {
             <div key={`pd-${i}`} className="space-y-1.5 rounded-lg border border-black/[0.11] bg-black/[0.03] p-2.5">
               <div className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-[2px] bg-q-brand-ember" />
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" style={{ animation: `cc-blink ${2.4 + i * 0.7}s ease-in-out infinite`, boxShadow: "0 0 8px rgba(52,211,153,0.8)" }} />
+                <span className="h-1.5 w-1.5 rounded-full bg-q-brand" style={{ animation: `cc-blink ${2.4 + i * 0.7}s ease-in-out infinite`, boxShadow: "0 0 6px rgba(214,17,31,0.45)" }} />
               </div>
               <div className="h-1.5 w-4/5 rounded bg-black/[0.22]" />
               <div className="h-1 w-3/5 rounded bg-black/[0.09]" />
@@ -291,7 +291,7 @@ export function ContractsScene(props: SceneProps) {
             <div className="mb-2.5 h-1.5 w-20 rounded bg-black/25" />
             {checks.map((w, i) => (
               <div key={`ck-${i}`} className="flex items-center gap-2 py-1.5">
-                <span className="flex h-4 w-4 flex-none items-center justify-center rounded-full border border-emerald-400/70">
+                <span className="flex h-4 w-4 flex-none items-center justify-center rounded-full border border-q-brand/60">
                   <motion.svg
                     viewBox="0 0 24 24"
                     className="h-2.5 w-2.5"
@@ -311,7 +311,7 @@ export function ContractsScene(props: SceneProps) {
             ))}
             <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-black/[0.07]">
               <motion.div
-                className="h-full rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.5)]"
+                className="h-full rounded-full bg-q-brand "
                 initial={{ width: 0 }}
                 whileInView={{ width: "88%" }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -404,8 +404,8 @@ export function IntegrationsScene(props: SceneProps) {
               <span className="h-1.5 w-3/5 rounded bg-black/20" />
             )}
             <span
-              className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400"
-              style={{ animation: `cc-blink ${2.2 + i * 0.5}s ease-in-out infinite`, boxShadow: "0 0 8px rgba(52,211,153,0.8)" }}
+              className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-q-brand"
+              style={{ animation: `cc-blink ${2.2 + i * 0.5}s ease-in-out infinite`, boxShadow: "0 0 6px rgba(214,17,31,0.45)" }}
             />
           </motion.div>
         ))}
@@ -470,9 +470,9 @@ export function WorkflowScene(props: SceneProps) {
         </div>
         {/* Human-in-the-loop governed handoff */}
         <div className="flex flex-none items-center gap-3 border-t border-black/10 px-3.5 py-3">
-          <span className="relative h-4 w-7 flex-none rounded-full bg-emerald-400/25">
+          <span className="relative h-4 w-7 flex-none rounded-full bg-q-brand/20">
             <motion.span
-              className="absolute top-0.5 h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
+              className="absolute top-0.5 h-3 w-3 rounded-full bg-q-brand "
               initial={{ left: 2 }}
               whileInView={{ left: 14 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -480,7 +480,7 @@ export function WorkflowScene(props: SceneProps) {
             />
           </span>
           <span className="text-[11px] text-q-gray-600 font-medium">Human in the loop</span>
-          <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full border border-emerald-400/70">
+          <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full border border-q-brand/60">
             <motion.svg
               viewBox="0 0 24 24"
               className="h-3 w-3"

@@ -51,7 +51,7 @@ export function Sustainability() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-black/5 pb-24 pt-44">
+      <section className="relative overflow-hidden border-b border-black/5 pb-24 page-hero">
         <div className="absolute inset-0 -z-0">
           <div className="absolute inset-0 bg-grid-pattern opacity-20" />
         </div>
@@ -61,7 +61,7 @@ export function Sustainability() {
             {...fadeUp}
             className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-black/10 bg-black/[0.04] px-4 py-1.5 text-[13px] font-bold text-q-gray-700 backdrop-blur-sm"
           >
-            <Leaf className="h-3.5 w-3.5 text-emerald-600" />
+            <Leaf className="h-3.5 w-3.5 text-q-brand-deep" />
             Sustainability
           </motion.span>
 
@@ -92,7 +92,7 @@ export function Sustainability() {
       </section>
 
       {/* Headline stats */}
-      <section className="border-b border-black/5 bg-white py-16 lg:py-20">
+      <section className="border-b border-black/5 bg-white section-y-sm">
         <div className="container-x">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {headlineStats.map((stat, index) => (
@@ -141,7 +141,7 @@ export function Sustainability() {
                     <td className="px-6 py-4 text-[15px] font-bold text-q-ink">{brand(row.dimension)}</td>
                     <td className="px-6 py-4 text-[15px] text-q-gray-700">{brand(row.qbricks)}</td>
                     <td className="px-6 py-4 text-[15px] text-q-gray-600">{brand(row.warehouse)}</td>
-                    <td className="px-6 py-4 text-[15px] font-black text-emerald-700">{brand(row.delta)}</td>
+                    <td className="px-6 py-4 text-[15px] font-black text-q-brand-deep">{brand(row.delta)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -200,13 +200,13 @@ export function Sustainability() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember"
+                className="btn-primary"
               >
                 Book a demo <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/eos"
-                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 font-bold text-q-ink backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-black/20 hover:bg-black/[0.08]"
+                className="btn-secondary"
               >
                 Meet EOS, the engine behind it <ArrowRight className="h-4 w-4" />
               </Link>

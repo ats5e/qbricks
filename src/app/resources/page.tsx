@@ -103,7 +103,7 @@ const videos = [
 function SectionHead({ id, label }: { id: string; label: string }) {
   return (
     <div id={id} className="mb-8 flex scroll-mt-28 items-end justify-between gap-6 border-b border-black/[0.08] pb-4">
-      <h2 className="text-2xl font-black tracking-tight text-q-ink md:text-3xl">{label}</h2>
+      <h2 className="h-sub">{label}</h2>
     </div>
   );
 }
@@ -134,7 +134,7 @@ export default function ResourcesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-black/5 pb-[22vw] pt-40 lg:pt-44">
+      <section className="relative overflow-hidden border-b border-black/5 pb-[22vw] page-hero">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
           <Image src="/assets/brand/resources/resources-hero.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
@@ -168,13 +168,13 @@ export default function ResourcesPage() {
             className="group mb-6 grid overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)] lg:grid-cols-[1.2fr_1fr]"
           >
             <div className="relative aspect-[3/2] overflow-hidden bg-q-panel lg:aspect-auto lg:min-h-[420px]">
-              <Image src={whitepaperImage(featured.slug)} alt="" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width: 1024px) 55vw, 100vw" />
+              <Image src={whitepaperImage(featured.slug)} alt="" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width: 1280px) 55vw, 100vw" />
             </div>
             <div className="flex flex-col justify-center p-8 md:p-12">
               <p className="text-sm font-medium text-q-brand-deep">{brand(featured.category)}</p>
               <h3 className="mt-3 text-3xl font-black leading-tight tracking-tight text-q-ink md:text-4xl">{brand(featured.title)}</h3>
               <p className="mt-5 text-lg leading-relaxed text-q-gray-600">{brand(featured.standfirst.slice(0, 220))}…</p>
-              <span className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-q-brand px-6 py-3 text-sm font-bold text-white transition-colors group-hover:bg-q-brand-ember">
+              <span className="btn-primary mt-8 w-fit group-hover:-translate-y-0.5 group-hover:bg-q-brand-ember">
                 Read & download <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </div>
@@ -190,7 +190,7 @@ export default function ResourcesPage() {
         <Link href="/resources/cost-calculator" className="group grid overflow-hidden rounded-[2rem] border border-black/[0.08] bg-q-panel transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)] lg:grid-cols-[1fr_0.8fr]">
           <div className="flex flex-col justify-center p-8 md:p-12">
             <p className="eyebrow mb-3">Illustrative cost calculator</p>
-            <h2 className="text-3xl font-black tracking-tight text-q-ink md:text-4xl">Where <QBricksText /> takes cost out</h2>
+            <h2 className="h-sub">Where <QBricksText /> takes cost out</h2>
             <p className="mt-4 max-w-xl text-lg text-q-gray-700">
               Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.
             </p>
@@ -243,7 +243,7 @@ export default function ResourcesPage() {
             {capabilityOverviews.map((item) => (
               <Link key={item.partner} href={item.href} className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-black/[0.08] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]">
                 <div className="flex h-32 items-center justify-center border-b border-black/[0.06] bg-q-panel">
-                  <Image src={item.logo} alt={item.partner} width={180} height={36} className="h-8 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={item.logo} alt={item.partner} width={320} height={40} className="h-8 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-lg font-black leading-snug text-q-ink">Trusted data for {item.partner}</h3>
@@ -276,7 +276,7 @@ export default function ResourcesPage() {
         </section>
 
         <div className="text-center">
-          <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+          <Link href="/contact" className="btn-primary">
             Request a demo <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

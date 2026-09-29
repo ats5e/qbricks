@@ -32,7 +32,7 @@ const constructs = [
 export default function ProductPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+      <section className="relative overflow-hidden border-b border-black/5 page-hero pb-[22vw]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
           <Image src="/assets/brand/hero-product.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
@@ -46,7 +46,7 @@ export default function ProductPage() {
             <p className="mx-auto mt-14 max-w-4xl text-lg leading-relaxed text-q-gray-700">
               <QBricksText /> brings high-performance SQL execution and data management into one platform. The EOS engine avoids unnecessary work so difficult queries finish sooner; local compute gets more useful analytics from your infrastructure; and the Open Data Contract Standard is enforced on every record, with agentic metadata management and full lineage, so you can govern the data behind every answer. Works with Databricks, Microsoft Fabric, Snowflake or your own on-premise database via SQL push-down, delivered in open formats that stay fully portable.
             </p>
-            <Link href="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+            <Link href="/contact" className="btn-primary mt-10">
               Evaluate your workload <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
@@ -92,13 +92,13 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="border-y border-black/5 bg-white py-20 lg:py-28">
+      <section className="border-y border-black/5 bg-white section-y-sm">
         <div className="container-x space-y-20">
           <div>
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
               <div>
                 <p className="eyebrow mb-3">Workload routing</p>
-                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-q-ink">Data lands in the lakehouse. <QBricksText /> runs the workload.</h2>
+                <h2 className="h-sub">Data lands in the lakehouse. <QBricksText /> runs the workload.</h2>
               </div>
               <p className="leading-relaxed text-q-gray-700 lg:pt-1">
                 Your lakehouse stays the governed landing zone. <QBricksText /> routes each workload to the EOS engine on one right-sized node, then returns governed data products to the landing zone for downstream consumption and to data scientists through the Python SDK.
@@ -112,7 +112,7 @@ export default function ProductPage() {
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
               <div>
                 <p className="eyebrow mb-3">Database to lakehouse migration</p>
-                <h2 className="text-[clamp(1.6rem,2.8vw,2.3rem)] font-black leading-[1.05] tracking-tight text-q-ink">Tables become contract-enforced data products on the way across.</h2>
+                <h2 className="h-sub">Tables become contract-enforced data products on the way across.</h2>
               </div>
               <p className="leading-relaxed text-q-gray-700 lg:pt-1">
                 Profile and ingest incrementally, generate the Open Data Contract Standard contract, validate with a human in the loop and publish in open formats. A migration that once took 12 to 18 months becomes a matter of hours to days.
@@ -130,7 +130,7 @@ export default function ProductPage() {
 
       <section className="section-y bg-white text-center pb-32">
         <div className="container-x relative z-10">
-          <Link href="/solutions" className="group inline-flex items-center justify-center gap-3 rounded-full bg-q-brand px-10 py-5 text-lg font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember hover:shadow-[0_0_40px_rgba(232,32,15,0.3)]">
+          <Link href="/solutions" className="btn-primary group">
             Explore use cases
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>

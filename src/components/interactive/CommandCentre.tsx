@@ -8,7 +8,7 @@ const flowSteps = [
   { label: "Data sprawl detection", detail: "Every source in one registry; spot schema drift and stale data", icon: Database, tone: "text-amber-600" },
   { label: "Data Lineage", detail: "Drill to field level across table joins and transformations", icon: GitBranch, tone: "text-blue-600" },
   { label: "Data Ontologies", detail: "Vocabulary, taxonomies, graphs and ontologies", icon: Network, tone: "text-q-brand-ember" },
-  { label: "Data Insights", detail: "Quality audits, data readiness and agent insights", icon: Lightbulb, tone: "text-emerald-600" },
+  { label: "Data Insights", detail: "Quality audits, data readiness and agent insights", icon: Lightbulb, tone: "text-q-brand-deep" },
   { label: "Agentic data mesh", detail: "60+ governed agents across structured and unstructured data", icon: Boxes, tone: "text-violet-600" },
 ];
 
@@ -41,7 +41,7 @@ export function CommandCentre() {
           Capstone
         </div>
         <div className="ml-auto hidden items-center gap-2.5 rounded-xl border border-black/10 bg-black/[0.04] px-3 py-1.5 sm:flex">
-          <Cpu className="h-4 w-4 text-emerald-600" />
+          <Cpu className="h-4 w-4 text-q-brand-deep" />
           <div>
             <p className="text-[9px] uppercase tracking-[0.18em] text-q-gray-600">Compute</p>
             <p className="text-[11px] font-bold text-q-ink">Local compute</p>
@@ -84,7 +84,7 @@ export function CommandCentre() {
               <p className="max-w-[140px] text-xs uppercase leading-relaxed tracking-[0.2em] text-q-gray-500">Catalogue of Catalogues</p>
               <div className="flex flex-col items-end gap-3">
                 <div
-                  className="whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-600"
+                  className="whitespace-nowrap rounded-full border border-q-brand/20 bg-q-brand/[0.05] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-q-brand-deep"
                 >
                   Audit-ready
                 </div>
@@ -134,7 +134,7 @@ export function CommandCentre() {
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.04] p-3">
                 <p className="text-[10px] text-q-gray-500">Agents</p>
-                <p className="mt-1 text-xl font-black text-emerald-600">60+</p>
+                <p className="mt-1 text-xl font-black text-q-brand-deep">60+</p>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.04] p-3">
                 <p className="text-[10px] text-q-gray-500">Records</p>

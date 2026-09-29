@@ -86,7 +86,7 @@ export function EosEngine() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-black/5 pb-24 pt-44">
+      <section className="relative overflow-hidden border-b border-black/5 pb-24 page-hero">
 
         <div className="container-x relative z-10 text-center">
 
@@ -296,13 +296,13 @@ export function EosEngine() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember"
+                className="btn-primary"
               >
                 Book a demo <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/sustainability"
-                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 font-bold text-q-ink transition-all hover:-translate-y-1 hover:border-black/20 hover:bg-black/[0.08]"
+                className="btn-secondary"
               >
                 Less compute, less carbon <ArrowRight className="h-4 w-4" />
               </Link>

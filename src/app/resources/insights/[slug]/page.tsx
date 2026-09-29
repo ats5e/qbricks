@@ -40,7 +40,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
 
-      <section className="relative overflow-hidden border-b border-black/5 pb-16 pt-40 lg:pt-44">
+      <section className="relative overflow-hidden border-b border-black/5 pb-16 page-hero">
         <div className="container-x relative z-10">
           <Link href="/resources" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-q-gray-600 transition-colors hover:text-q-ink">
             <ArrowLeft className="h-4 w-4" /> Resources
@@ -69,7 +69,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
           <div className="max-w-3xl space-y-14">
             {insight.sections.map((section) => (
               <div key={section.heading}>
-                <h2 className="text-2xl font-black tracking-tight text-q-ink md:text-3xl">{brand(section.heading)}</h2>
+                <h2 className="h-sub">{brand(section.heading)}</h2>
                 {section.paragraphs.map((paragraph, index) => (
                   <p key={index} className="mt-5 text-lg leading-relaxed text-q-gray-700">
                     {brand(paragraph)}
@@ -84,10 +84,10 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+              <Link href="/contact" className="btn-primary">
                 Request a demo <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link href="/resources" className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 font-black text-q-ink transition-all hover:-translate-y-1 hover:bg-black/[0.08]">
+              <Link href="/resources" className="btn-secondary">
                 More resources
               </Link>
             </div>

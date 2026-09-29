@@ -28,7 +28,7 @@ export default function SolutionsPage() {
 
       <UseCases />
 
-      <section className="relative overflow-hidden border-b border-black/5 bg-white py-24">
+      <section className="relative overflow-hidden border-b border-black/5 bg-white section-y-sm">
 
         <div className="container-x relative z-10">
           <div className="mx-auto mb-12 max-w-4xl text-center">
@@ -45,7 +45,7 @@ export default function SolutionsPage() {
           </div>
 
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.195)] md:p-3">
-            <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-white">
+            <div className="aspect-video overflow-hidden rounded-3xl bg-white">
               <PosterVideo
                 playerSrc="https://player.mux.com/7Dktyh8UTWs8h1ot86tVc2nomWrLZO028JaAM6s6suNg?metadata-video-title=QBricks+Use+Cases&video-title=QBricks+Use+Cases"
                 posterAlt="QBricks use cases in action video cover"

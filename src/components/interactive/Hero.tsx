@@ -68,11 +68,11 @@ export function Hero() {
             </p>
 
             <div className="mt-10 flex flex-col gap-3 whitespace-nowrap sm:flex-row sm:flex-wrap">
-              <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-7 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-q-brand-ember">
+              <Link href="/contact" className="btn-primary group">
                 Evaluate your workload
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="/eos#benchmarks" className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.055] px-7 py-4 text-sm font-bold text-q-ink transition-all hover:-translate-y-0.5 hover:border-black/20 hover:bg-black/[0.08]">
+              <Link href="/eos#benchmarks" className="btn-secondary">
                 Explore the benchmarks
               </Link>
             </div>

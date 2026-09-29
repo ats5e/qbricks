@@ -35,10 +35,10 @@ export default function Home() {
                 We will show you where <QBricksText /> helps, where it does not, and what adoption would require.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+                <Link href="/contact" className="btn-primary group">
                   Evaluate your workload <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link href="/product" className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 text-base font-black text-q-ink transition-all hover:-translate-y-1 hover:bg-black/[0.08]">
+                <Link href="/product" className="btn-secondary">
                   Explore the platform
                 </Link>
               </div>

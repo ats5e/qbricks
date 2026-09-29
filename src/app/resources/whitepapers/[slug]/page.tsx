@@ -53,7 +53,7 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
     <main className="min-h-screen bg-white selection:bg-q-brand/30 selection:text-q-ink">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-black/5 pb-20 pt-40 lg:pt-44">
+      <section className="relative overflow-hidden border-b border-black/5 pb-20 page-hero">
 
         <div className="container-x relative z-10">
           <Link href="/resources" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-q-gray-600 transition-colors hover:text-q-ink">
@@ -70,7 +70,7 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-q-gray-700">{brand(paper.standfirst)}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <DownloadButton href={paper.pdf} />
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-7 py-3.5 text-sm font-bold text-q-ink backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-black/[0.08]">
+                <Link href="/contact" className="btn-secondary">
                   Request a demo <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -96,7 +96,7 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
       {/* Numbered points */}
       <section className="relative overflow-hidden bg-white pb-16 pt-12 md:pb-24 md:pt-14 lg:pb-32 lg:pt-16">
         <div className="container-x relative z-10">
-          <h2 className="max-w-3xl text-[clamp(2rem,3.8vw,3.2rem)] font-black leading-[0.98] tracking-tight text-q-ink">
+          <h2 className="h-section max-w-3xl">
             {brand(paper.pointsTitle)}
           </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -112,7 +112,7 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
           {/* Solution */}
           <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-q-brand/25 bg-gradient-to-br from-[#f5e9e9]/80 to-transparent p-8 md:p-12">
             <div className="relative max-w-4xl">
-              <h2 className="text-[clamp(1.8rem,3.4vw,2.8rem)] font-black leading-[1.02] tracking-tight text-q-ink">
+              <h2 className="h-sub">
                 {brand(paper.solutionTitle)}
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-q-gray-700">{brand(paper.solutionText)}</p>
@@ -121,12 +121,12 @@ export default async function WhitepaperPage({ params }: { params: Promise<{ slu
 
           {/* Pull quote + CTA */}
           <div className="mt-16 text-center">
-            <p className="mx-auto max-w-4xl text-[clamp(1.7rem,3.6vw,3rem)] font-black leading-[1.05] tracking-tight text-brand-gradient">
+            <p className="mx-auto max-w-4xl h-sub">
               “{paper.quote}”
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <DownloadButton href={paper.pdf} large />
-              <Link href="/resources" className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 text-base font-black text-q-ink transition-all hover:-translate-y-1 hover:bg-black/[0.08]">
+              <Link href="/resources" className="btn-secondary">
                 More resources
               </Link>
             </div>

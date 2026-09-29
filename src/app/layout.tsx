@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { CtaTracker } from "@/components/analytics/CtaTracker";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
@@ -89,6 +90,7 @@ export default function RootLayout({
         <div id="main-content">{children}</div>
         <Footer />
         <Analytics />
+        <CtaTracker />
       </body>
     </html>
   );

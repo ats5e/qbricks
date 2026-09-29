@@ -15,7 +15,7 @@ export default function CostCalculatorPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-44 pb-16 md:pb-24">
+      <section className="relative overflow-hidden page-hero pb-16 md:pb-24">
         <div className="absolute inset-0 -z-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.2),#fff_88%)]" />
         </div>
@@ -35,10 +35,10 @@ export default function CostCalculatorPage() {
       </section>
 
       {/* Cost Lines Section */}
-      <section className="py-16 md:py-24 bg-white border-t border-black/5">
+      <section className="section-y-sm bg-white border-t border-black/5">
         <div className="container-x">
           <div className="mb-12 max-w-3xl">
-            <h2 className="text-3xl font-black text-q-ink md:text-4xl">Where <QBricksText /> takes cost out</h2>
+            <h2 className="h-sub">Where <QBricksText /> takes cost out</h2>
             <p className="mt-4 text-lg text-q-gray-600">
               Four cost lines an organisation carries to keep data fit for use, removed or collapsed.
             </p>

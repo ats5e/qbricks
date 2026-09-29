@@ -43,15 +43,17 @@
     @apply py-16 md:py-24 lg:py-32;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to bottom, #000000 0%, #55555e 100%);
+  /* Tighter band (logo rows, proof bands, sub-sections). */
+  .section-y-sm {
+    @apply py-16 lg:py-24;
   }
 
-  .text-brand-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #ff6a5c 0%, #ff3a26 42%, #e8200f 100%);
+  /* Top of every inner page: clears the floating nav without a void on phones. */
+  .page-hero {
+    @apply pt-32 md:pt-40 lg:pt-44;
   }
+
+
 
   /* Type scale: one display size for page titles, one for section headings. */
   .h-display {
@@ -60,10 +62,28 @@
     line-height: 0.98;
   }
 
+  .h-sub {
+    @apply font-black tracking-tight text-q-ink;
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    line-height: 1.12;
+  }
+
   .h-section {
     @apply font-black tracking-tight text-q-ink;
     font-size: clamp(1.7rem, 3.4vw, 3.25rem);
     line-height: 1.1;
+  }
+
+  /* One button system: primary (red) and secondary (quiet grey), one size. */
+  .btn-primary,
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-[0.95rem] font-bold leading-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-q-brand focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply bg-q-brand text-white hover:-translate-y-0.5 hover:bg-q-brand-ember;
+  }
+  .btn-secondary {
+    @apply border border-black/10 bg-black/[0.045] text-q-ink hover:-translate-y-0.5 hover:border-black/20 hover:bg-black/[0.07];
   }
 
   .eyebrow {

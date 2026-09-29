@@ -35,7 +35,7 @@ const fadeUp = {
 
 export function ProofBand() {
   return (
-    <section className="relative overflow-hidden border-y border-black/5 bg-white py-20 lg:py-24">
+    <section className="relative overflow-hidden border-y border-black/5 bg-white section-y-sm">
       <div className="container-x relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -78,7 +78,7 @@ export function ProofBand() {
               <p className="mt-3 max-w-xl text-lg text-q-gray-600">
                 Model the saving on your own numbers across the four cost lines an organisation carries to keep data fit for use.
               </p>
-              <span className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-q-brand px-7 py-3.5 text-sm font-black text-white transition-all group-hover:-translate-y-0.5 group-hover:bg-q-brand-ember">
+              <span className="btn-primary mt-7 w-fit group-hover:-translate-y-0.5 group-hover:bg-q-brand-ember">
                 Open the calculator <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </div>

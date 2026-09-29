@@ -70,7 +70,7 @@ function MeshDiagram() {
           </div>
           <h3 className="text-lg font-black text-q-ink">Governed Agentic Mesh</h3>
           <p className="mt-2 text-sm leading-relaxed text-q-gray-600">Learns, recommends and executes with human approval and full lineage.</p>
-          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-600/10 px-3 py-1.5 text-xs font-bold text-emerald-700">
+          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-q-brand/[0.05] px-3 py-1.5 text-xs font-bold text-q-brand-deep">
             <ShieldCheck className="h-3.5 w-3.5" />
             Always auditable
           </div>
@@ -114,7 +114,7 @@ export function Agentic() {
           >
             <p className="eyebrow mb-5">Secure agentic metadata management</p>
             <h2 className="h-section font-black tracking-tight text-q-ink">
-              Automate the heavy work. Audit everything.
+              Automate the heavy work. Audit everything.
             </h2>
             <p className="mt-7 text-xl leading-relaxed text-q-gray-700">
               <QBricksText />{" "}automates the data management process by creating data contracts, performing complex pipeline builds and joins and providing data products that can be used either in existing data management platforms or in an organisation&apos;s local database. Accelerate your organisation&apos;s AI journey and keep complete control of each and every data product.

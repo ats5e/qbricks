@@ -73,7 +73,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
   return (
     <main className="min-h-screen bg-white selection:bg-q-brand/30 selection:text-q-ink">
       {/* ================= Hero ================= */}
-      <section className="relative overflow-hidden border-b border-black/5 pb-20 pt-40 lg:pt-44">
+      <section className="relative overflow-hidden border-b border-black/5 pb-20 page-hero">
 
         <div className="container-x relative z-10">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -92,10 +92,10 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               </h1>
               <p className="mt-7 max-w-2xl text-xl leading-relaxed text-q-gray-700">{brand(content.heroIntro)}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-7 py-3.5 text-sm font-black text-white transition-all hover:-translate-y-0.5 hover:bg-q-brand-ember">
+                <Link href="/contact" className="btn-primary group">
                   Request a demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link href="/product" className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.055] px-7 py-3.5 text-sm font-bold text-q-ink backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-black/[0.08]">
+                <Link href="/product" className="btn-secondary">
                   Explore the platform
                 </Link>
               </div>
@@ -319,15 +319,15 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
 
           {/* Closing CTA */}
           <motion.div {...fadeUp} transition={{ duration: 0.8 }} className="premium-card mt-16 p-8 text-center md:p-12">
-            <h2 className="mx-auto max-w-3xl text-[clamp(2rem,4vw,3.4rem)] font-black leading-[0.98] tracking-tight text-brand-gradient">
+            <h2 className="h-section mx-auto max-w-3xl">
               {brand(content.fits.closing)}
             </h2>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-full bg-q-brand px-8 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+              <Link href="/contact" className="btn-primary group">
                 Request a demo <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="/resources" className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-8 py-4 text-base font-black text-q-ink transition-all hover:-translate-y-1 hover:bg-black/[0.08]">
-                <Check className="h-5 w-5 text-emerald-600" /> More resources
+              <Link href="/resources" className="btn-secondary">
+                <Check className="h-5 w-5 text-q-brand-deep" /> More resources
               </Link>
             </div>
           </motion.div>

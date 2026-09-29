@@ -24,7 +24,7 @@ export function VideoResourcePage({
 }: VideoResourcePageProps) {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-40 pb-20 md:pt-44 md:pb-24">
+      <section className="relative overflow-hidden border-b border-black/5 page-hero pb-20 md:pb-24">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),#fff_92%)]" />
 
         <div className="container-x relative z-10">
@@ -54,7 +54,7 @@ export function VideoResourcePage({
       <section className="section-y bg-white pt-14 md:pt-20">
         <div className="container-x">
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.195)] md:p-3">
-            <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-white">
+            <div className="aspect-video overflow-hidden rounded-3xl bg-white">
               <PosterVideo
                 playerSrc={playerSrc}
                 posterAlt={posterAlt}
@@ -70,7 +70,7 @@ export function VideoResourcePage({
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember"
+              className="btn-primary mt-7"
             >
               Request a demo <ArrowRight className="h-5 w-5" />
             </Link>

@@ -26,7 +26,7 @@ const cases = [
     colSpan: "lg:col-span-3",
   },
   {
-    title: "Stop fraud with data that is actually connected.",
+    title: "Stop fraud with data that is actually connected.",
     icon: AlertOctagon,
     tag: "Fraud & financial crime",
     pain: "Fraud signals live in silos; weak data linkage means missed patterns and inflated false positives.",
@@ -113,9 +113,9 @@ export function UseCases() {
 
                   {/* Outcome */}
                   <div className="mt-auto">
-                    <div className="h-full rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
-                      <span className="mb-2 block text-xs font-bold text-emerald-700">The outcome</span>
-                      <p className="text-sm font-bold leading-relaxed text-emerald-700">{brand(useCase.outcome)}</p>
+                    <div className="h-full rounded-2xl border border-q-brand/30 bg-white p-5">
+                      <span className="mb-2 block text-xs font-bold text-q-brand-dark">The outcome</span>
+                      <p className="text-sm font-bold leading-relaxed text-q-ink">{brand(useCase.outcome)}</p>
                     </div>
                   </div>
                 </div>

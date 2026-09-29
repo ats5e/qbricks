@@ -91,7 +91,7 @@ export const whitepapers: Whitepaper[] = [
       { title: "Batch thinking in a streaming world", text: "Nightly full loads reprocess everything to change almost nothing. Costs climb, SLAs slip, and incremental change, the thing regulators and ML models actually need, is lost in the reload." },
       { title: "Quality is discovered downstream", text: "Defects surface in a regulatory report or an AI model, weeks after ingestion, at the most expensive point to fix. Without record-level validation at entry, Bronze becomes a landfill, and every AI initiative built on it inherits the mess." },
     ],
-    solutionTitle: "The way out: contract-first ingestion",
+    solutionTitle: "The way out: contract-first ingestion",
     solutionText:
       "Banks that escape Bronze invert the model. Instead of landing raw data and cleaning it later, they agree the rules first, as machine-readable data contracts under the Open Data Contract Standard (ODCS), and validate every record against them at ingestion. Governance stops being remediation and becomes the pipeline itself: schema, quality thresholds, ownership and lineage are enforced before data lands, registered in Unity Catalog, with a human always in the loop for exceptions. Automated, streaming ingestion replaces the hand-built backlog, so incremental change flows from system of record to lakehouse in hours, not quarters.",
     quote: "The problem is not the AI solution you are trying to implement. It is the quality of your data.",

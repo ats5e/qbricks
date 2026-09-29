@@ -21,7 +21,7 @@ const differentiators = ["Data Contracts & Data Products", "Single-file deployme
 export default function WhyQBricksPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+      <section className="relative overflow-hidden border-b border-black/5 page-hero pb-[22vw]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
           <Image src="/assets/brand/hero-why.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
@@ -37,7 +37,7 @@ export default function WhyQBricksPage() {
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             {differentiators.map((item) => (
               <div key={item} className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.04] px-5 py-3 text-sm font-black text-q-ink backdrop-blur-sm">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {brand(item)}
+                <CheckCircle2 className="h-4 w-4 text-q-brand-deep" /> {brand(item)}
               </div>
             ))}
           </div>
@@ -65,7 +65,7 @@ export default function WhyQBricksPage() {
           </div>
 
           <div className="premium-card mx-auto max-w-6xl p-2 shadow-[0_35px_100px_rgba(0,0,0,0.195)] md:p-3">
-            <div className="aspect-video overflow-hidden rounded-[1.35rem] bg-white">
+            <div className="aspect-video overflow-hidden rounded-3xl bg-white">
               <PosterVideo
                 playerSrc="https://player.mux.com/pBStRpuKR00m7Xe1neCepUPvoWhvtOJZhhGq8N5JCOqE?metadata-video-title=QBricks_10reasonswhy&video-title=QBricks_10reasonswhy"
                 posterAlt="10 reasons why QBricks video cover"
@@ -85,7 +85,7 @@ export default function WhyQBricksPage() {
             <h2 className="h-section font-black tracking-tight text-q-ink">
               Ready to fix your data&nbsp;foundation?
             </h2>
-            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+            <Link href="/contact" className="btn-primary mt-8">
               Request a demo <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

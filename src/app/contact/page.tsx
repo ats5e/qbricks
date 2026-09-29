@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { QBricksText } from "@/components/ui/QBricksText";
 
@@ -56,18 +57,21 @@ export default function ContactPage() {
       });
       if (res.ok) {
         setStatus("success");
+        track("contact_submit", { result: "success" });
         setFormData({ name: "", email: "", company: "", message: "", company_website: "" });
       } else {
         setStatus("error");
+        track("contact_submit", { result: "error" });
       }
     } catch {
       setStatus("error");
+      track("contact_submit", { result: "error" });
     }
   };
 
   return (
     <main className="min-h-screen bg-white selection:bg-q-brand/30 selection:text-q-ink pb-24 relative overflow-hidden">
-      <div className="container-x relative z-10 pt-40 md:pt-48">
+      <div className="container-x page-hero relative z-10">
         <div className="mb-16 text-center md:mb-24">
           <h1 className="h-display font-black tracking-tight text-q-ink">
             Evaluate <QBricksText /> on your workload.
@@ -131,7 +135,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-bold text-q-gray-700">Full Name</label>
+                  <label htmlFor="name" className="text-sm font-bold text-q-gray-700">Full name</label>
                   <input
                     type="text"
                     id="name"
@@ -155,7 +159,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm font-bold text-q-gray-700">Work Email</label>
+                <label htmlFor="email" className="text-sm font-bold text-q-gray-700">Work email</label>
                 <input
                   type="email"
                   id="email"
@@ -194,15 +198,15 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="group mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-q-brand px-8 py-4 font-black text-white transition-all hover:bg-q-brand-ember hover:shadow-[0_0_30px_rgba(232,32,15,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
+                className="btn-primary group mt-2 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {status === "submitting" ? "Sending…" : "Send Message"}
+                {status === "submitting" ? "Sending…" : "Send message"}
                 <Send className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </button>
 
               {status === "success" && (
-                <p role="status" className="flex items-center gap-2 text-sm font-bold text-emerald-600">
-                  <CheckCircle2 className="h-5 w-5 shrink-0" />
+                <p role="status" className="flex items-center gap-2 text-sm font-bold text-q-ink">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-q-brand-deep" />
                   Thanks — your message is on its way. We&apos;ll be in touch shortly.
                 </p>
               )}

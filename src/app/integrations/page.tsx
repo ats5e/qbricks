@@ -20,7 +20,7 @@ export const metadata = pageMeta({
 export default function IntegrationsPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden border-b border-black/5 pt-44 pb-[22vw]">
+      <section className="relative overflow-hidden border-b border-black/5 page-hero pb-[22vw]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-0 h-[19vw]" aria-hidden="true">
           <Image src="/assets/brand/hero-integrations.webp" alt="" fill priority className="object-cover object-bottom" sizes="100vw" />
         </div>
@@ -47,7 +47,7 @@ export default function IntegrationsPage() {
       <DualFlowDiagram />
 
       <div className="container-x relative z-10 pb-20 pt-10 text-center">
-        <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">
+        <Link href="/contact" className="btn-primary">
           Request a demo <ArrowRight className="h-5 w-5" />
         </Link>
       </div>
