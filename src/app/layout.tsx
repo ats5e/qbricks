@@ -12,12 +12,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const siteDescription =
-  "QBricks turns systems of record into trusted, A.I.-ready data products in hours. Contract-enforced governance, agentic metadata and local compute, delivered in open, portable formats. Built for your organisation, with financial-crime use cases like AML and KYC. Works with Databricks, Microsoft Fabric, Snowflake or your own database.";
+  "QBricks turns systems of record into governed, A.I.-ready data products in hours. Works with Databricks, Microsoft Fabric, Snowflake or your own database.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://qbricks.ai"),
   title: {
-    default: "QBricks, Governed, A.I.-Ready Data Without Pipelines | Infinium",
+    default: "QBricks | Governed, A.I.-Ready Data Without Pipelines",
     template: "%s | QBricks",
   },
   description: siteDescription,

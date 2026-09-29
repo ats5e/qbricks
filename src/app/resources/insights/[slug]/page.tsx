@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights, insightImage } from "../data";
+import { clip, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return insights.map(({ slug }) => ({ slug }));
@@ -13,10 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const insight = insights.find((entry) => entry.slug === slug);
   if (!insight) return {};
-  return {
+  return pageMeta({
     title: insight.title,
-    description: insight.standfirst.slice(0, 155),
-  };
+    description: clip(insight.standfirst),
+    path: `/resources/insights/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function InsightPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -46,7 +49,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
           </Link>
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-q-brand/40 bg-q-brand/10 px-4 py-1.5 text-xs text-q-brand-ember font-medium">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-q-brand/40 bg-q-brand/10 px-4 py-1.5 text-xs text-q-brand-deep font-medium">
               <BookOpen className="h-3.5 w-3.5" /> Insight · {insight.category}
             </span>
             <h1 className="h-section font-black tracking-tight text-q-ink">
@@ -76,7 +79,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             ))}
 
             <div className="relative overflow-hidden rounded-[2rem] border border-q-brand/25 bg-gradient-to-br from-[#f5e9e9]/80 to-transparent p-8 md:p-10">
-              <p className="text-xs text-q-brand-ember font-medium">The takeaway</p>
+              <p className="text-xs text-q-brand-deep font-medium">The takeaway</p>
               <p className="mt-3 text-2xl font-black leading-snug tracking-tight text-q-ink md:text-3xl">{brand(insight.takeaway)}</p>
             </div>
 

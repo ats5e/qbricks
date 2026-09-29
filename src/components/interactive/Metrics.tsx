@@ -100,7 +100,7 @@ export function Metrics() {
               <div className="flex items-center gap-3">
                 <QIcon className="h-7 w-7" />
                 <div>
-                  <p className="text-sm font-medium text-q-brand-ember">With <QBricksText /></p>
+                  <p className="text-sm font-medium text-q-brand-deep">With <QBricksText /></p>
                   <h3 className="mt-1 text-2xl font-black tracking-tight text-q-ink">Governed foundation</h3>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export function Metrics() {
             {before.map((item, index) => (
               <li key={item} className="grid border-t border-black/[0.06] lg:grid-cols-2">
                 <div className="flex items-start gap-3 px-6 pb-2 pt-5 text-q-gray-500 md:px-10 lg:border-r lg:border-black/[0.08] lg:py-5">
-                  <X className="mt-1 h-4 w-4 shrink-0 text-q-gray-400" />
+                  <X className="mt-1 h-4 w-4 shrink-0 text-q-gray-500" />
                   <span>{brand(item)}</span>
                 </div>
                 <motion.div

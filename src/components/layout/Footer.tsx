@@ -54,7 +54,6 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex flex-col items-start gap-2 transition-opacity hover:opacity-80"
-              aria-label="A product of Infinium Technology"
             >
               <span className="text-xs font-medium text-q-gray-500">A product of</span>
               <InfiniumLockup className="text-[22px]" />
@@ -65,7 +64,7 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-3">
             {columns.map((column) => (
               <div key={column.title}>
-                <h4 className="mb-5 font-black text-q-ink">{brand(column.title)}</h4>
+                <h2 className="mb-5 font-black text-q-ink">{brand(column.title)}</h2>
                 <ul className="space-y-3 text-sm text-q-gray-600">
                   {column.links.map(([label, href]) => (
                     <li key={label}>
@@ -87,14 +86,14 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-black/5 pt-8 md:flex-row">
-          <p className="text-xs text-q-gray-400">
+          <p className="text-xs text-q-gray-500">
             &copy; {new Date().getFullYear()}{" "}
             <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-q-ink">
               Infinium Consulting B.V.
             </a>
             . All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-q-gray-400">
+          <div className="flex items-center gap-4 text-xs text-q-gray-500">
             <span>qbricks.ai</span>
           </div>
         </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { whitepaperImage, whitepapers } from "../data";
+import { clip, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return whitepapers.map(({ slug }) => ({ slug }));
@@ -13,10 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const paper = whitepapers.find((entry) => entry.slug === slug);
   if (!paper) return {};
-  return {
-    title: { absolute: `${paper.title} | QBricks White Paper` },
-    description: paper.standfirst.slice(0, 155),
-  };
+  return pageMeta({
+    title: paper.title,
+    description: clip(paper.standfirst),
+    path: `/resources/whitepapers/${slug}`,
+    type: "article",
+  });
 }
 
 function DownloadButton({ href, large = false }: { href: string; large?: boolean }) {

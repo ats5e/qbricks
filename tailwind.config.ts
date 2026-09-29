@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         "q-brand": "#e8200f",
         "q-brand-ember": "#ff3a26",
+        "q-brand-deep": "#d6111f",
+        "q-brand-dark": "#b30d18",
         "q-ink": "#0b0b0c",
         "q-black": "#000000",
         "q-panel": "#f7f7f8",
@@ -19,7 +21,7 @@ const config: Config = {
         "q-gray-200": "#e4e4e7",
         "q-gray-300": "#d4d4d8",
         "q-gray-400": "#a1a1aa",
-        "q-gray-500": "#71717a",
+        "q-gray-500": "#66666f",
         "q-gray-600": "#52525b",
         "q-gray-700": "#3f3f46",
         "q-gray-800": "#27272a",

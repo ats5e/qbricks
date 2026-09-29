@@ -6,6 +6,15 @@ import { Hero } from "@/components/interactive/Hero";
 import { Metrics } from "@/components/interactive/Metrics";
 import { Integrations } from "@/components/interactive/Integrations";
 import { ProofBand } from "@/components/interactive/ProofBand";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta({
+  title: "QBricks | Governed, A.I.-Ready Data Without Pipelines",
+  description:
+    "QBricks turns systems of record into governed, A.I.-ready data products in hours. Works with Databricks, Microsoft Fabric, Snowflake or your own database.",
+  path: "/",
+  absolute: true,
+});
 
 export default function Home() {
   return (

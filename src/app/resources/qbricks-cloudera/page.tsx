@@ -1,10 +1,14 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
 import { ClouderaFlowDiagram } from "@/components/diagrams/ClouderaFlowDiagram";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "QBricks + Cloudera | Capability Overview" },
-  description: "Trusted data, before it reaches Cloudera. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your Cloudera platform.",
-};
+export const metadata = pageMeta({
+  title: "QBricks + Cloudera capability overview",
+  description:
+    "Trusted data, before it reaches Cloudera. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your Cloudera platform.",
+  path: "/resources/qbricks-cloudera",
+  absolute: true,
+});
 
 const content: CapabilityContent = {
   partner: "Cloudera",

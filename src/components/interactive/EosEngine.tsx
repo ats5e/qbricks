@@ -99,7 +99,7 @@ export function EosEngine() {
           </motion.p>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.12 }} className="mx-auto mt-6 text-[clamp(1.15rem,2vw,1.4rem)] font-black tracking-tight text-q-ink">
-            Streaming data. No Spark. No clusters. <span className="text-q-brand-ember">No memory tax.</span>
+            Streaming data. No Spark. No clusters. <span className="text-q-brand-deep">No memory tax.</span>
           </motion.p>
 
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.16 }} className="mx-auto mt-14 grid max-w-3xl gap-4 text-left sm:grid-cols-2">
@@ -246,7 +246,7 @@ export function EosEngine() {
                 {eosRows.map((row) => (
                   <div key={row.label} className="flex items-center justify-between gap-4 rounded-xl bg-black/[0.04] px-4 py-3.5 text-[15px]">
                     <span className="text-q-ink">{brand(row.label)}</span>
-                    <span className={`shrink-0 text-right text-sm font-bold ${row.accent ? "text-q-brand-ember" : "text-q-gray-700"}`}>{brand(row.tag)}</span>
+                    <span className={`shrink-0 text-right text-sm font-bold ${row.accent ? "text-q-brand-dark" : "text-q-gray-700"}`}>{brand(row.tag)}</span>
                   </div>
                 ))}
                 <div className="rounded-xl border border-q-brand/45 bg-q-brand/[0.08] px-4 py-4 text-[15px] leading-relaxed text-q-ink">
@@ -274,7 +274,7 @@ export function EosEngine() {
                 transition={{ duration: 0.6, delay: (index % 3) * 0.06 }}
                 className="flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition-colors duration-300 hover:border-q-brand/40"
               >
-                <p className="text-sm font-black text-q-brand-ember">{brand(item.n)}</p>
+                <p className="text-sm font-black text-q-brand-deep">{brand(item.n)}</p>
                 <h3 className="mt-4 text-lg font-black tracking-tight text-q-ink">{brand(item.t)}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-q-gray-600">{brand(item.d)}</p>
               </motion.div>

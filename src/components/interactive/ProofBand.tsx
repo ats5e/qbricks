@@ -44,7 +44,7 @@ export function ProofBand() {
             </motion.h2>
           </div>
           <motion.div {...fadeUp} transition={{ delay: 0.1 }}>
-            <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-bold text-q-brand-ember transition-colors hover:text-q-ink">
+            <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-bold text-q-brand-deep transition-colors hover:text-q-ink">
               From our white papers <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
@@ -59,7 +59,7 @@ export function ProofBand() {
               >
                 <p className="text-5xl font-black tracking-tight text-q-brand-ember">{brand(stat.value)}</p>
                 <p className="mt-4 flex-1 leading-relaxed text-q-gray-700">{brand(stat.label)}</p>
-                <p className="mt-5 text-xs text-q-gray-500 transition-colors group-hover:text-q-brand-ember font-medium">
+                <p className="mt-5 text-xs text-q-gray-500 transition-colors group-hover:text-q-brand-deep font-medium">
                   White paper · {stat.source}
                 </p>
               </Link>

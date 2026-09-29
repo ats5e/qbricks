@@ -110,22 +110,22 @@ export default function Calculator() {
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-1" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   FTE today <span>{brand(fteToday)}</span>
                 </label>
-                <input type="range" min="1" max="50" value={fteToday} onChange={e => setFteToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
+                <input id="calc-1" type="range" min="1" max="50" value={fteToday} onChange={e => setFteToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-2" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   <span>FTE with <QBricksText /></span> <span>{brand(fteWith)}</span>
                 </label>
-                <input type="range" min="0" max="10" value={fteWith} onChange={e => setFteWith(Number(e.target.value))} className="w-full accent-emerald-600" />
+                <input id="calc-2" type="range" min="0" max="10" value={fteWith} onChange={e => setFteWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-3" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Loaded cost per FTE <span>€{loadedCost.toLocaleString()}</span>
                 </label>
-                <input type="range" min="50000" max="300000" step="5000" value={loadedCost} onChange={e => setLoadedCost(Number(e.target.value))} className="w-full accent-q-gray-600" />
+                <input id="calc-3" type="range" min="50000" max="300000" step="5000" value={loadedCost} onChange={e => setLoadedCost(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
             </div>
           </div>
@@ -137,28 +137,28 @@ export default function Calculator() {
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-4" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Person-weeks today <span>{brand(weeksToday)}</span>
                 </label>
-                <input type="range" min="4" max="100" value={weeksToday} onChange={e => setWeeksToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
+                <input id="calc-4" type="range" min="4" max="100" value={weeksToday} onChange={e => setWeeksToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-5" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   <span>Person-weeks with <QBricksText /></span> <span>{brand(weeksWith)}</span>
                 </label>
-                <input type="range" min="1" max="20" value={weeksWith} onChange={e => setWeeksWith(Number(e.target.value))} className="w-full accent-emerald-600" />
+                <input id="calc-5" type="range" min="1" max="20" value={weeksWith} onChange={e => setWeeksWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-6" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Contractor day rate <span>€{dayRate}</span>
                 </label>
-                <input type="range" min="300" max="2000" step="50" value={dayRate} onChange={e => setDayRate(Number(e.target.value))} className="w-full accent-q-gray-600" />
+                <input id="calc-6" type="range" min="300" max="2000" step="50" value={dayRate} onChange={e => setDayRate(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-7" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Annual maint. avoided <span>€{maintenanceAvoided.toLocaleString()}</span>
                 </label>
-                <input type="range" min="0" max="300000" step="10000" value={maintenanceAvoided} onChange={e => setMaintenanceAvoided(Number(e.target.value))} className="w-full accent-q-gray-600" />
+                <input id="calc-7" type="range" min="0" max="300000" step="10000" value={maintenanceAvoided} onChange={e => setMaintenanceAvoided(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
             </div>
           </div>
@@ -170,22 +170,22 @@ export default function Calculator() {
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-8" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Runs per year <span>{brand(runs)}</span>
                 </label>
-                <input type="range" min="10" max="2000" step="10" value={runs} onChange={e => setRuns(Number(e.target.value))} className="w-full accent-q-gray-600" />
+                <input id="calc-8" type="range" min="10" max="2000" step="10" value={runs} onChange={e => setRuns(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-9" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Cost per run <span>€{costPerRun}</span>
                 </label>
-                <input type="range" min="100" max="5000" step="50" value={costPerRun} onChange={e => setCostPerRun(Number(e.target.value))} className="w-full accent-q-gray-600" />
+                <input id="calc-9" type="range" min="100" max="5000" step="50" value={costPerRun} onChange={e => setCostPerRun(Number(e.target.value))} className="w-full accent-q-gray-600" />
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-10" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Share removed by push-down <span>{shareRemoved}%</span>
                 </label>
-                <input type="range" min="0" max="100" value={shareRemoved} onChange={e => setShareRemoved(Number(e.target.value))} className="w-full accent-emerald-600" />
+                <input id="calc-10" type="range" min="0" max="100" value={shareRemoved} onChange={e => setShareRemoved(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
             </div>
           </div>
@@ -197,16 +197,16 @@ export default function Calculator() {
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-11" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   Run + maintain today <span>€{runMaintainToday.toLocaleString()}</span>
                 </label>
-                <input type="range" min="10000" max="500000" step="5000" value={runMaintainToday} onChange={e => setRunMaintainToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
+                <input id="calc-11" type="range" min="10000" max="500000" step="5000" value={runMaintainToday} onChange={e => setRunMaintainToday(Number(e.target.value))} className="w-full accent-q-brand-ember" />
               </div>
               <div>
-                <label className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
+                <label htmlFor="calc-12" className="mb-2 flex justify-between text-sm font-bold text-q-gray-600">
                   <span>With <QBricksText /></span> <span>€{runMaintainWith.toLocaleString()}</span>
                 </label>
-                <input type="range" min="10000" max="250000" step="5000" value={runMaintainWith} onChange={e => setRunMaintainWith(Number(e.target.value))} className="w-full accent-emerald-600" />
+                <input id="calc-12" type="range" min="10000" max="250000" step="5000" value={runMaintainWith} onChange={e => setRunMaintainWith(Number(e.target.value))} className="w-full accent-emerald-600" />
               </div>
             </div>
           </div>
@@ -224,12 +224,12 @@ export default function Calculator() {
             <div className="space-y-6">
               <div>
                 <p className="mb-1 text-sm text-q-gray-600">01 Remediation</p>
-                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingRemediation} /></p>
+                <p className="text-2xl font-bold text-emerald-700"><Counter value={savingRemediation} /></p>
               </div>
               
               <div className="border-t border-black/10 pt-4">
                 <p className="mb-1 text-sm text-q-gray-600">02 Pipeline annual maint. avoided</p>
-                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingPipelineAnnual} /></p>
+                <p className="text-2xl font-bold text-emerald-700"><Counter value={savingPipelineAnnual} /></p>
                 
                 <div className="mt-3 rounded-xl bg-black/5 p-3 text-sm">
                   <p className="text-q-gray-600">Plus one-off build saving:</p>
@@ -239,17 +239,17 @@ export default function Calculator() {
               
               <div className="border-t border-black/10 pt-4">
                 <p className="mb-1 text-sm text-q-gray-600">03 Processing compute</p>
-                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingCompute} /></p>
+                <p className="text-2xl font-bold text-emerald-700"><Counter value={savingCompute} /></p>
               </div>
               
               <div className="border-t border-black/10 pt-4">
                 <p className="mb-1 text-sm text-q-gray-600">04 Ongoing compute & maintain</p>
-                <p className="text-2xl font-bold text-emerald-600"><Counter value={savingOngoing} /></p>
+                <p className="text-2xl font-bold text-emerald-700"><Counter value={savingOngoing} /></p>
               </div>
               
               <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-6 pt-5 mt-8">
                 <p className="text-sm font-bold uppercase tracking-wider text-emerald-700 mb-1">Total Annual Saving</p>
-                <p className="text-4xl font-black text-emerald-600">
+                <p className="text-4xl font-black text-emerald-700">
                   <Counter value={totalAnnualSaving} isMillion={true} />
                 </p>
               </div>
@@ -273,7 +273,7 @@ export default function Calculator() {
       <div className="mt-24 rounded-3xl border border-black/10 bg-black/[0.02] p-12 text-center">
         <h2 className="mb-6 text-3xl font-black text-q-ink md:text-5xl">Four cost lines, one engine</h2>
         <p className="mx-auto mb-10 max-w-2xl text-xl text-q-gray-700">
-          Reclaim <span className="font-bold text-emerald-600"><Counter value={totalAnnualSaving} isMillion={true} /></span> across your data estate.
+          Reclaim <span className="font-bold text-emerald-700"><Counter value={totalAnnualSaving} isMillion={true} /></span> across your data estate.
         </p>
         
         <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-q-brand px-8 py-4 font-black text-white transition-all hover:-translate-y-1 hover:bg-q-brand-ember">

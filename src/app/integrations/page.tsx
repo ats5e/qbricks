@@ -6,11 +6,14 @@ import { DualFlowDiagram } from "@/components/diagrams/DualFlowDiagram";
 import { Integrations } from "@/components/interactive/Integrations";
 import { PlatformSpotlights } from "@/components/interactive/PlatformSpotlights";
 import { QBricksText } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Integrations",
-  description: "QBricks works with Databricks, Microsoft Fabric, Snowflake and your own on-premise databases across modern data stacks.",
-};
+  description:
+    "QBricks works with Databricks, Microsoft Fabric, Snowflake and your own on-premise databases across modern data stacks.",
+  path: "/integrations",
+});
 
 
 

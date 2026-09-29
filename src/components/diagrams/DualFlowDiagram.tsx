@@ -77,7 +77,7 @@ export function DualFlowDiagram() {
                   transition={{ duration: 0.6, delay: 0.15 }}
                   className="mb-8 text-center"
                 >
-                  <p className="text-xs font-bold text-q-brand-ember">Option 01 · Direct streaming</p>
+                  <p className="text-xs font-bold text-q-brand-deep">Option 01 · Direct streaming</p>
                   <p className="mt-1.5 text-xs text-q-gray-500 font-medium">system of record → <QBricksText />, nothing in between</p>
                 </motion.div>
 
@@ -87,7 +87,7 @@ export function DualFlowDiagram() {
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, delay: 0.25 }}
                 >
-                  <p className="mb-3 text-center text-xs font-bold text-q-brand-ember">Option 02 · Lands in</p>
+                  <p className="mb-3 text-center text-xs font-bold text-q-brand-deep">Option 02 · Lands in</p>
                   <div
                     data-flow-id="df-govdb"
                     className="rounded-3xl border border-q-brand/60 bg-[#fbefef]/95 p-6 text-center transition-all duration-300 hover:-translate-y-0.5"
@@ -118,7 +118,7 @@ export function DualFlowDiagram() {
                     <QIcon className="h-6 w-6" />
                     <span className="text-base font-black tracking-tight text-q-ink">Bricks</span>
                   </div>
-                  <p className="mb-4 text-center text-xs text-q-brand-ember font-medium">Processes & governs the data</p>
+                  <p className="mb-4 text-center text-xs text-q-brand-deep font-medium">Processes & governs the data</p>
                   <div className="space-y-1.5">
                     {processes.map((process) => {
                       const Icon = process.icon;
@@ -134,7 +134,7 @@ export function DualFlowDiagram() {
                           </span>
                           <div className="min-w-0">
                             <p className="text-[15px] font-black leading-tight text-q-ink">{brand(process.title)}</p>
-                            <p className={`mt-0.5 text-[12px] leading-snug ${process.highlight ? "text-q-brand-ember/90" : "text-q-gray-500"}`}>{brand(process.text)}</p>
+                            <p className={`mt-0.5 text-[12px] leading-snug ${process.highlight ? "text-q-brand-deep/90" : "text-q-gray-500"}`}>{brand(process.text)}</p>
                           </div>
                         </div>
                       );

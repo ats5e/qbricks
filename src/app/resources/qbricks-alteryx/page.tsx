@@ -1,9 +1,13 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "QBricks + Alteryx | Capability Overview" },
-  description: "Trusted data, before it reaches Alteryx. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered into the stores your Alteryx workflows already read.",
-};
+export const metadata = pageMeta({
+  title: "QBricks + Alteryx capability overview",
+  description:
+    "Trusted data, before it reaches Alteryx. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered into the stores your Alteryx workflows already read.",
+  path: "/resources/qbricks-alteryx",
+  absolute: true,
+});
 
 const content: CapabilityContent = {
   partner: "Alteryx",

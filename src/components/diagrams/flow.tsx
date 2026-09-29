@@ -134,7 +134,7 @@ export function FlowCanvas({
       </svg>
       {label && labelPos && (
         <span
-          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-white/80 px-1.5 py-0.5 text-[11px] text-q-brand-ember lg:block font-medium"
+          className="pointer-events-none absolute z-10 hidden -translate-y-1/2 rounded bg-white/80 px-1.5 py-0.5 text-[11px] text-q-brand-deep lg:block font-medium"
           style={{ left: labelPos.x + 10, top: labelPos.y - 14 }}
         >
           {brand(label.text)}
@@ -256,7 +256,7 @@ export function QBricksHubCard({ flowId, className = "" }: { flowId: string; cla
         <QIcon className="h-6 w-6" />
         <span className="text-base font-black tracking-tight text-q-ink">Bricks</span>
       </div>
-      <p className="mt-2 text-xs text-q-brand-ember font-medium">Data management platform</p>
+      <p className="mt-2 text-xs text-q-brand-deep font-medium">Data management platform</p>
       <p className="mt-3 text-lg font-black leading-snug tracking-tight text-q-ink">
         Governed, AI-ready data, in hours, not years.
       </p>

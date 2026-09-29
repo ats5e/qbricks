@@ -265,7 +265,7 @@ export function ContractsScene(props: SceneProps) {
           <div className="mb-2.5 flex items-center gap-2">
             <span className="h-2 w-2 rounded-[2px] bg-q-brand/70" style={{ animation: "cc-blink 3.2s ease-in-out infinite" }} />
             <span className="h-1.5 w-24 rounded bg-black/25" />
-            <span className="ml-auto rounded border border-q-brand/50 px-1.5 py-0.5 text-[11px] text-q-brand-ember font-medium">ODCS</span>
+            <span className="ml-auto rounded border border-q-brand/50 px-1.5 py-0.5 text-[11px] text-q-brand-deep font-medium">ODCS</span>
           </div>
           {codeLines.map((l, i) => (
             <div key={`cl-${i}`} className="flex items-center gap-2 py-[3px]">

@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
 import CostLines from "./CostLines";
 import Calculator from "./Calculator";
 import { QBricksText } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: { absolute: "Where QBricks takes cost out" },
-  description: "An illustrative cost calculator: model where QBricks takes cost out of your data estate on your own numbers.",
-};
+export const metadata = pageMeta({
+  title: "Where QBricks takes cost out",
+  description:
+    "An illustrative cost calculator: model where QBricks takes cost out of your data estate on your own numbers.",
+  path: "/resources/cost-calculator",
+  absolute: true,
+});
 
 export default function CostCalculatorPage() {
   return (

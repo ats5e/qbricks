@@ -1,9 +1,13 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "QBricks + Snowflake | Capability Overview" },
-  description: "Trusted data, before it reaches Snowflake. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your data cloud.",
-};
+export const metadata = pageMeta({
+  title: "QBricks + Snowflake capability overview",
+  description:
+    "Trusted data, before it reaches Snowflake. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your data cloud.",
+  path: "/resources/qbricks-snowflake",
+  absolute: true,
+});
 
 const content: CapabilityContent = {
   partner: "Snowflake",

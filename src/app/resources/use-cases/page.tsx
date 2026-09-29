@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-
 import { VideoResourcePage } from "@/components/resources/VideoResourcePage";
 import { QBricksText } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: { absolute: "QBricks Use Cases | Resources" },
-  description: "See how governed, fully lineaged data products support financial crime, customer intelligence and risk workflows.",
-};
+export const metadata = pageMeta({
+  title: "QBricks Use Cases",
+  description:
+    "See how governed, fully lineaged data products support financial crime, customer intelligence and risk workflows.",
+  path: "/resources/use-cases",
+  absolute: true,
+});
 
 export default function UseCasesVideoPage() {
   return (

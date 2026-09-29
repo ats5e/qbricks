@@ -132,7 +132,7 @@ export function EcosystemDiagram({ emphasis = false }: { emphasis?: boolean }) {
                       title={
                         <span className="flex items-center justify-between gap-2">
                           {brand(lane.title)}
-                          <span className={`text-[11px] ${activeLane === index ? "text-q-brand-ember" : "text-q-gray-500"} font-medium`}>
+                          <span className={`text-[11px] ${activeLane === index ? "text-q-brand-deep" : "text-q-gray-500"} font-medium`}>
                             {brand(lane.tag)}
                           </span>
                         </span>

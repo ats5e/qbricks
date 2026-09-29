@@ -6,11 +6,15 @@ import { ComputeCost } from "@/components/interactive/ComputeCost";
 import { DataJourneyDiagram } from "@/components/diagrams/DataJourneyDiagram";
 import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "Why QBricks" },
-  description: "Why one platform, vendor-native tooling and consultancy data fabric programmes do not fix the metadata foundation organisations need.",
-};
+export const metadata = pageMeta({
+  title: "Why QBricks",
+  description:
+    "Why one platform, vendor-native tooling and consultancy data fabric programmes do not fix the metadata foundation organisations need.",
+  path: "/why-qbricks",
+  absolute: true,
+});
 
 const differentiators = ["Data Contracts & Data Products", "Single-file deployment", "Agentic + human-in-the-loop", "Ontologies & knowledge graphs", "Local compute", "End-to-end auditability"];
 

@@ -207,7 +207,7 @@ export default function ContactPage() {
                 </p>
               )}
               {status === "error" && (
-                <p role="alert" className="flex items-center gap-2 text-sm font-bold text-q-brand-ember">
+                <p role="alert" className="flex items-center gap-2 text-sm font-bold text-q-brand-deep">
                   <AlertCircle className="h-5 w-5 shrink-0" />
                   Something went wrong. Please try again, or email sales@infinium.consulting directly.
                 </p>

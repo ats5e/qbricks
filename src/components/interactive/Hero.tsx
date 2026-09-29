@@ -49,11 +49,8 @@ export function Hero() {
 
       <div className="container-x relative z-10">
         <div className="max-w-2xl lg:max-w-[46%] xl:max-w-xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          {/* CSS entrance, so the headline paints before hydration (faster LCP on phones). */}
+          <div className="hero-in">
             <h1 className="h-display">
               Significantly reduce your <span className="text-q-brand-ember">compute costs.</span>
             </h1>
@@ -79,7 +76,7 @@ export function Hero() {
                 Explore the benchmarks
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* The brick-built Q under the copy on mobile / tablet */}
           <div className="relative mt-10 h-[46svh] min-h-72 max-h-[26rem] w-full lg:hidden">

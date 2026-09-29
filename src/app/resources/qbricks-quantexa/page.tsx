@@ -1,10 +1,14 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
 import { QuantexaFlowDiagram } from "@/components/diagrams/QuantexaFlowDiagram";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "QBricks + Quantexa | Capability Overview" },
-  description: "Trusted data, before it reaches Quantexa. QBricks turns fragmented systems of record into governed, entity-ready data products, field-mapped to the Quantexa data model.",
-};
+export const metadata = pageMeta({
+  title: "QBricks + Quantexa capability overview",
+  description:
+    "Trusted data, before it reaches Quantexa. QBricks turns fragmented systems of record into governed, entity-ready data products, field-mapped to the Quantexa data model.",
+  path: "/resources/qbricks-quantexa",
+  absolute: true,
+});
 
 const content: CapabilityContent = {
   partner: "Quantexa",

@@ -5,11 +5,14 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Resources",
-  description: "Insights and FAQ on A.I.-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
-};
+  description:
+    "Insights and FAQ on A.I.-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
+  path: "/resources",
+});
 
 const capabilityOverviews = [
   {
@@ -115,7 +118,7 @@ function StoryCard({ href, image, kicker, title, cta }: { href: string; image: s
       <div className="flex flex-1 flex-col p-6">
         <p className="text-xs font-medium text-q-gray-500">{brand(kicker)}</p>
         <h3 className="mt-2 flex-1 text-lg font-black leading-snug tracking-tight text-q-ink">{brand(title)}</h3>
-        <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-q-ink transition-colors group-hover:text-q-brand-ember">
+        <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-q-ink transition-colors group-hover:text-q-brand-deep">
           {cta} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
       </div>
@@ -168,7 +171,7 @@ export default function ResourcesPage() {
               <Image src={whitepaperImage(featured.slug)} alt="" fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width: 1024px) 55vw, 100vw" />
             </div>
             <div className="flex flex-col justify-center p-8 md:p-12">
-              <p className="text-sm font-medium text-q-brand-ember">{brand(featured.category)}</p>
+              <p className="text-sm font-medium text-q-brand-deep">{brand(featured.category)}</p>
               <h3 className="mt-3 text-3xl font-black leading-tight tracking-tight text-q-ink md:text-4xl">{brand(featured.title)}</h3>
               <p className="mt-5 text-lg leading-relaxed text-q-gray-600">{brand(featured.standfirst.slice(0, 220))}…</p>
               <span className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-q-brand px-6 py-3 text-sm font-bold text-white transition-colors group-hover:bg-q-brand-ember">
@@ -245,7 +248,7 @@ export default function ResourcesPage() {
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-lg font-black leading-snug text-q-ink">Trusted data for {item.partner}</h3>
                   <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-q-gray-600">{brand(item.text)}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-q-ink transition-colors group-hover:text-q-brand-ember">
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-q-ink transition-colors group-hover:text-q-brand-deep">
                     Read the overview <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>

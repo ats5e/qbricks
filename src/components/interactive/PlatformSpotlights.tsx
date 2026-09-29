@@ -177,7 +177,7 @@ export function PlatformSpotlights() {
                         </li>
                       ))}
                     </ul>
-                    <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-bold text-q-brand-ember">
+                    <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-bold text-q-brand-deep">
                       Read the capability overview
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>

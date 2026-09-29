@@ -101,7 +101,7 @@ function Dot({ path, dur, begin }: { path: string; dur: number; begin: number })
 
 function Frame({ id, w, h, label, children }: { id: string; w: number; h: number; label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl">
+    <div className="overflow-x-auto rounded-2xl" tabIndex={0} role="region" aria-label={label}>
       <svg
         viewBox={`0 0 ${w} ${h}`}
         role="img"

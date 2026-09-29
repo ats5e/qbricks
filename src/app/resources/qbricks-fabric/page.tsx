@@ -1,9 +1,13 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "QBricks + Microsoft Fabric | Capability Overview" },
-  description: "Trusted data, before it reaches Microsoft Fabric. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into OneLake.",
-};
+export const metadata = pageMeta({
+  title: "QBricks + Microsoft Fabric capability overview",
+  description:
+    "Trusted data, before it reaches Microsoft Fabric. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into OneLake.",
+  path: "/resources/qbricks-fabric",
+  absolute: true,
+});
 
 const content: CapabilityContent = {
   partner: "Microsoft Fabric",

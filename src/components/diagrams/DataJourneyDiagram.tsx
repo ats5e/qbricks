@@ -274,7 +274,7 @@ function Connector({ active = false, label }: { active?: boolean; label?: string
   return (
     <div className="flex flex-col items-center justify-center">
       {label ? (
-        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-ember" : "text-q-gray-500"}`}>
+        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
           {brand(label)}
         </span>
       ) : null}
@@ -318,7 +318,7 @@ function CoreLayer({
         </div>
       )}
 
-      <p className={`text-[0.66rem] font-black uppercase tracking-[0.15em] ${active ? "text-q-brand-ember" : "text-q-gray-500"}`}>
+      <p className={`text-[0.66rem] font-black uppercase tracking-[0.15em] ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
         {brand(content.layerLabel)}
       </p>
       <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-q-ink md:text-xl">{brand(content.layerTitle)}</h3>
@@ -334,7 +334,7 @@ function CoreLayer({
         ))}
       </div>
 
-      <div className="mt-5 flex items-center gap-2 text-[11px] text-q-gray-400 font-medium">
+      <div className="mt-5 flex items-center gap-2 text-[11px] text-q-gray-500 font-medium">
         {active ? <Sparkles className="h-3.5 w-3.5 text-q-brand-ember" /> : <CalendarClock className="h-3.5 w-3.5" />}
         {content.timing}
       </div>

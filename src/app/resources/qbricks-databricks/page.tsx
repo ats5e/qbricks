@@ -1,9 +1,13 @@
 import { CapabilityOverview, type CapabilityContent } from "@/components/resources/CapabilityOverview";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: { absolute: "QBricks + Databricks | Capability Overview" },
-  description: "Trusted data, before it reaches Databricks. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your lakehouse.",
-};
+export const metadata = pageMeta({
+  title: "QBricks + Databricks capability overview",
+  description:
+    "Trusted data, before it reaches Databricks. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your lakehouse.",
+  path: "/resources/qbricks-databricks",
+  absolute: true,
+});
 
 const content: CapabilityContent = {
   partner: "Databricks",

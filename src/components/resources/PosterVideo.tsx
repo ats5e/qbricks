@@ -19,7 +19,7 @@ export function PosterVideo({
     <details className="group relative h-full w-full">
       <summary
         className="relative block h-full w-full cursor-pointer list-none overflow-hidden bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-q-brand focus-visible:ring-inset group-open:hidden [&::-webkit-details-marker]:hidden"
-        aria-label={`Play ${videoTitle}`}
+        aria-label={`Watch · ${videoTitle}`}
       >
         <Image
           src={posterSrc}

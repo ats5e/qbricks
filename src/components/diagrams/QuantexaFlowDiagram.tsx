@@ -131,7 +131,7 @@ export function QuantexaFlowDiagram() {
                       <p className="mb-2 text-[12px] font-black text-q-ink">Advanced AI with LLM</p>
                       <div className="flex flex-wrap gap-1.5">
                         {["Data Intelligence", "Case Narrative", "Q Assist", "Agentic AI · GenAI"].map((chip) => (
-                          <span key={chip} className="rounded-md border border-q-brand/35 bg-q-brand/10 px-2 py-1 text-xs leading-none text-q-brand-ember font-medium">
+                          <span key={chip} className="rounded-md border border-q-brand/35 bg-q-brand/10 px-2 py-1 text-xs leading-none text-q-brand-deep font-medium">
                             {brand(chip)}
                           </span>
                         ))}

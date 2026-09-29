@@ -5,11 +5,14 @@ import { Agentic } from "@/components/interactive/Agentic";
 import { FeaturesBento } from "@/components/interactive/FeaturesBento";
 import { MigrationGraphic, RoutingGraphic } from "@/components/interactive/flowGraphics";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Product",
-  description: "A.I.-enabled metadata management built for governed enterprise data, Data Contracts, Data Products and auditable deployment.",
-};
+  description:
+    "A.I.-enabled metadata management built for governed enterprise data, Data Contracts, Data Products and auditable deployment.",
+  path: "/product",
+});
 
 const flow = [
   ["Define", "Express data quality and ETL logic as owned, versioned Data Contracts."],

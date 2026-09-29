@@ -2,11 +2,14 @@ import { PlayCircle } from "lucide-react";
 import { UseCases } from "@/components/interactive/UseCases";
 import { PosterVideo } from "@/components/resources/PosterVideo";
 import { QBricksText } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Solutions",
-  description: "QBricks solutions for AML, KYC, fraud, contextual MDM, credit risk and ESG risk.",
-};
+  description:
+    "QBricks solutions for AML, KYC, fraud, contextual MDM, credit risk and ESG risk.",
+  path: "/solutions",
+});
 
 export default function SolutionsPage() {
   return (

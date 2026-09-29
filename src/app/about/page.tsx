@@ -4,11 +4,14 @@ import Link from "next/link";
 import { InfiniumLockup } from "@/components/ui/InfiniumLockup";
 import { Logo } from "@/components/ui/Logo";
 import { QBricksText } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "About",
-  description: "QBricks is developed and owned by Infinium Consulting B.V., part of Infinium Technology.",
-};
+  description:
+    "QBricks is developed and owned by Infinium Consulting B.V., part of Infinium Technology.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

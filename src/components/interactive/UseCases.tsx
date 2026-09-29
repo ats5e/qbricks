@@ -84,7 +84,7 @@ export function UseCases() {
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.0825),transparent_60%)]" />
 
                 <div className="mb-8 flex items-center justify-between gap-4">
-                  <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-q-brand-ember">
+                  <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-q-brand-dark">
                     {brand(useCase.tag)}
                   </span>
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black/5 text-q-gray-600 transition-colors group-hover:bg-q-brand/20 group-hover:text-q-brand-ember">

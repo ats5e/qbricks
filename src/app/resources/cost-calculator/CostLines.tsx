@@ -81,7 +81,7 @@ export default function CostLines() {
                   <div className="grid gap-8 md:grid-cols-2">
                     {/* Today */}
                     <div className="space-y-4 rounded-xl bg-white/40 p-5 border border-q-gray-200">
-                      <div className="flex items-center gap-2 text-q-brand-ember">
+                      <div className="flex items-center gap-2 text-q-brand-dark">
                         <AlertCircle className="h-4 w-4" />
                         <h4 className="font-bold">Today, without <QBricksText /></h4>
                       </div>
@@ -95,7 +95,7 @@ export default function CostLines() {
                     
                     {/* With QBricks */}
                     <div className="space-y-4 rounded-xl bg-emerald-400/5 p-5 border border-emerald-400/20">
-                      <div className="flex items-center gap-2 text-emerald-600">
+                      <div className="flex items-center gap-2 text-emerald-700">
                         <CheckCircle2 className="h-4 w-4" />
                         <h4 className="font-bold">With <QBricksText /></h4>
                       </div>
@@ -107,7 +107,7 @@ export default function CostLines() {
                   
                   {/* Annual Saving */}
                   <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 px-6 py-4">
-                    <span className="font-bold text-emerald-600 uppercase text-xs tracking-wider">Annual saving</span>
+                    <span className="font-bold text-emerald-700 uppercase text-xs tracking-wider">Annual saving</span>
                     <span className="font-bold text-emerald-700 text-sm">{brand(line.savingText)}</span>
                   </div>
                 </div>

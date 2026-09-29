@@ -67,7 +67,7 @@
   }
 
   .eyebrow {
-    @apply font-sans text-[0.75rem] uppercase tracking-[0.18em] font-bold text-q-brand-ember;
+    @apply font-sans text-[0.75rem] uppercase tracking-[0.18em] font-bold text-q-brand-deep;
   }
 
   .glass-panel {
@@ -423,4 +423,16 @@ summary:focus-visible {
 
 @keyframes qb-dash {
   to { stroke-dashoffset: -24; }
+}
+
+.hero-in {
+  animation: qb-hero-in 0.7s ease-out both;
+}
+
+@keyframes qb-hero-in {
+  from { opacity: 0; transform: translateY(20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in { animation: none; }
 }

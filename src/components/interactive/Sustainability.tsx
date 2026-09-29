@@ -125,12 +125,12 @@ export function Sustainability() {
             A bank’s FCRM pipeline, 3 runs a day, 1,095 runs a year, on a single <QBricksText /> node versus a provisioned cloud warehouse.
           </motion.p>
 
-          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.12 }} className="premium-card mt-12 overflow-x-auto">
+          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.12 }} className="premium-card mt-12 overflow-x-auto" tabIndex={0} role="region" aria-label="Annual energy, cost and emissions comparison">
             <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-black/10">
                   <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Dimension</th>
-                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-brand-ember"><QBricksText /> · single node</th>
+                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-brand-deep"><QBricksText /> · single node</th>
                   <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Cloud warehouse, on-demand</th>
                   <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Delta</th>
                 </tr>
@@ -141,7 +141,7 @@ export function Sustainability() {
                     <td className="px-6 py-4 text-[15px] font-bold text-q-ink">{brand(row.dimension)}</td>
                     <td className="px-6 py-4 text-[15px] text-q-gray-700">{brand(row.qbricks)}</td>
                     <td className="px-6 py-4 text-[15px] text-q-gray-600">{brand(row.warehouse)}</td>
-                    <td className="px-6 py-4 text-[15px] font-black text-emerald-600">{brand(row.delta)}</td>
+                    <td className="px-6 py-4 text-[15px] font-black text-emerald-700">{brand(row.delta)}</td>
                   </tr>
                 ))}
               </tbody>

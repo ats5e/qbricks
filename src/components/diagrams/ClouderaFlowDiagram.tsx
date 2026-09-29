@@ -88,7 +88,7 @@ export function ClouderaFlowDiagram() {
                 >
                   <div className="mb-4 flex items-center gap-3">
                     <Image src="/assets/partners/Cloudera_logo.webp" alt="Cloudera" width={110} height={22} className="h-4 w-auto object-contain" />
-                    <span className="text-[11px] text-q-brand-ember font-medium">Downstream platform</span>
+                    <span className="text-[11px] text-q-brand-deep font-medium">Downstream platform</span>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     {clouderaModules.map((module, index) => {

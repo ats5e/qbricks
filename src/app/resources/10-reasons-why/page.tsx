@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-
 import { VideoResourcePage } from "@/components/resources/VideoResourcePage";
 import { QBricksText } from "@/components/ui/QBricksText";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: { absolute: "10 Reasons Why QBricks | Resources" },
-  description: "See how QBricks turns governed data into an A.I.-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.",
-};
+export const metadata = pageMeta({
+  title: "10 Reasons Why QBricks",
+  description:
+    "See how QBricks turns governed data into an A.I.-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.",
+  path: "/resources/10-reasons-why",
+  absolute: true,
+});
 
 export default function TenReasonsWhyPage() {
   return (

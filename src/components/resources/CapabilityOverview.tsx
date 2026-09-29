@@ -136,7 +136,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                   </li>
                 ))}
               </ul>
-              <span className="mt-3 inline-block rounded-full border border-q-brand/50 px-3 py-1 text-xs text-q-brand-ember font-medium">
+              <span className="mt-3 inline-block rounded-full border border-q-brand/50 px-3 py-1 text-xs text-q-brand-deep font-medium">
                 Local compute
               </span>
             </motion.div>
@@ -144,7 +144,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.25 }} className="flex flex-col items-center justify-center rounded-2xl border border-black/10 bg-black/[0.03] p-5 text-center">
               <p className="text-sm text-q-gray-600">data product</p>
               <p className="mt-1 text-xl font-black text-q-ink">governed</p>
-              <p className="mt-2 text-xs text-q-brand-ember font-medium">{brand(content.handoff.productTags)}</p>
+              <p className="mt-2 text-xs text-q-brand-deep font-medium">{brand(content.handoff.productTags)}</p>
             </motion.div>
             <FlowArrow delay={0.3} />
             <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.35 }} className="rounded-2xl border border-black/10 bg-black/[0.03] p-5">
@@ -183,7 +183,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-q-brand/35 bg-q-brand/10 text-q-brand-ember">
                       <Icon className="h-4 w-4" />
                     </span>
-                    <span className="text-xs text-q-brand-ember font-medium">{brand(pillar.kicker)}</span>
+                    <span className="text-xs text-q-brand-deep font-medium">{brand(pillar.kicker)}</span>
                   </div>
                   <h3 className="text-xl font-black text-q-ink">{brand(pillar.title)}</h3>
                   <p className="mt-2.5 leading-relaxed text-q-gray-600">{brand(pillar.text)}</p>
@@ -241,7 +241,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
               transition={{ duration: 0.8 }}
               className="relative mt-10 overflow-hidden rounded-[2rem] border border-black/10 bg-gradient-to-br from-black/[0.05] to-transparent p-8 md:p-10"
             >
-              <p className="relative text-center text-xs text-q-brand-ember font-medium">The outcome</p>
+              <p className="relative text-center text-xs text-q-brand-deep font-medium">The outcome</p>
               <p className="relative mx-auto mt-3 max-w-6xl text-balance text-center text-[clamp(1.35rem,2.6vw,2rem)] font-black leading-[1.12] tracking-tight text-q-brand-ember">
                 {brand(content.outcome)}
               </p>
@@ -266,7 +266,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="premium-card border-q-brand/25 bg-gradient-to-br from-[#e7d9db]/90 to-[#f4f0f1]/90 p-7 md:p-9">
-              <p className="text-xs text-q-brand-ember font-medium">Upstream, production</p>
+              <p className="text-xs text-q-brand-deep font-medium">Upstream, production</p>
               <h3 className="mt-2 text-2xl font-black text-q-ink"><QBricksText /> handles</h3>
               <ul className="mt-6 space-y-3.5">
                 {content.fits.qbricksHandles.map((item) => (
@@ -310,7 +310,7 @@ export function CapabilityOverview({ content, diagram }: { content: CapabilityCo
                 transition={{ duration: 0.6, delay: index * 0.08 }}
                 className="rounded-3xl border border-black/10 bg-black/[0.035] p-7 backdrop-blur-xl"
               >
-                <p className="text-xs text-q-brand-ember font-medium">{brand(card.kicker)}</p>
+                <p className="text-xs text-q-brand-deep font-medium">{brand(card.kicker)}</p>
                 <h3 className="mt-2 text-xl font-black text-q-ink">{brand(card.title)}</h3>
                 <p className="mt-3 leading-relaxed text-q-gray-600">{brand(card.text)}</p>
               </motion.div>

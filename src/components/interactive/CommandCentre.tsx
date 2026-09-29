@@ -37,7 +37,7 @@ export function CommandCentre() {
       <div className="flex flex-none items-center gap-3.5 border-b border-black/10 px-6 py-4">
         <QIcon className="h-8 w-8" />
         <p className="text-base font-black tracking-tight text-q-ink">Data Command Centre</p>
-        <div className="hidden rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-ember md:block">
+        <div className="hidden rounded-full border border-q-brand/25 bg-q-brand/10 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-q-brand-deep md:block">
           Capstone
         </div>
         <div className="ml-auto hidden items-center gap-2.5 rounded-xl border border-black/10 bg-black/[0.04] px-3 py-1.5 sm:flex">
@@ -58,7 +58,7 @@ export function CommandCentre() {
             return (
               <div
                 key={step.label}
-                className={`rounded-2xl border p-2.5 ${active ? "translate-x-2 border-q-brand/45 bg-q-brand/[0.12]" : "border-black/[0.08] bg-black/[0.035] opacity-55"}`}
+                className={`rounded-2xl border p-2.5 ${active ? "translate-x-2 border-q-brand/45 bg-q-brand/[0.12]" : "border-black/[0.08] bg-black/[0.035] opacity-75"}`}
               >
                 <div className="flex items-center gap-3">
                   <div className={`rounded-xl border border-black/10 bg-black/5 p-2 ${step.tone}`}>
