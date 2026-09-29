@@ -26,7 +26,7 @@ const cases = [
     colSpan: "lg:col-span-3",
   },
   {
-    title: "Stop fraud with data that is actually connected.",
+    title: "Stop fraud with data that is actually connected.",
     icon: AlertOctagon,
     tag: "Fraud & financial crime",
     pain: "Fraud signals live in silos; weak data linkage means missed patterns and inflated false positives.",
@@ -78,7 +78,7 @@ export function UseCases() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] p-8 transition-all hover:bg-black/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-black/20 ${useCase.colSpan}`}
+                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] p-8 transition-all lg:grid lg:gap-0 lg:[grid-row:span_4] lg:[grid-template-rows:subgrid] hover:bg-black/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-black/20 ${useCase.colSpan}`}
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.0825),transparent_60%)]" />
@@ -92,12 +92,12 @@ export function UseCases() {
                   </div>
                 </div>
 
-                <h3 className="mb-6 text-2xl font-black leading-tight tracking-tight text-q-ink md:text-3xl">
+                <h3 className="mb-6 text-2xl font-black leading-tight tracking-tight text-q-ink xl:text-3xl">
                   {brand(useCase.title)}
                 </h3>
 
-                <div className="pt-6 border-t border-black/10 flex-grow flex flex-col">
-                  <div className="space-y-5 mb-6">
+                <div className="border-t border-black/10 pt-6">
+                  <div className="mb-6 space-y-5">
                     {/* Pain */}
                     <div>
                       <p className="text-sm leading-relaxed text-q-gray-600">{brand(useCase.pain)}</p>
@@ -110,14 +110,12 @@ export function UseCases() {
                       </p>
                     </div>
                   </div>
+                </div>
 
-                  {/* Outcome */}
-                  <div className="mt-auto">
-                    <div className="h-full rounded-2xl border border-q-brand/30 bg-white p-5">
-                      <span className="mb-2 block text-xs font-bold text-q-brand-dark">The outcome</span>
-                      <p className="text-sm font-bold leading-relaxed text-q-ink">{brand(useCase.outcome)}</p>
-                    </div>
-                  </div>
+                {/* Outcome */}
+                <div className="mt-auto rounded-2xl border border-q-brand/30 bg-white p-5 lg:mt-0">
+                  <span className="mb-2 block text-xs font-bold text-q-brand-dark">The outcome</span>
+                  <p className="text-sm font-bold leading-relaxed text-q-ink">{brand(useCase.outcome)}</p>
                 </div>
               </motion.div>
             );
