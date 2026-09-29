@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, FileSearch, Gauge, ShieldCheck, X } from "lucide-react";
+import { Check, X } from "lucide-react";
+import Image from "next/image";
 import { QIcon } from "@/components/ui/QIcon";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
@@ -22,9 +23,9 @@ const after = [
 ];
 
 const valueCards = [
-  { icon: ShieldCheck, title: "Regulatory confidence", text: "Every transformation, agent action and exception can be tracked and viewed by Risk, Compliance and Internal Audit." },
-  { icon: Gauge, title: "Speed without chaos", text: "Single-file deployment turns complex infrastructure and workloads into a controlled, repeatable process." },
-  { icon: FileSearch, title: "Data teams can prove it", text: "Contracts, products, lineage and knowledge graphs create a fully auditable shared language between business and technology." },
+  { image: "/assets/brand/resources/in-data-contracts-explained.webp", title: "Regulatory confidence", text: "Every transformation, agent action and exception can be tracked and viewed by Risk, Compliance and Internal Audit." },
+  { image: "/assets/brand/resources/wp-shift-right.webp", title: "Speed without chaos", text: "Single-file deployment turns complex infrastructure and workloads into a controlled, repeatable process." },
+  { image: "/assets/brand/resources/in-aml-kyc-data-problems-first.webp", title: "Data teams can prove it", text: "Contracts, products, lineage and knowledge graphs create a fully auditable shared language between business and technology." },
 ];
 
 export function Metrics() {
@@ -131,24 +132,31 @@ export function Metrics() {
           </ol>
         </motion.div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {valueCards.map((card, index) => {
-            const Icon = card.icon;
-            return (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="rounded-3xl border border-black/10 bg-black/[0.03] p-6"
-              >
-                <Icon className="mb-5 h-7 w-7 text-q-brand-ember" />
-                <h4 className="text-xl font-black text-q-ink">{brand(card.title)}</h4>
-                <p className="mt-3 leading-relaxed text-q-gray-600">{brand(card.text)}</p>
-              </motion.div>
-            );
-          })}
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {valueCards.map((card, index) => (
+            <motion.article
+              key={card.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
+              className="group overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-500 hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.25)]"
+            >
+              <div className="relative aspect-[3/2] overflow-hidden bg-q-panel">
+                <Image
+                  src={card.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="border-t border-black/[0.06] px-7 pb-8 pt-6">
+                <h3 className="text-[1.3rem] font-extrabold leading-snug tracking-tight text-q-ink">{brand(card.title)}</h3>
+                <p className="mt-2.5 text-[15px] leading-[1.65] text-q-gray-600">{brand(card.text)}</p>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
