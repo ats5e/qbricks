@@ -174,7 +174,8 @@ export default function ResourcesPage() {
               </span>
             </div>
           </Link>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {/* Half-width columns so an odd last card sits centred instead of stranded on the left */}
+          <div className="grid gap-6 md:grid-cols-4 md:[&>*]:col-span-2 md:max-xl:[&>*:last-child:nth-child(odd)]:col-start-2 xl:grid-cols-6 xl:[&>*:last-child:nth-child(3n+1)]:col-start-3 xl:[&>*:nth-last-child(2):nth-child(3n+1)]:col-start-2">
             {papers.map((paper) => (
               <StoryCard key={paper.slug} href={`/resources/whitepapers/${paper.slug}`} image={whitepaperImage(paper.slug)} kicker={paper.category} title={paper.title} cta="Read & download" />
             ))}

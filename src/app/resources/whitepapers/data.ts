@@ -19,6 +19,33 @@ export type Whitepaper = {
 
 export const whitepapers: Whitepaper[] = [
   {
+    slug: "memory-compute-hedge",
+    category: "Compute Economics / Memory Pricing",
+    title: "QBricks: a hedge to the cost of rising memory, Spark and compute.",
+    standfirst:
+      "Server DRAM has become the scarcest input in the AI build-out, and every Spark billing unit carries a fixed parcel of it. Contract prices for server DRAM roughly doubled in Q1 2026 and are still rising every quarter. When DRAM reprices, Spark reprices. This paper traces the price shock, the supply and geopolitical factors behind it, the capital chasing it, and how QBricks routes lakehouse workloads onto a Spark-free engine to cut the exposure by roughly 80 percent.",
+    stats: [
+      { value: "+90–95%", label: "conventional DRAM contract price rise in a single quarter, Q1 2026, a record" },
+      { value: "7×", label: "modelled server-DRAM index at the 2027 peak vs September 2025" },
+      { value: "−80%", label: "QBricks compute index at the same point: 140 vs 700 for memory-indexed Spark" },
+    ],
+    pointsTitle: "Why the memory squeeze lands on your lakehouse bill",
+    points: [
+      { title: "The billing unit is memory", text: "1 DPU = 4 vCPU + 16 GB memory. Databricks DBUs and Dataproc profiles are built the same way: every unit of Spark compute you buy carries a fixed parcel of DRAM, so the DRAM spike is a direct input cost. Server makers and cloud providers began passing it through in late 2025." },
+      { title: "Supply is slow", text: "A DRAM fab takes two to three years to build, qualify and ramp. New capacity lands in 2027–28, but every HBM bit consumes roughly four times the wafer area of conventional DRAM, so much of it never reaches the commodity pool." },
+      { title: "Demand is contracted", text: "Hyperscalers have guided to roughly $700 billion of 2026 capital expenditure, most of it AI infrastructure, and have locked up 2027 memory output under multi-year agreements. Everyone else absorbs the increase." },
+      { title: "The chain is fragile", text: "One EUV lithography supplier, around 90% of advanced logic made in Taiwan and two-thirds of DRAM made in South Korea. Diversification does not close the gap before 2028–29." },
+    ],
+    solutionTitle: "The hedge: data lands in the lakehouse, QBricks runs the workload",
+    solutionText:
+      "The exposure comes from the shape of the engine, not from the data. Spark parallelises across many executors, each holding a slice of the dataset in RAM, billed per executor-hour. EOS, the SQL engine that powers QBricks, inverts that trade: it runs the pipeline estate on one right-sized VM, with no Spark, no clusters and no memory tax. Your lakehouse, whether Databricks, Microsoft Fabric, Snowflake or Oracle, remains the governed landing zone on Iceberg or Delta tables. QBricks routes each suitable workload to EOS and returns governed data products to the landing zone, while large joins, streaming and ML stay on Spark. Every record is still checked against an ODCS data contract, with a human in the loop and before-and-after files for audit. The commercial model is gain-share: QBricks is paid from audited savings, so the hedge funds itself.",
+    quote: "For the window that matters, the cheapest memory is the memory you stop buying.",
+    tagline: "QBricks: keep the lakehouse, keep the governance, drop the cluster for most of the work.",
+    scene: "integrations",
+    sceneBadge: "Memory hedge",
+    pdf: "/whitepapers/memory-compute-hedge.pdf",
+  },
+  {
     slug: "ai-compute-numbers",
     category: "AI Economics / Enterprise Data",
     title: "Why the numbers on the AI revolution don't add up.",
