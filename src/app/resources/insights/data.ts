@@ -11,21 +11,21 @@ export const insights: Insight[] = [
   {
     slug: "why-ai-use-cases-fail",
     category: "AI readiness",
-    title: "Why 95% of A.I. use cases fail, and what organisations can do about it",
+    title: "Why 95% of AI use cases fail, and what organisations can do about it",
     standfirst:
-      "A 2025 MIT report found that around 95% of A.I.-related use cases were failing, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted. The pattern repeats across industries, and it is fixable.",
+      "A 2025 MIT report found that around 95% of AI-related use cases were failing, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted. The pattern repeats across industries, and it is fixable.",
     sections: [
       {
         heading: "The failure is upstream of the model",
         paragraphs: [
-          "When an A.I. initiative stalls, the post-mortem rarely blames the model. It finds unclear data ownership, undocumented semantics, quality defects discovered weeks after ingestion, and a lakehouse full of raw extracts nobody trusts. The model was asked to reason over data that was never fit for use.",
+          "When an AI initiative stalls, the post-mortem rarely blames the model. It finds unclear data ownership, undocumented semantics, quality defects discovered weeks after ingestion, and a lakehouse full of raw extracts nobody trusts. The model was asked to reason over data that was never fit for use.",
           "The economics compound the problem. Every ungoverned dataset consumed by a model is compute spent twice: once ingesting it, and again correcting what it produced. Failed use cases don't just miss their business case, they actively inflate the cost of the next attempt.",
         ],
       },
       {
         heading: "Why throwing money at it hasn't worked",
         paragraphs: [
-          "The default response has been spend: more data engineers, more remediation programmes, more platform licences, more pipeline building. But hand-built pipelines and after-the-fact cleansing scale linearly with headcount, while the backlog of sources scales with the business. Organisations are recognising that these costs outweigh the savings A.I. was meant to deliver.",
+          "The default response has been spend: more data engineers, more remediation programmes, more platform licences, more pipeline building. But hand-built pipelines and after-the-fact cleansing scale linearly with headcount, while the backlog of sources scales with the business. Organisations are recognising that these costs outweigh the savings AI was meant to deliver.",
         ],
       },
       {
@@ -36,7 +36,7 @@ export const insights: Insight[] = [
         ],
       },
     ],
-    takeaway: "The problem is not the A.I. solution you are trying to implement. It is the quality of your data.",
+    takeaway: "The problem is not the AI solution you are trying to implement. It is the quality of your data.",
   },
   {
     slug: "lakehouse-data-swamp",

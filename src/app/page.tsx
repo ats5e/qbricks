@@ -9,9 +9,9 @@ import { ProofBand } from "@/components/interactive/ProofBand";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "QBricks | Governed, A.I.-Ready Data Without Pipelines",
+  title: "QBricks | Governed, AI-Ready Data Without Pipelines",
   description:
-    "QBricks turns systems of record into governed, A.I.-ready data products in hours. Works with Databricks, Microsoft Fabric, Snowflake or your own database.",
+    "QBricks turns systems of record into governed, AI-ready data products in hours. Works with Databricks, Microsoft Fabric, Snowflake or your own database.",
   path: "/",
   absolute: true,
 });

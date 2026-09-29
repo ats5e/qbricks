@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "QBricks + Databricks capability overview",
   description:
-    "Trusted data, before it reaches Databricks. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your lakehouse.",
+    "Trusted data, before it reaches Databricks. QBricks turns fragmented systems of record into governed, AI-ready data products delivered straight into your lakehouse.",
   path: "/resources/qbricks-databricks",
   absolute: true,
 });
@@ -16,7 +16,7 @@ const content: CapabilityContent = {
   sceneBadge: "Q Agent",
   eyebrow: "No more data pipelines",
   heroIntro:
-    "QBricks turns fragmented systems of record into governed, A.I.-ready data products, contract-enforced and audit-ready, then delivers them straight into your Databricks lakehouse. From system of record to Unity Catalog in hours: no pipelines to build, no cluster to stand up, no mess to untangle first.",
+    "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into your Databricks lakehouse. From system of record to Unity Catalog in hours: no pipelines to build, no cluster to stand up, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your lakehouse",
   handoff: {
     sourceItems: ["Core banking", "Payments · SWIFT", "Trading · risk"],
@@ -68,7 +68,7 @@ const content: CapabilityContent = {
   ],
   computeNote:
     "Because all the integration, cleaning and transformation run on local compute, at any size, with no cluster to stand up, a single large-memory node handles wholesale-banking volumes. Your Databricks compute stays free for what it's for: analytics, ML and AI.",
-  outcome: "A.I.-ready data in hours, not months of pipeline building.",
+  outcome: "AI-ready data in hours, not months of pipeline building.",
   fits: {
     title: "Built to work with Databricks, not around it.",
     intro:

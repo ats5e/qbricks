@@ -56,7 +56,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-xl text-xl leading-relaxed text-q-gray-700">
-              <QBricksText /> combines a high-performance SQL engine with the tools to manage, govern and provide A.I. ready data.
+              <QBricksText /> combines a high-performance SQL engine with the tools to manage, govern and provide AI ready data.
             </p>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-q-gray-600">

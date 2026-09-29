@@ -61,10 +61,10 @@ export function UseCases() {
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <h2 className="h-section font-black tracking-tight text-q-ink">
-            Governed data products to accelerate your organisation&apos;s A.I. journey.
+            Governed data products to accelerate your organisation&apos;s AI journey.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-            <QBricksText /> builds A.I. ready data products, fast.
+            <QBricksText /> builds AI ready data products, fast.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export function UseCases() {
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.0825),transparent_60%)]" />
 
                 <div className="mb-8 flex items-center justify-between gap-4">
-                  <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-q-brand-dark">
+                  <span className="rounded-full border border-q-brand/30 bg-q-brand/[0.1] px-4 py-1.5 text-xs font-bold text-q-brand-dark">
                     {brand(useCase.tag)}
                   </span>
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black/5 text-q-gray-600 transition-colors group-hover:bg-q-brand/20 group-hover:text-q-brand-ember">
@@ -114,7 +114,7 @@ export function UseCases() {
                   {/* Outcome */}
                   <div className="mt-auto">
                     <div className="h-full rounded-2xl border border-emerald-500/20 bg-[linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.02))] p-5 shadow-[inset_0_1px_0_0_rgba(16,185,129,0.1)]">
-                      <span className="mb-2 block text-[10px] font-black uppercase tracking-widest text-emerald-600/80">The Outcome</span>
+                      <span className="mb-2 block text-xs font-bold text-emerald-700">The outcome</span>
                       <p className="text-sm font-bold leading-relaxed text-emerald-700">{brand(useCase.outcome)}</p>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ export function UseCases() {
 function StoryBlock({ label, text, tone = "neutral" }: { label: ReactNode; text: string; tone?: "red" | "neutral" }) {
   return (
     <div className={`border-l-2 pl-6 ${tone === "red" ? "border-red-400/35" : "border-black/20"}`}>
-      <span className="mb-2 block text-xs font-black uppercase tracking-[0.2em] text-q-gray-500">{brand(label)}</span>
+      <span className="mb-2 block text-xs font-bold text-q-gray-500">{brand(label)}</span>
       <p className="text-lg leading-relaxed text-q-gray-700">{brand(text)}</p>
     </div>
   );

@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "QBricks + Alteryx capability overview",
   description:
-    "Trusted data, before it reaches Alteryx. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered into the stores your Alteryx workflows already read.",
+    "Trusted data, before it reaches Alteryx. QBricks turns fragmented systems of record into governed, AI-ready data products delivered into the stores your Alteryx workflows already read.",
   path: "/resources/qbricks-alteryx",
   absolute: true,
 });
@@ -16,7 +16,7 @@ const content: CapabilityContent = {
   sceneBadge: "Workflow",
   eyebrow: "No more data pipelines",
   heroIntro:
-    "QBricks turns fragmented systems of record into governed, A.I.-ready data products, contract-enforced and audit-ready, then delivers them into the stores your Alteryx workflows already read. From system of record to analyst-ready in hours: no pipelines to build, no re-cleaning, no mess to untangle first.",
+    "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them into the stores your Alteryx workflows already read. From system of record to analyst-ready in hours: no pipelines to build, no re-cleaning, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your analysts",
   handoff: {
     sourceItems: ["Core banking", "Payments · SWIFT", "Trading · risk"],
@@ -68,7 +68,7 @@ const content: CapabilityContent = {
   ],
   computeNote:
     "Because all the integration, cleaning and transformation run on local compute, at any size, with no cluster to stand up, a single large-memory node handles wholesale-banking volumes. Your analysts' time stays free for what it's for: analysis, insight and automation.",
-  outcome: "A.I.-ready data in hours, not months of pipeline building.",
+  outcome: "AI-ready data in hours, not months of pipeline building.",
   fits: {
     title: "Built to work with Alteryx, not around it.",
     intro:

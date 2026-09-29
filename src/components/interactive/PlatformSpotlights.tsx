@@ -23,7 +23,7 @@ import {
 
 const spotlights = [
   {
-    title: "A.I.-ready products for Databricks",
+    title: "AI-ready products for Databricks",
     href: "/resources/qbricks-databricks",
     scene: AiReadyScene,
     badge: "Q Agent",

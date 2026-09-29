@@ -47,7 +47,7 @@ export function Footer() {
               <Logo height={32} />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-q-gray-500">
-              A.I.-enabled data management for your organisation. Built for governed, secure, auditable enterprise data.
+              AI-enabled data management for your organisation. Built for governed, secure, auditable enterprise data.
             </p>
             <a
               href="https://infinium-technology.com/"

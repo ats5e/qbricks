@@ -84,7 +84,7 @@ export function Sustainability() {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.7, delay: 0.16 }}
-            className="mt-9 text-[0.75rem] font-bold uppercase tracking-[0.22em] text-q-gray-500"
+            className="mt-9 text-sm font-bold text-q-gray-500"
           >
             Emissions the grid never sees
           </motion.p>
@@ -129,10 +129,10 @@ export function Sustainability() {
             <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-black/10">
-                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Dimension</th>
-                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-brand-deep"><QBricksText /> · single node</th>
-                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Cloud warehouse, on-demand</th>
-                  <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">Delta</th>
+                  <th className="px-6 py-5 text-sm font-bold text-q-gray-500">Dimension</th>
+                  <th className="px-6 py-5 text-sm font-bold text-q-brand-deep"><QBricksText /> · single node</th>
+                  <th className="px-6 py-5 text-sm font-bold text-q-gray-500">Cloud warehouse, on-demand</th>
+                  <th className="px-6 py-5 text-sm font-bold text-q-gray-500">Delta</th>
                 </tr>
               </thead>
               <tbody>

@@ -29,10 +29,10 @@ export default function WhyQBricksPage() {
         <div className="container-x relative z-10 text-center">
           <p className="eyebrow mb-6">The category problem</p>
           <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-q-ink">
-            Can “one platform” really fix your A.I.-ready data problem?
+            Can “one platform” really fix your AI-ready data problem?
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-q-gray-700 md:text-2xl">
-            <QBricksText /> sits underneath the tools and programmes organisations already run: the governed metadata foundation that makes A.I., analytics and regulatory reporting trustworthy.
+            <QBricksText /> sits underneath the tools and programmes organisations already run: the governed metadata foundation that makes AI, analytics and regulatory reporting trustworthy.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             {differentiators.map((item) => (
@@ -60,7 +60,7 @@ export default function WhyQBricksPage() {
               10 reasons why <QBricksText />
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-              See how <QBricksText /> turns governed data into an A.I.-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.
+              See how <QBricksText /> turns governed data into an AI-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.
             </p>
           </div>
 

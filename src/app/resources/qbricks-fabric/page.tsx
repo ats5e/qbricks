@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "QBricks + Microsoft Fabric capability overview",
   description:
-    "Trusted data, before it reaches Microsoft Fabric. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into OneLake.",
+    "Trusted data, before it reaches Microsoft Fabric. QBricks turns fragmented systems of record into governed, AI-ready data products delivered straight into OneLake.",
   path: "/resources/qbricks-fabric",
   absolute: true,
 });
@@ -16,7 +16,7 @@ const content: CapabilityContent = {
   sceneBadge: "ODCS",
   eyebrow: "No more data pipelines",
   heroIntro:
-    "QBricks turns fragmented systems of record into governed, A.I.-ready data products, contract-enforced and audit-ready, then delivers them straight into OneLake. From system of record to Power BI in hours: no pipelines to build, no capacity to burn on wrangling, no mess to untangle first.",
+    "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into OneLake. From system of record to Power BI in hours: no pipelines to build, no capacity to burn on wrangling, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets OneLake",
   handoff: {
     sourceItems: ["Core banking", "Payments · SWIFT", "Trading · risk"],
@@ -68,7 +68,7 @@ const content: CapabilityContent = {
   ],
   computeNote:
     "Because all the integration, cleaning and transformation run on local compute, at any size, with no cluster to stand up, a single large-memory node handles wholesale-banking volumes. Your Fabric capacity stays free for what it's for: Power BI, Real-Time Intelligence and Copilot.",
-  outcome: "A.I.-ready data in hours, not months of pipeline building.",
+  outcome: "AI-ready data in hours, not months of pipeline building.",
   fits: {
     title: "Built to work with Fabric, not around it.",
     intro:

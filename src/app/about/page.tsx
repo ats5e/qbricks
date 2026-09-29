@@ -28,7 +28,7 @@ export default function AboutPage() {
             <InfiniumLockup className="text-[26px]" />
           </div>
           <h1 className="h-display mx-auto max-w-5xl font-black tracking-tight text-q-ink">
-            The platform behind trustworthy A.I.
+            The platform behind trustworthy AI.
           </h1>
 
         </div>
@@ -40,17 +40,17 @@ export default function AboutPage() {
             <div className="premium-card p-7">
               <Building2 className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-q-ink">Our mission</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-600">To fix the layer the market skips: the governed data management foundation that makes A.I., analytics and regulatory reporting trustworthy.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-600">To fix the layer the market skips: the governed data management foundation that makes AI, analytics and regulatory reporting trustworthy.</p>
             </div>
             <div className="premium-card p-7">
               <ShieldCheck className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-q-ink">Built for regulated data</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-600"><QBricksText /> is an A.I.-enabled data management platform built for secure, governed enterprise data and auditable delivery.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-600"><QBricksText /> is an AI-enabled data management platform built for secure, governed enterprise data and auditable delivery.</p>
             </div>
             <div className="premium-card p-7">
               <Globe2 className="mb-6 h-8 w-8 text-q-brand-ember" />
               <h2 className="text-2xl font-black text-q-ink">Built for every organisation</h2>
-              <p className="mt-4 leading-relaxed text-q-gray-600">Designed for the realities of data-driven organisations: A.I. ambition, governance and trust in every data decision.</p>
+              <p className="mt-4 leading-relaxed text-q-gray-600">Designed for the realities of data-driven organisations: AI ambition, governance and trust in every data decision.</p>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
               <InfiniumLockup className="mb-4 text-[26px]" />
               <p className="eyebrow mb-2">Part of Infinium Technology</p>
               <p className="max-w-2xl leading-relaxed text-q-gray-600">
-                <QBricksText /> is developed and owned by Infinium Consulting B.V., the Amsterdam-based consultancy behind Infinium Technology. Infinium delivers the data, A.I. and transformation programmes that <QBricksText /> was built to accelerate.
+                <QBricksText /> is developed and owned by Infinium Consulting B.V., the Amsterdam-based consultancy behind Infinium Technology. Infinium delivers the data, AI and transformation programmes that <QBricksText /> was built to accelerate.
               </p>
             </div>
             <a

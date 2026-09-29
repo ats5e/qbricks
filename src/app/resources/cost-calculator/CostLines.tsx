@@ -107,7 +107,7 @@ export default function CostLines() {
                   
                   {/* Annual Saving */}
                   <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 px-6 py-4">
-                    <span className="font-bold text-emerald-700 uppercase text-xs tracking-wider">Annual saving</span>
+                    <span className="font-bold text-emerald-700 text-xs">Annual saving</span>
                     <span className="font-bold text-emerald-700 text-sm">{brand(line.savingText)}</span>
                   </div>
                 </div>

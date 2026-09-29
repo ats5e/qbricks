@@ -66,7 +66,7 @@ export function VideoResourcePage({
 
           <div className="mx-auto mt-16 max-w-3xl text-center">
             <p className="text-lg leading-relaxed text-q-gray-600">
-              Ready to turn governed enterprise data into trusted, A.I.-ready products?
+              Ready to turn governed enterprise data into trusted, AI-ready products?
             </p>
             <Link
               href="/contact"

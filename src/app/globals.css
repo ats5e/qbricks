@@ -67,7 +67,7 @@
   }
 
   .eyebrow {
-    @apply font-sans text-[0.75rem] uppercase tracking-[0.18em] font-bold text-q-brand-deep;
+    @apply font-sans text-sm font-semibold tracking-normal text-q-brand-deep;
   }
 
   .glass-panel {

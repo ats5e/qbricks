@@ -8,7 +8,7 @@ import { QIcon } from "@/components/ui/QIcon";
 /*
  * Animated mini-scenes recreated from the QBricks graphics pack
  * (1a lineage, 2a data contracts, 2c integrations hub, 2e governance
- * & audit, 2f A.I.-ready data products, plus a workflow-canvas scene).
+ * & audit, 2f AI-ready data products, plus a workflow-canvas scene).
  * Shared between the homepage spotlight cards and the partner
  * capability pages. An optional partner logo renders in the window
  * chrome.
@@ -169,7 +169,7 @@ export function GovernanceScene(props: SceneProps) {
   );
 }
 
-/* 2f · A.I.-ready data products */
+/* 2f · AI-ready data products */
 export function AiReadyScene(props: SceneProps) {
   const answerBars = [88, 72, 55];
   const cites = ["customer_risk", "txn_resolved"];

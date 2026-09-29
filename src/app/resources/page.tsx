@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Resources",
   description:
-    "Insights and FAQ on A.I.-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
+    "Insights and FAQ on AI-ready metadata management, data contracts, lakehouse governance, AML and KYC data foundations.",
   path: "/resources",
 });
 
@@ -19,7 +19,7 @@ const capabilityOverviews = [
     partner: "Databricks",
     logo: "/assets/partners/Databricks-dark.png",
     href: "/resources/qbricks-databricks",
-    text: "Governed, A.I.-ready data products delivered straight into Unity Catalog.",
+    text: "Governed, AI-ready data products delivered straight into Unity Catalog.",
   },
   {
     partner: "Microsoft Fabric",
@@ -54,7 +54,7 @@ const capabilityOverviews = [
 ];
 
 const faqs: Array<{ id: string; question: ReactNode; answer: ReactNode }> = [
-  { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
+  { id: "what-is-qbricks", question: <>What exactly is <QBricksText />?</>, answer: "An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
   { id: "deployment-speed", question: "How fast can we deploy?", answer: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
   { id: "supported-platforms", question: "Which platforms does it work with?", answer: <>Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down. <QBricksText /> is cloud-agnostic, delivering in open, portable formats.</> },
   { id: "security", question: "How secure is it?", answer: "Enterprise-grade security applying your organisation's own standards, full auditability and human-in-the-loop control over agentic automation." },
@@ -65,7 +65,7 @@ const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { q: "What exactly is QBricks?", a: "An A.I.-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
+    { q: "What exactly is QBricks?", a: "An AI-enabled metadata management platform that builds and deploys data quality and ETL workflows through Data Contracts and Data Products." },
     { q: "How fast can we deploy?", a: "Hours, not weeks. Single-file deployment covers both infrastructure and workloads." },
     { q: "Which platforms does it work with?", a: "Databricks, Microsoft Fabric, Snowflake, or your own on-premise database, via SQL push-down. QBricks is cloud-agnostic, delivering in open, portable formats." },
     { q: "How secure is it?", a: "Enterprise-grade security applying your organisation's own standards, full auditability and human-in-the-loop control over agentic automation." },
@@ -90,7 +90,7 @@ const videos = [
     href: "/resources/10-reasons-why",
     poster: "/assets/brand/poster-10-reasons.webp",
     title: <>10 reasons why <QBricksText /></>,
-    text: "See how governed data becomes an A.I.-ready foundation, no pipelines, delivered in open, portable formats.",
+    text: "See how governed data becomes an AI-ready foundation, no pipelines, delivered in open, portable formats.",
   },
   {
     href: "/resources/use-cases",
@@ -143,7 +143,7 @@ export default function ResourcesPage() {
             <p className="eyebrow mb-4">Resources</p>
             <h1 className="h-display">Make data your competitive edge.</h1>
             <p className="mt-6 text-lg leading-relaxed text-q-gray-700 md:text-xl">
-              Capability overviews, white papers and field-tested thinking on governed, A.I.-ready data, plus an illustrative calculator to model the saving on your own numbers. Everything a CDO, risk or financial-crime team needs to make the case for getting the data foundation right.
+              Capability overviews, white papers and field-tested thinking on governed, AI-ready data, plus an illustrative calculator to model the saving on your own numbers. Everything a CDO, risk or financial-crime team needs to make the case for getting the data foundation right.
             </p>
           </div>
           <nav className="mt-10 flex flex-wrap gap-2" aria-label="Resources sections">

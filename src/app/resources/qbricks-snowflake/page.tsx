@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "QBricks + Snowflake capability overview",
   description:
-    "Trusted data, before it reaches Snowflake. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your data cloud.",
+    "Trusted data, before it reaches Snowflake. QBricks turns fragmented systems of record into governed, AI-ready data products delivered straight into your data cloud.",
   path: "/resources/qbricks-snowflake",
   absolute: true,
 });
@@ -16,7 +16,7 @@ const content: CapabilityContent = {
   sceneBadge: "Integrations",
   eyebrow: "No more data pipelines",
   heroIntro:
-    "QBricks turns fragmented systems of record into governed, A.I.-ready data products, contract-enforced and audit-ready, then delivers them straight into your Snowflake account. From system of record to the data cloud in hours: no pipelines to build, no warehouse to spin up, no mess to untangle first.",
+    "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into your Snowflake account. From system of record to the data cloud in hours: no pipelines to build, no warehouse to spin up, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your data cloud",
   handoff: {
     sourceItems: ["Core banking", "Payments · SWIFT", "Trading · risk"],
@@ -68,7 +68,7 @@ const content: CapabilityContent = {
   ],
   computeNote:
     "Because all the integration, cleaning and transformation run on local compute, at any size, with no cluster to stand up, a single large-memory node handles wholesale-banking volumes. Your Snowflake credits stay free for what they're for: serving, applications and Cortex AI.",
-  outcome: "A.I.-ready data in hours, not months of pipeline building.",
+  outcome: "AI-ready data in hours, not months of pipeline building.",
   fits: {
     title: "Built to work with Snowflake, not around it.",
     intro:

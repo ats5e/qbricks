@@ -84,7 +84,7 @@ export function FeaturesBento() {
             A governed, secure Data Platform for your organisation, powered by a best in class SQL engine.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-            <QBricksText /> is a streaming data-management platform that enforces governance at the point of ingestion, so the data landing in your lakehouse or database is already trusted, governed and A.I. ready.
+            <QBricksText /> is a streaming data-management platform that enforces governance at the point of ingestion, so the data landing in your lakehouse or database is already trusted, governed and AI ready.
           </p>
         </div>
 

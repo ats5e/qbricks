@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Product",
   description:
-    "A.I.-enabled metadata management built for governed enterprise data, Data Contracts, Data Products and auditable deployment.",
+    "AI-enabled metadata management built for governed enterprise data, Data Contracts, Data Products and auditable deployment.",
   path: "/product",
 });
 

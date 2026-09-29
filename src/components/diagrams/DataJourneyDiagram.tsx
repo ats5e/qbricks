@@ -78,7 +78,7 @@ const diagramContent = {
     eyebrow: "The starting point",
     title: (
       <>
-        Today: <span className="text-q-brand-ember">months or years</span> before A.I. sees any quality data.
+        Today: <span className="text-q-brand-ember">months or years</span> before AI sees any quality data.
       </>
     ),
     description:
@@ -99,7 +99,7 @@ const diagramContent = {
     eyebrow: "Today",
     title: (
       <>
-        The Data Management approach: <span className="text-q-brand-ember">months or years</span> before A.I. sees any quality data.
+        The Data Management approach: <span className="text-q-brand-ember">months or years</span> before AI sees any quality data.
       </>
     ),
     description:
@@ -120,18 +120,18 @@ const diagramContent = {
     eyebrow: "The accelerator",
     title: (
       <>
-        From system of record to A.I. use case,{" "}
+        From system of record to AI use case,{" "}
         <span className="text-q-brand-ember">in hours.</span>
       </>
     ),
     description: (
       <>
-        <QBricksText /> accelerates the platforms you already run, streaming governed, A.I.-ready data from
+        <QBricksText /> accelerates the platforms you already run, streaming governed, AI-ready data from
         your systems of record straight into production use cases.
       </>
     ),
     layerLabel: "Data Management Platform",
-    layerTitle: "Governed, A.I.-ready data, in hours, not years.",
+    layerTitle: "Governed, AI-ready data, in hours, not years.",
     layerIcons: [],
     bullets: [
       { icon: Workflow, text: "Automatic pipeline building" },
@@ -208,7 +208,7 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
 
           <Connector active={isQBricks} />
 
-          <DiagramColumn label="A.I. use cases">
+          <DiagramColumn label="AI use cases">
             {aiUseCases.map((item) => (
               <DiagramNode key={item.title} item={item} muted={!isQBricks} active={isQBricks} />
             ))}
@@ -222,7 +222,7 @@ export function DataJourneyDiagram({ variant }: { variant: DiagramVariant }) {
 function DiagramColumn({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div>
-      <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-q-gray-500">{brand(label)}</p>
+      <p className="mb-4 text-xs font-bold text-q-gray-500">{brand(label)}</p>
       <div className="space-y-3">{children}</div>
     </div>
   );
@@ -274,7 +274,7 @@ function Connector({ active = false, label }: { active?: boolean; label?: string
   return (
     <div className="flex flex-col items-center justify-center">
       {label ? (
-        <span className={`mb-2 text-[0.56rem] font-black uppercase tracking-[0.17em] ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
+        <span className={`mb-2 text-xs font-bold ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
           {brand(label)}
         </span>
       ) : null}
@@ -318,7 +318,7 @@ function CoreLayer({
         </div>
       )}
 
-      <p className={`text-[0.66rem] font-black uppercase tracking-[0.15em] ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
+      <p className={`text-xs font-bold ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
         {brand(content.layerLabel)}
       </p>
       <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-q-ink md:text-xl">{brand(content.layerTitle)}</h3>

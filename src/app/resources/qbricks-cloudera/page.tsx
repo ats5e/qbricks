@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "QBricks + Cloudera capability overview",
   description:
-    "Trusted data, before it reaches Cloudera. QBricks turns fragmented systems of record into governed, A.I.-ready data products delivered straight into your Cloudera platform.",
+    "Trusted data, before it reaches Cloudera. QBricks turns fragmented systems of record into governed, AI-ready data products delivered straight into your Cloudera platform.",
   path: "/resources/qbricks-cloudera",
   absolute: true,
 });
@@ -17,7 +17,7 @@ const content: CapabilityContent = {
   sceneBadge: "Live audit",
   eyebrow: "No more data pipelines",
   heroIntro:
-    "QBricks turns fragmented systems of record into governed, A.I.-ready data products, contract-enforced and audit-ready, then delivers them straight into your Cloudera platform. From system of record to lakehouse in hours: no pipelines to build, no cluster to stand up, no mess to untangle first.",
+    "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into your Cloudera platform. From system of record to lakehouse in hours: no pipelines to build, no cluster to stand up, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your lakehouse",
   handoff: {
     sourceItems: ["Core banking", "Payments · SWIFT", "Trading · risk"],
@@ -69,7 +69,7 @@ const content: CapabilityContent = {
   ],
   computeNote:
     "Because all the integration, cleaning and transformation run on local compute, at any size, with no cluster to stand up, a single large-memory node handles wholesale-banking volumes. Cloudera's compute stays free for what it's for: serving, analytics and AI.",
-  outcome: "A.I.-ready data in hours, not months of pipeline building.",
+  outcome: "AI-ready data in hours, not months of pipeline building.",
   fits: {
     title: "Built to work with Cloudera, not around it.",
     intro:

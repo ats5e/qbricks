@@ -9,7 +9,7 @@ const before = [
   "Thousands of ungoverned notebooks",
   "Teams of data engineers",
   "Lengthy pipeline build and deployment time-lines",
-  "A.I. required data locked at the Bronze layer",
+  "AI required data locked at the Bronze layer",
   "On-going compute costs",
 ];
 
@@ -17,7 +17,7 @@ const after = [
   "Data governance enforced (ODCS). No notebooks",
   "Small engineering team (at set-up)",
   "Streaming data, automated pipeline builds, materialised views",
-  "A.I. ready data available in hours not years",
+  "AI ready data available in hours not years",
   "Low compute costs. No cloud requirement",
 ];
 
@@ -40,7 +40,7 @@ export function Metrics() {
             transition={{ duration: 0.75 }}
             className="h-section font-black tracking-tight text-q-ink"
           >
-            Everyone is racing to deploy A.I. The issue? The underlying data is not ready.
+            Everyone is racing to deploy AI. The issue? The underlying data is not ready.
           </motion.h2>
           </div>
           <div className="max-w-xl">
@@ -51,7 +51,7 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="text-lg leading-[1.7] text-q-gray-700 md:text-xl"
           >
-            A 2025 MIT report found that around <strong className="font-black text-q-ink">95% of A.I.-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
+            A 2025 MIT report found that around <strong className="font-black text-q-ink">95% of AI-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
@@ -69,7 +69,7 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.2 }}
             className="mt-5 text-lg leading-[1.7] text-q-gray-600"
           >
-            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting A.I. Industry is stuck and value from AI is under scrutiny.
+            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting AI. Industry is stuck and value from AI is under scrutiny.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
