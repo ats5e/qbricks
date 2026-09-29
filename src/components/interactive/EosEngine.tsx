@@ -150,7 +150,7 @@ export function EosEngine() {
                 key={b.kicker}
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="premium-card flex flex-col p-8 md:p-10"
+                className="premium-card flex flex-col p-8 md:p-10 lg:grid lg:gap-0 lg:[grid-row:span_5] lg:[grid-template-rows:subgrid]"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="text-sm font-bold text-q-gray-600">{brand(b.kicker)}</span>
@@ -160,7 +160,7 @@ export function EosEngine() {
                   {brand(b.title)}
                   <span className="text-q-brand-ember">.</span>
                 </h3>
-                <p className="mt-4 leading-relaxed text-q-gray-600">{brand(b.text)}</p>
+                <p className="mt-4 leading-relaxed text-q-gray-600 lg:self-start">{brand(b.text)}</p>
 
                 <div className="mt-auto pt-9">
                   <div className="h-1.5 overflow-hidden rounded-full bg-black/[0.08]">
@@ -181,7 +181,7 @@ export function EosEngine() {
                 <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10">
                   {b.facts.map((fact) => (
                     <div key={fact.label} className="bg-white p-4 md:p-5">
-                      <p className="text-xl font-black tracking-tight text-q-ink md:text-2xl">{brand(fact.value)}</p>
+                      <p className="whitespace-nowrap text-xl font-black tracking-tight text-q-ink xl:text-2xl">{brand(fact.value)}</p>
                       <p className="mt-1 text-[13px] text-q-gray-500">{brand(fact.label)}</p>
                     </div>
                   ))}
@@ -203,7 +203,7 @@ export function EosEngine() {
       <section className="section-y border-b border-black/5 bg-white">
         <div className="container-x">
           <motion.p {...fadeUp} className="eyebrow mb-5">The distributed tax</motion.p>
-          <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-3xl">
+          <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-3xl lg:max-w-none lg:whitespace-nowrap">
             SQL prompts replace pipelines. Single node<span className="text-q-brand-ember">.</span>
           </motion.h2>
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-700">
