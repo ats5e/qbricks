@@ -57,7 +57,7 @@ const organizationJsonLd = {
   sameAs: ["https://infinium-technology.com/"],
   parentOrganization: {
     "@type": "Organization",
-    name: "Infinium Technology",
+    name: "Infinium",
     legalName: "Infinium Consulting B.V.",
     url: "https://infinium-technology.com/",
   },

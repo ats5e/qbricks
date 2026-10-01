@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "About",
   description:
-    "QBricks is developed and owned by Infinium Consulting B.V., part of Infinium Technology.",
+    "QBricks is developed and owned by Infinium Consulting B.V., part of Infinium.",
   path: "/about",
 });
 
@@ -57,9 +57,9 @@ export default function AboutPage() {
           <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-black/10 bg-white p-7 md:flex-row md:items-center md:p-8">
             <div>
               <InfiniumLockup className="mb-4 text-[26px]" />
-              <p className="eyebrow mb-2">Part of Infinium Technology</p>
+              <p className="eyebrow mb-2">Part of Infinium</p>
               <p className="max-w-2xl leading-relaxed text-q-gray-600">
-                <QBricksText /> is developed and owned by Infinium Consulting B.V., the Amsterdam-based consultancy behind Infinium Technology. Infinium delivers the data, AI and transformation programmes that <QBricksText /> was built to accelerate.
+                <QBricksText /> is developed and owned by Infinium Consulting B.V., based in Amsterdam. Infinium delivers the data, AI and transformation programmes that <QBricksText /> was built to accelerate.
               </p>
             </div>
             <a
@@ -67,7 +67,7 @@ export default function AboutPage() {
               target="_blank" rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-full border border-black/10 bg-black/[0.055] px-6 py-3 text-sm font-bold text-q-ink transition-all hover:-translate-y-0.5 hover:border-black/20 hover:bg-black/[0.08]"
             >
-              Visit Infinium Technology <ArrowRight className="h-4 w-4" />
+              Visit Infinium <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
