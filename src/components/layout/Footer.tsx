@@ -20,7 +20,7 @@ const columns = [
     title: "Use cases",
     links: [
       ["AML", "/solutions"],
-      ["KYC / pKYC", "/solutions"],
+      ["pKYC & AMLR", "/solutions"],
       ["Fraud", "/solutions"],
       ["MDM & risk", "/solutions"],
     ],

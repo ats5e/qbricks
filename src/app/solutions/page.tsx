@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Solutions",
   description:
-    "QBricks solutions for AML, KYC, fraud, contextual MDM, credit risk and ESG risk.",
+    "QBricks solutions for AML, perpetual KYC and AMLR compliance, KYC, fraud, contextual MDM, credit risk and ESG risk.",
   path: "/solutions",
 });
 
@@ -18,7 +18,7 @@ export default function SolutionsPage() {
             Governed data products for the use cases that matter.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-            AML, KYC, fraud, contextual MDM, credit and ESG risk, every solution inherits the same trusted, contract-enforced foundation.
+            AML, perpetual KYC and AMLR, fraud, contextual MDM, credit and ESG risk, every solution inherits the same trusted, contract-enforced foundation.
           </p>
         </div>
       </section>

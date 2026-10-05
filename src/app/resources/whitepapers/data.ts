@@ -19,6 +19,33 @@ export type Whitepaper = {
 
 export const whitepapers: Whitepaper[] = [
   {
+    slug: "compute-commodity-hedge",
+    category: "Compute Economics / Compute Futures",
+    title: "Compute is becoming a commodity. Hedge it like one.",
+    standfirst:
+      "On 5 October 2026 the first US-regulated compute futures list on NYMEX. Once a forward curve exists, every data platform's compute bill becomes a marked exposure. This paper explains how the market is forming, why a paper hedge alone leaves the lakehouse uncovered, and how QBricks provides the operational hedge: consume a fraction of the commodity in the first place.",
+    stats: [
+      { value: "5 Oct 2026", label: "CME lists H100 and B200 rental-index futures on NYMEX, compute's first exchange-cleared forward curve" },
+      { value: "+56%", label: "move in H100 one-year contract rates between October 2025 and March 2026" },
+      { value: "€0.48", label: "QBricks compute per TB ingested, measured 29 September 2026" },
+    ],
+    pointsTitle: "Why futures alone leave the lakehouse uncovered",
+    points: [
+      { title: "Basis", text: "The contracts reference H100 and B200 rental rates; Spark bills in vCPU-plus-DRAM units. The two move together, but not one for one, so a hedge in the wrong underlying is a correlation bet." },
+      { title: "Price, not quantity", text: "A future fixes the price of a unit. It does nothing about how many units a Spark estate consumes: shuffle, serialisation, idle autoscale headroom and per-step minimums are all bought at the locked price." },
+      { title: "Direction", text: "The curve is backwardated. Lock a forward and the market falls, and the hedge loses: a real cash cost that a treasury must explain while the platform team's budget looks fine." },
+      { title: "Carry and liquidity", text: "Monthly contracts must be rolled and cleared positions post daily variation margin. Day-one depth is unknown, and index reliability is an open question the regulator itself has raised." },
+    ],
+    solutionTitle: "The operational hedge: own the volume, not just the price",
+    solutionText:
+      "An airline does not hedge jet fuel only with swaps. It buys a more efficient fleet, because efficiency is the one hedge that pays in every price scenario. QBricks is the efficient fleet for the lakehouse. Databricks, Microsoft Fabric or Snowflake remain the governed landing zone, and QBricks routes roughly 70 percent of workloads to EOS, a hardened fork of Apache DataFusion with Arrow-native streaming and the Vortex columnar format, built in Rust, on one right-sized VM. Large joins, streaming and ML stay on Spark. Measured on 29 September 2026, ingestion cost €0.48 per terabyte. Modelled against a volatile compute index, the routed estate runs 47–59 percent below the unhedged cost every year, including the years in which a futures hedge alone goes underwater. Every record is still checked against an ODCS data contract, and gain-share means the hedge pays for itself.",
+    quote: "Hedge the price where instruments exist. Reduce the quantity wherever engineering allows.",
+    tagline: "QBricks: keep the lakehouse, keep the governance, drop the cluster for most of the work.",
+    scene: "integrations",
+    sceneBadge: "Commodity hedge",
+    pdf: "/whitepapers/compute-commodity-hedge.pdf",
+  },
+  {
     slug: "memory-compute-hedge",
     category: "Compute Economics / Memory Pricing",
     title: "QBricks: a hedge to the cost of rising memory, Spark and compute.",

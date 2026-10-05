@@ -1,12 +1,21 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
+import { Activity, AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const cases = [
+  {
+    title: "Use QBricks to achieve pKYC and AMLR compliance.",
+    icon: Activity,
+    tag: "pKYC / AMLR",
+    pain: "The EU AML Regulation applies from 10 July 2027. KYC becomes continuous: event-driven reviews must update the customer record, and supervisors will ask for the data behind every decision.",
+    help: "Real-time streaming picks up every owner, sanctions and transaction change as it lands, checks it against ODCS data contracts and recomputes only the customers affected, with no data leaving your platform.",
+    outcome: "Reviews triggered by risk, not the calendar, on current, traceable data.",
+    colSpan: "lg:col-span-2",
+  },
   {
     title: "Governed data for AML that stands up to scrutiny.",
     icon: ShieldAlert,
@@ -14,16 +23,16 @@ const cases = [
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
     help: "Contract-enforced, fully-lineaged data gives your monitoring stack clean, resolved records you can defend to the regulator.",
     outcome: "Fewer false positives, defensible investigations and lower cost.",
-    colSpan: "lg:col-span-3",
+    colSpan: "lg:col-span-2",
   },
   {
-    title: "KYC and perpetual KYC built on data you can trust.",
+    title: "KYC built on data you can trust.",
     icon: Users,
-    tag: "KYC / pKYC",
+    tag: "KYC",
     pain: "Customer data is fragmented across systems; keeping KYC current is expensive and error-prone.",
     help: "Contextual, governed data with high matching accuracy gives a reliable single view.",
-    outcome: "Faster onboarding, continuous KYC and audit-ready files.",
-    colSpan: "lg:col-span-3",
+    outcome: "Faster onboarding, a reliable single view and a clean audit trail.",
+    colSpan: "lg:col-span-2",
   },
   {
     title: "Stop fraud with data that is actually connected.",
