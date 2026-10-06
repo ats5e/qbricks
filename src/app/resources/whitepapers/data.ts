@@ -23,9 +23,9 @@ export const whitepapers: Whitepaper[] = [
     category: "Compute Economics / Compute Futures",
     title: "Compute is becoming a commodity. Hedge it like one.",
     standfirst:
-      "On 5 October 2026 the first US-regulated compute futures list on NYMEX. Once a forward curve exists, every data platform's compute bill becomes a marked exposure. This paper explains how the market is forming, why a paper hedge alone leaves the lakehouse uncovered, and how QBricks provides the operational hedge: consume a fraction of the commodity in the first place.",
+      "CME planned to list the first US-regulated compute futures on NYMEX on 5 October 2026; the CFTC has extended its review to 9 November. Once a forward curve exists, every data platform's compute bill becomes a marked exposure. This paper explains how the market is forming, why a paper hedge alone leaves the lakehouse uncovered, and how QBricks provides the operational hedge: consume a fraction of the commodity in the first place.",
     stats: [
-      { value: "5 Oct 2026", label: "CME lists H100 and B200 rental-index futures on NYMEX, compute's first exchange-cleared forward curve" },
+      { value: "9 Nov 2026", label: "end of the CFTC's extended review of CME's H100 and B200 rental-index futures, compute's first exchange-cleared forward curve" },
       { value: "+56%", label: "move in H100 one-year contract rates between October 2025 and March 2026" },
       { value: "€0.48", label: "QBricks compute per TB ingested, measured 29 September 2026" },
     ],
@@ -52,16 +52,16 @@ export const whitepapers: Whitepaper[] = [
     standfirst:
       "Server DRAM has become the scarcest input in the AI build-out, and every Spark billing unit carries a fixed parcel of it. Contract prices for server DRAM roughly doubled in Q1 2026 and are still rising every quarter. When DRAM reprices, Spark reprices. This paper traces the price shock, the supply and geopolitical factors behind it, the capital chasing it, and how QBricks routes lakehouse workloads onto a Spark-free engine to cut the exposure by roughly 80 percent.",
     stats: [
-      { value: "+90–95%", label: "conventional DRAM contract price rise in a single quarter, Q1 2026, a record" },
+      { value: "+93–98%", label: "conventional DRAM contract price rise in a single quarter, Q1 2026, a record" },
       { value: "7×", label: "modelled server-DRAM index at the 2027 peak vs September 2025" },
       { value: "−80%", label: "QBricks compute index at the same point: 140 vs 700 for memory-indexed Spark" },
     ],
     pointsTitle: "Why the memory squeeze lands on your lakehouse bill",
     points: [
       { title: "The billing unit is memory", text: "1 DPU = 4 vCPU + 16 GB memory. Databricks DBUs and Dataproc profiles are built the same way: every unit of Spark compute you buy carries a fixed parcel of DRAM, so the DRAM spike is a direct input cost. Server makers and cloud providers began passing it through in late 2025." },
-      { title: "Supply is slow", text: "A DRAM fab takes two to three years to build, qualify and ramp. New capacity lands in 2027–28, but every HBM bit consumes roughly four times the wafer area of conventional DRAM, so much of it never reaches the commodity pool." },
-      { title: "Demand is contracted", text: "Hyperscalers have guided to roughly $700 billion of 2026 capital expenditure, most of it AI infrastructure, and have locked up 2027 memory output under multi-year agreements. Everyone else absorbs the increase." },
-      { title: "The chain is fragile", text: "One EUV lithography supplier, around 90% of advanced logic made in Taiwan and two-thirds of DRAM made in South Korea. Diversification does not close the gap before 2028–29." },
+      { title: "Supply is slow", text: "A DRAM fab takes two to three years to build, qualify and ramp. New capacity lands in 2027–28, but every HBM bit consumes three to four times the wafer area of conventional DRAM, so much of it never reaches the commodity pool." },
+      { title: "Demand is contracted", text: "Hyperscalers have guided to roughly $700–800 billion of 2026 capital expenditure, most of it AI infrastructure, and have locked up 2027 memory output under multi-year agreements. Everyone else absorbs the increase." },
+      { title: "The chain is fragile", text: "One EUV lithography supplier, around 90% of the most advanced logic made in Taiwan and two-thirds of DRAM made in South Korea. Diversification does not close the gap before 2028–29." },
     ],
     solutionTitle: "The hedge: data lands in the lakehouse, QBricks runs the workload",
     solutionText:

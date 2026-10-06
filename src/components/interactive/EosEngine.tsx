@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
-// Copy follows David's revised EOS page (28 Sept 2026).
+// Copy follows David's revised EOS page (28 Sept 2026). Ingestion figures follow the
+// Ingest Performance Report v3.2 (per TB, 29 Sept 2026), per David on 5 Oct 2026.
 
 const fadeUp = {
   initial: { opacity: 0, y: 22 },
@@ -15,21 +16,21 @@ const fadeUp = {
 } as const;
 
 const heroStats = [
-  { label: "Ingestion", value: "<5", unit: " min", detail: "10 TB of CSV · 867 BN records" },
+  { label: "Ingestion", value: "50.6", unit: "s", detail: "per TB of raw CSV · €0.48 compute per TB" },
   { label: "Complex pipeline builds", value: "14.5", unit: "s", detail: "866M records · full 22-query TPC-H suite" },
 ];
 
 const benchmarks = [
   {
     kicker: "01 · Ingestion",
-    tag: "CSV and Parquet at scale",
-    title: "10 TB of CSV files. 867 BN records. Less than 5 minutes",
-    text: "Raw, uncompressed CSV turned into governed, query-ready data before a Spark cluster has finished spinning up.",
-    range: ["0:00", "< 5:00"],
+    tag: "CSV at scale",
+    title: "1 TB of CSV ingested every 50.6 seconds. €0.48 compute per TB",
+    text: "Raw, uncompressed CSV turned into governed, query-ready data at 71 TB an hour. Measured on a 12.08 TB run of 86.6 BN records, with every table validated.",
+    range: ["0.0s", "50.6s per TB"],
     facts: [
-      { value: "10 TB", label: "Raw CSV" },
-      { value: "867 BN", label: "Records" },
-      { value: ">2.8 BN", label: "Records / sec" },
+      { value: "12.08 TB", label: "Raw CSV, one run" },
+      { value: "86.6 BN", label: "Records" },
+      { value: "€0.48", label: "Compute per TB" },
     ],
   },
   {
@@ -75,12 +76,12 @@ const features = [
   { n: "05", t: "Capped compute cost", d: "The whole pipeline estate runs on one right-sized VM as a single committed line item. Compression also shrinks your lakehouse storage bill." },
   { n: "06", t: "Governed by design", d: "Every record is checked against an Open Data Contract Standard contract. Fully auditable, with a human in the loop." },
   { n: "07", t: "Python SDK", d: "Data science teams connect with a few lines of Python and pull governed data products in seconds, with no pipeline build and no wait on engineering." },
-  { n: "08", t: "Best-in-class ingestion", d: "10 TB of CSV and Parquet, 867 BN records, landed in under 5 minutes." },
+  { n: "08", t: "Best-in-class ingestion", d: "1 TB of raw CSV landed every 50.6 seconds, at €0.48 compute per TB. 86.6 BN records validated in a single 12 TB run." },
   { n: "09", t: "Best-in-class pipeline builds", d: "Complex, multi-join pipelines over 866M records built in 14.5 seconds across the full TPC-H suite. Uses managed tables to deliver incremental changes." },
 ];
 
 const basis =
-  "Ingestion: 10 TB CSV, 867 BN records, under 5 minutes · Pipeline builds: TPC-H SF100 (~866M rows total, lineitem ~600M), 22 queries, single Azure D32als_v6 (32 vCPU / 64 GiB), pay-as-you-go ≈ $31/day at the $1.286/hr US baseline · Compute reduction: QBricks engineering estimate, up to 85% · Cost savings are subject to the QBricks gain share and aren't shown here.";
+  "Ingestion: 12.08 TB TPC-H-derived CSV (SF10000), 86.6 BN records in 610.8s on nine Azure D64ds_v5 workers (576 vCPU), so 50.6s and €0.48 timed compute per TB; 8/8 tables validated; single run, 29 Sept 2026 · Pipeline builds: TPC-H SF100 (~866M rows total, lineitem ~600M), 22 queries, single Azure D32als_v6 (32 vCPU / 64 GiB), pay-as-you-go ≈ $31/day at the $1.286/hr US baseline · Compute reduction: QBricks engineering estimate, up to 85% · Cost savings are subject to the QBricks gain share and aren't shown here.";
 
 export function EosEngine() {
   return (
@@ -127,8 +128,8 @@ export function EosEngine() {
           </motion.p>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.24 }} className="mx-auto mt-10 max-w-2xl text-xl font-black leading-snug tracking-tight text-q-ink">
-            From system of record to data product, available for consumption via a Python SDK, in just over{" "}
-            <span className="text-q-brand-ember">5 minutes.</span>
+            From system of record to data product, available for consumption via a Python SDK, in{" "}
+            <span className="text-q-brand-ember">minutes.</span>
           </motion.p>
         </div>
       </section>
