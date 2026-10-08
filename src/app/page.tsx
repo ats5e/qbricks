@@ -6,6 +6,7 @@ import { Hero } from "@/components/interactive/Hero";
 import { Metrics } from "@/components/interactive/Metrics";
 import { Integrations } from "@/components/interactive/Integrations";
 import { ProofBand } from "@/components/interactive/ProofBand";
+import { BeforeAfter } from "@/components/interactive/BeforeAfter";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
       <Metrics />
       <ProofBand />
+      <BeforeAfter />
       <Integrations />
 
       <section id="demo" className="section-y relative border-t border-black/5 bg-white">

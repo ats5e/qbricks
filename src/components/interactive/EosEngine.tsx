@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
+import { IngestFlow } from "@/components/interactive/IngestFlow";
 
 // Copy follows David's revised EOS page (28 Sept 2026). Ingestion figures follow the
 // Ingest Performance Report v3.2 (per TB, 29 Sept 2026), per David on 5 Oct 2026.
@@ -193,12 +193,7 @@ export function EosEngine() {
         </div>
       </section>
 
-      {/* Image bar: many small pieces of work resolving into one right-sized block */}
-      <div className="container-x pb-4" aria-hidden="true">
-        <div className="relative aspect-[3136/1100] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white">
-          <Image src="/assets/brand/eos-bar.webp" alt="" fill unoptimized className="object-cover object-[center_56%]" />
-        </div>
-      </div>
+      <IngestFlow />
 
       {/* The distributed tax */}
       <section className="section-y border-b border-black/5 bg-white">

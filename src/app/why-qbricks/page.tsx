@@ -81,6 +81,10 @@ export default function WhyQBricksPage() {
 
       <section className="section-y bg-white">
         <div className="container-x">
+          {/* Many scattered pieces of work resolving into one governed block */}
+          <div className="relative mb-14 aspect-[3136/1100] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white lg:mb-20" aria-hidden="true">
+            <Image src="/assets/brand/eos-bar.webp" alt="" fill unoptimized className="object-cover object-[center_56%]" />
+          </div>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="h-section font-black tracking-tight text-q-ink">
               Ready to fix your data&nbsp;foundation?
