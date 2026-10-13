@@ -9,6 +9,7 @@ const columns = [
     title: "Product",
     links: [
       ["Overview", "/product"],
+      ["Data products", "/data-products"],
       ["EOS Engine", "/eos"],
       ["Solutions", "/solutions"],
       ["Integrations", "/integrations"],
@@ -19,10 +20,10 @@ const columns = [
   {
     title: "Use cases",
     links: [
-      ["AML", "/solutions"],
-      ["pKYC & AMLR", "/solutions"],
-      ["Fraud", "/solutions"],
-      ["MDM & risk", "/solutions"],
+      ["AML", "/solutions#aml"],
+      ["pKYC & AMLR", "/solutions#pkyc"],
+      ["Fraud", "/solutions#fraud"],
+      ["MDM & risk", "/solutions#mdm"],
     ],
   },
   {
