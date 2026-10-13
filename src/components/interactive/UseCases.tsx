@@ -10,6 +10,7 @@ const cases = [
   {
     title: "Use QBricks to achieve pKYC and AMLR compliance.",
     icon: Activity,
+    id: "pkyc",
     tag: "pKYC / AMLR",
     pain: "The EU AML Regulation applies from 10 July 2027. KYC becomes continuous: event-driven reviews must update the customer record, and supervisors will ask for the data behind every decision.",
     help: "Real-time streaming picks up every owner, sanctions and transaction change as it lands, checks it against ODCS data contracts and recomputes only the customers affected, with no data leaving your platform.",
@@ -19,6 +20,7 @@ const cases = [
   {
     title: "Governed data for AML that stands up to scrutiny.",
     icon: ShieldAlert,
+    id: "aml",
     tag: "AML",
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
     help: "Contract-enforced, fully-lineaged data gives your monitoring stack clean, resolved records you can defend to the regulator.",
@@ -28,6 +30,7 @@ const cases = [
   {
     title: "KYC built on data you can trust.",
     icon: Users,
+    id: "kyc",
     tag: "KYC",
     pain: "Customer data is fragmented across systems; keeping KYC current is expensive and error-prone.",
     help: "Contextual, governed data with high matching accuracy gives a reliable single view.",
@@ -37,6 +40,7 @@ const cases = [
   {
     title: "Stop fraud with data that is actually connected.",
     icon: AlertOctagon,
+    id: "fraud",
     tag: "Fraud & financial crime",
     pain: "Fraud signals live in silos; weak data linkage means missed patterns and inflated false positives.",
     help: "Ontologies and knowledge graphs interconnect data; embedded trust scoring sharpens entity resolution.",
@@ -46,6 +50,7 @@ const cases = [
   {
     title: "Master data with context, governance and lineage.",
     icon: Network,
+    id: "mdm",
     tag: "Contextual MDM",
     pain: "Traditional MDM is brittle and loses the business context needed for customer intelligence.",
     help: "Governed metadata plus ontologies and knowledge graphs deliver contextual master data.",
@@ -55,6 +60,7 @@ const cases = [
   {
     title: "Risk decisions are only as good as the data behind them.",
     icon: TrendingDown,
+    id: "credit-risk",
     tag: "Credit & ESG risk",
     pain: "Credit and ESG risk depend on accurate, well-understood, well-lineaged data; regulators expect to see the working.",
     help: "Governed, auditable data foundations with clear lineage give risk teams explainable inputs.",
@@ -83,11 +89,12 @@ export function UseCases() {
             return (
               <motion.div
                 key={useCase.tag}
+                id={useCase.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] p-8 transition-all lg:grid lg:gap-0 lg:[grid-row:span_4] lg:[grid-template-rows:subgrid] hover:bg-black/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-black/20 ${useCase.colSpan}`}
+                className={`group relative flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] p-8 transition-all lg:grid lg:gap-0 lg:[grid-row:span_4] lg:[grid-template-rows:subgrid] hover:bg-black/[0.04] hover:shadow-[0_8px_30px_rgba(232,32,15,0.05)] hover:border-black/20 ${useCase.colSpan}`}
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(232,32,15,0.0825),transparent_60%)]" />

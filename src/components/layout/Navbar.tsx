@@ -48,7 +48,7 @@ export function Navbar() {
 
           <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
               return (
                 <Link
                   key={link.name}
@@ -107,7 +107,7 @@ export function Navbar() {
             >
               <div className="flex flex-col gap-1">
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
                   return (
                     <Link
                       key={link.name}
