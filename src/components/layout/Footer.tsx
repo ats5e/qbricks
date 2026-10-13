@@ -9,7 +9,6 @@ const columns = [
     title: "Product",
     links: [
       ["Overview", "/product"],
-      ["Data products", "/data-products"],
       ["EOS Engine", "/eos"],
       ["Solutions", "/solutions"],
       ["Integrations", "/integrations"],

@@ -5,15 +5,14 @@ export type UseCaseArea = {
   scope: string;
   value: string;
   oneLiner: string;
-  problem: string;
-  withQBricks: string;
+  support: string;
   related: { label: string; href: string }[];
   products: { name: string; text: string }[];
 };
 
 /* Order, titles, scopes, one-liners and value tags follow David's
    "Beyond KYC: five data products, ranked by value" slide (Oct 2026).
-   Intros and products are drawn from his architecture papers and his
+   Support text and products are drawn from his architecture papers and his
    "Data product focus areas" index. Use case 02 has no paper yet: its
    copy rests on the index and the slide only. */
 export const useCases: UseCaseArea[] = [
@@ -24,15 +23,13 @@ export const useCases: UseCaseArea[] = [
     scope: "BCBS 239 · COREP and FINREP · FRTB · DORA",
     value: "Regulatory",
     oneLiner: "One golden source of exposures feeds every report, reducing the risk of capital add-ons and fines.",
-    problem:
-      "Supervisors expect every reported figure to trace back to its source, and the calendar keeps tightening: xBRL-CSV is now mandatory for EBA reporting, FRTB own funds requirements apply from 1 January 2027 and the output floor reaches 72.5% in 2030.",
-    withQBricks:
-      "Counterparty, exposure, ledger, collateral, reference and market data are built once as contracted data products and reused by every return, from COREP to AnaCredit. Every load is checked against its contract and reconciled to the general ledger before a return is signed, and each reference date is frozen, so any figure traces to its sources: the evidence BCBS 239 asks for. Your reporting platform and risk engines stay as they are.",
+    support:
+      "Counterparty, exposure, ledger, collateral, reference and market data are built once as contracted data products and reused by every return, from COREP to AnaCredit. Every load is checked against its contract and reconciled to the general ledger before a return is signed, and each reference date is frozen, so any figure traces to its sources: the evidence BCBS 239 asks for. The same products carry the inputs for FRTB from 1 January 2027 and for the output floor, which reaches 72.5% in 2030. Your reporting platform and risk engines stay as they are.",
     related: [],
     products: [
       { name: "Critical data element register", text: "The owner, threshold and approved definition of every critical data element, linked to the report line it feeds." },
       { name: "Reporting input set", text: "The mandatory attributes for COREP and FINREP, frozen at the reference date, so a resubmission starts from the original snapshot." },
-      { name: "Incident classification", text: "Each ICT incident scored against the DORA classification criteria within minutes, with major incidents flagged and timestamped." },
+      { name: "Incident classification", text: "Each ICT incident scored against the DORA classification criteria within minutes, with major incidents flagged and a timestamp kept." },
     ],
   },
   {
@@ -42,10 +39,8 @@ export const useCases: UseCaseArea[] = [
     scope: "Builds directly on the KYC data products",
     value: "Cost reduction",
     oneLiner: "Cuts false positives, often by 30 to 60 percent, and analyst effort; enables perpetual KYC.",
-    problem:
-      "Monitoring is only as good as the population it sees, and from 10 July 2027 the EU AML Regulation will have supervisors asking for the data behind every alert and decision.",
-    withQBricks:
-      "The monitored transaction set is published as a contracted data product with every exclusion registered, alongside resolved parties, behaviour baselines and alert features for your scenarios, scoring and case tools. Threshold changes, test samples and dispositions are kept as evidence. Because it builds on the KYC data products, the same foundation supports perpetual KYC.",
+    support:
+      "The monitored transaction set is published as a contracted data product, with every exclusion registered, so your scenarios see the full population. Resolved parties, behaviour baselines and alert features sit alongside it for your scoring and case tools, and threshold changes, test samples and dispositions are kept as model-risk evidence.",
     related: [
       { label: "AML", href: "/solutions#aml" },
       { label: "KYC", href: "/solutions#kyc" },
@@ -64,10 +59,8 @@ export const useCases: UseCaseArea[] = [
     scope: "Early warning · IFRS 9 ECL · origination",
     value: "Loss and capital",
     oneLiner: "Lower losses, sharper provisioning, faster time to decision and better capital efficiency.",
-    problem:
-      "When a supervisor, auditor or customer asks why a loan was approved or moved to Stage 2, the answer has to be rebuilt as it stood on that day.",
-    withQBricks:
-      "Obligor, facility, collateral, arrears, financials and macro data are built once as contracted data products, checked on every load and reused from origination through early warning, IFRS 9 and IRB. Your decision, rating and ECL engines keep their methods and receive data of known quality, and every decision can be reproduced from the same inputs, rules and model versions.",
+    support:
+      "Obligor, facility, collateral, arrears, financials and macro data are built once as contracted data products, checked on every load and reused from origination through early warning, IFRS 9 and IRB. Your decision, rating and ECL engines keep their methods, and any credit decision, stage allocation or PD estimate can be rebuilt as it stood on the day, from the same inputs, rules and model versions.",
     related: [{ label: "Credit and ESG risk", href: "/solutions#credit-risk" }],
     products: [
       { name: "Affordability assessment", text: "Buffer and stress rate applied per policy version, with a result that can be reproduced." },
@@ -82,10 +75,8 @@ export const useCases: UseCaseArea[] = [
     scope: "Cross-sell · churn · pricing · lifetime value",
     value: "Revenue",
     oneLiner: "The main revenue lever: cross-sell, retention and pricing, with the uplift of every action measured.",
-    problem:
-      "Next best action only pays when the bank knows who the customer is, what they hold and what it is allowed to offer them.",
-    withQBricks:
-      "One resolved customer, with households, holdings, interactions and consent, is built as contracted data products that your CRM, marketing and decisioning platforms read. Consent, objections, suppressions and suitability are tested before any offer is ranked, and the answer on that date can be proven later. Control groups and an action log measure the incremental value of each action.",
+    support:
+      "One resolved customer, with households, holdings, interactions and consent, is built as contracted data products that your CRM, marketing and decisioning platforms read. Consent, objections, suppressions and suitability are tested before any offer is ranked, and control groups and an action log measure the incremental value of each action.",
     related: [{ label: "Contextual MDM", href: "/solutions#mdm" }],
     products: [
       { name: "Customer golden record", text: "One resolved customer per person or business, with the survivorship rule recorded for every attribute." },
@@ -100,9 +91,7 @@ export const useCases: UseCaseArea[] = [
     scope: "Security master · pricing · LEI hierarchies",
     value: "Cost and operations",
     oneLiner: "Lower data licence spend and fewer trade breaks; the reference layer under use cases 1 and 3.",
-    problem:
-      "Every desk, engine and report reads instruments, entities and prices. When each keeps its own copy, the result is trade breaks, duplicated vendor spend and reports that cannot be replayed.",
-    withQBricks:
+    support:
       "Instruments, legal entities, prices, calendars, client static and vendor licences are mastered once as foundation data products. Each vendor file and registry extract is checked against its contract on arrival, before it reaches a golden copy, and every product is versioned point in time, so a mark or a report can be replayed with the reference data of the day.",
     related: [{ label: "Contextual MDM", href: "/solutions#mdm" }],
     products: [

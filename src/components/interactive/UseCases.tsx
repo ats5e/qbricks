@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Activity, AlertOctagon, ArrowRight, ArrowRightCircle, CheckCircle2, Database, Network, ShieldAlert, Sparkles, TrendingDown, Users, XCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { useState } from "react";
+import Link from "next/link";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
 const cases = [
@@ -21,6 +22,7 @@ const cases = [
     title: "Governed data for AML that stands up to scrutiny.",
     icon: ShieldAlert,
     id: "aml",
+    dataProducts: "/solutions/data-products#aml",
     tag: "AML",
     pain: "Alerts and investigations are only as good as the data feeding them; poor matching and ungoverned data drive false positives.",
     help: "Contract-enforced, fully-lineaged data gives your monitoring stack clean, resolved records you can defend to the regulator.",
@@ -32,7 +34,7 @@ const cases = [
     icon: Users,
     id: "kyc",
     tag: "KYC",
-    pain: "Customer data is fragmented across systems; keeping KYC current is expensive and error-prone.",
+    pain: "Customer data is fragmented across systems, so keeping KYC current is costly and prone to error.",
     help: "Contextual, governed data with high matching accuracy gives a reliable single view.",
     outcome: "Faster onboarding, a reliable single view and a clean audit trail.",
     colSpan: "lg:col-span-2",
@@ -51,16 +53,18 @@ const cases = [
     title: "Master data with context, governance and lineage.",
     icon: Network,
     id: "mdm",
+    dataProducts: "/solutions/data-products#customer-360",
     tag: "Contextual MDM",
     pain: "Traditional MDM is brittle and loses the business context needed for customer intelligence.",
     help: "Governed metadata plus ontologies and knowledge graphs deliver contextual master data.",
-    outcome: "A trustworthy single view that powers customer intelligence and cross-sell.",
+    outcome: "Customer intelligence and cross-sell built on a single view you can trust.",
     colSpan: "lg:col-span-2",
   },
   {
     title: "Risk decisions are only as good as the data behind them.",
     icon: TrendingDown,
     id: "credit-risk",
+    dataProducts: "/solutions/data-products#credit-risk",
     tag: "Credit & ESG risk",
     pain: "Credit and ESG risk depend on accurate, well-understood, well-lineaged data; regulators expect to see the working.",
     help: "Governed, auditable data foundations with clear lineage give risk teams explainable inputs.",
@@ -132,6 +136,14 @@ export function UseCases() {
                 <div className="mt-auto rounded-2xl border border-q-brand/30 bg-white p-5 lg:mt-0">
                   <span className="mb-2 block text-xs font-bold text-q-brand-dark">The outcome</span>
                   <p className="text-sm font-bold leading-relaxed text-q-ink">{brand(useCase.outcome)}</p>
+                  {"dataProducts" in useCase && useCase.dataProducts && (
+                    <Link
+                      href={useCase.dataProducts}
+                      className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-q-brand-deep hover:underline"
+                    >
+                      See the data products <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             );
