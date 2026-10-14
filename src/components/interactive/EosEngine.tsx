@@ -202,8 +202,14 @@ export function EosEngine() {
           <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-3xl lg:max-w-none lg:whitespace-nowrap">
             SQL prompts replace pipelines. Single node<span className="text-q-brand-ember">.</span>
           </motion.h2>
-          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-700">
-            Spark splits your data up, runs it in parallel and recompiles it, and you pay for all of that before a single row is processed. EOS removes the coordination layer.
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-700 lg:max-w-5xl">
+            <span className="block text-balance">
+              Spark splits your data up, runs it in parallel and recompiles it, and you pay for all of that before a single row is processed.
+            </span>
+            <span className="mt-2 block text-balance">
+              EOS removes the coordination layer. Achieve large scale, complex joins{" "}
+              <span className="whitespace-nowrap">(60M × 15M rows)</span> in less than a second.
+            </span>
           </motion.p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-3">

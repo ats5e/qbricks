@@ -5,15 +5,12 @@ import { QBricksText, brand } from "@/components/ui/QBricksText";
 import { pageMeta } from "@/lib/seo";
 import { useCases } from "./data";
 
-export const metadata = {
-  ...pageMeta({
-    title: "Data products for financial services",
-    description:
-      "Five banking use cases and the contracted data products QBricks builds for each: risk data and regulatory reporting, AML transaction monitoring, credit risk, Customer 360 and reference data.",
-    path: "/solutions/data-products",
-  }),
-  robots: { index: false, follow: false },
-};
+export const metadata = pageMeta({
+  title: "Data products for financial services",
+  description:
+    "Five banking use cases and the contracted data products QBricks builds for each: risk data and regulatory reporting, AML transaction monitoring, credit risk, Customer 360 and reference data.",
+  path: "/solutions/data-products",
+});
 
 export default function DataProductsPage() {
   return (

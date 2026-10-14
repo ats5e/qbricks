@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/eos",
     "/sustainability",
     "/solutions",
+    "/solutions/data-products",
     "/integrations",
     "/why-qbricks",
     "/resources",
