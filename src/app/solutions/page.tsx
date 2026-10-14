@@ -36,7 +36,7 @@ export default function SolutionsPage() {
               <p className="eyebrow mb-3">Data products</p>
               <h2 className="h-sub">Five banking use cases, and the data products behind them.</h2>
               <p className="mt-5 leading-relaxed text-q-gray-700">
-                One level deeper: the five use cases where governed data products return most for a bank, ranked by value, with sample data products for each.
+                One level deeper: five use cases crucial for the running of a financial organisation, with sample data products for each.
               </p>
               <Link href="/solutions/data-products" className="btn-primary mt-8">
                 See the data products <ArrowRight className="h-5 w-5" />

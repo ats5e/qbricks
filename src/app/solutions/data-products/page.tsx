@@ -41,7 +41,7 @@ export default function DataProductsPage() {
       <section className="border-b border-black/5 bg-white section-y-sm">
         <div className="container-x">
           <p className="eyebrow mb-3">The Top 5</p>
-          <h2 className="h-sub">Five use cases, ranked by value.</h2>
+          <h2 className="h-sub">Five use cases, crucial for the running of a financial organisation.</h2>
 
           <ol className="mt-10 divide-y divide-black/10 border-y border-black/10">
             {useCases.map((uc) => (

@@ -76,10 +76,10 @@ export const useCases: UseCaseArea[] = [
     value: "Revenue",
     oneLiner: "The main revenue lever: cross-sell, retention and pricing, with the uplift of every action measured.",
     support:
-      "One resolved customer, with households, holdings, interactions and consent, is built as contracted data products that your CRM, marketing and decisioning platforms read. Consent, objections, suppressions and suitability are tested before any offer is ranked, and control groups and an action log measure the incremental value of each action.",
+      "One resolved customer (client data is resolved by our partner, Quantexa), with households, holdings, interactions and consent, is built as contracted data products that your CRM, marketing and decisioning platforms read. Consent, objections, suppressions and suitability are tested before any offer is ranked, and control groups and an action log measure the incremental value of each action.",
     related: [{ label: "Contextual MDM", href: "/solutions#mdm" }],
     products: [
-      { name: "Customer golden record", text: "One resolved customer per person or business, with the survivorship rule recorded for every attribute." },
+      { name: "Customer golden record", text: "One resolved customer per person or business (client data is resolved by our partner, Quantexa), with the survivorship rule recorded for every attribute." },
       { name: "Permitted-use flag", text: "Whether the bank may act for a given purpose, derived from consent and objections, with the rule version on every row." },
       { name: "Propensity score", text: "A score per customer and product, with model id and version, computed only where permitted use is true." },
     ],
