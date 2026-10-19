@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "QBricks, No more data pipelines." };
+const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "QBricks, No more hand-built data pipelines." };
 
 // Trim to a search-friendly length on a word boundary, never mid-word.
 export function clip(text: string, max = 155) {

@@ -10,7 +10,7 @@ import { BeforeAfter } from "@/components/interactive/BeforeAfter";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "QBricks | Governed, AI-Ready Data Without Pipelines",
+  title: "QBricks | Governed, AI-Ready Data Without Hand-Built Pipelines",
   description:
     "QBricks turns systems of record into governed, AI-ready data products in hours. Works with Databricks, Microsoft Fabric, Snowflake or your own database.",
   path: "/",
@@ -31,10 +31,10 @@ export default function Home() {
           <div className="grid items-center gap-10 overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white lg:grid-cols-[1fr_1.05fr] lg:gap-0">
             <div className="px-7 pt-10 md:px-12 lg:py-16">
               <h2 className="h-section text-[clamp(1.55rem,6.4vw,2rem)] lg:text-[2.5rem]">
-                Bring Us A Representative Workload
+                See what <QBricksText /> would do with your workload.
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-q-gray-700">
-                We will show you where <QBricksText /> helps, where it does not, and what adoption would require.
+                Bring us a representative workload. You get a straight answer on where <QBricksText /> helps, where it does not, and what adoption would take.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <Link href="/contact" className="btn-primary group">

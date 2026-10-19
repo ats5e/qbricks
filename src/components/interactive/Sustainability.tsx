@@ -14,7 +14,7 @@ const fadeUp = {
 const headlineStats = [
   { value: "−88", unit: "%", label: "Energy per year, same pipeline" },
   { value: "9", unit: "×", label: "Smaller provisioned compute" },
-  { value: "40", unit: "%", label: "Of the data-centre estate is pipeline compute, the layer QBricks addresses" },
+  { value: "40", unit: "%", label: "Of the data-centre estate is pipeline compute (our working assumption), the layer QBricks addresses" },
   { value: "−96", unit: "%", label: "Annual platform cost, same workload" },
 ];
 
@@ -45,7 +45,7 @@ const scaleCards = [
 ];
 
 const basis =
-  "Basis: Infinium QBricks impact model, Aug 2026, modelled scenarios, not predictions. Worked example: illustrative energy model, provisioned capacity × 8,760 h; QBricks on Azure D32als_v6, ~7.5 W/vCPU incl. server overhead, PUE 1.2; warehouse ≈ 560 slots (~0.5 vCPU-eq/slot), PUE 1.1; grid average 0.37 kg CO₂/kWh. Pipeline share of estate: working assumption, stress-tested at 20–30%. Cost savings are subject to the QBricks gain share, not shown here.";
+  "Basis: Infinium QBricks impact model, Aug 2026, modelled scenarios, not predictions. Worked example: illustrative energy model, provisioned capacity × 8,760 h; QBricks on Azure D32als_v6, ~7.5 W/vCPU incl. server overhead, PUE 1.2; warehouse ≈ 560 slots (~0.5 vCPU-eq/slot), PUE 1.1; grid average 0.37 kg CO₂/kWh. Pipeline share of estate: working assumption 40%, stress-tested at 20–30%; internal estimate, not externally sourced. Cost savings are subject to the QBricks gain share, not shown here.";
 
 export function Sustainability() {
   return (
@@ -149,7 +149,7 @@ export function Sustainability() {
           </motion.div>
 
           <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.16 }} className="mt-8 max-w-4xl text-[15px] leading-relaxed text-q-gray-700">
-            6.6 tCO₂e a year is roughly 1.4 passenger cars, for <em className="not-italic font-black text-q-ink">one</em> pipeline. A typical tier-2 bank runs ~300 of them: ~1.8 GWh and ~660 tCO₂e avoided every year.
+            6.6 tCO₂e a year is roughly 1.4 passenger cars, for <em className="not-italic font-black text-q-ink">one</em> pipeline. A typical tier-2 bank runs ~300 of them: ~5.3 GWh and ~2,000 tCO₂e avoided every year.
           </motion.p>
         </div>
       </section>
@@ -162,7 +162,7 @@ export function Sustainability() {
             The quiet 40% of the data centre
           </motion.h2>
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-700">
-            Data preparation and pipelines, ETL, Spark clusters, orchestration, warehouse transforms, account for roughly 40% of today’s data-centre compute estate. <QBricksText /> removes up to 85% of that layer’s compute for every workload that migrates. At scale, that is capacity that never has to be built.
+            Data preparation and pipelines, ETL, Spark clusters, orchestration, warehouse transforms, account for roughly 40% of today’s data-centre compute estate. That is our impact model’s working assumption, not an external figure, and we stress-test it at 20 to 30%. <QBricksText /> removes up to 85% of that layer’s compute for every workload that migrates. At scale, that is capacity that never has to be built.
           </motion.p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -202,7 +202,7 @@ export function Sustainability() {
                 href="/contact"
                 className="btn-primary"
               >
-                Book a demo <ArrowRight className="h-5 w-5" />
+                Request a demo <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/eos"

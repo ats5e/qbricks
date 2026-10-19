@@ -44,14 +44,13 @@ export default function WhyQBricksPage() {
         </div>
       </section>
 
-      <DataJourneyDiagram variant="manual" />
-      <DataJourneyDiagram variant="platform" />
+      <DataJourneyDiagram variant="today" />
+      <DataJourneyDiagram variant="qbricks" />
 
       <section id="ten-reasons" className="section-y relative overflow-hidden border-b border-black/5 bg-white">
 
         <div className="container-x relative z-10">
           <div className="mx-auto mb-12 max-w-4xl text-center">
-            <p className="eyebrow mb-5 text-q-gray-500">The answer?</p>
             <p className="eyebrow mb-5 inline-flex items-center justify-center gap-2">
               <PlayCircle className="h-4 w-4" />
               Watch
@@ -60,7 +59,7 @@ export default function WhyQBricksPage() {
               10 reasons why <QBricksText />
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-              See how <QBricksText /> turns governed data into an AI-ready foundation, no pipelines, no runaway compute, delivered in open, portable formats.
+              See how <QBricksText /> turns governed data into an AI-ready foundation, no hand-built pipelines, no runaway compute, delivered in open, portable formats.
             </p>
           </div>
 
@@ -79,10 +78,10 @@ export default function WhyQBricksPage() {
 
       <ComputeCost />
 
-      <section className="section-y bg-white">
+      <section className="section-y-sm bg-white">
         <div className="container-x">
           {/* Many scattered pieces of work resolving into one governed block */}
-          <div className="relative mb-14 aspect-[3136/1100] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white lg:mb-20" aria-hidden="true">
+          <div className="relative mb-10 aspect-[3136/1100] overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white lg:mb-12" aria-hidden="true">
             <Image src="/assets/brand/eos-bar.webp" alt="" fill unoptimized className="object-cover object-[center_56%]" />
           </div>
           <div className="mx-auto max-w-2xl text-center">

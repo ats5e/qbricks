@@ -13,7 +13,7 @@ export const insights: Insight[] = [
     category: "AI readiness",
     title: "Why 95% of AI use cases fail, and what organisations can do about it",
     standfirst:
-      "A 2025 MIT report found that around 95% of AI-related use cases were failing, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted. The pattern repeats across industries, and it is fixable.",
+      "MIT NANDA's 2025 report, The GenAI Divide: State of AI in Business, found that around 95% of enterprise generative AI pilots delivered no measurable return. The models were not the problem: the pilots never fitted the way the business works. In our experience, the first thing that does not fit is the data underneath, and that is fixable.",
     sections: [
       {
         heading: "The failure is upstream of the model",

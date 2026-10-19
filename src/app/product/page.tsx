@@ -1,4 +1,4 @@
-import { ArrowRight, FileCode2, GitBranch, Layers3, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Agentic } from "@/components/interactive/Agentic";
@@ -22,12 +22,6 @@ const flow = [
   ["Audit", "Track every decision, exception and lineage event end to end."],
 ];
 
-const constructs = [
-  { icon: FileCode2, title: "Data Contracts", text: "The unit of governance: explicit, owned and enforceable quality and transformation logic." },
-  { icon: Layers3, title: "Data Products", text: "Governed, discoverable assets carrying quality guarantees, ownership and lineage." },
-  { icon: GitBranch, title: "Decision lineage", text: "A transparent audit trail across agent actions, approvals, exceptions and releases." },
-  { icon: ShieldCheck, title: "Enterprise-grade security", text: "Cloud-agnostic, human-in-the-loop and designed for regulated environments." },
-];
 
 export default function ProductPage() {
   return (
@@ -53,7 +47,9 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="border-b border-black/5 bg-white pb-10 pt-20 lg:pb-12 lg:pt-32">
+      <FeaturesBento />
+
+      <section className="border-b border-black/5 bg-white section-y-sm">
         <div className="container-x">
           <div className="mx-auto mb-12 max-w-6xl text-center">
             <p className="eyebrow mb-4">How it works</p>
@@ -75,22 +71,8 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="bg-white pb-20 pt-10 lg:pb-32 lg:pt-12">
-        <div className="container-x">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {constructs.map((construct) => {
-              const Icon = construct.icon;
-              return (
-                <div key={construct.title} className="rounded-3xl border border-black/10 bg-black/[0.035] p-6">
-                  <Icon className="mb-5 h-7 w-7 text-q-brand-ember" />
-                  <h3 className="text-xl font-black text-q-ink">{brand(construct.title)}</h3>
-                  <p className="mt-3 leading-relaxed text-q-gray-600">{brand(construct.text)}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
+      <Agentic />
 
       <section className="border-y border-black/5 bg-white section-y-sm">
         <div className="container-x space-y-20">
@@ -125,15 +107,25 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <FeaturesBento />
-      <Agentic />
 
-      <section className="section-y bg-white text-center pb-32">
-        <div className="container-x relative z-10">
-          <Link href="/solutions" className="btn-primary group">
-            Explore use cases
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Link>
+      <section className="section-y bg-white">
+        <div className="container-x">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="h-section">
+              See <QBricksText /> on your own&nbsp;workload<span className="text-q-brand-ember">.</span>
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-q-gray-700">
+              Bring us a representative workload. We will show you where <QBricksText /> helps, where it does not, and what adoption would take.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/contact" className="btn-primary">
+                Request a demo <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link href="/solutions" className="btn-secondary">
+                Explore use cases <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

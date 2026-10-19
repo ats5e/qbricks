@@ -35,12 +35,12 @@ const fadeUp = {
 
 export function ProofBand() {
   return (
-    <section className="relative overflow-hidden border-y border-black/5 bg-white section-y-sm">
+    <section className="relative overflow-hidden border-y border-black/5 bg-[#f8f8fa] section-y-sm">
       <div className="container-x relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
             <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="text-3xl font-black tracking-tight text-q-ink md:text-4xl">
-              The economics only work when trusted data stops being the most expensive line on the bill.
+              Trusted data should not cost this much.
             </motion.h2>
           </div>
           <motion.div {...fadeUp} transition={{ delay: 0.1 }}>
@@ -55,7 +55,7 @@ export function ProofBand() {
             <motion.div key={stat.value + stat.source} {...fadeUp} transition={{ duration: 0.6, delay: index * 0.08 }}>
               <Link
                 href={stat.href}
-                className="group flex h-full flex-col rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
+                className="group flex h-full flex-col rounded-3xl border border-black/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-q-brand/40"
               >
                 <p className="text-5xl font-black tracking-tight text-q-brand-ember">{brand(stat.value)}</p>
                 <p className="mt-4 flex-1 leading-relaxed text-q-gray-700">{brand(stat.label)}</p>
@@ -71,7 +71,7 @@ export function ProofBand() {
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.1 }} className="mt-6">
           <Link
             href="/resources/cost-calculator"
-            className="group grid overflow-hidden rounded-[2rem] border border-black/[0.08] bg-q-panel transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)] md:grid-cols-[1.25fr_1fr]"
+            className="group grid overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white transition-shadow duration-300 hover:shadow-[0_40px_90px_rgba(0,0,0,0.08)] md:grid-cols-[1.25fr_1fr]"
           >
             <div className="flex flex-col justify-center p-7 md:p-10">
               <h3 className="text-2xl font-black tracking-tight text-q-ink md:text-3xl">Where <QBricksText /> takes cost out</h3>

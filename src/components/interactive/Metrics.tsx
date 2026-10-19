@@ -7,7 +7,7 @@ import { QBricksText, brand } from "@/components/ui/QBricksText";
 const valueCards = [
   { image: "/assets/brand/resources/in-data-contracts-explained.webp", title: "Regulatory confidence", text: "Every transformation, agent action and exception can be tracked and viewed by Risk, Compliance and Internal Audit." },
   { image: "/assets/brand/resources/wp-shift-right.webp", title: "Speed without chaos", text: "Single-file deployment turns complex infrastructure and workloads into a controlled, repeatable process." },
-  { image: "/assets/brand/resources/in-aml-kyc-data-problems-first.webp", title: "Data teams can prove it", text: "Contracts, products, lineage and knowledge graphs create a fully auditable shared language between business and technology." },
+  { image: "/assets/brand/resources/in-aml-kyc-data-problems-first.webp", title: "Provable data lineage", text: "Contracts, products, lineage and knowledge graphs show where every number came from, in a shared language business and technology both read." },
 ];
 
 export function Metrics() {
@@ -34,7 +34,7 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.1 }}
             className="text-lg leading-[1.7] text-q-gray-700 md:text-xl"
           >
-            A 2025 MIT report found that around <strong className="font-black text-q-ink">95% of AI-related use cases were failing</strong>, not because the models were weak, but because the underlying data quality and metadata foundation could not be trusted.
+            MIT NANDA&apos;s 2025 report, <em>The GenAI Divide: State of AI in Business</em>, found that around <strong className="font-black text-q-ink">95% of enterprise generative AI pilots delivered no measurable return</strong>. The models were not the problem: the pilots never fitted the way the business works. In our experience, the first thing that does not fit is the data underneath.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
@@ -52,7 +52,7 @@ export function Metrics() {
             transition={{ duration: 0.75, delay: 0.2 }}
             className="mt-5 text-lg leading-[1.7] text-q-gray-600"
           >
-            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting AI. Industry is stuck and value from AI is under scrutiny.
+            Organisations are now recognising that all of these costs outweigh the potential savings that can be made by adopting AI. The value of AI is now under scrutiny.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 22 }}

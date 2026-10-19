@@ -30,7 +30,7 @@ import {
 
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
-type DiagramVariant = "manual" | "platform" | "qbricks";
+type DiagramVariant = "today" | "qbricks";
 
 type NodeItem = {
   icon: LucideIcon;
@@ -54,15 +54,10 @@ const aiUseCases: NodeItem[] = [
 ];
 
 const platformNodes: Record<DiagramVariant, NodeItem[]> = {
-  manual: [
+  today: [
     { icon: Network, title: "Quantexa", subtitle: "Decision Intelligence" },
     { icon: Cloud, title: "Cloudera", subtitle: "Hybrid Data" },
     { icon: CircleEllipsis, title: "Others", subtitle: "Databricks · Fabric · Snowflake" },
-  ],
-  platform: [
-    { icon: Network, title: "Quantexa", subtitle: "Decision Intelligence" },
-    { icon: Cloud, title: "Cloudera", subtitle: "Hybrid Data" },
-    { icon: CircleEllipsis, title: "Others", subtitle: "Decisioning · B.I. · M.L." },
   ],
   qbricks: [
     { icon: Layers3, title: "Databricks", subtitle: "Lakehouse" },
@@ -74,50 +69,30 @@ const platformNodes: Record<DiagramVariant, NodeItem[]> = {
 };
 
 const diagramContent = {
-  manual: {
-    eyebrow: "The starting point",
-    title: (
-      <>
-        Today: <span className="text-q-brand-ember">months or years</span> before AI sees any quality data.
-      </>
-    ),
-    description:
-      "Spreadsheets and large teams sit between your systems of record and your platforms, ungoverned, manual and slow.",
-    layerLabel: "The manual layer",
-    layerTitle: "Excel and large teams of data professionals and analysts.",
-    layerIcons: [FileSpreadsheet, Users],
-    bullets: [
-      { icon: ShieldAlert, text: "Poor governance" },
-      { icon: CalendarClock, text: "Lengthy data processes" },
-      { icon: ShieldAlert, text: "Error-prone, manual rework" },
-      { icon: CalendarClock, text: "Months to build data sets" },
-    ],
-    timing: "months, not hours",
-    connectorLabel: "Manual",
-  },
-  platform: {
+  today: {
     eyebrow: "Today",
     title: (
       <>
-        The Data Management approach: <span className="text-q-brand-ember">months or years</span> before AI sees any quality data.
+        Two ways to get data ready for AI. Both take <span className="text-q-brand-ember">months or years</span>.
       </>
     ),
     description:
-      "Hand-built pipelines and heavy compute on the platforms themselves, engineering-led, costly and slow.",
-    layerLabel: "The engineering layer",
-    layerTitle: "Pipelines built on Databricks, Microsoft Fabric or Snowflake.",
-    layerIcons: [Layers3, Grid2X2, Snowflake],
+      "Some organisations put spreadsheets and large teams between their systems of record and their platforms. Others hand-build pipelines on the platforms themselves. One is manual and ungoverned, the other engineering-led and compute-heavy. Either way, AI waits.",
+    layers: [
+      { label: "The manual layer", title: "Excel and large teams of data professionals and analysts.", icons: [FileSpreadsheet, Users] },
+      { label: "Or the engineering layer", title: "Hand-built pipelines on Databricks, Microsoft Fabric or Snowflake.", icons: [Layers3, Grid2X2, Snowflake] },
+    ],
     bullets: [
-      { icon: GitBranch, text: "Hand-built pipeline builds" },
+      { icon: ShieldAlert, text: "Poor governance, ungoverned notebooks" },
+      { icon: FileSpreadsheet, text: "Error-prone, manual rework" },
+      { icon: GitBranch, text: "Hand-built pipelines" },
       { icon: CloudCog, text: "Costly compute" },
-      { icon: FileSpreadsheet, text: "Ungoverned notebooks" },
-      { icon: CalendarClock, text: "Months or years to data sets" },
     ],
     timing: "months or years, not hours",
     connectorLabel: "Manual",
   },
   qbricks: {
-    eyebrow: "The accelerator",
+    eyebrow: "The QBricks approach",
     title: (
       <>
         From system of record to AI use case,{" "}
@@ -130,9 +105,7 @@ const diagramContent = {
         your systems of record straight into production use cases.
       </>
     ),
-    layerLabel: "Data Management Platform",
-    layerTitle: "Governed, AI-ready data, in hours, not years.",
-    layerIcons: [],
+    layers: [{ label: "Data Management Platform", title: "Governed, AI-ready data, in hours, not years.", icons: [] }],
     bullets: [
       { icon: Workflow, text: "Automatic pipeline building" },
       { icon: Gauge, text: "Local compute" },
@@ -150,9 +123,7 @@ const diagramContent = {
     connectorLabel: string;
     description: React.ReactNode;
     eyebrow: string;
-    layerIcons: LucideIcon[];
-    layerLabel: string;
-    layerTitle: string;
+    layers: Array<{ icons: LucideIcon[]; label: string; title: string }>;
     timing: string;
     title: React.ReactNode;
   }
@@ -308,20 +279,25 @@ function CoreLayer({
         <div className="mb-6">
           <QBricksText />
         </div>
-      ) : (
-        <div className="mb-6 flex gap-2">
-          {content.layerIcons.map((Icon, index) => (
-            <div key={index} className="flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 bg-black/[0.045] text-q-gray-800">
-              <Icon className="h-5 w-5" />
-            </div>
-          ))}
-        </div>
-      )}
+      ) : null}
 
-      <p className={`text-xs font-bold ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>
-        {brand(content.layerLabel)}
-      </p>
-      <h3 className="mt-3 text-[1.1rem] font-black leading-tight text-q-ink md:text-xl">{brand(content.layerTitle)}</h3>
+      <div className="space-y-5">
+        {content.layers.map((layer, index) => (
+          <div key={layer.label} className={index > 0 ? "border-t border-dashed border-black/15 pt-5" : undefined}>
+            {layer.icons.length > 0 ? (
+              <div className="mb-4 flex gap-2">
+                {layer.icons.map((Icon, i) => (
+                  <div key={i} className="flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 bg-black/[0.045] text-q-gray-800">
+                    <Icon className="h-[18px] w-[18px]" />
+                  </div>
+                ))}
+              </div>
+            ) : null}
+            <p className={`text-xs font-bold ${active ? "text-q-brand-deep" : "text-q-gray-500"}`}>{brand(layer.label)}</p>
+            <h3 className="mt-2 text-[1.05rem] font-black leading-tight text-q-ink md:text-lg">{brand(layer.title)}</h3>
+          </div>
+        ))}
+      </div>
 
       <div className="my-5 h-px bg-black/10" />
 

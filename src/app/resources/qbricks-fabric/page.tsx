@@ -14,7 +14,7 @@ const content: CapabilityContent = {
   partnerLogo: "/assets/partners/Fabric-dark.png",
   scene: "contracts",
   sceneBadge: "ODCS",
-  eyebrow: "No more data pipelines",
+  eyebrow: "No more hand-built pipelines",
   heroIntro:
     "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into OneLake. From system of record to Power BI in hours: no pipelines to build, no capacity to burn on wrangling, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets OneLake",

@@ -4,33 +4,46 @@ import { Logo } from "@/components/ui/Logo";
 import { InfiniumLockup } from "@/components/ui/InfiniumLockup";
 import { QBricksText, brand } from "@/components/ui/QBricksText";
 
+// Mirrors the main navigation (Product, EOS, Solutions, Why QBricks, Resources);
+// solution labels match the cards on /solutions.
 const columns = [
   {
     title: "Product",
     links: [
-      ["Overview", "/product"],
-      ["EOS Engine", "/eos"],
-      ["Solutions", "/solutions"],
-      ["Integrations", "/integrations"],
+      ["Product", "/product"],
+      ["EOS", "/eos"],
       ["Why QBricks", "/why-qbricks"],
+      ["Integrations", "/integrations"],
       ["Sustainability", "/sustainability"],
     ],
   },
   {
-    title: "Use cases",
+    title: "Solutions",
     links: [
+      ["pKYC / AMLR", "/solutions#pkyc"],
       ["AML", "/solutions#aml"],
-      ["pKYC & AMLR", "/solutions#pkyc"],
-      ["Fraud", "/solutions#fraud"],
-      ["MDM & risk", "/solutions#mdm"],
+      ["KYC", "/solutions#kyc"],
+      ["Fraud & financial crime", "/solutions#fraud"],
+      ["Contextual MDM", "/solutions#mdm"],
+      ["Credit & ESG risk", "/solutions#credit-risk"],
+      ["Data products", "/solutions/data-products"],
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      ["All resources", "/resources"],
+      ["White papers", "/resources#white-papers"],
+      ["Insights", "/resources#insights"],
+      ["Cost calculator", "/resources/cost-calculator"],
     ],
   },
   {
     title: "Company",
     links: [
-      ["Resources", "/resources"],
       ["About", "/about"],
       ["Contact", "/contact"],
+      ["Privacy", "/privacy"],
     ],
   },
 ];
@@ -61,7 +74,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {columns.map((column) => (
               <div key={column.title}>
                 <h2 className="mb-5 font-black text-q-ink">{brand(column.title)}</h2>
@@ -90,8 +103,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()}{" "}
             <a href="https://infinium-technology.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-q-ink">
               Infinium Consulting B.V.
-            </a>
-            . All rights reserved.
+            </a>{" "}
+            All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-q-gray-500">
             <span>qbricks.ai</span>

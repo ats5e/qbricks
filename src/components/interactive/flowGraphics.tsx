@@ -546,7 +546,7 @@ export function RoutingGraphic() {
       <Mono x={1236} y={156} size={10} fill={EMBER}>FOR DATA SCIENTISTS</Mono>
       <T x={1236} y={180} size={15} weight={700}>QBricks</T>
       <T x={1236} y={198} size={15} weight={700}>Python SDK</T>
-      {["Governed data", "products in a few", "lines of Python.", "No pipeline build."].map((line, i) => (
+      {["Governed data", "products in a few", "lines of Python.", "No hand-built pipeline."].map((line, i) => (
         <T key={line} x={1236} y={222 + i * 16} size={11} fill={GRAY_400} weight={400}>{line}</T>
       ))}
 

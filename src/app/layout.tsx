@@ -19,21 +19,21 @@ const siteDescription =
 export const metadata: Metadata = {
   metadataBase: new URL("https://qbricks.ai"),
   title: {
-    default: "QBricks | Governed, AI-Ready Data Without Pipelines",
+    default: "QBricks | Governed, AI-Ready Data Without Hand-Built Pipelines",
     template: "%s | QBricks",
   },
   description: siteDescription,
   openGraph: {
     type: "website",
     siteName: "QBricks",
-    title: "QBricks, No more data pipelines.",
+    title: "QBricks, No more hand-built data pipelines.",
     description: "Governed, AI-ready data products, in hours, not years.",
     url: "https://qbricks.ai",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "QBricks, No more data pipelines." }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "QBricks, No more hand-built data pipelines." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QBricks, No more data pipelines.",
+    title: "QBricks, No more hand-built data pipelines.",
     description: "Governed, AI-ready data products, in hours, not years.",
     images: ["/og-image.png"],
   },

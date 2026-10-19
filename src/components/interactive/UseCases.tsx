@@ -80,10 +80,10 @@ export function UseCases() {
       <div className="container-x relative z-10">
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <h2 className="h-section font-black tracking-tight text-q-ink">
-            Governed data products to accelerate your organisation&apos;s AI journey.
+            One foundation. Six ways it pays back.
           </h2>
           <p className="mx-auto mt-7 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-            <QBricksText /> builds AI ready data products, fast.
+            Each card sets out the problem, what <QBricksText /> changes and the outcome.
           </p>
         </div>
 

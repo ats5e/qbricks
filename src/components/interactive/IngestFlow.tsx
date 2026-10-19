@@ -550,7 +550,7 @@ export function IngestFlow() {
                 <text key={y} className="t-code" x="1082" y={y} data-k={`c${i}`} />
               ))}
               <text className="t-sub" x="1076" y="572" data-k="sStat">Waiting for data product</text>
-              <text className="t-small" x="1076" y="590">No pipeline build</text>
+              <text className="t-small" x="1076" y="590">No hand-built pipeline</text>
 
               {/* measured tiles */}
               <text className="t-label" x="40" y="478">Ingestion, per TB of CSV</text>

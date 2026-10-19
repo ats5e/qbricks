@@ -75,7 +75,7 @@ const features = [
   { n: "04", t: "Built with Rust", d: "Compiled, memory-safe and free of garbage collection. No JVM and no pauses mean predictable low latency with a fraction of the memory footprint." },
   { n: "05", t: "Capped compute cost", d: "The whole pipeline estate runs on one right-sized VM as a single committed line item. Compression also shrinks your lakehouse storage bill." },
   { n: "06", t: "Governed by design", d: "Every record is checked against an Open Data Contract Standard contract. Fully auditable, with a human in the loop." },
-  { n: "07", t: "Python SDK", d: "Data science teams connect with a few lines of Python and pull governed data products in seconds, with no pipeline build and no wait on engineering." },
+  { n: "07", t: "Python SDK", d: "Data science teams connect with a few lines of Python and pull governed data products in seconds, with no hand-built pipeline and no wait on engineering." },
   { n: "08", t: "Best-in-class ingestion", d: "1 TB of raw CSV landed every 50.6 seconds, at €0.48 compute per TB. 86.6 BN records validated in a single 12 TB run." },
   { n: "09", t: "Best-in-class pipeline builds", d: "Complex, multi-join pipelines over 866M records built in 14.5 seconds across the full TPC-H suite. Uses managed tables to deliver incremental changes." },
 ];
@@ -182,7 +182,7 @@ export function EosEngine() {
                 <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10">
                   {b.facts.map((fact) => (
                     <div key={fact.label} className="bg-white p-4 md:p-5">
-                      <p className="whitespace-nowrap text-xl font-black tracking-tight text-q-ink xl:text-2xl">{brand(fact.value)}</p>
+                      <p className="whitespace-nowrap text-base font-black tracking-tight text-q-ink sm:text-xl xl:text-2xl">{brand(fact.value)}</p>
                       <p className="mt-1 text-[13px] text-q-gray-500">{brand(fact.label)}</p>
                     </div>
                   ))}
@@ -199,8 +199,8 @@ export function EosEngine() {
       <section className="section-y border-b border-black/5 bg-white">
         <div className="container-x">
           <motion.p {...fadeUp} className="eyebrow mb-5">The distributed tax</motion.p>
-          <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-3xl lg:max-w-none lg:whitespace-nowrap">
-            SQL prompts replace pipelines. Single node<span className="text-q-brand-ember">.</span>
+          <motion.h2 {...fadeUp} transition={{ duration: 0.7 }} className="h-section max-w-4xl [text-wrap:balance]">
+            SQL prompts replace hand-built pipelines. Single node<span className="text-q-brand-ember">.</span>
           </motion.h2>
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.08 }} className="mt-5 max-w-3xl text-lg leading-relaxed text-q-gray-700 lg:max-w-5xl">
             <span className="block text-balance">
@@ -300,7 +300,7 @@ export function EosEngine() {
                 href="/contact"
                 className="btn-primary"
               >
-                Book a demo <ArrowRight className="h-5 w-5" />
+                Request a demo <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/sustainability"

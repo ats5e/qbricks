@@ -90,7 +90,10 @@ export function Hero() {
       <div className="relative border-y border-black/10 bg-white py-8 lg:py-10">
         <div className="container-x">
           <p className="text-center text-[clamp(1.35rem,2.5vw,2.15rem)] font-black leading-tight tracking-tight text-q-ink">
-            No more data <span className="text-q-brand-ember">pipelines</span>.
+            No more hand-built data <span className="text-q-brand-ember">pipelines</span>.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base leading-relaxed text-q-gray-600 md:text-lg">
+            <QBricksText /> builds them for you from data contracts and runs them on EOS, at a fraction of the compute.
           </p>
         </div>
       </div>

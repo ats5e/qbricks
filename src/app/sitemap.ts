@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources/qbricks-alteryx",
     "/about",
     "/contact",
+    "/privacy",
   ];
 
   return [

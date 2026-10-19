@@ -14,7 +14,7 @@ const content: CapabilityContent = {
   partnerLogo: "/assets/partners/Alteryx.png",
   scene: "workflow",
   sceneBadge: "Workflow",
-  eyebrow: "No more data pipelines",
+  eyebrow: "No more hand-built pipelines",
   heroIntro:
     "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them into the stores your Alteryx workflows already read. From system of record to analyst-ready in hours: no pipelines to build, no re-cleaning, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your analysts",

@@ -22,7 +22,7 @@ export default function SolutionsPage() {
             Governed data products for the use cases that matter.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-q-gray-700">
-            AML, perpetual KYC and AMLR, fraud, contextual MDM, credit and ESG risk, every solution inherits the same trusted, contract-enforced foundation.
+            Six solutions: pKYC and AMLR, AML, KYC, fraud and financial crime, contextual MDM, and credit and ESG risk. Each one runs on the same trusted, contract-enforced foundation.
           </p>
         </div>
       </section>
@@ -53,6 +53,22 @@ export default function SolutionsPage() {
                 </li>
               ))}
             </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-white">
+        <div className="container-x">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="h-section">
+              Start with the use case that costs you&nbsp;most<span className="text-q-brand-ember">.</span>
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-q-gray-700">
+              Bring us a representative workload from it. We will show you where {brand("QBricks")} helps, where it does not, and what adoption would take.
+            </p>
+            <Link href="/contact" className="btn-primary mt-8">
+              Request a demo <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>

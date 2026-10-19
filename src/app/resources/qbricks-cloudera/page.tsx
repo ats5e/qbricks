@@ -15,7 +15,7 @@ const content: CapabilityContent = {
   partnerLogo: "/assets/partners/Cloudera_logo.webp",
   scene: "governance",
   sceneBadge: "Live audit",
-  eyebrow: "No more data pipelines",
+  eyebrow: "No more hand-built pipelines",
   heroIntro:
     "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into your Cloudera platform. From system of record to lakehouse in hours: no pipelines to build, no cluster to stand up, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your lakehouse",

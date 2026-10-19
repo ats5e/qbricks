@@ -90,7 +90,7 @@ const videos = [
     href: "/resources/10-reasons-why",
     poster: "/assets/brand/poster-10-reasons.webp",
     title: <>10 reasons why <QBricksText /></>,
-    text: "See how governed data becomes an AI-ready foundation, no pipelines, delivered in open, portable formats.",
+    text: "See how governed data becomes an AI-ready foundation, no hand-built pipelines, delivered in open, portable formats.",
   },
 
 ];
@@ -147,7 +147,7 @@ export default function ResourcesPage() {
                 {s.label}
               </a>
             ))}
-            <Link href="/resources/cost-calculator" className="rounded-full bg-q-brand px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-q-brand-ember">
+            <Link href="/resources/cost-calculator" className="rounded-full border border-black/10 bg-white/80 px-4 py-2 text-sm font-bold text-q-gray-700 backdrop-blur transition-colors hover:border-q-brand/40 hover:text-q-ink">
               Cost calculator
             </Link>
           </nav>

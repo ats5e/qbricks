@@ -1,31 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BrainCircuit, GitBranch, Network, ScanLine, ShieldCheck, UserCheck } from "lucide-react";
-import { QBricksText, brand } from "@/components/ui/QBricksText";
-
-const features = [
-  {
-    icon: BrainCircuit,
-    title: "Agentic automation",
-    description: "Depending on an organisation's policies, agents can be used to handle routine metadata work and act according to your governance policy.",
-  },
-  {
-    icon: GitBranch,
-    title: "Data Lineage",
-    description: <>Fully understand how data assets and products have been created by <QBricksText />. Drill down on each and see a visualisation of the joins and underlying data tables.</>,
-  },
-  {
-    icon: Network,
-    title: "Knowledge graphs",
-    description: "Fully understand your data with clickable knowledge graphs, enabling a full and detailed understanding of your organisation's data.",
-  },
-  {
-    icon: UserCheck,
-    title: "Human in the loop",
-    description: "Automation scales the work; your governance, risk and data teams retain review, control and accountability.",
-  },
-];
+import { ScanLine, ShieldCheck } from "lucide-react";
+import { QBricksText } from "@/components/ui/QBricksText";
 
 const outputs = ["Data Contracts", "Data Products"];
 const guarantees = ["Governed", "Auditable", "Lineage", "Ontologies"];
@@ -125,27 +102,6 @@ export function Agentic() {
           <MeshDiagram />
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 relative z-10">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.55, delay: index * 0.07 }}
-                className="rounded-3xl border border-black/[0.08] bg-white p-6 transition-colors hover:border-q-brand/30"
-              >
-                <div className="mb-5 inline-flex rounded-2xl border border-black/10 bg-black/5 p-3 text-q-brand-ember">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mb-3 text-xl font-black text-q-ink">{brand(feature.title)}</h3>
-                <p className="text-sm leading-relaxed text-q-gray-600">{brand(feature.description)}</p>
-              </motion.div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

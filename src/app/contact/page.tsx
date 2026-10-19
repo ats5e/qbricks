@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { QBricksText } from "@/components/ui/QBricksText";
@@ -194,6 +195,14 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({ ...formData, company_website: e.target.value })}
                 />
               </div>
+
+              <p className="text-xs leading-relaxed text-q-gray-500">
+                We use these details only to reply to your enquiry and follow up on it. The form is delivered through Formspree. See our{" "}
+                <Link href="/privacy" className="font-semibold text-q-gray-700 underline underline-offset-2 hover:text-q-ink">
+                  privacy notice
+                </Link>
+                .
+              </p>
 
               <button
                 type="submit"

@@ -14,7 +14,7 @@ const content: CapabilityContent = {
   partnerLogo: "/assets/partners/Snowflake.png",
   scene: "integrations",
   sceneBadge: "Integrations",
-  eyebrow: "No more data pipelines",
+  eyebrow: "No more hand-built pipelines",
   heroIntro:
     "QBricks turns fragmented systems of record into governed, AI-ready data products, contract-enforced and audit-ready, then delivers them straight into your Snowflake account. From system of record to the data cloud in hours: no pipelines to build, no warehouse to spin up, no mess to untangle first.",
   handoffLabel: "The handoff, where QBricks meets your data cloud",

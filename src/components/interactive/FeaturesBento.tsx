@@ -34,12 +34,12 @@ const capabilities = [
   {
     icon: Blocks,
     title: "Knowledge graph & lineage",
-    text: "See hierarchy, linkages and complex relationships. Supports ontologies and full data lineage.",
+    text: "See hierarchy, linkages and complex relationships, with ontologies and full data lineage. Drill into any data product to see the joins and tables behind it.",
     highlight: "Full lineage",
   },
   {
     icon: Sparkles,
-    title: "Fully auditable & Secure",
+    title: "Auditable and secure",
     text: "Before-and-after files and auditable outputs. Apply your organisation's security standards.",
     highlight: "Auditable",
   },
