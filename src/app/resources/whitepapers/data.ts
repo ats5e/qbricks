@@ -19,6 +19,60 @@ export type Whitepaper = {
 
 export const whitepapers: Whitepaper[] = [
   {
+    slug: "realtime-regulation",
+    category: "Regulation / Real-Time Data",
+    title: "Regulators feel the need, the need for speed.",
+    standfirst:
+      "For two decades, financial institutions have run on batch data. That model is now incompatible with the law. Legislation that has taken effect since January 2025 or applies by 2028 attaches hard clocks to data: ten seconds to clear a euro payment, four hours to notify a major ICT incident, one business day to settle a trade, and continuous customer screening whenever a sanctions list changes. This paper maps the legislation, extracts the data requirements it creates, and sets out the architecture that satisfies them.",
+    stats: [
+      { value: "10s", label: "to execute a euro instant credit transfer, around the clock" },
+      { value: "4h", label: "for a DORA major-incident initial notification" },
+      { value: "2 Dec 2027", label: "AI Act high-risk obligations apply, weeks after T+1 and months after AMLR" },
+    ],
+    pointsTitle: "What the legislation actually requires of data",
+    points: [
+      { title: "Decide on arrival", text: "Seconds under the Instant Payments Regulation and Singapore's Shared Responsibility Framework, hours under DORA, same day under T+1. Data must be usable the moment it is created, not after the next load." },
+      { title: "Every change, once", text: "Sanctions deltas, customer updates and transactions are streams of change. Full reloads are too slow and destroy the audit trail." },
+      { title: "Rules before records", text: "AMLR, BCBS 239, the ECB Guide and AI Act Article 10 expect documented definitions, provenance and quality thresholds applied at ingestion, not reconciled later." },
+      { title: "Lineage and a human in the loop", text: "Five to seven years of retention, before-and-after state and a traceable path from source event to STR or risk report. Automated decisions are permitted only with safeguards, override and documented review." },
+    ],
+    solutionTitle: "The architecture that satisfies the clock",
+    solutionText:
+      "QBricks was designed from these requirements rather than retrofitted to them. It is a streaming data management platform that moves data from systems of record into a governed lakehouse incrementally, change by change, and compares every record against a pre-agreed governance framework before it lands. Streaming ingestion answers the IPR, SRF and DORA latency requirements. ODCS data contracts, enforced at ingestion in Unity Catalog or the equivalent on Fabric and Snowflake, answer AMLR's documented risk methodology and BCBS 239. Before-and-after files keep every accepted and rejected record with the rule that decided it, so a supervisor's request can be traced to source without reconstruction. Agents improve metadata and quality rules while isolated from the data lake, and a person approves every change. Each new regulatory obligation becomes a change to a contract, not a new engineering project.",
+    quote: "Each new regulation should be a rule to add, not a platform to build.",
+    tagline: "QBricks: from system of record to a governed lakehouse in hours, with every record contract-checked and a human in the loop.",
+    scene: "governance",
+    sceneBadge: "Regulatory clock",
+    pdf: "/whitepapers/realtime-regulation.pdf",
+  },
+  {
+    slug: "query-at-scale",
+    category: "Compute Economics / Query at Scale",
+    title: "Why querying enterprise data at scale should not cost a fortune.",
+    standfirst:
+      "Financial institutions have never held more data, and have never been more reluctant to query it. Modern data management solutions encourage you to put your data in their platform and then charge you compute to query it, so every full-population screen, multi-year link analysis and supervisory replay carries a visible, variable bill. This paper explains why querying 1 TB and more in seconds is an operating condition for financial services, and how QBricks delivers it for a fixed, containerised fee.",
+    stats: [
+      { value: "1TB+", label: "interactive query target for screening, link analysis and replay" },
+      { value: "10s", label: "euro instant payment window that screening has to keep pace with" },
+      { value: "€0", label: "marginal cost of a query on a QBricks container" },
+    ],
+    pointsTitle: "Why current platforms make institutions ration the question",
+    points: [
+      { title: "Queries are rationed", text: "Teams sample, pre-aggregate or restrict look-back windows to protect budgets: exactly the shortcuts that break full-population screening and lineage replay." },
+      { title: "Cost is unpredictable", text: "A sanctions list change, a market event or a supervisory request produces a compute spike nobody budgeted for, so the controls that matter most are the ones finance pushes back on." },
+      { title: "Duplication multiplies the bill", text: "Each use case builds its own pipeline and its own copy of the data, and every copy is re-scanned by every job that touches it." },
+      { title: "Governance gets charged twice", text: "Quality checks, lineage capture and reconciliation are themselves compute jobs. Platforms that meter compute make good governance more expensive than bad governance." },
+    ],
+    solutionTitle: "A fixed, containerised fee for querying at scale",
+    solutionText:
+      "QBricks removes the variable from the equation. Its query and ingestion engine runs as a container inside your environment, including on local compute where residency demands it, for a fixed, containerised fee. Capacity is sized once, to the estate, and the price does not move with the number of queries run, the terabytes scanned or the day of the month. Data lands incrementally under an ODCS data contract, so full-population queries read a single governed estate that is already clean, deduplicated and lineaged. The container inherits the host platform's identity, encryption and access controls, and data never leaves your tenancy. When the marginal cost of a question is zero, the sanctions team screens everyone every time, the fraud team joins five years instead of ninety days, and the data office answers the supervisor on the spot.",
+    quote: "When every query has a price, the first casualty is the query that matters most.",
+    tagline: "QBricks: one governed estate, one fixed fee, and every question worth asking.",
+    scene: "lineage",
+    sceneBadge: "Fixed-fee query",
+    pdf: "/whitepapers/query-at-scale.pdf",
+  },
+  {
     slug: "compute-commodity-hedge",
     category: "Compute Economics / Compute Futures",
     title: "Compute is becoming a commodity. Hedge it like one.",
