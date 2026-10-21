@@ -43,3 +43,8 @@ node_modules_broken_*/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# remotion brand video renders
+/video/out/
+/video/node_modules/
+/.next-export/

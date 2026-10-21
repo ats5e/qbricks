@@ -1,0 +1,49 @@
+# Builds the static export and syncs it to the SiteGround host behind qbricks.ai.
+# Needs repository secrets SG_HOST, SG_PORT, SG_USER, SG_SSH_KEY and SG_PATH
+# (see Site Tools → Devs → SSH Keys Manager for the first four).
+name: Deploy to SiteGround
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: siteground
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 20 ships npm 10, the same strict lockfile check Vercel uses.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          STATIC_EXPORT: "1"
+
+      - name: Load SSH key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SG_SSH_KEY }}" > ~/.ssh/siteground
+          chmod 600 ~/.ssh/siteground
+          ssh-keyscan -p "${{ secrets.SG_PORT }}" "${{ secrets.SG_HOST }}" >> ~/.ssh/known_hosts
+
+      # --delete clears files from older builds; .htaccess (security headers,
+      # trailing-slash redirects) and any backup zips on the server are kept.
+      - name: Sync to public_html
+        run: |
+          rsync -az --delete \
+            --exclude '.htaccess' \
+            --exclude 'backup-*.zip' \
+            -e "ssh -i ~/.ssh/siteground -p ${{ secrets.SG_PORT }}" \
+            .next-export/ \
+            "${{ secrets.SG_USER }}@${{ secrets.SG_HOST }}:${{ secrets.SG_PATH }}/"

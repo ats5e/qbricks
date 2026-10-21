@@ -4,9 +4,24 @@
     {
       "name": "qbricks-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000,
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "4321"
+      ],
+      "port": 4321,
       "autoPort": true
+    },
+    {
+      "name": "video-studio",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd '/Volumes/Archive/QBricks Films/Remotion Project' && npm run dev -- --port 3050 --no-open"
+      ],
+      "port": 3050
     }
   ]
 }
