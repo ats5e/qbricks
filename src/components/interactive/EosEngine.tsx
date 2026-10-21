@@ -15,9 +15,11 @@ const fadeUp = {
   viewport: { once: true, margin: "-90px" },
 } as const;
 
+// Query card and TPC footnote per David, 21 Oct 2026 (final query results to follow).
 const heroStats = [
   { label: "Ingestion", value: "50.6", unit: "s", detail: "per TB of raw CSV · €0.48 compute per TB" },
-  { label: "Complex pipeline builds", value: "14.5", unit: "s", detail: "866M records · full 22-query TPC-H suite" },
+  { label: "Complex pipeline builds", value: "14.5", unit: "s", detail: "866M records · full 22-query TPC-H suite*" },
+  { label: "Query", headline: "Market leading TPC-DS* speed", detail: "All 99 TPC-DS-derived queries at 1 TB, benchmarked faster than Spark and Sail with minimal compute" },
 ];
 
 const benchmarks = [
@@ -103,7 +105,7 @@ export function EosEngine() {
             Streaming data. No Spark. No clusters. <span className="text-q-brand-deep">No memory tax.</span>
           </motion.p>
 
-          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.16 }} className="mx-auto mt-14 grid max-w-3xl gap-4 text-left sm:grid-cols-2">
+          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.16 }} className="mx-auto mt-14 grid max-w-5xl gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
             {heroStats.map((stat) => (
               <a
                 key={stat.label}
@@ -111,14 +113,25 @@ export function EosEngine() {
                 className="premium-card block p-7 transition-colors hover:border-q-brand/40"
               >
                 <p className="text-sm font-bold text-q-gray-600">{brand(stat.label)}</p>
-                <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-q-ink">
-                  {brand(stat.value)}
-                  <span className="text-q-brand-ember">{brand(stat.unit)}</span>
-                </p>
+                {stat.headline ? (
+                  <p className="mt-3 text-2xl font-black leading-tight tracking-tight text-q-ink">
+                    Market leading <span className="whitespace-nowrap">TPC-DS<sup className="text-[0.55em]">*</sup></span>{" "}
+                    <span className="text-q-brand-ember">speed</span>
+                  </p>
+                ) : (
+                  <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-q-ink">
+                    {brand(stat.value)}
+                    <span className="text-q-brand-ember">{brand(stat.unit)}</span>
+                  </p>
+                )}
                 <p className="mt-3 text-[15px] leading-relaxed text-q-gray-600">{brand(stat.detail)}</p>
               </a>
             ))}
           </motion.div>
+
+          <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.18 }} className="mx-auto mt-4 max-w-5xl text-left text-xs leading-relaxed text-q-gray-500">
+            * Workloads derived from the TPC-H and TPC-DS benchmarks. Results are not audited and are not comparable to published TPC-H or TPC-DS results.
+          </motion.p>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.2 }} className="mt-5 text-sm text-q-gray-500">
             Benchmarked against recognised industry standards ·{" "}
