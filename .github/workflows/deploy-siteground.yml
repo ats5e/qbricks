@@ -3,9 +3,8 @@
 # (see Site Tools → Devs → SSH Keys Manager for the first four).
 name: Deploy to SiteGround
 
+# Manual only (Actions → Deploy to SiteGround → Run workflow) until the secrets exist.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
