@@ -1,0 +1,59 @@
+# ============================================
+# .htaccess for React SPA on SiteGround
+# Place in public_html (same level as index.html)
+# ============================================
+
+# --- Force HTTPS ---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- React Router: serve index.html for unknown routes ---
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  # Content-Security-Policy — start restrictive, loosen only as needed.
+  # Add any external domains you actually use (fonts, analytics, APIs) to the relevant directive.
+  # Next.js needs 'unsafe-inline' on script-src for its inline hydration/bootstrap scripts
+  # (no server per-request nonce is possible on static hosting, so this is the practical tradeoff).
+  # formspree.io added to connect-src (AJAX submit) and form-action (native form submit) for the contact form.
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'self' https://player.mux.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests;"
+
+  # Prevent clickjacking (redundant with frame-ancestors above, but wider browser support)
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Stop browsers guessing MIME types
+  Header set X-Content-Type-Options "nosniff"
+
+  # Limit referrer leakage
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Force HTTPS for a year, include subdomains
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Restrict powerful browser features by default
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+
+  # Legacy XSS filter header (harmless to keep for old browsers)
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Remove server fingerprinting
+  Header unset X-Powered-By
+  Header unset Server
+</IfModule>
+
+# --- Disable directory listing ---
+Options -Indexes
+
+# --- Block access to hidden/system files ---
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# --- Block access to source maps in production (optional but recommended) ---
+<FilesMatch "\.map$">
+  Require all denied
+</FilesMatch>
