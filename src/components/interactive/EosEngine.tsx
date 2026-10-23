@@ -102,7 +102,7 @@ export function EosEngine() {
           </motion.p>
 
           <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.12 }} className="mx-auto mt-6 text-[clamp(1.15rem,2vw,1.4rem)] font-black tracking-tight text-q-ink">
-            Streaming data. No Spark. No clusters. <span className="text-q-brand-deep">No memory tax.</span>
+            Streaming data. No Spark. <span className="text-q-brand-deep">Low compute.</span>
           </motion.p>
 
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.16 }} className="mx-auto mt-14 grid max-w-5xl gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
