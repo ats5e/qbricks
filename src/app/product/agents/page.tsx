@@ -46,7 +46,7 @@ const content: CopyPageContent = {
         "Many institutions are deploying agents on dedicated agentic platforms, such as Wonderful, for customer service across voice, chat and email, or for back-office workflows. Those agents are only as good as the answers behind them. When an agent quotes a balance, a fee or a claim status, that answer needs to come from data your institution can stand behind. QBricks is the governed layer between your systems of record and the agents that speak for you.",
     },
   ],
-  next: { label: "Machine learning", href: "/product/machine-learning" },
+  next: { label: "Explore Machine learning", href: "/product/machine-learning" },
 };
 
 export default function AgentsPage() {

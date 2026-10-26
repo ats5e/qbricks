@@ -19,7 +19,7 @@ const fadeUp = {
 const heroStats = [
   { label: "Ingestion", value: "50.6", unit: "s", detail: "per TB of raw CSV · €0.48 compute per TB" },
   { label: "Complex pipeline builds", value: "14.5", unit: "s", detail: "866M records · full 22-query TPC-H suite*" },
-  { label: "Query", value: "266.7", unit: "s", detail: "All 99 TPC-DS-derived queries at 1 TB*, 1.81× Spark's speed" },
+  { label: "Query", value: "266.7", unit: "s", detail: "1.81× Spark's speed · all 99 TPC\u2011DS queries at 1\u00a0TB*" },
 ];
 
 const benchmarks = [
@@ -51,7 +51,7 @@ const benchmarks = [
     kicker: "03 · Query",
     tag: "TPC-DS 1 TB",
     title: "All 99 TPC-DS queries in 266.7 seconds, 1.81× Spark's speed",
-    text: "TPC-DS is the industry-standard decision-support benchmark: 99 complex queries of joins, aggregations and sub-queries. EOS runs the full suite in 0.55× of Spark's estimated time, 81% faster. Compiled Rust and no JVM mean less compute on every query.",
+    text: "TPC-DS is the industry-standard decision-support benchmark: 99 complex queries of joins, aggregations and sub-queries. EOS finishes the full suite in just over half of Spark's estimated time (0.55×), 81% faster. Compiled Rust and no JVM mean less compute on every query.",
     range: ["0.0s", "266.7s"],
     facts: [
       { value: "99", label: "Queries, best of two" },

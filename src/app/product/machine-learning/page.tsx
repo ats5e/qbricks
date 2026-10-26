@@ -46,7 +46,7 @@ const content: CopyPageContent = {
         "Most institutions have years invested in their own models: credit scorecards, fraud engines, pricing and risk models that have passed validation and earned trust. QBricks does not ask you to replace them. The QBricks Python SDK gives your data science teams direct, governed access to QBricks data, so every model starts from data that has already been approved and is ready for use.",
     },
   ],
-  next: { label: "Agents on governed data", href: "/product/agents" },
+  next: { label: "Explore Agents", href: "/product/agents" },
 };
 
 export default function MachineLearningPage() {
