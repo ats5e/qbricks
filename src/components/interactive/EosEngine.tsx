@@ -15,11 +15,11 @@ const fadeUp = {
   viewport: { once: true, margin: "-90px" },
 } as const;
 
-// Query card and TPC footnote per David, 21 Oct 2026 (final query results to follow).
+// Query card and TPC footnote per David, 21 Oct 2026; query figures from his "EOS vs Spark" slide (25 Oct 2026).
 const heroStats = [
   { label: "Ingestion", value: "50.6", unit: "s", detail: "per TB of raw CSV · €0.48 compute per TB" },
   { label: "Complex pipeline builds", value: "14.5", unit: "s", detail: "866M records · full 22-query TPC-H suite*" },
-  { label: "Query", headline: "Market leading TPC-DS* speed", detail: "All 99 TPC-DS-derived queries at 1 TB, benchmarked faster than Spark and Sail with minimal compute" },
+  { label: "Query", value: "266.7", unit: "s", detail: "All 99 TPC-DS-derived queries at 1 TB*, 1.81× Spark's speed" },
 ];
 
 const benchmarks = [
@@ -45,6 +45,18 @@ const benchmarks = [
       { value: "22", label: "Queries, fixed by spec" },
       { value: "8", label: "Tables, ~100 GB" },
       { value: "1 VM", label: "No cluster, no tuning" },
+    ],
+  },
+  {
+    kicker: "03 · Query",
+    tag: "TPC-DS 1 TB",
+    title: "All 99 TPC-DS queries in 266.7 seconds, 1.81× Spark's speed",
+    text: "TPC-DS is the industry-standard decision-support benchmark: 99 complex queries of joins, aggregations and sub-queries. EOS runs the full suite in 0.55× of Spark's estimated time, 81% faster. Compiled Rust and no JVM mean less compute on every query.",
+    range: ["0.0s", "266.7s"],
+    facts: [
+      { value: "99", label: "Queries, best of two" },
+      { value: "1.81×", label: "Spark's speed" },
+      { value: "9.5%", label: "Gain from table statistics" },
     ],
   },
 ];
@@ -83,7 +95,7 @@ const features = [
 ];
 
 const basis =
-  "Ingestion: 12.08 TB TPC-H-derived CSV (SF10000), 86.6 BN records in 610.8s on nine Azure D64ds_v5 workers (576 vCPU), so 50.6s and €0.48 timed compute per TB; 8/8 tables validated; single run, 29 Sept 2026 · Pipeline builds: TPC-H SF100 (~866M rows total, lineitem ~600M), 22 queries, single Azure D32als_v6 (32 vCPU / 64 GiB), pay-as-you-go ≈ $31/day at the $1.286/hr US baseline · Compute reduction: QBricks engineering estimate, up to 85% · Cost savings are subject to the QBricks gain share and aren't shown here.";
+  "Ingestion: 12.08 TB TPC-H-derived CSV (SF10000), 86.6 BN records in 610.8s on nine Azure D64ds_v5 workers (576 vCPU), so 50.6s and €0.48 timed compute per TB; 8/8 tables validated; single run, 29 Sept 2026 · Pipeline builds: TPC-H SF100 (~866M rows total, lineitem ~600M), 22 queries, single Azure D32als_v6 (32 vCPU / 64 GiB), pay-as-you-go ≈ $31/day at the $1.286/hr US baseline · Query: 99 TPC-DS-derived statements at 1 TB, EOS with table statistics, best of two runs, 266.7s; the Spark time (≈483.6s) is an estimate, not a measured run · Compute reduction: QBricks engineering estimate, up to 85% · Cost savings are subject to the QBricks gain share and aren't shown here.";
 
 export function EosEngine() {
   return (
@@ -113,17 +125,10 @@ export function EosEngine() {
                 className="premium-card block p-7 transition-colors hover:border-q-brand/40"
               >
                 <p className="text-sm font-bold text-q-gray-600">{brand(stat.label)}</p>
-                {stat.headline ? (
-                  <p className="mt-3 text-2xl font-black leading-tight tracking-tight text-q-ink">
-                    Market leading <span className="whitespace-nowrap">TPC-DS<sup className="text-[0.55em]">*</sup></span>{" "}
-                    <span className="text-q-brand-ember">speed</span>
-                  </p>
-                ) : (
-                  <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-q-ink">
-                    {brand(stat.value)}
-                    <span className="text-q-brand-ember">{brand(stat.unit)}</span>
-                  </p>
-                )}
+                <p className="mt-3 text-[2.75rem] font-black leading-none tracking-tight text-q-ink">
+                  {brand(stat.value)}
+                  <span className="text-q-brand-ember">{brand(stat.unit)}</span>
+                </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-q-gray-600">{brand(stat.detail)}</p>
               </a>
             ))}
@@ -158,23 +163,23 @@ export function EosEngine() {
             A new era in Data Management.
           </motion.p>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          <div className="mt-12 grid gap-5 xl:grid-cols-3">
             {benchmarks.map((b, index) => (
               <motion.article
                 key={b.kicker}
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="premium-card flex flex-col p-8 md:p-10 lg:grid lg:gap-0 lg:[grid-row:span_5] lg:[grid-template-rows:subgrid]"
+                className="premium-card flex flex-col p-8 md:p-10 xl:grid xl:gap-0 xl:p-8 xl:[grid-row:span_5] xl:[grid-template-rows:subgrid]"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="text-sm font-bold text-q-gray-600">{brand(b.kicker)}</span>
                   <span className="rounded-full border border-black/10 px-3 py-1 text-xs font-medium text-q-gray-700">{brand(b.tag)}</span>
                 </div>
-                <h3 className="mt-7 text-[clamp(1.6rem,2.6vw,2.2rem)] font-black leading-[1.1] tracking-tight text-q-ink">
+                <h3 className="mt-7 text-[clamp(1.6rem,2.6vw,2.2rem)] xl:text-[1.7rem] font-black leading-[1.1] tracking-tight text-q-ink">
                   {brand(b.title)}
                   <span className="text-q-brand-ember">.</span>
                 </h3>
-                <p className="mt-4 leading-relaxed text-q-gray-600 lg:self-start">{brand(b.text)}</p>
+                <p className="mt-4 leading-relaxed text-q-gray-600 xl:self-start">{brand(b.text)}</p>
 
                 <div className="mt-auto pt-9">
                   <div className="h-1.5 overflow-hidden rounded-full bg-black/[0.08]">
@@ -194,8 +199,8 @@ export function EosEngine() {
 
                 <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10">
                   {b.facts.map((fact) => (
-                    <div key={fact.label} className="bg-white p-4 md:p-5">
-                      <p className="whitespace-nowrap text-base font-black tracking-tight text-q-ink sm:text-xl xl:text-2xl">{brand(fact.value)}</p>
+                    <div key={fact.label} className="bg-white p-4 md:p-5 xl:p-3.5">
+                      <p className="whitespace-nowrap text-base font-black tracking-tight text-q-ink sm:text-xl xl:text-lg">{brand(fact.value)}</p>
                       <p className="mt-1 text-[13px] text-q-gray-500">{brand(fact.label)}</p>
                     </div>
                   ))}

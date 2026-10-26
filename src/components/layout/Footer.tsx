@@ -12,6 +12,8 @@ const columns = [
     links: [
       ["Product", "/product"],
       ["EOS", "/eos"],
+      ["Machine learning", "/product/machine-learning"],
+      ["Agents", "/product/agents"],
       ["Why QBricks", "/why-qbricks"],
       ["Integrations", "/integrations"],
       ["Sustainability", "/sustainability"],

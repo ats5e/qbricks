@@ -22,6 +22,20 @@ const flow = [
   ["Audit", "Track every decision, exception and lineage event end to end."],
 ];
 
+const more = [
+  {
+    label: "Machine learning",
+    href: "/product/machine-learning",
+    title: "Machine learning where your governed data already lives",
+    text: "Use our models, build your own in SQL, or take the data to the models you already trust.",
+  },
+  {
+    label: "Agents",
+    href: "/product/agents",
+    title: "Agents that work on governed data, not around it",
+    text: "Put the QBricks Agentic Crew to work, build agents of your own, or connect the agentic platforms you already use.",
+  },
+];
 
 export default function ProductPage() {
   return (
@@ -107,6 +121,29 @@ export default function ProductPage() {
         </div>
       </section>
 
+
+      <section className="border-b border-black/5 bg-white section-y-sm">
+        <div className="container-x">
+          <p className="eyebrow mb-3">On the platform</p>
+          <h2 className="h-sub">Models and agents on governed data.</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {more.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex flex-col rounded-3xl border border-black/10 bg-black/[0.035] p-6 transition-colors hover:border-q-brand/40 md:p-8"
+              >
+                <p className="text-sm font-bold text-q-gray-500">{item.label}</p>
+                <h3 className="mt-3 text-xl font-black leading-tight text-q-ink md:text-2xl">{brand(item.title)}</h3>
+                <p className="mt-3 leading-relaxed text-q-gray-600">{brand(item.text)}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-q-brand-deep">
+                  Read more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section-y bg-white">
         <div className="container-x">
